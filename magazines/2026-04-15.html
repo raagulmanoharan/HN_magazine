@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Morning Edition &middot; WEDNESDAY, APRIL 15, 2026</title>
+<meta name="description" content="Routines, bugs, privacy, and one gigapixel painting">
+<meta property="og:title" content="Morning Edition · WEDNESDAY, APRIL 15, 2026">
+<meta property="og:description" content="Routines, bugs, privacy, and one gigapixel painting">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:22px;line-height:1.45;
+  color:#111;background:#f6f1e7;-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility}
+a{color:inherit;text-underline-offset:4px}
+.spread{position:relative;min-height:100vh;padding:clamp(48px,6vw,110px);
+  overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.spread--short{min-height:auto}
+.kicker{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:.28em;
+  font-size:20px;text-transform:uppercase}
+.meta-row{display:flex;gap:28px;flex-wrap:wrap;font-family:'Inter',sans-serif;
+  font-weight:500;font-size:18px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.body-lead{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(24px,2.2vw,32px);
+  line-height:1.45;max-width:28ch}
+.body-lead--wide{max-width:40ch}
+.tag-applies{display:inline-block;padding:10px 20px;border:3px solid currentColor;
+  font-family:'Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:.22em;
+  text-transform:uppercase;border-radius:2px}
+.apply-note{font-family:'Inter',sans-serif;font-size:22px;line-height:1.5;font-weight:500;
+  max-width:42ch}
+.read-more{font-family:'Inter',sans-serif;font-weight:700;font-size:20px;letter-spacing:.12em;
+  text-transform:uppercase;border-bottom:3px solid currentColor;padding-bottom:6px;
+  text-decoration:none;display:inline-block}
+.footer-slug{font-family:'Inter',sans-serif;font-size:18px;letter-spacing:.22em;
+  text-transform:uppercase;opacity:.55;margin-top:40px}
+
+/* ---- 01 HERO ---- */
+.s-hero{background:#f4ecd8;color:#17140e}
+.s-hero .masthead{display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:4px solid #17140e;padding-bottom:18px}
+.s-hero .masthead h1{font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:clamp(44px,5vw,72px);margin:0;letter-spacing:-.02em}
+.s-hero .issue-meta{text-align:right;font-family:'Inter',sans-serif;font-weight:600;
+  font-size:20px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5}
+.s-hero .cover-body{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;
+  margin-top:auto}
+.s-hero .cover-numeral{font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(200px,28vw,420px);line-height:.82;letter-spacing:-.05em;color:#b63b1f}
+.s-hero .cover-title{font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(56px,7.5vw,136px);line-height:.95;letter-spacing:-.035em;margin:0 0 28px}
+.s-hero .cover-tagline{font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:clamp(26px,2.4vw,36px);max-width:30ch;line-height:1.3;margin:0 0 32px}
+.s-hero .cover-kicker{font-family:'Inter',sans-serif;font-weight:800;
+  font-size:22px;letter-spacing:.3em;text-transform:uppercase;color:#b63b1f;margin-bottom:24px}
+@media(max-width:900px){.s-hero .cover-body{grid-template-columns:1fr}
+  .s-hero .cover-numeral{font-size:42vw}}
+
+/* ---- 02 MIDNIGHT ---- */
+.s-midnight{background:#0b0b14;color:#f3ecd8}
+.s-midnight .bg-num{position:absolute;right:-4vw;top:10%;font-family:'Fraunces',serif;
+  font-weight:900;font-size:56vw;line-height:.8;color:transparent;
+  -webkit-text-stroke:2px rgba(243,236,216,.18);pointer-events:none;user-select:none}
+.s-midnight .content{position:relative;z-index:2;max-width:62ch}
+.s-midnight .kicker{color:#9ad9ff}
+.s-midnight h2{font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:clamp(52px,6.4vw,108px);line-height:1;letter-spacing:-.02em;margin:28px 0 36px}
+.s-midnight .body-lead{color:#f3ecd8;opacity:.9}
+.s-midnight .read-more{color:#9ad9ff;border-color:#9ad9ff}
+.s-midnight .apply-note{color:#9ad9ff}
+
+/* ---- 03 ROSE ALERT ---- */
+.s-rose{background:#e9b1a3;color:#3a0f08}
+.s-rose .stamp{position:absolute;top:72px;right:72px;transform:rotate(9deg);
+  border:5px double #8a1a0c;color:#8a1a0c;padding:22px 32px;font-family:'Inter',sans-serif;
+  font-weight:800;font-size:22px;letter-spacing:.28em;text-transform:uppercase;
+  background:rgba(255,255,255,.06);border-radius:6px;line-height:1.1;text-align:center}
+.s-rose .numeral-xl{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(140px,18vw,260px);
+  line-height:.85;color:#8a1a0c;letter-spacing:-.04em;margin:0}
+.s-rose h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(44px,5.4vw,90px);
+  line-height:1;letter-spacing:-.025em;margin:24px 0 32px;max-width:22ch}
+.s-rose .kicker{color:#8a1a0c}
+.s-rose .read-more{color:#8a1a0c;border-color:#8a1a0c}
+.s-rose .apply-note{color:#3a0f08}
+@media(max-width:700px){.s-rose .stamp{top:24px;right:24px;padding:14px 20px;font-size:18px}}
+
+/* ---- 04 TERMINAL ---- */
+.s-terminal{background:#050807;color:#7fffb0;font-family:'JetBrains Mono',monospace}
+.s-terminal .window{border:2px solid #2a3a32;border-radius:8px;padding:28px 36px;
+  background:#070d0b;max-width:100%;box-shadow:0 0 80px rgba(127,255,176,.08)}
+.s-terminal .chrome{display:flex;gap:10px;margin-bottom:28px}
+.s-terminal .dot{width:14px;height:14px;border-radius:50%;background:#2a3a32}
+.s-terminal .prompt{font-size:24px;line-height:1.6}
+.s-terminal .prompt .dollar{color:#4a8a6a}
+.s-terminal .prompt .cmd{color:#7fffb0}
+.s-terminal .prompt .arg{color:#f3e87a}
+.s-terminal h2{font-family:'JetBrains Mono',monospace;font-weight:700;
+  font-size:clamp(36px,4.4vw,72px);line-height:1.15;letter-spacing:-.01em;
+  color:#eafff3;margin:18px 0 28px}
+.s-terminal .ascii-num{white-space:pre;font-size:clamp(20px,1.6vw,26px);line-height:1;
+  color:#4a8a6a;margin-bottom:28px;font-weight:700}
+.s-terminal .body-lead{font-family:'JetBrains Mono',monospace;font-size:22px;
+  line-height:1.6;color:#c7f5d9;max-width:62ch}
+.s-terminal .read-more{color:#7fffb0;border-color:#7fffb0;font-family:'JetBrains Mono',monospace}
+.s-terminal .apply-note{color:#f3e87a;font-family:'JetBrains Mono',monospace}
+.s-terminal .kicker{color:#f3e87a}
+
+/* ---- 05 ACADEMIC ---- */
+.s-academic{background:#efe7d4;color:#1a1712}
+.s-academic .masthead-line{display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:1.5px solid #1a1712;padding-bottom:10px;font-family:'Fraunces',serif;
+  font-style:italic;font-size:20px}
+.s-academic .roman{font-family:'Fraunces',serif;font-weight:500;font-size:24px;letter-spacing:.3em}
+.s-academic h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(44px,5vw,88px);
+  line-height:1.05;letter-spacing:-.015em;margin:40px 0 28px;max-width:24ch}
+.s-academic .body-lead{column-count:2;column-gap:56px;max-width:none;font-size:24px;line-height:1.55}
+.s-academic .body-lead::first-letter{font-family:'Fraunces',serif;font-weight:900;float:left;
+  font-size:clamp(110px,12vw,180px);line-height:.82;margin:12px 18px 0 -6px;color:#6b2414}
+.s-academic .footnote{font-family:'Fraunces',serif;font-style:italic;font-size:20px;
+  border-top:1.5px solid #1a1712;padding-top:16px;max-width:60ch;margin-top:32px}
+.s-academic .kicker{color:#6b2414}
+@media(max-width:800px){.s-academic .body-lead{column-count:1}}
+
+/* ---- 06 BIG STAT ---- */
+.s-stat{background:#ffffff;color:#0a0a0a;display:grid;grid-template-rows:auto 1fr auto;gap:0}
+.s-stat .top{display:flex;justify-content:space-between;align-items:flex-start}
+.s-stat .chip{font-family:'Inter',sans-serif;font-weight:800;font-size:20px;
+  letter-spacing:.22em;text-transform:uppercase;border:3px solid #0a0a0a;padding:10px 18px}
+.s-stat .stat-wrap{display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:40px 0}
+.s-stat .stat-value{font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(200px,34vw,520px);line-height:.82;letter-spacing:-.06em;color:#e04b28}
+.s-stat .stat-label{font-family:'Inter',sans-serif;font-weight:800;
+  font-size:clamp(22px,1.8vw,28px);letter-spacing:.32em;text-transform:uppercase;margin-top:12px}
+.s-stat h2{font-family:'Fraunces',serif;font-weight:500;font-style:italic;
+  font-size:clamp(32px,3.4vw,54px);line-height:1.15;max-width:30ch;margin:32px 0 18px}
+.s-stat .read-more{color:#e04b28;border-color:#e04b28}
+
+/* ---- 07 NEWSPRINT ---- */
+.s-newsprint{background:#ece4d0;color:#141210;background-image:
+  repeating-linear-gradient(0deg,rgba(20,18,16,.025) 0 1px,transparent 1px 3px)}
+.s-newsprint .masthead-bar{font-family:'Fraunces',serif;font-weight:900;font-style:italic;
+  font-size:clamp(40px,4.6vw,72px);border-top:6px solid #141210;border-bottom:2px solid #141210;
+  padding:14px 0;letter-spacing:-.01em}
+.s-newsprint .badge{display:inline-flex;align-items:center;justify-content:center;
+  width:clamp(96px,9vw,140px);height:clamp(96px,9vw,140px);border:4px solid #141210;
+  border-radius:50%;font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(40px,4vw,64px);line-height:1}
+.s-newsprint .title-row{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;margin-top:36px}
+.s-newsprint h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(42px,5vw,88px);
+  line-height:1;letter-spacing:-.02em;margin:0}
+.s-newsprint .cols{column-count:2;column-gap:48px;margin-top:36px;font-size:22px;line-height:1.55}
+@media(max-width:800px){.s-newsprint .cols{column-count:1}}
+
+/* ---- 08 NEON ---- */
+.s-neon{background:linear-gradient(135deg,#ff2bd6 0%,#ff7a00 45%,#10e5ff 100%);color:#0a0018}
+.s-neon .numeral-slash{font-family:'Inter',sans-serif;font-weight:800;font-style:italic;
+  font-size:clamp(180px,26vw,420px);line-height:.8;transform:skewX(-12deg);
+  -webkit-text-stroke:4px #0a0018;color:transparent;letter-spacing:-.04em}
+.s-neon h2{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(44px,5.6vw,96px);
+  line-height:.95;letter-spacing:-.025em;margin:16px 0 28px;text-transform:uppercase;max-width:22ch}
+.s-neon .kicker{background:#0a0018;color:#10e5ff;padding:10px 16px;display:inline-block}
+.s-neon .body-lead{color:#0a0018;font-family:'Inter',sans-serif;font-weight:500}
+.s-neon .read-more{color:#0a0018;border-color:#0a0018}
+.s-neon .apply-note{background:#0a0018;color:#10e5ff;padding:20px 24px;display:inline-block}
+
+/* ---- 09 ZINE ---- */
+.s-zine{background:#f2e9d0;color:#1a1a1a;background-image:
+  radial-gradient(circle at 15% 20%,rgba(0,0,0,.04) 0 1px,transparent 1px),
+  radial-gradient(circle at 70% 60%,rgba(0,0,0,.04) 0 1px,transparent 1px);
+  background-size:14px 14px,22px 22px}
+.s-zine .sticker{display:inline-block;background:#ffd93a;padding:14px 22px;
+  font-family:'Inter',sans-serif;font-weight:800;font-size:22px;letter-spacing:.22em;
+  text-transform:uppercase;transform:rotate(-3deg);border:3px solid #1a1a1a;
+  box-shadow:6px 6px 0 #1a1a1a}
+.s-zine .marker-num{font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:clamp(160px,22vw,340px);line-height:.85;color:#1a1a1a;transform:rotate(-4deg);
+  display:inline-block;position:relative}
+.s-zine .marker-num::after{content:"";position:absolute;left:-4%;right:-4%;top:48%;height:18%;
+  background:#ff4d3a;mix-blend-mode:multiply;z-index:-1;transform:rotate(2deg);border-radius:6px}
+.s-zine h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(44px,5.4vw,92px);
+  line-height:1;letter-spacing:-.02em;margin:28px 0 28px;transform:rotate(-.5deg);max-width:22ch}
+.s-zine .read-more{color:#ff4d3a;border-color:#ff4d3a}
+.s-zine .scribble{display:block;width:220px;height:8px;background:#ff4d3a;
+  clip-path:polygon(0 40%,10% 60%,20% 30%,30% 70%,40% 40%,50% 60%,60% 30%,70% 70%,80% 40%,90% 60%,100% 40%,100% 100%,0 100%);
+  margin:10px 0 20px}
+
+/* ---- 10 PULLQUOTE ---- */
+.s-pullquote{background:#111820;color:#f3ecd8}
+.s-pullquote .top{display:flex;justify-content:space-between;align-items:baseline}
+.s-pullquote .tiny-num{font-family:'Fraunces',serif;font-weight:500;font-style:italic;
+  font-size:clamp(40px,4vw,64px);opacity:.6}
+.s-pullquote .quote-open{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(200px,24vw,360px);
+  line-height:.7;color:#d9b26a;margin:0 0 -20px -20px;display:block}
+.s-pullquote .pq{font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:clamp(48px,6.4vw,120px);line-height:1.02;letter-spacing:-.02em;
+  max-width:26ch;margin:0 0 40px}
+.s-pullquote .attrib{font-family:'Inter',sans-serif;font-weight:600;font-size:22px;
+  letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.s-pullquote .read-more{color:#d9b26a;border-color:#d9b26a}
+.s-pullquote .apply-note{color:#d9b26a}
+
+/* ---- Closing colophon ---- */
+.colophon{background:#17140e;color:#f4ecd8;padding:clamp(48px,6vw,110px);
+  display:flex;flex-direction:column;gap:32px}
+.colophon h3{font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:clamp(48px,5vw,84px);margin:0;line-height:1}
+.colophon p{font-family:'Fraunces',serif;font-size:24px;line-height:1.5;max-width:56ch;margin:0}
+.colophon .smallprint{font-family:'Inter',sans-serif;font-size:18px;letter-spacing:.18em;
+  text-transform:uppercase;opacity:.55}
+</style>
+</head>
+<body>
+
+<section class="spread s-hero">
+  <div class="masthead">
+    <h1>Morning Edition</h1>
+    <div class="issue-meta">
+      <div>WEDNESDAY, APRIL 15, 2026</div>
+      <div>Issue No. 0470</div>
+    </div>
+  </div>
+  <div class="cover-body">
+    <div>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AI TOOLING</div>
+      <h2 class="cover-title">Claude Code Routines</h2>
+      <p class="cover-tagline">Routines, bugs, privacy, and one gigapixel painting</p>
+      <p class="body-lead body-lead--wide">Anthropic just shipped Routines for Claude Code — reusable, parameterized workflows you define once and invoke at will. This is the agentic scaffolding you&#x27;ve been duct-taping together yourself, now first-class. 355 comments suggests the community is already stress-testing it hard.</p>
+      <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://code.claude.com/docs/en/routines" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
+      </div>
+      <p class="apply-note">&rarr; Open claude.ai/code, read the Routines docs, and wire up your first parameterized workflow today.</p>
+      <div class="meta-row"><span>611 pts</span><span>355 comments</span><span><a href="https://news.ycombinator.com/item?id=47768133" target="_blank" rel="noopener">Discussion</a></span></div>
+    </div>
+    <div class="cover-numeral" aria-hidden="true">01</div>
+  </div>
+</section>
+
+<section class="spread s-rose">
+  <div class="stamp">Applies<br>to&nbsp;you</div>
+  <div>
+    <div class="kicker">PRIVACY ALERT</div>
+    <div class="numeral-xl" aria-hidden="true">02</div>
+    <h2>Tell HN: Fiverr left customer files public and searchable</h2>
+    <p class="body-lead">Fiverr pipes user files through Cloudinary without access controls, making work products — including client deliverables — publicly guessable by URL. A textbook case of third-party data exposure hiding behind a platform you thought you trusted. Check any links you&#x27;ve sent there.</p>
+  </div>
+  <div>
+    <p class="apply-note">&rarr; If you&#x27;ve used Fiverr&#x27;s messaging, audit any PDFs or images you sent — they may be publicly accessible via predictable Cloudinary URLs right now.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://news.ycombinator.com/item?id=47769796" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <div class="meta-row"><span>657 pts</span><span>163 comments</span><span><a href="https://news.ycombinator.com/item?id=47769796" target="_blank" rel="noopener">Discussion</a></span></div>
+    <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
+  </div>
+</section>
+
+<section class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #####  
+#   #      #  
+#   #   ####  
+#   #      #  
+#####  #####  </div>
+    <div class="kicker">DEBUGGING</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">iczelia.net</span></div>
+    <h2>Fixing a 20-year-old bug in Enlightenment E16</h2>
+    <p class="body-lead">&gt; Someone hunted down a race condition that has lived in E16 since the mid-2000s — the kind of archaeological debugging that requires reading X11 internals and trusting almost nothing. The writeup is a masterclass in how you actually find bugs that have survived decades of eyeballs.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://iczelia.net/posts/e16-20-year-old-bug/" target="_blank" rel="noopener">$ open &rarr;</a>
+      
+    </div>
+    
+    <div class="meta-row"><span>143 pts</span><span>40 comments</span><span><a href="https://news.ycombinator.com/item?id=47774789" target="_blank" rel="noopener">Discussion</a></span></div>
+  </div>
+</section>
+
+<section class="spread s-zine">
+  <div>
+    <div class="sticker">Cut &amp; keep</div>
+  </div>
+  <div>
+    <div class="marker-num" aria-hidden="true">04</div>
+    <div class="scribble" aria-hidden="true"></div>
+    <div class="kicker">TECH ARCHAEOLOGY</div>
+    <h2>A communist Apple II and fourteen years of not knowing what you&#x27;re testing</h2>
+    <p class="body-lead">A Soviet-era Apple II clone surfaces, and with it the uncomfortable realization that a test suite was silently running against the wrong hardware for over a decade. Part hardware history, part epistemology of testing — the kind of story that makes you audit your own assumptions.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://llama.gs/blog/index.php/2026/04/10/friday-archaeology-a-communist-apple-ii-and-fourteen-years-of-not-knowing-what-youre-testing/" target="_blank" rel="noopener">Read it &rarr;</a>
+      
+    </div>
+    
+    <div class="meta-row"><span>171 pts</span><span>62 comments</span><span><a href="https://news.ycombinator.com/item?id=47724571" target="_blank" rel="noopener">Discussion</a></span></div>
+  </div>
+</section>
+
+<section class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">V</span>
+  </div>
+  <div>
+    <div class="kicker">DATABASES</div>
+    <h2>5NF and Database Design</h2>
+    <div class="body-lead">Fifth Normal Form gets handwaved in most SQL education, but this piece works through it concretely with real schema examples. If you&#x27;ve ever had a join dependency bite you in a reporting table, this is the theory that explains why — and how to fix the model upstream.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://kb.databasedesignbook.com/posts/5nf/" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      
+    </div>
+    
+  </div>
+  <div>
+    <div class="footnote">&sect; 164 points &middot; 60 comments &middot; filed under databases &middot; <a href="https://news.ycombinator.com/item?id=47767676" target="_blank" rel="noopener">discussion</a></div>
+  </div>
+</section>
+
+<section class="spread s-stat">
+  <div class="top">
+    <div class="chip">No. 06 &middot; AUDIO / CULTURE</div>
+    <span class="tag-applies">Applies to you</span>
+  </div>
+  <div class="stat-wrap">
+    <div class="stat-value" aria-hidden="true">Thousands</div>
+    <div class="stat-label">rare concert recordings now freely streamable</div>
+  </div>
+  <div>
+    <h2>Rare concert recordings are landing on the Internet Archive</h2>
+    <p class="body-lead">Thousands of live recordings — many previously circulating only as degraded bootlegs — are now freely streamable on archive.org. For anyone who cares about music as artifact rather than playlist fodder, this is a serious accession. The collection skews heavily toward 70s–90s rock and jazz.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://techcrunch.com/2026/04/13/thousands-of-rare-concert-recordings-are-landing-on-the-internet-archive-listen-now/" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    <p class="apply-note">&rarr; Head to archive.org/details/etree and start a search by your favorite artist — something rare is almost certainly already there.</p>
+    <div class="meta-row"><span>646 pts</span><span>188 comments</span><span><a href="https://news.ycombinator.com/item?id=47765604" target="_blank" rel="noopener">Discussion</a></span></div>
+  </div>
+</section>
+
+<section class="spread s-pullquote">
+  <div class="top">
+    <div class="kicker" style="color:#d9b26a">DEV CULTURE</div>
+    <div class="tiny-num" aria-hidden="true">07</div>
+  </div>
+  <div>
+    <span class="quote-open" aria-hidden="true">&ldquo;</span>
+    <p class="pq">Dependency cooldowns turn you into a free-rider on someone else&#x27;s maintenance labor.</p>
+    <div class="attrib">&mdash; calpaterson.com</div>
+  </div>
+  <div>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Pinning your dependencies and never updating is a rational short-term move that collectively hollows out open-source maintainership. Cal Paterson makes the tragedy-of-the-commons argument clearly and without moralizing — the kind of piece that reframes a habit you probably have.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://calpaterson.com/deps.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    <div class="meta-row"><span>119 pts</span><span>81 comments</span><span><a href="https://news.ycombinator.com/item?id=47773812" target="_blank" rel="noopener">Discussion</a></span></div>
+  </div>
+</section>
+
+<section class="spread s-neon">
+  <div>
+    <div class="kicker">INFORMATION DESIGN</div>
+  </div>
+  <div>
+    <div class="numeral-slash" aria-hidden="true">08</div>
+    <h2>Picasso&#x27;s Guernica (Gigapixel)</h2>
+    <p class="body-lead">The Reina Sofía&#x27;s gigapixel viewer for Guernica is legitimately excellent — brush texture, underpaint layers, and craquelure visible at a level impossible in person. The zoom interface itself is worth studying as a model for how to present large-format artworks without losing the whole.</p>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://guernica.museoreinasofia.es/gigapixel/#3/63.11/-120.59" target="_blank" rel="noopener">Go loud &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Open the link and zoom into the screaming horse&#x27;s eye — the brushwork at that scale is something you won&#x27;t forget.</p>
+    <div class="meta-row"><span>137 pts</span><span>38 comments</span><span><a href="https://news.ycombinator.com/item?id=47728662" target="_blank" rel="noopener">Discussion</a></span></div>
+  </div>
+</section>
+
+<section class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">09</div>
+  <div class="content">
+    <div class="kicker">CLI TOOLS</div>
+    <h2>Wacli – WhatsApp CLI: sync, search, send</h2>
+    <p class="body-lead">Peter Steinberger&#x27;s WhatsApp CLI wraps the Mac desktop app to let you sync history, search messages, and send programmatically — turning a locked-down messenger into something scriptable. Obvious use case: feeding chat context into an LLM workflow without copy-paste theater.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://github.com/steipete/wacli" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Clone the repo, point it at your WhatsApp Mac install, and pipe a conversation thread into your next Claude prompt.</p>
+    <div class="meta-row"><span>94 pts</span><span>69 comments</span><span><a href="https://news.ycombinator.com/item?id=47775628" target="_blank" rel="noopener">Discussion</a></span></div>
+  </div>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
+</section>
+
+<section class="spread s-newsprint">
+  <div class="masthead-bar">The Daily Ledger</div>
+  <div class="title-row">
+    <div class="badge">10</div>
+    <div>
+      <div class="kicker">MATH CURIOS</div>
+      <h2>Not all elementary functions can be expressed with exp-minus-log</h2>
+    </div>
+  </div>
+  <div class="cols">
+    <p>A clean proof that the standard exp/log basis for elementary functions has genuine gaps — not just an implementation limitation but a structural one.</p>
+    <p>The kind of result that recalibrates what you think &quot;closed form&quot; means, with concrete counterexamples you can hold in your head.</p>
+  </div>
+  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+    <a class="read-more" href="https://www.stylewarning.com/posts/not-all-elementary/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    
+  </div>
+  
+  <div class="meta-row"><span>98 pts</span><span>78 comments</span><span><a href="https://news.ycombinator.com/item?id=47773788" target="_blank" rel="noopener">Discussion</a></span></div>
+</section>
+
+
+<section class="colophon">
+  <div class="smallprint">Colophon</div>
+  <h3>That was today.</h3>
+  <p>Ten stories, hand-curated from the Hacker News front page before you were awake.
+  5 of them are flagged as directly applicable &mdash; open those first.</p>
+  <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
+  at 2026-04-15 10:00 UTC.</p>
+  <p class="smallprint">Morning Edition &middot; Issue No. 0470 &middot; WEDNESDAY, APRIL 15, 2026</p>
+</section>
+
+</body>
+</html>
