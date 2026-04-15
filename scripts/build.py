@@ -163,15 +163,39 @@ def build(date: dt.date, public_base_url: str | None = None, notify_enabled: boo
 
     if notify_enabled and public_base_url:
         url = public_base_url.rstrip("/") + f"/magazines/{date.isoformat()}.html"
-        try:
-            notify.send(url, fmt_date(date), applies_count, result["tagline"])
-            result["notified"] = True
-            result["public_url"] = url
-        except Exception as e:
-            log.exception("notification failed: %s", e)
+        if _is_paused(date):
+            log.info("notification suppressed — reader is paused")
             result["notified"] = False
+            result["paused"] = True
+            result["public_url"] = url
+        else:
+            try:
+                notify.send(url, fmt_date(date), applies_count, result["tagline"])
+                result["notified"] = True
+                result["public_url"] = url
+            except Exception as e:
+                log.exception("notification failed: %s", e)
+                result["notified"] = False
 
     return result
+
+
+def _is_paused(today: dt.date) -> bool:
+    """Returns True if taste.json has paused_until >= today."""
+    taste_path = ROOT / "taste.json"
+    try:
+        taste = json.loads(taste_path.read_text())
+    except Exception:
+        return False
+    until = taste.get("paused_until")
+    if not until:
+        return False
+    try:
+        # Accepts "YYYY-MM-DDTHH:MM:SSZ" — compare dates only.
+        until_date = dt.date.fromisoformat(until[:10])
+    except ValueError:
+        return False
+    return today <= until_date
 
 
 def main() -> int:

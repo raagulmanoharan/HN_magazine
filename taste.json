@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-04-15T00:00:00Z",
+  "profile": "Loves: UX, interface design, typography, information design. AI tools that work today (not AGI takes) — agentic workflows, LLM tooling, evals, prompt craft, shipping news from Anthropic / Claude / OpenAI. Creative software — design tools, music software, video, generative art. Developer tools — editors, terminals, languages, build systems, databases, debuggers, local-first, self-hosted. Privacy, encryption, security research, surveillance resistance. Weird science — biology, neuroscience, physics, math curios, archaeology, strange empirical findings. Actionable things — 'I could use this today' libraries, guides, Show HNs with working demos, field reports.\n\nSkip: low-effort hot takes without a concrete artifact. Pure VC / funding announcements with no product substance. Crypto price chatter, tokenomics, NFT drama. US political flame-wars and culture-war pieces. Layoff announcements without real analysis. Recycled listicles, SEO spam, LinkedIn-flavored leadership posts.",
+  "applies_to_me_rule": "Flag applies_to_me: true when the reader could literally use the thing today — a new Claude feature, a dev tool they'd install, a privacy utility, an editor plugin, a library, a how-to with a working demo.",
+  "voice": "sharp, curious, a little dry. Blurbs are 2-3 sentences, ~45 words. Explain WHY it matters to this reader specifically, not a summary of the headline. No exclamation points. No 'in this post'. No clickbait.",
+  "recent_changes": [],
+  "paused_until": null
+}

@@ -87,7 +87,40 @@ absent, so you can iterate on the renderer without burning tokens.
 
 ## Taste profile
 
-Edit `TASTE_PROFILE` in `scripts/curate.py` to adjust what gets boosted and
-what gets skipped. The block is sent to Claude with `cache_control:
-ephemeral`, so daily runs benefit from prompt caching — only the story list
-changes between calls.
+The reader profile lives in `taste.json` at the repo root. `scripts/curate.py`
+loads it at build time and interpolates it into the Claude system prompt
+(wrapped in `cache_control: ephemeral` so only the day's story list changes
+between runs).
+
+You don't edit this file by hand. Instead, text the WhatsApp bot.
+
+## Tuning by WhatsApp (Shape A)
+
+`api/twilio-whatsapp.py` is a Vercel serverless function that receives
+inbound WhatsApp messages, classifies intent with Claude Haiku, and rewrites
+`taste.json` through the GitHub Contents API. Messages you can send:
+
+| Message | Effect |
+|---|---|
+| `more rust stuff` | Appends to the "Loves" list |
+| `less crypto please` | Appends to the "Skip" list |
+| `pause 3 days` | Sets `paused_until` — build script skips sends until then |
+| `show` | Echoes your current profile |
+| `reset` | Wipes profile back to defaults |
+
+### One-time webhook setup
+
+1. Sign up at [vercel.com](https://vercel.com) and import this repo.
+2. In Vercel → Settings → Environment Variables, set:
+   - `TWILIO_AUTH_TOKEN` — same value as the GH Actions secret
+   - `ALLOWED_WHATSAPP_FROM` — your own `whatsapp:+…` number
+   - `ANTHROPIC_API_KEY` — reused
+   - `GH_TOKEN` — a fine-grained PAT with `Contents: write` on this repo
+   - `GH_REPO` — e.g. `raagulmanoharan/HN_magazine`
+   - `GH_BRANCH` — `main`
+3. Deploy. Vercel gives you a URL like `https://hn-magazine.vercel.app`.
+4. In Twilio Console → WhatsApp sender → "When a message comes in", paste
+   `https://<your-vercel-url>/api/twilio-whatsapp` and save.
+
+Now every reply you send to the morning link adjusts the next morning's
+curation.

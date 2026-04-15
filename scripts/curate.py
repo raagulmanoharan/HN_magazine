@@ -12,12 +12,28 @@ from __future__ import annotations
 import json
 import logging
 import os
+import pathlib
 import re
 from typing import Any
 
 log = logging.getLogger(__name__)
 
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+
+# Optional per-reader taste profile. Tuned via WhatsApp replies; the webhook
+# at api/twilio-whatsapp rewrites this file. If missing (fresh install) we
+# fall back to the in-prompt defaults below.
+TASTE_JSON = pathlib.Path(__file__).resolve().parent.parent / "taste.json"
+
+
+def _load_taste() -> dict:
+    try:
+        return json.loads(TASTE_JSON.read_text())
+    except FileNotFoundError:
+        return {}
+    except Exception as e:
+        log.warning("taste.json unreadable, using defaults: %s", e)
+        return {}
 
 SPREAD_STYLES = [
     "hero",          # #1 cover story — massive display type
@@ -32,40 +48,72 @@ SPREAD_STYLES = [
     "pullquote",     # single enormous pull quote
 ]
 
-TASTE_PROFILE = """\
+DEFAULT_PROFILE = (
+    "Loves: UX, interface design, typography, information design. "
+    "AI tools that work today (not AGI takes) — agentic workflows, LLM tooling, "
+    "evals, prompt craft, shipping news from Anthropic / Claude / OpenAI. "
+    "Creative software — design tools, music software, video, generative art. "
+    "Developer tools — editors, terminals, languages, build systems, databases, "
+    "debuggers, local-first, self-hosted. Privacy, encryption, security research, "
+    "surveillance resistance. Weird science — biology, neuroscience, physics, "
+    "math curios, archaeology, strange empirical findings. Actionable things — "
+    "'I could use this today' libraries, guides, Show HNs with working demos.\n\n"
+    "Skip: low-effort hot takes without a concrete artifact. Pure VC / funding "
+    "announcements with no product substance. Crypto price chatter, tokenomics, "
+    "NFT drama. US political flame-wars. Layoff announcements without real "
+    "analysis. Recycled listicles, SEO spam, LinkedIn-flavored leadership posts."
+)
+DEFAULT_APPLIES_RULE = (
+    'Flag "applies_to_me: true" when the reader could literally use the thing '
+    "today — a new Claude feature, a dev tool they'd install, a privacy utility, "
+    "an editor plugin, a library, a how-to with a working demo."
+)
+DEFAULT_VOICE = (
+    "sharp, curious, a little dry. Blurbs are 2-3 sentences, ~45 words. Explain "
+    "WHY it matters to this reader specifically, not a summary of the headline. "
+    'No exclamation points. No "in this post". No clickbait.'
+)
+
+
+def _build_taste_profile() -> str:
+    """Combine the editable reader profile (from taste.json, tuned via
+    WhatsApp) with the static structural rules (JSON schema, spread palette,
+    style-assignment rules). Returns the full system prompt."""
+    t = _load_taste()
+    profile = (t.get("profile") or DEFAULT_PROFILE).strip()
+    applies_rule = (t.get("applies_to_me_rule") or DEFAULT_APPLIES_RULE).strip()
+    voice = (t.get("voice") or DEFAULT_VOICE).strip()
+
+    recent = t.get("recent_changes") or []
+    recent_block = ""
+    if recent:
+        # Surface the 10 most recent tuning changes so the editor understands
+        # the trajectory of the reader's taste, not just the static snapshot.
+        recent_lines = "\n".join(
+            f"- {c.get('when','')}: {c.get('change','')}" for c in recent[-10:]
+        )
+        recent_block = (
+            "\n\nRECENT TUNING (what the reader has said lately, newest last):\n"
+            + recent_lines
+        )
+
+    header = f"""\
 You are the Editor-in-Chief of a one-reader daily called MORNING EDITION. The
 reader's taste is specific and strong. Curate ruthlessly.
 
-WHAT THE READER LOVES (boost):
-- UX, interface design, typography, information design
-- AI tools you can actually use today (not AGI takes), agentic workflows, LLM
-  tooling, evals, prompt craft, Claude / Anthropic / OpenAI shipping news
-- Creative software: design tools, music software, video, generative art
-- Developer tools: editors, terminals, languages, build systems, databases,
-  debuggers, local-first, self-hosted
-- Privacy, encryption, security research, surveillance resistance
-- Weird science: biology, neuroscience, physics, math curios, archaeology,
-  strange empirical findings
-- Actionable things: "I could use this today" — libraries, guides, show HNs
-  with working demos, field reports
+THE READER (verbatim profile, tuned over time via WhatsApp):
+{profile}
+{recent_block}
 
-WHAT TO SKIP (penalize hard):
-- Low-effort posts: generic hot takes, rage bait, vague blog posts without a
-  concrete artifact
-- Pure VC / funding announcements with no product substance
-- Crypto price chatter, tokenomics, NFT drama
-- US political flame-wars and culture-war pieces
-- "X company laid off N people" unless there's real analysis
-- Recycled listicles, SEO spam, LinkedIn-flavored leadership posts
+APPLIES-TO-ME FLAG:
+{applies_rule}
 
-FLAG "applies_to_me: true" when the reader could literally use the thing
-today: a new Claude feature, a dev tool they'd install, a privacy utility,
-an editor plugin, a library, a how-to with a working demo.
+EDITORIAL VOICE: {voice}
+"""
+    return header + _STATIC_SCHEMA_TAIL
 
-EDITORIAL VOICE: sharp, curious, a little dry. Blurbs are 2-3 sentences, ~45
-words. They must explain WHY it matters to this reader specifically — not a
-summary of the headline. No exclamation points. No "in this post". No clickbait.
 
+_STATIC_SCHEMA_TAIL = """
 SPREAD STYLE PALETTE (assign exactly one per story, use each style once):
   hero, midnight, rose-alert, terminal, academic, big-stat, newsprint,
   neon, zine, pullquote
@@ -146,7 +194,7 @@ def _curate_with_claude(stories: list[dict]) -> dict:
         system=[
             {
                 "type": "text",
-                "text": TASTE_PROFILE,
+                "text": _build_taste_profile(),
                 "cache_control": {"type": "ephemeral"},
             }
         ],
