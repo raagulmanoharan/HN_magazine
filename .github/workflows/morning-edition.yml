@@ -22,13 +22,13 @@ on:
       - ".github/workflows/morning-edition.yml"
       - "requirements.txt"
 
-# Pages deploy needs these; the content commit needs contents:write.
+# We commit generated files back to the repo; Pages serves them
+# directly from the branch (Settings -> Pages -> Source: Deploy from
+# a branch -> main -> /). No `github-pages` environment needed, so
+# environment protection rules cannot block us.
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
-# Never run two Morning Edition builds concurrently.
 concurrency:
   group: morning-edition
   cancel-in-progress: false
@@ -45,9 +45,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # Default branch — the schedule writes back to wherever the
-          # workflow file lives. After this PR merges to main, schedule
-          # runs write to main.
           ref: ${{ github.ref }}
 
       - name: Set up Python
@@ -62,7 +59,6 @@ jobs:
       - name: Compute Pages base URL
         id: base
         run: |
-          # e.g. https://octocat.github.io/HN_magazine
           owner="${{ github.repository_owner }}"
           repo="${GITHUB_REPOSITORY#*/}"
           echo "url=https://${owner}.github.io/${repo}" >> "$GITHUB_OUTPUT"
@@ -73,18 +69,12 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-4-6' }}
           PUBLIC_BASE_URL: ${{ steps.base.outputs.url }}
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_WHATSAPP_FROM: ${{ secrets.TWILIO_WHATSAPP_FROM }}
-          WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
         run: |
           set -euo pipefail
           DATE_ARG=""
           if [ -n "${{ github.event.inputs.date }}" ]; then
             DATE_ARG="--date ${{ github.event.inputs.date }}"
           fi
-          # We build first without notifying — notify only after Pages
-          # has actually deployed, so the link we send is live.
           python scripts/build.py $DATE_ARG --no-notify | tee build-result.json
 
       - name: Extract build metadata
@@ -111,24 +101,8 @@ jobs:
           git commit -m "Morning Edition: ${{ steps.meta.outputs.issue_date }}"
           git push origin HEAD:${GITHUB_REF#refs/heads/}
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v4
-
   notify:
-    needs: [build, deploy]
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -137,6 +111,20 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install twilio
+      - name: Wait for Pages to serve the new issue
+        env:
+          URL: ${{ needs.build.outputs.public_url }}
+        run: |
+          # Pages serves from the default branch; after our commit push,
+          # there's a short propagation window (usually <60s). Poll until
+          # the file responds 200 so the WhatsApp link is live when sent.
+          for i in $(seq 1 30); do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$URL" || echo 000)
+            echo "attempt $i: $URL -> $code"
+            if [ "$code" = "200" ]; then exit 0; fi
+            sleep 10
+          done
+          echo "::warning::Pages did not serve $URL after 5 minutes; sending link anyway."
       - name: Send WhatsApp
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
