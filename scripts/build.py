@@ -1,7 +1,7 @@
 """Build today's Morning Edition.
 
 Steps:
-  1. Fetch the HN front page (top ~30 stories).
+  1. Fetch across the eleven enabled sources in parallel.
   2. Curate with Claude (or heuristic fallback).
   3. Render the magazine HTML.
   4. Write to magazines/YYYY-MM-DD.html.
@@ -104,7 +104,7 @@ def render_index(issues: list[dict]) -> str:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition</title>
-<meta name="description" content="A daily, hand-curated magazine from the Hacker News front page.">
+<meta name="description" content="A daily, hand-curated magazine across eleven sources.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -114,7 +114,7 @@ def render_index(issues: list[dict]) -> str:
 <div class="wrap">
   <header class="masthead">
     <h1>Morning Edition</h1>
-    <div class="sub">A one-reader daily.<br>Hand-picked from the Hacker News front page while you slept.</div>
+    <div class="sub">A one-reader daily.<br>Hand-picked across eleven sources while you slept.</div>
   </header>
   {body}
   <footer>Latest issue: {latest or "—"} &middot; Built with Claude</footer>

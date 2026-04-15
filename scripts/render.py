@@ -725,7 +725,7 @@ def render_colophon(issue: dict, applies_count: int) -> str:
 <section class="colophon">
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
-  <p>Ten stories, hand-curated from the Hacker News front page before you were awake.
+  <p>Ten stories, hand-curated across eleven sources before you were awake.
   {applies_count} of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
   at {esc(issue["built_at"])}.</p>
@@ -752,7 +752,7 @@ def render_magazine(curation: dict, today: dt.date | None = None) -> str:
     colophon = render_colophon(issue, applies_count)
 
     title = f"Morning Edition &middot; {issue['date_display']}"
-    desc = esc(issue.get("tagline") or "Hand-picked from the Hacker News front page.")
+    desc = esc(issue.get("tagline") or "Hand-picked across eleven sources while you slept.")
     return f"""<!doctype html>
 <html lang="en">
 <head>

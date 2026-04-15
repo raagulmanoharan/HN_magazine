@@ -366,7 +366,7 @@ def _curate_heuristic(stories: list[dict]) -> dict:
         }
         picks.append(pick)
     return {
-        "issue_tagline": "Hand-picked from the front page while you slept.",
+        "issue_tagline": "Hand-picked across eleven sources while you slept.",
         "picks": picks,
     }
 
