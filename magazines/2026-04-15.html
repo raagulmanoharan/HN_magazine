@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; WEDNESDAY, APRIL 15, 2026</title>
-<meta name="description" content="Agentic Claude, leaky clouds, and ancient bugs">
+<meta name="description" content="Routines, bugs, leaks, and math that breaks">
 <meta property="og:title" content="Morning Edition · WEDNESDAY, APRIL 15, 2026">
-<meta property="og:description" content="Agentic Claude, leaky clouds, and ancient bugs">
+<meta property="og:description" content="Routines, bugs, leaks, and math that breaks">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -227,13 +227,13 @@ a{color:inherit;text-underline-offset:4px}
     <div>
       <div class="cover-kicker">Today&rsquo;s lead &middot; AI TOOLING</div>
       <h2 class="cover-title">Claude Code Routines</h2>
-      <p class="cover-tagline">Agentic Claude, leaky clouds, and ancient bugs</p>
-      <p class="body-lead body-lead--wide">Anthropic ships first-class Routines to Claude Code — reusable, composable agentic workflows you define once and invoke on demand. This is the missing abstraction between one-off prompts and full automation pipelines. The HN thread is dense with real usage patterns.</p>
+      <p class="cover-tagline">Routines, bugs, leaks, and math that breaks</p>
+      <p class="body-lead body-lead--wide">Anthropic just shipped Routines in Claude Code — named sequences of agentic steps you can invoke repeatedly on a codebase. This is the scaffolding layer that makes Claude Code less &#x27;chatbot with file access&#x27; and more &#x27;junior dev with a playbook.&#x27; 357 comments means the community is already stress-testing it.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
         <a class="read-more" href="https://code.claude.com/docs/en/routines" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Open Claude Code, read the Routines docs, and write one Routine for your most repeated dev task today.</p>
+      <p class="apply-note">&rarr; Open Claude Code docs, define a Routine for your most repeated task (e.g. write-test-lint-commit) and run it today.</p>
       <div class="meta-row"><span>613 pts</span><span>357 comments</span><span><a href="https://news.ycombinator.com/item?id=47768133" target="_blank" rel="noopener">Discussion</a></span></div>
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -243,15 +243,15 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">SECURITY</div>
+    <div class="kicker">SECURITY RESEARCH</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
     <h2>Tell HN: Fiverr left customer files public and searchable</h2>
-    <p class="body-lead">Fiverr&#x27;s Cloudinary integration left processed PDFs and images from private client conversations publicly enumerable — no auth required. A sharp reminder that third-party media pipelines are a silent attack surface most devs never audit.</p>
+    <p class="body-lead">Fiverr&#x27;s Cloudinary integration was exposing uploaded work files — including client deliverables — publicly indexed and searchable. This isn&#x27;t a breach in the dramatic sense; it&#x27;s the mundane horror of default-public cloud storage at scale, and it implicates every platform that blindly proxies through Cloudinary.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Audit any Cloudinary (or similar CDN) integration you own: confirm signed URLs are enforced and unsigned delivery is disabled.</p>
+    <p class="apply-note">&rarr; Audit any app you&#x27;ve built that uses Cloudinary: verify upload presets are set to &#x27;private&#x27; or &#x27;authenticated&#x27;, not the default unsigned public.</p>
     <div style="margin-top:28px"><a class="read-more" href="https://news.ycombinator.com/item?id=47769796" target="_blank" rel="noopener">Try it now &rarr;</a></div>
-    <div class="meta-row"><span>663 pts</span><span>163 comments</span><span><a href="https://news.ycombinator.com/item?id=47769796" target="_blank" rel="noopener">Discussion</a></span></div>
+    <div class="meta-row"><span>665 pts</span><span>163 comments</span><span><a href="https://news.ycombinator.com/item?id=47769796" target="_blank" rel="noopener">Discussion</a></span></div>
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
@@ -263,54 +263,58 @@ a{color:inherit;text-underline-offset:4px}
   <div>
     <div class="marker-num" aria-hidden="true">03</div>
     <div class="scribble" aria-hidden="true"></div>
-    <div class="kicker">PRIVACY</div>
+    <div class="kicker">SURVEILLANCE RESISTANCE</div>
     <h2>Stop Flock</h2>
-    <p class="body-lead">Flock Safety&#x27;s ALPR network has quietly become one of the most pervasive civilian surveillance infrastructures in the US, and this campaign is the clearest organized pushback yet. Worth understanding what data your town is selling before you find out the hard way.</p>
+    <p class="body-lead">Flock Safety&#x27;s license-plate-reader network has quietly expanded to thousands of municipalities, building a de facto national vehicle surveillance grid sold as &#x27;community safety.&#x27; StopFlock is a civil-society pushback campaign with a database of where cameras are deployed — useful both as advocacy and threat model.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
       <a class="read-more" href="https://stopflock.com" target="_blank" rel="noopener">Read it &rarr;</a>
       
     </div>
     
-    <div class="meta-row"><span>678 pts</span><span>175 comments</span><span><a href="https://news.ycombinator.com/item?id=47772012" target="_blank" rel="noopener">Discussion</a></span></div>
-  </div>
-</section>
-
-<section class="spread s-neon">
-  <div>
-    <div class="kicker">AUDIO / ARCHIVE</div>
-  </div>
-  <div>
-    <div class="numeral-slash" aria-hidden="true">04</div>
-    <h2>Rare concert recordings are landing on the Internet Archive</h2>
-    <p class="body-lead">Thousands of audience recordings — the kind that circulated on tape trees for decades — are now permanently indexed on archive.org. For anyone building audio tools or just wanting source material for generative experiments, this is an enormous lossless corpus.</p>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://techcrunch.com/2026/04/13/thousands-of-rare-concert-recordings-are-landing-on-the-internet-archive-listen-now/" target="_blank" rel="noopener">Go loud &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Browse archive.org/details/etree today for lossless FLAC sources to feed into your next audio ML or sampling project.</p>
-    <div class="meta-row"><span>646 pts</span><span>188 comments</span><span><a href="https://news.ycombinator.com/item?id=47765604" target="_blank" rel="noopener">Discussion</a></span></div>
+    <div class="meta-row"><span>679 pts</span><span>176 comments</span><span><a href="https://news.ycombinator.com/item?id=47772012" target="_blank" rel="noopener">Discussion</a></span></div>
   </div>
 </section>
 
 <section class="spread s-terminal">
   <div class="window">
     <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #      
+    <div class="ascii-num" aria-hidden="true">#####  #   #  
+#   #  #   #  
 #   #  #####  
 #   #      #  
-#####  #####  </div>
-    <div class="kicker">DEBUGGING</div>
+#####      #  </div>
+    <div class="kicker">DEBUG ARCHAEOLOGY</div>
     <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">iczelia.net</span></div>
     <h2>Fixing a 20-year-old bug in Enlightenment E16</h2>
-    <p class="body-lead">&gt; A meticulous field report on hunting down a two-decade-old rendering glitch in E16 — the kind of debugging narrative that teaches more about X11 window management than any tutorial. The archaeological patience here is genuinely instructive.</p>
+    <p class="body-lead">&gt; A meticulous post-mortem on hunting down a race condition that&#x27;s lived in E16 since the early 2000s — complete with the full bisect, strace, and X11 internals tour. The real value here is the methodology: this is how you actually find ancient bugs in event-driven C code.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
       <a class="read-more" href="https://iczelia.net/posts/e16-20-year-old-bug/" target="_blank" rel="noopener">$ open &rarr;</a>
       
     </div>
     
-    <div class="meta-row"><span>144 pts</span><span>43 comments</span><span><a href="https://news.ycombinator.com/item?id=47774789" target="_blank" rel="noopener">Discussion</a></span></div>
+    <div class="meta-row"><span>145 pts</span><span>43 comments</span><span><a href="https://news.ycombinator.com/item?id=47774789" target="_blank" rel="noopener">Discussion</a></span></div>
   </div>
+</section>
+
+<section class="spread s-newsprint">
+  <div class="masthead-bar">The Daily Ledger</div>
+  <div class="title-row">
+    <div class="badge">05</div>
+    <div>
+      <div class="kicker">CREATIVE CULTURE</div>
+      <h2>Rare concert recordings are landing on the Internet Archive</h2>
+    </div>
+  </div>
+  <div class="cols">
+    <p>Thousands of live recordings — many from tape traders and bootleg circuits — are being ingested into the Internet Archive with proper metadata.</p>
+    <p>For anyone working on music software, generative audio, or just wanting to hear a 1973 Grateful Dead show in lossless: it&#x27;s open, it&#x27;s free, it&#x27;s now.</p>
+  </div>
+  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+    <a class="read-more" href="https://techcrunch.com/2026/04/13/thousands-of-rare-concert-recordings-are-landing-on-the-internet-archive-listen-now/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    <span class="tag-applies">Applies to you</span>
+  </div>
+  <p class="apply-note">&rarr; Go to archive.org/details/etree and search an artist you love — most recordings are downloadable as FLAC today.</p>
+  <div class="meta-row"><span>648 pts</span><span>188 comments</span><span><a href="https://news.ycombinator.com/item?id=47765604" target="_blank" rel="noopener">Discussion</a></span></div>
 </section>
 
 <section class="spread s-academic">
@@ -321,7 +325,7 @@ a{color:inherit;text-underline-offset:4px}
   <div>
     <div class="kicker">DATABASES</div>
     <h2>5NF and Database Design</h2>
-    <div class="body-lead">Fifth Normal Form gets hand-waved in most DB courses, but this post works through concrete examples that show exactly when a 4NF schema still lies about your data. The HN comments extend the argument usefully into real-world schema design.</div>
+    <div class="body-lead">Fifth Normal Form is where most database curricula quietly give up, and this post actually explains the join-dependency concept with concrete examples rather than relational algebra notation. If you&#x27;ve normalized to 3NF by feel and never gone further, this is the missing chapter.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
       <a class="read-more" href="https://kb.databasedesignbook.com/posts/5nf/" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
@@ -335,77 +339,73 @@ a{color:inherit;text-underline-offset:4px}
 
 <section class="spread s-pullquote">
   <div class="top">
-    <div class="kicker" style="color:#d9b26a">DEV CULTURE</div>
+    <div class="kicker" style="color:#d9b26a">MATH CURIO</div>
     <div class="tiny-num" aria-hidden="true">07</div>
   </div>
   <div>
     <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">Delaying upgrades is free-riding on the maintainers doing the work.</p>
-    <div class="attrib">&mdash; calpaterson.com</div>
+    <p class="pq">The trick doesn&#x27;t cover everything — here&#x27;s the counterexample.</p>
+    <div class="attrib">&mdash; stylewarning.com</div>
   </div>
   <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Cal Paterson&#x27;s argument: delaying dependency upgrades shifts security and maintenance burden onto the maintainer and everyone downstream who shares that transitive dep. It reframes &quot;stability&quot; as an externality problem, not just a personal risk calculation.</p>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">A genuinely surprising result: the standard CAS trick of reducing elementary functions to exp and log doesn&#x27;t cover everything, and this post walks through a concrete counterexample with actual algebra. The kind of thing that quietly rewires your assumptions about symbolic computation.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://calpaterson.com/deps.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://www.stylewarning.com/posts/not-all-elementary/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
-    <div class="meta-row"><span>120 pts</span><span>82 comments</span><span><a href="https://news.ycombinator.com/item?id=47773812" target="_blank" rel="noopener">Discussion</a></span></div>
+    <div class="meta-row"><span>99 pts</span><span>79 comments</span><span><a href="https://news.ycombinator.com/item?id=47773788" target="_blank" rel="noopener">Discussion</a></span></div>
   </div>
 </section>
 
-<section class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">08</div>
-    <div>
-      <div class="kicker">WEIRD HISTORY</div>
-      <h2>A communist Apple II and fourteen years of not knowing what you&#x27;re testing</h2>
+<section class="spread s-neon">
+  <div>
+    <div class="kicker">AI TOOLING</div>
+  </div>
+  <div>
+    <div class="numeral-slash" aria-hidden="true">08</div>
+    <h2>Turn your best AI prompts into one-click tools in Chrome</h2>
+    <p class="body-lead">Chrome&#x27;s new &#x27;Skills&#x27; feature lets you save a prompt template and invoke it on any selected text via right-click — essentially macros for Gemini baked into the browser. Shallow compared to proper agentic tooling, but the UX pattern of &#x27;prompt as installable tool&#x27; is worth watching.</p>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/" target="_blank" rel="noopener">Go loud &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
     </div>
+    <p class="apply-note">&rarr; If you&#x27;re on Chrome Canary or the latest stable, check Settings → Gemini → Skills and wire up your most-used rewrite or summarize prompt.</p>
+    <div class="meta-row"><span>164 pts</span><span>82 comments</span><span><a href="https://news.ycombinator.com/item?id=47768339" target="_blank" rel="noopener">Discussion</a></span></div>
   </div>
-  <div class="cols">
-    <p>Fourteen years of running tests against what turned out to be a Soviet-era Apple II clone with subtly different hardware behavior.</p>
-    <p>A delightful piece of computing archaeology that also quietly indicts the assumption that test environments are neutral.</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://llama.gs/blog/index.php/2026/04/10/friday-archaeology-a-communist-apple-ii-and-fourteen-years-of-not-knowing-what-youre-testing/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
-    
-  </div>
-  
-  <div class="meta-row"><span>174 pts</span><span>65 comments</span><span><a href="https://news.ycombinator.com/item?id=47724571" target="_blank" rel="noopener">Discussion</a></span></div>
 </section>
 
 <section class="spread s-midnight">
   <div class="bg-num" aria-hidden="true">09</div>
   <div class="content">
-    <div class="kicker">AI TOOLING</div>
-    <h2>Turn your best AI prompts into one-click tools in Chrome</h2>
-    <p class="body-lead">Chrome&#x27;s new Skills feature lets you save a prompt-plus-context as a persistent browser action. Less powerful than a proper agentic setup but zero-friction for recurring tasks — worth knowing about given how many people live in the browser.</p>
+    <div class="kicker">DEV TOOLS</div>
+    <h2>Wacli – WhatsApp CLI: sync, search, send</h2>
+    <p class="body-lead">A CLI wrapper around WhatsApp&#x27;s unofficial API that lets you sync history, search messages, and send programmatically — useful for anyone building automations or wanting scriptable access to a chat platform that otherwise resists it. From steipete, who ships working things.</p>
     <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://github.com/steipete/wacli" target="_blank" rel="noopener">Read the story &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Enable Chrome Skills in the experimental settings and wire up one recurring prompt you currently retype manually.</p>
-    <div class="meta-row"><span>163 pts</span><span>82 comments</span><span><a href="https://news.ycombinator.com/item?id=47768339" target="_blank" rel="noopener">Discussion</a></span></div>
+    <p class="apply-note">&rarr; Clone the repo, run through the setup instructions, and pipe your WhatsApp history into a local search index today.</p>
+    <div class="meta-row"><span>100 pts</span><span>76 comments</span><span><a href="https://news.ycombinator.com/item?id=47775628" target="_blank" rel="noopener">Discussion</a></span></div>
   </div>
   <div class="footer-slug">Morning Edition &middot; After Dark</div>
 </section>
 
 <section class="spread s-stat">
   <div class="top">
-    <div class="chip">No. 10 &middot; MATH CURIO</div>
+    <div class="chip">No. 10 &middot; DEV CULTURE</div>
     
   </div>
   <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">∞</div>
-    <div class="stat-label">elementary functions outside the exp-log tower</div>
+    <div class="stat-value" aria-hidden="true">82</div>
+    <div class="stat-label">comments debating whether delayed upgrades are sane or freeloading</div>
   </div>
   <div>
-    <h2>Not all elementary functions can be expressed with exp-minus-log</h2>
-    <p class="body-lead">A clean proof that the standard exp/log basis can&#x27;t represent every elementary function — which has real consequences for symbolic computation and CAS design. The Lisp-flavored presentation makes it unusually readable for a result this fundamental.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://www.stylewarning.com/posts/not-all-elementary/" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    <h2>Dependency cooldowns turn you into a free-rider</h2>
+    <p class="body-lead">Cal Paterson&#x27;s argument: deliberately delaying dependency upgrades to let others find the bugs is individually rational but collectively corrosive — a tragedy-of-the-commons framing applied to package ecosystems. Sharp enough to actually change how you think about your update policy.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://calpaterson.com/deps.html" target="_blank" rel="noopener">Read the story &rarr;</a></div>
     
-    <div class="meta-row"><span>99 pts</span><span>79 comments</span><span><a href="https://news.ycombinator.com/item?id=47773788" target="_blank" rel="noopener">Discussion</a></span></div>
+    <div class="meta-row"><span>120 pts</span><span>82 comments</span><span><a href="https://news.ycombinator.com/item?id=47773812" target="_blank" rel="noopener">Discussion</a></span></div>
   </div>
 </section>
 
@@ -414,9 +414,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated from the Hacker News front page before you were awake.
-  4 of them are flagged as directly applicable &mdash; open those first.</p>
+  5 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-04-15 10:14 UTC.</p>
+  at 2026-04-15 10:19 UTC.</p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0470 &middot; WEDNESDAY, APRIL 15, 2026</p>
 </section>
 
