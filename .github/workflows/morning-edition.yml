@@ -1,0 +1,145 @@
+name: Morning Edition
+
+on:
+  schedule:
+    # 7:00 AM US Eastern = 11:00 UTC (standard) / 12:00 UTC (daylight).
+    # GitHub cron does not understand DST. We run at both so the reader
+    # always gets the issue by 07:00 local, regardless of season. The
+    # downstream build step is idempotent within a day (it overwrites
+    # the same YYYY-MM-DD.html) so running twice is harmless.
+    - cron: "0 11 * * *"
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Override date (YYYY-MM-DD). Leave blank for today."
+        required: false
+        default: ""
+
+# Pages deploy needs these; the content commit needs contents:write.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Never run two Morning Edition builds concurrently.
+concurrency:
+  group: morning-edition
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      public_url: ${{ steps.meta.outputs.public_url }}
+      issue_date: ${{ steps.meta.outputs.issue_date }}
+      applies_count: ${{ steps.meta.outputs.applies_count }}
+      tagline: ${{ steps.meta.outputs.tagline }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Default branch — the schedule writes back to wherever the
+          # workflow file lives. After this PR merges to main, schedule
+          # runs write to main.
+          ref: ${{ github.ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Compute Pages base URL
+        id: base
+        run: |
+          # e.g. https://octocat.github.io/HN_magazine
+          owner="${{ github.repository_owner }}"
+          repo="${GITHUB_REPOSITORY#*/}"
+          echo "url=https://${owner}.github.io/${repo}" >> "$GITHUB_OUTPUT"
+
+      - name: Build today's issue
+        id: build
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-4-6' }}
+          PUBLIC_BASE_URL: ${{ steps.base.outputs.url }}
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_WHATSAPP_FROM: ${{ secrets.TWILIO_WHATSAPP_FROM }}
+          WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
+        run: |
+          set -euo pipefail
+          DATE_ARG=""
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            DATE_ARG="--date ${{ github.event.inputs.date }}"
+          fi
+          # We build first without notifying — notify only after Pages
+          # has actually deployed, so the link we send is live.
+          python scripts/build.py $DATE_ARG --no-notify | tee build-result.json
+
+      - name: Extract build metadata
+        id: meta
+        run: |
+          date=$(python -c "import json;print(json.load(open('build-result.json'))['date'])")
+          applies=$(python -c "import json;print(json.load(open('build-result.json'))['applies_count'])")
+          tagline=$(python -c "import json;print(json.load(open('build-result.json'))['tagline'])")
+          echo "issue_date=$date" >> "$GITHUB_OUTPUT"
+          echo "applies_count=$applies" >> "$GITHUB_OUTPUT"
+          echo "tagline=$tagline" >> "$GITHUB_OUTPUT"
+          echo "public_url=${{ steps.base.outputs.url }}/magazines/$date.html" >> "$GITHUB_OUTPUT"
+
+      - name: Commit generated issue
+        run: |
+          set -euo pipefail
+          git config user.name "morning-edition-bot"
+          git config user.email "morning-edition-bot@users.noreply.github.com"
+          git add magazines/ index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Morning Edition: ${{ steps.meta.outputs.issue_date }}"
+          git push origin HEAD:${GITHUB_REF#refs/heads/}
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+  notify:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install twilio
+      - name: Send WhatsApp
+        env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_WHATSAPP_FROM: ${{ secrets.TWILIO_WHATSAPP_FROM }}
+          WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
+        run: |
+          python scripts/notify.py \
+            "${{ needs.build.outputs.public_url }}" \
+            "${{ needs.build.outputs.issue_date }}" \
+            "${{ needs.build.outputs.applies_count }}" \
+            "${{ needs.build.outputs.tagline }}"
