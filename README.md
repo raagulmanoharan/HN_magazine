@@ -17,8 +17,8 @@ spreads. It publishes to GitHub Pages and WhatsApps you the link.
         │     └── scripts/fetch_hn.py   dedup by URL, pre-rank by `prior`
         ├── scripts/curate.py           Claude editorial curator (prompt cached)
         └── scripts/render.py           10 distinct magazine spreads
-  └── commit magazines/YYYY-MM-DD.html + index.html back to the branch
-  └── actions/deploy-pages              publish
+  └── commit magazines/YYYY-MM-DD.html + index.html back to main
+  └── GitHub Pages                      serves main directly
   └── scripts/notify.py                 Twilio WhatsApp message with public URL
 ```
 
@@ -42,7 +42,7 @@ layout, and numeral treatment. No inline font is smaller than 18px.
 
 ### 1. Enable GitHub Pages
 
-Settings → Pages → Source: **GitHub Actions**.
+Settings → Pages → Source: **Deploy from a branch → main → /(root)**.
 
 ### 2. Add secrets
 
@@ -94,7 +94,17 @@ loads it at build time and interpolates it into the Claude system prompt
 (wrapped in `cache_control: ephemeral` so only the day's story list changes
 between runs).
 
-You don't edit this file by hand. Instead, text the WhatsApp bot.
+Edit it by hand to tune what gets picked. Fields you can change:
+
+- `profile` — the long prose description of loves/skips. Appended verbatim
+  into the Claude system prompt.
+- `applies_to_me_rule` — when the "APPLIES TO YOU" stamp should fire.
+- `voice` — blurb tone, length, what to avoid.
+- `sources.<name>.enabled` — flip `true`/`false` to silence a source.
+- `paused_until` — ISO date; while set, the daily WhatsApp send is skipped
+  (the build still runs and the HTML still publishes).
+
+Commit and push; the next scheduled build picks it up.
 
 ## Sources & ranking
 
@@ -117,38 +127,6 @@ but the curator treats `prior` as a tiebreaker. The real ranking rubric
 (in `scripts/curate.py`) is: taste alignment → UX/design priority → AI
 shipping freshness → actionability → cross-source diversity → prior.
 
-Source feeds live in `scripts/fetch_sources.py` (`FEED_URLS`). To toggle a
-source on or off, text the bot: `stop product hunt` or `turn sidebar back on`.
-
-## Tuning by WhatsApp (Shape A)
-
-`api/twilio-whatsapp.py` is a Vercel serverless function that receives
-inbound WhatsApp messages, classifies intent with Claude Haiku, and rewrites
-`taste.json` through the GitHub Contents API. Messages you can send:
-
-| Message | Effect |
-|---|---|
-| `more rust stuff` | Appends to the "Loves" list |
-| `less crypto please` | Appends to the "Skip" list |
-| `stop product hunt` | Disables a source |
-| `turn sidebar back on` | Re-enables a source |
-| `pause 3 days` | Sets `paused_until` — build script skips sends until then |
-| `show` | Echoes your current profile |
-| `reset` | Wipes profile back to defaults |
-
-### One-time webhook setup
-
-1. Sign up at [vercel.com](https://vercel.com) and import this repo.
-2. In Vercel → Settings → Environment Variables, set:
-   - `TWILIO_AUTH_TOKEN` — same value as the GH Actions secret
-   - `ALLOWED_WHATSAPP_FROM` — your own `whatsapp:+…` number
-   - `ANTHROPIC_API_KEY` — reused
-   - `GH_TOKEN` — a fine-grained PAT with `Contents: write` on this repo
-   - `GH_REPO` — e.g. `raagulmanoharan/HN_magazine`
-   - `GH_BRANCH` — `main`
-3. Deploy. Vercel gives you a URL like `https://hn-magazine.vercel.app`.
-4. In Twilio Console → WhatsApp sender → "When a message comes in", paste
-   `https://<your-vercel-url>/api/twilio-whatsapp` and save.
-
-Now every reply you send to the morning link adjusts the next morning's
-curation.
+Source feeds live in `scripts/fetch_sources.py` (`FEED_URLS`). To disable a
+source without editing code, set `sources.<name>.enabled` to `false` in
+`taste.json`. If a publisher changes their RSS path, update `FEED_URLS`.

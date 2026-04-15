@@ -20,9 +20,8 @@ log = logging.getLogger(__name__)
 
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6")
 
-# Optional per-reader taste profile. Tuned via WhatsApp replies; the webhook
-# at api/twilio-whatsapp rewrites this file. If missing (fresh install) we
-# fall back to the in-prompt defaults below.
+# Optional per-reader taste profile. Edited by hand and committed. If
+# missing (fresh install) we fall back to the in-prompt defaults below.
 TASTE_JSON = pathlib.Path(__file__).resolve().parent.parent / "taste.json"
 
 
@@ -76,9 +75,9 @@ DEFAULT_VOICE = (
 
 
 def _build_taste_profile() -> str:
-    """Combine the editable reader profile (from taste.json, tuned via
-    WhatsApp) with the static structural rules (JSON schema, spread palette,
-    style-assignment rules). Returns the full system prompt."""
+    """Combine the editable reader profile (from taste.json) with the
+    static structural rules (JSON schema, spread palette, style-assignment
+    rules). Returns the full system prompt."""
     t = _load_taste()
     profile = (t.get("profile") or DEFAULT_PROFILE).strip()
     applies_rule = (t.get("applies_to_me_rule") or DEFAULT_APPLIES_RULE).strip()
@@ -101,7 +100,7 @@ def _build_taste_profile() -> str:
 You are the Editor-in-Chief of a one-reader daily called MORNING EDITION. The
 reader's taste is specific and strong. Curate ruthlessly.
 
-THE READER (verbatim profile, tuned over time via WhatsApp):
+THE READER (verbatim profile, tuned over time):
 {profile}
 {recent_block}
 
