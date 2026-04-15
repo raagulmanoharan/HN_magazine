@@ -239,10 +239,12 @@ a{color:inherit;text-underline-offset:4px}
 .s-polaroid .photo{background:#fdfaf1;padding:28px 28px 56px;
   box-shadow:0 20px 40px rgba(0,0,0,.25);transform:rotate(-3deg);
   max-width:clamp(280px,42vw,540px);position:relative}
-.s-polaroid .photo-body{height:clamp(180px,28vw,340px);
+.s-polaroid .photo-body{min-height:clamp(180px,28vw,340px);
   background:linear-gradient(135deg,#9ec1c4 0%,#cfa4a6 45%,#edd6ac 100%);
-  display:flex;align-items:flex-end;padding:22px;font-family:'Fraunces',serif;
-  font-weight:500;font-style:italic;color:#1d1408;font-size:24px;line-height:1.2}
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:24px;font-family:'Fraunces',serif;font-weight:500;font-style:italic;
+  color:#1d1408;font-size:clamp(20px,2vw,28px);line-height:1.25;
+  hyphens:auto;overflow-wrap:break-word}
 .s-polaroid .photo-caption{font-family:'Inter',sans-serif;font-weight:600;font-size:20px;
   letter-spacing:.1em;text-transform:uppercase;margin-top:18px;text-align:center}
 .s-polaroid .tape{position:absolute;width:140px;height:28px;top:-14px;left:50%;
@@ -316,24 +318,26 @@ a{color:inherit;text-underline-offset:4px}
 .s-riso .read-more{color:#ff478c;border-color:#ff478c}
 .s-riso .apply-note{color:#0a7b80}
 
-/* ---- 17 INDEX CARD (3x5 ruled note) ---- */
-.s-index{background:#fdf6e3;color:#1a1a1a;position:relative}
-.s-index::before{content:"";position:absolute;left:clamp(70px,9vw,140px);top:0;bottom:0;
-  width:2px;background:#d64545}
-.s-index::after{content:"";position:absolute;left:0;right:0;top:clamp(140px,14vw,220px);
-  height:clamp(260px,38vw,520px);background-image:repeating-linear-gradient(0deg,
-  transparent 0 44px,rgba(102,150,200,.45) 44px 45px);pointer-events:none}
-.s-index .red-top{position:absolute;left:0;right:0;top:clamp(130px,13vw,210px);
-  height:2px;background:#d64545}
+/* ---- 17 INDEX CARD (3x5 ruled note) ----
+   Decoration is anchored to elements (border-bottom on header, background
+   on body) rather than absolute pixel offsets, so the red rule and ruled
+   lines never overlap the title. */
+.s-index{background:#fdf6e3;color:#1a1a1a;position:relative;overflow:hidden}
+.s-index::before{content:"";position:absolute;left:clamp(48px,7vw,120px);top:0;bottom:0;
+  width:2px;background:#d64545;pointer-events:none;z-index:1}
 .s-index .ix-top{display:flex;justify-content:space-between;align-items:baseline;
   font-family:'JetBrains Mono',monospace;font-size:20px;color:#5a5040;
-  letter-spacing:.12em;text-transform:uppercase;padding-bottom:18px;position:relative;z-index:2}
-.s-index .ix-body{padding-left:clamp(90px,11vw,168px);position:relative;z-index:2;padding-top:28px}
+  letter-spacing:.12em;text-transform:uppercase;
+  border-bottom:2px solid #d64545;padding:0 0 18px clamp(70px,9vw,148px);
+  position:relative;z-index:2}
+.s-index .ix-body{padding:36px 0 0 clamp(70px,9vw,148px);position:relative;z-index:2;
+  background-image:repeating-linear-gradient(0deg,
+    transparent 0 41px,rgba(102,150,200,.42) 41px 42px);
+  background-position:0 36px}
 .s-index h2{font-family:'Fraunces',serif;font-style:italic;font-weight:500;
-  font-size:clamp(38px,4.6vw,72px);line-height:1.22;letter-spacing:-.01em;
-  margin:0 0 32px;max-width:26ch}
-.s-index .kicker{color:#d64545}
-.s-index .body-lead{font-family:'Fraunces',serif;font-weight:400;line-height:1.45;
+  font-size:clamp(36px,4.4vw,64px);line-height:1.3;letter-spacing:-.01em;
+  margin:0 0 28px;max-width:26ch}
+.s-index .body-lead{font-family:'Fraunces',serif;font-weight:400;line-height:1.5;
   font-size:22px;max-width:52ch}
 .s-index .read-more{color:#d64545;border-color:#d64545}
 .s-index .apply-note{color:#1a1a1a}
@@ -500,13 +504,14 @@ a{color:inherit;text-underline-offset:4px}
   .s-riso .riso-num{font-size:44vw}
 
   /* 17 index-card */
-  .s-index::before{left:30px}
+  .s-index::before{left:24px}
   .s-index .ix-top{font-size:14px;letter-spacing:.1em;padding-left:44px}
-  .s-index .ix-body{padding-left:44px;padding-top:20px}
-  .s-index h2{font-size:clamp(26px,7vw,46px);margin:0 0 22px}
-  .s-index .body-lead{font-size:19px}
-  .s-index::after{left:0;right:0;top:96px;height:480px;
-    background-image:repeating-linear-gradient(0deg,transparent 0 32px,rgba(102,150,200,.45) 32px 33px)}
+  .s-index .ix-body{padding-left:44px;padding-top:24px;
+    background-image:repeating-linear-gradient(0deg,
+      transparent 0 32px,rgba(102,150,200,.42) 32px 33px);
+    background-position:0 24px}
+  .s-index h2{font-size:clamp(26px,7vw,44px);margin:0 0 20px;line-height:1.3}
+  .s-index .body-lead{font-size:19px;line-height:1.5}
 
   /* 18 postcard */
   .s-postcard h2{font-size:clamp(28px,8vw,52px);padding-right:0}
@@ -550,11 +555,10 @@ a{color:inherit;text-underline-offset:4px}
   <div class="layout">
     <div class="photo">
       <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">&ldquo;An Awwwards case study on an extinction narrative designed for active exploration rather than passive scrolling. Editori&rdquo;</div>
+      <div class="photo-body">100 Lost Species: a digital memorial</div>
       <div class="photo-caption">No. 02 &middot; awwwards.com</div>
     </div>
     <div>
-      <h2>100 Lost Species: a digital memorial</h2>
       <p class="body-lead">An Awwwards case study on an extinction narrative designed for active exploration rather than passive scrolling. Editorial structure and interactivity reinforce each other.</p>
       <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
         <a class="read-more" href="https://www.awwwards.com/100-lost-species.html" target="_blank" rel="noopener">Read the story &rarr;</a>
@@ -683,9 +687,7 @@ a{color:inherit;text-underline-offset:4px}
     <span>Card No. 09</span>
     <span>WEIRD SCIENCE</span>
   </div>
-  <div class="red-top" aria-hidden="true"></div>
   <div class="ix-body">
-    <div class="kicker">WEIRD SCIENCE</div>
     <h2>Octopuses appear to dream in color</h2>
     <p class="body-lead">New high-speed chromatophore imaging suggests sleeping octopuses cycle through the same color patterns they use awake — possible evidence for visual replay during REM-like states.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
@@ -869,7 +871,7 @@ a{color:inherit;text-underline-offset:4px}
   <p>Ten stories, hand-curated across eleven sources before you were awake.
   4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-04-15 11:51 UTC.</p>
+  at 2026-04-15 11:56 UTC.</p>
   <p class="smallprint">Morning Edition &middot; Issue No. PREVIEW &middot; PALETTE PREVIEW · ALL 18 STYLES</p>
 </section>
 
