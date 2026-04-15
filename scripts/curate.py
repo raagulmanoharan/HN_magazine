@@ -302,8 +302,14 @@ _PENALTY = [
 
 
 def _score(story: dict) -> float:
+    """Heuristic ranking used when the Anthropic API is unavailable. In a
+    multi-source world, raw `score` (HN points vs GitHub stars vs 0) is
+    incomparable, so we lean on (a) the cross-source `prior` from
+    fetch_sources, which already blends source weight + log-score, and
+    (b) keyword signals from the title/domain."""
     t = (story["title"] + " " + _domain(story["url"])).lower()
-    s = float(story.get("score", 0))
+    # Prior is the dominant signal (0..~1.2 range → up to 120 pts).
+    s = float(story.get("prior", 0.0) or 0.0) * 100.0
     for kw, w in _BOOST:
         if kw in t:
             s += w * 10
@@ -328,24 +334,35 @@ def _curate_heuristic(stories: list[dict]) -> dict:
     picks = []
     for i, s in enumerate(ranked):
         style = SPREAD_STYLES[i]
+        score = int(s.get("score", 0) or 0)
+        comments = int(s.get("comments", s.get("descendants", 0)) or 0)
+        source = s.get("source", "hn")
+        kicker_map = {
+            "hn": "FRONT PAGE", "lobsters": "LOBSTE.RS",
+            "anthropic": "ANTHROPIC", "openai": "OPENAI",
+            "deepmind": "DEEPMIND", "simonwillison": "SIMON WILLISON",
+            "github_trending": "TRENDING", "sidebar": "DESIGN",
+            "quanta": "SCIENCE", "schneier": "SECURITY",
+            "producthunt": "LAUNCH",
+        }
         pick = {
             "rank": i + 1,
-            "hn_id": s["id"],
+            "hn_id": s.get("id", i),
             "title": s["title"],
             "url": s["url"],
-            "hn_url": s["hn_url"],
-            "score": s["score"],
-            "comments": s["descendants"],
-            "kicker": "FRONT PAGE",
+            "hn_url": s.get("hn_url", ""),
+            "score": score,
+            "comments": comments,
+            "kicker": kicker_map.get(source, "FRONT PAGE"),
             "blurb": (
-                f"From {_domain(s['url'])}. HN is giving this {s['score']} points "
-                f"and {s['descendants']} comments — worth a look on the commute."
+                f"From {_domain(s['url'])}. Surfaced via {source}; ranked on the "
+                f"pre-score. Worth a look on the commute."
             ),
             "applies_to_me": _applies(s),
             "apply_note": "Open the link and skim the README." if _applies(s) else "",
             "spread_style": style,
-            "stat_value": str(s["score"]) if style == "big-stat" else "",
-            "stat_label": "POINTS ON HN" if style == "big-stat" else "",
+            "stat_value": str(score) if style == "big-stat" and score else "",
+            "stat_label": "POINTS" if style == "big-stat" and score else "",
             "pullquote": s["title"] if style == "pullquote" else "",
         }
         picks.append(pick)
