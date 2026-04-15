@@ -5,8 +5,9 @@ A one-reader daily. Every morning at 7 AM, a GitHub Actions cron job sweeps
 Simon Willison, GitHub trending, Sidebar, Quanta, Schneier, Product Hunt),
 asks Claude to rank across them by taste (UX, AI shipping news, creative
 software, dev tools, privacy, weird science, actionable things), picks 10,
-and renders them as a self-contained editorial magazine with ten distinct
-spreads. It publishes to GitHub Pages and WhatsApps you the link.
+and renders them as a self-contained editorial magazine — each story cast
+into one of eighteen spread styles, ten of which land in any given issue.
+It publishes to GitHub Pages and WhatsApps you the link.
 
 ## How it works
 
@@ -22,10 +23,14 @@ spreads. It publishes to GitHub Pages and WhatsApps you the link.
   └── scripts/notify.py                 Twilio WhatsApp message with public URL
 ```
 
-### The ten spreads
+### Ten spreads, cast from an eighteen-style palette
 
 Each story gets its own full-viewport spread with a distinct background,
-layout, and numeral treatment. No inline font is smaller than 18px.
+layout, and numeral treatment. No inline font is smaller than 18px. Claude
+picks ten distinct styles each issue — the other eight sit out, which is
+where day-to-day variance comes from.
+
+**Core ten (v1)**
 
 1. **hero** — cover page, giant Fraunces display
 2. **midnight** — dark, outlined numeral in the bleed, neon accent
@@ -37,6 +42,17 @@ layout, and numeral treatment. No inline font is smaller than 18px.
 8. **neon** — magenta/cyan gradient, brutalist skewed numeral
 9. **zine** — zine sticker, marker scribble, offset title
 10. **pullquote** — single enormous Fraunces italic pull quote
+
+**Expansion pack (v2)**
+
+11. **grid** — Swiss modernist, pure white, red-accent modular grid
+12. **manifesto** — pitch-black, giant Fraunces italic declaration
+13. **polaroid** — kraft scrapbook with a rotated photo card + washi tape
+14. **ticker** — yellow/black hazard-tape bars, BREAKING marquee
+15. **blueprint** — deep navy CAD aesthetic with technical annotations
+16. **risograph** — duotone magenta/teal overprint, halftone texture
+17. **index-card** — ruled 3x5 research note with red margin
+18. **postcard** — airmail chevrons, rotated stamp + postmark
 
 ## Setup (one-time)
 

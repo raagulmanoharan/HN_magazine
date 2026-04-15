@@ -239,6 +239,180 @@ a{color:inherit;text-underline-offset:4px}
 .s-pullquote .read-more{color:#d9b26a;border-color:#d9b26a}
 .s-pullquote .apply-note{color:#d9b26a}
 
+/* ---- 11 GRID (Swiss) ---- */
+.s-grid{background:#ffffff;color:#111}
+.s-grid .grid-top{display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:2px solid #e63025;padding-bottom:14px}
+.s-grid .tag{font-family:'Inter',sans-serif;font-weight:800;font-size:20px;
+  letter-spacing:.28em;text-transform:uppercase;color:#e63025}
+.s-grid .num-corner{font-family:'Inter',sans-serif;font-weight:800;font-size:28px;
+  letter-spacing:.06em;color:#111}
+.s-grid .grid-body{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;margin-top:56px;align-items:start}
+.s-grid h2{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(42px,5vw,84px);
+  line-height:1.02;letter-spacing:-.025em;margin:0}
+.s-grid .side{border-left:3px solid #e63025;padding-left:24px}
+.s-grid .side .body-lead{font-family:'Inter',sans-serif;font-weight:500;font-size:22px;
+  line-height:1.5;max-width:34ch;color:#111}
+.s-grid .read-more{color:#e63025;border-color:#e63025}
+@media(max-width:800px){.s-grid .grid-body{grid-template-columns:1fr;gap:28px;margin-top:32px}}
+
+/* ---- 12 MANIFESTO ---- */
+.s-manifesto{background:#0a0a0a;color:#f5ebd7}
+.s-manifesto .top{display:flex;justify-content:space-between;align-items:baseline}
+.s-manifesto .kicker{color:#e8a34b}
+.s-manifesto .tiny-num{font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:28px;opacity:.6;letter-spacing:.06em}
+.s-manifesto h2{font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:clamp(60px,8vw,160px);line-height:.98;letter-spacing:-.03em;
+  margin:auto 0;max-width:18ch}
+.s-manifesto .mark{color:#e8a34b}
+.s-manifesto .attrib{font-family:'Inter',sans-serif;font-weight:600;font-size:20px;
+  letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+.s-manifesto .read-more{color:#e8a34b;border-color:#e8a34b}
+.s-manifesto .apply-note{color:#e8a34b}
+
+/* ---- 13 POLAROID (scrapbook) ---- */
+.s-polaroid{background:#d9c28c;color:#1d1408;background-image:
+  radial-gradient(circle at 30% 20%,rgba(0,0,0,.04) 0 1px,transparent 1px),
+  radial-gradient(circle at 80% 70%,rgba(0,0,0,.06) 0 1px,transparent 1px);
+  background-size:10px 10px,16px 16px}
+.s-polaroid .photo{background:#fdfaf1;padding:28px 28px 56px;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);transform:rotate(-3deg);
+  max-width:clamp(280px,42vw,540px);position:relative}
+.s-polaroid .photo-body{height:clamp(180px,28vw,340px);
+  background:linear-gradient(135deg,#9ec1c4 0%,#cfa4a6 45%,#edd6ac 100%);
+  display:flex;align-items:flex-end;padding:22px;font-family:'Fraunces',serif;
+  font-weight:500;font-style:italic;color:#1d1408;font-size:24px;line-height:1.2}
+.s-polaroid .photo-caption{font-family:'Inter',sans-serif;font-weight:600;font-size:20px;
+  letter-spacing:.1em;text-transform:uppercase;margin-top:18px;text-align:center}
+.s-polaroid .tape{position:absolute;width:140px;height:28px;top:-14px;left:50%;
+  transform:translateX(-50%) rotate(-3deg);background:rgba(231,165,122,.75);
+  border-left:1px dashed rgba(0,0,0,.08);border-right:1px dashed rgba(0,0,0,.08)}
+.s-polaroid .layout{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;margin-top:32px}
+.s-polaroid h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(38px,4.6vw,76px);
+  line-height:1;letter-spacing:-.02em;margin:0 0 24px;max-width:20ch}
+.s-polaroid .kicker{color:#7c3a0c}
+.s-polaroid .read-more{color:#7c3a0c;border-color:#7c3a0c}
+@media(max-width:800px){.s-polaroid .layout{grid-template-columns:1fr;gap:28px}
+  .s-polaroid .photo{transform:rotate(-2deg);max-width:none}}
+
+/* ---- 14 TICKER (hazard tape) ---- */
+.s-ticker{background:#111;color:#ffe73d;padding-top:0;padding-bottom:0}
+.s-ticker .bar{height:56px;background:repeating-linear-gradient(45deg,
+  #ffe73d 0 24px,#111 24px 48px);display:flex;align-items:center;
+  font-family:'Inter',sans-serif;font-weight:800;letter-spacing:.3em;font-size:20px;
+  text-transform:uppercase;padding:0 32px;color:#111;
+  -webkit-text-stroke:0;background-clip:padding-box}
+.s-ticker .bar .bar-inner{background:#ffe73d;padding:6px 18px}
+.s-ticker .core{padding:clamp(48px,6vw,110px);flex:1;
+  display:flex;flex-direction:column;justify-content:center;gap:24px}
+.s-ticker .kicker{color:#ffe73d}
+.s-ticker h2{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(44px,5.6vw,96px);
+  line-height:.98;letter-spacing:-.025em;margin:0;color:#fdfdfd;max-width:22ch;text-transform:uppercase}
+.s-ticker .big-num{font-family:'JetBrains Mono',monospace;font-weight:700;color:#ffe73d;
+  font-size:clamp(32px,3.4vw,56px);letter-spacing:.08em}
+.s-ticker .body-lead{color:#f4f4f4;font-family:'Inter',sans-serif;font-weight:500;max-width:46ch}
+.s-ticker .read-more{color:#ffe73d;border-color:#ffe73d}
+.s-ticker .apply-note{color:#ffe73d}
+
+/* ---- 15 BLUEPRINT (technical) ---- */
+.s-blueprint{background:#0d1b3a;color:#d6e3ff;background-image:
+  linear-gradient(rgba(214,227,255,.07) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(214,227,255,.07) 1px,transparent 1px);
+  background-size:32px 32px,32px 32px}
+.s-blueprint .frame{border:1.5px solid rgba(214,227,255,.4);padding:32px;position:relative}
+.s-blueprint .frame::before,.s-blueprint .frame::after{content:"";position:absolute;
+  width:12px;height:12px;border:1.5px solid rgba(214,227,255,.6)}
+.s-blueprint .frame::before{top:-7px;left:-7px}
+.s-blueprint .frame::after{bottom:-7px;right:-7px}
+.s-blueprint .spec{font-family:'JetBrains Mono',monospace;font-size:20px;
+  letter-spacing:.06em;color:rgba(214,227,255,.75);display:flex;justify-content:space-between;
+  margin-bottom:24px;flex-wrap:wrap;gap:16px}
+.s-blueprint h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(44px,5.2vw,92px);
+  line-height:1.02;letter-spacing:-.015em;margin:0 0 28px;max-width:24ch;color:#f2f6ff}
+.s-blueprint .kicker{color:#7fbfff;font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:.2em}
+.s-blueprint .big-n{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:clamp(80px,11vw,180px);
+  line-height:.9;color:rgba(127,191,255,.65);letter-spacing:-.02em}
+.s-blueprint .body-lead{color:#d6e3ff;font-family:'Inter',sans-serif;font-weight:500;max-width:52ch}
+.s-blueprint .read-more{color:#7fbfff;border-color:#7fbfff;font-family:'JetBrains Mono',monospace}
+.s-blueprint .apply-note{color:#7fbfff}
+
+/* ---- 16 RISOGRAPH (duotone) ---- */
+.s-riso{background:#f4efe2;color:#1a1a1a;position:relative;overflow:hidden}
+.s-riso::before{content:"";position:absolute;inset:0;background-image:
+  radial-gradient(circle at 15% 22%,rgba(255,71,140,.18) 0 2px,transparent 2px),
+  radial-gradient(circle at 60% 70%,rgba(10,184,190,.16) 0 2px,transparent 2px);
+  background-size:12px 12px,14px 14px;pointer-events:none;mix-blend-mode:multiply}
+.s-riso .layout{position:relative;z-index:1}
+.s-riso .kicker{color:#ff478c}
+.s-riso h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(44px,5.4vw,96px);
+  line-height:1;letter-spacing:-.02em;margin:16px 0 32px;max-width:22ch;color:#1a1a1a;
+  text-shadow:3px 3px 0 rgba(10,184,190,.55),-3px -3px 0 rgba(255,71,140,.45)}
+.s-riso .riso-num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(160px,22vw,320px);
+  line-height:.85;color:#ff478c;letter-spacing:-.04em;display:inline-block;position:relative}
+.s-riso .riso-num::after{content:attr(data-n);position:absolute;left:6px;top:6px;
+  color:#0ab8be;mix-blend-mode:multiply;z-index:-1}
+.s-riso .body-lead{color:#1a1a1a;max-width:52ch}
+.s-riso .read-more{color:#ff478c;border-color:#ff478c}
+.s-riso .apply-note{color:#0a7b80}
+
+/* ---- 17 INDEX CARD (3x5 ruled note) ---- */
+.s-index{background:#fdf6e3;color:#1a1a1a;position:relative}
+.s-index::before{content:"";position:absolute;left:clamp(70px,9vw,140px);top:0;bottom:0;
+  width:2px;background:#d64545}
+.s-index::after{content:"";position:absolute;left:0;right:0;top:clamp(140px,14vw,220px);
+  height:clamp(260px,38vw,520px);background-image:repeating-linear-gradient(0deg,
+  transparent 0 44px,rgba(102,150,200,.45) 44px 45px);pointer-events:none}
+.s-index .red-top{position:absolute;left:0;right:0;top:clamp(130px,13vw,210px);
+  height:2px;background:#d64545}
+.s-index .ix-top{display:flex;justify-content:space-between;align-items:baseline;
+  font-family:'JetBrains Mono',monospace;font-size:20px;color:#5a5040;
+  letter-spacing:.12em;text-transform:uppercase;padding-bottom:18px;position:relative;z-index:2}
+.s-index .ix-body{padding-left:clamp(90px,11vw,168px);position:relative;z-index:2;padding-top:28px}
+.s-index h2{font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:clamp(38px,4.6vw,72px);line-height:1.22;letter-spacing:-.01em;
+  margin:0 0 32px;max-width:26ch}
+.s-index .kicker{color:#d64545}
+.s-index .body-lead{font-family:'Fraunces',serif;font-weight:400;line-height:1.45;
+  font-size:22px;max-width:52ch}
+.s-index .read-more{color:#d64545;border-color:#d64545}
+.s-index .apply-note{color:#1a1a1a}
+
+/* ---- 18 POSTCARD (airmail) ---- */
+.s-postcard{background:#f5ebd7;color:#1a1712;position:relative;
+  border:14px solid transparent;border-image:repeating-linear-gradient(45deg,
+  #d42c2c 0 14px,#f5ebd7 14px 28px,#2a53d4 28px 42px,#f5ebd7 42px 56px) 14}
+.s-postcard .pc-inner{position:relative}
+.s-postcard .stamp{position:absolute;top:0;right:0;width:clamp(130px,14vw,200px);
+  height:clamp(160px,16vw,240px);background:#f0d9b7;border:6px solid #f5ebd7;
+  outline:2px dashed rgba(26,23,18,.5);transform:rotate(4deg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:20px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+  font-weight:900;font-size:clamp(28px,3vw,46px);color:#7c2020;line-height:1;letter-spacing:-.02em}
+.s-postcard .stamp small{display:block;font-family:'Inter',sans-serif;font-style:normal;
+  font-weight:800;font-size:18px;letter-spacing:.18em;text-transform:uppercase;
+  margin-top:10px;color:#1a1712}
+.s-postcard .postmark{position:absolute;top:clamp(80px,8vw,120px);right:clamp(90px,10vw,160px);
+  width:clamp(100px,10vw,150px);height:clamp(100px,10vw,150px);
+  border:3px solid rgba(26,23,18,.55);border-radius:50%;display:flex;align-items:center;
+  justify-content:center;text-align:center;font-family:'Inter',sans-serif;font-weight:800;
+  font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,23,18,.7);
+  transform:rotate(-8deg);line-height:1.15;padding:8px}
+.s-postcard h2{font-family:'Fraunces',serif;font-style:italic;font-weight:900;
+  font-size:clamp(40px,4.8vw,80px);line-height:1.05;letter-spacing:-.015em;
+  margin:0 0 24px;max-width:18ch;padding-right:clamp(140px,16vw,240px)}
+.s-postcard .kicker{color:#7c2020}
+.s-postcard .body-lead{max-width:30ch;color:#1a1712}
+.s-postcard .read-more{color:#7c2020;border-color:#7c2020}
+.s-postcard .apply-note{color:#1a1712}
+@media(max-width:720px){
+  .s-postcard{border-width:10px;border-image-slice:10}
+  .s-postcard .stamp{position:static;transform:none;margin:0 0 18px auto;
+    width:120px;height:150px;font-size:26px}
+  .s-postcard .postmark{position:static;margin:0 0 12px 0;width:100px;height:100px}
+  .s-postcard h2{padding-right:0}
+}
+
 /* ---- Closing colophon ---- */
 .colophon{background:#17140e;color:#f4ecd8;padding:clamp(48px,6vw,110px);
   display:flex;flex-direction:column;gap:32px}
@@ -327,6 +501,56 @@ a{color:inherit;text-underline-offset:4px}
   .s-pullquote .pq{font-size:clamp(30px,8.4vw,58px);line-height:1.05;margin:0 0 22px;max-width:none}
   .s-pullquote .tiny-num{font-size:32px}
   .s-pullquote .attrib{font-size:16px;letter-spacing:.16em}
+
+  /* 11 grid */
+  .s-grid h2{font-size:clamp(30px,8.4vw,52px)}
+  .s-grid .tag{font-size:15px;letter-spacing:.22em}
+  .s-grid .num-corner{font-size:20px}
+  .s-grid .side{padding-left:16px}
+  .s-grid .side .body-lead{font-size:19px}
+
+  /* 12 manifesto */
+  .s-manifesto h2{font-size:clamp(34px,10vw,58px);line-height:1;max-width:none}
+  .s-manifesto .tiny-num{font-size:20px}
+  .s-manifesto .attrib{font-size:15px;letter-spacing:.14em}
+
+  /* 13 polaroid */
+  .s-polaroid .photo{padding:18px 18px 38px;max-width:none}
+  .s-polaroid .photo-body{height:180px;font-size:18px}
+  .s-polaroid .photo-caption{font-size:15px;letter-spacing:.16em}
+  .s-polaroid h2{font-size:clamp(30px,8.4vw,52px);margin:0 0 18px}
+
+  /* 14 ticker */
+  .s-ticker .bar{height:40px;font-size:14px;letter-spacing:.22em;padding:0 16px}
+  .s-ticker .bar .bar-inner{padding:4px 10px}
+  .s-ticker .core{padding:36px 22px;gap:18px}
+  .s-ticker h2{font-size:clamp(30px,9vw,52px)}
+  .s-ticker .big-num{font-size:22px;letter-spacing:.06em}
+
+  /* 15 blueprint */
+  .s-blueprint{background-size:18px 18px,18px 18px}
+  .s-blueprint .frame{padding:22px}
+  .s-blueprint .spec{font-size:14px;gap:10px}
+  .s-blueprint h2{font-size:clamp(30px,8vw,54px)}
+  .s-blueprint .big-n{font-size:20vw}
+
+  /* 16 riso */
+  .s-riso h2{font-size:clamp(32px,8.4vw,56px);margin:12px 0 20px;
+    text-shadow:2px 2px 0 rgba(10,184,190,.55),-2px -2px 0 rgba(255,71,140,.45)}
+  .s-riso .riso-num{font-size:44vw}
+
+  /* 17 index-card */
+  .s-index::before{left:30px}
+  .s-index .ix-top{font-size:14px;letter-spacing:.1em;padding-left:44px}
+  .s-index .ix-body{padding-left:44px;padding-top:20px}
+  .s-index h2{font-size:clamp(26px,7vw,46px);margin:0 0 22px}
+  .s-index .body-lead{font-size:19px}
+  .s-index::after{left:0;right:0;top:96px;height:480px;
+    background-image:repeating-linear-gradient(0deg,transparent 0 32px,rgba(102,150,200,.45) 32px 33px)}
+
+  /* 18 postcard */
+  .s-postcard h2{font-size:clamp(28px,8vw,52px);padding-right:0}
+  .s-postcard .body-lead{max-width:none}
 
   .colophon{padding:36px 22px}
   .colophon h3{font-size:40px}
@@ -613,6 +837,190 @@ def render_pullquote(p: dict, issue: dict) -> str:
 """
 
 
+def render_grid(p: dict, issue: dict) -> str:
+    return f"""
+<section class="spread s-grid">
+  <div class="grid-top">
+    <div class="tag">{esc(p.get("kicker","") or "Index")}</div>
+    <div class="num-corner">No. {numeral(p["rank"])}</div>
+  </div>
+  <div class="grid-body">
+    <h2>{esc(p["title"])}</h2>
+    <div class="side">
+      <p class="body-lead">{esc(p.get("blurb",""))}</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        {_read_more(p)}
+        {_applies_badge(p)}
+      </div>
+      {_apply_note(p)}
+      {_meta_line(p)}
+    </div>
+  </div>
+</section>
+"""
+
+
+def render_manifesto(p: dict, issue: dict) -> str:
+    pq = (p.get("pullquote") or "").strip() or p["title"]
+    return f"""
+<section class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">{esc(p.get("kicker","") or "Position")}</div>
+    <div class="tiny-num" aria-hidden="true">{numeral(p["rank"])}</div>
+  </div>
+  <h2>{esc(pq)}<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">{esc(p.get("blurb",""))}</p>
+    <div class="attrib" style="margin-top:24px">&mdash; {esc(_domain_only(p["url"]) or "source")}</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      {_read_more(p)}
+      {_applies_badge(p)}
+    </div>
+    {_apply_note(p)}
+    {_meta_line(p)}
+  </div>
+</section>
+"""
+
+
+def render_polaroid(p: dict, issue: dict) -> str:
+    caption_source = _domain_only(p["url"]) or "dispatch"
+    return f"""
+<section class="spread s-polaroid">
+  <div class="kicker">{esc(p.get("kicker","") or "Field notes")}</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">&ldquo;{esc((p.get("blurb","")[:120] or "").strip())}&rdquo;</div>
+      <div class="photo-caption">No. {numeral(p["rank"])} &middot; {esc(caption_source)}</div>
+    </div>
+    <div>
+      <h2>{esc(p["title"])}</h2>
+      <p class="body-lead">{esc(p.get("blurb",""))}</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        {_read_more(p)}
+        {_applies_badge(p)}
+      </div>
+      {_apply_note(p)}
+      {_meta_line(p)}
+    </div>
+  </div>
+</section>
+"""
+
+
+def render_ticker(p: dict, issue: dict) -> str:
+    return f"""
+<section class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; {esc(p.get("kicker","") or "Signal")} &middot; Morning Edition</span></div>
+  <div class="core">
+    <div class="big-num" aria-hidden="true">No. {numeral(p["rank"])}</div>
+    <div class="kicker">{esc(p.get("kicker","") or "Wire")}</div>
+    <h2>{esc(p["title"])}</h2>
+    <p class="body-lead">{esc(p.get("blurb",""))}</p>
+    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      {_read_more(p, "Over the wire")}
+      {_applies_badge(p)}
+    </div>
+    {_apply_note(p)}
+    {_meta_line(p)}
+  </div>
+  <div class="bar"><span class="bar-inner">Filed {esc(issue["date_display"])}</span></div>
+</section>
+"""
+
+
+def render_blueprint(p: dict, issue: dict) -> str:
+    host = _domain_only(p["url"]) or "source"
+    return f"""
+<section class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.{numeral(p["rank"])}</span>
+      <span>{esc(host.upper())}</span>
+      <span>SHEET {esc(p["rank"])}/10</span>
+    </div>
+    <div class="kicker">{esc((p.get("kicker","") or "Systems").upper())}</div>
+    <h2>{esc(p["title"])}</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">{numeral(p["rank"])}</div>
+      <p class="body-lead">{esc(p.get("blurb",""))}</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      {_read_more(p, "View schematic")}
+      {_applies_badge(p)}
+    </div>
+    {_apply_note(p)}
+    {_meta_line(p)}
+  </div>
+</section>
+"""
+
+
+def render_riso(p: dict, issue: dict) -> str:
+    return f"""
+<section class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">{esc(p.get("kicker","") or "Press")}</div>
+    <div class="riso-num" data-n="{numeral(p["rank"])}" aria-hidden="true">{numeral(p["rank"])}</div>
+    <h2>{esc(p["title"])}</h2>
+    <p class="body-lead">{esc(p.get("blurb",""))}</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      {_read_more(p, "Pull a proof")}
+      {_applies_badge(p)}
+    </div>
+    {_apply_note(p)}
+    {_meta_line(p)}
+  </div>
+</section>
+"""
+
+
+def render_index_card(p: dict, issue: dict) -> str:
+    return f"""
+<section class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. {numeral(p["rank"])}</span>
+    <span>{esc((p.get("kicker","") or "Note").upper())}</span>
+  </div>
+  <div class="red-top" aria-hidden="true"></div>
+  <div class="ix-body">
+    <div class="kicker">{esc(p.get("kicker","") or "Note")}</div>
+    <h2>{esc(p["title"])}</h2>
+    <p class="body-lead">{esc(p.get("blurb",""))}</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      {_read_more(p, "Follow the thread")}
+      {_applies_badge(p)}
+    </div>
+    {_apply_note(p)}
+    {_meta_line(p)}
+  </div>
+</section>
+"""
+
+
+def render_postcard(p: dict, issue: dict) -> str:
+    host = _domain_only(p["url"]) or "field"
+    return f"""
+<section class="spread s-postcard">
+  <div class="pc-inner">
+    <div class="stamp" aria-hidden="true">{numeral(p["rank"])}<small>Morning<br>Edition</small></div>
+    <div class="postmark" aria-hidden="true">{esc(issue["date_display"].split(",")[0])}<br>&middot;&middot;&middot;</div>
+    <div class="kicker">{esc(p.get("kicker","") or "Dispatch")}</div>
+    <h2>{esc(p["title"])}</h2>
+    <p class="body-lead">{esc(p.get("blurb",""))}</p>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      {_read_more(p, "Wish you were here")}
+      {_applies_badge(p)}
+    </div>
+    {_apply_note(p)}
+    {_meta_line(p)}
+    <div class="footer-slug">Morning Edition &middot; Airmail from {esc(host)}</div>
+  </div>
+</section>
+"""
+
+
 # --------------------------------------------------------------------------
 # Spread style -> renderer dispatch
 # --------------------------------------------------------------------------
@@ -627,11 +1035,24 @@ RENDERERS = {
     "neon": render_neon,
     "zine": render_zine,
     "pullquote": render_pullquote,
+    "grid": render_grid,
+    "manifesto": render_manifesto,
+    "polaroid": render_polaroid,
+    "ticker": render_ticker,
+    "blueprint": render_blueprint,
+    "risograph": render_riso,
+    "index-card": render_index_card,
+    "postcard": render_postcard,
 }
 
+# Fallback order when _repair_picks needs to assign a style. Hero stays first
+# (it's forced onto rank 1). The rest is shuffled weekly-ish to avoid the same
+# "default 10" showing up every build when Claude returns junk styles.
 STYLE_ORDER = [
     "hero", "midnight", "rose-alert", "terminal", "academic",
     "big-stat", "newsprint", "neon", "zine", "pullquote",
+    "grid", "manifesto", "polaroid", "ticker", "blueprint",
+    "risograph", "index-card", "postcard",
 ]
 
 
