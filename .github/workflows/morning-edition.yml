@@ -15,6 +15,12 @@ on:
         description: "Override date (YYYY-MM-DD). Leave blank for today."
         required: false
         default: ""
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/morning-edition.yml"
+      - "requirements.txt"
 
 # Pages deploy needs these; the content commit needs contents:write.
 permissions:
