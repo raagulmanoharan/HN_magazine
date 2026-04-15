@@ -359,14 +359,10 @@ def _read_more(p: dict, label: str = "Read the story") -> str:
 
 
 def _meta_line(p: dict) -> str:
-    pts = p.get("score", 0)
-    cmts = p.get("comments", 0)
-    return (
-        f'<div class="meta-row">'
-        f'<span>{pts} pts</span><span>{cmts} comments</span>'
-        f'<span><a href="{esc(p["hn_url"])}" target="_blank" rel="noopener">Discussion</a></span>'
-        f"</div>"
-    )
+    # Intentionally blank: spreads now surface a single CTA per article
+    # (the source-link read-more) plus the optional "Applies to you" badge
+    # and apply-note. Points/comments/discussion links were visual clutter.
+    return ""
 
 
 # --------------------------------------------------------------------------
@@ -489,7 +485,7 @@ def render_academic(p: dict, issue: dict) -> str:
     {_apply_note(p)}
   </div>
   <div>
-    <div class="footnote">&sect; {esc(p["score"])} points &middot; {esc(p["comments"])} comments &middot; filed under {esc((p.get('kicker','') or 'review').lower())} &middot; <a href="{esc(p["hn_url"])}" target="_blank" rel="noopener">discussion</a></div>
+    <div class="footnote">&sect; filed under {esc((p.get('kicker','') or 'review').lower())}</div>
   </div>
 </section>
 """
