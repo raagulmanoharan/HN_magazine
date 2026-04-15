@@ -247,6 +247,91 @@ a{color:inherit;text-underline-offset:4px}
 .colophon p{font-family:'Fraunces',serif;font-size:24px;line-height:1.5;max-width:56ch;margin:0}
 .colophon .smallprint{font-family:'Inter',sans-serif;font-size:18px;letter-spacing:.18em;
   text-transform:uppercase;opacity:.55}
+
+/* ---- Mobile (<= 720px) ---------------------------------------------------
+   Desktop spreads use huge minimum font sizes that overflow narrow viewports.
+   Below 720px we reduce padding, collapse multi-column grids, and shrink
+   the decorative numerals so everything fits without horizontal scroll.
+   Body copy stays >= 18px so the "no small fonts" rule still holds. */
+@media (max-width:720px){
+  body{font-size:20px}
+  .spread{padding:36px 22px;min-height:auto}
+  .kicker{font-size:16px;letter-spacing:.22em}
+  .body-lead{font-size:19px;max-width:none}
+  .apply-note{font-size:19px;max-width:none}
+  .read-more{font-size:17px}
+  .meta-row{font-size:15px;gap:14px}
+  .tag-applies{padding:8px 14px;font-size:15px;border-width:2px}
+
+  /* 01 hero */
+  .s-hero .masthead{flex-direction:column;align-items:flex-start;gap:6px}
+  .s-hero .masthead h1{font-size:38px}
+  .s-hero .issue-meta{text-align:left;font-size:15px}
+  .s-hero .cover-body{grid-template-columns:1fr;gap:14px;margin-top:32px}
+  .s-hero .cover-numeral{font-size:38vw;order:-1;line-height:.85;align-self:flex-end;margin-bottom:-10px}
+  .s-hero .cover-title{font-size:clamp(42px,11vw,72px);margin:0 0 18px}
+  .s-hero .cover-tagline{font-size:22px;margin:0 0 22px}
+  .s-hero .cover-kicker{font-size:16px;letter-spacing:.22em;margin-bottom:16px}
+
+  /* 02 midnight */
+  .s-midnight .bg-num{font-size:80vw;right:-14vw;top:2%}
+  .s-midnight h2{font-size:clamp(38px,10vw,64px);margin:18px 0 22px}
+
+  /* 03 rose */
+  .s-rose .stamp{top:18px;right:18px;padding:9px 12px;font-size:13px;border-width:3px;letter-spacing:.22em}
+  .s-rose .numeral-xl{font-size:42vw}
+  .s-rose h2{font-size:clamp(32px,8.4vw,54px);margin:16px 0 20px}
+
+  /* 04 terminal */
+  .s-terminal .window{padding:20px}
+  .s-terminal h2{font-size:clamp(28px,7vw,48px);margin:14px 0 18px}
+  .s-terminal .body-lead{font-size:18px}
+  .s-terminal .prompt{font-size:18px}
+  .s-terminal .ascii-num{font-size:13px;line-height:1.1}
+
+  /* 05 academic */
+  .s-academic h2{font-size:clamp(32px,8.4vw,56px);margin:24px 0 18px}
+  .s-academic .body-lead{column-count:1;font-size:20px}
+  .s-academic .body-lead::first-letter{font-size:clamp(72px,22vw,120px);margin:6px 12px 0 -2px}
+  .s-academic .footnote{font-size:17px}
+  .s-academic .roman{font-size:20px}
+
+  /* 06 big-stat */
+  .s-stat .top{flex-direction:column;gap:12px;align-items:flex-start}
+  .s-stat .chip{font-size:15px;padding:8px 12px;border-width:2px}
+  .s-stat .stat-value{font-size:48vw;line-height:.8}
+  .s-stat .stat-label{font-size:17px;letter-spacing:.22em}
+  .s-stat h2{font-size:24px;margin:22px 0 12px}
+
+  /* 07 newsprint */
+  .s-newsprint .masthead-bar{font-size:38px;padding:10px 0}
+  .s-newsprint .title-row{grid-template-columns:1fr;gap:14px;margin-top:24px}
+  .s-newsprint .badge{width:68px;height:68px;font-size:34px;border-width:3px}
+  .s-newsprint h2{font-size:clamp(30px,8vw,52px)}
+  .s-newsprint .cols{column-count:1;font-size:19px;margin-top:22px}
+
+  /* 08 neon */
+  .s-neon .numeral-slash{font-size:58vw;-webkit-text-stroke-width:3px}
+  .s-neon h2{font-size:clamp(34px,9vw,60px);margin:10px 0 18px}
+  .s-neon .kicker{padding:8px 12px}
+  .s-neon .apply-note{padding:14px 16px}
+
+  /* 09 zine */
+  .s-zine .marker-num{font-size:50vw}
+  .s-zine h2{font-size:clamp(32px,8.4vw,56px);margin:18px 0 18px}
+  .s-zine .sticker{font-size:16px;padding:10px 14px;box-shadow:4px 4px 0 #1a1a1a}
+  .s-zine .scribble{width:60%}
+
+  /* 10 pullquote */
+  .s-pullquote .quote-open{font-size:55vw;line-height:.72;margin:0 0 -8px -6px}
+  .s-pullquote .pq{font-size:clamp(30px,8.4vw,58px);line-height:1.05;margin:0 0 22px;max-width:none}
+  .s-pullquote .tiny-num{font-size:32px}
+  .s-pullquote .attrib{font-size:16px;letter-spacing:.16em}
+
+  .colophon{padding:36px 22px}
+  .colophon h3{font-size:40px}
+  .colophon p{font-size:20px}
+}
 """
 
 
