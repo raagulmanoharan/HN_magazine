@@ -48,20 +48,28 @@ HAIKU_MODEL = os.environ.get("ANTHROPIC_HAIKU_MODEL", "claude-haiku-4-5-20251001
 
 CLASSIFIER_SYSTEM = """\
 You are the intent classifier for a one-reader WhatsApp bot that tunes a
-daily HN-curation taste profile. The reader texts short messages; you emit
-a strict JSON patch describing what to change. Never prose.
+daily multi-source curation taste profile. The reader texts short
+messages; you emit a strict JSON patch describing what to change. Never
+prose.
 
 Schema:
 {
   "intent": "add_like" | "add_skip" | "update_voice" | "update_applies_rule"
+            | "enable_source" | "disable_source"
             | "pause" | "show" | "reset" | "noop",
-  "payload": "<string — the phrase to add, the new rule, days to pause, etc.>",
+  "payload": "<string — the phrase to add, the source name, days to pause, etc.>",
   "reply": "<short confirmation to send back over WhatsApp, <= 160 chars>"
 }
+
+Known source names (for enable_source / disable_source):
+  hn, lobsters, anthropic, openai, deepmind, simonwillison, github_trending,
+  sidebar, quanta, schneier, producthunt
 
 Guidance:
 - "more rust stuff" → add_like, payload "Rust systems programming".
 - "less crypto please" → add_skip, payload "crypto, tokens, NFTs".
+- "stop product hunt" → disable_source, payload "producthunt".
+- "turn sidebar back on" → enable_source, payload "sidebar".
 - "pause 3 days" → pause, payload "3".
 - "show me my profile" → show, payload "".
 - "reset to defaults" → reset, payload "".
@@ -188,6 +196,13 @@ def _apply(taste: dict, intent: str, payload: str) -> str:
         taste["paused_until"] = until.replace(microsecond=0).isoformat().replace("+00:00", "Z")
         _log_change(taste, f"paused for {days} day(s)")
         return f"taste: pause {days}d"
+    if intent in ("enable_source", "disable_source"):
+        src = (payload or "").strip().lower().replace(" ", "_")
+        taste.setdefault("sources", {}).setdefault(src, {})
+        taste["sources"][src]["enabled"] = intent == "enable_source"
+        verb = "enabled" if intent == "enable_source" else "disabled"
+        _log_change(taste, f"{verb} source: {src}")
+        return f"taste: {verb} source {src}"
     if intent == "reset":
         taste["profile"] = ""
         taste["voice"] = ""

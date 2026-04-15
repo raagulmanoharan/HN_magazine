@@ -110,8 +110,52 @@ APPLIES-TO-ME FLAG:
 
 EDITORIAL VOICE: {voice}
 """
-    return header + _STATIC_SCHEMA_TAIL
+    return header + _SOURCES_BLOCK + _RANKING_BLOCK + _STATIC_SCHEMA_TAIL
 
+
+_SOURCES_BLOCK = """
+CANDIDATE SOURCES (each item includes a `source` field):
+  hn              — Hacker News front page. Broad, noisy, strong on dev + AI.
+  lobsters        — Lobste.rs. Smaller, higher-signal systems / languages.
+  anthropic       — Anthropic official news. Claude shipping news, nearly always relevant.
+  openai          — OpenAI news. Product + research shipping.
+  deepmind        — Google DeepMind blog. Research + Gemini shipping.
+  simonwillison   — Simon Willison's blog. LLM tooling, evals, prompt craft, hands-on.
+  github_trending — Repos created in the last 7 days with rising stars. Actionable tools.
+  sidebar         — Curated design/UX links. Rare + high-value for a UX designer.
+  quanta          — Quanta Magazine. Editorial-grade science journalism.
+  schneier        — Schneier on Security. Analytical, not breach-report chum.
+  producthunt     — Product Hunt feed. More marketing noise; filter hard.
+
+Each candidate also carries a local `prior` in [0..~1.2] combining source
+weight, within-source rank, and log-score. Treat `prior` as a weak
+tiebreaker, not a verdict.
+"""
+
+_RANKING_BLOCK = """
+RANKING RUBRIC (apply top-down):
+1. TASTE ALIGNMENT — the reader profile is a hard filter first. If a story
+   doesn't match the profile, it doesn't make the issue, regardless of prior.
+2. UX / DESIGN PRIORITY — the reader is a UX designer. Typography,
+   interface design, information design, design-system or creative-software
+   finds jump near the top. These signals are rare; never pass one up.
+3. AI SHIPPING FRESHNESS — new Claude / OpenAI / DeepMind features beat old
+   thinkpieces. An anthropic/openai/deepmind item from this week is almost
+   certainly cover-material unless it's a minor aside.
+4. ACTIONABILITY — "I could install this, open this, use this today" beats
+   abstract commentary. Favor Show-HN-style or github_trending finds with
+   a working demo.
+5. CROSS-SOURCE DIVERSITY — the issue shouldn't be 10 HN items when other
+   sources have gold. Aim for at least 4 non-HN picks when quality allows.
+6. PRIOR AS TIEBREAKER — with all else equal, prefer higher `prior`.
+
+HARD SKIPS (never include):
+- Funding / M&A announcements with no product substance.
+- Crypto / NFT / tokenomics.
+- US political flame-wars, culture-war pieces.
+- Layoffs without real analysis.
+- Recycled listicles, SEO bait, LinkedIn-style leadership posts.
+"""
 
 _STATIC_SCHEMA_TAIL = """
 SPREAD STYLE PALETTE (assign exactly one per story, use each style once):
@@ -167,23 +211,29 @@ def _curate_with_claude(stories: list[dict]) -> dict:
 
     client = anthropic.Anthropic()
 
-    # Compact candidate list — keep prompt lean.
+    # Compact candidate list — keep prompt lean. Candidates arrive
+    # pre-ranked by local `prior`; curator re-ranks by taste.
     candidates = [
         {
-            "hn_id": s["id"],
+            "id": s.get("id"),
             "title": s["title"],
             "url": s["url"],
-            "hn_url": s["hn_url"],
-            "score": s["score"],
-            "comments": s["descendants"],
+            "hn_url": s.get("hn_url", ""),
+            "source": s.get("source", "hn"),
+            "score": s.get("score", 0),
+            "comments": s.get("comments", s.get("descendants", 0)),
             "domain": _domain(s["url"]),
             "snippet": _snippet(s.get("text", "")),
+            "published_at": s.get("published_at", ""),
+            "prior": s.get("prior"),
+            "rank_within_source": s.get("rank_within_source"),
         }
         for s in stories
     ]
 
     user_payload = (
-        "Today's HN front page candidates (ranked by HN):\n\n"
+        "Today's candidates, pre-ranked by a local `prior` signal "
+        "(source weight × within-source rank + log-score). Re-rank by taste:\n\n"
         + json.dumps(candidates, indent=2)
         + "\n\nReturn the JSON now."
     )

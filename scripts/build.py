@@ -27,7 +27,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from curate import curate                       # noqa: E402
-from fetch_hn import fetch_front_page           # noqa: E402
+from fetch_sources import fetch_all             # noqa: E402
 from render import fmt_date, render_magazine    # noqa: E402
 import notify                                    # noqa: E402
 
@@ -130,9 +130,18 @@ def render_index(issues: list[dict]) -> str:
 def build(date: dt.date, public_base_url: str | None = None, notify_enabled: bool = True) -> dict:
     MAGAZINES_DIR.mkdir(parents=True, exist_ok=True)
 
-    log.info("fetching HN front page ...")
-    stories = fetch_front_page(30)
-    log.info("fetched %d stories", len(stories))
+    log.info("fetching candidates from all sources ...")
+    # Read per-source enable flags from taste.json if present.
+    taste_path = ROOT / "taste.json"
+    enabled: dict[str, bool] = {}
+    try:
+        taste = json.loads(taste_path.read_text())
+        sources_cfg = taste.get("sources") or {}
+        enabled = {k: bool(v.get("enabled", True)) for k, v in sources_cfg.items()}
+    except Exception:
+        pass
+    stories = fetch_all(enabled=enabled, top_k=60)
+    log.info("fetched %d candidates", len(stories))
 
     log.info("curating ...")
     curation = curate(stories)
