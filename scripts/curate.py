@@ -12,12 +12,27 @@ from __future__ import annotations
 import json
 import logging
 import os
+import pathlib
 import re
 from typing import Any
 
 log = logging.getLogger(__name__)
 
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+
+# Optional per-reader taste profile. Edited by hand and committed. If
+# missing (fresh install) we fall back to the in-prompt defaults below.
+TASTE_JSON = pathlib.Path(__file__).resolve().parent.parent / "taste.json"
+
+
+def _load_taste() -> dict:
+    try:
+        return json.loads(TASTE_JSON.read_text())
+    except FileNotFoundError:
+        return {}
+    except Exception as e:
+        log.warning("taste.json unreadable, using defaults: %s", e)
+        return {}
 
 SPREAD_STYLES = [
     "hero",          # #1 cover story — massive display type
@@ -32,40 +47,116 @@ SPREAD_STYLES = [
     "pullquote",     # single enormous pull quote
 ]
 
-TASTE_PROFILE = """\
+DEFAULT_PROFILE = (
+    "Loves: UX, interface design, typography, information design. "
+    "AI tools that work today (not AGI takes) — agentic workflows, LLM tooling, "
+    "evals, prompt craft, shipping news from Anthropic / Claude / OpenAI. "
+    "Creative software — design tools, music software, video, generative art. "
+    "Developer tools — editors, terminals, languages, build systems, databases, "
+    "debuggers, local-first, self-hosted. Privacy, encryption, security research, "
+    "surveillance resistance. Weird science — biology, neuroscience, physics, "
+    "math curios, archaeology, strange empirical findings. Actionable things — "
+    "'I could use this today' libraries, guides, Show HNs with working demos.\n\n"
+    "Skip: low-effort hot takes without a concrete artifact. Pure VC / funding "
+    "announcements with no product substance. Crypto price chatter, tokenomics, "
+    "NFT drama. US political flame-wars. Layoff announcements without real "
+    "analysis. Recycled listicles, SEO spam, LinkedIn-flavored leadership posts."
+)
+DEFAULT_APPLIES_RULE = (
+    'Flag "applies_to_me: true" when the reader could literally use the thing '
+    "today — a new Claude feature, a dev tool they'd install, a privacy utility, "
+    "an editor plugin, a library, a how-to with a working demo."
+)
+DEFAULT_VOICE = (
+    "sharp, curious, a little dry. Blurbs are 2-3 sentences, ~45 words. Explain "
+    "WHY it matters to this reader specifically, not a summary of the headline. "
+    'No exclamation points. No "in this post". No clickbait.'
+)
+
+
+def _build_taste_profile() -> str:
+    """Combine the editable reader profile (from taste.json) with the
+    static structural rules (JSON schema, spread palette, style-assignment
+    rules). Returns the full system prompt."""
+    t = _load_taste()
+    profile = (t.get("profile") or DEFAULT_PROFILE).strip()
+    applies_rule = (t.get("applies_to_me_rule") or DEFAULT_APPLIES_RULE).strip()
+    voice = (t.get("voice") or DEFAULT_VOICE).strip()
+
+    recent = t.get("recent_changes") or []
+    recent_block = ""
+    if recent:
+        # Surface the 10 most recent tuning changes so the editor understands
+        # the trajectory of the reader's taste, not just the static snapshot.
+        recent_lines = "\n".join(
+            f"- {c.get('when','')}: {c.get('change','')}" for c in recent[-10:]
+        )
+        recent_block = (
+            "\n\nRECENT TUNING (what the reader has said lately, newest last):\n"
+            + recent_lines
+        )
+
+    header = f"""\
 You are the Editor-in-Chief of a one-reader daily called MORNING EDITION. The
 reader's taste is specific and strong. Curate ruthlessly.
 
-WHAT THE READER LOVES (boost):
-- UX, interface design, typography, information design
-- AI tools you can actually use today (not AGI takes), agentic workflows, LLM
-  tooling, evals, prompt craft, Claude / Anthropic / OpenAI shipping news
-- Creative software: design tools, music software, video, generative art
-- Developer tools: editors, terminals, languages, build systems, databases,
-  debuggers, local-first, self-hosted
-- Privacy, encryption, security research, surveillance resistance
-- Weird science: biology, neuroscience, physics, math curios, archaeology,
-  strange empirical findings
-- Actionable things: "I could use this today" — libraries, guides, show HNs
-  with working demos, field reports
+THE READER (verbatim profile, tuned over time):
+{profile}
+{recent_block}
 
-WHAT TO SKIP (penalize hard):
-- Low-effort posts: generic hot takes, rage bait, vague blog posts without a
-  concrete artifact
-- Pure VC / funding announcements with no product substance
-- Crypto price chatter, tokenomics, NFT drama
-- US political flame-wars and culture-war pieces
-- "X company laid off N people" unless there's real analysis
-- Recycled listicles, SEO spam, LinkedIn-flavored leadership posts
+APPLIES-TO-ME FLAG:
+{applies_rule}
 
-FLAG "applies_to_me: true" when the reader could literally use the thing
-today: a new Claude feature, a dev tool they'd install, a privacy utility,
-an editor plugin, a library, a how-to with a working demo.
+EDITORIAL VOICE: {voice}
+"""
+    return header + _SOURCES_BLOCK + _RANKING_BLOCK + _STATIC_SCHEMA_TAIL
 
-EDITORIAL VOICE: sharp, curious, a little dry. Blurbs are 2-3 sentences, ~45
-words. They must explain WHY it matters to this reader specifically — not a
-summary of the headline. No exclamation points. No "in this post". No clickbait.
 
+_SOURCES_BLOCK = """
+CANDIDATE SOURCES (each item includes a `source` field):
+  hn              — Hacker News front page. Broad, noisy, strong on dev + AI.
+  lobsters        — Lobste.rs. Smaller, higher-signal systems / languages.
+  anthropic       — Anthropic official news. Claude shipping news, nearly always relevant.
+  openai          — OpenAI news. Product + research shipping.
+  deepmind        — Google DeepMind blog. Research + Gemini shipping.
+  simonwillison   — Simon Willison's blog. LLM tooling, evals, prompt craft, hands-on.
+  github_trending — Repos created in the last 7 days with rising stars. Actionable tools.
+  sidebar         — Curated design/UX links. Rare + high-value for a UX designer.
+  quanta          — Quanta Magazine. Editorial-grade science journalism.
+  schneier        — Schneier on Security. Analytical, not breach-report chum.
+  producthunt     — Product Hunt feed. More marketing noise; filter hard.
+
+Each candidate also carries a local `prior` in [0..~1.2] combining source
+weight, within-source rank, and log-score. Treat `prior` as a weak
+tiebreaker, not a verdict.
+"""
+
+_RANKING_BLOCK = """
+RANKING RUBRIC (apply top-down):
+1. TASTE ALIGNMENT — the reader profile is a hard filter first. If a story
+   doesn't match the profile, it doesn't make the issue, regardless of prior.
+2. UX / DESIGN PRIORITY — the reader is a UX designer. Typography,
+   interface design, information design, design-system or creative-software
+   finds jump near the top. These signals are rare; never pass one up.
+3. AI SHIPPING FRESHNESS — new Claude / OpenAI / DeepMind features beat old
+   thinkpieces. An anthropic/openai/deepmind item from this week is almost
+   certainly cover-material unless it's a minor aside.
+4. ACTIONABILITY — "I could install this, open this, use this today" beats
+   abstract commentary. Favor Show-HN-style or github_trending finds with
+   a working demo.
+5. CROSS-SOURCE DIVERSITY — the issue shouldn't be 10 HN items when other
+   sources have gold. Aim for at least 4 non-HN picks when quality allows.
+6. PRIOR AS TIEBREAKER — with all else equal, prefer higher `prior`.
+
+HARD SKIPS (never include):
+- Funding / M&A announcements with no product substance.
+- Crypto / NFT / tokenomics.
+- US political flame-wars, culture-war pieces.
+- Layoffs without real analysis.
+- Recycled listicles, SEO bait, LinkedIn-style leadership posts.
+"""
+
+_STATIC_SCHEMA_TAIL = """
 SPREAD STYLE PALETTE (assign exactly one per story, use each style once):
   hero, midnight, rose-alert, terminal, academic, big-stat, newsprint,
   neon, zine, pullquote
@@ -119,23 +210,29 @@ def _curate_with_claude(stories: list[dict]) -> dict:
 
     client = anthropic.Anthropic()
 
-    # Compact candidate list — keep prompt lean.
+    # Compact candidate list — keep prompt lean. Candidates arrive
+    # pre-ranked by local `prior`; curator re-ranks by taste.
     candidates = [
         {
-            "hn_id": s["id"],
+            "id": s.get("id"),
             "title": s["title"],
             "url": s["url"],
-            "hn_url": s["hn_url"],
-            "score": s["score"],
-            "comments": s["descendants"],
+            "hn_url": s.get("hn_url", ""),
+            "source": s.get("source", "hn"),
+            "score": s.get("score", 0),
+            "comments": s.get("comments", s.get("descendants", 0)),
             "domain": _domain(s["url"]),
             "snippet": _snippet(s.get("text", "")),
+            "published_at": s.get("published_at", ""),
+            "prior": s.get("prior"),
+            "rank_within_source": s.get("rank_within_source"),
         }
         for s in stories
     ]
 
     user_payload = (
-        "Today's HN front page candidates (ranked by HN):\n\n"
+        "Today's candidates, pre-ranked by a local `prior` signal "
+        "(source weight × within-source rank + log-score). Re-rank by taste:\n\n"
         + json.dumps(candidates, indent=2)
         + "\n\nReturn the JSON now."
     )
@@ -146,7 +243,7 @@ def _curate_with_claude(stories: list[dict]) -> dict:
         system=[
             {
                 "type": "text",
-                "text": TASTE_PROFILE,
+                "text": _build_taste_profile(),
                 "cache_control": {"type": "ephemeral"},
             }
         ],
@@ -204,8 +301,14 @@ _PENALTY = [
 
 
 def _score(story: dict) -> float:
+    """Heuristic ranking used when the Anthropic API is unavailable. In a
+    multi-source world, raw `score` (HN points vs GitHub stars vs 0) is
+    incomparable, so we lean on (a) the cross-source `prior` from
+    fetch_sources, which already blends source weight + log-score, and
+    (b) keyword signals from the title/domain."""
     t = (story["title"] + " " + _domain(story["url"])).lower()
-    s = float(story.get("score", 0))
+    # Prior is the dominant signal (0..~1.2 range → up to 120 pts).
+    s = float(story.get("prior", 0.0) or 0.0) * 100.0
     for kw, w in _BOOST:
         if kw in t:
             s += w * 10
@@ -230,24 +333,35 @@ def _curate_heuristic(stories: list[dict]) -> dict:
     picks = []
     for i, s in enumerate(ranked):
         style = SPREAD_STYLES[i]
+        score = int(s.get("score", 0) or 0)
+        comments = int(s.get("comments", s.get("descendants", 0)) or 0)
+        source = s.get("source", "hn")
+        kicker_map = {
+            "hn": "FRONT PAGE", "lobsters": "LOBSTE.RS",
+            "anthropic": "ANTHROPIC", "openai": "OPENAI",
+            "deepmind": "DEEPMIND", "simonwillison": "SIMON WILLISON",
+            "github_trending": "TRENDING", "sidebar": "DESIGN",
+            "quanta": "SCIENCE", "schneier": "SECURITY",
+            "producthunt": "LAUNCH",
+        }
         pick = {
             "rank": i + 1,
-            "hn_id": s["id"],
+            "hn_id": s.get("id", i),
             "title": s["title"],
             "url": s["url"],
-            "hn_url": s["hn_url"],
-            "score": s["score"],
-            "comments": s["descendants"],
-            "kicker": "FRONT PAGE",
+            "hn_url": s.get("hn_url", ""),
+            "score": score,
+            "comments": comments,
+            "kicker": kicker_map.get(source, "FRONT PAGE"),
             "blurb": (
-                f"From {_domain(s['url'])}. HN is giving this {s['score']} points "
-                f"and {s['descendants']} comments — worth a look on the commute."
+                f"From {_domain(s['url'])}. Surfaced via {source}; ranked on the "
+                f"pre-score. Worth a look on the commute."
             ),
             "applies_to_me": _applies(s),
             "apply_note": "Open the link and skim the README." if _applies(s) else "",
             "spread_style": style,
-            "stat_value": str(s["score"]) if style == "big-stat" else "",
-            "stat_label": "POINTS ON HN" if style == "big-stat" else "",
+            "stat_value": str(score) if style == "big-stat" and score else "",
+            "stat_label": "POINTS" if style == "big-stat" and score else "",
             "pullquote": s["title"] if style == "pullquote" else "",
         }
         picks.append(pick)
