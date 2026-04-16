@@ -1,51 +1,11 @@
-"""Render the curated picks as a single self-contained HTML magazine.
-
-The magazine is one long document; each of the 10 stories gets its own
-full-viewport spread with a distinct background, layout, and numeral
-treatment. No inline font is smaller than 18px — base body type is 22px
-and display type goes up to 16vw.
-
-Typography: Fraunces (serif display) + Inter (sans body), both via
-Google Fonts. Both required by the brief.
-"""
-from __future__ import annotations
-
-import datetime as dt
-import html
-from typing import Any
-
-# Ordered list of spread renderers is wired up at the bottom of this file
-# (after each render_* function is defined).
-
-GOOGLE_FONTS = (
-    '<link rel="preconnect" href="https://fonts.googleapis.com">'
-    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    '<link href="https://fonts.googleapis.com/css2?'
-    'family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900'
-    '&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700'
-    '&display=swap" rel="stylesheet">'
-)
-
-
-def esc(s: Any) -> str:
-    """HTML-escape; accepts anything stringifiable."""
-    return html.escape("" if s is None else str(s), quote=True)
-
-
-def fmt_date(d: dt.date) -> str:
-    return d.strftime("%A, %B %-d, %Y").upper()
-
-
-def numeral(n: int) -> str:
-    """Two-digit numeral string. 1 -> 01, 10 -> 10."""
-    return f"{n:02d}"
-
-
-# --------------------------------------------------------------------------
-# Base CSS — shared resets, type scale, and per-spread rules. Every rule
-# here is deliberately written to keep text large (>= 18px everywhere).
-# --------------------------------------------------------------------------
-BASE_CSS = r"""
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Palette Preview · Morning Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -561,650 +521,359 @@ a{color:inherit;text-underline-offset:4px}
   .colophon h3{font-size:40px}
   .colophon p{font-size:20px}
 }
-"""
+</style>
+</head>
+<body>
 
-
-# --------------------------------------------------------------------------
-# Shared fragments
-# --------------------------------------------------------------------------
-def _applies_badge(p: dict) -> str:
-    if not p.get("applies_to_me"):
-        return ""
-    return '<span class="tag-applies">Applies to you</span>'
-
-
-def _apply_note(p: dict) -> str:
-    note = (p.get("apply_note") or "").strip()
-    if not note:
-        return ""
-    return f'<p class="apply-note">&rarr; {esc(note)}</p>'
-
-
-def _read_more(p: dict, label: str = "Read the story") -> str:
-    return (
-        f'<a class="read-more" href="{esc(p["url"])}" target="_blank" '
-        f'rel="noopener">{esc(label)} &rarr;</a>'
-    )
-
-
-def _meta_line(p: dict) -> str:
-    # Intentionally blank: spreads now surface a single CTA per article
-    # (the source-link read-more) plus the optional "Applies to you" badge
-    # and apply-note. Points/comments/discussion links were visual clutter.
-    return ""
-
-
-# --------------------------------------------------------------------------
-# Spread renderers — one per style
-# --------------------------------------------------------------------------
-def render_hero(p: dict, issue: dict) -> str:
-    date = issue["date_display"]
-    issue_no = issue["issue_no"]
-    tagline = issue.get("tagline") or ""
-    return f"""
 <section class="spread s-hero">
   <div class="masthead">
     <h1>Morning Edition</h1>
     <div class="issue-meta">
-      <div>{esc(date)}</div>
-      <div>Issue No. {esc(issue_no)}</div>
+      <div>PALETTE PREVIEW · ALL 18 STYLES</div>
+      <div>Issue No. PREVIEW</div>
     </div>
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; {esc(p.get("kicker",""))}</div>
-      <h2 class="cover-title">{esc(p["title"])}</h2>
-      <p class="cover-tagline">{esc(tagline)}</p>
-      <p class="body-lead body-lead--wide">{esc(p.get("blurb",""))}</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AGENTIC AI</div>
+      <h2 class="cover-title">Claude Code Routines</h2>
+      <p class="cover-tagline">Eighteen spread styles, one per page — desktop and mobile preview</p>
+      <p class="body-lead body-lead--wide">Anthropic ships reusable, composable automation sequences for Claude Code — define a routine once, run multi-step agentic tasks on command. The biggest workflow shift in CC since /commands.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        {_read_more(p, "Open the lead")}
-        {_applies_badge(p)}
+        <a class="read-more" href="https://code.claude.com/docs/en/routines" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
       </div>
-      {_apply_note(p)}
-      {_meta_line(p)}
+      <p class="apply-note">&rarr; Open the docs and define one routine for a task you repeat in Claude Code today.</p>
+      
     </div>
-    <div class="cover-numeral" aria-hidden="true">{numeral(p["rank"])}</div>
+    <div class="cover-numeral" aria-hidden="true">01</div>
   </div>
 </section>
-"""
 
-
-def render_midnight(p: dict, issue: dict) -> str:
-    return f"""
-<section class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">{numeral(p["rank"])}</div>
-  <div class="content">
-    <div class="kicker">{esc(p.get("kicker","") or "After dark")}</div>
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">{esc(p.get("blurb",""))}</p>
-    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p)}
-      {_applies_badge(p)}
+<section class="spread s-polaroid">
+  <div class="kicker">INFORMATION DESIGN</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">100 Lost Species: a digital memorial</div>
+      <div class="photo-caption">No. 02 &middot; awwwards.com</div>
     </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
-  </div>
-  <div class="footer-slug">Morning Edition &middot; After Dark</div>
-</section>
-"""
-
-
-def render_rose(p: dict, issue: dict) -> str:
-    stamp = ""
-    if p.get("applies_to_me"):
-        stamp = '<div class="stamp">Applies<br>to&nbsp;you</div>'
-    return f"""
-<section class="spread s-rose">
-  {stamp}
-  <div>
-    <div class="kicker">{esc(p.get("kicker","") or "Actionable")}</div>
-    <div class="numeral-xl" aria-hidden="true">{numeral(p["rank"])}</div>
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">{esc(p.get("blurb",""))}</p>
-  </div>
-  <div>
-    {_apply_note(p)}
-    <div style="margin-top:28px">{_read_more(p, "Try it now")}</div>
-    {_meta_line(p)}
-    <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
+    <div>
+      <p class="body-lead">An Awwwards case study on an extinction narrative designed for active exploration rather than passive scrolling. Editorial structure and interactivity reinforce each other.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://www.awwwards.com/100-lost-species.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
+      
+    </div>
   </div>
 </section>
-"""
 
+<section class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.03</span>
+      <span>TIGERBEETLE.COM</span>
+      <span>SHEET 3/10</span>
+    </div>
+    <div class="kicker">DATABASES</div>
+    <h2>How TigerBeetle achieves deterministic 1M txn/s</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">03</div>
+      <p class="body-lead">Single-binary distributed ledger with deterministic execution, LSM storage, and a custom replication protocol. Architecture deep-dive worth reading even if you&#x27;ll never deploy it.</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://tigerbeetle.com/blog/2026-04-determinism" target="_blank" rel="noopener">View schematic &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
 
-def render_terminal(p: dict, issue: dict) -> str:
-    ascii_n = _ascii_numeral(p["rank"])
-    host = _domain_only(p["url"]) or "news.ycombinator.com"
-    return f"""
 <section class="spread s-terminal">
   <div class="window">
     <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">{esc(ascii_n)}</div>
-    <div class="kicker">{esc(p.get("kicker","") or "Systems")}</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">{esc(host)}</span></div>
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">&gt; {esc(p.get("blurb",""))}</p>
+    <div class="ascii-num" aria-hidden="true">#####  #   #  
+#   #  #   #  
+#   #  #####  
+#   #      #  
+#####      #  </div>
+    <div class="kicker">DEV TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
+    <h2>codeburn — see where your AI tokens go</h2>
+    <p class="body-lead">&gt; Interactive TUI dashboard that breaks down token spend across Claude Code and Codex sessions. As agentic flows get longer, cost observability becomes a real operational concern.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p, "$ open")}
-      {_applies_badge(p)}
+      <a class="read-more" href="https://github.com/AgentSeal/codeburn" target="_blank" rel="noopener">$ open &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
     </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
+    <p class="apply-note">&rarr; Run codeburn against your last week of Claude Code sessions to find the heaviest task.</p>
+    
   </div>
 </section>
-"""
 
+<section class="spread s-grid">
+  <div class="grid-top">
+    <div class="tag">DESIGN SYSTEMS</div>
+    <div class="num-corner">No. 05</div>
+  </div>
+  <div class="grid-body">
+    <h2>A field guide to design tokens in 2026</h2>
+    <div class="side">
+      <p class="body-lead">Refactoring UI&#x27;s annual token survey: what shipped, what got abandoned, and where the W3C spec landed. Required reading if you maintain a tokens pipeline.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://refactoringui.com/tokens-2026/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
 
-def render_academic(p: dict, issue: dict) -> str:
-    roman = _to_roman(p["rank"])
-    return f"""
+<section class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">CREATIVE SOFTWARE</div>
+    <div class="riso-num" data-n="06" aria-hidden="true">06</div>
+    <h2>Cavalry 3 ships scriptable scene graphs</h2>
+    <p class="body-lead">The 2D motion design tool gets a JS scripting layer over its scene graph — generative animation pipelines without leaving the canvas. Side-stepping After Effects entirely.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://cavalry.scenegroup.co/blog/v3" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; AI POLICY &middot; Morning Edition</span></div>
+  <div class="core">
+    <div class="big-num" aria-hidden="true">No. 07</div>
+    <div class="kicker">AI POLICY</div>
+    <h2>OpenAI pulls Sora 3 over watermark bypass</h2>
+    <p class="body-lead">Sora 3 quietly removed from public API after a paper showed C2PA provenance metadata can be stripped without re-encoding. OpenAI says a fix is in flight.</p>
+    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://openai.com/blog/sora-3-pause" target="_blank" rel="noopener">Over the wire &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+  <div class="bar"><span class="bar-inner">Filed PALETTE PREVIEW · ALL 18 STYLES</span></div>
+</section>
+
+<section class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">UX CRAFT</div>
+    <div class="tiny-num" aria-hidden="true">08</div>
+  </div>
+  <h2>Stop separating what the work doesn&#x27;t separate<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Matthias Ott argues the design/engineering split is structural, not natural — and increasingly a liability. Direct about org dysfunction without sliding into LinkedIn platitude.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; matthiasott.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://matthiasott.com/articles/design-and-engineering-as-one" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 09</span>
+    <span>WEIRD SCIENCE</span>
+  </div>
+  <div class="ix-body">
+    <h2>Octopuses appear to dream in color</h2>
+    <p class="body-lead">New high-speed chromatophore imaging suggests sleeping octopuses cycle through the same color patterns they use awake — possible evidence for visual replay during REM-like states.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.quantamagazine.org/octopus-dreams-color-20260413/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-postcard">
+  <div class="pc-inner">
+    <div class="stamp" aria-hidden="true">10<small>Morning<br>Edition</small></div>
+    <div class="postmark" aria-hidden="true">PALETTE PREVIEW · ALL 18 STYLES<br>&middot;&middot;&middot;</div>
+    <div class="kicker">DISPATCH</div>
+    <h2>Field notes from the last analog darkroom in Lisbon</h2>
+    <p class="body-lead">A photographer&#x27;s account of working alongside the city&#x27;s last surviving wet-process technician. Slow, lyrical, and oddly grounding next to today&#x27;s AI-image discourse.</p>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://aperture.org/lisbon-darkroom-2026" target="_blank" rel="noopener">Wish you were here &rarr;</a>
+      
+    </div>
+    
+    
+    <div class="footer-slug">Morning Edition &middot; Airmail from aperture.org</div>
+  </div>
+</section>
+
+<section class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">11</div>
+  <div class="content">
+    <div class="kicker">AI SECURITY</div>
+    <h2>On Anthropic&#x27;s Mythos preview and Project Glasswing</h2>
+    <p class="body-lead">Schneier&#x27;s analysis of Mythos — held back from public release over cyberattack capability concerns — and what Glasswing means for responsible disclosure norms around frontier AI.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/04/glasswing.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
+</section>
+
+<section class="spread s-rose">
+  <div class="stamp">Applies<br>to&nbsp;you</div>
+  <div>
+    <div class="kicker">DESIGN SYSTEMS</div>
+    <div class="numeral-xl" aria-hidden="true">12</div>
+    <h2>hamen/material-3-skill — MD3 skill for Claude Code</h2>
+    <p class="body-lead">Encodes the full MD3 spec — 30+ components, design tokens, theming, automated compliance audit. Shortcut from &#x27;prompt and pray&#x27; to spec-correct AI-generated UI.</p>
+  </div>
+  <div>
+    <p class="apply-note">&rarr; Drop it into your Claude Code setup and run the audit on a component you&#x27;ve shipped.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://github.com/hamen/material-3-skill" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    
+    <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
+  </div>
+</section>
+
 <section class="spread s-academic">
   <div class="masthead-line">
     <span>Morning Edition &mdash; Review</span>
-    <span class="roman">{esc(roman)}</span>
+    <span class="roman">XIII</span>
   </div>
   <div>
-    <div class="kicker">{esc(p.get("kicker","") or "Research")}</div>
-    <h2>{esc(p["title"])}</h2>
-    <div class="body-lead">{esc(p.get("blurb",""))}</div>
+    <div class="kicker">WEIRD SCIENCE</div>
+    <h2>The AI revolution in math has arrived</h2>
+    <div class="body-lead">Quanta on AI systems now proving novel mathematical results at pace, not just verifying existing proofs. The interesting tension is whether speed of proof-finding changes what mathematicians choose to ask.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p, "Continue reading")}
-      {_applies_badge(p)}
+      <a class="read-more" href="https://www.quantamagazine.org/the-ai-revolution-in-math-20260413/" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      
     </div>
-    {_apply_note(p)}
+    
   </div>
   <div>
-    <div class="footnote">&sect; filed under {esc((p.get('kicker','') or 'review').lower())}</div>
+    <div class="footnote">&sect; filed under weird science</div>
   </div>
 </section>
-"""
 
-
-def render_stat(p: dict, issue: dict) -> str:
-    value = (p.get("stat_value") or "").strip() or str(p.get("score", "")) or "—"
-    label = (p.get("stat_label") or "").strip() or "POINTS ON HN"
-    return f"""
 <section class="spread s-stat">
   <div class="top">
-    <div class="chip">No. {numeral(p["rank"])} &middot; {esc(p.get("kicker","") or "By the numbers")}</div>
-    {_applies_badge(p)}
+    <div class="chip">No. 14 &middot; OPEN MODELS</div>
+    
   </div>
   <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">{esc(value)}</div>
-    <div class="stat-label">{esc(label)}</div>
+    <div class="stat-value" aria-hidden="true">0.1B</div>
+    <div class="stat-label">GEMMA-4-NANO PARAMETERS — REALTIME ON CPU</div>
   </div>
   <div>
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">{esc(p.get("blurb",""))}</p>
-    <div style="margin-top:24px">{_read_more(p)}</div>
-    {_apply_note(p)}
-    {_meta_line(p)}
+    <h2>Gemma 4: byte-for-byte the most capable open models</h2>
+    <p class="body-lead">DeepMind ships Gemma 4 — top capability per byte for open weights, purpose-built for reasoning and agentic flows. Runs fully on-device for prototyping local UX.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://deepmind.google/blog/gemma-4" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    
+    
   </div>
 </section>
-"""
 
-
-def render_newsprint(p: dict, issue: dict) -> str:
-    blurb = p.get("blurb", "")
-    # Break blurb into two paragraphs for column flow
-    halves = _split_half(blurb)
-    return f"""
 <section class="spread s-newsprint">
   <div class="masthead-bar">The Daily Ledger</div>
   <div class="title-row">
-    <div class="badge">{numeral(p["rank"])}</div>
+    <div class="badge">15</div>
     <div>
-      <div class="kicker">{esc(p.get("kicker","") or "Dispatch")}</div>
-      <h2>{esc(p["title"])}</h2>
+      <div class="kicker">INFRA</div>
+      <h2>Inside the Cloudflare Workers KV migration</h2>
     </div>
   </div>
   <div class="cols">
-    <p>{esc(halves[0])}</p>
-    <p>{esc(halves[1])}</p>
+    <p>Cloudflare&#x27;s engineering writeup on porting Workers KV from a custom store to Durable Obj</p>
+    <p>ects under the hood — zero-downtime, multi-region, with a clever shadow-read verification.</p>
   </div>
   <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    {_read_more(p, "Full dispatch")}
-    {_applies_badge(p)}
+    <a class="read-more" href="https://blog.cloudflare.com/workers-kv-do-migration/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    
   </div>
-  {_apply_note(p)}
-  {_meta_line(p)}
+  
+  
 </section>
-"""
 
-
-def render_neon(p: dict, issue: dict) -> str:
-    return f"""
 <section class="spread s-neon">
   <div>
-    <div class="kicker">{esc(p.get("kicker","") or "Signal")}</div>
+    <div class="kicker">AI TOOLING</div>
   </div>
   <div>
-    <div class="numeral-slash" aria-hidden="true">{numeral(p["rank"])}</div>
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">{esc(p.get("blurb",""))}</p>
+    <div class="numeral-slash" aria-hidden="true">16</div>
+    <h2>fireworks-tech-graph — AI/agent diagrams as a Claude Code skill</h2>
+    <p class="body-lead">Production-grade SVG and PNG technical diagrams across 8 diagram types and 5 visual styles, with embedded AI/agent domain knowledge. Closes a gap that generic prompting leaves wide open.</p>
     <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p, "Go loud")}
-      {_applies_badge(p)}
+      <a class="read-more" href="https://github.com/yizhiyanhua-ai/fireworks-tech-graph" target="_blank" rel="noopener">Go loud &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
     </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
+    <p class="apply-note">&rarr; Install it and generate an architecture diagram for a project you&#x27;re documenting.</p>
+    
   </div>
 </section>
-"""
 
-
-def render_zine(p: dict, issue: dict) -> str:
-    return f"""
 <section class="spread s-zine">
   <div>
     <div class="sticker">Cut &amp; keep</div>
   </div>
   <div>
-    <div class="marker-num" aria-hidden="true">{numeral(p["rank"])}</div>
+    <div class="marker-num" aria-hidden="true">17</div>
     <div class="scribble" aria-hidden="true"></div>
-    <div class="kicker">{esc(p.get("kicker","") or "Dispatch")}</div>
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">{esc(p.get("blurb",""))}</p>
+    <div class="kicker">VISUAL IDENTITY</div>
+    <h2>The aesthetics of AI</h2>
+    <p class="body-lead">A Color Bright dissects the visual identities of leading AI brands — what&#x27;s converging, what&#x27;s distinctive, and what&#x27;s hardening into cliché. Useful ambient intelligence on the visual language of the space.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p, "Read it")}
-      {_applies_badge(p)}
+      <a class="read-more" href="https://www.acolorbright.com/insights/aesthetics-of-ai" target="_blank" rel="noopener">Read it &rarr;</a>
+      
     </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
+    
+    
   </div>
 </section>
-"""
 
-
-def render_pullquote(p: dict, issue: dict) -> str:
-    pq = (p.get("pullquote") or "").strip() or p["title"]
-    return f"""
 <section class="spread s-pullquote">
   <div class="top">
-    <div class="kicker" style="color:#d9b26a">{esc(p.get("kicker","") or "In their words")}</div>
-    <div class="tiny-num" aria-hidden="true">{numeral(p["rank"])}</div>
+    <div class="kicker" style="color:#d9b26a">PROMPT CRAFT</div>
+    <div class="tiny-num" aria-hidden="true">18</div>
   </div>
   <div>
     <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">{esc(pq)}</p>
-    <div class="attrib">&mdash; {esc(_domain_only(p["url"]) or "source")}</div>
+    <p class="pq">A brilliant intern who forgets you exist every morning</p>
+    <div class="attrib">&mdash; simonwillison.net</div>
   </div>
   <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">{esc(p.get("blurb",""))}</p>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Simon Willison&#x27;s annual reflection on a year of LLM tooling. Honest about the limits, sharp on what&#x27;s quietly gotten dramatically better.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p)}
-      {_applies_badge(p)}
+      <a class="read-more" href="https://simonwillison.net/2026/Apr/year-in-llms" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
     </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
+    
+    
   </div>
 </section>
-"""
 
 
-def render_grid(p: dict, issue: dict) -> str:
-    return f"""
-<section class="spread s-grid">
-  <div class="grid-top">
-    <div class="tag">{esc(p.get("kicker","") or "Index")}</div>
-    <div class="num-corner">No. {numeral(p["rank"])}</div>
-  </div>
-  <div class="grid-body">
-    <h2>{esc(p["title"])}</h2>
-    <div class="side">
-      <p class="body-lead">{esc(p.get("blurb",""))}</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        {_read_more(p)}
-        {_applies_badge(p)}
-      </div>
-      {_apply_note(p)}
-      {_meta_line(p)}
-    </div>
-  </div>
-</section>
-"""
-
-
-def render_manifesto(p: dict, issue: dict) -> str:
-    pq = (p.get("pullquote") or "").strip() or p["title"]
-    return f"""
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">{esc(p.get("kicker","") or "Position")}</div>
-    <div class="tiny-num" aria-hidden="true">{numeral(p["rank"])}</div>
-  </div>
-  <h2>{esc(pq)}<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">{esc(p.get("blurb",""))}</p>
-    <div class="attrib" style="margin-top:24px">&mdash; {esc(_domain_only(p["url"]) or "source")}</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p)}
-      {_applies_badge(p)}
-    </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
-  </div>
-</section>
-"""
-
-
-def render_polaroid(p: dict, issue: dict) -> str:
-    caption_source = _domain_only(p["url"]) or "dispatch"
-    return f"""
-<section class="spread s-polaroid">
-  <div class="kicker">{esc(p.get("kicker","") or "Field notes")}</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">{esc(p["title"])}</div>
-      <div class="photo-caption">No. {numeral(p["rank"])} &middot; {esc(caption_source)}</div>
-    </div>
-    <div>
-      <p class="body-lead">{esc(p.get("blurb",""))}</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        {_read_more(p)}
-        {_applies_badge(p)}
-      </div>
-      {_apply_note(p)}
-      {_meta_line(p)}
-    </div>
-  </div>
-</section>
-"""
-
-
-def render_ticker(p: dict, issue: dict) -> str:
-    return f"""
-<section class="spread s-ticker">
-  <div class="bar"><span class="bar-inner">Breaking &middot; {esc(p.get("kicker","") or "Signal")} &middot; Morning Edition</span></div>
-  <div class="core">
-    <div class="big-num" aria-hidden="true">No. {numeral(p["rank"])}</div>
-    <div class="kicker">{esc(p.get("kicker","") or "Wire")}</div>
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">{esc(p.get("blurb",""))}</p>
-    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p, "Over the wire")}
-      {_applies_badge(p)}
-    </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
-  </div>
-  <div class="bar"><span class="bar-inner">Filed {esc(issue["date_display"])}</span></div>
-</section>
-"""
-
-
-def render_blueprint(p: dict, issue: dict) -> str:
-    host = _domain_only(p["url"]) or "source"
-    return f"""
-<section class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.{numeral(p["rank"])}</span>
-      <span>{esc(host.upper())}</span>
-      <span>SHEET {esc(p["rank"])}/10</span>
-    </div>
-    <div class="kicker">{esc((p.get("kicker","") or "Systems").upper())}</div>
-    <h2>{esc(p["title"])}</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">{numeral(p["rank"])}</div>
-      <p class="body-lead">{esc(p.get("blurb",""))}</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p, "View schematic")}
-      {_applies_badge(p)}
-    </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
-  </div>
-</section>
-"""
-
-
-def render_riso(p: dict, issue: dict) -> str:
-    return f"""
-<section class="spread s-riso">
-  <div class="layout">
-    <div class="kicker">{esc(p.get("kicker","") or "Press")}</div>
-    <div class="riso-num" data-n="{numeral(p["rank"])}" aria-hidden="true">{numeral(p["rank"])}</div>
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">{esc(p.get("blurb",""))}</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p, "Pull a proof")}
-      {_applies_badge(p)}
-    </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
-  </div>
-</section>
-"""
-
-
-def render_index_card(p: dict, issue: dict) -> str:
-    return f"""
-<section class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. {numeral(p["rank"])}</span>
-    <span>{esc((p.get("kicker","") or "Note").upper())}</span>
-  </div>
-  <div class="ix-body">
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">{esc(p.get("blurb",""))}</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p, "Follow the thread")}
-      {_applies_badge(p)}
-    </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
-  </div>
-</section>
-"""
-
-
-def render_postcard(p: dict, issue: dict) -> str:
-    host = _domain_only(p["url"]) or "field"
-    return f"""
-<section class="spread s-postcard">
-  <div class="pc-inner">
-    <div class="stamp" aria-hidden="true">{numeral(p["rank"])}<small>Morning<br>Edition</small></div>
-    <div class="postmark" aria-hidden="true">{esc(issue["date_display"].split(",")[0])}<br>&middot;&middot;&middot;</div>
-    <div class="kicker">{esc(p.get("kicker","") or "Dispatch")}</div>
-    <h2>{esc(p["title"])}</h2>
-    <p class="body-lead">{esc(p.get("blurb",""))}</p>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      {_read_more(p, "Wish you were here")}
-      {_applies_badge(p)}
-    </div>
-    {_apply_note(p)}
-    {_meta_line(p)}
-    <div class="footer-slug">Morning Edition &middot; Airmail from {esc(host)}</div>
-  </div>
-</section>
-"""
-
-
-# --------------------------------------------------------------------------
-# Spread style -> renderer dispatch
-# --------------------------------------------------------------------------
-RENDERERS = {
-    "hero": render_hero,
-    "midnight": render_midnight,
-    "rose-alert": render_rose,
-    "terminal": render_terminal,
-    "academic": render_academic,
-    "big-stat": render_stat,
-    "newsprint": render_newsprint,
-    "neon": render_neon,
-    "zine": render_zine,
-    "pullquote": render_pullquote,
-    "grid": render_grid,
-    "manifesto": render_manifesto,
-    "polaroid": render_polaroid,
-    "ticker": render_ticker,
-    "blueprint": render_blueprint,
-    "risograph": render_riso,
-    "index-card": render_index_card,
-    "postcard": render_postcard,
-}
-
-# Fallback order when _repair_picks needs to assign a style. Hero stays first
-# (it's forced onto rank 1). The rest is shuffled weekly-ish to avoid the same
-# "default 10" showing up every build when Claude returns junk styles.
-STYLE_ORDER = [
-    "hero", "midnight", "rose-alert", "terminal", "academic",
-    "big-stat", "newsprint", "neon", "zine", "pullquote",
-    "grid", "manifesto", "polaroid", "ticker", "blueprint",
-    "risograph", "index-card", "postcard",
-]
-
-
-# --------------------------------------------------------------------------
-# Small helpers
-# --------------------------------------------------------------------------
-def _domain_only(url: str) -> str:
-    import re
-    m = re.match(r"https?://([^/]+)", url or "")
-    if not m:
-        return ""
-    d = m.group(1)
-    return d[4:] if d.startswith("www.") else d
-
-
-def _split_half(s: str) -> tuple[str, str]:
-    s = (s or "").strip()
-    if not s:
-        return ("", "")
-    mid = len(s) // 2
-    left = s.rfind(". ", 0, mid + 30)
-    if left != -1 and left > len(s) * 0.3:
-        return (s[: left + 1].strip(), s[left + 1 :].strip())
-    return (s[:mid].strip(), s[mid:].strip())
-
-
-def _to_roman(n: int) -> str:
-    vals = [(10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
-    out = ""
-    for v, sym in vals:
-        while n >= v:
-            out += sym
-            n -= v
-    return out
-
-
-def _ascii_numeral(n: int) -> str:
-    digits = {
-        "0": ["#####", "#   #", "#   #", "#   #", "#####"],
-        "1": ["  #  ", " ##  ", "  #  ", "  #  ", "#####"],
-        "2": ["#####", "    #", "#####", "#    ", "#####"],
-        "3": ["#####", "    #", " ####", "    #", "#####"],
-        "4": ["#   #", "#   #", "#####", "    #", "    #"],
-        "5": ["#####", "#    ", "#####", "    #", "#####"],
-        "6": ["#####", "#    ", "#####", "#   #", "#####"],
-        "7": ["#####", "    #", "   # ", "  #  ", " #   "],
-        "8": ["#####", "#   #", "#####", "#   #", "#####"],
-        "9": ["#####", "#   #", "#####", "    #", "#####"],
-    }
-    s = numeral(n)
-    rows = ["", "", "", "", ""]
-    for ch in s:
-        for i in range(5):
-            rows[i] += digits[ch][i] + "  "
-    return "\n".join(rows)
-
-
-# --------------------------------------------------------------------------
-# Repair picks so every required field has something sensible
-# --------------------------------------------------------------------------
-def _repair_picks(picks: list[dict]) -> list[dict]:
-    picks = sorted(picks, key=lambda p: p.get("rank", 99))
-    picks = picks[:10]
-    used = []
-    for i, p in enumerate(picks):
-        p["rank"] = i + 1
-        style = p.get("spread_style") or ""
-        if style not in RENDERERS or style in used:
-            for s in STYLE_ORDER:
-                if s not in used:
-                    style = s
-                    break
-            p["spread_style"] = style
-        used.append(style)
-    if picks and picks[0].get("spread_style") != "hero":
-        for q in picks:
-            if q.get("spread_style") == "hero":
-                q["spread_style"] = picks[0]["spread_style"]
-                picks[0]["spread_style"] = "hero"
-                break
-        else:
-            picks[0]["spread_style"] = "hero"
-    return picks
-
-
-# --------------------------------------------------------------------------
-# Colophon + page chrome
-# --------------------------------------------------------------------------
-def render_colophon(issue: dict, applies_count: int) -> str:
-    return f"""
 <section class="colophon">
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across eleven sources before you were awake.
-  {applies_count} of them are flagged as directly applicable &mdash; open those first.</p>
+  4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
-  at {esc(issue["built_at"])}.</p>
-  <p class="smallprint">Morning Edition &middot; Issue No. {esc(issue["issue_no"])} &middot; {esc(issue["date_display"])}</p>
+  at 2026-04-15 11:56 UTC.</p>
+  <p class="smallprint">Morning Edition &middot; Issue No. PREVIEW &middot; PALETTE PREVIEW · ALL 18 STYLES</p>
 </section>
-"""
 
-
-def render_magazine(curation: dict, today: dt.date | None = None) -> str:
-    today = today or dt.date.today()
-    picks = _repair_picks(curation.get("picks", []))
-    issue = {
-        "date_iso": today.isoformat(),
-        "date_display": fmt_date(today),
-        "issue_no": f"{(today - dt.date(2025, 1, 1)).days + 1:04d}",
-        "tagline": curation.get("issue_tagline", ""),
-        "built_at": dt.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
-    }
-    spreads = []
-    for p in picks:
-        fn = RENDERERS[p["spread_style"]]
-        spreads.append(fn(p, issue))
-    applies_count = sum(1 for p in picks if p.get("applies_to_me"))
-    colophon = render_colophon(issue, applies_count)
-
-    title = f"Morning Edition &middot; {issue['date_display']}"
-    desc = esc(issue.get("tagline") or "Hand-picked across eleven sources while you slept.")
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title}</title>
-<meta name="description" content="{desc}">
-<meta property="og:title" content="Morning Edition · {esc(issue['date_display'])}">
-<meta property="og:description" content="{desc}">
-<meta property="og:type" content="article">
-{GOOGLE_FONTS}
-<style>{BASE_CSS}</style>
-</head>
-<body>
-{''.join(spreads)}
-{colophon}
 </body>
 </html>
-"""
-
-
-if __name__ == "__main__":
-    import json
-    import sys
-    data = json.load(sys.stdin)
-    sys.stdout.write(render_magazine(data))
-
-
-
-
-
-

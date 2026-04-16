@@ -35,6 +35,7 @@ def _load_taste() -> dict:
         return {}
 
 SPREAD_STYLES = [
+    # Core ten (v1 palette) -------------------------------------------------
     "hero",          # #1 cover story — massive display type
     "midnight",      # deep dark spread, neon accent
     "rose-alert",    # rose background, stamp-style "APPLIES TO YOU" when flagged
@@ -45,6 +46,15 @@ SPREAD_STYLES = [
     "neon",          # magenta/cyan gradient, brutalist sans
     "zine",          # handmade zine, offset, marker accents
     "pullquote",     # single enormous pull quote
+    # Expansion pack (v2) ---------------------------------------------------
+    "grid",          # Swiss modernist, pure white, tight grid, red accent
+    "manifesto",     # pitch-black, giant Fraunces italic declaration
+    "polaroid",      # kraft paper, rotated photo card + washi tape
+    "ticker",        # yellow hazard-tape bars, BREAKING marquee
+    "blueprint",     # navy CAD aesthetic with technical annotations
+    "risograph",     # duotone magenta/teal overprint, halftone dots
+    "index-card",    # ruled 3x5 research note, red margin
+    "postcard",      # airmail chevrons, rotated stamp + postmark
 ]
 
 DEFAULT_PROFILE = (
@@ -157,23 +167,39 @@ HARD SKIPS (never include):
 """
 
 _STATIC_SCHEMA_TAIL = """
-SPREAD STYLE PALETTE (assign exactly one per story, use each style once):
-  hero, midnight, rose-alert, terminal, academic, big-stat, newsprint,
-  neon, zine, pullquote
+SPREAD STYLE PALETTE (pick 10 distinct styles from the 18 below, no repeats
+within an issue; the remaining 8 styles sit out today and will likely appear
+in future issues). Choose the style that fits the CONTENT — cast a dev tool
+as terminal, a research piece as academic, a visual-design story as polaroid,
+etc. Day-to-day variance comes from making taste-driven casting choices.
 
-Rules for style assignment:
-- Position 1 (the cover / lead): ALWAYS "hero".
-- "rose-alert" should go to a story where applies_to_me is true — the stamp
-  lands. If multiple qualify, pick the most actionable. If none qualify,
-  assign rose-alert to the most urgent/actionable anyway.
-- "terminal" should go to a dev-tools / CLI / systems story when possible.
-- "academic" should go to the most research- or science-flavored pick.
-- "big-stat" should go to a story with a meaningful number to pull out
-  (benchmark, %, count, dollars, years). Provide that number in `stat_value`
-  and a short `stat_label`.
-- "pullquote" should go to a story where one sentence from the headline or
-  blurb hits hard — provide `pullquote` text (<= 14 words).
-- The remaining styles fill in naturally.
+Palette (18):
+  hero, midnight, rose-alert, terminal, academic, big-stat, newsprint,
+  neon, zine, pullquote, grid, manifesto, polaroid, ticker, blueprint,
+  risograph, index-card, postcard
+
+Casting rules:
+- Position 1 (cover / lead): ALWAYS "hero".
+- "rose-alert" → an applies_to_me: true story where the stamp lands. If none
+  qualify, skip rose-alert entirely (use a different style for position 2+).
+- "terminal" → dev tools, CLI, systems, languages, build chains.
+- "academic" → research, science journalism, proofs, long-form empirical.
+- "big-stat" → a story with a meaningful number (benchmark %, count, dollars,
+  years). Provide it in `stat_value` + short `stat_label`.
+- "pullquote" → a story whose title or a line from its blurb hits hard as a
+  standalone sentence. Provide `pullquote` text (≤ 14 words).
+- "manifesto" → a strong opinion / declarative piece (industry critique,
+  philosophical stance). Provide `pullquote` with the declaration.
+- "grid" → dense information-design, data-heavy, editorial minimalism.
+- "polaroid" → visual / photography / portfolio / design showcase / craft.
+- "ticker" → urgent breaking news, time-sensitive shipping announcement.
+- "blueprint" → systems architecture, infra deep-dive, engineered protocol.
+- "risograph" → creative software, generative art, print/typography craft.
+- "index-card" → short curiosity, research note, neat empirical finding.
+- "postcard" → travel-adjacent, field report, cultural / place-based story.
+- "midnight", "newsprint", "neon", "zine" → flexible fillers; assign by vibe.
+
+Pick 10 styles total. Never repeat a style within an issue.
 
 OUTPUT: strict JSON, no prose, no code fences. Schema:
 {
@@ -274,11 +300,16 @@ def _validate(data: dict) -> None:
         raise ValueError("missing picks[]")
     if len(data["picks"]) != 10:
         raise ValueError(f"expected 10 picks, got {len(data['picks'])}")
-    used_styles = {p.get("spread_style") for p in data["picks"]}
-    missing = set(SPREAD_STYLES) - used_styles
-    # Non-fatal — we'll repair in render — but log.
-    if missing:
-        log.warning("missing spread styles (will repair): %s", missing)
+    # With an 18-style palette and 10 picks, most styles are unused each issue
+    # (that's the point — rotation creates variance). But we still flag any
+    # duplicates or unknown styles so render.py can repair them.
+    used = [p.get("spread_style") for p in data["picks"]]
+    dupes = sorted({s for s in used if used.count(s) > 1})
+    if dupes:
+        log.warning("duplicate spread styles (will repair): %s", dupes)
+    unknown = sorted({s for s in used if s and s not in SPREAD_STYLES})
+    if unknown:
+        log.warning("unknown spread styles (will repair): %s", unknown)
 
 
 # --------------------------------------------------------------------------
@@ -366,7 +397,7 @@ def _curate_heuristic(stories: list[dict]) -> dict:
         }
         picks.append(pick)
     return {
-        "issue_tagline": "Hand-picked from the front page while you slept.",
+        "issue_tagline": "Hand-picked across eleven sources while you slept.",
         "picks": picks,
     }
 
