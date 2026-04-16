@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; THURSDAY, APRIL 16, 2026</title>
-<meta name="description" content="Agents ship, diagrams render, trust gets measured">
+<meta name="description" content="Agents ship, costs bite, craft persists">
 <meta property="og:title" content="Morning Edition · THURSDAY, APRIL 16, 2026">
-<meta property="og:description" content="Agents ship, diagrams render, trust gets measured">
+<meta property="og:description" content="Agents ship, costs bite, craft persists">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -539,10 +539,10 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AGENTIC DESIGN</div>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AGENTIC UX</div>
       <h2 class="cover-title">One developer, two dozen agents, zero alignment</h2>
-      <p class="cover-tagline">Agents ship, diagrams render, trust gets measured</p>
-      <p class="body-lead body-lead--wide">Maggie Appleton&#x27;s essay argues that multi-agent systems have a fundamental UX problem: agents optimize locally with no shared mental model of the broader task. For a designer thinking about agentic workflows, this is the conceptual frame you didn&#x27;t know you needed before building anything.</p>
+      <p class="cover-tagline">Agents ship, costs bite, craft persists</p>
+      <p class="body-lead body-lead--wide">Maggie Appleton&#x27;s piece on the coordination chaos when one developer orchestrates many AI agents is exactly the UX problem nobody is designing for yet. This is a rare sidebar find that bridges interface thinking with agentic workflow architecture — the framing alone is worth the read.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
         <a class="read-more" href="https://maggieappleton.com/zero-alignment" target="_blank" rel="noopener">Open the lead &rarr;</a>
         
@@ -557,36 +557,33 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">AI TOOLING</div>
+    <div class="kicker">DEV TOOLS</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
     <h2>AgentSeal/codeburn — See where your AI coding tokens go. Interactive TUI dashboard for Claude Code, Codex, and Cursor cost observability.</h2>
-    <p class="body-lead">Token spend across Claude Code, Codex, and Cursor in a single TUI — finally, cost observability that doesn&#x27;t require parsing billing dashboards. If you&#x27;re using multiple AI coding assistants, this turns opaque API spend into something you can actually reason about.</p>
+    <p class="body-lead">If you&#x27;re running Claude Code or Cursor daily, you have no idea where your tokens are actually going — until now. Codeburn is an interactive TUI that surfaces cost by session, file, and task across the three main AI coding tools.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Clone the repo and run it against your existing Claude Code / Cursor sessions today to see where tokens are actually going.</p>
+    <p class="apply-note">&rarr; Clone the repo and point it at your Claude Code or Cursor session logs to see today&#x27;s spend broken down by project.</p>
     <div style="margin-top:28px"><a class="read-more" href="https://github.com/AgentSeal/codeburn" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #      #  
-#   #   ####  
-#   #      #  
-#####  #####  </div>
-    <div class="kicker">INFORMATION DESIGN</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
-    <h2>yizhiyanhua-ai/fireworks-tech-graph — Claude Code skill for generating production-quality SVG+PNG technical diagrams. Supports 8 diagram types, 5 visual styles, and deep AI/Agent domain knowledge.</h2>
-    <p class="body-lead">&gt; A Claude Code skill that outputs production-grade SVG and PNG technical diagrams across eight types — sequence, architecture, flowchart, and more. For a UX designer who also thinks in systems, this bridges diagramming and AI-assisted documentation in one installable skill.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/yizhiyanhua-ai/fireworks-tech-graph" target="_blank" rel="noopener">$ open &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Install as a Claude Code skill and point it at your next architecture or agentic-workflow diagram to get a clean SVG out immediately.</p>
+<section class="spread s-stat">
+  <div class="top">
+    <div class="chip">No. 03 &middot; SECURITY</div>
+    <span class="tag-applies">Applies to you</span>
+  </div>
+  <div class="stat-wrap">
+    <div class="stat-value" aria-hidden="true">€54k</div>
+    <div class="stat-label">billing spike in 13 hours from one exposed key</div>
+  </div>
+  <div>
+    <h2>€54k spike in 13h from unrestricted Firebase browser key accessing Gemini APIs</h2>
+    <p class="body-lead">A developer shipped a Firebase browser key with no API restrictions and woke up to a €54k bill after bots found it within hours. The threat model for AI API keys is fundamentally different from traditional web keys — exposure is instant and costs are unbounded.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://discuss.ai.google.dev/t/unexpected-54k-billing-spike-in-13-hours-firebase-browser-key-without-api-restrictions-used-for-gemini-requests/140262" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    <p class="apply-note">&rarr; Audit every project where you&#x27;ve hardcoded an AI API key client-side and add restrictions in the Firebase console or equivalent today.</p>
     
   </div>
 </section>
@@ -597,12 +594,12 @@ a{color:inherit;text-underline-offset:4px}
     <div class="big-num" aria-hidden="true">No. 04</div>
     <div class="kicker">AI SHIPPING</div>
     <h2>The next evolution of the Agents SDK</h2>
-    <p class="body-lead">OpenAI&#x27;s Agents SDK now includes native sandbox execution and a model-native harness for secure, long-running agents with file and tool access. This is the plumbing layer that agentic UX will be built on — worth reading before you design any agent-facing interface.</p>
+    <p class="body-lead">OpenAI&#x27;s Agents SDK now includes native sandbox execution and a model-native harness for long-running agents that need to operate across files and tools securely. This is the infrastructure layer that makes multi-step agentic workflows actually deployable rather than demo-ware.</p>
     <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
       <a class="read-more" href="https://openai.com/index/the-next-evolution-of-the-agents-sdk" target="_blank" rel="noopener">Over the wire &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Pull the updated SDK and test the sandbox execution feature if you&#x27;re prototyping any agentic tool flows this week.</p>
+    <p class="apply-note">&rarr; Pull the updated Agents SDK and try the sandbox execution feature on a file-manipulation agent you&#x27;ve been prototyping.</p>
     
   </div>
   <div class="bar"><span class="bar-inner">Filed THURSDAY, APRIL 16, 2026</span></div>
@@ -617,54 +614,49 @@ a{color:inherit;text-underline-offset:4px}
       <div class="photo-caption">No. 05 &middot; font-stealer.vercel.app</div>
     </div>
     <div>
-      <p class="body-lead">Paste a URL, get an instant breakdown of every font in use — family, weight, size, line-height. For a UX designer doing competitive research or auditing a design system, this is the kind of frictionless utility that replaces five minutes of DevTools spelunking.</p>
+      <p class="body-lead">Paste any URL and this tool instantly extracts and identifies every font in use on the page — weights, sizes, the works. A genuine daily-use utility for any UX designer reverse-engineering a visual system or auditing type consistency.</p>
       <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
         <a class="read-more" href="https://font-stealer.vercel.app/" target="_blank" rel="noopener">Read the story &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Open it now and drop in any site you&#x27;re referencing or auditing — results are instant.</p>
+      <p class="apply-note">&rarr; Open font-stealer.vercel.app and drop in a competitor&#x27;s URL or your own product to audit what&#x27;s actually rendering.</p>
       
     </div>
   </div>
 </section>
 
-<section class="spread s-stat">
-  <div class="top">
-    <div class="chip">No. 06 &middot; SECURITY</div>
+<section class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">06</div>
+  <div class="content">
+    <div class="kicker">PRIVACY + AI</div>
+    <h2>Darkbloom – Private inference on idle Macs</h2>
+    <p class="body-lead">Darkbloom turns idle Macs into a private inference network — local LLM inference with no data leaving your hardware. For a UX designer working with sensitive client work, this is the most interesting privacy-preserving AI compute story in a while.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://darkbloom.dev" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Visit darkbloom.dev and sign up for early access if you have a Mac sitting idle on your desk or at home.</p>
     
   </div>
-  <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">€54k</div>
-    <div class="stat-label">billed in 13 hours from one exposed API key</div>
-  </div>
-  <div>
-    <h2>€54k spike in 13h from unrestricted Firebase browser key accessing Gemini APIs</h2>
-    <p class="body-lead">An unrestricted Firebase browser key exposed to the public triggered €54k in Gemini API charges in under 13 hours. If you&#x27;re building anything that touches an LLM API on the client side, this is a concrete, expensive reminder of what &#x27;API key hygiene&#x27; actually means.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://discuss.ai.google.dev/t/unexpected-54k-billing-spike-in-13-hours-firebase-browser-key-without-api-restrictions-used-for-gemini-requests/140262" target="_blank" rel="noopener">Read the story &rarr;</a></div>
-    
-    
-  </div>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
 </section>
 
-<section class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">07</div>
-    <div>
-      <div class="kicker">UX / ACCESSIBILITY</div>
-      <h2>Playwright accessibility testing</h2>
+<section class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">INTERFACE DESIGN</div>
+    <div class="tiny-num" aria-hidden="true">07</div>
+  </div>
+  <h2>Snarky UI is a personality substitute for genuine design empathy<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Thoughtbot examines the creeping pattern of UIs that respond to users with sarcasm, passive aggression, or dark humor — and why it&#x27;s a design failure dressed up as personality. A sharp read on tone, trust, and what emotional design actually costs.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; thoughtbot.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://thoughtbot.com/blog/the-age-of-snarky-ui" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
     </div>
+    
+    
   </div>
-  <div class="cols">
-    <p>Automated tools like Axe and Lighthouse miss 60–70% of WCAG violations — this piece explains the gap and shows how to write smarter</p>
-    <p>Playwright tests that catch what automated scanners can&#x27;t. A UX designer who cares about shipping accessible work needs this framing.</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://www.davidmello.com/software-testing/test-automation/playwright-accessibility-testing-axe-lighthouse-limitations" target="_blank" rel="noopener">Full dispatch &rarr;</a>
-    <span class="tag-applies">Applies to you</span>
-  </div>
-  <p class="apply-note">&rarr; Use the Playwright patterns in the article to add a coverage layer to your next accessibility audit pass.</p>
-  
 </section>
 
 <section class="spread s-academic">
@@ -675,7 +667,7 @@ a{color:inherit;text-underline-offset:4px}
   <div>
     <div class="kicker">WEIRD SCIENCE</div>
     <h2>The AI Revolution in Math Has Arrived</h2>
-    <div class="body-lead">Quanta&#x27;s editorial-grade account of AI systems now proving genuinely novel mathematical results at pace — not just verifying existing proofs. The implications for how LLMs are reasoning (or approximating reasoning) are relevant to anyone building AI-assisted tools.</div>
+    <div class="body-lead">Quanta&#x27;s editorial-grade piece on AI now proving novel mathematical results at pace — not assisting humans but generating proofs independently. The implications for what &#x27;reasoning&#x27; means in LLMs are more concrete here than in most AI discourse.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
       <a class="read-more" href="https://www.quantamagazine.org/the-ai-revolution-in-math-has-arrived-20260413/" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
@@ -687,45 +679,41 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">AI + TRUST</div>
-    <div class="tiny-num" aria-hidden="true">09</div>
-  </div>
-  <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">Humans expect rationality from LLMs — and they&#x27;re wrong to.</p>
-    <div class="attrib">&mdash; schneier.com</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Schneier points to research showing humans consistently expect rationality and cooperation from LLM opponents in strategic games — often to their own detriment. For a UX designer shaping how people perceive and interact with AI agents, this is the behavioral foundation the design has to work against.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/04/human-trust-of-ai-agents.html" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
+<section class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.09</span>
+      <span>DAVIDMELLO.COM</span>
+      <span>SHEET 9/10</span>
     </div>
-    
+    <div class="kicker">ACCESSIBILITY</div>
+    <h2>Playwright accessibility testing</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">09</div>
+      <p class="body-lead">Axe and Lighthouse miss 60–70% of WCAG violations — that number should embarrass anyone relying solely on automated a11y tooling. This field report breaks down exactly where automated tools fail and how to write Playwright tests that actually catch what matters.</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.davidmello.com/software-testing/test-automation/playwright-accessibility-testing-axe-lighthouse-limitations" target="_blank" rel="noopener">View schematic &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Read the limitations table, then add one manual Playwright a11y assertion to a form or modal in your current project.</p>
     
   </div>
 </section>
 
-<section class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.10</span>
-      <span>PRODUCTHUNT.COM</span>
-      <span>SHEET 10/10</span>
+<section class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 10</span>
+    <span>RESEARCH NOTE</span>
+  </div>
+  <div class="ix-body">
+    <h2>AI Assistance Reduces Persistence and Hurts Independent Performance</h2>
+    <p class="body-lead">A controlled study finds that AI assistance makes people give up faster on hard problems and perform worse when the AI is removed. The dependency effect is measurable and fast-forming — an uncomfortable data point for anyone designing AI-augmented workflows.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://arxiv.org/pdf/2604.04721" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      
     </div>
-    <div class="kicker">DESIGN SYSTEMS</div>
-    <h2>Chinilla</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">10</div>
-      <p class="body-lead">Chinilla lets you design a system, simulate it, and watch where it breaks — an interactive stress-testing layer on top of design tokens and component rules. The &#x27;simulate and break&#x27; framing is a genuinely different approach to design system QA that&#x27;s worth poking at.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.producthunt.com/products/chinilla" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Open the Product Hunt page, find the live demo or beta link, and throw your current design system tokens at it.</p>
+    
     
   </div>
 </section>
@@ -737,7 +725,7 @@ a{color:inherit;text-underline-offset:4px}
   <p>Ten stories, hand-curated across eleven sources before you were awake.
   6 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-04-16 13:33 UTC.</p>
+  at 2026-04-16 13:58 UTC.</p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0471 &middot; THURSDAY, APRIL 16, 2026</p>
 </section>
 
