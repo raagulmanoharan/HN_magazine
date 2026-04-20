@@ -27,15 +27,59 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from curate import curate                       # noqa: E402
-from fetch_sources import fetch_all             # noqa: E402
+from fetch_sources import fetch_all, _normalize_url  # noqa: E402
 from render import fmt_date, render_magazine    # noqa: E402
 import notify                                    # noqa: E402
 
 ROOT = HERE.parent
 MAGAZINES_DIR = ROOT / "magazines"
 INDEX_PATH = ROOT / "index.html"
+PUBLISHED_MANIFEST = MAGAZINES_DIR / ".published-urls.json"
+
+# Don't let a story reappear within this many days of its last publish.
+DEDUP_WINDOW_DAYS = 14
+# Drop manifest entries older than this so the file doesn't grow forever.
+MANIFEST_RETENTION_DAYS = 60
+# If dedup filtering would leave fewer than this many candidates, skip the
+# filter — better to risk a repeat than to starve the curator.
+MIN_CANDIDATES_AFTER_DEDUP = 25
 
 log = logging.getLogger("build")
+
+
+# --------------------------------------------------------------------------
+# Cross-issue deduplication
+# --------------------------------------------------------------------------
+def _load_manifest() -> dict[str, str]:
+    """Returns {normalized_url: "YYYY-MM-DD"} of previously-published picks."""
+    try:
+        return json.loads(PUBLISHED_MANIFEST.read_text())
+    except (FileNotFoundError, ValueError):
+        return {}
+
+
+def _save_manifest(manifest: dict[str, str], today: dt.date) -> None:
+    cutoff = today - dt.timedelta(days=MANIFEST_RETENTION_DAYS)
+    pruned = {}
+    for url, date_str in manifest.items():
+        try:
+            if dt.date.fromisoformat(date_str) >= cutoff:
+                pruned[url] = date_str
+        except ValueError:
+            continue
+    PUBLISHED_MANIFEST.write_text(json.dumps(pruned, indent=2, sort_keys=True))
+
+
+def _recent_urls(manifest: dict[str, str], today: dt.date) -> set[str]:
+    cutoff = today - dt.timedelta(days=DEDUP_WINDOW_DAYS)
+    out = set()
+    for url, date_str in manifest.items():
+        try:
+            if dt.date.fromisoformat(date_str) >= cutoff:
+                out.add(url)
+        except ValueError:
+            continue
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -143,6 +187,20 @@ def build(date: dt.date, public_base_url: str | None = None, notify_enabled: boo
     stories = fetch_all(enabled=enabled, top_k=60)
     log.info("fetched %d candidates", len(stories))
 
+    # Cross-issue dedup: drop anything we ran in the last DEDUP_WINDOW_DAYS.
+    manifest = _load_manifest()
+    recent = _recent_urls(manifest, date)
+    if recent:
+        before = len(stories)
+        filtered = [s for s in stories if _normalize_url(s.get("url", "")) not in recent]
+        if len(filtered) >= MIN_CANDIDATES_AFTER_DEDUP:
+            log.info("dedup: dropped %d already-published stories (%d → %d)",
+                     before - len(filtered), before, len(filtered))
+            stories = filtered
+        else:
+            log.warning("dedup: would leave only %d candidates; skipping filter",
+                        len(filtered))
+
     log.info("curating ...")
     curation = curate(stories)
 
@@ -157,6 +215,15 @@ def build(date: dt.date, public_base_url: str | None = None, notify_enabled: boo
     out_path = MAGAZINES_DIR / f"{date.isoformat()}.html"
     out_path.write_text(html_out, encoding="utf-8")
     log.info("wrote %s (%d bytes)", out_path, len(html_out))
+
+    # Record today's picks in the published-URLs manifest.
+    today_iso = date.isoformat()
+    for pick in curation.get("picks", []):
+        key = _normalize_url(pick.get("url", ""))
+        if key and key not in manifest:
+            manifest[key] = today_iso
+    _save_manifest(manifest, date)
+    log.info("manifest: %d urls tracked", len(manifest))
 
     # Landing page
     INDEX_PATH.write_text(render_index(_issue_list()), encoding="utf-8")
