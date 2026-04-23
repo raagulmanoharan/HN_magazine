@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; THURSDAY, APRIL 23, 2026</title>
-<meta name="description" content="Agents ship, privacy cracks, craft holds">
+<meta name="description" content="Dark modes, dithering, bugs cops exploited, and more">
 <meta property="og:title" content="Morning Edition · THURSDAY, APRIL 23, 2026">
-<meta property="og:description" content="Agents ship, privacy cracks, craft holds">
+<meta property="og:description" content="Dark modes, dithering, bugs cops exploited, and more">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -539,15 +539,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AI SHIPPING</div>
-      <h2 class="cover-title">Introducing workspace agents in ChatGPT</h2>
-      <p class="cover-tagline">Agents ship, privacy cracks, craft holds</p>
-      <p class="body-lead body-lead--wide">Codex-powered agents that run in the cloud, connect to your tools, and automate multi-step workflows — this is agentic AI moving from demo to deployed product. For a UX designer building or evaluating AI-assisted workflows, the architecture here is worth dissecting before your team asks you to design around it.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; PRIVACY &amp; SECURITY</div>
+      <h2 class="cover-title">Apple fixes bug that cops used to extract deleted chat messages from iPhones</h2>
+      <p class="cover-tagline">Dark modes, dithering, bugs cops exploited, and more</p>
+      <p class="body-lead body-lead--wide">A quietly patched iOS bug allowed forensic tools to recover messages users had explicitly deleted — the kind of gap that makes device trust claims hollow. For anyone designing around privacy expectations or advising clients on data hygiene, this is the concrete case study. Update your devices now.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://openai.com/index/introducing-workspace-agents-in-chatgpt" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://techcrunch.com/2026/04/22/apple-fixes-bug-that-cops-used-to-extract-deleted-chat-messages-from-iphones/" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Open the workspace agents setup guide today and sketch how it maps to a repeatable task in your current project workflow.</p>
+      <p class="apply-note">&rarr; Install the latest iOS update today; this patch is already shipping.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -555,130 +555,71 @@ a{color:inherit;text-underline-offset:4px}
 </section>
 
 <section class="spread s-rose">
-  <div class="stamp">Applies<br>to&nbsp;you</div>
+  
   <div>
-    <div class="kicker">PRIVACY + AI</div>
+    <div class="kicker">SURVEILLANCE RESISTANCE</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Introducing OpenAI Privacy Filter</h2>
-    <p class="body-lead">An open-weight model for detecting and redacting PII with state-of-the-art accuracy — this is a directly deployable privacy primitive, not a policy statement. If you&#x27;re building any AI pipeline that touches user-generated content, this belongs in your stack evaluation today.</p>
+    <h2>Surveillance vendors caught abusing access to telcos to track people&#x27;s locations</h2>
+    <p class="body-lead">Commercial surveillance vendors are reportedly exploiting legitimate telco access channels to geolocate targets without carrier knowledge — a systemic abuse, not a one-off. Pairs grimly with the Apple story above. The infrastructure you assume is neutral isn&#x27;t.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Pull the model from Hugging Face and run it against a sample of your own data today to benchmark redaction quality.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://openai.com/index/introducing-openai-privacy-filter" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    
+    <div style="margin-top:28px"><a class="read-more" href="https://techcrunch.com/2026/04/23/surveillance-vendors-caught-abusing-access-to-telcos-to-track-peoples-phone-locations-researchers-say/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">03</div>
-  <div class="content">
-    <div class="kicker">SECURITY</div>
-    <h2>FBI Extracts Deleted Signal Messages from iPhone Notification Database</h2>
-    <p class="body-lead">Push notification payloads persist in iOS&#x27;s notification database even after an app is deleted — a forensic vector the FBI has actively exploited. Schneier&#x27;s analysis cuts past the headline to explain exactly which threat model this breaks and what users who actually care about operational security need to know.</p>
-    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/04/fbi-extracts-deleted-signal-messages-from-iphone-notification-database.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+<section class="spread s-grid">
+  <div class="grid-top">
+    <div class="tag">INTERFACE CRAFT</div>
+    <div class="num-corner">No. 03</div>
+  </div>
+  <div class="grid-body">
+    <h2>Six levels of dark mode</h2>
+    <div class="side">
+      <p class="body-lead">A taxonomy of dark mode implementations from bare HTML to JS-driven theming — each level trading simplicity for control. As a UX designer who ships dark mode decisions, having a framework for what&#x27;s actually happening under the hood (vs. what users experience) is genuinely useful.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://cssence.com/2024/six-levels-of-dark-mode/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
+      </div>
+      <p class="apply-note">&rarr; Use the level breakdown as a decision framework on your next dark-mode design ticket.</p>
       
     </div>
-    
-    
-  </div>
-  <div class="footer-slug">Morning Edition &middot; After Dark</div>
-</section>
-
-<section class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.04</span>
-      <span>OPENAI.COM</span>
-      <span>SHEET 4/10</span>
-    </div>
-    <div class="kicker">AGENTIC TOOLING</div>
-    <h2>Speeding up agentic workflows with WebSockets in the Responses API</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">04</div>
-      <p class="body-lead">A deep-dive into the Codex agent loop showing how persistent WebSocket connections and connection-scoped caching cut API overhead and latency in multi-step agentic runs. The architectural decisions here are directly applicable to anyone designing or building LLM-backed workflow systems.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://openai.com/index/speeding-up-agentic-workflows-with-websockets" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; If you&#x27;re experimenting with the Responses API, swap your HTTP polling for a WebSocket connection today using the patterns described.</p>
-    
   </div>
 </section>
 
-<section class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">05</div>
+<section class="spread s-polaroid">
+  <div class="kicker">INFORMATION DESIGN</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">Your hex editor should color-code bytes</div>
+      <div class="photo-caption">No. 04 &middot; simonomi.dev</div>
+    </div>
     <div>
-      <div class="kicker">PRIVACY RESEARCH</div>
-      <h2>We Found a Stable Firefox Identifier Linking All Your Private Tor Identities</h2>
-    </div>
-  </div>
-  <div class="cols">
-    <p>A persistent IndexedDB-based identifier survives Tor Browser&#x27;s identity isolation, linking separate browsing sessions that should be cryptographically unlinkable.</p>
-    <p>The attack surface here sits squarely in browser storage APIs — relevant to any designer or developer reasoning about user privacy guarantees in web products.</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://fingerprint.com/blog/firefox-tor-indexeddb-privacy-vulnerability/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
-    
-  </div>
-  
-  
-</section>
-
-<section class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">LLM EVALS</div>
-    <div class="tiny-num" aria-hidden="true">06</div>
-  </div>
-  <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">Over-editing: a model modifying code beyond what is necessary.</p>
-    <div class="attrib">&mdash; nrehiew.github.io</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">A named failure mode: models that rewrite more than they need to, breaking working code in the process of &#x27;helping.&#x27; This is a crisp empirical observation with direct implications for anyone evaluating or prompting code-gen tools — and it has 216 comments worth of practitioner experience attached.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://nrehiew.github.io/blog/minimal_editing/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <p class="body-lead">A compelling argument — backed by prototypes — that semantic color assignment to byte classes (nulls, ASCII, high bytes) transforms a wall of hex into scannable structure. Pure information-design thinking applied to a tool that hasn&#x27;t changed visually in decades.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://simonomi.dev/blog/color-code-your-bytes/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
       
     </div>
-    
-    
-  </div>
-</section>
-
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">AI + UX DESIGN</div>
-    <div class="tiny-num" aria-hidden="true">07</div>
-  </div>
-  <h2>Headless services are quicker and more dependable for personal AIs than GUI bots.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">The argument: personal AI agents should interface with headless APIs rather than GUI automation, because bot-controlled mouse clicks are fragile and slow. This reframes a core UX question — where the AI/human boundary sits — in a way that should inform how you design systems that include AI actors.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; interconnected.org</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://interconnected.org/home/2026/04/18/headless" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
   </div>
 </section>
 
 <section class="spread s-riso">
   <div class="layout">
     <div class="kicker">GENERATIVE CRAFT</div>
-    <div class="riso-num" data-n="08" aria-hidden="true">08</div>
-    <h2>GPT image gen prompting guide</h2>
-    <p class="body-lead">Official prompting patterns for gpt-image-2 drawn from real production use cases — portraits, UI mockups, posters. For a designer already using or evaluating AI image generation in design workflows, this is the reference doc that actually ships with worked examples rather than platitudes.</p>
+    <div class="riso-num" data-n="05" aria-hidden="true">05</div>
+    <h2>Single-pass palette refinement and ordered dithering</h2>
+    <p class="body-lead">A deep technical walkthrough of combining online k-means palette quantization with Bayer-matrix dithering in a single image pass — the kind of algorithm underpinning every retro-aesthetic generative art tool. If you&#x27;re using or designing around image generation pipelines, this is the math behind the look.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide" target="_blank" rel="noopener">Pull a proof &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
+      <a class="read-more" href="https://30fps.net/pages/bayer-order-online-kmeans/" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      
     </div>
-    <p class="apply-note">&rarr; Run the UI mockup prompting examples against a current design brief today and compare output quality to your existing workflow.</p>
+    
     
   </div>
 </section>
@@ -687,19 +628,75 @@ a{color:inherit;text-underline-offset:4px}
   <div class="window">
     <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
     <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #   #  
+#   #  #      
 #   #  #####  
-#   #      #  
+#   #  #   #  
 #####  #####  </div>
-    <div class="kicker">OPEN WEIGHTS</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
-    <h2>Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model</h2>
-    <p class="body-lead">&gt; Simon Willison cuts through the benchmark marketing: Qwen3.6-27B claims flagship-level agentic coding performance at a size that can actually run locally. If you&#x27;re maintaining a local LLM setup for privacy-sensitive work, this is the release to benchmark against your current stack.</p>
+    <div class="kicker">DEV TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
+    <h2>Show HN: Honker – Postgres NOTIFY/LISTEN Semantics for SQLite</h2>
+    <p class="body-lead">&gt; Brings Postgres&#x27;s real-time pub/sub NOTIFY/LISTEN pattern to SQLite, which is increasingly the database of local-first and self-hosted apps. If you&#x27;re prototyping reactive interfaces backed by SQLite, this fills a genuine gap without a network dependency.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/Apr/22/qwen36-27b/#atom-everything" target="_blank" rel="noopener">$ open &rarr;</a>
+      <a class="read-more" href="https://github.com/russellromney/honker" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Pull the model via Ollama or llama.cpp today and run your standard coding eval prompts against it.</p>
+    <p class="apply-note">&rarr; Clone and run the demo; drop it into any local-first project needing reactive data today.</p>
+    
+  </div>
+</section>
+
+<section class="spread s-pullquote">
+  <div class="top">
+    <div class="kicker" style="color:#d9b26a">AI CULTURE</div>
+    <div class="tiny-num" aria-hidden="true">07</div>
+  </div>
+  <div>
+    <span class="quote-open" aria-hidden="true">&ldquo;</span>
+    <p class="pq">I don&#x27;t want a screenshot of your Claude conversation.</p>
+    <div class="attrib">&mdash; daverupert.com</div>
+  </div>
+  <div>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Dave Rupert articulates the rising fatigue with screenshot-as-argument in design and dev discourse — when a Claude response becomes the citation, something about craft and accountability erodes. Relevant friction for a UX designer navigating AI-saturated team communication.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://daverupert.com/2026/04/claude-no/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; AI SHIPPING &middot; Morning Edition</span></div>
+  <div class="core">
+    <div class="big-num" aria-hidden="true">No. 08</div>
+    <div class="kicker">AI SHIPPING</div>
+    <h2>Making ChatGPT better for clinicians</h2>
+    <p class="body-lead">OpenAI is making ChatGPT free for verified U.S. clinicians — a vertical-specific deployment with documentation and research workflows baked in. The UX pattern here (role-verified access tiers, domain-tuned affordances) is worth studying as a design case for agentic professional tools.</p>
+    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://openai.com/index/making-chatgpt-better-for-clinicians" target="_blank" rel="noopener">Over the wire &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+  <div class="bar"><span class="bar-inner">Filed THURSDAY, APRIL 23, 2026</span></div>
+</section>
+
+<section class="spread s-stat">
+  <div class="top">
+    <div class="chip">No. 09 &middot; GENERATIVE IMAGE TOOLS</div>
+    <span class="tag-applies">Applies to you</span>
+  </div>
+  <div class="stat-wrap">
+    <div class="stat-value" aria-hidden="true">2,455</div>
+    <div class="stat-label">stars in under a week</div>
+  </div>
+  <div>
+    <h2>EvoLinkAI/awesome-gpt-image-2-prompts — Curated GPT-Image-2 prompts for the OpenAI API: image examples across portraits, posters, UI mockups, character sheets, and community experiments.</h2>
+    <p class="body-lead">A community-curated prompt library for GPT-Image-2 covering UI mockups, posters, and character sheets — the UI mockup category is directly useful for a UX designer exploring generative image tooling in workflows. 2,455 stars in days signals real practitioner uptake.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    <p class="apply-note">&rarr; Browse the UI mockup prompts section and test one against your current project brief today.</p>
     
   </div>
 </section>
@@ -711,10 +708,10 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div>
     <div class="kicker">WEIRD SCIENCE</div>
-    <h2>A Powerful New &#x27;QR Code&#x27; Untangles Math&#x27;s Knottiest Knots</h2>
-    <div class="body-lead">Researchers have found a new mathematical invariant — a kind of topological fingerprint — that can distinguish complex knots that previously looked identical to every known tool. Quanta&#x27;s reporting is editorial-grade; the knot-theory angle has quiet resonance for anyone thinking about information encoding and visual identity.</div>
+    <h2>A Renaissance gambling dispute spawned probability theory</h2>
+    <div class="body-lead">How an unresolved 16th-century card game argument between Cardano and others forced the formalization of expected value and combinatorics. A clean origin story for the math underlying every A/B test and probabilistic model a UX researcher uses today.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.quantamagazine.org/a-powerful-new-qr-code-untangles-maths-knottiest-knots-20260422/" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      <a class="read-more" href="https://www.scientificamerican.com/article/how-a-renaissance-gambling-dispute-spawned-probability-theory/" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
@@ -729,9 +726,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across eleven sources before you were awake.
-  5 of them are flagged as directly applicable &mdash; open those first.</p>
+  4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-04-23 11:58 UTC.</p>
+  at 2026-04-23 13:56 UTC.</p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0478 &middot; THURSDAY, APRIL 23, 2026</p>
 </section>
 
