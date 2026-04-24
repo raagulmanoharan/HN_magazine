@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; FRIDAY, APRIL 24, 2026</title>
-<meta name="description" content="Supply chains burn, models ship, craft holds">
+<meta name="description" content="New models ship, security leaks, tools you can use">
 <meta property="og:title" content="Morning Edition · FRIDAY, APRIL 24, 2026">
-<meta property="og:description" content="Supply chains burn, models ship, craft holds">
+<meta property="og:description" content="New models ship, security leaks, tools you can use">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -539,15 +539,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AI TOOLING</div>
-      <h2 class="cover-title">An update on recent Claude Code quality reports</h2>
-      <p class="cover-tagline">Supply chains burn, models ship, craft holds</p>
-      <p class="body-lead body-lead--wide">Anthropic&#x27;s engineering postmortem confirming that two months of Claude Code degradation were real — caused by a system-prompt infrastructure issue, not the model weights. Rare transparency from a lab about a quality regression that affected agentic workflows at scale. If you use Claude Code daily, this explains a lot.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AI SHIPPING</div>
+      <h2 class="cover-title">DeepSeek V4 - almost on the frontier, a fraction of the price</h2>
+      <p class="cover-tagline">New models ship, security leaks, tools you can use</p>
+      <p class="body-lead body-lead--wide">Simon Willison&#x27;s hands-on breakdown of DeepSeek-V4-Pro and V4-Flash: frontier-adjacent performance at a cost that undercuts the established players again. If you&#x27;re choosing a backend for agentic workflows or eval pipelines, this is the price-performance story to watch right now.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://simonwillison.net/2026/Apr/24/deepseek-v4/#atom-everything" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Read the postmortem and check your current Claude Code sessions — the fix is deployed, so now is a good time to re-evaluate workflows you may have abandoned.</p>
+      <p class="apply-note">&rarr; Swap your current LLM backend to DeepSeek-V4-Flash today for latency-sensitive or high-volume tasks and compare outputs against your existing eval suite.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -559,119 +559,72 @@ a{color:inherit;text-underline-offset:4px}
   <div class="core">
     <div class="big-num" aria-hidden="true">No. 02</div>
     <div class="kicker">AI SHIPPING</div>
-    <h2>Introducing GPT-5.5</h2>
-    <p class="body-lead">OpenAI ships GPT-5.5, positioned as their smartest model yet with improved coding, research, and multi-tool data analysis. Fresh frontier drop from the main competitor to Claude — worth benchmarking against your existing agentic workflows to see if it changes your daily stack.</p>
+    <h2>GPT-5.5 System Card</h2>
+    <p class="body-lead">OpenAI&#x27;s official system card for GPT-5.5 is the canonical read before integrating it into any production workflow. System cards have become the fastest way to understand safety trade-offs, capability ceilings, and what the model will and won&#x27;t do — essential due diligence for anyone building on top of it.</p>
     <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://openai.com/index/introducing-gpt-5-5" target="_blank" rel="noopener">Over the wire &rarr;</a>
+      <a class="read-more" href="https://openai.com/index/gpt-5-5-system-card" target="_blank" rel="noopener">Over the wire &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Hit the API or ChatGPT today and run your standard eval prompts against it — compare directly to Claude on your actual tasks, not synthetic benchmarks.</p>
+    <p class="apply-note">&rarr; Read the system card before wiring GPT-5.5 into any agentic flow; the refusal and capability sections directly inform prompt design and fallback logic.</p>
     
   </div>
   <div class="bar"><span class="bar-inner">Filed FRIDAY, APRIL 24, 2026</span></div>
 </section>
 
-<section class="spread s-rose">
-  <div class="stamp">Applies<br>to&nbsp;you</div>
-  <div>
-    <div class="kicker">SECURITY</div>
-    <div class="numeral-xl" aria-hidden="true">03</div>
-    <h2>Bitwarden CLI Compromised in Ongoing Checkmarx Supply Chain</h2>
-    <p class="body-lead">The Bitwarden CLI package was poisoned in an active npm supply-chain attack traced through Checkmarx&#x27;s ecosystem. If you have `@bitwarden/cli` anywhere in your toolchain — CI, dotfiles, shell scripts — this is an audit-now situation, not a read-later one.</p>
-  </div>
-  <div>
-    <p class="apply-note">&rarr; Run `npm ls @bitwarden/cli` and check your package-lock or yarn.lock for the affected version range; Socket&#x27;s post lists the exact bad versions.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://socket.dev/blog/bitwarden-cli-compromised" target="_blank" rel="noopener">Try it now &rarr;</a></div>
-    
-    <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
-  </div>
-</section>
-
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">DESIGN CRAFT</div>
-    <div class="tiny-num" aria-hidden="true">04</div>
-  </div>
-  <h2>Without a critical human eye, AI produces slop.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Jonny Burch argues the quality bar in AI-assisted design is entirely owned by the human reviewer — not the model. As a UX designer embedded in AI tooling, this is the live tension you navigate every day: the tool generates, you judge, and that judgment is the irreplaceable part.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; jonnyburch.com</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://jonnyburch.com/i-love-ai-but-it-still-cant-design-for-shit/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
 <section class="spread s-stat">
   <div class="top">
-    <div class="chip">No. 05 &middot; AI MODELS</div>
-    <span class="tag-applies">Applies to you</span>
+    <div class="chip">No. 03 &middot; PRIVACY &amp; SECURITY</div>
+    
   </div>
   <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">1,108</div>
-    <div class="stat-label">HN points in under 24 hrs — biggest model drop this week</div>
+    <div class="stat-value" aria-hidden="true">500,000</div>
+    <div class="stat-label">health records offered for sale</div>
   </div>
   <div>
-    <h2>DeepSeek v4</h2>
-    <p class="body-lead">DeepSeek drops V4-Pro and V4-Flash: Simon Willison&#x27;s take (also in this feed) pegs it as near-frontier quality at a fraction of GPT-5.5 pricing. The HN thread has 762 comments of hands-on evals worth mining — particularly relevant if you&#x27;re optimizing cost on agentic pipelines.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://api-docs.deepseek.com/" target="_blank" rel="noopener">Read the story &rarr;</a></div>
-    <p class="apply-note">&rarr; Pull the API docs and run a cost-per-token comparison against your current Claude/GPT spend — V4-Flash in particular may slot in for high-volume, lower-stakes tasks.</p>
+    <h2>UK Biobank leak: Health details of 500 000 people are offered for sale</h2>
+    <p class="body-lead">Half a million people&#x27;s longitudinal health records from one of the world&#x27;s most sensitive research databases are reportedly on the market. The attack surface here is the aggregation problem at scale — a reminder that consent architecture and data minimization in UX design carry real downstream stakes.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://www.bmj.com/content/393/bmj.s781" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    
     
   </div>
 </section>
 
-<section class="spread s-riso">
-  <div class="layout">
-    <div class="kicker">CLAUDE TOOLING</div>
-    <div class="riso-num" data-n="06" aria-hidden="true">06</div>
-    <h2>op7418/guizang-ppt-skill — A Claude Code Skill that turns prompts into horizontal-swipe magazine-style HTML decks — 10 layouts, 5 curated themes, WebGL hero backgrounds, single-file output.</h2>
-    <p class="body-lead">A Claude Code Skill that generates magazine-style HTML presentations — 10 layouts, WebGL hero backgrounds, single self-contained file. Directly intersects your AI tooling and design interests: it&#x27;s a prompt-to-polished-output workflow you could drop into a Claude Code session right now.</p>
+<section class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #   #  
+#   #  #   #  
+#   #  #####  
+#   #      #  
+#####      #  </div>
+    <div class="kicker">DEV TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
+    <h2>russellromney/honker</h2>
+    <p class="body-lead">&gt; Postgres NOTIFY/LISTEN semantics ported to SQLite via a Rust extension with Python bindings — meaning you can build queue-driven, event-reactive local-first apps without spinning up a full Postgres instance. The architecture is clean and the local-first angle is exactly what self-hosted workflow tooling needs.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/op7418/guizang-ppt-skill" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      <a class="read-more" href="https://simonwillison.net/2026/Apr/24/honker/#atom-everything" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Clone the repo, install as a Claude Code Skill per the README, and try prompting it with your next deck brief — single-file HTML output means zero build tooling.</p>
+    <p class="apply-note">&rarr; Install the Python bindings today and prototype a lightweight event queue for a local agentic tool without any external infra.</p>
     
   </div>
 </section>
 
-<section class="spread s-polaroid">
-  <div class="kicker">INFORMATION DESIGN</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">Show HN: How LLMs Work – Interactive visual guide based on Karpathy&#x27;s lecture</div>
-      <div class="photo-caption">No. 07 &middot; ynarwal.github.io</div>
+<section class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.05</span>
+      <span>DEEPMIND.GOOGLE</span>
+      <span>SHEET 5/10</span>
     </div>
-    <div>
-      <p class="body-lead">An interactive visual explainer of LLM internals built entirely with Claude Code from Karpathy&#x27;s lecture transcript. Doubly interesting: the subject matter is your professional infrastructure, and the making-of is a live case study in agentic content generation from a single source doc.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://ynarwal.github.io/how-llms-work/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
-      </div>
-      <p class="apply-note">&rarr; Open it now as a reference — it&#x27;s a working demo you can share with collaborators who need LLM intuition without engineering depth.</p>
-      
+    <div class="kicker">AI RESEARCH</div>
+    <h2>Decoupled DiLoCo: A new frontier for resilient, distributed AI training</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">05</div>
+      <p class="body-lead">DeepMind&#x27;s Decoupled DiLoCo lets model training span unreliable, heterogeneous compute nodes without tight synchronization — essentially making distributed training resilient to flaky infra. The architectural insight matters because it reshapes assumptions about who can train frontier-scale models.</p>
     </div>
-  </div>
-</section>
-
-<section class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">LLM TOOLING</div>
-    <div class="tiny-num" aria-hidden="true">08</div>
-  </div>
-  <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">The models themselves were not to blame — the infrastructure around them was.</p>
-    <div class="attrib">&mdash; simonwillison.net</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Simon Willison&#x27;s gloss on the Anthropic postmortem adds context worth reading separately: the system-prompt infrastructure bug, why it was hard to detect, and what it implies for how you should think about model quality regressions vs. prompt-layer issues in your own evals.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/#atom-everything" target="_blank" rel="noopener">Read the story &rarr;</a>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://deepmind.google/blog/decoupled-diloco/" target="_blank" rel="noopener">View schematic &rarr;</a>
       
     </div>
     
@@ -680,36 +633,99 @@ a{color:inherit;text-underline-offset:4px}
 </section>
 
 <section class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">09</div>
+  <div class="bg-num" aria-hidden="true">06</div>
   <div class="content">
-    <div class="kicker">SURVEILLANCE</div>
-    <h2>Hiding Bluetooth Trackers in Mail</h2>
-    <p class="body-lead">A Dutch journalist mailed a postcard with a hidden BLE tracker to a naval vessel and tracked the ship&#x27;s movements — following official government postal instructions. Schneier&#x27;s framing focuses on the physical-layer surveillance gap that no app-layer privacy tool closes.</p>
+    <div class="kicker">PRIVACY TOOLS</div>
+    <h2>masterking32/MasterHttpRelayVPN</h2>
+    <p class="body-lead">Domain-fronted HTTP/SOCKS5 proxy that tunnels through Google Apps Script with DPI evasion and HTTP/1-2 multiplexing. A trending, deployable surveillance-resistance tool — relevant if you&#x27;re building or advising on products for users in restricted-network environments.</p>
     <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/04/hiding-bluetooth-trackers-in-mail.html" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
+      <a class="read-more" href="https://github.com/masterking32/MasterHttpRelayVPN" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
     </div>
-    
+    <p class="apply-note">&rarr; Clone and self-host to test domain-fronting techniques as a practical privacy layer for users behind aggressive DPI firewalls.</p>
     
   </div>
   <div class="footer-slug">Morning Edition &middot; After Dark</div>
 </section>
 
-<section class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 10</span>
-    <span>DESIGN PRACTICE</span>
+<section class="spread s-polaroid">
+  <div class="kicker">INFORMATION DESIGN</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">Grit Garden</div>
+      <div class="photo-caption">No. 07 &middot; grit.garden</div>
+    </div>
+    <div>
+      <p class="body-lead">Every Wordle game rendered as a bouquet of flowers with a procedurally generated prose narrative of its emotional arc. A small, tight piece of data-to-metaphor translation that&#x27;s worth studying for how it maps game state to visual and textual output.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://www.grit.garden/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
+      
+    </div>
   </div>
-  <div class="ix-body">
-    <h2>Mouth Coding</h2>
-    <p class="body-lead">Brad Frost on talking websites into existence — using voice and natural language to describe UI intent and have it rendered in code. For a UX designer already living in agentic workflows, this is a practical field report on where design intent and AI code generation are actually converging.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://bradfrost.com/blog/post/mouth-coding/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+</section>
+
+<section class="spread s-grid">
+  <div class="grid-top">
+    <div class="tag">DEV TOOLS</div>
+    <div class="num-corner">No. 08</div>
+  </div>
+  <div class="grid-body">
+    <h2>What are the best developer tools built around Markdown?</h2>
+    <div class="side">
+      <p class="body-lead">Lobsters community thread surfacing tools that treat Markdown as a first-class substrate rather than a rendering target — from Obsidian-style PKM to code-execution environments. A useful survey if you&#x27;re evaluating local-first writing or documentation tooling for design-system or spec workflows.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://lobste.rs/s/g9jlyl/what_are_best_developer_tools_built" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
+      </div>
+      <p class="apply-note">&rarr; Skim the thread for one Markdown-native tool you haven&#x27;t tried and spend 20 minutes testing it against your current spec or design-doc workflow.</p>
+      
+    </div>
+  </div>
+</section>
+
+<section class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">IX</span>
+  </div>
+  <div>
+    <div class="kicker">SECURITY</div>
+    <h2>Security issues found within rust-coreutils</h2>
+    <div class="body-lead">Canonical&#x27;s post-mortem on security vulnerabilities discovered in the Rust rewrite of coreutils is an honest field report on what memory safety buys you and where it doesn&#x27;t help. The nuance — that Rust prevents certain classes of bug but doesn&#x27;t prevent logic errors — is the part worth reading.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://discourse.ubuntu.com/t/an-update-on-rust-coreutils/80773" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
+  </div>
+  <div>
+    <div class="footnote">&sect; filed under security</div>
+  </div>
+</section>
+
+<section class="spread s-newsprint">
+  <div class="masthead-bar">The Daily Ledger</div>
+  <div class="title-row">
+    <div class="badge">10</div>
+    <div>
+      <div class="kicker">AI IN THE WILD</div>
+      <h2>S. Korea police arrest man over AI image of runaway wolf that misled authorities</h2>
+    </div>
+  </div>
+  <div class="cols">
+    <p>A fabricated AI image of an escaped wolf triggered a real emergency response in South Korea before authorities realized it was synthetic.</p>
+    <p>A tight, concrete case study in how generative image plausibility now intersects with public-safety UX — specifically, what trust and verification UI needs to look like in crisis systems.</p>
+  </div>
+  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+    <a class="read-more" href="https://www.bbc.com/news/articles/c4gx1n0dl9no" target="_blank" rel="noopener">Full dispatch &rarr;</a>
     
   </div>
+  
+  
 </section>
 
 
@@ -717,9 +733,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across eleven sources before you were awake.
-  6 of them are flagged as directly applicable &mdash; open those first.</p>
+  5 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-04-24 11:55 UTC.</p>
+  at 2026-04-24 13:46 UTC.</p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0479 &middot; FRIDAY, APRIL 24, 2026</p>
 </section>
 
