@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import datetime as dt
 import html
+import random
 from typing import Any
 
 # Ordered list of spread renderers is wired up at the bottom of this file
@@ -25,6 +26,165 @@ GOOGLE_FONTS = (
     '&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700'
     '&display=swap" rel="stylesheet">'
 )
+
+# --------------------------------------------------------------------------
+# Font pairings — rotated per issue for visual variety.
+# Each pairing: (display_serif, body_sans, mono, google_families_param)
+# The google_families_param is everything between "css2?" and "&display=swap".
+# --------------------------------------------------------------------------
+FONT_PAIRINGS = [
+    {
+        "display": "Fraunces",
+        "body": "Inter",
+        "mono": "JetBrains Mono",
+        "google": (
+            "family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900"
+            "&family=Inter:wght@400;500;600;800"
+            "&family=JetBrains+Mono:wght@400;700"
+        ),
+    },
+    {
+        "display": "Playfair Display",
+        "body": "DM Sans",
+        "mono": "Fira Code",
+        "google": (
+            "family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900"
+            "&family=DM+Sans:wght@400;500;600;700"
+            "&family=Fira+Code:wght@400;700"
+        ),
+    },
+    {
+        "display": "Crimson Pro",
+        "body": "Source Sans 3",
+        "mono": "Source Code Pro",
+        "google": (
+            "family=Crimson+Pro:ital,wght@0,300;0,500;0,700;0,900;1,500;1,900"
+            "&family=Source+Sans+3:wght@400;500;600;800"
+            "&family=Source+Code+Pro:wght@400;700"
+        ),
+    },
+    {
+        "display": "Bodoni Moda",
+        "body": "Albert Sans",
+        "mono": "IBM Plex Mono",
+        "google": (
+            "family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,900"
+            "&family=Albert+Sans:wght@400;500;600;800"
+            "&family=IBM+Plex+Mono:wght@400;700"
+        ),
+    },
+    {
+        "display": "Vollkorn",
+        "body": "Fira Sans",
+        "mono": "Fira Code",
+        "google": (
+            "family=Vollkorn:ital,wght@0,400;0,700;0,900;1,400;1,900"
+            "&family=Fira+Sans:wght@400;500;600;800"
+            "&family=Fira+Code:wght@400;700"
+        ),
+    },
+    {
+        "display": "Merriweather",
+        "body": "Open Sans",
+        "mono": "Roboto Mono",
+        "google": (
+            "family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900"
+            "&family=Open+Sans:wght@400;500;600;800"
+            "&family=Roboto+Mono:wght@400;700"
+        ),
+    },
+    {
+        "display": "Bitter",
+        "body": "Karla",
+        "mono": "Space Mono",
+        "google": (
+            "family=Bitter:ital,wght@0,300;0,500;0,700;0,900;1,500;1,900"
+            "&family=Karla:wght@400;500;600;800"
+            "&family=Space+Mono:wght@400;700"
+        ),
+    },
+    {
+        "display": "Noto Serif Display",
+        "body": "Noto Sans",
+        "mono": "JetBrains Mono",
+        "google": (
+            "family=Noto+Serif+Display:ital,wght@0,300;0,500;0,700;0,900;1,500;1,900"
+            "&family=Noto+Sans:wght@400;500;600;800"
+            "&family=JetBrains+Mono:wght@400;700"
+        ),
+    },
+    {
+        "display": "Lora",
+        "body": "Raleway",
+        "mono": "Fira Code",
+        "google": (
+            "family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,700"
+            "&family=Raleway:wght@400;500;600;800"
+            "&family=Fira+Code:wght@400;700"
+        ),
+    },
+    {
+        "display": "Cormorant Garamond",
+        "body": "Work Sans",
+        "mono": "IBM Plex Mono",
+        "google": (
+            "family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400;1,700"
+            "&family=Work+Sans:wght@400;500;600;800"
+            "&family=IBM+Plex+Mono:wght@400;700"
+        ),
+    },
+    {
+        "display": "Spectral",
+        "body": "Rubik",
+        "mono": "Roboto Mono",
+        "google": (
+            "family=Spectral:ital,wght@0,300;0,500;0,700;0,800;1,500;1,800"
+            "&family=Rubik:wght@400;500;600;800"
+            "&family=Roboto+Mono:wght@400;700"
+        ),
+    },
+    {
+        "display": "EB Garamond",
+        "body": "Manrope",
+        "mono": "Source Code Pro",
+        "google": (
+            "family=EB+Garamond:ital,wght@0,400;0,500;0,700;0,800;1,400;1,800"
+            "&family=Manrope:wght@400;500;600;800"
+            "&family=Source+Code+Pro:wght@400;700"
+        ),
+    },
+]
+
+
+def _pick_fonts(today: dt.date) -> dict:
+    n = len(FONT_PAIRINGS)
+    epoch = dt.date(2025, 1, 1)
+    day_num = (today - epoch).days
+    cycle = day_num // n
+    pos = day_num % n
+    rng = random.Random(cycle)
+    order = list(range(n))
+    rng.shuffle(order)
+    return FONT_PAIRINGS[order[pos]]
+
+
+def _swap_fonts(html_str: str, fonts: dict) -> str:
+    """Replace default font names and Google Fonts link with the day's pairing."""
+    if fonts["display"] == "Fraunces":
+        return html_str
+
+    gf_link = (
+        '<link rel="preconnect" href="https://fonts.googleapis.com">'
+        '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+        f'<link href="https://fonts.googleapis.com/css2?{fonts["google"]}'
+        '&display=swap" rel="stylesheet">'
+    )
+    out = html_str.replace(GOOGLE_FONTS, gf_link)
+    out = out.replace("'Fraunces'", f"'{fonts['display']}'")
+    out = out.replace("'Inter'", f"'{fonts['body']}'")
+    out = out.replace("'JetBrains Mono'", f"'{fonts['mono']}'")
+    out = out.replace("Fraunces and Inter", f"{fonts['display']} and {fonts['body']}")
+    return out
 
 
 def esc(s: Any) -> str:
@@ -1174,9 +1334,11 @@ def render_magazine(curation: dict, today: dt.date | None = None) -> str:
     applies_count = sum(1 for p in picks if p.get("applies_to_me"))
     colophon = render_colophon(issue, applies_count)
 
+    fonts = _pick_fonts(today)
+
     title = f"Morning Edition &middot; {issue['date_display']}"
     desc = esc(issue.get("tagline") or "Hand-picked across eleven sources while you slept.")
-    return f"""<!doctype html>
+    raw = f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -1195,6 +1357,7 @@ def render_magazine(curation: dict, today: dt.date | None = None) -> str:
 </body>
 </html>
 """
+    return _swap_fonts(raw, fonts)
 
 
 if __name__ == "__main__":
