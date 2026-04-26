@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; SUNDAY, APRIL 26, 2026</title>
-<meta name="description" content="Amateur math breakthroughs, post-quantum GPG, honeypot diaries">
+<meta name="description" content="New models, craft debates, and weird science">
 <meta property="og:title" content="Morning Edition · SUNDAY, APRIL 26, 2026">
-<meta property="og:description" content="Amateur math breakthroughs, post-quantum GPG, honeypot diaries">
+<meta property="og:description" content="New models, craft debates, and weird science">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,500;0,700;0,800;1,500;1,800&family=Rubik:wght@400;500;600;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -539,15 +539,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AI + WEIRD SCIENCE</div>
-      <h2 class="cover-title">Amateur armed with ChatGPT solves an Erdős problem</h2>
-      <p class="cover-tagline">Amateur math breakthroughs, post-quantum GPG, honeypot diaries</p>
-      <p class="body-lead body-lead--wide">A 60-year-old Erdős combinatorics problem fell to a non-mathematician wielding ChatGPT as a proof-exploration partner. This is the most concrete &#x27;AI as cognitive tool&#x27; story in a while — not a benchmark, an actual result. The mechanism matters more than the hype.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AI SHIPPING</div>
+      <h2 class="cover-title">Introducing GPT-5.5</h2>
+      <p class="cover-tagline">New models, craft debates, and weird science</p>
+      <p class="body-lead body-lead--wide">OpenAI collapses the Codex coding line into the main model — GPT-5.5 is now a single unified system with strong gains in agentic coding and computer use. The architecture shift matters more than the benchmark numbers: one model to prompt, one model to eval. Simon Willison has the prompting guide you need today.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://www.scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem/" target="_blank" rel="noopener">Open the lead &rarr;</a>
-        
+        <a class="read-more" href="https://openai.com/index/introducing-gpt-5-5" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
       </div>
-      
+      <p class="apply-note">&rarr; Access via API with `llm -m gpt-5.5` after `pip install llm` — Simon Willison&#x27;s llm 0.31 already ships support.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -557,44 +557,117 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">SECURITY</div>
+    <div class="kicker">PROMPT CRAFT</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>GnuPG – post-quantum crypto landing in mainline</h2>
-    <p class="body-lead">Post-quantum algorithms are merging into GnuPG mainline — the encryption infrastructure most privacy-conscious developers already depend on. This is the quiet moment where theoretical quantum-resistance becomes something you can actually ship in your toolchain.</p>
+    <h2>GPT-5.5 prompting guide</h2>
+    <p class="body-lead">Simon Willison distills OpenAI&#x27;s official guidance on prompting GPT-5.5, including a neat verbosity-control trick (`-o verbosity low/medium/high`) and tips for agentic tasks where the model now thinks in longer chains. Concrete and immediately adoptable.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Pull the latest GnuPG mainline build and verify PQC key generation works in your existing signing workflow.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://lists.gnupg.org/pipermail/gnupg-announce/2026q2/000504.html" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Read it, then test `llm -m gpt-5.5 -o verbosity low` in your terminal today — the model is live in the API.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Apr/25/gpt-5-5-prompting-guide/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section class="spread s-postcard">
-  <div class="pc-inner">
-    <div class="stamp" aria-hidden="true">03<small>Morning<br>Edition</small></div>
-    <div class="postmark" aria-hidden="true">SUNDAY<br>&middot;&middot;&middot;</div>
-    <div class="kicker">SECURITY FIELD REPORT</div>
-    <h2>I Left Port 22 Open on the Internet for 54 Days. Here&#x27;s Who Showed Up</h2>
-    <p class="body-lead">A 54-day SSH honeypot diary with real logs, attack patterns, and geographic breakdowns — empirical surveillance-resistance data, not lecture. Useful calibration for anyone who self-hosts dev infrastructure or runs local-first servers exposed to the net.</p>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://arman-bd.hashnode.dev/i-left-port-22-open-on-the-internet-for-54-days-here-s-who-showed-up" target="_blank" rel="noopener">Wish you were here &rarr;</a>
+<section class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">DESIGN CRAFT</div>
+    <div class="tiny-num" aria-hidden="true">03</div>
+  </div>
+  <h2>Without a critical human eye, AI produces slop.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Jonny Burch makes the case that AI output is structurally incapable of taste — it can execute, but it cannot judge. For a UX designer living inside these tools daily, this is the most honest framing of where the human eye still earns its keep.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; jonnyburch.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://jonnyburch.com/i-love-ai-but-it-still-cant-design-for-shit/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
     
-    <div class="footer-slug">Morning Edition &middot; Airmail from arman-bd.hashnode.dev</div>
+  </div>
+</section>
+
+<section class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">TYPOGRAPHY &amp; PRINT</div>
+    <div class="riso-num" data-n="04" aria-hidden="true">04</div>
+    <h2>tw93/Kami — 👩‍🚒 Good content deserves good paper.</h2>
+    <p class="body-lead">Kami is a beautifully crafted reading and print tool — the kind of project that treats typographic layout as a first-class concern. 3,300+ stars in days suggests the design community is starving for software that takes paper seriously.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://github.com/tw93/Kami" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Clone the repo and try rendering something you care about — the output quality is the demo.</p>
+    
+  </div>
+</section>
+
+<section class="spread s-polaroid">
+  <div class="kicker">AGENTIC TOOLS</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">op7418/guizang-ppt-skill — A Claude Code Skill that turns prompts into horizontal-swipe magazine-style HTML decks</div>
+      <div class="photo-caption">No. 05 &middot; github.com</div>
+    </div>
+    <div>
+      <p class="body-lead">A Claude Code Skill that outputs single-file magazine-style HTML presentations — 10 layouts, 5 themes, WebGL hero backgrounds. Prompt-to-deck is now a design workflow, not just a party trick, and the single-file output means it&#x27;s shareable instantly.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://github.com/op7418/guizang-ppt-skill" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
+      </div>
+      <p class="apply-note">&rarr; Drop the skill into your Claude Code setup and feed it your next presentation brief — output is a self-contained HTML file.</p>
+      
+    </div>
+  </div>
+</section>
+
+<section class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">VI</span>
+  </div>
+  <div>
+    <div class="kicker">WEIRD SCIENCE</div>
+    <h2>Amateur armed with ChatGPT solves an Erdős problem</h2>
+    <div class="body-lead">A non-professional mathematician used ChatGPT as a reasoning partner to crack an Erdős combinatorics problem open for 60 years. This is the clearest empirical case yet that LLMs extend the reach of curious non-experts into hard math — not by solving it for them, but by keeping up with the reasoning.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem/" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      
+    </div>
+    
+  </div>
+  <div>
+    <div class="footnote">&sect; filed under weird science</div>
+  </div>
+</section>
+
+<section class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 07</span>
+    <span>WEIRD SCIENCE</span>
+  </div>
+  <div class="ix-body">
+    <h2>A New Type of Neuroplasticity Rewires the Brain After a Single Experience</h2>
+    <p class="body-lead">Quanta reports on a newly discovered plasticity mechanism that can durably rewire neural circuits from a single event — upending the &quot;neurons that fire together&quot; orthodoxy. The implications for how we model learning and memory are significant, and the parallel to one-shot learning in transformers is hard to ignore.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      
+    </div>
+    
+    
   </div>
 </section>
 
 <section class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">04</div>
+  <div class="bg-num" aria-hidden="true">08</div>
   <div class="content">
-    <div class="kicker">PRIVACY / SURVEILLANCE</div>
-    <h2>Tell HN: An app is silently installing itself on my iPhone every day</h2>
-    <p class="body-lead">Headspace silently reinstalling itself daily on a user&#x27;s iPhone despite automatic downloads being disabled — the thread surfaces real iOS permission-model gaps. For a UX designer thinking about trust and consent surfaces, this is a case study in how notifications and app-install flows erode user agency invisibly.</p>
+    <div class="kicker">SURVEILLANCE RESISTANCE</div>
+    <h2>FBI Extracts Deleted Signal Messages from iPhone Notification Database</h2>
+    <p class="body-lead">Push notifications are a forensic goldmine: deleted Signal messages survived on-device because iOS caches notification payloads in a separate database. Schneier&#x27;s analysis is terse but the implication is clear — app-level encryption doesn&#x27;t protect what the OS copies before encryption kicks in.</p>
     <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://news.ycombinator.com/item?id=47906253" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/04/fbi-extracts-deleted-signal-messages-from-iphone-notification-database.html" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
@@ -603,124 +676,46 @@ a{color:inherit;text-underline-offset:4px}
   <div class="footer-slug">Morning Edition &middot; After Dark</div>
 </section>
 
-<section class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.05</span>
-      <span>STATECHARTS.DEV</span>
-      <span>SHEET 5/10</span>
-    </div>
-    <div class="kicker">INTERACTION DESIGN</div>
-    <h2>Statecharts: hierarchical state machines</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">05</div>
-      <p class="body-lead">Statecharts.dev is a deep, well-designed reference on hierarchical state machines — the mental model behind XState and most serious UI logic. For a UX designer building or speccing complex interaction flows, this is the formal vocabulary that makes agentic UI actually predictable.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://statecharts.dev/" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Use it today to map a multi-step UI flow or agent interaction as a proper statechart before prototyping.</p>
-    
-  </div>
-</section>
-
-<section class="spread s-zine">
-  <div>
-    <div class="sticker">Cut &amp; keep</div>
-  </div>
-  <div>
-    <div class="marker-num" aria-hidden="true">06</div>
-    <div class="scribble" aria-hidden="true"></div>
-    <div class="kicker">AI TOOLS / LLM CRAFT</div>
-    <h2>WHY ARE YOU LIKE THIS</h2>
-    <p class="body-lead">Simon Willison documents a ChatGPT Images 2.0 model spontaneously inserting a &#x27;WHY ARE YOU LIKE THIS&#x27; sign into a pelican-on-bicycle benchmark image, unprompted. A tiny, delightful data point about emergent model personality leaking through image generation — and a prompt-craft curio worth understanding.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/Apr/25/why-are-you-like-this/#atom-everything" target="_blank" rel="noopener">Read it &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
 <section class="spread s-terminal">
   <div class="window">
     <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
     <div class="ascii-num" aria-hidden="true">#####  #####  
+#   #  #   #  
+#   #  #####  
 #   #      #  
-#   #     #   
-#   #    #    
-#####   #     </div>
-    <div class="kicker">DEV TOOLS</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">lcamtuf.substack.com</span></div>
-    <h2>A breakthrough in C/C++ dependency management</h2>
-    <p class="body-lead">&gt; lcamtuf (Michal Zalewski) declaring a genuine breakthrough in C/C++ dependency management is worth reading on title alone — this person does not use that word carelessly. Relevant to anyone who touches native-compiled toolchains or cares about build system craft.</p>
+#####  #####  </div>
+    <div class="kicker">SECURITY</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">lists.gnupg.org</span></div>
+    <h2>GnuPG – post-quantum crypto landing in mainline</h2>
+    <p class="body-lead">&gt; Post-quantum cryptography is shipping in GnuPG mainline — not a research branch, not a proposal. For anyone running encrypted communication infrastructure, this is the update that starts the migration clock from classical to quantum-resistant key exchange.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://lcamtuf.substack.com/p/a-breakthrough-in-cc-dependency-management" target="_blank" rel="noopener">$ open &rarr;</a>
-      
+      <a class="read-more" href="https://lists.gnupg.org/pipermail/gnupg-announce/2026q2/000504.html" target="_blank" rel="noopener">$ open &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
     </div>
+    <p class="apply-note">&rarr; Pull the latest GnuPG mainline build and check if your key setup needs a PQ-compatible refresh — the mailing list post details what&#x27;s changed.</p>
     
-    
-  </div>
-</section>
-
-<section class="spread s-polaroid">
-  <div class="kicker">GENERATIVE / CREATIVE TECH</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">Show HN: Turning a Gaussian Splat into a videogame</div>
-      <div class="photo-caption">No. 08 &middot; blog.playcanvas.com</div>
-    </div>
-    <div>
-      <p class="body-lead">PlayCanvas walks through converting a 3D Gaussian Splat capture into a playable game environment — a working demo that bridges photorealistic scene capture and real-time interaction. For designers thinking about spatial interfaces and generative environments, this is a concrete craft find.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://blog.playcanvas.com/turning-a-gaussian-splat-into-a-videogame/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
-      </div>
-      <p class="apply-note">&rarr; Open the live demo today and poke at how splat-based scenes handle collision and camera — directly relevant to spatial UI research.</p>
-      
-    </div>
   </div>
 </section>
 
 <section class="spread s-newsprint">
   <div class="masthead-bar">The Daily Ledger</div>
   <div class="title-row">
-    <div class="badge">09</div>
+    <div class="badge">10</div>
     <div>
-      <div class="kicker">AI IMPACT / INFRA</div>
-      <h2>Linux May Drop Old Network Drivers Now That AI-Driven Bug Reports Are Causing A Burden</h2>
+      <div class="kicker">SECURITY RESEARCH</div>
+      <h2>I Left Port 22 Open on the Internet for 54 Days. Here&#x27;s Who Showed Up</h2>
     </div>
   </div>
   <div class="cols">
-    <p>AI-generated bug reports are overwhelming Linux maintainers enough to potentially trigger removal of legacy drivers — a concrete, unintended cons</p>
-    <p>equence of agentic tooling at scale. The signal: AI-assisted workflows are already reshaping open-source maintenance culture, not always cleanly.</p>
+    <p>A field experiment: one exposed SSH port, 54 days of logs, a taxonomy of who probes and what they want.</p>
+    <p>The empirical data on automated scan patterns and credential-stuffing cadence is more useful than any threat-model whitepaper.</p>
   </div>
   <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://www.phoronix.com/news/Linux-Old-Network-AI" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    <a class="read-more" href="https://arman-bd.hashnode.dev/i-left-port-22-open-on-the-internet-for-54-days-here-s-who-showed-up" target="_blank" rel="noopener">Full dispatch &rarr;</a>
     
   </div>
   
   
-</section>
-
-<section class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 10</span>
-    <span>WEIRD SCIENCE / SYSTEMS</span>
-  </div>
-  <div class="ix-body">
-    <h2>Your CPU Has More Registers Than You&#x27;d Think</h2>
-    <p class="body-lead">A tight explainer on register renaming and the physical vs. architectural register distinction — the kind of low-level systems curio that reframes your intuition about how code actually executes. Clean information design makes an arcane topic genuinely approachable.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://fp32.org/register_renaming.html" target="_blank" rel="noopener">Follow the thread &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
 </section>
 
 
@@ -728,9 +723,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across eleven sources before you were awake.
-  3 of them are flagged as directly applicable &mdash; open those first.</p>
+  5 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Spectral and Rubik. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-04-26 11:37 UTC.</p>
+  at 2026-04-26 13:16 UTC.</p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0481 &middot; SUNDAY, APRIL 26, 2026</p>
 </section>
 
