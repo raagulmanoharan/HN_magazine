@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; THURSDAY, APRIL 30, 2026</title>
-<meta name="description" content="Design craft, AI shipping, and 732 bytes of chaos">
+<meta name="description" content="AI bans, clipboard exploits, curves, and infinity">
 <meta property="og:title" content="Morning Edition · THURSDAY, APRIL 30, 2026">
-<meta property="og:description" content="Design craft, AI shipping, and 732 bytes of chaos">
+<meta property="og:description" content="AI bans, clipboard exploits, curves, and infinity">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -539,12 +539,12 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; DESIGN THINKING</div>
-      <h2 class="cover-title">Output isn&#x27;t design</h2>
-      <p class="cover-tagline">Design craft, AI shipping, and 732 bytes of chaos</p>
-      <p class="body-lead body-lead--wide">Linear&#x27;s editorial argues that AI design tools conflate production speed with design thinking — a distinction every UX practitioner feels but rarely articulates this cleanly. It&#x27;s the best short manifesto on why Figma autopilot won&#x27;t replace judgment. Worth reading before your next sprint kickoff.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; BROWSER WARS / AI</div>
+      <h2 class="cover-title">Mozilla&#x27;s Opposition to Chrome&#x27;s Prompt API</h2>
+      <p class="cover-tagline">AI bans, clipboard exploits, curves, and infinity</p>
+      <p class="body-lead body-lead--wide">Mozilla formally opposes Chrome&#x27;s in-browser Prompt API, arguing it bakes a specific LLM vendor into the web platform itself. For UX designers building AI-adjacent products, this standards fight will shape what on-device inference looks like in the browser for years. Worth reading Mozilla&#x27;s actual objections, not just the headline.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://linear.app/now/output-isn-t-design" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://github.com/mozilla/standards-positions/issues/1213" target="_blank" rel="noopener">Open the lead &rarr;</a>
         
       </div>
       
@@ -557,34 +557,35 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">LLM TOOLING</div>
+    <div class="kicker">AGENTIC WORKFLOWS</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>LLM 0.32a0  is a major backwards-compatible refactor</h2>
-    <p class="body-lead">Simon Willison&#x27;s LLM CLI/library ships a major internal refactor that reshapes how models, tools, and conversations are represented — moving away from a flat model-centric world. If you run agentic workflows or evals from the command line, this alpha is worth testing before it locks in.</p>
+    <h2>cursor/cookbook</h2>
+    <p class="body-lead">Cursor&#x27;s official cookbook repo collects prompt patterns and agentic workflow recipes for getting the most out of the editor. Think of it as structured prompt craft from the people who built the tool — not a blog post, actual working templates you can fork and adapt today.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Run `pip install llm==0.32a0` and test your existing tool-calling scripts against the new conversation model before stable ships.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Apr/29/llm/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Clone the repo and browse the recipes folder for agentic task patterns you can drop into your Cursor workflow this afternoon.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://github.com/cursor/cookbook" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section class="spread s-ticker">
-  <div class="bar"><span class="bar-inner">Breaking &middot; AI SHIPPING &middot; Morning Edition</span></div>
-  <div class="core">
-    <div class="big-num" aria-hidden="true">No. 03</div>
-    <div class="kicker">AI SHIPPING</div>
-    <h2>Where the goblins came from</h2>
-    <p class="body-lead">OpenAI does a public post-mortem on how &quot;goblin&quot; personality artifacts propagated through GPT-5&#x27;s training pipeline — a rare, honest look at how alignment failures spread and compound. Directly relevant if you&#x27;re designing UX around model personality and need to understand behavioral drift.</p>
-    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://openai.com/index/where-the-goblins-came-from" target="_blank" rel="noopener">Over the wire &rarr;</a>
+<section class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">OPEN SOURCE / AI POLICY</div>
+    <div class="tiny-num" aria-hidden="true">03</div>
+  </div>
+  <h2>LLM contributions shift the burden from the author to the reviewer.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Zig&#x27;s lead explains the social and technical reasoning behind banning all LLM-generated contributions — framing it not as AI-phobia but as a signal-to-noise problem in open source maintenance. The &#x27;contributor poker&#x27; framing is genuinely sharp and applies far beyond Zig.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; kristoff.it</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://kristoff.it/blog/contributor-poker-and-ai/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
     
   </div>
-  <div class="bar"><span class="bar-inner">Filed THURSDAY, APRIL 30, 2026</span></div>
 </section>
 
 <section class="spread s-terminal">
@@ -595,133 +596,125 @@ a{color:inherit;text-underline-offset:4px}
 #   #  #####  
 #   #      #  
 #####      #  </div>
-    <div class="kicker">DEV TOOLS</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">zed.dev</span></div>
-    <h2>Zed is 1.0</h2>
-    <p class="body-lead">&gt; Zed crosses the 1.0 line — the Rust-built, GPU-accelerated editor with built-in AI collaboration is now stable. For a UX designer who writes code, the performance and clean interface design are the actual story; this is the editor Sublime Text users have been waiting for.</p>
+    <div class="kicker">SECURITY RESEARCH</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
+    <h2>theori-io/copy-fail-CVE-2026-31431</h2>
+    <p class="body-lead">&gt; A fully documented exploit repo for CVE-2026-31431, a clipboard-based attack vector. The proof-of-concept is live and the write-up walks through the mechanism — exactly the kind of hands-on security research worth understanding if you&#x27;re thinking about clipboard access in web or desktop UIs.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://zed.dev/blog/zed-1-0" target="_blank" rel="noopener">$ open &rarr;</a>
+      <a class="read-more" href="https://github.com/theori-io/copy-fail-CVE-2026-31431" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Download Zed 1.0 from zed.dev and swap it in for your current editor for a day — the AI context features and latency are the things to evaluate.</p>
+    <p class="apply-note">&rarr; Read the exploit write-up to understand what clipboard permission requests actually expose, then audit any web app you&#x27;ve built that touches the Clipboard API.</p>
     
   </div>
 </section>
 
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">UX + ACCESSIBILITY</div>
-    <div class="tiny-num" aria-hidden="true">05</div>
-  </div>
-  <h2>AI-generated UI is inaccessible by default — unless you know what to ask.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Frontend Masters documents the systematic accessibility gaps in AI-generated UI code — missing ARIA, broken focus order, unlabeled controls — and shows what prompts and review steps actually fix it. Concrete field report, not a vague warning.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; frontendmasters.com</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://frontendmasters.com/blog/ai-generated-ui-is-inaccessible-by-default/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Use the article&#x27;s prompt patterns as a checklist the next time you hand off AI-generated component code for accessibility review.</p>
-    
-  </div>
-</section>
-
-<section class="spread s-grid">
-  <div class="grid-top">
-    <div class="tag">DESIGN TOOLS</div>
-    <div class="num-corner">No. 06</div>
-  </div>
-  <div class="grid-body">
-    <h2>designtools.fyi</h2>
-    <div class="side">
-      <p class="body-lead">A structured comparison matrix for design tools across capabilities — designer, design engineer, and non-designer axes. Rare to find something this well-organized for tooling decisions; useful when you need to make or justify a stack choice for a team.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://designtools.fyi/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
-      </div>
-      <p class="apply-note">&rarr; Open it now and run your current stack against the capability matrix — there&#x27;s likely at least one gap or overlap you haven&#x27;t articulated.</p>
+<section class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">05</div>
+  <div class="content">
+    <div class="kicker">SECURITY / SURVEILLANCE</div>
+    <h2>Fast16 Malware</h2>
+    <p class="body-lead">Schneier covers Fast16, a reverse-engineered piece of state-sponsored malware now believed to predate Stuxnet and be US-origin. The analysis of its design goals — persistent, stealthy ICS disruption — is a case study in adversarial systems thinking that rewards careful reading.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/04/fast16-malware.html" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
+    
+    
   </div>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
+</section>
+
+<section class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; LLM TOOLING &middot; Morning Edition</span></div>
+  <div class="core">
+    <div class="big-num" aria-hidden="true">No. 06</div>
+    <div class="kicker">LLM TOOLING</div>
+    <h2>llm 0.32a1</h2>
+    <p class="body-lead">Simon Willison&#x27;s `llm` CLI hits 0.32a1, patching a bug where tool-calling conversations weren&#x27;t correctly rehydrated from SQLite storage. Small fix, but tool-calling persistence is the backbone of any agentic workflow you build with this library — worth pulling the update.</p>
+    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://simonwillison.net/2026/Apr/29/llm-3/#atom-everything" target="_blank" rel="noopener">Over the wire &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Run `pip install --pre llm` to get 0.32a1 and verify your tool-calling conversation logs round-trip correctly from SQLite.</p>
+    
+  </div>
+  <div class="bar"><span class="bar-inner">Filed THURSDAY, APRIL 30, 2026</span></div>
 </section>
 
 <section class="spread s-stat">
   <div class="top">
-    <div class="chip">No. 07 &middot; SECURITY RESEARCH</div>
+    <div class="chip">No. 07 &middot; LOCAL AI / MODELS</div>
     
   </div>
   <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">732 bytes</div>
-    <div class="stat-label">payload size to root on every major Linux distro</div>
+    <div class="stat-value" aria-hidden="true">8B</div>
+    <div class="stat-label">parameters matching a 32B MoE model</div>
   </div>
   <div>
-    <h2>Copy Fail — 732 Bytes to Root</h2>
-    <p class="body-lead">A 732-byte exploit achieves root on every major Linux distribution — the writeup and PoC are both live. The elegance of the attack surface (cp-related race condition) makes this required reading for anyone running Linux locally or in CI.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://copy.fail/" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    <h2>Granite 4.1: IBM&#x27;s 8B Model Matching 32B MoE</h2>
+    <p class="body-lead">IBM&#x27;s Granite 4.1 8B reportedly matches a 32B mixture-of-experts model on key benchmarks — a meaningful efficiency jump for anyone running local inference. If you&#x27;re building agentic pipelines that need to stay on-device or self-hosted, this changes the size/capability calculus.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://firethering.com/granite-4-1-ibm-open-source-model-family/" target="_blank" rel="noopener">Read the story &rarr;</a></div>
     
     
+  </div>
+</section>
+
+<section class="spread s-polaroid">
+  <div class="kicker">DESIGN CRAFT / MATH</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">A Primer on Bézier Curves – So What Makes a Bézier Curve?</div>
+      <div class="photo-caption">No. 08 &middot; pomax.github.io</div>
+    </div>
+    <div>
+      <p class="body-lead">This long-running interactive primer on Bézier curves resurfaced and it remains the definitive visual explainer — every concept is live and manipulable in the browser. For a UX designer working with motion, SVG paths, or generative shapes, this is the reference to bookmark and actually finish.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://pomax.github.io/bezierinfo/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
+      </div>
+      <p class="apply-note">&rarr; Open it now and work through the curvature and offset sections — directly applicable to animation easing and pen-tool intuition.</p>
+      
+    </div>
   </div>
 </section>
 
 <section class="spread s-academic">
   <div class="masthead-line">
     <span>Morning Edition &mdash; Review</span>
-    <span class="roman">VIII</span>
+    <span class="roman">IX</span>
   </div>
   <div>
-    <div class="kicker">AI RESEARCH</div>
-    <h2>Alignment whack-a-mole: Finetuning activates recall of copyrighted books in LLMs</h2>
-    <div class="body-lead">Researchers show that alignment fine-tuning suppresses but doesn&#x27;t erase memorized copyrighted text — further fine-tuning reliably reactivates it. The code is public. Directly relevant if you&#x27;re building products on fine-tuned models and need to understand legal exposure.</div>
+    <div class="kicker">WEIRD SCIENCE / MATH</div>
+    <h2>What Can We Gain by Losing Infinity?</h2>
+    <div class="body-lead">Quanta makes a serious case for ultrafinitism — the mathematical philosophy that rejects infinite sets entirely — and shows it&#x27;s not just philosophical contrarianism but a generator of new results. The tension between computational tractability and mathematical idealism maps surprisingly well onto how we think about infinite scroll and unbounded data in UI.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/cauchy221/Alignment-Whack-a-Mole-Code" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      <a class="read-more" href="https://www.quantamagazine.org/what-can-we-gain-by-losing-infinity-20260429/" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
   </div>
   <div>
-    <div class="footnote">&sect; filed under ai research</div>
+    <div class="footnote">&sect; filed under weird science / math</div>
   </div>
 </section>
 
-<section class="spread s-polaroid">
-  <div class="kicker">INFORMATION DESIGN</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">154 Macs since 1983</div>
-      <div class="photo-caption">No. 09 &middot; sheets.works</div>
-    </div>
-    <div>
-      <p class="body-lead">A visual biography of every Mac Apple has shipped since 1983 — dense, well-structured, and a nice example of timeline data visualization done with restraint. Worth studying for how it handles product-family branching across four decades.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://sheets.works/data-viz/every-mac" target="_blank" rel="noopener">Read the story &rarr;</a>
-        
-      </div>
-      
+<section class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 10</span>
+    <span>INTERFACE DESIGN</span>
+  </div>
+  <div class="ix-body">
+    <h2>A text editor as a user interface</h2>
+    <p class="body-lead">A short, considered argument for using a plain text editor as the primary UI for certain classes of tools — treating the editor itself as the interface layer rather than building on top of it. Directly relevant to anyone designing for developers or thinking about where modal interfaces still beat GUIs.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://ratfactor.com/cards/text-editor-as-ui" target="_blank" rel="noopener">Follow the thread &rarr;</a>
       
     </div>
-  </div>
-</section>
-
-<section class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">10</div>
-    <div>
-      <div class="kicker">WEIRD SCIENCE</div>
-      <h2>Why Math&#x27;s Final Axiom Proved So Controversial</h2>
-    </div>
-  </div>
-  <div class="cols">
-    <p>Quanta traces the fraught adoption history of the Axiom of Choice within Zermelo-Fraenkel set theory — a foundational piece most mathe</p>
-    <p>maticians use without thinking today. Good long-form for a reader who likes understanding why consensus on hard problems takes decades.</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://www.quantamagazine.org/why-maths-final-axiom-proved-so-controversial-20260429/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    
     
   </div>
-  
-  
 </section>
 
 
@@ -731,7 +724,7 @@ a{color:inherit;text-underline-offset:4px}
   <p>Ten stories, hand-curated across eleven sources before you were awake.
   4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Playfair Display and DM Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-04-30 12:12 UTC.</p>
+  at 2026-04-30 14:07 UTC.</p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0485 &middot; THURSDAY, APRIL 30, 2026</p>
 </section>
 
