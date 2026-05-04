@@ -125,12 +125,14 @@ def _save_spillover(candidates: list[dict], picked_urls: set[str], today: dt.dat
 def _issue_list() -> list[dict]:
     out = []
     for p in sorted(MAGAZINES_DIR.glob("*.html"), reverse=True):
-        name = p.stem  # YYYY-MM-DD
+        name = p.stem  # YYYY-MM-DD or weekly-YYYY-MM-DD
+        is_weekly = name.startswith("weekly-")
+        date_str = name.replace("weekly-", "")
         try:
-            d = dt.date.fromisoformat(name)
+            d = dt.date.fromisoformat(date_str)
         except ValueError:
             continue
-        out.append({"date": d, "href": f"magazines/{p.name}"})
+        out.append({"date": d, "href": f"magazines/{p.name}", "weekly": is_weekly})
     return out
 
 
@@ -155,6 +157,10 @@ h1{font-family:'Fraunces',serif;font-style:italic;font-weight:900;
 .issue-list .n{font-family:'Inter',sans-serif;font-size:20px;letter-spacing:.18em;
   text-transform:uppercase;opacity:.6}
 .issue-list a:hover .d{color:#b63b1f}
+.issue-list .weekly-badge{display:inline-block;background:#b63b1f;color:#f4ecd8;
+  padding:4px 12px;font-family:'Inter',sans-serif;font-size:14px;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;border-radius:3px;vertical-align:middle;
+  margin-left:12px}
 .empty{font-family:'Fraunces',serif;font-style:italic;font-size:26px;opacity:.7}
 footer{margin-top:96px;padding-top:24px;border-top:1.5px solid rgba(23,20,14,.2);
   font-size:18px;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
@@ -169,11 +175,19 @@ def render_index(issues: list[dict]) -> str:
         for i, it in enumerate(issues):
             d = it["date"]
             label = d.strftime("%A, %B %-d, %Y")
-            issue_no = (d - dt.date(2025, 1, 1)).days + 1
+            is_weekly = it.get("weekly", False)
+            if is_weekly:
+                week_num = d.isocalendar()[1]
+                badge = '<span class="weekly-badge">Weekly</span>'
+                issue_label = f"Week {week_num:02d}"
+            else:
+                issue_no = (d - dt.date(2025, 1, 1)).days + 1
+                badge = ""
+                issue_label = f"Issue No. {issue_no:04d}"
             items.append(
                 f'<li><a href="{it["href"]}">'
-                f'<span class="d">{label}</span>'
-                f'<span class="n">Issue No. {issue_no:04d}</span>'
+                f'<span class="d">{label}{badge}</span>'
+                f'<span class="n">{issue_label}</span>'
                 f"</a></li>"
             )
         body = f'<ul class="issue-list">{"".join(items)}</ul>'

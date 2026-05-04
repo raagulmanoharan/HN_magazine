@@ -1317,6 +1317,8 @@ def render_colophon(issue: dict, applies_count: int) -> str:
   {applies_count} of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
   at {esc(issue["built_at"])}.</p>
+  <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
+    text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. {esc(issue["issue_no"])} &middot; {esc(issue["date_display"])}</p>
 </section>
 """
