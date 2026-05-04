@@ -21,6 +21,8 @@ import os
 import pathlib
 import sys
 
+import re
+
 # Make script-directory imports work whether we're run as a module or a script.
 HERE = pathlib.Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
@@ -122,6 +124,15 @@ def _save_spillover(candidates: list[dict], picked_urls: set[str], today: dt.dat
 # --------------------------------------------------------------------------
 # Landing page
 # --------------------------------------------------------------------------
+def _extract_tagline(path: pathlib.Path) -> str:
+    try:
+        head = path.read_text(encoding="utf-8")[:2000]
+        m = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', head)
+        return m.group(1) if m else ""
+    except Exception:
+        return ""
+
+
 def _issue_list() -> list[dict]:
     out = []
     for p in sorted(MAGAZINES_DIR.glob("*.html"), reverse=True):
@@ -132,7 +143,12 @@ def _issue_list() -> list[dict]:
             d = dt.date.fromisoformat(date_str)
         except ValueError:
             continue
-        out.append({"date": d, "href": f"magazines/{p.name}", "weekly": is_weekly})
+        out.append({
+            "date": d,
+            "href": f"magazines/{p.name}",
+            "weekly": is_weekly,
+            "tagline": _extract_tagline(p),
+        })
     return out
 
 
@@ -152,8 +168,11 @@ h1{font-family:'Fraunces',serif;font-style:italic;font-weight:900;
 .issue-list li{border-bottom:1.5px solid rgba(23,20,14,.2);padding:24px 0}
 .issue-list a{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
   color:#17140e;text-decoration:none;flex-wrap:wrap}
+.issue-list .left{display:flex;flex-direction:column;gap:6px}
 .issue-list .d{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,3vw,42px);
   letter-spacing:-.01em}
+.issue-list .tagline{font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+  font-size:clamp(18px,1.8vw,24px);opacity:.7;line-height:1.3}
 .issue-list .n{font-family:'Inter',sans-serif;font-size:20px;letter-spacing:.18em;
   text-transform:uppercase;opacity:.6}
 .issue-list a:hover .d{color:#b63b1f}
@@ -184,9 +203,11 @@ def render_index(issues: list[dict]) -> str:
                 issue_no = (d - dt.date(2025, 1, 1)).days + 1
                 badge = ""
                 issue_label = f"Issue No. {issue_no:04d}"
+            tagline = it.get("tagline", "")
+            tagline_html = f'<span class="tagline">{tagline}</span>' if tagline else ""
             items.append(
                 f'<li><a href="{it["href"]}">'
-                f'<span class="d">{label}{badge}</span>'
+                f'<span class="left"><span class="d">{label}{badge}</span>{tagline_html}</span>'
                 f'<span class="n">{issue_label}</span>'
                 f"</a></li>"
             )
