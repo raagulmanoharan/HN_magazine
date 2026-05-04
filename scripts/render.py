@@ -64,11 +64,11 @@ FONT_PAIRINGS = [
         ),
     },
     {
-        "display": "Bodoni Moda",
+        "display": "Alegreya",
         "body": "Albert Sans",
         "mono": "IBM Plex Mono",
         "google": (
-            "family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,900"
+            "family=Alegreya:ital,wght@0,400;0,500;0,700;0,900;1,400;1,900"
             "&family=Albert+Sans:wght@400;500;600;800"
             "&family=IBM+Plex+Mono:wght@400;700"
         ),
@@ -216,6 +216,7 @@ a{color:inherit;text-underline-offset:4px}
 .spread{position:relative;min-height:100vh;padding:clamp(48px,6vw,110px);
   overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
 .spread--short{min-height:auto}
+.spread h2,.cover-title{overflow-wrap:break-word;word-break:break-word}
 .kicker{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:.28em;
   font-size:20px;text-transform:uppercase}
 .meta-row{display:flex;gap:28px;flex-wrap:wrap;font-family:'Inter',sans-serif;
@@ -1297,6 +1298,10 @@ def _repair_picks(picks: list[dict]) -> list[dict]:
                 break
         else:
             picks[0]["spread_style"] = "hero"
+    for p in picks:
+        title = p.get("title", "")
+        if len(title) > 120:
+            p["title"] = title[:117].rsplit(" ", 1)[0] + " …"
     return picks
 
 
