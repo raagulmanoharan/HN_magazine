@@ -208,7 +208,7 @@ OUTPUT: strict JSON, no prose, no code fences. Schema:
     {
       "rank": 1,
       "hn_id": <int>,
-      "title": "<as given>",
+      "title": "<headline, max 100 chars — rewrite if the original is longer>",
       "url": "<as given>",
       "hn_url": "<as given>",
       "score": <int>,
