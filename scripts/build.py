@@ -35,14 +35,13 @@ ROOT = HERE.parent
 MAGAZINES_DIR = ROOT / "magazines"
 INDEX_PATH = ROOT / "index.html"
 PUBLISHED_MANIFEST = MAGAZINES_DIR / ".published-urls.json"
+SPILLOVER_PATH = MAGAZINES_DIR / ".spillover.json"
 
-# Don't let a story reappear within this many days of its last publish.
 DEDUP_WINDOW_DAYS = 14
-# Drop manifest entries older than this so the file doesn't grow forever.
 MANIFEST_RETENTION_DAYS = 60
-# If dedup filtering would leave fewer than this many candidates, skip the
-# filter — better to risk a repeat than to starve the curator.
 MIN_CANDIDATES_AFTER_DEDUP = 25
+SPILLOVER_MAX_AGE_DAYS = 3
+SPILLOVER_PRIOR_DISCOUNT = 0.85
 
 log = logging.getLogger("build")
 
@@ -80,6 +79,44 @@ def _recent_urls(manifest: dict[str, str], today: dt.date) -> set[str]:
         except ValueError:
             continue
     return out
+
+
+# --------------------------------------------------------------------------
+# Spillover — carry interesting runners-up to the next edition
+# --------------------------------------------------------------------------
+def _load_spillover(today: dt.date) -> list[dict]:
+    """Load candidates from last build that weren't picked, drop stale ones."""
+    try:
+        data = json.loads(SPILLOVER_PATH.read_text())
+    except (FileNotFoundError, ValueError):
+        return []
+    cutoff = today - dt.timedelta(days=SPILLOVER_MAX_AGE_DAYS)
+    kept = []
+    for item in data:
+        saved = item.get("_spillover_date", "")
+        try:
+            if dt.date.fromisoformat(saved) >= cutoff:
+                item["prior"] = round(float(item.get("prior", 0)) * SPILLOVER_PRIOR_DISCOUNT, 3)
+                item["_from_spillover"] = True
+                kept.append(item)
+        except ValueError:
+            continue
+    return kept
+
+
+def _save_spillover(candidates: list[dict], picked_urls: set[str], today: dt.date) -> None:
+    """Save non-picked candidates as spillover for the next build."""
+    today_iso = today.isoformat()
+    keep = []
+    for c in candidates:
+        key = _normalize_url(c.get("url", ""))
+        if key in picked_urls:
+            continue
+        c["_spillover_date"] = c.get("_spillover_date", today_iso)
+        c.pop("_from_spillover", None)
+        keep.append(c)
+    keep.sort(key=lambda x: float(x.get("prior", 0)), reverse=True)
+    SPILLOVER_PATH.write_text(json.dumps(keep[:50], indent=2))
 
 
 # --------------------------------------------------------------------------
@@ -148,7 +185,7 @@ def render_index(issues: list[dict]) -> str:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition</title>
-<meta name="description" content="A daily, hand-curated magazine across eleven sources.">
+<meta name="description" content="A daily, hand-curated magazine across twenty sources.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -158,7 +195,7 @@ def render_index(issues: list[dict]) -> str:
 <div class="wrap">
   <header class="masthead">
     <h1>Morning Edition</h1>
-    <div class="sub">A one-reader daily.<br>Hand-picked across eleven sources while you slept.</div>
+    <div class="sub">A one-reader daily.<br>Hand-picked across twenty sources while you slept.</div>
   </header>
   {body}
   <footer>Latest issue: {latest or "—"} &middot; Built with Claude</footer>
@@ -184,8 +221,16 @@ def build(date: dt.date, public_base_url: str | None = None, notify_enabled: boo
         enabled = {k: bool(v.get("enabled", True)) for k, v in sources_cfg.items()}
     except Exception:
         pass
-    stories = fetch_all(enabled=enabled, top_k=60)
+    stories = fetch_all(enabled=enabled, top_k=80)
     log.info("fetched %d candidates", len(stories))
+
+    # Merge spillover from the previous build (runners-up that are still fresh).
+    spillover = _load_spillover(date)
+    if spillover:
+        existing_urls = {_normalize_url(s.get("url", "")) for s in stories}
+        added = [s for s in spillover if _normalize_url(s.get("url", "")) not in existing_urls]
+        stories.extend(added)
+        log.info("spillover: merged %d carried-over candidates", len(added))
 
     # Cross-issue dedup: drop anything we ran in the last DEDUP_WINDOW_DAYS.
     manifest = _load_manifest()
@@ -218,12 +263,19 @@ def build(date: dt.date, public_base_url: str | None = None, notify_enabled: boo
 
     # Record today's picks in the published-URLs manifest.
     today_iso = date.isoformat()
+    picked_urls = set()
     for pick in curation.get("picks", []):
         key = _normalize_url(pick.get("url", ""))
-        if key and key not in manifest:
-            manifest[key] = today_iso
+        if key:
+            picked_urls.add(key)
+            if key not in manifest:
+                manifest[key] = today_iso
     _save_manifest(manifest, date)
     log.info("manifest: %d urls tracked", len(manifest))
+
+    # Save runners-up as spillover for the next build.
+    _save_spillover(stories, picked_urls, date)
+    log.info("spillover: saved runners-up for next build")
 
     # Landing page
     INDEX_PATH.write_text(render_index(_issue_list()), encoding="utf-8")
