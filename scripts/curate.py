@@ -124,17 +124,42 @@ EDITORIAL VOICE: {voice}
 
 _SOURCES_BLOCK = """
 CANDIDATE SOURCES (each item includes a `source` field):
-  hn              — Hacker News front page. Broad, noisy, strong on dev + AI.
-  lobsters        — Lobste.rs. Smaller, higher-signal systems / languages.
-  anthropic       — Anthropic official news. Claude shipping news, nearly always relevant.
-  openai          — OpenAI news. Product + research shipping.
-  deepmind        — Google DeepMind blog. Research + Gemini shipping.
-  simonwillison   — Simon Willison's blog. LLM tooling, evals, prompt craft, hands-on.
-  github_trending — Repos created in the last 7 days with rising stars. Actionable tools.
-  sidebar         — Curated design/UX links. Rare + high-value for a UX designer.
-  quanta          — Quanta Magazine. Editorial-grade science journalism.
-  schneier        — Schneier on Security. Analytical, not breach-report chum.
-  producthunt     — Product Hunt feed. More marketing noise; filter hard.
+
+  Lab blogs (almost always relevant when they publish):
+    anthropic       — Anthropic official news. Claude shipping news.
+    openai          — OpenAI news. Product + research shipping.
+    deepmind        — Google DeepMind blog. Research + Gemini shipping.
+    meta_ai         — Meta AI / FAIR blog. Open models, research.
+
+  AI thought leaders (high signal, personal voice):
+    simonwillison   — Simon Willison's blog. LLM tooling, evals, prompt craft.
+    karpathy        — Andrej Karpathy's blog. Deep technical, training, infra.
+    importai        — Import AI (Jack Clark). Weekly AI industry analysis.
+    lilianweng      — Lil'Log (Lilian Weng). Research deep-dives.
+    interconnects   — Interconnects (Nathan Lambert). RLHF, alignment, evals.
+
+  Community + aggregators:
+    hn              — Hacker News front page. Broad, noisy, strong on dev + AI.
+    lobsters        — Lobste.rs. Smaller, higher-signal systems / languages.
+    reddit_ml       — Reddit r/MachineLearning + r/LocalLLaMA. Research culture,
+                      open-source model community, hipster/contrarian AI takes.
+    github_trending — Repos created in the last 7 days with rising stars.
+    huggingface     — Hugging Face daily trending papers. Cutting-edge research.
+
+  Design + science:
+    sidebar         — Curated design/UX links. Rare + high-value for a UX designer.
+    quanta          — Quanta Magazine. Editorial-grade science journalism.
+    schneier        — Schneier on Security. Analytical, not breach-report chum.
+
+  Industry press (noisier, filter hard):
+    techcrunch      — TechCrunch AI coverage. Industry news, launches, deals.
+    theverge        — The Verge AI coverage. Consumer-facing, culture angle.
+    producthunt     — Product Hunt feed. Feature an AI product if one is genuinely
+                      useful — not just marketing fluff.
+
+Some candidates may be marked `_from_spillover: true` — these are runners-up
+from yesterday that the reader might still find interesting. Treat them like
+any other candidate but don't force them in if today's fresh pool is stronger.
 
 Each candidate also carries a local `prior` in [0..~1.2] combining source
 weight, within-source rank, and log-score. Treat `prior` as a weak
@@ -370,9 +395,14 @@ def _curate_heuristic(stories: list[dict]) -> dict:
         kicker_map = {
             "hn": "FRONT PAGE", "lobsters": "LOBSTE.RS",
             "anthropic": "ANTHROPIC", "openai": "OPENAI",
-            "deepmind": "DEEPMIND", "simonwillison": "SIMON WILLISON",
+            "deepmind": "DEEPMIND", "meta_ai": "META AI",
+            "simonwillison": "SIMON WILLISON",
+            "karpathy": "KARPATHY", "importai": "IMPORT AI",
+            "lilianweng": "LIL'LOG", "interconnects": "INTERCONNECTS",
             "github_trending": "TRENDING", "sidebar": "DESIGN",
+            "reddit_ml": "REDDIT", "huggingface": "HF PAPERS",
             "quanta": "SCIENCE", "schneier": "SECURITY",
+            "techcrunch": "TECHCRUNCH", "theverge": "THE VERGE",
             "producthunt": "LAUNCH",
         }
         pick = {
@@ -397,7 +427,7 @@ def _curate_heuristic(stories: list[dict]) -> dict:
         }
         picks.append(pick)
     return {
-        "issue_tagline": "Hand-picked across eleven sources while you slept.",
+        "issue_tagline": "Hand-picked across twenty sources while you slept.",
         "picks": picks,
     }
 

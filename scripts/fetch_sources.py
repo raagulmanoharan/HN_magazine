@@ -43,16 +43,29 @@ log = logging.getLogger(__name__)
 # Higher weight = stronger baseline assumption that items are worth surfacing.
 # --------------------------------------------------------------------------
 SOURCE_WEIGHTS = {
+    # Lab blogs — high weight, low volume, almost always relevant
     "anthropic":        0.98,
     "openai":           0.92,
-    "deepmind":         0.86,
     "simonwillison":    0.88,
+    "deepmind":         0.86,
+    "meta_ai":          0.84,
     "sidebar":          0.84,   # UX/design signal is scarce, weight high
+    # AI thought leaders / newsletters
+    "karpathy":         0.86,
+    "importai":         0.84,
+    "lilianweng":       0.82,
+    "interconnects":    0.80,
+    # Aggregators + community
     "github_trending":  0.82,
     "lobsters":         0.80,
+    "huggingface":      0.78,
+    "reddit_ml":        0.76,
     "hn":               0.75,
     "quanta":           0.72,
     "schneier":         0.66,
+    # Industry press — noisier, filter hard
+    "techcrunch":       0.62,
+    "theverge":         0.58,
     "producthunt":      0.55,
 }
 
@@ -61,30 +74,46 @@ SOURCE_WEIGHTS = {
 DEFAULT_LIMITS = {
     "hn":              25,
     "lobsters":        15,
+    "reddit_ml":       20,
     "github_trending": 12,
+    "huggingface":     10,
     "quanta":           8,
     "producthunt":      8,
+    "techcrunch":       8,
+    "theverge":         8,
     "anthropic":        5,
     "openai":           5,
     "deepmind":         5,
+    "meta_ai":          5,
     "simonwillison":    5,
+    "karpathy":         5,
+    "importai":         5,
+    "lilianweng":       5,
+    "interconnects":    5,
     "schneier":         5,
     "sidebar":          5,
 }
 
-# Staleness cap per source, in days. Blog feeds often contain older posts;
-# we don't want last month's article to land in today's front page.
 FRESHNESS_DAYS = {
     "hn": 3,
     "lobsters": 3,
+    "reddit_ml": 3,
     "github_trending": 7,
+    "huggingface": 7,
     "anthropic": 14,
     "openai": 14,
     "deepmind": 14,
+    "meta_ai": 14,
     "simonwillison": 7,
+    "karpathy": 14,
+    "importai": 7,
+    "lilianweng": 14,
+    "interconnects": 7,
     "schneier": 10,
     "sidebar": 3,
     "quanta": 14,
+    "techcrunch": 3,
+    "theverge": 3,
     "producthunt": 3,
 }
 
@@ -95,10 +124,17 @@ FEED_URLS = {
     "anthropic":     "https://www.anthropic.com/news/rss.xml",
     "openai":        "https://openai.com/news/rss.xml",
     "deepmind":      "https://deepmind.google/blog/rss.xml",
+    "meta_ai":       "https://ai.meta.com/blog/rss/",
     "simonwillison": "https://simonwillison.net/atom/everything/",
+    "karpathy":      "https://karpathy.ai/rss.xml",
+    "importai":      "https://importai.substack.com/feed",
+    "lilianweng":    "https://lilianweng.github.io/index.xml",
+    "interconnects": "https://www.interconnects.ai/feed",
     "schneier":      "https://www.schneier.com/feed/atom/",
     "sidebar":       "https://sidebar.io/feed.xml",
     "quanta":        "https://www.quantamagazine.org/feed/",
+    "techcrunch":    "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "theverge":      "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
     "producthunt":   "https://www.producthunt.com/feed",
 }
 
@@ -397,17 +433,86 @@ def _fetch_feed(source: str, limit: int) -> list[dict]:
     return out
 
 
+def _fetch_reddit(limit: int) -> list[dict]:
+    """Fetch hot posts from r/MachineLearning + r/LocalLLaMA."""
+    subs = ["MachineLearning", "LocalLLaMA"]
+    out = []
+    per_sub = max(limit // len(subs), 5)
+    for sub in subs:
+        url = f"https://www.reddit.com/r/{sub}/hot.json?limit={per_sub}&raw_json=1"
+        try:
+            data = json.loads(_http_get(url, timeout=15).decode("utf-8"))
+        except Exception as e:
+            log.warning("reddit r/%s failed: %s", sub, e)
+            continue
+        for i, child in enumerate(data.get("data", {}).get("children", [])):
+            d = child.get("data", {})
+            if d.get("stickied"):
+                continue
+            link = d.get("url") or ""
+            if link.startswith("/r/"):
+                link = f"https://www.reddit.com{link}"
+            permalink = f"https://www.reddit.com{d.get('permalink', '')}"
+            published = _parse_time(d.get("created_utc"))
+            out.append({
+                "id":    f"reddit:{d.get('id', '')}",
+                "title": d.get("title", ""),
+                "url":   link if not link.startswith("https://www.reddit.com/r/") else permalink,
+                "source": "reddit_ml",
+                "score":  int(d.get("score", 0)),
+                "comments": int(d.get("num_comments", 0)),
+                "text":   _snippet(d.get("selftext") or ""),
+                "published_at": _iso(published),
+                "rank_within_source": len(out) + 1,
+                "hn_url": permalink,
+            })
+    return out[:limit]
+
+
+def _fetch_huggingface(limit: int) -> list[dict]:
+    """Fetch trending daily papers from Hugging Face."""
+    url = "https://huggingface.co/api/daily_papers"
+    data = json.loads(_http_get(url, timeout=15).decode("utf-8"))
+    out = []
+    for i, item in enumerate(data[:limit]):
+        paper = item.get("paper", {})
+        pid = paper.get("id", "")
+        published = _parse_time(paper.get("publishedAt"))
+        out.append({
+            "id":    f"hf:{pid}",
+            "title": paper.get("title", ""),
+            "url":   f"https://huggingface.co/papers/{pid}" if pid else "",
+            "source": "huggingface",
+            "score":  int(item.get("numLikes", 0)),
+            "comments": int(item.get("numComments", 0)),
+            "text":   _snippet(paper.get("summary") or ""),
+            "published_at": _iso(published),
+            "rank_within_source": i + 1,
+            "hn_url": "",
+        })
+    return out
+
+
 FETCHERS: dict[str, Callable[[int], list[dict]]] = {
     "hn":              _fetch_hn,
     "lobsters":        _fetch_lobsters,
+    "reddit_ml":       _fetch_reddit,
     "github_trending": _fetch_github_trending,
+    "huggingface":     _fetch_huggingface,
     "anthropic":       lambda n: _fetch_feed("anthropic", n),
     "openai":          lambda n: _fetch_feed("openai", n),
     "deepmind":        lambda n: _fetch_feed("deepmind", n),
+    "meta_ai":         lambda n: _fetch_feed("meta_ai", n),
     "simonwillison":   lambda n: _fetch_feed("simonwillison", n),
+    "karpathy":        lambda n: _fetch_feed("karpathy", n),
+    "importai":        lambda n: _fetch_feed("importai", n),
+    "lilianweng":      lambda n: _fetch_feed("lilianweng", n),
+    "interconnects":   lambda n: _fetch_feed("interconnects", n),
     "schneier":        lambda n: _fetch_feed("schneier", n),
     "sidebar":         lambda n: _fetch_feed("sidebar", n),
     "quanta":          lambda n: _fetch_feed("quanta", n),
+    "techcrunch":      lambda n: _fetch_feed("techcrunch", n),
+    "theverge":        lambda n: _fetch_feed("theverge", n),
     "producthunt":     lambda n: _fetch_feed("producthunt", n),
 }
 
@@ -430,7 +535,7 @@ def fetch_all(
     log.info("fetching from %d sources: %s", len(active), ", ".join(active))
 
     results: list[dict] = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=min(len(active), 10)) as pool:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(len(active), 16)) as pool:
         future_to_source = {
             pool.submit(FETCHERS[s], limits.get(s, 10)): s for s in active
         }
