@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; MONDAY, MAY 4, 2026</title>
-<meta name="description" content="Craft, context windows, and security curiosities">
+<meta name="description" content="Diffusion internals, gravity tests, and neural cipher math">
 <meta property="og:title" content="Morning Edition · MONDAY, MAY 4, 2026">
-<meta property="og:description" content="Craft, context windows, and security curiosities">
+<meta property="og:description" content="Diffusion internals, gravity tests, and neural cipher math">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -540,12 +540,12 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AI INFRASTRUCTURE</div>
-      <h2 class="cover-title">The Road to a Billion-Token Context</h2>
-      <p class="cover-tagline">Craft, context windows, and security curiosities</p>
-      <p class="body-lead body-lead--wide">CACM traces the engineering trajectory from 4K tokens to billion-token windows — the architectural bets, memory tricks, and attention rewrites that made it possible. For a UX designer building on LLM APIs, understanding where context limits are going shapes what interactions are even conceivable to design.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AI RESEARCH</div>
+      <h2 class="cover-title">When Do Diffusion Models Learn to Generate Multiple Objects?</h2>
+      <p class="cover-tagline">Diffusion internals, gravity tests, and neural cipher math</p>
+      <p class="body-lead body-lead--wide">A formal study into why text-to-image diffusion models reliably fail at multi-object scenes — the exact failure mode that shows up whenever you&#x27;re generating UI mockups or complex compositions. Understanding the training-time dynamics here is directly useful for prompt craft and model selection.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://cacm.acm.org/news/the-road-to-a-billion-token-context/" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://huggingface.co/papers/2605.00273" target="_blank" rel="noopener">Open the lead &rarr;</a>
         
       </div>
       
@@ -555,130 +555,74 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section class="spread s-rose">
-  <div class="stamp">Applies<br>to&nbsp;you</div>
-  <div>
-    <div class="kicker">DESIGN TOOLS</div>
-    <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>TUIStudio: Figma-like Visual Editor for Terminal UI Apps</h2>
-    <p class="body-lead">A drag-and-drop canvas for building terminal UIs that exports to six frameworks in one click — basically Figma for the command line. The fact this interaction paradigm now spans from web to TUI is a genuinely interesting moment for interface design craft.</p>
-  </div>
-  <div>
-    <p class="apply-note">&rarr; Open tui.studio now and drag a few components — the live preview and multi-framework export are immediately usable.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://tui.studio/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
-    
-    <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
-  </div>
-</section>
-
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">UX CRAFT</div>
-    <div class="tiny-num" aria-hidden="true">03</div>
-  </div>
-  <h2>Structure is the backbone of any system — and no model generates it for you.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A sharp reminder that structure precedes surface — in an era where AI can generate UI on demand, the designer&#x27;s irreducible job is deciding how information relates. Short, well-argued, and a useful counterweight to the current vibe of shipping interfaces fast.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; saturdave.com</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://saturdave.com/information-architecture-still-matters/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
+<section class="spread s-polaroid">
+  <div class="kicker">GENERATIVE DESIGN</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">Prox-E: Fine-Grained 3D Shape Editing via Primitive-Based Abstractions</div>
+      <div class="photo-caption">No. 02 &middot; huggingface.co</div>
     </div>
-    
-    
-  </div>
-</section>
-
-<section class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">DESIGN FUTURES</div>
-    <div class="tiny-num" aria-hidden="true">04</div>
-  </div>
-  <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">Automation doesn&#x27;t end design — it turns designers into curators.</p>
-    <div class="attrib">&mdash; nathanbeck.eu</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Nathan Beck argues that automation doesn&#x27;t eliminate design judgment — it relocates it from making to selecting, from authoring to curating. Worth reading alongside the IA piece above; together they sketch a credible theory of what the UX role actually becomes.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://nathanbeck.eu/essays/death-of-design/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
-<section class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">05</div>
     <div>
-      <div class="kicker">WEB CRAFT</div>
-      <h2>Reminder: You Can Stitch Together Small HTML Pages for Interactions</h2>
+      <p class="body-lead">Where 2D image-editing models fall short for 3D, Prox-E decomposes shapes into geometric primitives and edits them with text prompts. For UX designers eyeing generative 3D workflows — product mockups, spatial UI — this is the architecture to watch as it matures toward usable tools.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://huggingface.co/papers/2604.23774" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
+      
     </div>
   </div>
-  <div class="cols">
-    <p>Jim Nielsen makes the case for multi-page navigation as a legitimate interaction pattern — not a fallback but a design choice with real UX advantages.</p>
-    <p>A useful prod for anyone who reflexively reaches for a SPA when the problem doesn&#x27;t actually require one.</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://blog.jim-nielsen.com/2026/small-html-pages/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
-    
-  </div>
-  
-  
 </section>
 
 <section class="spread s-academic">
   <div class="masthead-line">
     <span>Morning Edition &mdash; Review</span>
-    <span class="roman">VI</span>
+    <span class="roman">III</span>
   </div>
   <div>
-    <div class="kicker">ML RESEARCH</div>
-    <h2>Trees to Flows and Back: Unifying Decision Trees and Diffusion Models</h2>
-    <div class="body-lead">A new paper establishes a clean mathematical bridge between hierarchical decision trees and continuous diffusion flows — two model families that seemed to have nothing in common. The kind of unification result that tends to unlock practical hybrids a year or two later.</div>
+    <div class="kicker">WEIRD SCIENCE</div>
+    <h2>Why Are Neural Networks and Cryptographic Ciphers So Similar?</h2>
+    <div class="body-lead">Both neural nets and block ciphers are iterated nonlinear transforms over high-dimensional spaces — this piece unpacks the structural parallels with actual math. It&#x27;s the kind of conceptual bridge that reshapes how you think about what LLMs are doing under the hood.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://huggingface.co/papers/2605.00414" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      <a class="read-more" href="https://reiner.org/neural-net-ciphers" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
   </div>
   <div>
-    <div class="footnote">&sect; filed under ml research</div>
+    <div class="footnote">&sect; filed under weird science</div>
   </div>
 </section>
 
-<section class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">07</div>
-  <div class="content">
-    <div class="kicker">SECURITY</div>
-    <h2>Hacking Polymarket: When Prediction Markets Meet Adversarial Verification</h2>
-    <p class="body-lead">Schneier dissects how prediction markets&#x27; oracle problem — verifying real-world outcomes — becomes an attack surface. The analysis of adversarial manipulation in systems that rely on external truth is relevant well beyond betting: it&#x27;s the same problem facing AI grounding and retrieval pipelines.</p>
-    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/05/hacking-polymarket.html" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
+<section class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 04</span>
+    <span>WEIRD SCIENCE</span>
   </div>
-  <div class="footer-slug">Morning Edition &middot; After Dark</div>
-</section>
-
-<section class="spread s-zine">
-  <div>
-    <div class="sticker">Cut &amp; keep</div>
-  </div>
-  <div>
-    <div class="marker-num" aria-hidden="true">08</div>
-    <div class="scribble" aria-hidden="true"></div>
-    <div class="kicker">SECURITY FIELD REPORT</div>
-    <h2>I Accidentally Made Law Enforcement Shut Down Their DDoS Honeypot</h2>
-    <p class="body-lead">A genuinely funny first-person account of stumbling into a law-enforcement honeypot operation and, through routine security research, causing it to collapse. The kind of unintentional red-team story that illuminates how these infrastructure traps actually work.</p>
+  <div class="ix-body">
+    <h2>Newton&#x27;s Law of Gravity Passes Its Biggest Test Ever</h2>
+    <p class="body-lead">Measurements at scales previously inaccessible to experiment confirm the inverse-square law holds — tightening constraints on fifth-force candidates and extra-dimension theories. The experimental design here, squeezing signal from noise at extreme precision, is as interesting as the result.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://lina.sh/blog/ddos-honeypot" target="_blank" rel="noopener">Read it &rarr;</a>
+      <a class="read-more" href="https://www.science.org/content/article/newton-s-law-gravity-passes-its-biggest-test-ever" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">DESIGN PRACTICE</div>
+    <div class="tiny-num" aria-hidden="true">05</div>
+  </div>
+  <h2>AI changes who&#x27;s forming the opinion.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">When AI can generate a confident-sounding opinion on anything instantly, the UX practitioner&#x27;s old heuristic needs rethinking. Gothelf argues that who forms the opinion — human or model — changes what &#x27;loosely held&#x27; even means for your team&#x27;s design decisions.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; jeffgothelf.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://jeffgothelf.com/blog/strong-opinions-loosely-held-and-what-that-means-in-the-age-of-ai/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
@@ -689,18 +633,18 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-blueprint">
   <div class="frame">
     <div class="spec">
-      <span>REV.09</span>
-      <span>SEIYA.ME</span>
-      <span>SHEET 9/10</span>
+      <span>REV.06</span>
+      <span>HUGGINGFACE.CO</span>
+      <span>SHEET 6/10</span>
     </div>
-    <div class="kicker">SYSTEMS</div>
-    <h2>Designing Microkernel IPC</h2>
+    <div class="kicker">AGENTIC AI</div>
+    <h2>Web2BigTable: Bi-Level Multi-Agent LLM System for Internet-Scale Extraction</h2>
     <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">09</div>
-      <p class="body-lead">A careful walkthrough of the tradeoffs in inter-process communication design for microkernels — synchronous vs. async, capability passing, message sizing. Low-level systems writing at its best: every decision has a clear consequence spelled out.</p>
+      <div class="big-n" aria-hidden="true">06</div>
+      <p class="body-lead">A two-level agent architecture that separates deep single-target reasoning from broad multi-entity structured aggregation — exactly the bifurcation that breaks current agentic web scrapers. The system design is worth studying for anyone building research or competitive-intel pipelines.</p>
     </div>
     <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://seiya.me/blog/microkernel-ipc-design" target="_blank" rel="noopener">View schematic &rarr;</a>
+      <a class="read-more" href="https://huggingface.co/papers/2604.27221" target="_blank" rel="noopener">View schematic &rarr;</a>
       
     </div>
     
@@ -708,25 +652,78 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">  #    #####  
- ##    #   #  
-  #    #   #  
-  #    #   #  
-#####  #####  </div>
-    <div class="kicker">TINKERING</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">evertpot.com</span></div>
-    <h2>Broadcasting GPS on the Local Network</h2>
-    <p class="body-lead">&gt; A practical how-to for streaming GPS coordinates from a phone to any device on the local network — useful for self-hosted location-aware apps without punching through the public internet. Clean implementation, working demo, the kind of thing you actually build on.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://evertpot.com/broadcasting-gps-on-local-network/" target="_blank" rel="noopener">$ open &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Follow the guide to stand up a local GPS broadcast today — a useful building block for any location-aware self-hosted project.</p>
+<section class="spread s-rose">
+  <div class="stamp">Applies<br>to&nbsp;you</div>
+  <div>
+    <div class="kicker">DEV TOOLS</div>
+    <div class="numeral-xl" aria-hidden="true">07</div>
+    <h2>Native macOS App to Track YouTube Channels, No Google Login Required</h2>
+    <p class="body-lead">A SwiftUI Mac app that pulls YouTube RSS feeds without touching the Google API or requiring an account — clean native UI, zero surveillance surface. If you follow design and AI channels and resent the algorithm tax, this is installable today.</p>
+  </div>
+  <div>
+    <p class="apply-note">&rarr; Clone the repo and open in Xcode, or check the releases page for a pre-built binary — running in minutes.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://github.com/agentcooper/Telik" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    
+    <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
+  </div>
+</section>
+
+<section class="spread s-stat">
+  <div class="top">
+    <div class="chip">No. 08 &middot; HARDWARE SUPPLY CHAIN</div>
     
   </div>
+  <div class="stat-wrap">
+    <div class="stat-value" aria-hidden="true">~€36B</div>
+    <div class="stat-label">ASML 2025 revenue, mostly not EUV</div>
+  </div>
+  <div>
+    <h2>ASML&#x27;s Best-Selling Product Isn&#x27;t What You Think It Is</h2>
+    <p class="body-lead">EUV machines get all the press, but ASML&#x27;s revenue story is more nuanced — the piece unpacks the product mix and what it reveals about the semiconductor supply chain&#x27;s real chokepoints. Useful background for thinking about where the compute buildout for AI inference actually bottlenecks.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://www.siliconimist.com/p/asmls-best-selling-product" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-zine">
+  <div>
+    <div class="sticker">Cut &amp; keep</div>
+  </div>
+  <div>
+    <div class="marker-num" aria-hidden="true">09</div>
+    <div class="scribble" aria-hidden="true"></div>
+    <div class="kicker">AI + CREATORS</div>
+    <h2>&#x27;This Is Fine&#x27; Creator Says AI Startup Stole His Art</h2>
+    <p class="body-lead">Artisan — the &#x27;stop hiring humans&#x27; billboard company — allegedly lifted K.C. Green&#x27;s iconic &#x27;This Is Fine&#x27; strip without permission for an ad. The story is almost too on-the-nose, but the concrete IP dispute pattern matters for any designer thinking about AI-generated derivative work.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art/" target="_blank" rel="noopener">Read it &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-newsprint">
+  <div class="masthead-bar">The Daily Ledger</div>
+  <div class="title-row">
+    <div class="badge">10</div>
+    <div>
+      <div class="kicker">LLM EVALS</div>
+      <h2>Online Self-Calibration Against Hallucination in Vision-Language Models</h2>
+    </div>
+  </div>
+  <div class="cols">
+    <p>A method for VLMs to self-correct hallucinated visual descriptions at inference time without requiring a stronger supervisor</p>
+    <p>model — relevant if you&#x27;re using vision models in any design-asset pipeline where accuracy to source imagery actually matters.</p>
+  </div>
+  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+    <a class="read-more" href="https://huggingface.co/papers/2605.00323" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    
+  </div>
+  
+  
 </section>
 
 
@@ -734,9 +731,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  2 of them are flagged as directly applicable &mdash; open those first.</p>
+  1 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-05-04 12:20 UTC.</p>
+  at 2026-05-04 14:12 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0489 &middot; MONDAY, MAY 4, 2026</p>
