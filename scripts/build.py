@@ -169,10 +169,10 @@ h1{font-family:'Fraunces',serif;font-style:italic;font-weight:900;
 .issue-list a{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
   color:#17140e;text-decoration:none;flex-wrap:wrap}
 .issue-list .left{display:flex;flex-direction:column;gap:6px}
-.issue-list .d{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,3vw,42px);
-  letter-spacing:-.01em}
-.issue-list .tagline{font-family:'Fraunces',serif;font-style:italic;font-weight:400;
-  font-size:clamp(18px,1.8vw,24px);opacity:.7;line-height:1.3}
+.issue-list .tagline{font-family:'Fraunces',serif;font-style:italic;font-weight:700;
+  font-size:clamp(26px,2.8vw,38px);letter-spacing:-.01em;line-height:1.2}
+.issue-list .d{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(16px,1.4vw,20px);
+  letter-spacing:.08em;text-transform:uppercase;opacity:.55}
 .issue-list .n{font-family:'Inter',sans-serif;font-size:20px;letter-spacing:.18em;
   text-transform:uppercase;opacity:.6}
 .issue-list a:hover .d{color:#b63b1f}
@@ -205,9 +205,10 @@ def render_index(issues: list[dict]) -> str:
                 issue_label = f"Issue No. {issue_no:04d}"
             tagline = it.get("tagline", "")
             tagline_html = f'<span class="tagline">{tagline}</span>' if tagline else ""
+            title_line = tagline_html if tagline_html else f'<span class="tagline">{label}</span>'
             items.append(
                 f'<li><a href="{it["href"]}">'
-                f'<span class="left"><span class="d">{label}{badge}</span>{tagline_html}</span>'
+                f'<span class="left">{title_line}<span class="d">{label}{badge}</span></span>'
                 f'<span class="n">{issue_label}</span>'
                 f"</a></li>"
             )
