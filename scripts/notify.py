@@ -65,4 +65,4 @@ if __name__ == "__main__":
     applies = int(sys.argv[3]) if len(sys.argv) > 3 else 0
     tagline = sys.argv[4] if len(sys.argv) > 4 else ""
     ok = send(url, date, applies, tagline)
-    sys.exit(0 if ok else 1)
+    sys.exit(0)
