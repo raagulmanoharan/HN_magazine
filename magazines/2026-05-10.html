@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; SUNDAY, MAY 10, 2026</title>
-<meta name="description" content="Reproducible builds, multimodal RAG, and assembly absurdism">
+<meta name="description" content="Agents, data structures, and craft under pressure">
 <meta property="og:title" content="Morning Edition · SUNDAY, MAY 10, 2026">
-<meta property="og:description" content="Reproducible builds, multimodal RAG, and assembly absurdism">
+<meta property="og:description" content="Agents, data structures, and craft under pressure">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -540,12 +540,12 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; SECURITY / INFRA</div>
-      <h2 class="cover-title">Debian Must Ship Reproducible Packages</h2>
-      <p class="cover-tagline">Reproducible builds, multimodal RAG, and assembly absurdism</p>
-      <p class="body-lead body-lead--wide">Debian has formally mandated reproducible builds across the entire package archive — a supply-chain security milestone years in the making. For anyone shipping software that touches Debian-derived systems, this hardens the trust model at the OS layer and sets a precedent other distros will feel pressure to follow.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AGENTIC AI</div>
+      <h2 class="cover-title">StraTA: Strategic Trajectory Abstraction for Agentic RL</h2>
+      <p class="cover-tagline">Agents, data structures, and craft under pressure</p>
+      <p class="body-lead body-lead--wide">Current agentic LLM training fails at long-horizon tasks because models are purely reactive — poor at exploration and credit assignment. StraTA introduces strategic trajectory abstraction to fix exactly this, which matters directly for anyone building or evaluating multi-step AI workflows today.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://lists.debian.org/debian-devel-announce/2026/05/msg00001.html" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://huggingface.co/papers/2605.06642" target="_blank" rel="noopener">Open the lead &rarr;</a>
         
       </div>
       
@@ -558,45 +558,66 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">AI SHIPPING</div>
+    <div class="kicker">DEV TOOLS</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Gemini API File Search Is Now Multimodal</h2>
-    <p class="body-lead">Google&#x27;s Gemini API now supports multimodal RAG — search across images, PDFs, and mixed-media files, not just text. If you&#x27;re building agentic pipelines that need to reason over design assets, scanned docs, or visual data, this is a same-week drop worth integrating.</p>
+    <h2>Replacing a 3 GB SQLite DB with a 10 MB Finite State Transducer</h2>
+    <p class="body-lead">A field report on swapping a heavyweight SQLite store for a read-only FST binary — 300x size reduction for a lookup-only dataset. The kind of TIL that rewires how you think about choosing a data structure for the problem, not the habit.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Hit the Gemini API docs today and test a multimodal file-search query against a PDF or image corpus in your current agentic workflow.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://blog.google/innovation-and-ai/technology/developers-tools/expanded-gemini-api-file-search-multimodal-rag/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; If you have any read-only lookup data in a project, skim the post and check the Rust `fst` crate today.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://til.andrew-quinn.me/posts/replacing-a-3-gb-sqlite-database-with-a-7-mb-fst-finite-state-trandsucer-binary/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section class="spread s-stat">
+<section class="spread s-manifesto">
   <div class="top">
-    <div class="chip">No. 03 &middot; DEV TOOLS</div>
-    <span class="tag-applies">Applies to you</span>
+    <div class="kicker">WEB CRAFT</div>
+    <div class="tiny-num" aria-hidden="true">03</div>
   </div>
-  <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">99.8%</div>
-    <div class="stat-label">test compatibility on Linux x64 glibc</div>
-  </div>
+  <h2>A URL is a promise. Query strings break it quietly.<span class="mark">.</span></h2>
   <div>
-    <h2>Bun&#x27;s Rust Rewrite Hits 99.8% Test Compatibility on Linux x64</h2>
-    <p class="body-lead">The experimental Rust rewrite of Bun is now passing 99.8% of the existing test suite on Linux x64 glibc — an extraordinary compatibility bar for a full runtime rewrite. If Bun is in your frontend or Node toolchain, this signals the Zig-era is winding down and a faster, memory-safer runtime is close.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://twitter.com/jarredsumner/status/2053047748191232310" target="_blank" rel="noopener">Read the story &rarr;</a></div>
-    <p class="apply-note">&rarr; Watch the repo for a canary build; spin it up against your existing test suite to spot the 0.2% edge cases early.</p>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A quiet, principled refusal — the author documents why query strings corrupt stable URLs and degrade the long-term information architecture of a site. As a UX and information designer, the canonical URL is your product&#x27;s spine; this is a useful framing for that argument.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; susam.net</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://susam.net/no-query-strings.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #   #  
+#   #  #   #  
+#   #  #####  
+#   #      #  
+#####      #  </div>
+    <div class="kicker">PRIVACY + INFRA</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">isabelroses.com</span></div>
+    <h2>NixOS and Secrets — A Practical Guide</h2>
+    <p class="body-lead">&gt; Secrets management on NixOS is a genuinely thorny problem — the Nix store is world-readable by design. This post walks through practical options (agenix, sops-nix, etc.) for anyone self-hosting infrastructure who doesn&#x27;t want credentials baked into their config.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://isabelroses.com/blog/nixos-and-secrets/" target="_blank" rel="noopener">$ open &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; If you run NixOS for any self-hosted tooling, this gives you a concrete migration path to secrets-outside-the-store today.</p>
     
   </div>
 </section>
 
 <section class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">04</div>
+  <div class="bg-num" aria-hidden="true">05</div>
   <div class="content">
     <div class="kicker">SECURITY</div>
-    <h2>Local Privilege Escalation via execve() — FreeBSD Security Advisory</h2>
-    <p class="body-lead">A FreeBSD kernel vuln in execve() allows local privilege escalation — the kind of low-level flaw that matters if you run self-hosted infra, jails, or BSD-based network appliances. The advisory is crisp and the patch is out; read it for the mechanism, not just the patch number.</p>
+    <h2>dirtyfrag — Trending Security Research Repo</h2>
+    <p class="body-lead">Nearly 4,000 stars in days is a signal worth noticing even without a detailed snippet — dirtyfrag is clearly catching the security community&#x27;s eye. Worth a look for anyone tracking low-level Linux exploitation techniques or kernel-surface attack research.</p>
     <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.freebsd.org/security/advisories/FreeBSD-SA-26:13.exec.asc" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://github.com/V4bel/dirtyfrag" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
@@ -605,17 +626,31 @@ a{color:inherit;text-underline-offset:4px}
   <div class="footer-slug">Morning Edition &middot; After Dark</div>
 </section>
 
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">INFORMATION DESIGN</div>
-    <div class="tiny-num" aria-hidden="true">05</div>
+<section class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 06</span>
+    <span>LLM TOOLING</span>
   </div>
-  <h2>Query strings are where information architecture goes to die.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A principled argument for designing URLs as clean, hierarchical identifiers with no query parameters — ever. For UX and information architects, this is a rare piece that treats URL structure as a design surface, with implications for navigation, caching, and link rot that most teams ignore entirely.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; chrismorgan.info</div>
+  <div class="ix-body">
+    <h2>Big Words — Simon Willison&#x27;s Vibe-Coded Presentation Tool</h2>
+    <p class="body-lead">Willison built a tiny macOS presentation utility via vibe-coding, then needed a quick slide tool — so he shipped a query-string-driven big-text page on the side. It&#x27;s a live demonstration of agentic prototyping methodology more than a product, and the meta-commentary is the point.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://chrismorgan.info/no-query-strings" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://simonwillison.net/2026/May/7/big-words/#atom-everything" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; The Big Words page accepts query strings to render slide text — open it directly for instant single-thought presentation slides.</p>
+    
+  </div>
+</section>
+
+<section class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">CREATIVE AI</div>
+    <div class="riso-num" data-n="07" aria-hidden="true">07</div>
+    <h2>PianoCoRe: A Combined and Refined Piano MIDI Dataset</h2>
+    <p class="body-lead">A new large-scale symbolic piano dataset combining matched scores and performances with note-level alignment — the kind of infrastructure paper that unlocks real generative music tooling. Relevant to anyone experimenting with AI music composition or score-following workflows.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://huggingface.co/papers/2605.06627" target="_blank" rel="noopener">Pull a proof &rarr;</a>
       
     </div>
     
@@ -623,41 +658,37 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">06</div>
-    <div>
-      <div class="kicker">PRESERVATION</div>
-      <h2>Internet Archive Expands to Switzerland</h2>
+<section class="spread s-pullquote">
+  <div class="top">
+    <div class="kicker" style="color:#d9b26a">AI + COGNITION</div>
+    <div class="tiny-num" aria-hidden="true">08</div>
+  </div>
+  <div>
+    <span class="quote-open" aria-hidden="true">&ldquo;</span>
+    <p class="pq">AI doesn&#x27;t fix paralysis — sometimes it deepens it.</p>
+    <div class="attrib">&mdash; g5t.de</div>
+  </div>
+  <div>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">An honest account of how AI tools interact with executive dysfunction and task paralysis — not a productivity-hype piece, but an empirical first-person study. For designers building AI interfaces, this is user research on a psychological edge case that&#x27;s more common than the industry admits.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://g5t.de/articles/20260510-task-paralysis-and-ai/index.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
     </div>
-  </div>
-  <div class="cols">
-    <p>The Internet Archive is establishing a Swiss entity to legally protect its global preservation mission outside US jurisdiction.</p>
-    <p>For anyone who uses it as a source-of-truth for vanished UX patterns, design history, or dead hyperlinks, this is straightforwardly good news.</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://blog.archive.org/2026/05/06/internet-archive-switzerland-expanding-a-global-mission-to-preserve-knowledge/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    
     
   </div>
-  
-  
 </section>
 
-<section class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #      #  
-#   #     #   
-#   #    #    
-#####   #     </div>
-    <div class="kicker">SYSTEMS / SHOW HN</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
-    <h2>Show HN: A Static Web Server Written Entirely in ARM64 Assembly</h2>
-    <p class="body-lead">&gt; A working ARM64 assembly web server supporting GET, PUT, DELETE, Range headers, and video scrubbing — zero dependencies, every syscall hand-rolled. Not a tool you&#x27;ll ship, but a beautiful dissection of what a web server actually is at the metal, with every line as documentation.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/imtomt/ymawky" target="_blank" rel="noopener">$ open &rarr;</a>
+<section class="spread s-neon">
+  <div>
+    <div class="kicker">WEIRD SCIENCE</div>
+  </div>
+  <div>
+    <div class="numeral-slash" aria-hidden="true">09</div>
+    <h2>I Learned Something About GPUs Today</h2>
+    <p class="body-lead">A debugging story that bottoms out at unexpected GPU hardware behavior — the kind of post where the journey through a visual glitch reveals something real about how graphics pipelines handle edge cases. Strong weird-empirical energy; satisfying even if you never write a shader.</p>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://foon.uk/blackshift-sand-bug/" target="_blank" rel="noopener">Go loud &rarr;</a>
       
     </div>
     
@@ -666,61 +697,22 @@ a{color:inherit;text-underline-offset:4px}
 </section>
 
 <section class="spread s-polaroid">
-  <div class="kicker">CRAFT / DESIGN</div>
+  <div class="kicker">TYPOGRAPHY + DESIGN</div>
   <div class="layout">
     <div class="photo">
       <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">Casio S100X Japanese Lacquer Edition</div>
-      <div class="photo-caption">No. 08 &middot; casio.com</div>
+      <div class="photo-body">Wordamour — Personal Words into Printed Puzzle Art</div>
+      <div class="photo-caption">No. 10 &middot; wordamour.com</div>
     </div>
     <div>
-      <p class="body-lead">Casio produced a premium calculator in traditional Japanese lacquer finish — currently Japan-only. It&#x27;s a sharp reminder that even a commodity object can be reconsidered as a craft artifact; the material language here is a UX argument about attention and tactility.</p>
+      <p class="body-lead">Turn a curated set of words into a beautifully typeset, printable word-search puzzle — an interesting intersection of information design, personal data, and physical artifact. Worth a look as a reference for how playful constraints can produce compelling visual output.</p>
       <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://www.casio.com/jp/basic-calculators/premium/en-s100x-jc1-u/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        
+        <a class="read-more" href="https://wordamour.com/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
       </div>
-      
-      
-    </div>
-  </div>
-</section>
-
-<section class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 09</span>
-    <span>WEIRD SCIENCE / SYSTEMS</span>
-  </div>
-  <div class="ix-body">
-    <h2>Space Cadet Pinball on Linux — and What It Taught Me About Code Escrow</h2>
-    <p class="body-lead">A reverse-engineering dig into getting the classic Space Cadet Pinball running on Linux surfaces an unexpected meditation on software escrow, preservation contracts, and what it means when code is technically available but legally inaccessible. Odd, but genuinely thought-provoking.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://brennan.io/2026/05/09/pinball-and-escrow/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      <p class="apply-note">&rarr; Open the site, enter words that matter to you, and you have a print-ready typographic artifact in under two minutes.</p>
       
     </div>
-    
-    
-  </div>
-</section>
-
-<section class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.10</span>
-      <span>AHELWER.CA</span>
-      <span>SHEET 10/10</span>
-    </div>
-    <div class="kicker">PRIVACY / SECURITY</div>
-    <h2>Laptops All Have Built-In Security Tokens These Days</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">10</div>
-      <p class="body-lead">Modern laptops ship with embedded hardware security tokens usable for U2F/FIDO2 authentication — most people simply don&#x27;t know they have them. A practical guide to activating what&#x27;s already in your machine as a phishing-resistant second factor, no dongle required.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://ahelwer.ca/post/2026-05-08-builtin-u2f/" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Open your laptop&#x27;s TPM or Secure Enclave settings today and enroll the built-in token as a FIDO2 key for your critical accounts.</p>
-    
   </div>
 </section>
 
@@ -729,9 +721,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  3 of them are flagged as directly applicable &mdash; open those first.</p>
+  4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Playfair Display and DM Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-05-10 11:47 UTC.</p>
+  at 2026-05-10 13:28 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0495 &middot; SUNDAY, MAY 10, 2026</p>
