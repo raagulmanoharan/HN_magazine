@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; TUESDAY, MAY 12, 2026</title>
-<meta name="description" content="Craft, agents, and code under pressure">
+<meta name="description" content="Agentic shops, sky shaders, and leaky Androids">
 <meta property="og:title" content="Morning Edition · TUESDAY, MAY 12, 2026">
-<meta property="og:description" content="Craft, agents, and code under pressure">
+<meta property="og:description" content="Agentic shops, sky shaders, and leaky Androids">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Raleway:wght@400;500;600;800&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -540,15 +540,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; UX DESIGN</div>
-      <h2 class="cover-title">Mockups Were Never the Hard Part</h2>
-      <p class="cover-tagline">Craft, agents, and code under pressure</p>
-      <p class="body-lead body-lead--wide">Luke Wroblewski cuts to the real wound: AI democratizes mockup generation, which exposes that mockups were never the bottleneck. The hard part — systems thinking, edge cases, interaction logic — still requires a designer. Required reading for anyone rationalizing their role right now.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AGENTIC WORKFLOWS</div>
+      <h2 class="cover-title">Shopify&#x27;s Internal Coding Agent &#x27;River&#x27; Operates Entirely in Public Slack</h2>
+      <p class="cover-tagline">Agentic shops, sky shaders, and leaky Androids</p>
+      <p class="body-lead body-lead--wide">Tobias Lütke describes River, Shopify&#x27;s in-house coding agent that refuses DMs and insists on working in public channels — a deliberate design choice forcing transparency into the agentic loop. Simon Willison&#x27;s gloss on the interaction model is worth reading alongside the original.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://www.lukew.com/ff/entry.asp?2152" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://simonwillison.net/2026/May/11/learning-on-the-shop-floor/#atom-everything" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Read this before your next sprint planning to sharpen how you pitch your actual value-add beyond deliverables.</p>
+      <p class="apply-note">&rarr; Read the thread for concrete patterns around public-channel agent design you could apply when building or speccing agentic tooling today.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -558,33 +558,109 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">SECURITY</div>
+    <div class="kicker">LLM INTERNALS</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Postmortem: TanStack NPM Supply-Chain Compromise</h2>
-    <p class="body-lead">TanStack — the router and query library sitting in half the React projects on earth — got hit by a supply-chain attack and lived to write the postmortem. Detailed, honest, and a blueprint for what to audit in your own dependency graph today.</p>
+    <h2>Prompt-Activation Duality: Fixing Activation Steering via KV-Cache Interventions</h2>
+    <p class="body-lead">Standard activation steering breaks in stateful dialogue because it contaminates the KV cache — this paper identifies the failure mode and proposes attention-level interventions instead. Directly relevant if you&#x27;re building prompt-craft pipelines that need reliable behavioral control across turns.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Check your lock files and npm audit output for TanStack packages; the postmortem lists affected versions explicitly.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://tanstack.com/blog/npm-supply-chain-compromise-postmortem" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Skim the intervention taxonomy to inform how you design multi-turn system prompts where tone or persona drift is a known problem.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://huggingface.co/papers/2605.10664" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
+<section class="spread s-polaroid">
+  <div class="kicker">CREATIVE CRAFT</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">Rendering the Sky, Sunsets, and Planets — A Deep Shader Craft Post</div>
+      <div class="photo-caption">No. 03 &middot; blog.maximeheckel.com</div>
+    </div>
+    <div>
+      <p class="body-lead">Maxime Heckel walks through physically-based atmospheric scattering in WebGL — Rayleigh, Mie, the works — with interactive demos. The kind of visual-systems deep-dive that&#x27;s as useful for understanding generative art tooling as it is just beautiful to read.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
+      </div>
+      <p class="apply-note">&rarr; The live demos run in-browser; open one and start tweaking parameters to understand how procedural sky systems work for generative design projects.</p>
+      
+    </div>
+  </div>
+</section>
+
+<section class="spread s-newsprint">
+  <div class="masthead-bar">The Daily Ledger</div>
+  <div class="title-row">
+    <div class="badge">04</div>
+    <div>
+      <div class="kicker">DEV TOOLS INDUSTRY</div>
+      <h2>GitLab&#x27;s &#x27;Act 2&#x27;: Agentic Era Restructuring, Fewer Countries, New Bets</h2>
+    </div>
+  </div>
+  <div class="cols">
+    <p>GitLab is cutting headcount and country presence while explicitly framing the move around the &#x27;agentic era&#x27; — Simon Willison unpacks what their</p>
+    <p>structural bets actually imply for developer tooling. Not a layoff post; it&#x27;s an analysis of where the dev-tooling platform market is heading.</p>
+  </div>
+  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+    <a class="read-more" href="https://simonwillison.net/2026/May/11/gitlab-act-2/#atom-everything" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    
+  </div>
+  
+  
+</section>
+
+<section class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">05</div>
+  <div class="content">
+    <div class="kicker">PRIVACY &amp; SECURITY</div>
+    <h2>Any App on Recent Android Can Leak Certain Traffic — Mullvad&#x27;s Findings</h2>
+    <p class="body-lead">Mullvad documents a traffic-leak vector affecting recent Android versions that any installed app can exploit, bypassing VPN tunnels in specific conditions. If you do any privacy-sensitive work on Android or recommend tools to users, this is the paper trail you need.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://mullvad.net/en/blog/any-app-on-recent-android-versions-can-leak-certain-traffic" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Check Mullvad&#x27;s mitigation notes and test your threat model — their blog links to the specific Android API conditions that trigger the leak.</p>
+    
+  </div>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
+</section>
+
 <section class="spread s-pullquote">
   <div class="top">
-    <div class="kicker" style="color:#d9b26a">AI TOOLING</div>
-    <div class="tiny-num" aria-hidden="true">03</div>
+    <div class="kicker" style="color:#d9b26a">AI CULTURE</div>
+    <div class="tiny-num" aria-hidden="true">06</div>
   </div>
   <div>
     <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">Write twice as fast? Better hope you&#x27;ve halved your maintenance costs.</p>
+    <p class="pq">AI writing is so pervasive it&#x27;s starting to distort regular human writing styles.</p>
     <div class="attrib">&mdash; simonwillison.net</div>
   </div>
   <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">James Shore (via Willison): if you&#x27;re shipping code 2× faster with AI but maintenance costs haven&#x27;t halved, you&#x27;re just accumulating debt at speed. The sharpest framing of the AI productivity illusion currently circulating.</p>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Jason Koebler&#x27;s angry essay, surfaced by Willison, argues AI-generated writing has become so pervasive it&#x27;s starting to warp human writing style — a feedback loop that matters for anyone designing interfaces that mediate how people write and communicate.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/May/11/james-shore/#atom-everything" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://simonwillison.net/2026/May/11/zombie-internet/#atom-everything" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-zine">
+  <div>
+    <div class="sticker">Cut &amp; keep</div>
+  </div>
+  <div>
+    <div class="marker-num" aria-hidden="true">07</div>
+    <div class="scribble" aria-hidden="true"></div>
+    <div class="kicker">DESIGN CULTURE</div>
+    <h2>The Boring Internet: A Visual Essay on What Actually Persists</h2>
+    <p class="body-lead">Terry Godier&#x27;s visual essay argues the commercial veneer layered over the web is dying — but the underlying internet persists. Sharp information-design sensibility and a useful counterweight to the endless &#x27;internet is dying&#x27; takes.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.terrygodier.com/the-boring-internet" target="_blank" rel="noopener">Read it &rarr;</a>
       
     </div>
     
@@ -595,124 +671,59 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-terminal">
   <div class="window">
     <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #   #  
+    <div class="ascii-num" aria-hidden="true">#####  #####  
 #   #  #   #  
 #   #  #####  
-#   #      #  
-#####      #  </div>
-    <div class="kicker">AI TOOLING</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
-    <h2>Using LLM in the Shebang Line of a Script</h2>
-    <p class="body-lead">&gt; Willison explores putting `llm` directly in a script&#x27;s shebang so an English-language text file executes as a prompt. Genuinely weird, genuinely usable — the kind of small trick that changes how you think about shell scripting with LLMs.</p>
+#   #  #   #  
+#####  #####  </div>
+    <div class="kicker">SUPPLY CHAIN SECURITY</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">socket.dev</span></div>
+    <h2>fsnotify Supply Chain Alarm: Maintainer Access Changes Spark Concern</h2>
+    <p class="body-lead">&gt; Socket&#x27;s analysis of a maintainer dispute on fsnotify — one of Go&#x27;s most-depended-upon file-watching libraries — shows how access handoffs become attack surface. A concrete reminder of why dependency provenance matters for any project using Go tooling.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/May/11/llm-shebang/#atom-everything" target="_blank" rel="noopener">$ open &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Install Simon&#x27;s `llm` CLI tool and try the shebang pattern on any throwaway script you&#x27;d normally prompt manually.</p>
-    
-  </div>
-</section>
-
-<section class="spread s-ticker">
-  <div class="bar"><span class="bar-inner">Breaking &middot; AI SHIPPING &middot; Morning Edition</span></div>
-  <div class="core">
-    <div class="big-num" aria-hidden="true">No. 05</div>
-    <div class="kicker">AI SHIPPING</div>
-    <h2>OpenAI Daybreak: AI That Detects Vulns Before Attackers Do</h2>
-    <p class="body-lead">OpenAI&#x27;s Daybreak ships an agentic security product built on Codex that threat-models your codebase and hunts zero-days. The framing — AI finding vulns before attackers do — is the flip side of the AI-generated exploit story (see below). A real product, not a concept.</p>
-    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.theverge.com/ai-artificial-intelligence/928342/openai-daybreak-security-ai" target="_blank" rel="noopener">Over the wire &rarr;</a>
+      <a class="read-more" href="https://socket.dev/blog/fsnotify-maintainer-dispute-sparks-supply-chain-concerns" target="_blank" rel="noopener">$ open &rarr;</a>
       
     </div>
     
     
   </div>
-  <div class="bar"><span class="bar-inner">Filed TUESDAY, MAY 12, 2026</span></div>
 </section>
 
-<section class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">06</div>
-  <div class="content">
-    <div class="kicker">SECURITY</div>
-    <h2>Copy.Fail: Worst Linux Kernel Privilege Escalation in Years</h2>
-    <p class="body-lead">Schneier&#x27;s breakdown of Copy.Fail, a local privilege escalation via the kernel crypto API with a working PoC already public. Disclosed April 29; if you run Linux locally or deploy Linux containers, patch window is now.</p>
-    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/05/copy-fail-linux-vulnerability.html" target="_blank" rel="noopener">Read the story &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Check your kernel version against the CVE and apply the patch — PoC is already in the wild.</p>
-    
+<section class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">IX</span>
   </div>
-  <div class="footer-slug">Morning Edition &middot; After Dark</div>
-</section>
-
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">INTERFACE DESIGN</div>
-    <div class="tiny-num" aria-hidden="true">07</div>
-  </div>
-  <h2>The anti-minimalist backlash is the bigger story behind Oxygen&#x27;s revival.<span class="mark">.</span></h2>
   <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">KDE&#x27;s Oxygen desktop theme is being revived, and this piece argues it&#x27;s a symptom of a broader cultural turn away from flat, featureless UI. A sharp read on how user fatigue with hyper-minimalism is starting to reshape visual design language.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; filipfila.wordpress.com</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://filipfila.wordpress.com/2026/05/10/the-anti-minimalist-backlash-is-the-bigger-story-behind-oxygens-revival/" target="_blank" rel="noopener">Read the story &rarr;</a>
+    <div class="kicker">WEIRD SCIENCE</div>
+    <h2>UCLA Discovers First Drug to Repair Stroke Brain Damage</h2>
+    <div class="body-lead">UCLA researchers identified a compound that, administered post-stroke, promotes functional recovery by repairing cortical connectivity — the first drug to show actual structural repair rather than just symptom management. Neuroscience with rare clinical implications.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://stemcell.ucla.edu/news/ucla-discovers-first-stroke-rehabilitation-drug-repair-brain-damage" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
-    
+  </div>
+  <div>
+    <div class="footnote">&sect; filed under weird science</div>
   </div>
 </section>
 
-<section class="spread s-riso">
-  <div class="layout">
-    <div class="kicker">TYPOGRAPHY</div>
-    <div class="riso-num" data-n="08" aria-hidden="true">08</div>
-    <h2>CSS &amp; Vertical Rhythm for Text, Images, and Tables</h2>
-    <p class="body-lead">A careful, practical walkthrough of achieving true vertical rhythm across mixed content — text, images, tables — in CSS. The kind of typographic craft detail that most design systems skip and everyone quietly regrets later.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://vincent.bernat.ch/en/blog/2026-css-vertical-rhythm" target="_blank" rel="noopener">Pull a proof &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Apply the baseline-grid technique to your next component library or design token set before shipping.</p>
+<section class="spread s-stat">
+  <div class="top">
+    <div class="chip">No. 10 &middot; AI ADOPTION</div>
     
   </div>
-</section>
-
-<section class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 09</span>
-    <span>PRIVACY</span>
+  <div class="stat-wrap">
+    <div class="stat-value" aria-hidden="true">35+</div>
+    <div class="stat-label">Fastest-growing ChatGPT age cohort in Q1 2026</div>
   </div>
-  <div class="ix-body">
-    <h2>Taken: What Your Browser Gives Away the Moment You Arrive</h2>
-    <p class="body-lead">A single web page that silently enumerates everything your browser leaks on arrival — no login, no form, no permission prompt. Useful as a privacy gut-check and as a design reference for what passive fingerprinting looks like at the user level.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://sinceyouarrived.world/taken" target="_blank" rel="noopener">Follow the thread &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Open it now in your primary browser, then again in a hardened profile — the delta is the conversation.</p>
+  <div>
+    <h2>ChatGPT Q1 2026: Fastest Growth Now Among Users Over 35</h2>
+    <p class="body-lead">OpenAI&#x27;s Q1 signals report shows ChatGPT&#x27;s fastest-growing cohort is now 35+, with more balanced gender distribution — a mainstream inflection that shifts the UX design problem from &#x27;onboarding enthusiasts&#x27; to &#x27;designing for general adults with no mental model of LLMs&#x27;.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://openai.com/signals/research/2026q1-update" target="_blank" rel="noopener">Read the story &rarr;</a></div>
     
-  </div>
-</section>
-
-<section class="spread s-polaroid">
-  <div class="kicker">DESIGN HISTORY</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">Screenshots of Old Desktop OSes</div>
-      <div class="photo-caption">No. 10 &middot; typewritten.org</div>
-    </div>
-    <div>
-      <p class="body-lead">A dense archive of early desktop OS screenshots — Amiga, GEOS, NeXTSTEP, OS/2, BeOS — each a design language that never became dominant. Useful raw material for thinking about interface idioms that got discarded, not disproven.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="http://www.typewritten.org/Media/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        
-      </div>
-      
-      
-    </div>
+    
   </div>
 </section>
 
@@ -721,9 +732,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  6 of them are flagged as directly applicable &mdash; open those first.</p>
+  4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Lora and Raleway. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-05-12 13:03 UTC.</p>
+  at 2026-05-12 14:35 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0497 &middot; TUESDAY, MAY 12, 2026</p>
