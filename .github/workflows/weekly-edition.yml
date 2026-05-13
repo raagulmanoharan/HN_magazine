@@ -86,6 +86,7 @@ jobs:
             exit 0
           fi
           git commit -m "Weekly Edition: ${{ steps.meta.outputs.issue_date }}"
+          git pull --rebase origin ${GITHUB_REF#refs/heads/}
           git push origin HEAD:${GITHUB_REF#refs/heads/}
 
   notify:
