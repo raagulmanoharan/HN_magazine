@@ -31,14 +31,28 @@ def _format_message(url: str, issue_date: str, applies_count: int, tagline: str)
     return "\n".join(lines)
 
 
-def send(url: str, issue_date: str, applies_count: int = 0, tagline: str = "") -> bool:
-    sid = os.environ.get("TWILIO_ACCOUNT_SID")
-    token = os.environ.get("TWILIO_AUTH_TOKEN")
-    sender = os.environ.get("TWILIO_WHATSAPP_FROM")
-    recipient = os.environ.get("WHATSAPP_TO")
+def _ensure_whatsapp_prefix(number: str) -> str:
+    """Add 'whatsapp:' prefix if missing."""
+    number = number.strip()
+    if not number.startswith("whatsapp:"):
+        number = f"whatsapp:{number}"
+    return number
 
-    if not all([sid, token, sender, recipient]):
-        log.warning("Twilio env vars missing; skipping WhatsApp notification.")
+
+def send(url: str, issue_date: str, applies_count: int = 0, tagline: str = "") -> bool:
+    sid = os.environ.get("TWILIO_ACCOUNT_SID", "").strip()
+    token = os.environ.get("TWILIO_AUTH_TOKEN", "").strip()
+    sender = os.environ.get("TWILIO_WHATSAPP_FROM", "").strip()
+    recipient = os.environ.get("WHATSAPP_TO", "").strip()
+
+    missing = [
+        name for name, val in [
+            ("TWILIO_ACCOUNT_SID", sid), ("TWILIO_AUTH_TOKEN", token),
+            ("TWILIO_WHATSAPP_FROM", sender), ("WHATSAPP_TO", recipient),
+        ] if not val
+    ]
+    if missing:
+        log.warning("Twilio env vars missing (%s); skipping notification.", ", ".join(missing))
         return False
 
     try:
@@ -47,11 +61,20 @@ def send(url: str, issue_date: str, applies_count: int = 0, tagline: str = "") -
         log.warning("twilio package not installed; skipping WhatsApp notification.")
         return False
 
+    sender = _ensure_whatsapp_prefix(sender)
+    recipient = _ensure_whatsapp_prefix(recipient)
+
     body = _format_message(url, issue_date, applies_count, tagline)
-    client = Client(sid, token)
-    msg = client.messages.create(from_=sender, to=recipient, body=body)
-    log.info("WhatsApp message queued: sid=%s", msg.sid)
-    return True
+    log.info("Sending WhatsApp: from=%s to=%s", sender, recipient)
+
+    try:
+        client = Client(sid, token)
+        msg = client.messages.create(from_=sender, to=recipient, body=body)
+        log.info("WhatsApp message queued: sid=%s status=%s", msg.sid, msg.status)
+        return True
+    except Exception as e:
+        log.error("Twilio API call failed: %s", e)
+        return False
 
 
 if __name__ == "__main__":
