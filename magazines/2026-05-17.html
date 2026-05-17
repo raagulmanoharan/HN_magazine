@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; SUNDAY, MAY 17, 2026</title>
-<meta name="description" content="Agents, icons, dishonest charts, and async Zig">
+<meta name="description" content="Craft, inference costs, and steering vectors">
 <meta property="og:title" content="Morning Edition · SUNDAY, MAY 17, 2026">
-<meta property="og:description" content="Agents, icons, dishonest charts, and async Zig">
+<meta property="og:description" content="Craft, inference costs, and steering vectors">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,900;1,400;1,900&family=Albert+Sans:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -540,15 +540,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AGENTIC TOOLS</div>
-      <h2 class="cover-title">Zerostack – A Unix-inspired coding agent written in pure Rust</h2>
-      <p class="cover-tagline">Agents, icons, dishonest charts, and async Zig</p>
-      <p class="body-lead body-lead--wide">A self-contained coding agent with Unix philosophy baked in — pipes, composability, no framework bloat. With 435 upvotes and 203 comments it&#x27;s clearly struck a nerve. If you&#x27;re evaluating agentic scaffolds beyond Claude Code or Codex, this is the one to benchmark against today.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; UX / TYPOGRAPHY</div>
+      <h2 class="cover-title">Native all the way, until you need text</h2>
+      <p class="cover-tagline">Craft, inference costs, and steering vectors</p>
+      <p class="body-lead body-lead--wide">A practitioner&#x27;s deep-dive into why text rendering is the last unsolved problem in native UI — where platform constraints, font stacks, and layout engines silently diverge. For a UX designer shipping cross-platform, this is the anatomy of exactly the pain you&#x27;ve been describing to engineers for years.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://crates.io/crates/zerostack/1.0.0" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://justsitandgrin.im/posts/native-all-the-way-until-you-need-text/" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Install via `cargo install zerostack` and point it at a small project to test its Unix-pipe agentic loop against your current workflow.</p>
+      <p class="apply-note">&rarr; Read alongside your current design spec; use it to frame the next cross-platform text-rendering conversation with your dev team.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -558,53 +558,92 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">DESIGN TOOLS</div>
+    <div class="kicker">LOCAL AI / INFRA</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>theSVG — 6,030+ brand SVG icons with npm, React, Vue, Svelte, CLI &amp; MCP</h2>
-    <p class="body-lead">A single open-source library covering the brand icon landscape, with framework-native packages and — notably — an MCP server so your coding agent can pull icons on demand. Replaces the scattered Simple Icons / Iconify juggle for most design-system work.</p>
+    <h2>Running local LLMs on Apple Silicon costs more than OpenRouter</h2>
+    <p class="body-lead">A field report with actual electricity cost math comparing on-device inference to hosted API pricing — the result flips the conventional wisdom around local-first LLMs. Directly relevant if you&#x27;re running Ollama or llama.cpp on your M-series Mac for agentic workflows.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Run `npm install thesvg` or hit the CDN endpoint; wire the MCP server into Claude Code for agent-assisted icon retrieval inside Figma exports.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://thesvg.org/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Cross-reference your own token usage patterns against the author&#x27;s cost model to decide whether local inference is actually worth it for your workload.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://www.williamangel.net/blog/2026/05/17/offline-llm-energy-use.html" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section class="spread s-polaroid">
-  <div class="kicker">UX / FIGMA</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">html.to.design — Capture any webpage, paste straight into Figma</div>
-      <div class="photo-caption">No. 03 &middot; bit.ly</div>
-    </div>
-    <div>
-      <p class="body-lead">The Chrome extension now lets you capture full pages or isolated sections, copy to clipboard, and Ctrl+V directly into Figma as editable layers. Closes the gap between &#x27;existing web UI&#x27; and &#x27;design file I can actually iterate on&#x27; in one keystroke.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://bit.ly/side-div4" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
-      </div>
-      <p class="apply-note">&rarr; Install the updated Chrome extension, select any live component you want to redesign, and paste it straight into your active Figma file.</p>
+<section class="spread s-pullquote">
+  <div class="top">
+    <div class="kicker" style="color:#d9b26a">LLM TOOLING</div>
+    <div class="tiny-num" aria-hidden="true">03</div>
+  </div>
+  <div>
+    <span class="quote-open" aria-hidden="true">&ldquo;</span>
+    <p class="pq">An open, fast model makes steering vectors a practical tool again.</p>
+    <div class="attrib">&mdash; seangoedecke.com</div>
+  </div>
+  <div>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Steering vectors — nudging model activations directly rather than prompting — had stalled on closed models, but an open, fast architecture revives the technique. A concise argument for why prompt engineers should start paying attention to mechanistic interventions as a practical tool.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.seangoedecke.com/steering-vectors/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
+    
+    
   </div>
 </section>
 
-<section class="spread s-grid">
-  <div class="grid-top">
-    <div class="tag">INFORMATION DESIGN</div>
-    <div class="num-corner">No. 04</div>
+<section class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #   #  
+#   #  #   #  
+#   #  #####  
+#   #      #  
+#####      #  </div>
+    <div class="kicker">CREATIVE SOFTWARE / AGENTIC</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
+    <h2>Claude Code managed to get Adobe Lightroom running on Linux</h2>
+    <p class="body-lead">&gt; A working GitHub repo where Claude Code autonomously navigated Wine configuration, dependency resolution, and patch application to ship Lightroom CC on Linux — no manual shell scripting. A concrete demonstration of agentic coding solving a real creative-software pain point.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://github.com/sander110419/lightroom-cc-on-linux" target="_blank" rel="noopener">$ open &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Clone the repo and follow the instructions if you run Linux and want Lightroom; even on macOS it&#x27;s a useful study in what Claude Code can orchestrate unsupervised.</p>
+    
   </div>
-  <div class="grid-body">
-    <h2>Defense Against Dishonest Charts — FlowingData&#x27;s practical guide</h2>
-    <div class="side">
-      <p class="body-lead">Nathan Yau catalogs the manipulation patterns baked into bad data vis — truncated axes, dual-axis abuse, cherry-picked ranges — and shows the corrected forms side by side. Essential reference for any designer who commissions or critiques charts in product work.</p>
+</section>
+
+<section class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">05</div>
+  <div class="content">
+    <div class="kicker">SECURITY</div>
+    <h2>Nginx-Rift: exploit for CVE-2026-42945 (PoC released)</h2>
+    <p class="body-lead">A proof-of-concept exploit for a freshly disclosed Nginx CVE, already trending on GitHub. If you self-host anything behind Nginx — and plenty of designers running local-first stacks do — this is patch-now territory.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://github.com/DepthFirstDisclosures/Nginx-Rift" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Check your Nginx version immediately; patch or apply the workaround documented in the repo before exposing any self-hosted service.</p>
+    
+  </div>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
+</section>
+
+<section class="spread s-polaroid">
+  <div class="kicker">INFORMATION DESIGN</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">A nicer voltmeter clock — hardware craft and analog display design</div>
+      <div class="photo-caption">No. 06 &middot; lcamtuf.substack.com</div>
+    </div>
+    <div>
+      <p class="body-lead">lcamtuf rebuilds a voltmeter clock with obsessive attention to dial aesthetics, needle damping, and analog readability — it&#x27;s essentially an information-design essay disguised as a hardware project. The decisions about what to display and how to communicate continuous values map cleanly to data-viz thinking.</p>
       <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://flowingdata.com/projects/dishonest-charts/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
+        <a class="read-more" href="https://lcamtuf.substack.com/p/a-nicer-voltmeter-clock" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
       </div>
-      <p class="apply-note">&rarr; Bookmark and share with stakeholders next time you&#x27;re reviewing a dashboard spec or a slide deck with suspiciously tidy trend lines.</p>
+      
       
     </div>
   </div>
@@ -613,38 +652,35 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-newsprint">
   <div class="masthead-bar">The Daily Ledger</div>
   <div class="title-row">
-    <div class="badge">05</div>
+    <div class="badge">07</div>
     <div>
-      <div class="kicker">OPEN MODELS</div>
-      <h2>Latest Open Artifacts #21: Gemma 4, DeepSeek V4, Kimi K2.6 and more</h2>
+      <div class="kicker">AI POLICY</div>
+      <h2>ArXiv will ban authors for a year for fully AI-written papers</h2>
     </div>
   </div>
   <div class="cols">
-    <p>Nathan Lambert&#x27;s running digest of open-weight releases hits a dense month: Gemma 4, DeepSeek V4 Flash, Kimi K2.6, MiMo 2.5, GLM-5.1.</p>
-    <p>Useful specifically because it includes CAISI&#x27;s V4 assessment — the kind of eval context you need before swapping a model into a production agentic pipeline.</p>
+    <p>ArXiv is drawing a hard line: papers where LLMs did all the intellectual work will get the author banned for twelve months.</p>
+    <p>It&#x27;s a concrete governance artifact — not a hot take — that sets a precedent for how institutions will define human authorship in the agentic era.</p>
   </div>
   <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    <a class="read-more" href="https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
     
   </div>
   
   
 </section>
 
-<section class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #      
-#   #  #####  
-#   #  #   #  
-#####  #####  </div>
-    <div class="kicker">LANGUAGES / SYSTEMS</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">lalinsky.com</span></div>
-    <h2>Async I/O in Zig 0.16, Today</h2>
-    <p class="body-lead">&gt; A hands-on walkthrough of writing async I/O in Zig 0.16&#x27;s current state — before the official async story is finalized. Useful if you&#x27;re watching Zig as a potential systems substrate for tool-building, since the async design has been the language&#x27;s longest-running open question.</p>
+<section class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">CRAFT / PHILOSOPHY</div>
+    <div class="tiny-num" aria-hidden="true">08</div>
+  </div>
+  <h2>Fewer tools, more mastery: constraint as craft rather than compromise.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A thoughtful essay arguing for deliberate constraint in tooling choices — fewer dependencies, slower upgrades, less noise — as a form of technical discipline. Resonates for a designer drowning in AI-powered everything; a useful counterweight to perpetual tool FOMO.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; ratfactor.com</div>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://lalinsky.com/2026/05/11/async-io-in-zig-016-today.html" target="_blank" rel="noopener">$ open &rarr;</a>
+      <a class="read-more" href="https://ratfactor.com/ascetic-computing" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
@@ -652,39 +688,16 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.07</span>
-      <span>GITHUB.COM</span>
-      <span>SHEET 7/10</span>
-    </div>
-    <div class="kicker">AGENTIC WORKFLOWS</div>
-    <h2>agents-best-practices — Provider-neutral harness design for Codex &amp; Claude Code</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">07</div>
-      <p class="body-lead">A concise, opinionated guide to structuring agent skills that work across Codex, Claude Code, and custom harnesses — tool selection, context budgeting, failure handling. Provider-neutral framing means what you learn here isn&#x27;t locked to one vendor&#x27;s next API reshuffle.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/DenisSergeevitch/agents-best-practices" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Clone the repo and skim the harness-design section before your next agentic feature build; the tool-selection heuristics are immediately applicable.</p>
-    
+<section class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 09</span>
+    <span>WEIRD SCIENCE / AUDIO</span>
   </div>
-</section>
-
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">PRIVACY / POLICY</div>
-    <div class="tiny-num" aria-hidden="true">08</div>
-  </div>
-  <h2>Undermining VPNs is undermining the architecture of private communication.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Mozilla&#x27;s formal submission to UK regulators argues that VPN undermining sets a dangerous precedent for encryption infrastructure globally — not just in Britain. The legal framing here matters: this is the template other orgs will reference when regulators come for their region.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; blog.mozilla.org</div>
+  <div class="ix-body">
+    <h2>Playing Atari ST music on the Amiga with zero CPU overhead</h2>
+    <p class="body-lead">A deep technical reconstruction of YM2149 chip-sound emulation on Amiga hardware that offloads all computation to a pre-baked lookup table — zero CPU cycles at playback. Genuinely strange empirical engineering, and a surprisingly elegant lesson in latency/memory tradeoffs for anyone thinking about audio tooling.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://blog.mozilla.org/netpolicy/2026/05/15/mozilla-to-uk-regulators-vpns-are-essential-privacy-and-security-tools-and-should-not-be-undermined/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://arnaud-carre.github.io/2026-05-15-ym-fast-emu/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
       
     </div>
     
@@ -695,41 +708,20 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-academic">
   <div class="masthead-line">
     <span>Morning Edition &mdash; Review</span>
-    <span class="roman">IX</span>
+    <span class="roman">X</span>
   </div>
   <div>
-    <div class="kicker">WEIRD SCIENCE</div>
-    <h2>Fecal Transplants for Autism Deliver Success in Clinical Trials</h2>
-    <div class="body-lead">Clinical trial results showing measurable behavioral improvements in autistic patients following microbiome transplants — the gut-brain axis delivering stranger empirical fruit than most neuroscience has managed this decade. The mechanism remains contested but the effect sizes are hard to dismiss.</div>
+    <div class="kicker">SECURITY / MATH</div>
+    <h2>The Futility of Lava Lamps: What &#x27;Random&#x27; Really Means</h2>
+    <div class="body-lead">A rigorous unpacking of what randomness actually requires in cryptographic contexts, using the lava-lamp PRNG as a jumping-off point to explain entropy sources, mixing functions, and where the real security properties live. Clear, well-argued, and directly relevant to anyone self-hosting services that depend on RNG.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://refractor.io/adhd-autism/fecal-transplants-for-autism-delivers-success-in-clinical-trials/" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      <a class="read-more" href="https://loup-vaillant.fr/articles/lava-lamps-and-randomness" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
   </div>
   <div>
-    <div class="footnote">&sect; filed under weird science</div>
-  </div>
-</section>
-
-<section class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">DESIGN CULTURE</div>
-    <div class="tiny-num" aria-hidden="true">10</div>
-  </div>
-  <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">Frictionlessness is an aesthetic choice that erases all other choices.</p>
-    <div class="attrib">&mdash; wallpaper.com</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Wallpaper&#x27;s essay on how frictionlessness became the dominant aesthetic ideology — and what disappears when every surface is optimized. Directly relevant for UX designers who suspect they&#x27;ve been building the problem, not solving it.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.wallpaper.com/art/the-aesthetics-of-optimisation" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
+    <div class="footnote">&sect; filed under security / math</div>
   </div>
 </section>
 
@@ -738,9 +730,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  5 of them are flagged as directly applicable &mdash; open those first.</p>
+  4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Alegreya and Albert Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-05-17 11:58 UTC.</p>
+  at 2026-05-17 13:40 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0502 &middot; SUNDAY, MAY 17, 2026</p>
