@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; MONDAY, MAY 18, 2026</title>
-<meta name="description" content="Backdoors, bots, and bloat fighting back">
+<meta name="description" content="Backdoors, agents, and math that breaks everything">
 <meta property="og:title" content="Morning Edition · MONDAY, MAY 18, 2026">
-<meta property="og:description" content="Backdoors, bots, and bloat fighting back">
+<meta property="og:description" content="Backdoors, agents, and math that breaks everything">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&family=Open+Sans:wght@400;500;600;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -540,15 +540,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; PRIVACY TOOLS</div>
-      <h2 class="cover-title">I automated opt-outs for 500 data broker sites (open source)</h2>
-      <p class="cover-tagline">Backdoors, bots, and bloat fighting back</p>
-      <p class="body-lead body-lead--wide">A working, open-source script that submits removal requests to 500 data brokers automatically — no service subscription required. For a privacy-conscious designer who handles client data and personal identity, this is the rare kind of tool that converts annoyance into a solved problem. Clone, configure, run.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; SECURITY</div>
+      <h2 class="cover-title">Researcher Says Microsoft Secretly Built a Backdoor into BitLocker</h2>
+      <p class="cover-tagline">Backdoors, agents, and math that breaks everything</p>
+      <p class="body-lead body-lead--wide">A researcher claims Microsoft embedded a recovery-key backdoor in BitLocker and has released proof-of-concept code. For anyone using full-disk encryption on Windows workstations — which is most designers and devs — understanding whether your threat model just changed is non-optional.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://github.com/stephenlthorn/auto-identity-remove" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://www.techspot.com/news/112410-security-researcher-microsoft-secretly-built-backdoor-bitlocker-releases.html" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Clone the repo, add your personal details to the config, and run the opt-out script today — no account needed.</p>
+      <p class="apply-note">&rarr; Review your disk encryption posture today: consider VeraCrypt or Linux LUKS if BitLocker is your primary defense on sensitive machines.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -558,152 +558,110 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">SECURITY</div>
+    <div class="kicker">AI AGENTS</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Zero-Day Exploit Against Windows BitLocker (YellowKey)</h2>
-    <p class="body-lead">Schneier&#x27;s calm dissection of YellowKey — a physical-access BitLocker bypass on default Windows 11 — is the analytical take worth reading over the breathless headlines. Pairs with the Lobste.rs researcher claim of a secret Microsoft backdoor; together they paint an uncomfortable picture of disk encryption&#x27;s actual threat model.</p>
+    <h2>Known By Their Actions: Fingerprinting LLM Browser Agents via UI Traces</h2>
+    <p class="body-lead">Websites can passively identify which LLM is piloting a browser agent just by watching its interaction patterns — click timing, scroll depth, form-fill cadence. A direct security and privacy concern for anyone building or deploying agentic workflows today.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Check whether your Windows machines use a non-default BitLocker PIN — the exploit targets default deployments specifically.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://www.schneier.com/blog/archives/2026/05/zero-day-exploit-against-windows-bitlocker.html" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; If you&#x27;re building or demoing browser agents, read this before your next client presentation — your agent&#x27;s model identity may already be leaking.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://huggingface.co/papers/2605.14786" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">AI + OPEN SOURCE</div>
-    <div class="tiny-num" aria-hidden="true">03</div>
+<section class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">III</span>
   </div>
   <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">AI-powered bug hunters have made the mailing list almost unmanageable.</p>
-    <div class="attrib">&mdash; theregister.com</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Torvalds says AI-generated vulnerability reports have flooded the Linux security list to the point of near-paralysis — a concrete illustration of agentic tooling&#x27;s externalities. The signal-to-noise problem is a UX problem: whoever designs the triage interface for this owns the outcome.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.theregister.com/security/2026/05/18/linus-torvalds-says-ai-powered-bug-hunters-have-made-linux-security-mailing-list-almost-entirely-unmanageable/5241633" target="_blank" rel="noopener">Read the story &rarr;</a>
+    <div class="kicker">WEIRD SCIENCE</div>
+    <h2>What Do Gödel&#x27;s Incompleteness Theorems Truly Mean?</h2>
+    <div class="body-lead">Natalie Wolchover revisits the 95-year-old proof that demolished Hilbert&#x27;s dream of a complete mathematics. Quanta&#x27;s editorial quality makes this the rare piece that can actually shift how you think about the limits of formal systems — and, by extension, AI reasoning.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.quantamagazine.org/what-do-godels-incompleteness-theorems-truly-mean-20260518/" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
-    
   </div>
-</section>
-
-<section class="spread s-polaroid">
-  <div class="kicker">CREATIVE TOOLS</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">GenCAD — AI-assisted parametric CAD in the browser</div>
-      <div class="photo-caption">No. 04 &middot; gencad.github.io</div>
-    </div>
-    <div>
-      <p class="body-lead">GenCAD is a browser-based parametric CAD tool where you describe geometry in natural language and it generates editable, constraint-based models — a direct challenge to the &#x27;AI can&#x27;t do real CAD&#x27; assumption. High HN engagement suggests it&#x27;s actually working for people, not just demoing well.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://gencad.github.io/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
-      </div>
-      <p class="apply-note">&rarr; Open gencad.github.io in your browser right now and try describing a simple enclosure or bracket in plain English.</p>
-      
-    </div>
-  </div>
-</section>
-
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">SOFTWARE PHILOSOPHY</div>
-    <div class="tiny-num" aria-hidden="true">05</div>
-  </div>
-  <h2>Fitting on a floppy is a constraint, not a gimmick — it forces you to care.<span class="mark">.</span></h2>
   <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A sharp argument that useful software should fit on a 1.44MB floppy — not as nostalgia, but as a design constraint that forces discipline. For a UX designer who cares about craft, this is the kind of manifesto that reframes what &#x27;done&#x27; means in an era of 400MB Electron apps.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; fitsonafloppy.com</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://fitsonafloppy.com" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
+    <div class="footnote">&sect; filed under weird science</div>
   </div>
 </section>
 
 <section class="spread s-terminal">
   <div class="window">
     <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #      
-#   #  #####  
+    <div class="ascii-num" aria-hidden="true">#####  #   #  
 #   #  #   #  
-#####  #####  </div>
-    <div class="kicker">AGENTIC AI / FIELD REPORT</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">zanestjohn.com</span></div>
-    <h2>Reverse Engineering Android Malware with Claude Code</h2>
-    <p class="body-lead">&gt; A practitioner&#x27;s field report on using Claude Code as a reverse-engineering assistant for real malware analysis — not a toy demo. This is exactly the kind of &#x27;agentic workflow that actually shipped and worked&#x27; the reader profile calls for, applied to security research rather than CRUD scaffolding.</p>
+#   #  #####  
+#   #      #  
+#####      #  </div>
+    <div class="kicker">DEV TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
+    <h2>zerostack — Minimalistic Coding Agent in Rust, Optimized for Memory and Performance</h2>
+    <p class="body-lead">&gt; A lean Rust-native coding agent that prioritizes low memory footprint over feature maximalism. If you&#x27;re evaluating agentic coding tools and tired of Electron-heavy wrappers, this is the contrarian pick worth a local install.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://zanestjohn.com/blog/reing-with-claude-code" target="_blank" rel="noopener">$ open &rarr;</a>
+      <a class="read-more" href="https://github.com/gi-dellav/zerostack" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; If you have Claude Code access, the workflow described here adapts directly to any unfamiliar codebase you need to audit fast.</p>
+    <p class="apply-note">&rarr; Clone and run locally today — it&#x27;s vanilla Rust with no heavyweight runtime dependencies, so `cargo install` is the full story.</p>
     
   </div>
 </section>
 
-<section class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">07</div>
+<section class="spread s-polaroid">
+  <div class="kicker">INTERFACE DESIGN</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">New Design for the FreeBSD Website</div>
+      <div class="photo-caption">No. 05 &middot; freebsd.org</div>
+    </div>
     <div>
-      <div class="kicker">AI + PRIVACY</div>
-      <h2>Revamped Siri Will Reportedly Offer Auto-Deleting Chats</h2>
+      <p class="body-lead">FreeBSD shipped a ground-up visual redesign — a rare case of open-source infrastructure investing in information design. Worth a look for how technical documentation sites can evolve their visual language without losing density.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://www.freebsd.org/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
+      
     </div>
-  </div>
-  <div class="cols">
-    <p>Apple is positioning privacy-by-default — ephemeral chat history — as its differentiator in the AI assistant wars.</p>
-    <p>For a UX designer watching how assistants handle sensitive context, this is a genuine interaction design decision with product strategy implications baked in.</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://www.theverge.com/tech/932207/siri-apple-intelligence-auto-deleting-chats" target="_blank" rel="noopener">Full dispatch &rarr;</a>
-    
-  </div>
-  
-  
-</section>
-
-<section class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.08</span>
-      <span>WTARREAU.BLOGSPOT.COM</span>
-      <span>SHEET 8/10</span>
-    </div>
-    <div class="kicker">LOCAL LLM / DEV TOOLS</div>
-    <h2>Find Bugs in Your Code Using OpenCode, Llama.cpp, and Qwen3</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">08</div>
-      <p class="body-lead">A concrete walkthrough of running a fully local code-review agent — OpenCode CLI + llama.cpp + Qwen3 — with no cloud dependency. The stack is installable today on a reasonably specced machine, and the post covers actual results rather than benchmarks.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="http://wtarreau.blogspot.com/2026/05/find-bugs-in-your-code-using-opencode.html" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Follow the post&#x27;s setup steps to run the local agent against your own codebase; requires llama.cpp and a Qwen3 GGUF model.</p>
-    
   </div>
 </section>
 
-<section class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 09</span>
-    <span>WEIRD SCIENCE</span>
+<section class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">06</div>
+  <div class="content">
+    <div class="kicker">AI RESEARCH</div>
+    <h2>Forgetting That Sticks: Quantization-Permanent Unlearning via Circuit Attribution</h2>
+    <p class="body-lead">Standard LLM unlearning evaluations are run at full precision, but real deployments are 4-bit quantized — and quantization reverses the forgetting. This paper proposes circuit-attributed unlearning that survives quantization, which matters for anyone running local models with safety constraints.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://huggingface.co/papers/2605.15138" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
   </div>
-  <div class="ix-body">
-    <h2>Strange Crystals Found Inside Wreckage from the First Nuclear Bomb Test</h2>
-    <p class="body-lead">Researchers found previously unclassified crystal structures in Trinity test debris — materials that only exist because of the specific thermodynamic conditions of a nuclear detonation. An 80-year-old explosion is still producing mineralogical surprises.</p>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
+</section>
+
+<section class="spread s-pullquote">
+  <div class="top">
+    <div class="kicker" style="color:#d9b26a">PROMPT CRAFT</div>
+    <div class="tiny-num" aria-hidden="true">07</div>
+  </div>
+  <div>
+    <span class="quote-open" aria-hidden="true">&ldquo;</span>
+    <p class="pq">The stated question is rarely the actual problem.</p>
+    <div class="attrib">&mdash; lalitm.com</div>
+  </div>
+  <div>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">The stated question is rarely the actual problem — a principle that applies as sharply to prompt design as to user interviews. This piece frames the diagnostic habit of probing one layer deeper before responding, which maps directly onto LLM system-prompt design.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.scientificamerican.com/article/strange-crystals-found-inside-wreckage-from-the-first-nuclear-bomb-test/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      <a class="read-more" href="https://lalitm.com/post/dont-answer-the-first-question/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
@@ -711,20 +669,63 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">10</div>
-  <div class="content">
-    <div class="kicker">LOCAL-FIRST TOOLS</div>
-    <h2>Files.md — Open-source, filesystem-native alternative to Obsidian</h2>
-    <p class="body-lead">Files.md is a zero-dependency Markdown knowledge base that treats your filesystem as the database — no proprietary format, no sync lock-in, no Electron. For a designer who keeps research notes, design references, or personal docs, this is the kind of local-first tool that stays out of your way.</p>
-    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/zakirullin/files.md" target="_blank" rel="noopener">Read the story &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
+<section class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">WEIRD SCIENCE</div>
+    <div class="tiny-num" aria-hidden="true">08</div>
+  </div>
+  <h2>The hard problem dissolves when you stop importing the dualism that created it.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A serious philosophical argument that the Chalmers-framing of consciousness as irreducibly mysterious is itself the error. With 514 HN comments this is the week&#x27;s sharpest intellectual fire — and it has direct bearing on how we should talk about AI interiority.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; noemamag.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.noemamag.com/there-is-no-hard-problem-of-consciousness/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
     </div>
-    <p class="apply-note">&rarr; Clone the repo and point it at an existing folder of Markdown files — it requires no migration and works immediately.</p>
+    
     
   </div>
-  <div class="footer-slug">Morning Edition &middot; After Dark</div>
+</section>
+
+<section class="spread s-grid">
+  <div class="grid-top">
+    <div class="tag">AI INDUSTRY</div>
+    <div class="num-corner">No. 09</div>
+  </div>
+  <div class="grid-body">
+    <h2>AI Eats the World — Spring 2026 Landscape Report</h2>
+    <div class="side">
+      <p class="body-lead">A dense Spring 2026 state-of-AI PDF making the rounds on HN. Worth skimming for benchmark context and capability-vs-deployment gap data — the kind of grounding that separates informed tool decisions from vibes-driven ones.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/6a0af5d0484fbf5fe9a7743e/1779103184855/2026-Spring-AI.pdf" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
+
+<section class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.10</span>
+      <span>OPENWALL.COM</span>
+      <span>SHEET 10/10</span>
+    </div>
+    <div class="kicker">SECURITY</div>
+    <h2>Recent Linux Kernel Exploits and Attack Surface Reduction via IPSEC</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">10</div>
+      <p class="body-lead">A practical oss-security post walking through recent kernel exploits alongside concrete attack-surface reduction techniques. The IPSEC angle is a useful case study in how protocol scoping limits lateral movement — actionable for anyone running self-hosted infra.</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.openwall.com/lists/oss-security/2026/05/16/3" target="_blank" rel="noopener">View schematic &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Skim the mitigations section and cross-check your kernel config or container seccomp profiles against the listed attack surfaces.</p>
+    
+  </div>
 </section>
 
 
@@ -732,9 +733,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  6 of them are flagged as directly applicable &mdash; open those first.</p>
+  4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Merriweather and Open Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-05-18 14:28 UTC.</p>
+  at 2026-05-18 15:41 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0503 &middot; MONDAY, MAY 18, 2026</p>
