@@ -22,10 +22,6 @@ on:
       - ".github/workflows/morning-edition.yml"
       - "requirements.txt"
 
-# We commit generated files back to the repo; Pages serves them
-# directly from the branch (Settings -> Pages -> Source: Deploy from
-# a branch -> main -> /). No `github-pages` environment needed, so
-# environment protection rules cannot block us.
 permissions:
   contents: write
 
@@ -36,11 +32,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      public_url: ${{ steps.meta.outputs.public_url }}
-      issue_date: ${{ steps.meta.outputs.issue_date }}
-      applies_count: ${{ steps.meta.outputs.applies_count }}
-      tagline: ${{ steps.meta.outputs.tagline }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -64,7 +55,6 @@ jobs:
           echo "url=https://${owner}.github.io/${repo}" >> "$GITHUB_OUTPUT"
 
       - name: Build today's issue
-        id: build
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-4-6' }}
@@ -75,65 +65,19 @@ jobs:
           if [ -n "${{ github.event.inputs.date }}" ]; then
             DATE_ARG="--date ${{ github.event.inputs.date }}"
           fi
-          python scripts/build.py $DATE_ARG --no-notify | tee build-result.json
-
-      - name: Extract build metadata
-        id: meta
-        run: |
-          date=$(python -c "import json;print(json.load(open('build-result.json'))['date'])")
-          applies=$(python -c "import json;print(json.load(open('build-result.json'))['applies_count'])")
-          tagline=$(python -c "import json;print(json.load(open('build-result.json'))['tagline'])")
-          echo "issue_date=$date" >> "$GITHUB_OUTPUT"
-          echo "applies_count=$applies" >> "$GITHUB_OUTPUT"
-          echo "tagline=$tagline" >> "$GITHUB_OUTPUT"
-          echo "public_url=${{ steps.base.outputs.url }}/magazines/$date.html" >> "$GITHUB_OUTPUT"
+          python scripts/build.py $DATE_ARG
 
       - name: Commit generated issue
         run: |
           set -euo pipefail
           git config user.name "morning-edition-bot"
           git config user.email "morning-edition-bot@users.noreply.github.com"
-          git add magazines/ index.html
+          git add magazines/ index.html feed.xml
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "Morning Edition: ${{ steps.meta.outputs.issue_date }}"
+          date=$(python -c "import json,pathlib;d=[p.stem for p in sorted(pathlib.Path('magazines').glob('[0-9]*.html'),reverse=True)];print(d[0] if d else 'unknown')")
+          git commit -m "Morning Edition: $date"
+          git pull --rebase origin ${GITHUB_REF#refs/heads/}
           git push origin HEAD:${GITHUB_REF#refs/heads/}
-
-  notify:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-      - run: pip install twilio
-      - name: Wait for Pages to serve the new issue
-        env:
-          URL: ${{ needs.build.outputs.public_url }}
-        run: |
-          # Pages serves from the default branch; after our commit push,
-          # there's a short propagation window (usually <60s). Poll until
-          # the file responds 200 so the WhatsApp link is live when sent.
-          for i in $(seq 1 30); do
-            code=$(curl -s -o /dev/null -w "%{http_code}" "$URL" || echo 000)
-            echo "attempt $i: $URL -> $code"
-            if [ "$code" = "200" ]; then exit 0; fi
-            sleep 10
-          done
-          echo "::warning::Pages did not serve $URL after 5 minutes; sending link anyway."
-      - name: Send WhatsApp
-        env:
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_WHATSAPP_FROM: ${{ secrets.TWILIO_WHATSAPP_FROM }}
-          WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
-        run: |
-          python scripts/notify.py \
-            "${{ needs.build.outputs.public_url }}" \
-            "${{ needs.build.outputs.issue_date }}" \
-            "${{ needs.build.outputs.applies_count }}" \
-            "${{ needs.build.outputs.tagline }}"
