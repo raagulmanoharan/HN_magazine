@@ -1,15 +1,11 @@
 """Build today's Morning Edition.
 
 Steps:
-  1. Fetch across the eleven enabled sources in parallel.
+  1. Fetch across the twenty enabled sources in parallel.
   2. Curate with Claude (or heuristic fallback).
   3. Render the magazine HTML.
   4. Write to magazines/YYYY-MM-DD.html.
-  5. Re-render the landing page (index.html) listing every issue.
-  6. Optionally send a WhatsApp notification with the public URL.
-
-The script exits 0 on success so GitHub Actions can continue to the deploy
-and commit steps even if notification fails.
+  5. Re-render the landing page (index.html) and RSS feed (feed.xml).
 """
 from __future__ import annotations
 
@@ -31,11 +27,11 @@ if str(HERE) not in sys.path:
 from curate import curate                       # noqa: E402
 from fetch_sources import fetch_all, _normalize_url  # noqa: E402
 from render import fmt_date, render_magazine    # noqa: E402
-import notify                                    # noqa: E402
 
 ROOT = HERE.parent
 MAGAZINES_DIR = ROOT / "magazines"
 INDEX_PATH = ROOT / "index.html"
+FEED_PATH = ROOT / "feed.xml"
 PUBLISHED_MANIFEST = MAGAZINES_DIR / ".published-urls.json"
 SPILLOVER_PATH = MAGAZINES_DIR / ".spillover.json"
 
@@ -222,6 +218,7 @@ def render_index(issues: list[dict]) -> str:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition</title>
 <meta name="description" content="A daily, hand-curated magazine across twenty sources.">
+<link rel="alternate" type="application/rss+xml" title="Morning Edition" href="feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -242,9 +239,51 @@ def render_index(issues: list[dict]) -> str:
 
 
 # --------------------------------------------------------------------------
+# RSS feed
+# --------------------------------------------------------------------------
+def render_feed(issues: list[dict], base_url: str) -> str:
+    from email.utils import format_datetime
+    base = base_url.rstrip("/")
+    items = []
+    for it in issues[:30]:
+        d = it["date"]
+        pub = dt.datetime(d.year, d.month, d.day, 11, 0, tzinfo=dt.timezone.utc)
+        label = "Weekly" if it.get("weekly") else "Morning Edition"
+        tagline = it.get("tagline", "")
+        title = tagline if tagline else f"{label} — {fmt_date(d)}"
+        link = f"{base}/{it['href']}"
+        items.append(
+            f"<item>"
+            f"<title>{_xml_escape(title)}</title>"
+            f"<link>{link}</link>"
+            f"<guid isPermaLink=\"true\">{link}</guid>"
+            f"<pubDate>{format_datetime(pub)}</pubDate>"
+            f"<description>{_xml_escape(f'{label} — {fmt_date(d)}')}</description>"
+            f"</item>"
+        )
+    items_xml = "\n    ".join(items)
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Morning Edition</title>
+  <description>A daily, hand-curated magazine across twenty sources.</description>
+  <link>{base}/</link>
+  <atom:link href="{base}/feed.xml" rel="self" type="application/rss+xml"/>
+  <language>en-us</language>
+  {items_xml}
+</channel>
+</rss>
+"""
+
+
+def _xml_escape(s: str) -> str:
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+
+# --------------------------------------------------------------------------
 # Orchestration
 # --------------------------------------------------------------------------
-def build(date: dt.date, public_base_url: str | None = None, notify_enabled: bool = True) -> dict:
+def build(date: dt.date, public_base_url: str | None = None) -> dict:
     MAGAZINES_DIR.mkdir(parents=True, exist_ok=True)
 
     log.info("fetching candidates from all sources ...")
@@ -313,53 +352,21 @@ def build(date: dt.date, public_base_url: str | None = None, notify_enabled: boo
     _save_spillover(stories, picked_urls, date)
     log.info("spillover: saved runners-up for next build")
 
-    # Landing page
-    INDEX_PATH.write_text(render_index(_issue_list()), encoding="utf-8")
+    # Landing page + RSS feed
+    issues = _issue_list()
+    INDEX_PATH.write_text(render_index(issues), encoding="utf-8")
     log.info("wrote %s", INDEX_PATH)
+    if public_base_url:
+        FEED_PATH.write_text(render_feed(issues, public_base_url), encoding="utf-8")
+        log.info("wrote %s", FEED_PATH)
 
     applies_count = sum(1 for p in curation.get("picks", []) if p.get("applies_to_me"))
-    result = {
+    return {
         "date": date.isoformat(),
         "path": str(out_path.relative_to(ROOT)),
         "applies_count": applies_count,
         "tagline": curation.get("issue_tagline", ""),
     }
-
-    if notify_enabled and public_base_url:
-        url = public_base_url.rstrip("/") + f"/magazines/{date.isoformat()}.html"
-        if _is_paused(date):
-            log.info("notification suppressed — reader is paused")
-            result["notified"] = False
-            result["paused"] = True
-            result["public_url"] = url
-        else:
-            try:
-                notify.send(url, fmt_date(date), applies_count, result["tagline"])
-                result["notified"] = True
-                result["public_url"] = url
-            except Exception as e:
-                log.exception("notification failed: %s", e)
-                result["notified"] = False
-
-    return result
-
-
-def _is_paused(today: dt.date) -> bool:
-    """Returns True if taste.json has paused_until >= today."""
-    taste_path = ROOT / "taste.json"
-    try:
-        taste = json.loads(taste_path.read_text())
-    except Exception:
-        return False
-    until = taste.get("paused_until")
-    if not until:
-        return False
-    try:
-        # Accepts "YYYY-MM-DDTHH:MM:SSZ" — compare dates only.
-        until_date = dt.date.fromisoformat(until[:10])
-    except ValueError:
-        return False
-    return today <= until_date
 
 
 def main() -> int:
@@ -368,16 +375,10 @@ def main() -> int:
     ap.add_argument("--date", help="ISO date YYYY-MM-DD (default: today UTC)")
     ap.add_argument("--public-base-url", default=os.environ.get("PUBLIC_BASE_URL", ""),
                     help="Public origin for Pages, e.g. https://user.github.io/HN_magazine")
-    ap.add_argument("--no-notify", action="store_true",
-                    help="Skip the WhatsApp notification step")
     args = ap.parse_args()
 
     date = dt.date.fromisoformat(args.date) if args.date else dt.date.today()
-    result = build(
-        date,
-        public_base_url=args.public_base_url or None,
-        notify_enabled=not args.no_notify,
-    )
+    result = build(date, public_base_url=args.public_base_url or None)
     print(json.dumps(result, indent=2))
     return 0
 

@@ -11,7 +11,7 @@ Steps:
   3. Generate a unique HTML/CSS spread for each story via Claude.
   4. Stitch into a self-contained magazine.
   5. Write to magazines/weekly-YYYY-MM-DD.html.
-  6. Optionally notify via WhatsApp.
+  6. Re-render the landing page and RSS feed.
 """
 from __future__ import annotations
 
@@ -28,11 +28,10 @@ HERE = pathlib.Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from build import render_index, _issue_list, INDEX_PATH  # noqa: E402
+from build import render_index, render_feed, _issue_list, INDEX_PATH, FEED_PATH  # noqa: E402
 from curate import curate                         # noqa: E402
 from fetch_sources import fetch_all, FRESHNESS_DAYS  # noqa: E402
 from render import fmt_date                       # noqa: E402
-import notify                                      # noqa: E402
 
 ROOT = HERE.parent
 MAGAZINES_DIR = ROOT / "magazines"
@@ -225,8 +224,7 @@ a{{color:inherit}}
 # --------------------------------------------------------------------------
 # Orchestration
 # --------------------------------------------------------------------------
-def build_weekly(date: dt.date, public_base_url: str | None = None,
-                 notify_enabled: bool = True) -> dict:
+def build_weekly(date: dt.date, public_base_url: str | None = None) -> dict:
     MAGAZINES_DIR.mkdir(parents=True, exist_ok=True)
 
     # Fetch with wider freshness for weekly recap.
@@ -309,29 +307,21 @@ def build_weekly(date: dt.date, public_base_url: str | None = None,
     out_path.write_text(html_out, encoding="utf-8")
     log.info("wrote %s (%d bytes)", out_path, len(html_out))
 
-    # Re-render landing page so the weekly shows up.
-    INDEX_PATH.write_text(render_index(_issue_list()), encoding="utf-8")
+    # Re-render landing page + RSS feed so the weekly shows up.
+    issues = _issue_list()
+    INDEX_PATH.write_text(render_index(issues), encoding="utf-8")
     log.info("wrote %s", INDEX_PATH)
+    if public_base_url:
+        FEED_PATH.write_text(render_feed(issues, public_base_url), encoding="utf-8")
+        log.info("wrote %s", FEED_PATH)
 
-    result = {
+    return {
         "date": date.isoformat(),
         "path": str(out_path.relative_to(ROOT)),
         "applies_count": applies_count,
         "tagline": curation.get("issue_tagline", ""),
         "edition": "weekly",
     }
-
-    if notify_enabled and public_base_url:
-        url = public_base_url.rstrip("/") + f"/magazines/weekly-{date.isoformat()}.html"
-        try:
-            notify.send(url, f"Weekly — {fmt_date(date)}", applies_count, result["tagline"])
-            result["notified"] = True
-            result["public_url"] = url
-        except Exception as e:
-            log.exception("notification failed: %s", e)
-            result["notified"] = False
-
-    return result
 
 
 def main() -> int:
@@ -340,16 +330,10 @@ def main() -> int:
     ap.add_argument("--date", help="ISO date YYYY-MM-DD (default: today UTC)")
     ap.add_argument("--public-base-url", default=os.environ.get("PUBLIC_BASE_URL", ""),
                     help="Public origin for Pages")
-    ap.add_argument("--no-notify", action="store_true",
-                    help="Skip the WhatsApp notification step")
     args = ap.parse_args()
 
     date = dt.date.fromisoformat(args.date) if args.date else dt.date.today()
-    result = build_weekly(
-        date,
-        public_base_url=args.public_base_url or None,
-        notify_enabled=not args.no_notify,
-    )
+    result = build_weekly(date, public_base_url=args.public_base_url or None)
     print(json.dumps(result, indent=2))
     return 0
 
