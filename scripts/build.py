@@ -32,6 +32,7 @@ ROOT = HERE.parent
 MAGAZINES_DIR = ROOT / "magazines"
 INDEX_PATH = ROOT / "index.html"
 FEED_PATH = ROOT / "feed.xml"
+LATEST_PATH = ROOT / "latest.json"
 PUBLISHED_MANIFEST = MAGAZINES_DIR / ".published-urls.json"
 SPILLOVER_PATH = MAGAZINES_DIR / ".spillover.json"
 
@@ -280,6 +281,23 @@ def _xml_escape(s: str) -> str:
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
+def render_latest(issues: list[dict], base_url: str) -> str:
+    base = base_url.rstrip("/")
+    if not issues:
+        return json.dumps({"title": "No issues yet", "url": base, "date": "", "edition": ""})
+    it = issues[0]
+    d = it["date"]
+    label = "weekly" if it.get("weekly") else "morning"
+    tagline = it.get("tagline", "")
+    title = tagline if tagline else f"Morning Edition — {fmt_date(d)}"
+    return json.dumps({
+        "title": title,
+        "url": f"{base}/{it['href']}",
+        "date": d.isoformat(),
+        "edition": label,
+    }, indent=2)
+
+
 # --------------------------------------------------------------------------
 # Orchestration
 # --------------------------------------------------------------------------
@@ -358,7 +376,8 @@ def build(date: dt.date, public_base_url: str | None = None) -> dict:
     log.info("wrote %s", INDEX_PATH)
     if public_base_url:
         FEED_PATH.write_text(render_feed(issues, public_base_url), encoding="utf-8")
-        log.info("wrote %s", FEED_PATH)
+        LATEST_PATH.write_text(render_latest(issues, public_base_url), encoding="utf-8")
+        log.info("wrote %s, %s", FEED_PATH, LATEST_PATH)
 
     applies_count = sum(1 for p in curation.get("picks", []) if p.get("applies_to_me"))
     return {

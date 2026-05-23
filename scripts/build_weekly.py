@@ -28,7 +28,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from build import render_index, render_feed, _issue_list, INDEX_PATH, FEED_PATH  # noqa: E402
+from build import render_index, render_feed, render_latest, _issue_list, INDEX_PATH, FEED_PATH, LATEST_PATH  # noqa: E402
 from curate import curate                         # noqa: E402
 from fetch_sources import fetch_all, FRESHNESS_DAYS  # noqa: E402
 from render import fmt_date                       # noqa: E402
@@ -313,7 +313,8 @@ def build_weekly(date: dt.date, public_base_url: str | None = None) -> dict:
     log.info("wrote %s", INDEX_PATH)
     if public_base_url:
         FEED_PATH.write_text(render_feed(issues, public_base_url), encoding="utf-8")
-        log.info("wrote %s", FEED_PATH)
+        LATEST_PATH.write_text(render_latest(issues, public_base_url), encoding="utf-8")
+        log.info("wrote %s, %s", FEED_PATH, LATEST_PATH)
 
     return {
         "date": date.isoformat(),
