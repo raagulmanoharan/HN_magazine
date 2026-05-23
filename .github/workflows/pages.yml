@@ -3,13 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  workflow_run:
-    workflows: ["Morning Edition", "Weekly Edition"]
-    types: [completed]
-    branches: [main]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -19,9 +15,6 @@ concurrency:
 
 jobs:
   deploy:
-    if: >-
-      github.event_name == 'push' ||
-      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
