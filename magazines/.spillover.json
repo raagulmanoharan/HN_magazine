@@ -1,24 +1,10 @@
 [
   {
-    "id": "hn:48255593",
-    "title": "Greg Brockman: Inside the 72 Hours That Almost Killed OpenAI",
-    "url": "https://fs.blog/knowledge-project-podcast/greg-brockman/",
-    "source": "hn",
-    "score": 51,
-    "comments": 20,
-    "text": "",
-    "published_at": "2026-05-24T08:29:38Z",
-    "rank_within_source": 1,
-    "hn_url": "https://news.ycombinator.com/item?id=48255593",
-    "prior": 0.9,
-    "_spillover_date": "2026-05-24"
-  },
-  {
     "id": "github:1244095591",
     "title": "thananon/9arm-skills",
     "url": "https://github.com/thananon/9arm-skills",
     "source": "github_trending",
-    "score": 1938,
+    "score": 1950,
     "comments": 3,
     "text": "",
     "published_at": "2026-05-20T00:49:37Z",
@@ -42,17 +28,31 @@
     "_spillover_date": "2026-05-24"
   },
   {
-    "id": "hn:48254475",
-    "title": "Amazon Web Services \u2013 Four Years and Out",
-    "url": "https://www.adventuresinoss.com/aws-four-years/",
+    "id": "hn:48256597",
+    "title": "Childhood Computing",
+    "url": "https://susam.net/childhood-computing.html",
     "source": "hn",
-    "score": 170,
-    "comments": 41,
+    "score": 27,
+    "comments": 9,
     "text": "",
-    "published_at": "2026-05-24T04:51:22Z",
-    "rank_within_source": 1,
-    "hn_url": "https://news.ycombinator.com/item?id=48254475",
-    "prior": 0.765,
+    "published_at": "2026-05-24T12:07:34Z",
+    "rank_within_source": 2,
+    "hn_url": "https://news.ycombinator.com/item?id=48256597",
+    "prior": 0.802,
+    "_spillover_date": "2026-05-24"
+  },
+  {
+    "id": "hn:48255593",
+    "title": "Greg Brockman: Inside the 72 Hours That Almost Killed OpenAI",
+    "url": "https://fs.blog/knowledge-project-podcast/greg-brockman/",
+    "source": "hn",
+    "score": 98,
+    "comments": 58,
+    "text": "",
+    "published_at": "2026-05-24T08:29:38Z",
+    "rank_within_source": 3,
+    "hn_url": "https://news.ycombinator.com/item?id=48255593",
+    "prior": 0.727,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -70,18 +70,18 @@
     "_spillover_date": "2026-05-24"
   },
   {
-    "id": "hn:48247127",
-    "title": "I Miss Terry Pratchett",
-    "url": "https://www.mahl.me/blog/the-spell-that-wouldnt-leave/",
+    "id": "hn:48254475",
+    "title": "Amazon Web Services \u2013 Four Years and Out",
+    "url": "https://www.adventuresinoss.com/aws-four-years/",
     "source": "hn",
-    "score": 110,
-    "comments": 56,
+    "score": 170,
+    "comments": 41,
     "text": "",
-    "published_at": "2026-05-23T12:35:28Z",
+    "published_at": "2026-05-24T04:51:22Z",
     "rank_within_source": 1,
-    "hn_url": "https://news.ycombinator.com/item?id=48247127",
+    "hn_url": "https://news.ycombinator.com/item?id=48254475",
     "prior": 0.65,
-    "_spillover_date": "2026-05-23"
+    "_spillover_date": "2026-05-24"
   },
   {
     "id": "techcrunch:https://techcrunch.com/?p=3125548",
@@ -95,6 +95,34 @@
     "rank_within_source": 1,
     "hn_url": "",
     "prior": 0.62,
+    "_spillover_date": "2026-05-24"
+  },
+  {
+    "id": "hn:48247127",
+    "title": "I Miss Terry Pratchett",
+    "url": "https://www.mahl.me/blog/the-spell-that-wouldnt-leave/",
+    "source": "hn",
+    "score": 110,
+    "comments": 56,
+    "text": "",
+    "published_at": "2026-05-23T12:35:28Z",
+    "rank_within_source": 1,
+    "hn_url": "https://news.ycombinator.com/item?id=48247127",
+    "prior": 0.552,
+    "_spillover_date": "2026-05-23"
+  },
+  {
+    "id": "github:1246625636",
+    "title": "open-gsd/get-shit-done-redux \u2014 Getting Shit Done, the Aftermath",
+    "url": "https://github.com/open-gsd/get-shit-done-redux",
+    "source": "github_trending",
+    "score": 471,
+    "comments": 118,
+    "text": "Getting Shit Done, the Aftermath",
+    "published_at": "2026-05-22T11:36:21Z",
+    "rank_within_source": 8,
+    "hn_url": "",
+    "prior": 0.55,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -112,6 +140,20 @@
     "_spillover_date": "2026-05-24"
   },
   {
+    "id": "lobsters:sbe8ln",
+    "title": "remind(1) -- calendar and alarm program",
+    "url": "https://dianne.skoll.ca/projects/remind/",
+    "source": "lobsters",
+    "score": 17,
+    "comments": 5,
+    "text": "\"Remind is a sophisticated calendar and alarm program designed to run on Linux and other UNIX-like systems.\"",
+    "published_at": "2026-05-23T22:01:32Z",
+    "rank_within_source": 10,
+    "hn_url": "https://lobste.rs/s/sbe8ln/remind_1_calendar_alarm_program",
+    "prior": 0.49,
+    "_spillover_date": "2026-05-24"
+  },
+  {
     "id": "github:1242450421",
     "title": "xw7872081123/wallpaper-engine-steam \u2014 Free Wallpaper Engine Steam: download PC windows 11, steam workshop downloader bypass, high CPU RAM usage fix, android apk mobile sync. 4k anime live wallpaper, black screen crash on startup, corsair icue razer chroma integration, ui32.exe error solution, scene web wallpaper, mobile connection pin, custom playlist screensaver,",
     "url": "https://github.com/xw7872081123/wallpaper-engine-steam",
@@ -120,9 +162,9 @@
     "comments": 1,
     "text": "Free Wallpaper Engine Steam: download PC windows 11, steam workshop downloader bypass, high CPU RAM usage fix, android apk mobile sync. 4k anime live wallpaper, black screen crash on startup, corsair icue razer chroma integration, ui32.exe ",
     "published_at": "2026-05-18T12:44:49Z",
-    "rank_within_source": 9,
+    "rank_within_source": 11,
     "hn_url": "",
-    "prior": 0.523,
+    "prior": 0.478,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -134,149 +176,9 @@
     "comments": 2,
     "text": "Scheme Working Group 2 is pleased to announce the first draft of the second part of the R7RS-Large Foundations, the \"Procedural Fascicle .\" This draft encompasses the familiar block programming forms, such as lambda , let , if , or , and se",
     "published_at": "2026-05-23T20:11:14Z",
-    "rank_within_source": 10,
-    "hn_url": "https://lobste.rs/s/yfpl8d/procedural_fascicle_for_r7rs_large",
-    "prior": 0.49,
-    "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "github:1246625636",
-    "title": "open-gsd/get-shit-done-redux \u2014 Getting Shit Done, the Aftermath",
-    "url": "https://github.com/open-gsd/get-shit-done-redux",
-    "source": "github_trending",
-    "score": 444,
-    "comments": 116,
-    "text": "Getting Shit Done, the Aftermath",
-    "published_at": "2026-05-22T11:36:21Z",
-    "rank_within_source": 11,
-    "hn_url": "",
-    "prior": 0.478,
-    "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "producthunt:tag:www.producthunt.com,2005:Post/1154221",
-    "title": "DynamicNotch",
-    "url": "https://www.producthunt.com/products/dynamicnotch",
-    "source": "producthunt",
-    "score": 0,
-    "comments": 0,
-    "text": "Dynamic island for macOS Discussion | Link",
-    "published_at": "2026-05-23T19:24:38Z",
-    "rank_within_source": 2,
-    "hn_url": "",
-    "prior": 0.478,
-    "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "lobsters:sbe8ln",
-    "title": "remind(1) -- calendar and alarm program",
-    "url": "https://dianne.skoll.ca/projects/remind/",
-    "source": "lobsters",
-    "score": 15,
-    "comments": 5,
-    "text": "\"Remind is a sophisticated calendar and alarm program designed to run on Linux and other UNIX-like systems.\"",
-    "published_at": "2026-05-23T22:01:32Z",
-    "rank_within_source": 11,
-    "hn_url": "https://lobste.rs/s/sbe8ln/remind_1_calendar_alarm_program",
-    "prior": 0.47,
-    "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "hn:48255501",
-    "title": "All Lean Books and Where to Find Them",
-    "url": "https://lakesare.brick.do/all-lean-books-and-where-to-find-them-x2nYwjM3AwBQ",
-    "source": "hn",
-    "score": 14,
-    "comments": 0,
-    "text": "",
-    "published_at": "2026-05-24T08:13:32Z",
-    "rank_within_source": 10,
-    "hn_url": "https://news.ycombinator.com/item?id=48255501",
-    "prior": 0.466,
-    "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "github:1242719319",
-    "title": "paradigmxyz/centaur \u2014 Multiplayer, self-hosted, secure agents.",
-    "url": "https://github.com/paradigmxyz/centaur",
-    "source": "github_trending",
-    "score": 443,
-    "comments": 29,
-    "text": "Multiplayer, self-hosted, secure agents.",
-    "published_at": "2026-05-18T17:30:29Z",
     "rank_within_source": 12,
-    "hn_url": "",
-    "prior": 0.459,
-    "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "hn:48246614",
-    "title": "US tech firms share Dutch regulator officials' names with Senate",
-    "url": "https://www.dutchnews.nl/2026/05/us-tech-firms-share-dutch-regulator-officials-names-with-senate/",
-    "source": "hn",
-    "score": 110,
-    "comments": 69,
-    "text": "",
-    "published_at": "2026-05-23T10:57:14Z",
-    "rank_within_source": 5,
-    "hn_url": "https://news.ycombinator.com/item?id=48246614",
-    "prior": 0.447,
-    "_spillover_date": "2026-05-23"
-  },
-  {
-    "id": "theverge:https://www.theverge.com/?p=936219",
-    "title": "Elon, stop trying to make Grok happen",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/936219/elon-stop-trying-to-make-grok-happen",
-    "source": "theverge",
-    "score": 0,
-    "comments": 0,
-    "text": "There is a harsh truth about Elon Musk's \"truth-seeking\" AI chatbot Grok: It's not very good, and not many people are using it. That's the takeaway of a new Reuters report, which found that Grok barely appears in federal records of how the ",
-    "published_at": "2026-05-22T17:17:06Z",
-    "rank_within_source": 3,
-    "hn_url": "",
-    "prior": 0.446,
-    "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "lobsters:z17p7a",
-    "title": "The price of humans",
-    "url": "https://blog.umangsurana.com/blog/price_of_humans/",
-    "source": "lobsters",
-    "score": 7,
-    "comments": 3,
-    "text": "",
-    "published_at": "2026-05-23T06:04:52Z",
-    "rank_within_source": 5,
-    "hn_url": "https://lobste.rs/s/z17p7a/price_humans",
-    "prior": 0.443,
-    "_spillover_date": "2026-05-23"
-  },
-  {
-    "id": "hn:48241890",
-    "title": "Green card seekers must leave U.S. to apply, Trump administration says",
-    "url": "https://www.nytimes.com/2026/05/22/us/politics/green-card-changes-trump.html",
-    "source": "hn",
-    "score": 817,
-    "comments": 1395,
-    "text": "https:&#x2F;&#x2F;www.uscis.gov&#x2F;newsroom&#x2F;news-releases&#x2F;us-citizenship-... https:&#x2F;&#x2F;www.uscis.gov&#x2F;sites&#x2F;default&#x2F;files&#x2F;document&#x2F;memos&#x2F;PM-... [pdf] https:&#x2F;&#x2F;twitter.com&#x2F;DHSgov",
-    "published_at": "2026-05-22T21:27:12Z",
-    "rank_within_source": 8,
-    "hn_url": "https://news.ycombinator.com/item?id=48241890",
-    "prior": 0.439,
-    "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "lobsters:arfalj",
-    "title": "That one time I used Go panics for flow control",
-    "url": "https://noncrab.net/posts/panic-as-flow-control/",
-    "source": "lobsters",
-    "score": 15,
-    "comments": 13,
-    "text": "",
-    "published_at": "2026-05-23T09:57:28Z",
-    "rank_within_source": 13,
-    "hn_url": "https://lobste.rs/s/arfalj/one_time_i_used_go_panics_for_flow_control",
-    "prior": 0.436,
+    "hn_url": "https://lobste.rs/s/yfpl8d/procedural_fascicle_for_r7rs_large",
+    "prior": 0.452,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -294,17 +196,87 @@
     "_spillover_date": "2026-05-24"
   },
   {
-    "id": "lobsters:kz0m2n",
-    "title": "\u201cLong-Term Support\u201d doesn\u2019t mean what you think",
-    "url": "https://pointieststick.com/2026/05/23/long-term-support-doesnt-mean-what-you-think/",
+    "id": "lobsters:arfalj",
+    "title": "That one time I used Go panics for flow control",
+    "url": "https://noncrab.net/posts/panic-as-flow-control/",
     "source": "lobsters",
-    "score": 9,
-    "comments": 4,
+    "score": 16,
+    "comments": 14,
     "text": "",
-    "published_at": "2026-05-23T21:44:43Z",
-    "rank_within_source": 12,
-    "hn_url": "https://lobste.rs/s/kz0m2n/long_term_support_doesn_t_mean_what_you",
-    "prior": 0.427,
+    "published_at": "2026-05-23T09:57:28Z",
+    "rank_within_source": 14,
+    "hn_url": "https://lobste.rs/s/arfalj/one_time_i_used_go_panics_for_flow_control",
+    "prior": 0.421,
+    "_spillover_date": "2026-05-24"
+  },
+  {
+    "id": "theverge:https://www.theverge.com/?p=936219",
+    "title": "Elon, stop trying to make Grok happen",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/936219/elon-stop-trying-to-make-grok-happen",
+    "source": "theverge",
+    "score": 0,
+    "comments": 0,
+    "text": "There is a harsh truth about Elon Musk's \"truth-seeking\" AI chatbot Grok: It's not very good, and not many people are using it. That's the takeaway of a new Reuters report, which found that Grok barely appears in federal records of how the ",
+    "published_at": "2026-05-22T17:17:06Z",
+    "rank_within_source": 4,
+    "hn_url": "",
+    "prior": 0.4,
+    "_spillover_date": "2026-05-24"
+  },
+  {
+    "id": "hn:48255501",
+    "title": "All Lean Books and Where to Find Them",
+    "url": "https://lakesare.brick.do/all-lean-books-and-where-to-find-them-x2nYwjM3AwBQ",
+    "source": "hn",
+    "score": 14,
+    "comments": 0,
+    "text": "",
+    "published_at": "2026-05-24T08:13:32Z",
+    "rank_within_source": 10,
+    "hn_url": "https://news.ycombinator.com/item?id=48255501",
+    "prior": 0.396,
+    "_spillover_date": "2026-05-24"
+  },
+  {
+    "id": "producthunt:tag:www.producthunt.com,2005:Post/1153432",
+    "title": "WhatCable",
+    "url": "https://www.producthunt.com/products/whatcable",
+    "source": "producthunt",
+    "score": 0,
+    "comments": 0,
+    "text": "Know what your USB-C cable can really do Discussion | Link",
+    "published_at": "2026-05-22T14:23:28Z",
+    "rank_within_source": 4,
+    "hn_url": "",
+    "prior": 0.379,
+    "_spillover_date": "2026-05-24"
+  },
+  {
+    "id": "lobsters:z17p7a",
+    "title": "The price of humans",
+    "url": "https://blog.umangsurana.com/blog/price_of_humans/",
+    "source": "lobsters",
+    "score": 7,
+    "comments": 3,
+    "text": "",
+    "published_at": "2026-05-23T06:04:52Z",
+    "rank_within_source": 5,
+    "hn_url": "https://lobste.rs/s/z17p7a/price_humans",
+    "prior": 0.377,
+    "_spillover_date": "2026-05-23"
+  },
+  {
+    "id": "hn:48241890",
+    "title": "Green card seekers must leave U.S. to apply, Trump administration says",
+    "url": "https://www.nytimes.com/2026/05/22/us/politics/green-card-changes-trump.html",
+    "source": "hn",
+    "score": 817,
+    "comments": 1395,
+    "text": "https:&#x2F;&#x2F;www.uscis.gov&#x2F;newsroom&#x2F;news-releases&#x2F;us-citizenship-... https:&#x2F;&#x2F;www.uscis.gov&#x2F;sites&#x2F;default&#x2F;files&#x2F;document&#x2F;memos&#x2F;PM-... [pdf] https:&#x2F;&#x2F;twitter.com&#x2F;DHSgov",
+    "published_at": "2026-05-22T21:27:12Z",
+    "rank_within_source": 8,
+    "hn_url": "https://news.ycombinator.com/item?id=48241890",
+    "prior": 0.373,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -318,7 +290,7 @@
     "published_at": "2026-05-21T21:20:06Z",
     "rank_within_source": 3,
     "hn_url": "",
-    "prior": 0.423,
+    "prior": 0.36,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -332,7 +304,7 @@
     "published_at": "2026-05-22T21:36:55Z",
     "rank_within_source": 6,
     "hn_url": "https://news.ycombinator.com/item?id=48241997",
-    "prior": 0.418,
+    "prior": 0.355,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -346,7 +318,7 @@
     "published_at": "2026-05-23T02:20:30Z",
     "rank_within_source": 7,
     "hn_url": "https://lobste.rs/s/bo9ecf/planescape_torment_part_1_from_tabletop",
-    "prior": 0.412,
+    "prior": 0.35,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -360,7 +332,7 @@
     "published_at": "2026-05-18T17:01:42Z",
     "rank_within_source": 11,
     "hn_url": "",
-    "prior": 0.406,
+    "prior": 0.345,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -374,22 +346,8 @@
     "published_at": "2026-05-22T14:30:00Z",
     "rank_within_source": 4,
     "hn_url": "",
-    "prior": 0.4,
+    "prior": 0.34,
     "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "hn:48245262",
-    "title": "Rubish: A Unix shell written in pure Ruby",
-    "url": "https://github.com/amatsuda/rubish",
-    "source": "hn",
-    "score": 87,
-    "comments": 48,
-    "text": "",
-    "published_at": "2026-05-23T06:32:00Z",
-    "rank_within_source": 7,
-    "hn_url": "https://news.ycombinator.com/item?id=48245262",
-    "prior": 0.394,
-    "_spillover_date": "2026-05-23"
   },
   {
     "id": "lobsters:5zonsl",
@@ -402,7 +360,7 @@
     "published_at": "2026-05-23T15:05:29Z",
     "rank_within_source": 12,
     "hn_url": "https://lobste.rs/s/5zonsl/cuneiforth_forth_for_your_chifir",
-    "prior": 0.384,
+    "prior": 0.326,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -416,7 +374,7 @@
     "published_at": "2026-05-23T12:48:02Z",
     "rank_within_source": 16,
     "hn_url": "https://news.ycombinator.com/item?id=48247208",
-    "prior": 0.381,
+    "prior": 0.324,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -430,7 +388,7 @@
     "published_at": "2026-05-17T08:37:31Z",
     "rank_within_source": 9,
     "hn_url": "",
-    "prior": 0.378,
+    "prior": 0.321,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -444,7 +402,7 @@
     "published_at": "2026-05-22T15:22:04Z",
     "rank_within_source": 8,
     "hn_url": "https://news.ycombinator.com/item?id=48237163",
-    "prior": 0.373,
+    "prior": 0.317,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -458,7 +416,7 @@
     "published_at": "2026-05-22T20:54:35Z",
     "rank_within_source": 9,
     "hn_url": "https://lobste.rs/s/tbizqg/mysterious_xf86audioplay_issue",
-    "prior": 0.371,
+    "prior": 0.315,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -472,7 +430,7 @@
     "published_at": "2026-05-17T11:25:47Z",
     "rank_within_source": 10,
     "hn_url": "",
-    "prior": 0.36,
+    "prior": 0.306,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -486,7 +444,7 @@
     "published_at": "2026-05-20T12:06:56Z",
     "rank_within_source": 6,
     "hn_url": "https://news.ycombinator.com/item?id=48206387",
-    "prior": 0.355,
+    "prior": 0.302,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -500,7 +458,7 @@
     "published_at": "2026-05-23T05:51:38Z",
     "rank_within_source": 8,
     "hn_url": "https://lobste.rs/s/z9lnpe/spy_interpreter_compiler_for_statically",
-    "prior": 0.353,
+    "prior": 0.3,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -514,21 +472,7 @@
     "published_at": "2026-05-23T15:24:02Z",
     "rank_within_source": 14,
     "hn_url": "https://lobste.rs/s/lcrlcb/z386_open_source_80386_built_around",
-    "prior": 0.352,
-    "_spillover_date": "2026-05-24"
-  },
-  {
-    "id": "lobsters:fmdyt7",
-    "title": "The Architecture of BerkeleyDB",
-    "url": "https://aosabook.org/en/v1/bdb.html",
-    "source": "lobsters",
-    "score": 9,
-    "comments": 1,
-    "text": "",
-    "published_at": "2026-05-23T20:38:20Z",
-    "rank_within_source": 13,
-    "hn_url": "https://lobste.rs/s/fmdyt7/architecture_berkeleydb",
-    "prior": 0.349,
+    "prior": 0.299,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -542,7 +486,7 @@
     "published_at": "2026-05-22T04:14:40Z",
     "rank_within_source": 2,
     "hn_url": "",
-    "prior": 0.345,
+    "prior": 0.293,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -556,7 +500,7 @@
     "published_at": "2026-05-22T14:06:44Z",
     "rank_within_source": 14,
     "hn_url": "https://news.ycombinator.com/item?id=48236057",
-    "prior": 0.343,
+    "prior": 0.292,
     "_spillover_date": "2026-05-24"
   },
   {
@@ -570,7 +514,7 @@
     "published_at": "2026-05-22T06:49:30Z",
     "rank_within_source": 11,
     "hn_url": "https://lobste.rs/s/4vhivn/c_programming_language_quiz",
-    "prior": 0.339,
+    "prior": 0.288,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -584,22 +528,8 @@
     "published_at": "2026-05-21T16:54:48Z",
     "rank_within_source": 10,
     "hn_url": "https://news.ycombinator.com/item?id=48225782",
-    "prior": 0.339,
+    "prior": 0.288,
     "_spillover_date": "2026-05-23"
-  },
-  {
-    "id": "hn:48232721",
-    "title": "Sales and Dungeons: Thermal printer TTRPG utility",
-    "url": "https://sales-and-dungeons.app/",
-    "source": "hn",
-    "score": 85,
-    "comments": 28,
-    "text": "",
-    "published_at": "2026-05-22T06:36:56Z",
-    "rank_within_source": 15,
-    "hn_url": "https://news.ycombinator.com/item?id=48232721",
-    "prior": 0.333,
-    "_spillover_date": "2026-05-24"
   },
   {
     "id": "hn:48242668",
@@ -612,7 +542,7 @@
     "published_at": "2026-05-22T23:01:23Z",
     "rank_within_source": 5,
     "hn_url": "https://news.ycombinator.com/item?id=48242668",
-    "prior": 0.323,
+    "prior": 0.275,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -626,22 +556,8 @@
     "published_at": "2026-05-23T10:39:09Z",
     "rank_within_source": 10,
     "hn_url": "https://lobste.rs/s/fms0x0/mvm_fast_virtual_machine_for_go",
-    "prior": 0.316,
+    "prior": 0.269,
     "_spillover_date": "2026-05-23"
-  },
-  {
-    "id": "hn:48234547",
-    "title": "The Companies Cutting Headcount for AI Will Lose to the Ones Who Didn't",
-    "url": "https://libertas.software/en/knowledge-hub/19/the-companies-cutting-headcount-for-ai-will-lose-to-the-ones-who-didnt",
-    "source": "hn",
-    "score": 158,
-    "comments": 139,
-    "text": "",
-    "published_at": "2026-05-22T11:45:24Z",
-    "rank_within_source": 2,
-    "hn_url": "https://news.ycombinator.com/item?id=48234547",
-    "prior": 0.303,
-    "_spillover_date": "2026-05-22"
   },
   {
     "id": "hn:48206828",
@@ -654,7 +570,7 @@
     "published_at": "2026-05-20T12:49:20Z",
     "rank_within_source": 9,
     "hn_url": "https://news.ycombinator.com/item?id=48206828",
-    "prior": 0.301,
+    "prior": 0.256,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -668,7 +584,7 @@
     "published_at": "2026-05-23T11:18:23Z",
     "rank_within_source": 14,
     "hn_url": "https://news.ycombinator.com/item?id=48246735",
-    "prior": 0.292,
+    "prior": 0.248,
     "_spillover_date": "2026-05-23"
   },
   {
@@ -682,7 +598,7 @@
     "published_at": "2026-05-21T13:17:20Z",
     "rank_within_source": 1,
     "hn_url": "",
-    "prior": 0.287,
+    "prior": 0.244,
     "_spillover_date": "2026-05-23"
   }
 ]
