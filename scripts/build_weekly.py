@@ -22,6 +22,7 @@ import json
 import logging
 import os
 import pathlib
+import re
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -39,6 +40,22 @@ MAGAZINES_DIR = ROOT / "magazines"
 log = logging.getLogger("build_weekly")
 
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+
+
+def _sanitize_spread(html: str, class_name: str) -> str:
+    """Ensure a generated spread is a single well-formed <section>."""
+    html = html.strip()
+    open_tag = f'<section class="spread {class_name}">'
+    # Extract just the section element if there's junk before/after
+    start = html.find("<section")
+    if start > 0:
+        html = html[start:]
+    # Ensure it ends with </section>
+    if not html.rstrip().endswith("</section>"):
+        html = html.rstrip() + "\n</section>"
+    # Remove duplicate </section> tags
+    html = re.sub(r"(</section>\s*)+$", "</section>", html)
+    return html
 
 
 # --------------------------------------------------------------------------
@@ -122,7 +139,7 @@ Generate the spread now.
         text = text.split("\n", 1)[1] if "\n" in text else text[3:]
         if text.endswith("```"):
             text = text[:-3]
-    return text.strip()
+    return _sanitize_spread(text.strip(), f"spread-{index + 1}")
 
 
 def _generate_cover(issue_meta: dict) -> str:
@@ -158,7 +175,7 @@ Generate the <section> now.
         text = text.split("\n", 1)[1] if "\n" in text else text[3:]
         if text.endswith("```"):
             text = text[:-3]
-    return text.strip()
+    return _sanitize_spread(text.strip(), "spread-cover")
 
 
 def _generate_colophon(issue_meta: dict, applies_count: int) -> str:
