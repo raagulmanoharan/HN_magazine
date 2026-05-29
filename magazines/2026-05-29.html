@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; FRIDAY, MAY 29, 2026</title>
-<meta name="description" content="Claude ships, agents forget, science surprises">
+<meta name="description" content="Claude ships, inference flies, craft endures">
 <meta property="og:title" content="Morning Edition · FRIDAY, MAY 29, 2026">
-<meta property="og:description" content="Claude ships, agents forget, science surprises">
+<meta property="og:description" content="Claude ships, inference flies, craft endures">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -541,14 +541,14 @@ a{color:inherit;text-underline-offset:4px}
   <div class="cover-body">
     <div>
       <div class="cover-kicker">Today&rsquo;s lead &middot; AI SHIPPING</div>
-      <h2 class="cover-title">Claude Opus 4.8</h2>
-      <p class="cover-tagline">Claude ships, agents forget, science surprises</p>
-      <p class="body-lead body-lead--wide">Anthropic&#x27;s latest Opus model drops with 1,269 HN comments and a rare honest release note: &#x27;modest but tangible improvement, more to be done.&#x27; For Claude Code users this is a same-day swap — the llm-anthropic plugin already has the model ID. Knowing what the new ceiling looks like matters for anyone tuning agentic workflows.</p>
+      <h2 class="cover-title">Claude Opus 4.8: &quot;A Modest but Tangible Improvement&quot;</h2>
+      <p class="cover-tagline">Claude ships, inference flies, craft endures</p>
+      <p class="body-lead body-lead--wide">Simon Willison&#x27;s take on Anthropic&#x27;s Opus 4.8 drop, notable for its refreshingly honest release framing — &quot;there&#x27;s still more to be done&quot; — rather than hype. The signal for daily users: real but incremental gains, worth testing in your heaviest workflows against Opus 4.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Upgrade llm-anthropic to 0.25.1 (`llm install -U llm-anthropic`) to get claude-opus-4.8 as a drop-in today.</p>
+      <p class="apply-note">&rarr; Swap claude-opus-4 for claude-opus-4.8 in any Claude API calls or llm-anthropic workflows today and compare outputs on your toughest prompts.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -558,14 +558,14 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">AGENTIC TOOLS</div>
+    <div class="kicker">DEV TOOLS</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Claude Code – Everything You Can Configure the Docs Don&#x27;t Tell You</h2>
-    <p class="body-lead">Someone read the Claude Code source so you don&#x27;t have to, surfacing hidden config knobs that never made the official docs. For a UX designer running Claude Code in daily workflows, undocumented toggles — think custom system prompts, hooks, permission overrides — are exactly the kind of leverage that changes how the tool feels to operate.</p>
+    <h2>llm-anthropic 0.25.1: Claude Opus 4.8 + fast mode flag</h2>
+    <p class="body-lead">Simon Willison&#x27;s llm-anthropic plugin picks up Opus 4.8 and a new -o fast 1 flag for orgs with fast mode enabled. If you already run LLM from the CLI, this is a one-line upgrade that hands you the new model immediately.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Open the article, grep for any config key against your ~/.claude settings, and flip the one that looked risky before you knew what it did.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://buildingbetter.tech/p/i-read-the-claude-code-source-code" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Run `pip install -U llm-anthropic` then `llm -m claude-opus-4.8 &#x27;your prompt&#x27;` to access the new model from your terminal right now.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/May/28/llm-anthropic/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
@@ -573,17 +573,75 @@ a{color:inherit;text-underline-offset:4px}
 
 <section class="spread s-stat">
   <div class="top">
-    <div class="chip">No. 03 &middot; INDUSTRY SIGNAL</div>
+    <div class="chip">No. 03 &middot; AI INFRA</div>
     
   </div>
   <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">$47B</div>
-    <div class="stat-label">Anthropic annualized run-rate, May 2026</div>
+    <div class="stat-value" aria-hidden="true">3,000 tok/s</div>
+    <div class="stat-label">per-request throughput on standard GPUs</div>
   </div>
   <div>
-    <h2>Anthropic&#x27;s Run-Rate Revenue Hits $47 Billion</h2>
-    <p class="body-lead">Simon Willison flags the one line that matters in Anthropic&#x27;s $65B Series H: run-rate crossed $47B since February&#x27;s Series G. That&#x27;s roughly 3x in three months — the kind of growth rate that tells you Claude tooling is becoming infrastructure, not experiment, and changes how seriously to take the API as a long-term platform.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://simonwillison.net/2026/May/29/anthropic/#atom-everything" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    <h2>Real-time LLM Inference on Standard GPUs: 3k Tokens/s per Request</h2>
+    <p class="body-lead">kog.ai claims 3,000 tokens/second per request on commodity GPUs — a number that, if real, rewrites the economics of self-hosted LLM inference. The comment thread is appropriately skeptical and worth reading before you believe the headline.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request/" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.04</span>
+      <span>INKANDSWITCH.COM</span>
+      <span>SHEET 4/10</span>
+    </div>
+    <div class="kicker">INFORMATION DESIGN</div>
+    <h2>Bijou64: A Variable-Length Integer Encoding (Ink &amp; Switch)</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">04</div>
+      <p class="body-lead">Ink &amp; Switch — the local-first research lab — proposes a compact integer encoding scheme designed for CRDTs and sync protocols. The care put into the bit-level layout is a masterclass in constraint-driven information design; directly relevant if you&#x27;re thinking about local-first data structures.</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.inkandswitch.com/tangents/bijou64/" target="_blank" rel="noopener">View schematic &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Read the spec and prototype page — the encoding is self-contained enough to drop into any local-first sync layer or custom binary format you&#x27;re designing today.</p>
+    
+  </div>
+</section>
+
+<section class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">CREATIVE TOOLS</div>
+    <div class="riso-num" data-n="05" aria-hidden="true">05</div>
+    <h2>markdown-svg-renderer: Render SVG Fenced Blocks Inline in Markdown</h2>
+    <p class="body-lead">A small, immediately usable tool that renders inline SVG code blocks in Markdown with a toggle to the source — perfect for AI-generated diagrams, design specs, or documentation where you want both the visual and the code visible. Paste your Markdown and go.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://simonwillison.net/2026/May/28/markdown-svg-renderer/#atom-everything" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Open the tool, paste any Markdown with fenced SVG blocks, and use the tab toggle to switch between rendered graphic and code — ideal for LLM-generated diagram workflows.</p>
+    
+  </div>
+</section>
+
+<section class="spread s-pullquote">
+  <div class="top">
+    <div class="kicker" style="color:#d9b26a">UX + ORG DESIGN</div>
+    <div class="tiny-num" aria-hidden="true">06</div>
+  </div>
+  <div>
+    <span class="quote-open" aria-hidden="true">&ldquo;</span>
+    <p class="pq">What changed because we spent those tokens?</p>
+    <div class="attrib">&mdash; robert-glaser.de</div>
+  </div>
+  <div>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">A sharp piece from Sidebar on the gap between AI tool adoption and organizational learning — the tokens get spent but the institutional knowledge doesn&#x27;t compound. Directly relevant to any UX team watching AI absorb the work without capturing the reasoning.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.robert-glaser.de/when-everyone-has-ai-and-the-company-still-learns-nothing/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
     
     
   </div>
@@ -592,134 +650,77 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-terminal">
   <div class="window">
     <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #   #  
-#   #  #   #  
-#   #  #####  
+    <div class="ascii-num" aria-hidden="true">#####  #####  
 #   #      #  
-#####      #  </div>
-    <div class="kicker">DEV TOOLS</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
-    <h2>datasette 1.0a31 — Write Queries and Saved Queries Land</h2>
-    <p class="body-lead">&gt; Datasette&#x27;s latest alpha adds permissioned write queries and stored queries — a meaningful step toward it being a real local-first data app, not just a read-only explorer. If you&#x27;re prototyping LLM pipelines that need a lightweight database UI you can self-host and hand to non-engineers, this alpha changes the calculus.</p>
+#   #     #   
+#   #    #    
+#####   #     </div>
+    <div class="kicker">LANGUAGES</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">blog.rust-lang.org</span></div>
+    <h2>Announcing Rust 1.96.0</h2>
+    <p class="body-lead">&gt; Rust 1.96 lands with new stabilizations worth checking if you&#x27;re building CLI tooling, WASM targets, or anything systems-adjacent. The release notes are the fastest way to scan whether anything touches your stack.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/May/29/datasette/#atom-everything" target="_blank" rel="noopener">$ open &rarr;</a>
+      <a class="read-more" href="https://blog.rust-lang.org/2026/05/28/Rust-1.96.0/" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; `pip install datasette==1.0a31` and try the new write endpoint against any SQLite database you already have lying around.</p>
-    
-  </div>
-</section>
-
-<section class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">SECURITY + AGENTS</div>
-    <div class="tiny-num" aria-hidden="true">05</div>
-  </div>
-  <h2>Maintainers should be free to sabotage the agents mining their work.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A developer argument: open-source maintainers should be allowed to deliberately frustrate autonomous coding agents crawling their repos without consent. It&#x27;s a sharp new front in the supply-chain trust conversation — if agents start hitting protestware traps, the failure modes are invisible and very hard to eval for.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; nesbitt.io</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://nesbitt.io/2026/05/28/protestware-for-coding-agents.html" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
-<section class="spread s-neon">
-  <div>
-    <div class="kicker">DEV TOOLS</div>
-  </div>
-  <div>
-    <div class="numeral-slash" aria-hidden="true">06</div>
-    <h2>Show HN: AISlop – CLI for Catching AI-Generated Code Smells</h2>
-    <p class="body-lead">A fresh Show HN: a CLI that scans codebases for patterns LLMs habitually emit — empty catch blocks, over-commented boilerplate, defensive no-ops that pass tests but mean nothing. If you&#x27;re shipping Claude Code or Codex output to production, this is the kind of lint layer that catches what the compiler won&#x27;t.</p>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/scanaislop/aislop" target="_blank" rel="noopener">Go loud &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Clone the repo and run it against any project you&#x27;ve been vibe-coding this week; takes under a minute to get a first report.</p>
+    <p class="apply-note">&rarr; Run `rustup update stable` to pull 1.96.0 and check the release notes for any stabilized APIs relevant to your build pipeline.</p>
     
   </div>
 </section>
 
 <section class="spread s-polaroid">
-  <div class="kicker">DESIGN + AI</div>
+  <div class="kicker">CRAFT + VISUAL</div>
   <div class="layout">
     <div class="photo">
       <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">Adobe&#x27;s Conversational AI Agent Is a Mediocre Design Intern</div>
-      <div class="photo-caption">No. 07 &middot; theverge.com</div>
+      <div class="photo-body">Mechanical Pencil: Illustrating the Engineering Around Us</div>
+      <div class="photo-caption">No. 08 &middot; mechanical-pencil.com</div>
     </div>
     <div>
-      <p class="body-lead">The Verge&#x27;s hands-on with Adobe&#x27;s new conversational AI agent is a useful field report: it&#x27;s better than generic text-to-image tools at keeping you in the creative loop, but still falls short of a real collaborator. For a UX designer evaluating which AI creative tools actually ship craft, not just content, this is the honest take.</p>
+      <p class="body-lead">A Sidebar find: detailed technical illustrations of everyday engineered objects, drawn with the kind of precision and information density that information designers dream about. A quiet bookmark for the visual vocabulary folder.</p>
       <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://www.theverge.com/tech/939686/adobes-conversational-ai-agent-is-a-mediocre-design-intern" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
+        <a class="read-more" href="https://mechanical-pencil.com/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
       </div>
-      <p class="apply-note">&rarr; If you have a Creative Cloud subscription, pull up the beta and test it against one real design problem — the gap between your expectations and output is itself useful signal.</p>
+      
       
     </div>
   </div>
 </section>
 
-<section class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">PROMPT CRAFT</div>
-    <div class="tiny-num" aria-hidden="true">08</div>
-  </div>
-  <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">Every prompt you write is code you&#x27;ll have to maintain forever.</p>
-    <div class="attrib">&mdash; seangoedecke.com</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">A terse, well-argued piece: every custom prompt you write is a maintenance liability that diverges from upstream model improvements over time. The author&#x27;s prescription — minimize bespoke prompting, rely on model defaults, update on model releases — runs counter to the &#x27;prompt engineering is a career&#x27; narrative and deserves the pushback it invites.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.seangoedecke.com/prompts-are-technical-debt-too/" target="_blank" rel="noopener">Read the story &rarr;</a>
+<section class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">09</div>
+  <div class="content">
+    <div class="kicker">PRIVACY + SURVEILLANCE</div>
+    <h2>Headway Therapy Forces Patients to Facial-Scan to Keep Getting Care</h2>
+    <p class="body-lead">404 Media reports that Headway, a therapy platform, is mandating biometric facial scans for continued care — a coercive data-collection pattern that should disturb any UX designer who thinks about consent flows. The friction-as-compliance design deserves scrutiny.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.404media.co/headway-therapy-facial-scan-biometric-data-identity-verification/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
     
   </div>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
 </section>
 
 <section class="spread s-academic">
   <div class="masthead-line">
     <span>Morning Edition &mdash; Review</span>
-    <span class="roman">IX</span>
+    <span class="roman">X</span>
   </div>
   <div>
-    <div class="kicker">WEIRD SCIENCE</div>
-    <h2>Key Chemistry Question Answered, No Quantum Computer Required</h2>
-    <div class="body-lead">Decades of consensus held that simulating certain complex chemical reactions required a quantum computer — a new classical algorithm blows that assumption open. The result matters beyond chemistry: it shifts how we think about the actual boundary between classical and quantum computational advantage, which has downstream implications for AI hardware roadmaps.</div>
+    <div class="kicker">AI RESEARCH</div>
+    <h2>Xetrieval: Mechanistically Explaining Dense Retrieval</h2>
+    <div class="body-lead">A HuggingFace paper that tries to crack open the black box of dense retrieval — why does a retriever assign high relevance? Useful grounding for anyone building RAG pipelines who wants to move beyond vibes-based eval toward mechanistic understanding.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.quantamagazine.org/key-chemistry-question-answered-no-quantum-computer-required-20260529/" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      <a class="read-more" href="https://huggingface.co/papers/2605.29507" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
   </div>
   <div>
-    <div class="footnote">&sect; filed under weird science</div>
-  </div>
-</section>
-
-<section class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 10</span>
-    <span>UX CRAFT</span>
-  </div>
-  <div class="ix-body">
-    <h2>What to Do After a Design Critique Ends</h2>
-    <p class="body-lead">Nielsen Norman makes the case that most critique culture fails not in the room but in the follow-up: no decision log, no accountability, feedback evaporates. The actionable framework here — capture, prioritize, close the loop — is the missing half of any design-review process, and it&#x27;s short enough to implement this week.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.nngroup.com/articles/after-design-critique/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Take 10 minutes today to write a one-paragraph decision log from your last critique; it&#x27;s the habit the article is really advocating for.</p>
-    
+    <div class="footnote">&sect; filed under ai research</div>
   </div>
 </section>
 
@@ -728,9 +729,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  6 of them are flagged as directly applicable &mdash; open those first.</p>
+  5 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Fraunces and Inter. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-05-29 13:57 UTC.</p>
+  at 2026-05-29 15:51 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0514 &middot; FRIDAY, MAY 29, 2026</p>
