@@ -45,7 +45,6 @@ MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6")
 def _sanitize_spread(html: str, class_name: str) -> str:
     """Ensure a generated spread is a single well-formed <section>."""
     html = html.strip()
-    open_tag = f'<section class="spread {class_name}">'
     # Extract just the section element if there's junk before/after
     start = html.find("<section")
     if start > 0:
@@ -55,6 +54,18 @@ def _sanitize_spread(html: str, class_name: str) -> str:
         html = html.rstrip() + "\n</section>"
     # Remove duplicate </section> tags
     html = re.sub(r"(</section>\s*)+$", "</section>", html)
+    # Ensure dark-background spreads have a light text color set
+    bg_match = re.search(
+        rf'\.{re.escape(class_name)}\s*\{{([^}}]+)\}}', html)
+    if bg_match:
+        body = bg_match.group(1)
+        has_dark_bg = re.search(
+            r'background(?:-color)?\s*:\s*#[0-3]', body)
+        has_color = re.search(r'(?<!background-)color\s*:', body)
+        if has_dark_bg and not has_color:
+            html = html.replace(
+                bg_match.group(0),
+                bg_match.group(0).replace('{', '{ color: #f0eee8;', 1))
     return html
 
 
