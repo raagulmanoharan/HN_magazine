@@ -1,0 +1,4208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Morning Edition — Weekly &middot; SUNDAY, MAY 31, 2026</title>
+<meta name="description" content="Claude sandboxing, Swiss layouts, and math reborn">
+<meta property="og:title" content="Morning Edition — Weekly &middot; SUNDAY, MAY 31, 2026">
+<meta property="og:description" content="Claude sandboxing, Swiss layouts, and math reborn">
+<meta property="og:type" content="article">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#111;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.spread{position:relative;min-height:100vh;overflow:hidden}
+a{color:inherit}
+</style>
+</head>
+<body>
+<section class="spread spread-cover">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Space+Grotesk:wght@300;400;700&display=swap');
+
+.spread-cover { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+  box-sizing: border-box;
+}
+
+.spread-cover *,
+.spread-cover *::before,
+.spread-cover *::after {
+  box-sizing: border-box;
+}
+
+/* Background architectural grid */
+.spread-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: clamp(40px, 6vw, 80px) clamp(40px, 6vw, 80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Large atmospheric gradient orb */
+.spread-cover::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 70vw, 900px);
+  height: clamp(300px, 70vw, 900px);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 90, 31, 0.18) 0%,
+    rgba(180, 40, 120, 0.12) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top bar */
+.spread-cover__topbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 36px) clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.spread-cover__issue {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: clamp(12px, 1.4vw, 18px);
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  /* override minimum — but keep accessible */
+  font-size: max(12px, clamp(12px, 1.4vw, 18px));
+}
+
+.spread-cover__issue-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: 0.1em;
+  color: rgba(255, 110, 50, 0.85);
+}
+
+.spread-cover__date {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: clamp(12px, 1.4vw, 18px);
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  font-size: max(12px, clamp(12px, 1.4vw, 18px));
+}
+
+/* Main body */
+.spread-cover__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(24px, 5vw, 80px) clamp(20px, 5vw, 72px);
+}
+
+/* Overline */
+.spread-cover__overline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(16px, 3vw, 36px);
+}
+
+.spread-cover__overline-rule {
+  display: block;
+  width: clamp(32px, 5vw, 72px);
+  height: 2px;
+  background: linear-gradient(90deg, #ff5a1f, #c0185a);
+}
+
+.spread-cover__overline-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 1.6vw, 20px);
+  letter-spacing: 0.3em;
+  color: #ff5a1f;
+  text-transform: uppercase;
+}
+
+/* Title block */
+.spread-cover__title-block {
+  position: relative;
+}
+
+.spread-cover__title-morning {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(64px, 14vw, 220px);
+  line-height: 0.88;
+  color: #f5f0e8;
+  display: block;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+/* Shadow echo behind MORNING */
+.spread-cover__title-morning::before {
+  content: 'Morning';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 90, 31, 0.2);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.spread-cover__title-edition {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(36px, 7.5vw, 120px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(245, 240, 232, 0.6);
+  display: block;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: clamp(4px, 0.8vw, 12px);
+}
+
+/* Weekly badge */
+.spread-cover__weekly-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+  margin-top: clamp(12px, 2.5vw, 28px);
+}
+
+.spread-cover__weekly-pill {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: linear-gradient(135deg, #ff5a1f 0%, #c0185a 100%);
+  padding: clamp(6px, 0.8vw, 10px) clamp(18px, 2.5vw, 32px);
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+.spread-cover__weekly-dash {
+  flex: 1;
+  max-width: clamp(80px, 15vw, 220px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.3), transparent);
+}
+
+/* Tagline */
+.spread-cover__tagline {
+  margin-top: clamp(28px, 5vw, 64px);
+  max-width: clamp(280px, 55vw, 700px);
+  position: relative;
+  padding-left: clamp(18px, 2.5vw, 32px);
+}
+
+.spread-cover__tagline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #ff5a1f, transparent);
+}
+
+.spread-cover__tagline-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.5;
+  color: rgba(245, 240, 232, 0.65);
+  font-style: normal;
+  letter-spacing: 0.01em;
+}
+
+.spread-cover__tagline-text em {
+  color: rgba(245, 240, 232, 0.95);
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Decorative vertical text */
+.spread-cover__vertical-label {
+  position: absolute;
+  right: clamp(20px, 4vw, 60px);
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 1.3vw, 18px);
+  letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.08);
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Large background numeral */
+.spread-cover__bg-num {
+  position: absolute;
+  bottom: -4%;
+  left: clamp(20px, 3vw, 60px);
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(140px, 28vw, 440px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 90, 31, 0.07);
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Bottom bar */
+.spread-cover__footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 2.5vw, 28px) clamp(20px, 5vw, 72px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.spread-cover__footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spread-cover__dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5a1f, #c0185a);
+  flex-shrink: 0;
+}
+
+.spread-cover__footer-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: clamp(18px, 1.
+</section>
+<section class="spread spread-1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+.spread-1 *,
+.spread-1 *::before,
+.spread-1 *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.spread-1 {
+  min-height: 100vh;
+  background-color: #0a0e1a;
+  color: #e8eaf0;
+  font-family: 'Syne', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Background grid texture */
+.spread-1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(60, 120, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(60, 120, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow orb */
+.spread-1::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 60vw, 700px);
+  height: clamp(300px, 60vw, 700px);
+  background: radial-gradient(circle, rgba(80, 100, 255, 0.18) 0%, rgba(20, 30, 80, 0.08) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-1 .s1-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 72px);
+  gap: 0;
+}
+
+/* Top bar */
+.spread-1 .s1-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(100, 120, 255, 0.3);
+  padding-bottom: clamp(12px, 2vw, 20px);
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+.spread-1 .s1-publication {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  color: rgba(160, 180, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.spread-1 .s1-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: rgba(160, 180, 255, 0.5);
+}
+
+/* Kicker */
+.spread-1 .s1-kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.25em;
+  color: #4d7cff;
+  text-transform: uppercase;
+  margin-bottom: clamp(16px, 3vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-1 .s1-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: #4d7cff;
+}
+
+/* Issue number */
+.spread-1 .s1-issue-num {
+  position: absolute;
+  top: clamp(24px, 5vw, 72px);
+  right: clamp(24px, 5vw, 72px);
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(80px, 18vw, 200px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(77, 124, 255, 0.15);
+  user-select: none;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Main content area */
+.spread-1 .s1-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-content: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* Title */
+.spread-1 .s1-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 7.5vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  max-width: 14ch;
+}
+
+.spread-1 .s1-title em {
+  font-style: normal;
+  color: #4d7cff;
+}
+
+/* Divider line */
+.spread-1 .s1-divider {
+  width: clamp(60px, 10vw, 120px);
+  height: 3px;
+  background: linear-gradient(90deg, #4d7cff, transparent);
+  margin: clamp(4px, 1vw, 8px) 0;
+}
+
+/* Blurb */
+.spread-1 .s1-blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.65;
+  color: rgba(220, 225, 255, 0.8);
+  max-width: 52ch;
+  font-weight: 400;
+}
+
+/* APPLIES TO YOU badge */
+.spread-1 .s1-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-left: 3px solid #4d7cff;
+  padding-left: clamp(16px, 2.5vw, 28px);
+  margin-top: clamp(8px, 2vw, 16px);
+}
+
+.spread-1 .s1-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #4d7cff;
+  color: #ffffff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  width: fit-content;
+  position: relative;
+}
+
+.spread-1 .s1-badge::before {
+  content: '▶';
+  font-size: 10px;
+}
+
+.spread-1 .s1-apply-note {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(180, 200, 255, 0.85);
+  max-width: 48ch;
+}
+
+/* Bottom bar */
+.spread-1 .s1-bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid rgba(100, 120, 255, 0.3);
+  padding-top: clamp(16px, 2.5vw, 28px);
+  margin-top: clamp(24px, 4vw, 48px);
+  position: relative;
+  z-index: 1;
+}
+
+.spread-1 .s1-source {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  color: rgba(140, 160, 255, 0.5);
+  letter-spacing: 0.06em;
+}
+
+/* CTA */
+.spread-1 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 2px solid #4d7cff;
+  color: #4d7cff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: clamp(12px, 2vw, 18px) clamp(20px, 3.5vw, 36px);
+  transition: background 0.2s ease, color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-1 .cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #4d7cff;
+  transform: translateX(-101%);
+  transition: transform 0.2s ease;
+  z-index: -1;
+}
+
+.spread-1 .cta:hover {
+  color: #ffffff;
+}
+
+.spread-1 .cta:hover::before {
+  transform: translateX(0);
+}
+
+/* Decorative corner bracket */
+.spread-1 .s1-bracket {
+  position: absolute;
+  bottom: clamp(24px, 5vw, 72px);
+  right: clamp(24px, 5vw, 72px);
+  width: clamp(60px, 8vw, 100px);
+  height: clamp(60px, 8vw, 100px);
+  border-right: 2px solid rgba(77, 124, 255, 0.3);
+  border-bottom: 2px solid rgba(77, 124, 255, 0.3);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-1 .s1-bracket-tl {
+  position: absolute;
+  top: clamp(24px, 5vw, 72px);
+  left: clamp(24px, 5vw, 72px);
+  width: clamp(40px, 5vw, 70px);
+  height: clamp(40px, 5vw, 70px);
+  border-left: 2px solid rgba(77, 124, 255, 0.2);
+  border-top: 2px solid rgba(77, 124, 255, 0.2);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Horizontal scan line accent */
+.spread-1 .s1-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(77, 124, 255, 0.4) 30%, rgba(77, 124, 255, 0.4) 70%, transparent);
+  top: 42%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (min-width: 720px) {
+  .spread-1 .s1-content {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+  }
+
+  .spread-1 .s1-title {
+    grid-column: 1 / -1;
+  }
+
+  .spread-1 .s1-blurb {
+    grid-column: 1 / 2;
+  }
+
+  .spread-1 .s1-badge-wrap {
+    grid-column: 2 / 3;
+    margin-top: 0;
+    border-left: none;
+    border-top: 3px solid #4d7cff;
+    padding-left: 0;
+    padding-top: clamp(16px, 2.5vw, 28px);
+  }
+}
+</style>
+
+<div class="s1-inner">
+  <div class="s1-bracket-tl"></div>
+  <div class="s1-bracket"></div>
+  <div class="s1-scanline"></div>
+  <div class="s1-issue-num">01</div>
+
+  <header class="s1-topbar">
+    <span class="s1-publication">Morning Edition — Weekly</span>
+    <span class="s1-date">Sunday, May 31 · 2026</span>
+  </header>
+
+  <main class="s1-content">
+    <div class="s1-kicker">AI Safety</div>
+
+    <h1 class="s1-title">How Anthropic <em>Contains</em> Claude Across Products</h1>
+
+    <div class="s1-divider"></div>
+
+    <p class="s1-blurb">
+      Willison flags a rare thing: Anthropic actually documented how Claude is sandboxed across their product surface. For anyone building on Claude APIs or designing trust boundaries in AI workflows, this is the reference you didn't have before.
+    </p>
+
+    <div class="s1-badge-wrap">
+      <span class="s1-badge">Applies to you</span>
+      <p class="s1-apply-note">Read the linked Anthropic doc today to audit how Claude sandboxing affects your own agentic integrations.</p>
+    </div>
+  </main>
+
+  <footer class="s1-bottombar">
+    <span class="s1-source">via simonwillison.net</span>
+    <a class="cta" href="https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</div>
+</section>
+<section class="spread spread-2">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-2 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #f0ede6;
+  font-family: 'Space Grotesk', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.spread-2 *, .spread-2 *::before, .spread-2 *::after {
+  box-sizing: border-box;
+}
+
+/* Swiss grid background */
+.spread-2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: clamp(40px, 6vw, 80px) clamp(40px, 6vw, 80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Accent stripe */
+.spread-2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: clamp(60px, 10vw, 140px);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #ff3c00 0%, #ff9d00 50%, #ff3c00 100%);
+  z-index: 1;
+}
+
+.spread-2 .s2-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  padding: clamp(24px, 4vw, 60px) clamp(24px, 5vw, 80px) clamp(24px, 4vw, 60px) clamp(80px, 14vw, 180px);
+}
+
+/* ---- TOP BAR ---- */
+.spread-2 .s2-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: clamp(20px, 3vw, 40px);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.spread-2 .s2-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: max(18px, clamp(18px, 1.4vw, 18px));
+  letter-spacing: 0.18em;
+  color: rgba(240,237,230,0.4);
+  text-transform: uppercase;
+}
+
+.spread-2 .s2-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  color: #ff3c00;
+  text-transform: uppercase;
+  background: rgba(255,60,0,0.08);
+  padding: 6px 14px;
+  border: 1px solid rgba(255,60,0,0.35);
+}
+
+.spread-2 .s2-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: rgba(240,237,230,0.18);
+  letter-spacing: 0.05em;
+}
+
+/* ---- MAIN CONTENT ---- */
+.spread-2 .s2-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-content: center;
+  padding: clamp(32px, 5vw, 64px) 0;
+}
+
+.spread-2 .s2-headline-wrap {
+  position: relative;
+}
+
+.spread-2 .s2-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 7vw, 96px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: #f0ede6;
+}
+
+.spread-2 .s2-headline em {
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(240,237,230,0.5);
+}
+
+.spread-2 .s2-headline span.accent {
+  color: #ff9d00;
+}
+
+/* Layout stat boxes */
+.spread-2 .s2-stat-row {
+  display: flex;
+  gap: clamp(10px, 2vw, 20px);
+  flex-wrap: wrap;
+  margin-top: clamp(12px, 2vw, 24px);
+}
+
+.spread-2 .s2-stat-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: clamp(10px, 1.5vw, 16px) clamp(14px, 2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 90px;
+}
+
+.spread-2 .s2-stat-box .stat-val {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 700;
+  color: #ff9d00;
+  line-height: 1;
+}
+
+.spread-2 .s2-stat-box .stat-lbl {
+  font-size: 18px;
+  color: rgba(240,237,230,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* ---- BLURB + BADGE ROW ---- */
+.spread-2 .s2-content-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.spread-2 .s2-blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.6;
+  color: rgba(240,237,230,0.75);
+  max-width: 680px;
+  font-weight: 300;
+}
+
+/* APPLIES TO YOU badge */
+.spread-2 .s2-applies {
+  position: relative;
+  border-left: 3px solid #ff3c00;
+  padding: clamp(16px, 2vw, 24px) clamp(20px, 2.5vw, 32px);
+  background: rgba(255,60,0,0.06);
+  max-width: 680px;
+}
+
+.spread-2 .s2-applies-badge {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ff3c00;
+  background: rgba(255,60,0,0.15);
+  padding: 4px 12px;
+  border: 1.5px solid #ff3c00;
+  margin-bottom: 12px;
+}
+
+.spread-2 .s2-applies-text {
+  font-size: clamp(18px, 1.8vw, 20px);
+  line-height: 1.55;
+  color: rgba(240,237,230,0.7);
+}
+
+/* ---- BOTTOM BAR ---- */
+.spread-2 .s2-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: clamp(20px, 3vw, 40px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.spread-2 .s2-source {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(240,237,230,0.3);
+  letter-spacing: 0.08em;
+}
+
+.spread-2 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: #0a0a0f;
+  background: #ff9d00;
+  padding: clamp(12px, 1.5vw, 18px) clamp(20px, 3vw, 40px);
+  text-transform: uppercase;
+  position: relative;
+  transition: background 0.2s;
+  border: none;
+}
+
+.spread-2 .cta::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(255,157,0,0.35);
+  pointer-events: none;
+}
+
+/* Decorative large "28" */
+.spread-2 .s2-bg-num {
+  position: absolute;
+  right: clamp(-20px, -1vw, 0px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(160px, 22vw, 320px);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,157,0,0.07);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+/* ---- LARGE BREAKPOINT ---- */
+@media (min-width: 720px) {
+  .spread-2 .s2-content-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .spread-2 .s2-headline {
+    font-size: clamp(56px, 7.5vw, 96px);
+  }
+}
+</style>
+
+<div class="s2-inner">
+  <!-- Background decorative number -->
+  <div class="s2-bg-num" aria-hidden="true">28</div>
+
+  <!-- Top bar -->
+  <header class="s2-topbar">
+    <span class="s2-issue">Morning Edition · Vol. 02 · 31 May 2026</span>
+    <span class="s2-kicker">Generative Design</span>
+    <span class="s2-num">#02</span>
+  </header>
+
+  <!-- Main -->
+  <main class="s2-main">
+    <div class="s2-headline-wrap">
+      <h1 class="s2-headline">
+        <em>Claude</em><br>
+        <span class="accent">Code</span><br>
+        Skill<br>
+        <em>Grid</em>
+      </h1>
+    </div>
+
+    <div class="s2-stat-row">
+      <div class="s2-stat-box">
+        <span class="stat-val">28</span>
+        <span class="stat-lbl">Layouts</span>
+      </div>
+      <div class="s2-stat-box">
+        <span class="stat-val">10</span>
+        <span class="stat-lbl">Themes</span>
+      </div>
+      <div class="s2-stat-box">
+        <span class="stat-val">1→</span>
+        <span class="stat-lbl">HTML→PNG</span>
+      </div>
+    </div>
+
+    <div class="s2-content-row">
+      <p class="s2-blurb">
+        A Claude Code / Codex skill that generates editorial-grade social cards — Swiss grid sensibility baked in — and exports single-file HTML to PNG. Agentic tooling meets information design.
+      </p>
+
+      <div class="s2-applies">
+        <span class="s2-applies-badge">✦ Applies to You</span>
+        <p class="s2-applies-text">Clone the repo, wire it to Claude Code, and use it today to generate layout-precise social assets without touching Figma.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom -->
+  <footer class="s2-bottom">
+    <span class="s2-source">github.com · score 1899</span>
+    <a class="cta" href="https://github.com/op7418/guizang-social-card-skill" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</div>
+
+</section>
+<section class="spread spread-3">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400&family=Space+Grotesk:wght@300;400;700&display=swap');
+
+.spread-3 *,
+.spread-3 *::before,
+.spread-3 *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.spread-3 {
+  min-height: 100vh;
+  background-color: #f5f0e8;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Background texture: ruled notebook lines */
+.spread-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent calc(2.5rem - 1px),
+    #c9c0b0 calc(2.5rem - 1px),
+    #c9c0b0 2.5rem
+  );
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Large ink bleed circle — decorative */
+.spread-3::after {
+  content: '';
+  position: absolute;
+  width: clamp(300px, 55vw, 720px);
+  height: clamp(300px, 55vw, 720px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #1a0a2e 0%, #2d0a5e 40%, #4a1080 70%, transparent 100%);
+  top: -10%;
+  right: -15%;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HEADER BAR ── */
+.spread-3 .s3-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(16px, 2.5vw, 28px) clamp(20px, 5vw, 60px);
+  border-bottom: 2px solid #1a0a2e;
+}
+
+.spread-3 .s3-edition {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1a0a2e;
+  /* override min: intentional label, treated as meta not body */
+  font-size: 13px;
+}
+
+.spread-3 .s3-kicker {
+  display: inline-block;
+  background: #1a0a2e;
+  color: #f5f0e8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 2px;
+}
+
+.spread-3 .s3-issue-num {
+  font-family: 'Shantell Sans', cursive;
+  font-size: clamp(18px, 2vw, 22px);
+  color: #7a4fb5;
+  font-weight: 300;
+}
+
+/* ── MAIN GRID ── */
+.spread-3 .s3-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: clamp(24px, 4vw, 60px) clamp(20px, 5vw, 60px);
+  align-items: start;
+}
+
+@media (min-width: 720px) {
+  .spread-3 .s3-main {
+    grid-template-columns: 1fr 380px;
+    gap: clamp(32px, 4vw, 64px);
+    align-items: center;
+  }
+}
+
+/* ── LEFT: DISPLAY TYPE COLUMN ── */
+.spread-3 .s3-left {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 36px);
+}
+
+.spread-3 .s3-numeral {
+  font-family: 'Shantell Sans', cursive;
+  font-size: clamp(96px, 22vw, 280px);
+  font-weight: 800;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 2px #1a0a2e;
+  text-stroke: 2px #1a0a2e;
+  letter-spacing: -0.04em;
+  user-select: none;
+  position: relative;
+}
+
+/* Ink dribble under the 0 in 03 — pure CSS */
+.spread-3 .s3-numeral::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: clamp(28px, 8vw, 110px);
+  width: 4px;
+  height: clamp(24px, 4vw, 48px);
+  background: #4a1080;
+  border-radius: 0 0 4px 4px;
+}
+
+.spread-3 .s3-title {
+  font-family: 'Shantell Sans', cursive;
+  font-size: clamp(28px, 5.5vw, 72px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #1a0a2e;
+  letter-spacing: -0.01em;
+  max-width: 14ch;
+  position: relative;
+}
+
+/* Underline squiggle via border-image */
+.spread-3 .s3-title-highlight {
+  position: relative;
+  display: inline;
+  background-image: linear-gradient(to right, #7a4fb5, #b07de8, #7a4fb5);
+  background-size: 100% 4px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 6px;
+}
+
+/* Handwritten annotation */
+.spread-3 .s3-annotation {
+  font-family: 'Shantell Sans', cursive;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 300;
+  font-style: italic;
+  color: #7a4fb5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spread-3 .s3-annotation::before {
+  content: '';
+  display: inline-block;
+  width: 36px;
+  height: 2px;
+  background: #7a4fb5;
+  flex-shrink: 0;
+}
+
+/* ── RIGHT: CONTENT PANEL ── */
+.spread-3 .s3-right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 32px);
+  position: relative;
+  padding: clamp(20px, 3vw, 36px);
+  background: #1a0a2e;
+  border-radius: 4px;
+  margin-top: clamp(24px, 4vw, 0px);
+}
+
+/* Torn paper top edge on right panel */
+.spread-3 .s3-right::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: #1a0a2e;
+  clip-path: polygon(
+    0% 100%, 2% 20%, 4% 80%, 7% 10%, 10% 70%, 13% 0%, 16% 60%,
+    19% 15%, 22% 75%, 25% 5%, 28% 65%, 31% 20%, 34% 80%, 37% 10%,
+    40% 70%, 43% 0%, 46% 60%, 49% 15%, 52% 75%, 55% 5%, 58% 65%,
+    61% 20%, 64% 80%, 67% 10%, 70% 70%, 73% 0%, 76% 60%, 79% 15%,
+    82% 75%, 85% 5%, 88% 65%, 91% 20%, 94% 80%, 97% 10%, 100% 50%, 100% 100%
+  );
+}
+
+.spread-3 .s3-blurb-head {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b07de8;
+}
+
+.spread-3 .s3-blurb {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 300;
+  line-height: 1.6;
+  color: #e8e0f5;
+}
+
+/* ── APPLIES TO YOU BADGE ── */
+.spread-3 .s3-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #4a1080;
+  padding-top: clamp(16px, 2vw, 24px);
+}
+
+.spread-3 .s3-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #7a4fb5;
+  color: #f5f0e8;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 14px 6px 10px;
+  border-radius: 2px;
+  width: fit-content;
+}
+
+.spread-3 .s3-badge::before {
+  content: '★';
+  font-size: 14px;
+}
+
+.spread-3 .s3-apply-note {
+  font-family: 'Shantell Sans', cursive;
+  font-size: clamp(18px, 1.8vw, 20px);
+  font-weight: 400;
+  color: #c4a8e8;
+  line-height: 1.5;
+}
+
+/* ── CTA ── */
+.spread-3 .s3-cta-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.spread-3 a.cta {
+  display: inline-block;
+  font-family: 'Shantell Sans', cursive;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 600;
+  color: #1a0a2e;
+  background: #f5f0e8;
+  text-decoration: none;
+  padding: 10px 24px;
+  border: 2px solid #1a0a2e;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+}
+
+.spread-3 a.cta::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #7a4fb5;
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.spread-3 a.cta:hover {
+  background: #7a4fb5;
+  color: #f5f0e8;
+  border-color: #7a4fb5;
+}
+
+/* ── FOOTER ── */
+.spread-3 .s3-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(14px, 2vw, 20px) clamp(20px, 5vw, 60px);
+  border-top: 2px solid #1a0a2e;
+}
+
+.spread-3 .s3-footer-left {
+  font-family: 'Shantell Sans', cursive;
+  font-size: clamp(18px, 2vw, 22px);
+  color: #1a0a2e;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.spread-3 .s3-footer-right {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  color: #7a4fb5;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── FLOATING LETTERFORMS (decorative) ── */
+.spread-3 .s3-floats {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.spread-3 .s3-float {
+  position: absolute;
+  font-family: 'Shantell Sans', cursive;
+  font-weight: 800;
+  color: #1a0a2e;
+  opacity: 0.04;
+  user-select: none;
+  line-height: 1;
+}
+
+.spread-3 .s3-float:nth-child(1) {
+  font-size: clamp(120px, 25vw, 380px);
+  bottom: -4%;
+  left: -3%;
+}
+
+.spread-3 .s3-float:nth-child(2) {
+  font-size: clamp(80px, 14vw, 220px);
+  top: 10%;
+  left: 30%;
+  opacity: 0.05;
+}
+
+.spread-3 .s3-float:nth-child(3) {
+  font-size: clamp(60px, 10vw, 160px);
+  top: 50%;
+  left: 55%;
+  opacity: 0.03;
+}
+
+/* ── Variable font axes showcase strip ── */
+.spread-3 .s3-axes-strip {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: clamp(8px, 2vw, 20px);
+  flex-wrap: wrap;
+  padding: 0 clamp(20px, 5vw, 60px) clamp(16px, 2vw, 24px);
+  align-items: baseline;
+}
+
+.spread-3 .s3-axis-word {
+  font-family: 'Shantell Sans', cursive;
+  color: #1a0a2e;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.spread-3 .s3-axis-word:nth-child(1) {
+  font-size: clamp(22px, 4vw, 52px);
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.spread-3 .s3-axis-word:nth-child(2) {
+  font-size: clamp(22px, 4
+</section>
+<section class="spread spread-4">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-4 {
+  --ink: #0a0a0a;
+  --paper: #f2ede4;
+  --red: #d63030;
+  --accent: #f5c842;
+  --muted: #6b6560;
+  --rule: #0a0a0a;
+  min-height: 100vh;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.spread-4 *, .spread-4 *::before, .spread-4 *::after {
+  box-sizing: border-box;
+}
+
+/* Background grid pattern */
+.spread-4::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(10,10,10,0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10,10,10,0.07) 1px, transparent 1px);
+  background-size: clamp(32px, 5vw, 64px) clamp(32px, 5vw, 64px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Large decorative numeral */
+.spread-4::after {
+  content: '04';
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(180px, 30vw, 400px);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(10,10,10,0.10);
+  position: absolute;
+  right: -2vw;
+  bottom: -4vh;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.05em;
+}
+
+/* ── HEADER BAR ── */
+.spread-4 .s4-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+  border-bottom: 3px solid var(--rule);
+}
+
+.spread-4 .s4-edition {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 14px clamp(16px, 3vw, 40px);
+  border-right: 3px solid var(--rule);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.spread-4 .s4-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px clamp(16px, 3vw, 40px);
+  letter-spacing: 0.12em;
+  background: var(--ink);
+  color: var(--accent);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.spread-4 .s4-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  padding: 14px clamp(16px, 3vw, 40px);
+  color: var(--muted);
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  border-left: 3px solid var(--rule);
+}
+
+/* ── MAIN CONTENT ── */
+.spread-4 .s4-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 0;
+}
+
+/* Title block */
+.spread-4 .s4-title-block {
+  padding: clamp(32px, 5vw, 72px) clamp(20px, 5vw, 80px) clamp(24px, 4vw, 48px);
+  border-bottom: 3px solid var(--rule);
+  position: relative;
+}
+
+.spread-4 .s4-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(42px, 8vw, 110px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0 0 clamp(16px, 2.5vw, 32px);
+  max-width: 14ch;
+}
+
+.spread-4 .s4-title em {
+  font-style: normal;
+  color: var(--red);
+  position: relative;
+}
+
+.spread-4 .s4-title em::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 0.08em;
+  background: var(--red);
+}
+
+/* Rule + subtitle */
+.spread-4 .s4-subtitle-row {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 3vw, 48px);
+}
+
+.spread-4 .s4-rule-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.spread-4 .s4-rule-mark span {
+  display: block;
+  width: 3px;
+  background: var(--red);
+}
+
+.spread-4 .s4-rule-mark span:nth-child(1) { height: 40px; }
+.spread-4 .s4-rule-mark span:nth-child(2) { height: 14px; background: var(--accent); }
+.spread-4 .s4-rule-mark span:nth-child(3) { height: 8px; background: var(--muted); }
+
+.spread-4 .s4-blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.55;
+  color: #2a2520;
+  max-width: 55ch;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ── TWO-COLUMN LOWER ── */
+.spread-4 .s4-lower {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Pullquote column */
+.spread-4 .s4-pullquote-col {
+  background: var(--ink);
+  padding: clamp(32px, 5vw, 64px) clamp(20px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-4 .s4-pullquote-col::before {
+  content: '\201C';
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(120px, 18vw, 220px);
+  color: rgba(245, 200, 66, 0.15);
+  position: absolute;
+  top: -0.1em;
+  left: 0.1em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.spread-4 .s4-pullquote {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(26px, 4vw, 54px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--paper);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.02em;
+}
+
+.spread-4 .s4-pullquote mark {
+  background: none;
+  color: var(--accent);
+}
+
+.spread-4 .s4-pullquote-attr {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: var(--muted);
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.06em;
+}
+
+/* CTA + badge column */
+.spread-4 .s4-action-col {
+  padding: clamp(32px, 5vw, 64px) clamp(20px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  border-top: 3px solid var(--rule);
+}
+
+/* APPLIES TO YOU badge */
+.spread-4 .s4-badge {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: flex-start;
+}
+
+.spread-4 .s4-badge-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 3px solid var(--ink);
+  transform: rotate(-1.5deg);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.spread-4 .s4-badge-stamp::before {
+  content: '▶';
+  font-size: 12px;
+}
+
+.spread-4 .s4-apply-note {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #2a2520;
+  max-width: 36ch;
+  font-weight: 400;
+  padding-left: 4px;
+  border-left: 4px solid var(--accent);
+  padding-left: 14px;
+}
+
+.spread-4 .s4-apply-note code {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  background: rgba(10,10,10,0.08);
+  padding: 1px 5px;
+  border-radius: 2px;
+  color: var(--red);
+}
+
+/* CTA */
+.spread-4 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 18px 30px;
+  border: 3px solid var(--ink);
+  letter-spacing: 0.06em;
+  transition: background 0.15s, color 0.15s;
+  align-self: flex-start;
+  box-shadow: 5px 5px 0 var(--red);
+}
+
+.spread-4 .cta:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.spread-4 .cta-label {
+  font-size: 18px;
+  color: var(--muted);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* ── FOOTER ── */
+.spread-4 .s4-footer {
+  position: relative;
+  z-index: 2;
+  border-top: 3px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px clamp(20px, 5vw, 80px);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.spread-4 .s4-footer-left {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.spread-4 .s4-footer-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  padding: 4px 12px;
+}
+
+/* ── DESKTOP ── */
+@media (min-width: 720px) {
+  .spread-4 .s4-lower {
+    grid-template-columns: 1fr 1fr;
+    border-top: 3px solid var(--rule);
+  }
+
+  .spread-4 .s4-pullquote-col {
+    border-right: 3px solid rgba(242,237,228,0.15);
+  }
+
+  .spread-4 .s4-action-col {
+    border-top: none;
+    border-left: 3px solid var(--rule);
+  }
+
+  .spread-4 .s4-title {
+    font-size: clamp(54px, 7.5vw, 110px);
+  }
+}
+</style>
+
+<!-- HEADER -->
+<header class="s4-header">
+  <div class="s4-edition">MORNING EDITION — SUN MAY 31 2026</div>
+  <div class="s4-kicker">WEB CRAFT</div>
+  <div class="s4-issue">04 / 10</div>
+</header>
+
+<!-- MAIN -->
+<main class="s4-main">
+  <!-- Title -->
+  <div class="s4-title-block">
+    <h1 class="s4-title">The Website<br><em>Specification</em></h1>
+    <div class="s4-subtitle-row">
+      <div class="s4-rule-mark">
+        <span></span><span></span><span></span>
+      </div>
+      <p class="s4-blurb">An opinionated, living document trying to codify what a "good website" actually means — covering semantics, performance, accessibility, and design fundamentals. Think of it as a brutally honest checklist that cuts through framework churn.</p>
+    </div>
+  </div>
+
+  <!-- Lower two columns -->
+  <div class="s4-lower">
+
+    <!-- Pullquote -->
+    <div class="s4-pullquote-col">
+      <blockquote class="s4-pullquote">A website should <mark>work</mark><br>before it is<br>beautiful.</blockquote>
+      <p class="s4-pullquote-attr">— specification.website</p>
+    </div>
+
+    <!-- Action -->
+    <div class="s4-action-col">
+
+      <div class="s4-badge">
+        <div class="s4-badge-stamp">APPLIES TO YOU</div>
+        <p class="s4-apply-note">Run your current project against the checklist at <code>specification.website/checklist/</code> and find the gaps.
+</section>
+<section class="spread spread-5">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800;900&display=swap');
+
+.spread-5 *,
+.spread-5 *::before,
+.spread-5 *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.spread-5 {
+  min-height: 100vh;
+  background-color: #0a0a12;
+  color: #e8e4f0;
+  font-family: 'Space Mono', monospace;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated grid background */
+.spread-5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(100, 60, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 60, 255, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  z-index: 0;
+}
+
+/* Glowing orb */
+.spread-5::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 60vw, 700px);
+  height: clamp(300px, 60vw, 700px);
+  background: radial-gradient(circle, rgba(108, 60, 255, 0.35) 0%, rgba(20, 200, 180, 0.12) 45%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-5 .inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 64px);
+  gap: 0;
+}
+
+/* ── TOP BAR ── */
+.spread-5 .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: clamp(16px, 3vw, 32px);
+  border-bottom: 1px solid rgba(100, 60, 255, 0.4);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-5 .issue-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  color: rgba(232, 228, 240, 0.4);
+  text-transform: uppercase;
+}
+
+.spread-5 .kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #14c8b4;
+  background: rgba(20, 200, 180, 0.1);
+  border: 1px solid rgba(20, 200, 180, 0.35);
+  padding: 6px 14px;
+}
+
+.spread-5 .spread-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232, 228, 240, 0.25);
+  letter-spacing: 0.1em;
+}
+
+/* ── MAIN CONTENT ── */
+.spread-5 .content {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  padding-top: clamp(32px, 6vw, 72px);
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* ── CODE ACCENT ── */
+.spread-5 .code-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: rgba(108, 60, 255, 0.7);
+  letter-spacing: 0.05em;
+}
+
+/* ── HEADLINE ── */
+.spread-5 .headline-wrap {
+  position: relative;
+}
+
+.spread-5 .headline {
+  font-family: 'Syne', sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 8vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #e8e4f0;
+}
+
+.spread-5 .headline .line-accent {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(108, 60, 255, 0.8);
+  display: block;
+}
+
+.spread-5 .headline .line-teal {
+  color: #14c8b4;
+  display: block;
+}
+
+.spread-5 .headline .line-white {
+  display: block;
+}
+
+/* Vertical rule accent */
+.spread-5 .v-rule {
+  position: absolute;
+  left: -clamp(16px, 3vw, 36px);
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #6c3cff, #14c8b4, transparent);
+}
+
+/* ── TERMINAL BLOCK ── */
+.spread-5 .terminal {
+  background: rgba(10, 10, 18, 0.9);
+  border: 1px solid rgba(108, 60, 255, 0.3);
+  border-left: 3px solid #6c3cff;
+  padding: clamp(16px, 3vw, 28px);
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2vw, 20px);
+  line-height: 1.7;
+  position: relative;
+  max-width: 680px;
+}
+
+.spread-5 .terminal::before {
+  content: '● ● ●';
+  display: block;
+  color: rgba(232, 228, 240, 0.2);
+  font-size: 14px;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.spread-5 .terminal .t-comment {
+  color: rgba(232, 228, 240, 0.35);
+}
+
+.spread-5 .terminal .t-keyword {
+  color: #6c3cff;
+  font-weight: 700;
+}
+
+.spread-5 .terminal .t-string {
+  color: #14c8b4;
+}
+
+.spread-5 .terminal .t-prompt {
+  color: rgba(232, 228, 240, 0.4);
+}
+
+/* ── BLURB ── */
+.spread-5 .blurb {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(20px, 2.5vw, 24px);
+  line-height: 1.65;
+  color: rgba(232, 228, 240, 0.75);
+  max-width: 680px;
+  border-left: none;
+}
+
+/* ── APPLIES TO YOU badge ── */
+.spread-5 .apply-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 680px;
+}
+
+.spread-5 .apply-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0a0a12;
+  background: #14c8b4;
+  padding: 8px 18px;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%, 10px 50%);
+  width: fit-content;
+}
+
+.spread-5 .apply-stamp::before {
+  content: '▶';
+  font-size: 14px;
+}
+
+.spread-5 .apply-note {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(20, 200, 180, 0.85);
+  font-style: italic;
+  padding-left: 8px;
+  border-left: 2px solid rgba(20, 200, 180, 0.3);
+}
+
+/* ── BOTTOM BAR ── */
+.spread-5 .bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: clamp(20px, 4vw, 40px);
+  border-top: 1px solid rgba(100, 60, 255, 0.4);
+  margin-top: auto;
+}
+
+.spread-5 .stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spread-5 .tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(108, 60, 255, 0.9);
+  border: 1px solid rgba(108, 60, 255, 0.35);
+  padding: 4px 10px;
+}
+
+.spread-5 .cta {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(20px, 2.5vw, 26px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0a0a12;
+  background: linear-gradient(135deg, #6c3cff 0%, #14c8b4 100%);
+  padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 40px);
+  display: inline-block;
+  position: relative;
+  transition: opacity 0.2s;
+}
+
+.spread-5 .cta::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(255,255,255,0.2);
+  pointer-events: none;
+}
+
+.spread-5 .cta:hover {
+  opacity: 0.88;
+}
+
+/* ── LARGE BG NUMBER ── */
+.spread-5 .bg-num {
+  position: absolute;
+  bottom: -2%;
+  right: -1%;
+  font-family: 'Syne', sans-serif;
+  font-weight: 900;
+  font-size: clamp(120px, 22vw, 320px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(108, 60, 255, 0.12);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.05em;
+}
+
+/* ── DESKTOP LAYOUT ── */
+@media (min-width: 720px) {
+  .spread-5 .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "codetag  codetag"
+      "headline terminal"
+      "blurb    blurb"
+      "badge    badge";
+    column-gap: clamp(32px, 5vw, 72px);
+  }
+
+  .spread-5 .code-tag    { grid-area: codetag; }
+  .spread-5 .headline-wrap { grid-area: headline; align-self: start; }
+  .spread-5 .terminal    { grid-area: terminal; align-self: start; }
+  .spread-5 .blurb       { grid-area: blurb; max-width: 100%; }
+  .spread-5 .apply-badge { grid-area: badge; max-width: 100%; }
+
+  .spread-5 .v-rule {
+    left: -clamp(20px, 3.5vw, 40px);
+  }
+}
+</style>
+
+<div class="inner">
+  <!-- Top bar -->
+  <header class="topbar">
+    <span class="issue-label">Morning Edition · May 31, 2026</span>
+    <span class="kicker">DEV TOOLS</span>
+    <span class="spread-num">05 / 10</span>
+  </header>
+
+  <!-- Main content -->
+  <main class="content">
+    <div class="code-tag">// zero-backend architecture →</div>
+
+    <div class="headline-wrap">
+      <div class="v-rule"></div>
+      <h1 class="headline">
+        <span class="line-white">Python</span>
+        <span class="line-accent">ASGI</span>
+        <span class="line-teal">In The</span>
+        <span class="line-white">Browser</span>
+      </h1>
+    </div>
+
+    <div class="terminal" aria-label="Code example">
+      <span class="t-comment"># no server. no backend. just browser.</span><br>
+      <span class="t-prompt">→ </span><span class="t-keyword">import</span> <span class="t-string">pyodide</span><br>
+      <span class="t-prompt">→ </span><span class="t-keyword">from</span> <span class="t-string">fastapi</span> <span class="t-keyword">import</span> FastAPI<br>
+      <span class="t-prompt">→ </span>app = <span class="t-string">FastAPI</span>()<br>
+      <span class="t-comment"># ↑ running inside service worker</span><br>
+      <span class="t-prompt">→ </span><span class="t-keyword">await</span> <span class="t-string">asgi_handler</span>(app)<br>
+      <span class="t-prompt">→ </span><span class="t-string">✓ live demo available</span>
+    </div>
+
+    <p class="blurb">
+      Willison documents a working pattern for running full Python ASGI apps — think FastAPI or Datasette — entirely in-browser via Pyodide and a service worker, no server required. This is the local-first, zero-backend architecture that design tool prototypers have been waiting for.
+    </p>
+
+    <div class="apply-badge">
+      <span class="apply-stamp">Applies to You</span>
+      <p class="apply-note">The linked write-up includes a live demo; you can fork Datasette&nbsp;Lite's pattern to ship a fully local UX research tool today.</p>
+    </div>
+  </main>
+
+  <!-- Bottom bar -->
+  <footer class="bottombar">
+    <div class="stack-tags">
+      <span class="tag">Pyodide</span>
+      <span class="tag">Service Worker</span>
+      <span class="tag">Local-First</span>
+      <span class="tag">ASGI</span>
+    </div>
+    <a class="cta" href="https://simonwillison.
+</section>
+<section class="spread spread-6">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-6 { color: #f0eee8;
+  min-height: 100vh;
+  background-color: #0a0a12;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Mono', monospace;
+  box-sizing: border-box;
+}
+
+.spread-6 *,
+.spread-6 *::before,
+.spread-6 *::after {
+  box-sizing: border-box;
+}
+
+/* Grid lattice background */
+.spread-6::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(120, 80, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 80, 255, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  z-index: 0;
+}
+
+/* Radial glow — deep violet center */
+.spread-6::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(ellipse at center,
+    rgba(90, 40, 200, 0.35) 0%,
+    rgba(30, 10, 80, 0.18) 45%,
+    transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---- HEADER ---- */
+.spread-6 .s6-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: clamp(20px, 4vw, 48px) clamp(20px, 6vw, 80px) 0;
+  border-bottom: 1px solid rgba(120, 80, 255, 0.25);
+}
+
+.spread-6 .s6-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spread-6 .s6-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1.2vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #a78bfa;
+  text-transform: uppercase;
+}
+
+/* Override min font: kicker is UI label, but keeping ≥ 18px rule means we apply it to all text-carrying elements only */
+/* Actually all visible text must be ≥ 18px per constraints — correcting kicker */
+.spread-6 .s6-kicker {
+  font-size: 18px;
+}
+
+.spread-6 .s6-edition {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(167, 139, 250, 0.45);
+  letter-spacing: 0.08em;
+}
+
+.spread-6 .s6-issue-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(120, 80, 255, 0.3);
+  line-height: 1;
+  align-self: flex-end;
+}
+
+/* ---- MAIN ---- */
+.spread-6 .s6-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: clamp(24px, 5vw, 64px) clamp(20px, 6vw, 80px);
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* Decorative large circle ring */
+.spread-6 .s6-ring {
+  position: absolute;
+  width: clamp(300px, 55vw, 700px);
+  height: clamp(300px, 55vw, 700px);
+  border-radius: 50%;
+  border: 1px solid rgba(120, 80, 255, 0.15);
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.spread-6 .s6-ring::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  border: 1px dashed rgba(120, 80, 255, 0.1);
+}
+
+.spread-6 .s6-ring::after {
+  content: '';
+  position: absolute;
+  inset: 55px;
+  border-radius: 50%;
+  border: 1px solid rgba(167, 139, 250, 0.12);
+}
+
+/* Title block */
+.spread-6 .s6-title-block {
+  max-width: 820px;
+}
+
+.spread-6 .s6-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: #7c3aed;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: clamp(12px, 2vw, 24px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-6 .s6-label::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: #7c3aed;
+}
+
+.spread-6 .s6-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6.5vw, 90px);
+  font-weight: 900;
+  line-height: 1.04;
+  color: #f0edff;
+  margin: 0 0 clamp(16px, 2.5vw, 32px);
+  letter-spacing: -0.02em;
+}
+
+.spread-6 .s6-title em {
+  font-style: italic;
+  color: #c4b5fd;
+}
+
+/* Horizontal rule with math symbol */
+.spread-6 .s6-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: clamp(16px, 2vw, 28px) 0;
+}
+
+.spread-6 .s6-divider::before,
+.spread-6 .s6-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, #7c3aed, transparent);
+}
+
+.spread-6 .s6-divider::after {
+  background: linear-gradient(270deg, transparent, transparent);
+  display: none;
+}
+
+.spread-6 .s6-symbol {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 3vw, 36px);
+  color: #a78bfa;
+  font-style: italic;
+}
+
+/* Blurb */
+.spread-6 .s6-blurb {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.65;
+  color: rgba(210, 200, 255, 0.75);
+  max-width: 640px;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Side panel: floating math fragments */
+.spread-6 .s6-fragments {
+  position: absolute;
+  right: clamp(20px, 6vw, 80px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: right;
+  pointer-events: none;
+}
+
+.spread-6 .s6-frag {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(120, 80, 255, 0.3);
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.spread-6 .s6-frag.hi {
+  color: rgba(167, 139, 250, 0.55);
+}
+
+/* CTA */
+.spread-6 .s6-cta-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  margin-top: clamp(20px, 3vw, 40px);
+  flex-wrap: wrap;
+}
+
+.spread-6 .cta {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0a0a12;
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 2px;
+  position: relative;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 0 32px rgba(124, 58, 237, 0.4), 4px 4px 0 rgba(167, 139, 250, 0.25);
+}
+
+.spread-6 .cta:hover {
+  box-shadow: 0 0 48px rgba(124, 58, 237, 0.7), 4px 4px 0 rgba(167, 139, 250, 0.4);
+}
+
+.spread-6 .s6-source-note {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(167, 139, 250, 0.4);
+  letter-spacing: 0.06em;
+}
+
+/* ---- FOOTER ---- */
+.spread-6 .s6-footer {
+  position: relative;
+  z-index: 2;
+  padding: clamp(12px, 2vw, 24px) clamp(20px, 6vw, 80px);
+  border-top: 1px solid rgba(120, 80, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spread-6 .s6-footer-left {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(167, 139, 250, 0.35);
+  letter-spacing: 0.1em;
+}
+
+.spread-6 .s6-footer-right {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(167, 139, 250, 0.25);
+}
+
+/* Condensed / floating word mark */
+.spread-6 .s6-watermark {
+  position: absolute;
+  bottom: clamp(80px, 10vw, 130px);
+  left: clamp(20px, 6vw, 80px);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(60px, 14vw, 180px);
+  font-weight: 900;
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(120, 80, 255, 0.08);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Dot accent */
+.spread-6 .s6-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7c3aed;
+  vertical-align: middle;
+  margin-right: 8px;
+  box-shadow: 0 0 12px #7c3aed;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (min-width: 720px) {
+  .spread-6 .s6-main {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .spread-6 .s6-fragments {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    text-align: right;
+    align-self: center;
+  }
+
+  .spread-6 .s6-ring {
+    right: -5%;
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-6 .s6-fragments {
+    display: none;
+  }
+
+  .spread-6 .s6-ring {
+    opacity: 0.4;
+    right: -30%;
+    width: 280px;
+    height: 280px;
+  }
+
+  .spread-6 .s6-watermark {
+    display: none;
+  }
+}
+</style>
+
+<!-- Watermark -->
+<div class="s6-watermark" aria-hidden="true">condensed</div>
+
+<!-- Ring decoration -->
+<div class="s6-ring" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="s6-header">
+  <div class="s6-meta">
+    <span class="s6-kicker"><span class="s6-dot"></span>Weird Science</span>
+    <span class="s6-edition">Morning Edition — Sunday, May 31, 2026</span>
+  </div>
+  <div class="s6-issue-num" aria-hidden="true">06</div>
+</header>
+
+<!-- MAIN -->
+<main class="s6-main">
+  <div class="s6-title-block">
+    <div class="s6-label">Foundation Reset</div>
+
+    <h1 class="s6-title">
+      Two Researchers<br>
+      Are <em>Rebuilding</em><br>
+      Mathematics
+    </h1>
+
+    <div class="s6-divider">
+      <span class="s6-symbol">∂ℝ → 𝒞</span>
+    </div>
+
+    <p class="s6-blurb">
+      Scholze and Clausen are replacing topology's foundational objects with something called condensed mathematics — a restructuring so deep it may change why numbers behave as they do.
+    </p>
+
+    <div class="s6-cta-row">
+      <a class="cta" href="https://www.quantamagazine.org/two-researchers-are-rebuilding-mathematics-from-the-ground-up-20260520/" target="_blank" rel="noopener">Read →</a>
+      <span class="s6-source-note">via Quanta Magazine</span>
+    </div>
+  </div>
+</section>
+<section class="spread spread-7">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+.spread-7 {
+  min-height: 100vh;
+  background-color: #0d0d0d;
+  color: #e8e0d0;
+  font-family: 'IBM Plex Mono', monospace;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Scanline texture */
+.spread-7::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,0.015) 3px,
+    rgba(255,255,255,0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Diagonal warning stripe accent */
+.spread-7::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(60px, 12vw, 160px);
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #ff3c00 0px,
+    #ff3c00 8px,
+    #0d0d0d 8px,
+    #0d0d0d 20px
+  );
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spread-7 .inner {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: clamp(24px, 5vw, 72px) clamp(24px, 6vw, 90px);
+  padding-right: clamp(48px, 14vw, 200px);
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── HEADER ── */
+.spread-7 .header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 2px solid #ff3c00;
+  padding-top: clamp(16px, 2vw, 28px);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-7 .kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #ff3c00;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.spread-7 .meta {
+  font-size: 18px;
+  color: #555;
+  letter-spacing: 0.1em;
+  font-style: italic;
+}
+
+.spread-7 .issue-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 6vw, 80px);
+  color: #1a1a1a;
+  position: absolute;
+  bottom: clamp(20px, 4vh, 60px);
+  right: clamp(60px, 14vw, 200px);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-text-stroke: 1px #2a2a2a;
+}
+
+/* ── MAIN CONTENT ── */
+.spread-7 .body {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  gap: clamp(24px, 4vh, 48px);
+  padding: clamp(32px, 5vh, 64px) 0;
+  position: relative;
+}
+
+.spread-7 .title-block {
+  position: relative;
+}
+
+.spread-7 .title-line-1,
+.spread-7 .title-line-2,
+.spread-7 .title-line-3 {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.spread-7 .title-line-1 {
+  font-size: clamp(52px, 10vw, 130px);
+  color: #e8e0d0;
+}
+
+.spread-7 .title-line-2 {
+  font-size: clamp(52px, 10vw, 130px);
+  color: #ff3c00;
+  position: relative;
+}
+
+.spread-7 .title-line-2::after {
+  content: 'ARE';
+  position: absolute;
+  left: 0.06em;
+  top: 0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,60,0,0.25);
+  pointer-events: none;
+}
+
+.spread-7 .title-line-3 {
+  font-size: clamp(52px, 10vw, 130px);
+  color: #e8e0d0;
+}
+
+/* Highlight "DEBT" differently */
+.spread-7 .debt-word {
+  color: #e8e0d0;
+  background: #ff3c00;
+  padding: 0 0.12em;
+  display: inline-block;
+}
+
+.spread-7 .pullquote-wrap {
+  border-left: 3px solid #ff3c00;
+  padding-left: clamp(16px, 2.5vw, 32px);
+  max-width: 700px;
+  position: relative;
+}
+
+.spread-7 .pullquote-wrap::before {
+  content: '"';
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(60px, 8vw, 100px);
+  color: #ff3c00;
+  opacity: 0.15;
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  line-height: 1;
+}
+
+.spread-7 .pullquote {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-style: italic;
+  color: #c8bfae;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.spread-7 .blurb-text {
+  font-size: clamp(20px, 1.8vw, 23px);
+  color: #888;
+  line-height: 1.7;
+  max-width: 580px;
+  font-weight: 400;
+}
+
+/* code-style decoration */
+.spread-7 .code-deco {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.8;
+  border: 1px solid #222;
+  padding: clamp(12px, 2vw, 20px) clamp(16px, 2.5vw, 28px);
+  background: #111;
+  max-width: 480px;
+  position: relative;
+}
+
+.spread-7 .code-deco::before {
+  content: '// prompt.config.js — last modified: ???';
+  display: block;
+  color: #444;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.spread-7 .code-line-red {
+  color: #ff3c00;
+}
+
+.spread-7 .code-line-dim {
+  color: #333;
+}
+
+/* ── FOOTER ── */
+.spread-7 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #222;
+  padding-bottom: clamp(20px, 3vh, 36px);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.spread-7 .cta {
+  display: inline-block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(20px, 2.5vw, 30px);
+  letter-spacing: 0.15em;
+  color: #0d0d0d;
+  background: #ff3c00;
+  padding: 10px 28px 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.15s, color 0.15s;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
+  padding-right: 38px;
+}
+
+.spread-7 .cta:hover {
+  background: #e8e0d0;
+  color: #0d0d0d;
+}
+
+.spread-7 .source-label {
+  font-size: 18px;
+  color: #333;
+  letter-spacing: 0.1em;
+  font-style: italic;
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 720px) {
+  .spread-7 .body {
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: auto auto auto;
+    column-gap: clamp(32px, 4vw, 64px);
+  }
+
+  .spread-7 .title-block {
+    grid-column: 1 / -1;
+  }
+
+  .spread-7 .pullquote-wrap {
+    grid-column: 1;
+    align-self: start;
+  }
+
+  .spread-7 .code-deco {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    align-self: start;
+    max-width: 100%;
+  }
+
+  .spread-7 .blurb-text {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .spread-7 .inner {
+    padding-right: clamp(24px, 6vw, 48px);
+  }
+  .spread-7 .title-line-1,
+  .spread-7 .title-line-2,
+  .spread-7 .title-line-3 {
+    font-size: clamp(44px, 13vw, 80px);
+  }
+}
+</style>
+
+<div class="inner">
+
+  <header class="header">
+    <span class="kicker">Prompt Craft</span>
+    <span class="meta">MORNING EDITION — 31 MAY 2026</span>
+  </header>
+
+  <main class="body">
+
+    <div class="title-block">
+      <span class="title-line-1">Prompts</span>
+      <span class="title-line-2">Are</span>
+      <span class="title-line-3">Technical <span class="debt-word">Debt</span> Too</span>
+    </div>
+
+    <div class="pullquote-wrap">
+      <p class="pullquote">Prompts you write today will haunt someone in six months.</p>
+    </div>
+
+    <div class="code-deco">
+      <span class="code-line-dim">const system = `</span>
+      <span class="code-line-dim">&nbsp;&nbsp;You are a helpful…`</span>
+      <span class="code-line-red">// who wrote this?</span>
+      <span class="code-line-dim">// why does it say "always"?</span>
+      <span class="code-line-red">// is this still true?</span>
+      <span class="code-line-dim">// v3? v12? prod?</span>
+    </div>
+
+    <p class="blurb-text">
+      Custom prompt strings accumulate the same rot as bespoke code. The fix is identical: prefer upstream tool defaults, version-control what you must keep, and minimize surface area.
+    </p>
+
+  </main>
+
+  <footer class="footer">
+    <a class="cta" href="https://www.seangoedecke.com/prompts-are-technical-debt-too/" target="_blank" rel="noopener">Read →</a>
+    <span class="source-label">seangoedecke.com</span>
+  </footer>
+
+  <span class="issue-num">07</span>
+
+</div>
+</section>
+<section class="spread spread-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Bebas+Neue&display=swap');
+
+.spread-8 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #e8e4dc;
+  font-family: 'Space Grotesk', sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background: token rain / grid texture */
+.spread-8::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      rgba(255, 80, 60, 0.06) 59px,
+      rgba(255, 80, 60, 0.06) 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      rgba(255, 80, 60, 0.04) 59px,
+      rgba(255, 80, 60, 0.04) 60px
+    );
+  z-index: 0;
+}
+
+/* Burning ember glow top-right */
+.spread-8::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 60vw, 700px);
+  height: clamp(300px, 60vw, 700px);
+  background: radial-gradient(circle, rgba(255, 100, 30, 0.18) 0%, rgba(220, 40, 10, 0.10) 40%, transparent 70%);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.spread-8 .inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(28px, 5vw, 80px) clamp(20px, 6vw, 100px);
+  box-sizing: border-box;
+  gap: 0;
+}
+
+/* Top bar */
+.spread-8 .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 80, 60, 0.3);
+  padding-bottom: 14px;
+  margin-bottom: clamp(30px, 5vw, 60px);
+}
+
+.spread-8 .magazine-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: rgba(232, 228, 220, 0.45);
+  text-transform: uppercase;
+}
+
+.spread-8 .issue-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(20px, 3vw, 32px);
+  color: rgba(255, 80, 60, 0.7);
+  letter-spacing: 0.1em;
+}
+
+/* Kicker */
+.spread-8 .kicker {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ff5030;
+  margin-bottom: clamp(14px, 2vw, 24px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spread-8 .kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  background: #ff5030;
+  flex-shrink: 0;
+}
+
+/* Main headline */
+.spread-8 .headline-block {
+  position: relative;
+  margin-bottom: clamp(24px, 4vw, 50px);
+}
+
+.spread-8 .display-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(100px, 25vw, 280px);
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 80, 60, 0.18);
+  position: absolute;
+  top: -0.1em;
+  right: -0.02em;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+}
+
+.spread-8 .headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 9vw, 110px);
+  line-height: 0.93;
+  letter-spacing: 0.01em;
+  color: #e8e4dc;
+  position: relative;
+  z-index: 1;
+  max-width: 14ch;
+}
+
+.spread-8 .headline em {
+  font-style: normal;
+  color: #ff5030;
+  display: block;
+}
+
+/* Token meter visual */
+.spread-8 .token-meter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: clamp(20px, 3vw, 40px) 0;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+.spread-8 .meter-label {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 220, 0.4);
+  margin-bottom: 4px;
+}
+
+.spread-8 .meter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spread-8 .meter-tag {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(232, 228, 220, 0.5);
+  min-width: 80px;
+}
+
+.spread-8 .meter-bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.spread-8 .meter-bar {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.spread-8 .meter-bar.b1 {
+  width: 32%;
+  background: linear-gradient(90deg, #ff5030, #ff8040);
+}
+
+.spread-8 .meter-bar.b2 {
+  width: 68%;
+  background: linear-gradient(90deg, #ff5030, #ff2010);
+}
+
+.spread-8 .meter-bar.b3 {
+  width: 91%;
+  background: linear-gradient(90deg, #ff3010, #ff0000);
+  box-shadow: 0 0 8px rgba(255, 30, 10, 0.5);
+}
+
+.spread-8 .meter-cost {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff5030;
+  min-width: 48px;
+  text-align: right;
+}
+
+/* Blurb / body */
+.spread-8 .body-text {
+  font-size: clamp(20px, 2.2vw, 23px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(232, 228, 220, 0.75);
+  max-width: 55ch;
+  position: relative;
+  z-index: 1;
+  margin-bottom: clamp(32px, 5vw, 56px);
+  border-left: 2px solid rgba(255, 80, 60, 0.35);
+  padding-left: clamp(16px, 2vw, 28px);
+}
+
+/* Warning flag */
+.spread-8 .warning-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 50, 20, 0.12);
+  border: 1px solid rgba(255, 50, 20, 0.35);
+  border-radius: 2px;
+  padding: 10px 18px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff5030;
+  margin-bottom: clamp(32px, 4vw, 50px);
+  position: relative;
+  z-index: 1;
+}
+
+.spread-8 .warning-flag::before {
+  content: '⚠';
+  font-size: 20px;
+}
+
+/* Bottom row */
+.spread-8 .bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid rgba(255, 80, 60, 0.2);
+  padding-top: clamp(16px, 2.5vw, 28px);
+  position: relative;
+  z-index: 1;
+}
+
+.spread-8 .source-tag {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 220, 0.3);
+}
+
+.spread-8 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ff5030;
+  color: #0a0a0f;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: clamp(12px, 1.5vw, 16px) clamp(20px, 3vw, 36px);
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-8 .cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.12);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.spread-8 .cta:hover {
+  background: #ff7050;
+}
+
+.spread-8 .cta:hover::after {
+  opacity: 1;
+}
+
+/* Decorative vertical text */
+.spread-8 .vert-label {
+  position: absolute;
+  left: clamp(6px, 1.5vw, 20px);
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  color: rgba(255, 80, 60, 0.18);
+  white-space: nowrap;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Token scatter decoration */
+.spread-8 .token-scatter {
+  position: absolute;
+  bottom: clamp(60px, 12vw, 140px);
+  right: clamp(20px, 5vw, 80px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1;
+  opacity: 0.22;
+}
+
+.spread-8 .tok {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  letter-spacing: 0.2em;
+  color: #ff5030;
+  text-align: right;
+}
+
+/* Responsive: medium+ */
+@media (min-width: 720px) {
+  .spread-8 .inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    column-gap: clamp(24px, 4vw, 60px);
+  }
+
+  .spread-8 .top-bar {
+    grid-column: 1 / 3;
+  }
+
+  .spread-8 .left-col {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spread-8 .right-col {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: clamp(60px, 10vw, 130px);
+  }
+
+  .spread-8 .bottom-row {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-8 .left-col,
+  .spread-8 .right-col {
+    display: contents;
+  }
+
+  .spread-8 .token-scatter {
+    display: none;
+  }
+
+  .spread-8 .display-num {
+    font-size: clamp(80px, 35vw, 160px);
+  }
+}
+</style>
+
+<div class="inner">
+  <span class="vert-label">MORNING EDITION — MAY 31 2026</span>
+
+  <div class="top-bar">
+    <span class="magazine-label">Morning Edition · Weekly</span>
+    <span class="issue-number">08 / 10</span>
+  </div>
+
+  <div class="left-col">
+    <div class="kicker">AI Tooling</div>
+
+    <div class="headline-block">
+      <span class="display-num">08</span>
+      <h1 class="headline">
+        GitHub<br>
+        Copilot's<br>
+        <em>Token</em><br>
+        Backlash
+      </h1>
+    </div>
+
+    <div class="warning-flag">Consumption billing incoming</div>
+
+    <div class="token-meter">
+      <span class="meter-label">Token burn rate</span>
+      <div class="meter-row">
+        <span class="meter-tag">Flat sub</span>
+        <div class="meter-bar-wrap"><div class="meter-bar b1"></div></div>
+        <span class="meter-cost">$10</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-tag">Light use</span>
+        <div class="meter-bar-wrap"><div class="meter-bar b2"></div></div>
+        <span class="meter-cost">$34</span>
+      </div>
+      <div class="meter-row">
+        <span class="meter-tag">Heavy use</span>
+        <div class="meter-bar-wrap"><div class="meter-bar b3"></div></div>
+        <span class="meter-cost">$???</span>
+      </div>
+    </div>
+</section>
+<section class="spread spread-9">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-9 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #e8e8f0;
+  font-family: 'Space Grotesk', sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Animated grid background */
+.spread-9::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,80,80,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,80,80,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  z-index: 0;
+}
+
+/* Glow orb */
+.spread-9::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 50vw, 700px);
+  height: clamp(300px, 50vw, 700px);
+  background: radial-gradient(circle, rgba(255,40,60,0.18) 0%, rgba(255,40,60,0.06) 40%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-9 * {
+  box-sizing: border-box;
+}
+
+/* ─── HEADER BAR ─── */
+.spread-9 .s9-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 80px);
+  border-bottom: 1px solid rgba(255,80,80,0.25);
+}
+
+.spread-9 .s9-masthead {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.15em;
+  color: rgba(232,232,240,0.4);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.spread-9 .s9-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #ff3c50;
+  text-transform: uppercase;
+  background: rgba(255,60,80,0.1);
+  border: 1px solid rgba(255,60,80,0.4);
+  padding: 6px 16px;
+}
+
+.spread-9 .s9-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232,232,240,0.35);
+  letter-spacing: 0.08em;
+}
+
+/* ─── MAIN CONTENT ─── */
+.spread-9 .s9-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: clamp(32px, 6vw, 80px) clamp(20px, 5vw, 80px);
+  align-content: center;
+}
+
+/* Big number */
+.spread-9 .s9-numeral {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(120px, 25vw, 320px);
+  font-weight: 700;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,60,80,0.3);
+  letter-spacing: -0.04em;
+  position: absolute;
+  right: clamp(10px, 4vw, 60px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Title */
+.spread-9 .s9-title {
+  font-size: clamp(32px, 5.5vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 15ch;
+  margin: 0 0 clamp(12px, 2vw, 28px) 0;
+  position: relative;
+  z-index: 3;
+}
+
+.spread-9 .s9-title em {
+  font-style: normal;
+  color: #ff3c50;
+  display: inline;
+}
+
+/* Blurb */
+.spread-9 .s9-blurb {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.6;
+  color: rgba(232,232,240,0.65);
+  max-width: 55ch;
+  margin: 0 0 clamp(20px, 3vw, 40px) 0;
+  position: relative;
+  z-index: 3;
+  font-weight: 300;
+}
+
+/* Fingerprint visualization */
+.spread-9 .s9-tech-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+  position: relative;
+  z-index: 3;
+  flex-wrap: wrap;
+}
+
+.spread-9 .s9-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  padding: 6px 14px;
+  border: 1px solid rgba(232,232,240,0.15);
+  color: rgba(232,232,240,0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.02);
+}
+
+.spread-9 .s9-tag.alert {
+  border-color: rgba(255,60,80,0.5);
+  color: #ff3c50;
+  background: rgba(255,60,80,0.08);
+}
+
+/* Code-style line */
+.spread-9 .s9-code-line {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(255,60,80,0.6);
+  letter-spacing: 0.05em;
+  margin-bottom: clamp(28px, 4vw, 48px);
+  position: relative;
+  z-index: 3;
+}
+
+.spread-9 .s9-code-line span {
+  color: rgba(232,232,240,0.3);
+}
+
+/* CTA */
+.spread-9 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  color: #0a0a0f;
+  background: #ff3c50;
+  text-decoration: none;
+  padding: 16px 36px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 3;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 40px rgba(255,60,80,0.3);
+}
+
+.spread-9 .cta:hover {
+  background: #ff5a6a;
+  box-shadow: 0 0 60px rgba(255,60,80,0.5);
+}
+
+/* ─── BOTTOM BAR ─── */
+.spread-9 .s9-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(14px, 2vw, 24px) clamp(20px, 5vw, 80px);
+  border-top: 1px solid rgba(255,80,80,0.2);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.spread-9 .s9-footer-left {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232,232,240,0.25);
+  letter-spacing: 0.08em;
+}
+
+.spread-9 .s9-footer-right {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232,232,240,0.25);
+  letter-spacing: 0.05em;
+}
+
+/* Horizontal scan line */
+.spread-9 .s9-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,60,80,0.5) 30%, rgba(255,60,80,0.8) 50%, rgba(255,60,80,0.5) 70%, transparent 100%);
+  z-index: 2;
+  top: 50%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Bottom glow */
+.spread-9 .s9-bottom-glow {
+  position: absolute;
+  bottom: -15%;
+  left: -5%;
+  width: clamp(250px, 40vw, 500px);
+  height: clamp(250px, 40vw, 500px);
+  background: radial-gradient(circle, rgba(80,60,255,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (min-width: 720px) {
+  .spread-9 .s9-main {
+    position: relative;
+  }
+  .spread-9 .s9-title {
+    max-width: 12ch;
+  }
+  .spread-9 .s9-blurb {
+    max-width: 46ch;
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-9 .s9-numeral {
+    opacity: 0.35;
+    font-size: clamp(100px, 35vw, 180px);
+    top: auto;
+    bottom: 8%;
+    right: -5%;
+    transform: none;
+  }
+  .spread-9 .s9-issue {
+    display: none;
+  }
+}
+</style>
+
+<!-- Decorative elements -->
+<div class="s9-scanline"></div>
+<div class="s9-bottom-glow"></div>
+
+<!-- Header -->
+<header class="s9-header">
+  <div class="s9-masthead">Morning Edition</div>
+  <div class="s9-kicker">&#9632; Privacy</div>
+  <div class="s9-issue">No.09 — May 31, 2026</div>
+</header>
+
+<!-- Main -->
+<main class="s9-main">
+
+  <div class="s9-numeral" aria-hidden="true">09</div>
+
+  <h1 class="s9-title">Cloudflare Turnstile Is Requiring <em>Fingerprintable</em> WebGL</h1>
+
+  <p class="s9-blurb">A careful teardown showing Cloudflare's supposedly privacy-respecting CAPTCHA alternative now requires WebGL — a fingerprinting surface — to pass verification. The implications for privacy-focused browsers and users who block fingerprinting are concrete and immediate.</p>
+
+  <div class="s9-tech-strip">
+    <div class="s9-tag alert">WebGL Required</div>
+    <div class="s9-tag">Fingerprinting Surface</div>
+    <div class="s9-tag">CAPTCHA Bypass</div>
+    <div class="s9-tag alert">Privacy Break</div>
+  </div>
+
+  <div class="s9-code-line">
+    <span>// cloudflare_turnstile.js →</span> navigator.webgl.getParameter(RENDERER)
+  </div>
+
+  <a class="cta" href="https://hacktivis.me/articles/cloudflare-turnstile-webgl-fingerprinting" target="_blank" rel="noopener">Read →</a>
+
+</main>
+
+<!-- Footer -->
+<footer class="s9-footer">
+  <div class="s9-footer-left">MORNING EDITION — WEEKLY · SUNDAY MAY 31 2026</div>
+  <div class="s9-footer-right">9 of 10 · hacktivis.me</div>
+</footer>
+
+</section>
+<section class="spread spread-10">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-10 { color: #f0eee8;
+  min-height: 100vh;
+  background-color: #0a0e1a;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Mono', monospace;
+  box-sizing: border-box;
+}
+
+.spread-10 *,
+.spread-10 *::before,
+.spread-10 *::after {
+  box-sizing: border-box;
+}
+
+/* Atomic orbital background rings */
+.spread-10::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(400px, 80vw, 900px);
+  height: clamp(400px, 80vw, 900px);
+  border-radius: 50%;
+  border: 1px solid rgba(99, 230, 190, 0.08);
+  box-shadow:
+    0 0 0 clamp(30px, 5vw, 60px) rgba(99, 230, 190, 0.04),
+    0 0 0 clamp(70px, 12vw, 140px) rgba(99, 230, 190, 0.03),
+    0 0 0 clamp(120px, 20vw, 240px) rgba(99, 230, 190, 0.02),
+    0 0 0 clamp(180px, 30vw, 360px) rgba(99, 230, 190, 0.015);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-10::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: clamp(300px, 60vw, 700px);
+  height: clamp(300px, 60vw, 700px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 200, 80, 0.06);
+  box-shadow:
+    0 0 0 clamp(40px, 7vw, 80px) rgba(255, 200, 80, 0.03),
+    0 0 0 clamp(90px, 15vw, 180px) rgba(255, 200, 80, 0.02);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header bar */
+.spread-10 .top-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid rgba(99, 230, 190, 0.2);
+}
+
+.spread-10 .masthead {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.5vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+}
+
+.spread-10 .issue-info {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.5vw, 14px);
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em;
+}
+
+/* Main content area */
+.spread-10 .main-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: clamp(24px, 5vw, 80px) clamp(20px, 5vw, 64px);
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* Kicker */
+.spread-10 .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.5vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #63e6be;
+  text-transform: uppercase;
+}
+
+.spread-10 .kicker::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #63e6be;
+  box-shadow: 0 0 12px #63e6be, 0 0 24px rgba(99,230,190,0.4);
+}
+
+.spread-10 .kicker::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: #63e6be;
+  opacity: 0.5;
+}
+
+/* Display headline */
+.spread-10 .headline-block {
+  position: relative;
+}
+
+.spread-10 .headline-no-quantum {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(48px, 9vw, 120px);
+  line-height: 0.9;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.spread-10 .headline-no-quantum .strike-word {
+  position: relative;
+  display: inline-block;
+  color: rgba(255,255,255,0.25);
+}
+
+.spread-10 .headline-no-quantum .strike-word::after {
+  content: '';
+  position: absolute;
+  left: -2%;
+  top: 50%;
+  width: 104%;
+  height: 4px;
+  background: #ffc840;
+  box-shadow: 0 0 10px rgba(255,200,64,0.6);
+  transform: rotate(-2deg);
+}
+
+.spread-10 .headline-sub {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(42px, 8vw, 110px);
+  line-height: 0.92;
+  color: #63e6be;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Equation decoration */
+.spread-10 .equation-strip {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.3vw, 14px);
+  color: rgba(99, 230, 190, 0.3);
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Content split */
+.spread-10 .content-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.spread-10 .blurb-text {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+  max-width: 65ch;
+  border-left: 2px solid rgba(99, 230, 190, 0.3);
+  padding-left: clamp(16px, 2.5vw, 28px);
+  margin: 0;
+}
+
+/* Atom node diagram (CSS only) */
+.spread-10 .atom-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  pointer-events: none;
+}
+
+.spread-10 .node {
+  width: clamp(10px, 1.5vw, 16px);
+  height: clamp(10px, 1.5vw, 16px);
+  border-radius: 50%;
+  background: #63e6be;
+  box-shadow: 0 0 8px #63e6be, 0 0 20px rgba(99,230,190,0.3);
+  flex-shrink: 0;
+}
+
+.spread-10 .node.dim {
+  background: rgba(99,230,190,0.3);
+  box-shadow: 0 0 6px rgba(99,230,190,0.2);
+}
+
+.spread-10 .bond {
+  width: clamp(20px, 3vw, 40px);
+  height: 1px;
+  background: rgba(99,230,190,0.4);
+  flex-shrink: 0;
+}
+
+.spread-10 .bond.double {
+  height: 2px;
+  background: linear-gradient(90deg, rgba(99,230,190,0.4) 0%, rgba(255,200,64,0.5) 100%);
+}
+
+.spread-10 .node.gold {
+  background: #ffc840;
+  box-shadow: 0 0 8px #ffc840, 0 0 20px rgba(255,200,64,0.3);
+}
+
+/* Bottom footer row */
+.spread-10 .footer-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 64px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.spread-10 .source-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.3vw, 13px);
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.spread-10 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #63e6be;
+  color: #0a0e1a;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: clamp(13px, 1.6vw, 16px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: clamp(12px, 1.8vw, 18px) clamp(20px, 3vw, 36px);
+  position: relative;
+  transition: background 0.2s;
+}
+
+.spread-10 .cta::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(10, 14, 26, 0.3);
+  pointer-events: none;
+}
+
+.spread-10 .cta:hover {
+  background: #ffc840;
+}
+
+/* Spread number */
+.spread-10 .spread-number {
+  position: absolute;
+  right: clamp(20px, 5vw, 64px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(120px, 22vw, 320px);
+  color: rgba(99, 230, 190, 0.03);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Horizontal rule decoration */
+.spread-10 .h-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(99,230,190,0.3) 30%, rgba(255,200,64,0.3) 70%, transparent 100%);
+  margin: 0;
+  border: none;
+}
+
+/* Classical badge */
+.spread-10 .classical-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255,200,64,0.4);
+  padding: clamp(10px, 1.5vw, 18px) clamp(14px, 2vw, 24px);
+  background: rgba(255, 200, 64, 0.05);
+}
+
+.spread-10 .classical-badge .badge-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.3vw, 12px);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,200,64,0.6);
+}
+
+.spread-10 .classical-badge .badge-value {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(22px, 3.5vw, 42px);
+  color: #ffc840;
+  line-height: 1.1;
+}
+
+/* Responsive breakpoint */
+@media (min-width: 720px) {
+  .spread-10 .main-content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "kicker kicker"
+      "headline diagram"
+      "equation equation"
+      "split split";
+    align-items: start;
+  }
+
+  .spread-10 .kicker-wrap {
+    grid-area: kicker;
+  }
+
+  .spread-10 .headline-block {
+    grid-area: headline;
+  }
+
+  .spread-10 .diagram-wrap {
+    grid-area: diagram;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-top: clamp(16px, 3vw, 48px);
+    gap: clamp(16px, 2vw, 32px);
+  }
+
+  .spread-10 .equation-wrap {
+    grid-area: equation;
+  }
+
+  .spread-10 .content-split {
+    grid-area: split;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-10 .diagram-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .spread-10 .spread-number {
+    opacity: 0.5;
+    font-size: clamp(80px, 30vw, 160px);
+    top: auto;
+    bottom: 60px;
+    transform: none;
+  }
+}
+</style>
+
+<!-- Background numeral -->
+<div class="spread-10 spread-number" aria-hidden="true">10</div>
+
+<!-- Top bar -->
+<header class="spread-10 top-bar">
+  <span class="spread-10 masthead">Morning Edition — Weekly</span>
+  <span
+</section>
+
+<section class="spread spread-colophon">
+<style>
+.spread-colophon{background:#17140e;color:#f4ecd8;padding:clamp(48px,6vw,110px);
+  min-height:50vh;display:flex;flex-direction:column;justify-content:center;gap:28px;
+  font-family:system-ui,sans-serif}
+.spread-colophon h3{font-size:clamp(36px,5vw,72px);margin:0;font-weight:300;
+  font-style:italic;line-height:1.1}
+.spread-colophon p{font-size:22px;line-height:1.5;max-width:56ch;margin:0;opacity:.85}
+.spread-colophon .sm{font-size:18px;letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+</style>
+<h3>That was this week.</h3>
+<p>Ten stories, curated across twenty sources. 5 flagged as
+directly applicable. Each spread designed from scratch by Claude.</p>
+<p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
+text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
+<p class="sm">Morning Edition — Weekly &middot; Issue No. W22
+&middot; SUNDAY, MAY 31, 2026</p>
+</section>
+
+</body>
+</html>
