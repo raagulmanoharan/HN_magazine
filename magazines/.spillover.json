@@ -1,33 +1,5 @@
 [
   {
-    "id": "openai:https://openai.com/index/boston-childrens-hospital",
-    "title": "Boston Children\u2019s uses AI to unlock new diagnoses",
-    "url": "https://openai.com/index/boston-childrens-hospital",
-    "source": "openai",
-    "score": 0,
-    "comments": 0,
-    "text": "Boston Children\u2019s Hospital uses OpenAI technology to improve patient care, reduce operational burden, and help diagnose more than 40 rare disease cases.",
-    "published_at": "2026-05-29T12:00:00Z",
-    "rank_within_source": 1,
-    "hn_url": "",
-    "prior": 0.92,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "hn:48350598",
-    "title": "Chuwi Minibook X",
-    "url": "https://tylercipriani.com/blog/2026/05/28/chuwi-minibook-x/",
-    "source": "hn",
-    "score": 199,
-    "comments": 145,
-    "text": "",
-    "published_at": "2026-05-31T22:59:50Z",
-    "rank_within_source": 1,
-    "hn_url": "https://news.ycombinator.com/item?id=48350598",
-    "prior": 0.9,
-    "_spillover_date": "2026-06-01"
-  },
-  {
     "id": "deepmind:https://deepmind.google/blog/were-launching-the-google-deepmind-accelerator-program-in-asia-pacific-to-tackle-environmental-risks/",
     "title": "We\u2019re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks",
     "url": "https://deepmind.google/blog/were-launching-the-google-deepmind-accelerator-program-in-asia-pacific-to-tackle-environmental-risks/",
@@ -60,8 +32,8 @@
     "title": "helloianneo/ian-xiaohei-illustrations \u2014 \u4e2d\u6587\u5c0f\u9ed1\u602a\u8bde\u6b63\u6587\u914d\u56fe\u751f\u6210 Skill | 16:9 \u767d\u5e95\u624b\u7ed8 | \u5c11\u91cf\u7ea2\u6a59\u84dd\u6279\u6ce8 | Codex Skill",
     "url": "https://github.com/helloianneo/ian-xiaohei-illustrations",
     "source": "github_trending",
-    "score": 1510,
-    "comments": 2,
+    "score": 1525,
+    "comments": 3,
     "text": "\u4e2d\u6587\u5c0f\u9ed1\u602a\u8bde\u6b63\u6587\u914d\u56fe\u751f\u6210 Skill | 16:9 \u767d\u5e95\u624b\u7ed8 | \u5c11\u91cf\u7ea2\u6a59\u84dd\u6279\u6ce8 | Codex Skill",
     "published_at": "2026-05-27T22:47:56Z",
     "rank_within_source": 3,
@@ -88,7 +60,7 @@
     "title": "Decades of Effort Restore Steelhead and Salmon Passage on Alameda Creek",
     "url": "https://www.fisheries.noaa.gov/feature-story/decades-effort-restore-steelhead-and-salmon-passage-californias-alameda-creek",
     "source": "hn",
-    "score": 91,
+    "score": 103,
     "comments": 7,
     "text": "",
     "published_at": "2026-05-29T18:37:22Z",
@@ -102,27 +74,13 @@
     "title": "GordenSun/GordenPPTSkill \u2014 AI-friendly PPT builder skill: 17 hand-polished Chinese PPTX templates + non-destructive text-only editing tools (python-pptx based). Pick a template, write edits.json, build a real .pptx with the layout intact. Personal/research use only.",
     "url": "https://github.com/GordenSun/GordenPPTSkill",
     "source": "github_trending",
-    "score": 1174,
+    "score": 1197,
     "comments": 0,
     "text": "AI-friendly PPT builder skill: 17 hand-polished Chinese PPTX templates + non-destructive text-only editing tools (python-pptx based). Pick a template, write edits.json, build a real .pptx with the layout intact. Personal/research use only.",
     "published_at": "2026-05-27T10:25:58Z",
     "rank_within_source": 4,
     "hn_url": "",
     "prior": 0.716,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "nngroup:/articles/research-recommendations-roadmap/?1780074000",
-    "title": "How to Get Research Recommendations on the Roadmap",
-    "url": "https://www.nngroup.com/articles/research-recommendations-roadmap/?utm_source=rss&utm_medium=feed&utm_campaign=rss-syndication",
-    "source": "nngroup",
-    "score": 0,
-    "comments": 0,
-    "text": "To influence the roadmap: join planning early, learn constraints, tie research to PM metrics, and give clear recommendations at the right time.",
-    "published_at": "2026-05-29T17:00:00Z",
-    "rank_within_source": 2,
-    "hn_url": "",
-    "prior": 0.713,
     "_spillover_date": "2026-06-01"
   },
   {
@@ -158,8 +116,8 @@
     "title": "MatinSenPai/SenPaiScanner \u2014 A light-weight scanner for Cloudflare IPs, written in Golang",
     "url": "https://github.com/MatinSenPai/SenPaiScanner",
     "source": "github_trending",
-    "score": 808,
-    "comments": 21,
+    "score": 812,
+    "comments": 23,
     "text": "A light-weight scanner for Cloudflare IPs, written in Golang",
     "published_at": "2026-05-28T17:02:54Z",
     "rank_within_source": 6,
@@ -168,17 +126,17 @@
     "_spillover_date": "2026-06-01"
   },
   {
-    "id": "lobsters:4xllsb",
-    "title": "It's Not Just X. It's Y",
-    "url": "https://mail.cyberneticforests.com/its-not-just-data-its-post-training/",
-    "source": "lobsters",
-    "score": 13,
-    "comments": 0,
+    "id": "hn:48353497",
+    "title": "Malaysia enforces ban on social media accounts for children younger than 16",
+    "url": "https://apnews.com/article/malaysia-social-media-ban-16-bfaa7b01163b61b5d53c4ecfa870d133",
+    "source": "hn",
+    "score": 20,
+    "comments": 1,
     "text": "",
-    "published_at": "2026-06-01T03:33:55Z",
-    "rank_within_source": 6,
-    "hn_url": "https://lobste.rs/s/4xllsb/it_s_not_just_x_it_s_y",
-    "prior": 0.6,
+    "published_at": "2026-06-01T07:05:26Z",
+    "rank_within_source": 5,
+    "hn_url": "https://news.ycombinator.com/item?id=48353497",
+    "prior": 0.619,
     "_spillover_date": "2026-06-01"
   },
   {
@@ -214,25 +172,11 @@
     "title": "Michaelliv/pi-dynamic-workflows",
     "url": "https://github.com/Michaelliv/pi-dynamic-workflows",
     "source": "github_trending",
-    "score": 646,
+    "score": 647,
     "comments": 13,
     "text": "",
     "published_at": "2026-05-28T20:46:15Z",
     "rank_within_source": 8,
-    "hn_url": "",
-    "prior": 0.55,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "producthunt:tag:www.producthunt.com,2005:Post/1159225",
-    "title": "Marqly 5.0",
-    "url": "https://www.producthunt.com/products/marqly",
-    "source": "producthunt",
-    "score": 0,
-    "comments": 0,
-    "text": "Your AI-powered bookmark manager Discussion | Link",
-    "published_at": "2026-05-30T09:30:11Z",
-    "rank_within_source": 1,
     "hn_url": "",
     "prior": 0.55,
     "_spillover_date": "2026-06-01"
@@ -252,25 +196,11 @@
     "_spillover_date": "2026-06-01"
   },
   {
-    "id": "hn:48347354",
-    "title": "Meta launches Instagram, Facebook, and WhatsApp subscriptions",
-    "url": "https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/",
-    "source": "hn",
-    "score": 192,
-    "comments": 290,
-    "text": "",
-    "published_at": "2026-05-31T17:02:23Z",
-    "rank_within_source": 8,
-    "hn_url": "https://news.ycombinator.com/item?id=48347354",
-    "prior": 0.516,
-    "_spillover_date": "2026-06-01"
-  },
-  {
     "id": "github:1249866465",
     "title": "ace-trump-tech/DeltaForce-OBS-Locker \u2014 \u4e09\u89d2\u6d32\u884c\u52a8OBS\u9501\u5934\u63d2\u4ef6 \u2013 \u57fa\u4e8eOBS\u6e32\u67d3\u6ce8\u5165\u7684\u667a\u80fd\u9501\u5934\u8f85\u52a9\uff0c\u652f\u6301QQ\u97f3\u4e50/\u7f51\u6613\u4e91\u8054\u7cbe\u51c6\u9aa8\u9abc\u8bc6\u522b\u3001\u5e73\u6ed1\u81ea\u7784\u3001\u538b\u67aa\u6291\u5236\uff0c\u7a33\u5b9a\u8fc7\u68c0\uff0c\u63d0\u5347\u51fb\u6740\u6548\u7387\u3002\u52a8\u52a0\u8f7d\u3002DeltaForce OBS Lockhead Plugin \u2013 Smart aim assist via OBS injection, supports QQ Music/NetEase Cloud integration. Bone recognition, smooth aimbot, recoil control, stable anti-cheat bypass.",
     "url": "https://github.com/ace-trump-tech/DeltaForce-OBS-Locker",
     "source": "github_trending",
-    "score": 514,
+    "score": 519,
     "comments": 14,
     "text": "\u4e09\u89d2\u6d32\u884c\u52a8OBS\u9501\u5934\u63d2\u4ef6 \u2013 \u57fa\u4e8eOBS\u6e32\u67d3\u6ce8\u5165\u7684\u667a\u80fd\u9501\u5934\u8f85\u52a9\uff0c\u652f\u6301QQ\u97f3\u4e50/\u7f51\u6613\u4e91\u8054\u7cbe\u51c6\u9aa8\u9abc\u8bc6\u522b\u3001\u5e73\u6ed1\u81ea\u7784\u3001\u538b\u67aa\u6291\u5236\uff0c\u7a33\u5b9a\u8fc7\u68c0\uff0c\u63d0\u5347\u51fb\u6740\u6548\u7387\u3002\u52a8\u52a0\u8f7d\u3002DeltaForce OBS Lockhead Plugin \u2013 Smart aim assist via OBS injection, supports QQ Music/NetEase Cloud integration. Bone recognition, smooth aimbot, recoil control, s",
     "published_at": "2026-05-26T05:24:10Z",
@@ -294,17 +224,45 @@
     "_spillover_date": "2026-06-01"
   },
   {
+    "id": "producthunt:tag:www.producthunt.com,2005:Post/1159225",
+    "title": "Marqly 5.0",
+    "url": "https://www.producthunt.com/products/marqly",
+    "source": "producthunt",
+    "score": 0,
+    "comments": 0,
+    "text": "Your AI-powered bookmark manager Discussion | Link",
+    "published_at": "2026-05-30T09:30:11Z",
+    "rank_within_source": 1,
+    "hn_url": "",
+    "prior": 0.468,
+    "_spillover_date": "2026-06-01"
+  },
+  {
     "id": "github:1252592714",
     "title": "BlackCandleLab/polymarket-trading-bot \u2014 polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket arbitrage bot, polymarket trading bot, polymarket arbitrage bot, polymarket trading bot, polymarket arbitrage bot, polymarket trading bot, polymarket arbitrage bot,",
     "url": "https://github.com/BlackCandleLab/polymarket-trading-bot",
     "source": "github_trending",
-    "score": 401,
+    "score": 403,
     "comments": 0,
     "text": "polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket arbitrage bot, polymarket trading bot, polymarket arbitrage b",
     "published_at": "2026-05-28T17:14:14Z",
     "rank_within_source": 12,
     "hn_url": "",
     "prior": 0.459,
+    "_spillover_date": "2026-06-01"
+  },
+  {
+    "id": "hn:48347354",
+    "title": "Meta launches Instagram, Facebook, and WhatsApp subscriptions",
+    "url": "https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/",
+    "source": "hn",
+    "score": 200,
+    "comments": 307,
+    "text": "",
+    "published_at": "2026-05-31T17:02:23Z",
+    "rank_within_source": 11,
+    "hn_url": "https://news.ycombinator.com/item?id=48347354",
+    "prior": 0.45,
     "_spillover_date": "2026-06-01"
   },
   {
@@ -322,20 +280,6 @@
     "_spillover_date": "2026-06-01"
   },
   {
-    "id": "hn:48343714",
-    "title": "London's Free Roof Terraces",
-    "url": "https://diamondgeezer.blogspot.com/2026/05/londons-free-roof-terraces.html",
-    "source": "hn",
-    "score": 150,
-    "comments": 69,
-    "text": "",
-    "published_at": "2026-05-31T07:16:18Z",
-    "rank_within_source": 3,
-    "hn_url": "https://news.ycombinator.com/item?id=48343714",
-    "prior": 0.446,
-    "_spillover_date": "2026-05-31"
-  },
-  {
     "id": "lobsters:ng3xwc",
     "title": "Adding Offline Mode and Custom Servers to an MMORPG",
     "url": "https://plantbasedgames.io/blog/posts/09-adding-offline-mode-and-custom-servers-to-an-mmorpg/",
@@ -344,23 +288,9 @@
     "comments": 1,
     "text": "",
     "published_at": "2026-05-31T20:15:09Z",
-    "rank_within_source": 11,
+    "rank_within_source": 12,
     "hn_url": "https://lobste.rs/s/ng3xwc/adding_offline_mode_custom_servers",
-    "prior": 0.439,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "producthunt:tag:www.producthunt.com,2005:Post/1159008",
-    "title": "TabTasker",
-    "url": "https://www.producthunt.com/products/tabtasker",
-    "source": "producthunt",
-    "score": 0,
-    "comments": 0,
-    "text": "Zero servers. Total privacy. Your new favorite toolbox. Discussion | Link",
-    "published_at": "2026-05-29T23:00:20Z",
-    "rank_within_source": 3,
-    "hn_url": "",
-    "prior": 0.423,
+    "prior": 0.421,
     "_spillover_date": "2026-06-01"
   },
   {
@@ -378,30 +308,16 @@
     "_spillover_date": "2026-06-01"
   },
   {
-    "id": "hf:2605.29488",
-    "title": "AnyMo: Scaling Any-Modality Conditional Motion Generation with Masked Modeling",
-    "url": "https://huggingface.co/papers/2605.29488",
-    "source": "huggingface",
-    "score": 0,
-    "comments": 1,
-    "text": "Conditional human motion generation remains a fundamental challenge in computer vision and robotics. Despite significant progress, current methods are often constrained by fixed modality configurations and task-specific architectures, leavi",
-    "published_at": "2026-05-28T00:00:00Z",
-    "rank_within_source": 7,
-    "hn_url": "",
-    "prior": 0.411,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "hn:48322134",
-    "title": "Finding success in industry as a chip designer",
-    "url": "https://spectrum.ieee.org/chip-design-academic-vs-industry",
+    "id": "hn:48352627",
+    "title": "Surface Laptop Ultra: Made for World Makers",
+    "url": "https://blogs.windows.com/devices/2026/05/31/introducing-surface-laptop-ultra-made-for-world-makers/",
     "source": "hn",
-    "score": 21,
+    "score": 16,
     "comments": 3,
     "text": "",
-    "published_at": "2026-05-29T12:15:43Z",
+    "published_at": "2026-06-01T04:32:45Z",
     "rank_within_source": 14,
-    "hn_url": "https://news.ycombinator.com/item?id=48322134",
+    "hn_url": "https://news.ycombinator.com/item?id=48352627",
     "prior": 0.404,
     "_spillover_date": "2026-06-01"
   },
@@ -420,6 +336,48 @@
     "_spillover_date": "2026-06-01"
   },
   {
+    "id": "hn:48343714",
+    "title": "London's Free Roof Terraces",
+    "url": "https://diamondgeezer.blogspot.com/2026/05/londons-free-roof-terraces.html",
+    "source": "hn",
+    "score": 150,
+    "comments": 69,
+    "text": "",
+    "published_at": "2026-05-31T07:16:18Z",
+    "rank_within_source": 3,
+    "hn_url": "https://news.ycombinator.com/item?id=48343714",
+    "prior": 0.379,
+    "_spillover_date": "2026-05-31"
+  },
+  {
+    "id": "producthunt:tag:www.producthunt.com,2005:Post/1159008",
+    "title": "TabTasker",
+    "url": "https://www.producthunt.com/products/tabtasker",
+    "source": "producthunt",
+    "score": 0,
+    "comments": 0,
+    "text": "Zero servers. Total privacy. Your new favorite toolbox. Discussion | Link",
+    "published_at": "2026-05-29T23:00:20Z",
+    "rank_within_source": 3,
+    "hn_url": "",
+    "prior": 0.36,
+    "_spillover_date": "2026-06-01"
+  },
+  {
+    "id": "hn:48322134",
+    "title": "Finding success in industry as a chip designer",
+    "url": "https://spectrum.ieee.org/chip-design-academic-vs-industry",
+    "source": "hn",
+    "score": 21,
+    "comments": 3,
+    "text": "",
+    "published_at": "2026-05-29T12:15:43Z",
+    "rank_within_source": 14,
+    "hn_url": "https://news.ycombinator.com/item?id=48322134",
+    "prior": 0.343,
+    "_spillover_date": "2026-06-01"
+  },
+  {
     "id": "simonwillison:https://simonwillison.net/2026/May/30/retiring-from-tech-to-live-offline/#atom-everything",
     "title": "I Am Retiring from Tech to Live Offline",
     "url": "https://simonwillison.net/2026/May/30/retiring-from-tech-to-live-offline/#atom-everything",
@@ -430,7 +388,7 @@
     "published_at": "2026-05-30T19:39:08Z",
     "rank_within_source": 4,
     "hn_url": "",
-    "prior": 0.373,
+    "prior": 0.317,
     "_spillover_date": "2026-05-31"
   },
   {
@@ -444,7 +402,7 @@
     "published_at": "2026-05-29T18:52:09Z",
     "rank_within_source": 1,
     "hn_url": "https://lobste.rs/s/lwnweu/it_happened_casey_muratori_s_comment_on",
-    "prior": 0.359,
+    "prior": 0.305,
     "_spillover_date": "2026-05-30"
   },
   {
@@ -458,21 +416,7 @@
     "published_at": "2026-05-28T18:33:54Z",
     "rank_within_source": 6,
     "hn_url": "https://news.ycombinator.com/item?id=48313427",
-    "prior": 0.355,
-    "_spillover_date": "2026-05-31"
-  },
-  {
-    "id": "simonwillison:https://simonwillison.net/2026/May/30/daniel-jalkut/#atom-everything",
-    "title": "Quoting Daniel Jalkut",
-    "url": "https://simonwillison.net/2026/May/30/daniel-jalkut/#atom-everything",
-    "source": "simonwillison",
-    "score": 0,
-    "comments": 0,
-    "text": "My take on AI is, essentially, everybody who\u2019s against it is too against it and everybody who\u2019s for it is too for it. &mdash; Daniel Jalkut , via John Gruber Tags: ai , john-gruber",
-    "published_at": "2026-05-30T17:29:55Z",
-    "rank_within_source": 5,
-    "hn_url": "",
-    "prior": 0.338,
+    "prior": 0.302,
     "_spillover_date": "2026-05-31"
   },
   {
@@ -486,7 +430,7 @@
     "published_at": "2026-05-25T14:13:24Z",
     "rank_within_source": 8,
     "hn_url": "",
-    "prior": 0.338,
+    "prior": 0.287,
     "_spillover_date": "2026-05-31"
   },
   {
@@ -500,7 +444,7 @@
     "published_at": "2026-05-31T02:20:15Z",
     "rank_within_source": 8,
     "hn_url": "https://lobste.rs/s/e7n06u/ahoy_decmate_ii_little_pdp_8_could",
-    "prior": 0.33,
+    "prior": 0.281,
     "_spillover_date": "2026-05-31"
   },
   {
@@ -514,7 +458,7 @@
     "published_at": "2026-05-28T00:00:00Z",
     "rank_within_source": 6,
     "hn_url": "",
-    "prior": 0.322,
+    "prior": 0.274,
     "_spillover_date": "2026-06-01"
   },
   {
@@ -528,21 +472,7 @@
     "published_at": "2026-05-30T15:59:58Z",
     "rank_within_source": 3,
     "hn_url": "",
-    "prior": 0.292,
-    "_spillover_date": "2026-05-31"
-  },
-  {
-    "id": "github:1248747220",
-    "title": "nv-tlabs/Gamma-World \u2014 Implementation of Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players",
-    "url": "https://github.com/nv-tlabs/Gamma-World",
-    "source": "github_trending",
-    "score": 449,
-    "comments": 1,
-    "text": "Implementation of Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players",
-    "published_at": "2026-05-25T02:35:01Z",
-    "rank_within_source": 12,
-    "hn_url": "",
-    "prior": 0.282,
+    "prior": 0.248,
     "_spillover_date": "2026-05-31"
   }
 ]
