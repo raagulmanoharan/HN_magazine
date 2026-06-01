@@ -262,6 +262,67 @@ a{{color:inherit}}
 
 
 # --------------------------------------------------------------------------
+# Validation — must pass before the magazine is written to disk
+# --------------------------------------------------------------------------
+def _validate_magazine(html: str) -> list[str]:
+    """Run structural evals on the stitched magazine HTML. Returns errors."""
+    errors: list[str] = []
+
+    # 1. Every <style> must have a matching </style>
+    style_opens = html.count('<style>')
+    style_closes = html.count('</style>')
+    if style_opens != style_closes:
+        errors.append(f"Unbalanced style tags: {style_opens} <style> vs {style_closes} </style>")
+
+    # 2. Every <section> must have a matching </section>
+    section_opens = len(re.findall(r'<section', html))
+    section_closes = html.count('</section>')
+    if section_opens != section_closes:
+        errors.append(f"Unbalanced sections: {section_opens} <section> vs {section_closes} </section>")
+
+    # 3. Each spread section must contain both <style> and </style>
+    for m in re.finditer(r'<section class="spread (spread-[\w-]+)">', html):
+        cls = m.group(1)
+        start = m.start()
+        end_match = re.search(r'</section>', html[start:])
+        if not end_match:
+            errors.append(f"{cls}: no closing </section>")
+            continue
+        section = html[start:start + end_match.end()]
+        if '<style>' in section and '</style>' not in section:
+            errors.append(f"{cls}: <style> opened but never closed (CSS truncated)")
+        if '<style>' not in section and cls != 'spread-colophon':
+            if 'style="' not in section[:500]:
+                errors.append(f"{cls}: no <style> block found")
+
+    # 4. Dark backgrounds must have light text color
+    for m in re.finditer(r'\.(spread-[\w-]+)\s*\{([^}]+)\}', html):
+        cls = m.group(1)
+        body = m.group(2)
+        bg = re.search(r'background(?:-color)?\s*:\s*#([0-9a-fA-F]{2})', body)
+        has_color = re.search(r'(?<!background-)color\s*:', body)
+        if bg and int(bg.group(1), 16) < 0x30 and not has_color:
+            errors.append(f"{cls}: dark background but no text color set")
+
+    # 5. Minimum content check — each spread should have some HTML beyond just CSS
+    for m in re.finditer(r'<section class="spread (spread-[\w-]+)">', html):
+        cls = m.group(1)
+        start = m.start()
+        end_match = re.search(r'</section>', html[start:])
+        if not end_match:
+            continue
+        section = html[start:start + end_match.end()]
+        # Strip out the style block and check remaining HTML
+        stripped = re.sub(r'<style>.*?</style>', '', section, flags=re.DOTALL)
+        # Count actual content tags
+        content_tags = len(re.findall(r'<(?:h[1-6]|p|a|div|span|main|header)', stripped))
+        if content_tags < 2 and cls != 'spread-colophon':
+            errors.append(f"{cls}: too little HTML content ({content_tags} tags)")
+
+    return errors
+
+
+# --------------------------------------------------------------------------
 # Orchestration
 # --------------------------------------------------------------------------
 def build_weekly(date: dt.date, public_base_url: str | None = None) -> dict:
@@ -342,6 +403,12 @@ def build_weekly(date: dt.date, public_base_url: str | None = None) -> dict:
 
     colophon = _generate_colophon(issue_meta, applies_count)
     html_out = _stitch_magazine(cover_html, spread_htmls, colophon, issue_meta)
+
+    errors = _validate_magazine(html_out)
+    if errors:
+        for e in errors:
+            log.error("EVAL FAIL: %s", e)
+        raise RuntimeError(f"Magazine failed {len(errors)} eval(s): {'; '.join(errors)}")
 
     out_path = MAGAZINES_DIR / f"weekly-{date.isoformat()}.html"
     out_path.write_text(html_out, encoding="utf-8")

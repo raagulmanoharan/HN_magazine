@@ -350,6 +350,12 @@ def build(date: dt.date, public_base_url: str | None = None) -> dict:
     log.info("rendering ...")
     html_out = render_magazine(curation, date)
 
+    # Basic structural validation before writing
+    style_opens = html_out.count('<style>')
+    style_closes = html_out.count('</style>')
+    if style_opens != style_closes:
+        raise RuntimeError(f"EVAL FAIL: unbalanced style tags ({style_opens} vs {style_closes})")
+
     out_path = MAGAZINES_DIR / f"{date.isoformat()}.html"
     out_path.write_text(html_out, encoding="utf-8")
     log.info("wrote %s (%d bytes)", out_path, len(html_out))
