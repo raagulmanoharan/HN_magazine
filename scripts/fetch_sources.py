@@ -50,6 +50,11 @@ SOURCE_WEIGHTS = {
     "deepmind":         0.86,
     "meta_ai":          0.84,
     "sidebar":          0.84,   # UX/design signal is scarce, weight high
+    # Design + UX sources — weighted high to balance the tech-heavy mix
+    "smashingmag":      0.84,
+    "nngroup":          0.82,
+    "figma":            0.80,
+    "codrops":          0.78,
     # AI thought leaders / newsletters
     "karpathy":         0.86,
     "importai":         0.84,
@@ -92,6 +97,10 @@ DEFAULT_LIMITS = {
     "interconnects":    5,
     "schneier":         5,
     "sidebar":          5,
+    "smashingmag":      8,
+    "nngroup":          5,
+    "figma":            5,
+    "codrops":          8,
 }
 
 FRESHNESS_DAYS = {
@@ -111,6 +120,10 @@ FRESHNESS_DAYS = {
     "interconnects": 7,
     "schneier": 10,
     "sidebar": 3,
+    "smashingmag": 3,
+    "nngroup": 7,
+    "figma": 7,
+    "codrops": 5,
     "quanta": 14,
     "techcrunch": 3,
     "theverge": 3,
@@ -132,6 +145,10 @@ FEED_URLS = {
     "interconnects": "https://www.interconnects.ai/feed",
     "schneier":      "https://www.schneier.com/feed/atom/",
     "sidebar":       "https://sidebar.io/feed.xml",
+    "smashingmag":   "https://www.smashingmagazine.com/feed/",
+    "nngroup":       "https://www.nngroup.com/feed/rss/",
+    "figma":         "https://www.figma.com/blog/feed/",
+    "codrops":       "https://tympanus.net/codrops/feed/",
     "quanta":        "https://www.quantamagazine.org/feed/",
     "techcrunch":    "https://techcrunch.com/category/artificial-intelligence/feed/",
     "theverge":      "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
@@ -510,6 +527,10 @@ FETCHERS: dict[str, Callable[[int], list[dict]]] = {
     "interconnects":   lambda n: _fetch_feed("interconnects", n),
     "schneier":        lambda n: _fetch_feed("schneier", n),
     "sidebar":         lambda n: _fetch_feed("sidebar", n),
+    "smashingmag":     lambda n: _fetch_feed("smashingmag", n),
+    "nngroup":         lambda n: _fetch_feed("nngroup", n),
+    "figma":           lambda n: _fetch_feed("figma", n),
+    "codrops":         lambda n: _fetch_feed("codrops", n),
     "quanta":          lambda n: _fetch_feed("quanta", n),
     "techcrunch":      lambda n: _fetch_feed("techcrunch", n),
     "theverge":        lambda n: _fetch_feed("theverge", n),
