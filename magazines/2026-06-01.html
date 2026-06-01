@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; MONDAY, JUNE 1, 2026</title>
-<meta name="description" content="Agentic spirals, GUI robustness, and craft signals">
+<meta name="description" content="Self-play, strange skies, and editor craft">
 <meta property="og:title" content="Morning Edition · MONDAY, JUNE 1, 2026">
-<meta property="og:description" content="Agentic spirals, GUI robustness, and craft signals">
+<meta property="og:description" content="Self-play, strange skies, and editor craft">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,500;0,700;0,800;1,500;1,800&family=Rubik:wght@400;500;600;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -540,12 +540,12 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AI CULTURE</div>
-      <h2 class="cover-title">The Solution Might Be Cancelling My AI Subscription</h2>
-      <p class="cover-tagline">Agentic spirals, GUI robustness, and craft signals</p>
-      <p class="body-lead body-lead--wide">Simon Willison surfaces a field report from someone who built 16+ projects in Claude sessions and couldn&#x27;t stop — a pattern that will feel uncomfortably familiar. The piece reframes AI tools not as productivity multipliers but as compulsion engines, worth sitting with if you&#x27;re designing or using agentic workflows daily.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AI RESEARCH</div>
+      <h2 class="cover-title">SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks</h2>
+      <p class="cover-tagline">Self-play, strange skies, and editor craft</p>
+      <p class="body-lead body-lead--wide">SCOPE trains LMs on open-ended tasks without human-labeled data or frontier-model judges — policies co-evolve as their own curriculum. For anyone building evals or agentic workflows, this is the shape of the next-generation training loop: no external oracle required.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://simonwillison.net/2026/May/31/the-solution-might-be-cancelling-my-ai-subscription/#atom-everything" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://huggingface.co/papers/2605.31433" target="_blank" rel="noopener">Open the lead &rarr;</a>
         
       </div>
       
@@ -561,56 +561,69 @@ a{color:inherit;text-underline-offset:4px}
     <span class="roman">II</span>
   </div>
   <div>
-    <div class="kicker">AGENTIC UX</div>
-    <h2>Recovering from Policy-Induced Errors: Benchmarking GUI Agents</h2>
-    <div class="body-lead">GUI-RobustEval is the first benchmark targeting an agent&#x27;s ability to recover from its own mistakes mid-task — the failure mode that actually kills real-world deployment. For a UX designer thinking about how agentic tools expose their error states to users, this is the research frame that matters.</div>
+    <div class="kicker">ALIGNMENT / EVALS</div>
+    <h2>The Flip Side of RLHF: On-Policy Feedback for Reward Model Self-Supervised Improvement</h2>
+    <div class="body-lead">Reward models degrade as the policy they evaluate improves — a known but mostly hand-waved problem. This paper proposes on-policy self-supervised feedback to keep reward models calibrated without expensive re-annotation. Directly relevant if you&#x27;re building eval pipelines or following RLHF practice.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://huggingface.co/papers/2605.29447" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      <a class="read-more" href="https://huggingface.co/papers/2605.30888" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
   </div>
   <div>
-    <div class="footnote">&sect; filed under agentic ux</div>
+    <div class="footnote">&sect; filed under alignment / evals</div>
   </div>
 </section>
 
-<section class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.03</span>
-      <span>HUGGINGFACE.CO</span>
-      <span>SHEET 3/10</span>
-    </div>
-    <div class="kicker">LLM TRAINING</div>
-    <h2>DRIFT: Efficient Multi-Turn RL for LLMs Without Full Rollouts</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">03</div>
-      <p class="body-lead">DRIFT decouples rollout generation from fine-tuning and applies importance weighting, making multi-turn RLHF practical without burning a GPU cluster. The mechanism directly shapes how the next generation of conversational and agentic models will behave across long sessions.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://huggingface.co/papers/2605.31455" target="_blank" rel="noopener">View schematic &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
-<section class="spread s-pullquote">
+<section class="spread s-manifesto">
   <div class="top">
-    <div class="kicker" style="color:#d9b26a">FIELD REPORT</div>
-    <div class="tiny-num" aria-hidden="true">04</div>
+    <div class="kicker">INDUSTRY CRITIQUE</div>
+    <div class="tiny-num" aria-hidden="true">03</div>
   </div>
+  <h2>The industry is annealing, but the temperature schedule is wrong.<span class="mark">.</span></h2>
   <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">AI coding isn&#x27;t a productivity tool — it&#x27;s a dopamine rewrite.</p>
-    <div class="attrib">&mdash; thoughts.hmmz.org</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">A personal account of how AI-assisted coding doesn&#x27;t just help ADHD — it structurally changes the reward loop in ways that feel neurologically specific. Useful texture if you&#x27;re thinking about cognitive load in tool design or your own AI-assisted practice.</p>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">apenwarr uses simulated annealing as a lens on how the software industry gets stuck in local optima — wrong temperature schedules, wrong perturbations. Dense systems-thinking that rewards slow reading; the kind of argument that reframes problems you thought you understood.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; apenwarr.ca</div>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://thoughts.hmmz.org/2026-05-31.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://apenwarr.ca/log/20260531" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #   #  
+#   #  #   #  
+#   #  #####  
+#   #      #  
+#####      #  </div>
+    <div class="kicker">EDITOR TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">bhoot.org</span></div>
+    <h2>A Simple Project Switcher for Kakoune</h2>
+    <p class="body-lead">&gt; A minimal project-context switcher for Kakoune — one script, zero dependencies. If you&#x27;ve been nudged toward modal editors by the AI-tooling wave, this is the kind of quality-of-life piece that makes an unfamiliar editor feel like yours.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://bhoot.org/2026/kakoune-project-switcher/" target="_blank" rel="noopener">$ open &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Clone the repo and drop the script into your Kakoune autoload directory to try it immediately.</p>
+    
+  </div>
+</section>
+
+<section class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 05</span>
+    <span>WEIRD SCIENCE</span>
+  </div>
+  <div class="ix-body">
+    <h2>Rubin Tracks Skyscraper-Size Asteroids and Failed Supernovas</h2>
+    <p class="body-lead">The Vera Rubin Observatory is now scanning the full sky every few nights, catching objects classical surveys missed entirely: interstellar visitors, stars that vanish without a bang, boulders the size of city blocks. Quanta&#x27;s coverage of first-light science is reliably the best around.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.quantamagazine.org/rubin-tracks-skyscraper-size-asteroids-failed-supernovas-and-interstellar-visitors-20260515/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
       
     </div>
     
@@ -621,112 +634,91 @@ a{color:inherit;text-underline-offset:4px}
 <section class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">UX PRACTICE</div>
-    <div class="numeral-xl" aria-hidden="true">05</div>
-    <h2>Using RAS to Guide UX Research Resource Allocation</h2>
-    <p class="body-lead">NNg introduces a Research Allocation Score framework that shifts UX research planning from output-counting to outcome-impact — a reframe that&#x27;s immediately useful when justifying study scope to PMs. Concrete enough to sketch into a team process today.</p>
+    <div class="kicker">AGENTIC TOOLING</div>
+    <div class="numeral-xl" aria-hidden="true">06</div>
+    <h2>Duel-Agents: CLI, SDK, and IDE Plugins for Competing Agent Workflows</h2>
+    <p class="body-lead">A rising GitHub project offering a CLI, SDK, and IDE plugin layer for pitting two AI agents against each other — useful for adversarial evals, red-teaming, or structured debate pipelines. Thin docs so far, but the scaffolding pattern is worth watching.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Map your current research backlog against the RAS criteria to immediately surface which items deserve time and which are low-leverage busywork.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://www.nngroup.com/articles/ras-research-resource-allocation/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Clone and run the CLI demo to see the dual-agent loop in action — pairs naturally with Claude or any OpenAI-compatible endpoint.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://github.com/2aronS/Duel-Agents" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section class="spread s-ticker">
-  <div class="bar"><span class="bar-inner">Breaking &middot; LOCAL AI HARDWARE &middot; Morning Edition</span></div>
-  <div class="core">
-    <div class="big-num" aria-hidden="true">No. 06</div>
-    <div class="kicker">LOCAL AI HARDWARE</div>
-    <h2>Nvidia RTX Spark — A Tiny Local-AI PC</h2>
-    <p class="body-lead">Nvidia&#x27;s RTX Spark is a palm-sized desktop built explicitly for local LLM inference — the hardware answer to running your own models without a gaming tower. Relevant as the cost-vs-cloud calculus for self-hosted AI keeps shifting, especially for privacy-conscious workflows.</p>
-    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.nvidia.com/en-us/products/rtx-spark/" target="_blank" rel="noopener">Over the wire &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
+<section class="spread s-postcard">
+  <div class="pc-inner">
+    <div class="stamp" aria-hidden="true">07<small>Morning<br>Edition</small></div>
+    <div class="postmark" aria-hidden="true">MONDAY<br>&middot;&middot;&middot;</div>
+    <div class="kicker">WEB / CRAFT</div>
+    <h2>How One Founder&#x27;s Bet on &#x27;the Old School Web&#x27; Is Paying Off</h2>
+    <p class="body-lead">A former Meta engineer built a focused, non-AI website in the middle of the AI gold rush and found an audience Google&#x27;s SEO collapse accidentally created. A field report on what actually survives when AI floods the generic web.</p>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.theverge.com/tech/938245/past-maps-website-google-zero-ai" target="_blank" rel="noopener">Wish you were here &rarr;</a>
+      
     </div>
-    <p class="apply-note">&rarr; Check the spec sheet and HN thread for real-world inference benchmarks before the product ships — useful baseline for deciding whether local inference is viable for your stack.</p>
+    
+    
+    <div class="footer-slug">Morning Edition &middot; Airmail from theverge.com</div>
+  </div>
+</section>
+
+<section class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; AI SHIPPING &middot; Morning Edition</span></div>
+  <div class="core">
+    <div class="big-num" aria-hidden="true">No. 08</div>
+    <div class="kicker">AI SHIPPING</div>
+    <h2>OpenAI Launches Rosalind Biodefense for Vetted Developers and U.S. Government Partners</h2>
+    <p class="body-lead">OpenAI is expanding GPT-Rosalind access to vetted biodefense and public health researchers — a restricted-access model track that signals how frontier labs plan to tier sensitive-domain APIs. The access model itself is as interesting as the application.</p>
+    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense" target="_blank" rel="noopener">Over the wire &rarr;</a>
+      
+    </div>
+    
     
   </div>
   <div class="bar"><span class="bar-inner">Filed MONDAY, JUNE 1, 2026</span></div>
 </section>
 
-<section class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #      #  
-#   #     #   
-#   #    #    
-#####   #     </div>
-    <div class="kicker">DEV TOOLS</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">blog.nlnetlabs.nl</span></div>
-    <h2>One Year of Roto: A Compiled Scripting Language for Rust</h2>
-    <p class="body-lead">&gt; NLnet Labs reflects on a year shipping Roto — a language that lets you embed user-scriptable logic inside Rust applications without the escape-hatch overhead of Lua or WASM. A thoughtful retrospective on the hard gap between scripting-language design and production robustness.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://blog.nlnetlabs.nl/one-year-of-roto-the-compiled-scripting-language-for-rust/" target="_blank" rel="noopener">$ open &rarr;</a>
+<section class="spread s-grid">
+  <div class="grid-top">
+    <div class="tag">VISION MODELS</div>
+    <div class="num-corner">No. 09</div>
+  </div>
+  <div class="grid-body">
+    <h2>Count Anything: A Generalist Vision Model for Open-World Object Counting</h2>
+    <div class="side">
+      <p class="body-lead">Most counting models are locked to specific domains — crowds, cells, cars. This paper presents a unified model that works across arbitrary object categories, which has direct implications for data annotation, QA pipelines, and generative-art production workflows where &#x27;how many of X&#x27; is a recurring check.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://huggingface.co/papers/2605.30846" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
       
     </div>
-    
-    
-  </div>
-</section>
-
-<section class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 08</span>
-    <span>WEIRD SCIENCE</span>
-  </div>
-  <div class="ix-body">
-    <h2>Rubin Telescope Tracks Asteroids, Failed Supernovas, and Interstellar Visitors</h2>
-    <p class="body-lead">Quanta reports on the Vera Rubin Observatory&#x27;s first real haul — skyscraper-scale near-Earth objects, stars that vanish without exploding, and confirmed interstellar objects. The sheer data volume Rubin generates per night is its own information-design challenge.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.quantamagazine.org/rubin-tracks-skyscraper-size-asteroids-failed-supernovas-and-interstellar-visitors-20260515/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
-      
-    </div>
-    
-    
   </div>
 </section>
 
 <section class="spread s-newsprint">
   <div class="masthead-bar">The Daily Ledger</div>
   <div class="title-row">
-    <div class="badge">09</div>
+    <div class="badge">10</div>
     <div>
-      <div class="kicker">AI ETHICS</div>
-      <h2>Unlawful by Design: Amnesty International on Generative AI and Human Rights</h2>
+      <div class="kicker">SECURITY / HUMAN FACTORS</div>
+      <h2>United Airlines 767 Returns to Newark After Bluetooth Name Triggers Security Alert</h2>
     </div>
   </div>
   <div class="cols">
-    <p>Amnesty&#x27;s full report catalogs concrete legal and rights failures embedded in generative AI systems — scraping without consent, discrimin</p>
-    <p>atory outputs, opaque automated decisions. More rigorous than the usual critique, with named harms and legal frameworks rather than vibes.</p>
+    <p>A passenger&#x27;s Bluetooth device name caused a full security diversion — 327 upvotes and nearly 600 comments because this is exactly the kind of a</p>
+    <p>mbient-signals-as-threat-vectors story that surfaces real gaps in automated detection logic. Worth reading for the systems-thinking thread alone.</p>
   </div>
   <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://www.amnesty.org/en/documents/pol40/0996/2026/en/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    <a class="read-more" href="https://simpleflying.com/united-airlines-767-returns-newark-bluetooth-name-alert/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
     
   </div>
   
   
-</section>
-
-<section class="spread s-grid">
-  <div class="grid-top">
-    <div class="tag">ML TOOLING</div>
-    <div class="num-corner">No. 10</div>
-  </div>
-  <div class="grid-body">
-    <h2>FlashLib: Fast, Memory-Efficient Classical ML Operators</h2>
-    <div class="side">
-      <p class="body-lead">FlashLib brings FlashAttention-style memory discipline to classical ML operators — SVMs, trees, linear models — rather than deep learning primitives. If your prototyping pipeline includes any sklearn-style steps that bottleneck on RAM, this is worth a direct benchmark.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://github.com/FlashML-org/flashlib" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
-      </div>
-      <p class="apply-note">&rarr; Clone the repo and swap one classical ML step in an existing pipeline to measure the memory delta — the README includes drop-in examples.</p>
-      
-    </div>
-  </div>
 </section>
 
 
@@ -734,9 +726,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  3 of them are flagged as directly applicable &mdash; open those first.</p>
+  2 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Spectral and Rubik. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-06-01 06:50 UTC.</p>
+  at 2026-06-01 06:51 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0517 &middot; MONDAY, JUNE 1, 2026</p>

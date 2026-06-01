@@ -18,7 +18,7 @@
     "title": "Chuwi Minibook X",
     "url": "https://tylercipriani.com/blog/2026/05/28/chuwi-minibook-x/",
     "source": "hn",
-    "score": 197,
+    "score": 199,
     "comments": 145,
     "text": "",
     "published_at": "2026-05-31T22:59:50Z",
@@ -60,7 +60,7 @@
     "title": "helloianneo/ian-xiaohei-illustrations \u2014 \u4e2d\u6587\u5c0f\u9ed1\u602a\u8bde\u6b63\u6587\u914d\u56fe\u751f\u6210 Skill | 16:9 \u767d\u5e95\u624b\u7ed8 | \u5c11\u91cf\u7ea2\u6a59\u84dd\u6279\u6ce8 | Codex Skill",
     "url": "https://github.com/helloianneo/ian-xiaohei-illustrations",
     "source": "github_trending",
-    "score": 1509,
+    "score": 1510,
     "comments": 2,
     "text": "\u4e2d\u6587\u5c0f\u9ed1\u602a\u8bde\u6b63\u6587\u914d\u56fe\u751f\u6210 Skill | 16:9 \u767d\u5e95\u624b\u7ed8 | \u5c11\u91cf\u7ea2\u6a59\u84dd\u6279\u6ce8 | Codex Skill",
     "published_at": "2026-05-27T22:47:56Z",
@@ -123,20 +123,6 @@
     "rank_within_source": 2,
     "hn_url": "",
     "prior": 0.713,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "openai:https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
-    "title": "Strengthening societal resilience with Rosalind Biodefense",
-    "url": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
-    "source": "openai",
-    "score": 0,
-    "comments": 0,
-    "text": "OpenAI launches Rosalind Biodefense, expanding trusted access to GPT-Rosalind for vetted developers and U.S. government partners advancing biodefense, public health, and pandemic preparedness through frontier AI.",
-    "published_at": "2026-05-29T03:00:00Z",
-    "rank_within_source": 3,
-    "hn_url": "",
-    "prior": 0.708,
     "_spillover_date": "2026-06-01"
   },
   {
@@ -238,6 +224,20 @@
     "_spillover_date": "2026-06-01"
   },
   {
+    "id": "producthunt:tag:www.producthunt.com,2005:Post/1159225",
+    "title": "Marqly 5.0",
+    "url": "https://www.producthunt.com/products/marqly",
+    "source": "producthunt",
+    "score": 0,
+    "comments": 0,
+    "text": "Your AI-powered bookmark manager Discussion | Link",
+    "published_at": "2026-05-30T09:30:11Z",
+    "rank_within_source": 1,
+    "hn_url": "",
+    "prior": 0.55,
+    "_spillover_date": "2026-06-01"
+  },
+  {
     "id": "techcrunch:https://techcrunch.com/?p=3128061",
     "title": "Making sense of the debate over AI psychosis",
     "url": "https://techcrunch.com/2026/05/31/making-sense-of-the-debate-over-ai-psychosis/",
@@ -249,48 +249,6 @@
     "rank_within_source": 2,
     "hn_url": "",
     "prior": 0.539,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "hf:2605.31433",
-    "title": "SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks",
-    "url": "https://huggingface.co/papers/2605.31433",
-    "source": "huggingface",
-    "score": 0,
-    "comments": 1,
-    "text": "Self-play can train language models without external supervision. However, existing methods require rule-checkable answers, leaving open-ended tasks dependent on curated prompts or frontier-model judges. We introduce SCOPE, a data-free self",
-    "published_at": "2026-05-29T00:00:00Z",
-    "rank_within_source": 4,
-    "hn_url": "",
-    "prior": 0.538,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "hn:48343714",
-    "title": "London's Free Roof Terraces",
-    "url": "https://diamondgeezer.blogspot.com/2026/05/londons-free-roof-terraces.html",
-    "source": "hn",
-    "score": 150,
-    "comments": 69,
-    "text": "",
-    "published_at": "2026-05-31T07:16:18Z",
-    "rank_within_source": 3,
-    "hn_url": "https://news.ycombinator.com/item?id=48343714",
-    "prior": 0.525,
-    "_spillover_date": "2026-05-31"
-  },
-  {
-    "id": "github:1252258448",
-    "title": "2aronS/Duel-Agents \u2014 CLI, SDK, and IDE plugins for Duel Agents",
-    "url": "https://github.com/2aronS/Duel-Agents",
-    "source": "github_trending",
-    "score": 585,
-    "comments": 1,
-    "text": "CLI, SDK, and IDE plugins for Duel Agents",
-    "published_at": "2026-05-28T10:45:44Z",
-    "rank_within_source": 9,
-    "hn_url": "",
-    "prior": 0.523,
     "_spillover_date": "2026-06-01"
   },
   {
@@ -308,20 +266,6 @@
     "_spillover_date": "2026-06-01"
   },
   {
-    "id": "theverge:https://www.theverge.com/?p=938245",
-    "title": "How one founder\u2019s bet on \u2018the old school web\u2019 is paying off",
-    "url": "https://www.theverge.com/tech/938245/past-maps-website-google-zero-ai",
-    "source": "theverge",
-    "score": 0,
-    "comments": 0,
-    "text": "Craig Campbell walked away from the river of investor money flowing into AI to create, of all things, a website. Sure, Campbell probably could have started an AI company. He's a former engineer at Meta and an experienced tech founder who in",
-    "published_at": "2026-05-30T13:00:00Z",
-    "rank_within_source": 2,
-    "hn_url": "",
-    "prior": 0.504,
-    "_spillover_date": "2026-06-01"
-  },
-  {
     "id": "github:1249866465",
     "title": "ace-trump-tech/DeltaForce-OBS-Locker \u2014 \u4e09\u89d2\u6d32\u884c\u52a8OBS\u9501\u5934\u63d2\u4ef6 \u2013 \u57fa\u4e8eOBS\u6e32\u67d3\u6ce8\u5165\u7684\u667a\u80fd\u9501\u5934\u8f85\u52a9\uff0c\u652f\u6301QQ\u97f3\u4e50/\u7f51\u6613\u4e91\u8054\u7cbe\u51c6\u9aa8\u9abc\u8bc6\u522b\u3001\u5e73\u6ed1\u81ea\u7784\u3001\u538b\u67aa\u6291\u5236\uff0c\u7a33\u5b9a\u8fc7\u68c0\uff0c\u63d0\u5347\u51fb\u6740\u6548\u7387\u3002\u52a8\u52a0\u8f7d\u3002DeltaForce OBS Lockhead Plugin \u2013 Smart aim assist via OBS injection, supports QQ Music/NetEase Cloud integration. Bone recognition, smooth aimbot, recoil control, stable anti-cheat bypass.",
     "url": "https://github.com/ace-trump-tech/DeltaForce-OBS-Locker",
@@ -333,48 +277,6 @@
     "rank_within_source": 10,
     "hn_url": "",
     "prior": 0.499,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "hn:48345248",
-    "title": "United Airlines 767 returns to Newark after Bluetooth name sparks alert",
-    "url": "https://simpleflying.com/united-airlines-767-returns-newark-bluetooth-name-alert/",
-    "source": "hn",
-    "score": 327,
-    "comments": 596,
-    "text": "",
-    "published_at": "2026-05-31T12:41:19Z",
-    "rank_within_source": 9,
-    "hn_url": "https://news.ycombinator.com/item?id=48345248",
-    "prior": 0.491,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "hf:2605.30888",
-    "title": "The Flip Side of RLHF: On-Policy Feedback for Reward Model Self-Supervised Improvement",
-    "url": "https://huggingface.co/papers/2605.30888",
-    "source": "huggingface",
-    "score": 0,
-    "comments": 1,
-    "text": "Building strong reward models (RMs) for language model alignment is bottlenecked by the cost and difficulty of acquiring diverse and reliable preference data from human annotation or judge models. It is dramatically worse as the policy evol",
-    "published_at": "2026-05-29T00:00:00Z",
-    "rank_within_source": 5,
-    "hn_url": "",
-    "prior": 0.488,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "producthunt:tag:www.producthunt.com,2005:Post/1159225",
-    "title": "Marqly 5.0",
-    "url": "https://www.producthunt.com/products/marqly",
-    "source": "producthunt",
-    "score": 0,
-    "comments": 0,
-    "text": "Your AI-powered bookmark manager Discussion | Link",
-    "published_at": "2026-05-30T09:30:11Z",
-    "rank_within_source": 2,
-    "hn_url": "",
-    "prior": 0.478,
     "_spillover_date": "2026-06-01"
   },
   {
@@ -406,20 +308,6 @@
     "_spillover_date": "2026-06-01"
   },
   {
-    "id": "hf:2605.30846",
-    "title": "Count Anything",
-    "url": "https://huggingface.co/papers/2605.30846",
-    "source": "huggingface",
-    "score": 0,
-    "comments": 1,
-    "text": "Object counting remains fragmented across domain-specific datasets and task formulations, despite rapid progress in generalist vision models. Existing counting models are often tailored to scenarios such as crowds, vehicles, cells, crops, o",
-    "published_at": "2026-05-29T00:00:00Z",
-    "rank_within_source": 6,
-    "hn_url": "",
-    "prior": 0.446,
-    "_spillover_date": "2026-06-01"
-  },
-  {
     "id": "theverge:https://www.theverge.com/?p=938844",
     "title": "AI grifters are creating fake Black people to sell Shein junk",
     "url": "https://www.theverge.com/ai-artificial-intelligence/938844/ai-tiktok-shop-blackface-shein-dropshipping",
@@ -432,6 +320,20 @@
     "hn_url": "",
     "prior": 0.446,
     "_spillover_date": "2026-06-01"
+  },
+  {
+    "id": "hn:48343714",
+    "title": "London's Free Roof Terraces",
+    "url": "https://diamondgeezer.blogspot.com/2026/05/londons-free-roof-terraces.html",
+    "source": "hn",
+    "score": 150,
+    "comments": 69,
+    "text": "",
+    "published_at": "2026-05-31T07:16:18Z",
+    "rank_within_source": 3,
+    "hn_url": "https://news.ycombinator.com/item?id=48343714",
+    "prior": 0.446,
+    "_spillover_date": "2026-05-31"
   },
   {
     "id": "lobsters:ng3xwc",
@@ -448,74 +350,18 @@
     "_spillover_date": "2026-06-01"
   },
   {
-    "id": "simonwillison:https://simonwillison.net/2026/May/30/retiring-from-tech-to-live-offline/#atom-everything",
-    "title": "I Am Retiring from Tech to Live Offline",
-    "url": "https://simonwillison.net/2026/May/30/retiring-from-tech-to-live-offline/#atom-everything",
-    "source": "simonwillison",
+    "id": "producthunt:tag:www.producthunt.com,2005:Post/1159008",
+    "title": "TabTasker",
+    "url": "https://www.producthunt.com/products/tabtasker",
+    "source": "producthunt",
     "score": 0,
     "comments": 0,
-    "text": "I Am Retiring from Tech to Live Offline I've seen a lot of posts on forums from people threatening to quit their careers over AI. This is not one of those: Chad Whitacre is taking concrete steps, starting with this typewritten, scanned lett",
-    "published_at": "2026-05-30T19:39:08Z",
-    "rank_within_source": 4,
+    "text": "Zero servers. Total privacy. Your new favorite toolbox. Discussion | Link",
+    "published_at": "2026-05-29T23:00:20Z",
+    "rank_within_source": 3,
     "hn_url": "",
-    "prior": 0.439,
-    "_spillover_date": "2026-05-31"
-  },
-  {
-    "id": "lobsters:mem2md",
-    "title": "A simple project switcher for Kakoune",
-    "url": "https://bhoot.org/2026/kakoune-project-switcher/",
-    "source": "lobsters",
-    "score": 18,
-    "comments": 5,
-    "text": "",
-    "published_at": "2026-05-31T06:43:48Z",
-    "rank_within_source": 13,
-    "hn_url": "https://lobste.rs/s/mem2md/simple_project_switcher_for_kakoune",
-    "prior": 0.436,
+    "prior": 0.423,
     "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "lobsters:nv2cnf",
-    "title": "The software industry: annealing, but wrong",
-    "url": "https://apenwarr.ca/log/20260531",
-    "source": "lobsters",
-    "score": 4,
-    "comments": 0,
-    "text": "",
-    "published_at": "2026-06-01T02:27:10Z",
-    "rank_within_source": 10,
-    "hn_url": "https://lobste.rs/s/nv2cnf/software_industry_annealing_wrong",
-    "prior": 0.428,
-    "_spillover_date": "2026-06-01"
-  },
-  {
-    "id": "lobsters:lwnweu",
-    "title": "\"But it happened.\" - Casey Muratori's comment on Eric Schmidt's commencement speech",
-    "url": "https://youtu.be/tlQ7EoJDTQY",
-    "source": "lobsters",
-    "score": 128,
-    "comments": 26,
-    "text": "",
-    "published_at": "2026-05-29T18:52:09Z",
-    "rank_within_source": 1,
-    "hn_url": "https://lobste.rs/s/lwnweu/it_happened_casey_muratori_s_comment_on",
-    "prior": 0.422,
-    "_spillover_date": "2026-05-30"
-  },
-  {
-    "id": "hn:48313427",
-    "title": "What it's like to have your insulin pump die while you're on vacation",
-    "url": "https://blog.lauramichet.com/what-its-like-to-have-the-machine-that-keeps-you-alive-die-while-youre-on-vacation/",
-    "source": "hn",
-    "score": 22,
-    "comments": 13,
-    "text": "",
-    "published_at": "2026-05-28T18:33:54Z",
-    "rank_within_source": 6,
-    "hn_url": "https://news.ycombinator.com/item?id=48313427",
-    "prior": 0.418,
-    "_spillover_date": "2026-05-31"
   },
   {
     "id": "schneier:https://www.schneier.com/?p=72093",
@@ -574,6 +420,48 @@
     "_spillover_date": "2026-06-01"
   },
   {
+    "id": "simonwillison:https://simonwillison.net/2026/May/30/retiring-from-tech-to-live-offline/#atom-everything",
+    "title": "I Am Retiring from Tech to Live Offline",
+    "url": "https://simonwillison.net/2026/May/30/retiring-from-tech-to-live-offline/#atom-everything",
+    "source": "simonwillison",
+    "score": 0,
+    "comments": 0,
+    "text": "I Am Retiring from Tech to Live Offline I've seen a lot of posts on forums from people threatening to quit their careers over AI. This is not one of those: Chad Whitacre is taking concrete steps, starting with this typewritten, scanned lett",
+    "published_at": "2026-05-30T19:39:08Z",
+    "rank_within_source": 4,
+    "hn_url": "",
+    "prior": 0.373,
+    "_spillover_date": "2026-05-31"
+  },
+  {
+    "id": "lobsters:lwnweu",
+    "title": "\"But it happened.\" - Casey Muratori's comment on Eric Schmidt's commencement speech",
+    "url": "https://youtu.be/tlQ7EoJDTQY",
+    "source": "lobsters",
+    "score": 128,
+    "comments": 26,
+    "text": "",
+    "published_at": "2026-05-29T18:52:09Z",
+    "rank_within_source": 1,
+    "hn_url": "https://lobste.rs/s/lwnweu/it_happened_casey_muratori_s_comment_on",
+    "prior": 0.359,
+    "_spillover_date": "2026-05-30"
+  },
+  {
+    "id": "hn:48313427",
+    "title": "What it's like to have your insulin pump die while you're on vacation",
+    "url": "https://blog.lauramichet.com/what-its-like-to-have-the-machine-that-keeps-you-alive-die-while-youre-on-vacation/",
+    "source": "hn",
+    "score": 22,
+    "comments": 13,
+    "text": "",
+    "published_at": "2026-05-28T18:33:54Z",
+    "rank_within_source": 6,
+    "hn_url": "https://news.ycombinator.com/item?id=48313427",
+    "prior": 0.355,
+    "_spillover_date": "2026-05-31"
+  },
+  {
     "id": "simonwillison:https://simonwillison.net/2026/May/30/daniel-jalkut/#atom-everything",
     "title": "Quoting Daniel Jalkut",
     "url": "https://simonwillison.net/2026/May/30/daniel-jalkut/#atom-everything",
@@ -584,7 +472,7 @@
     "published_at": "2026-05-30T17:29:55Z",
     "rank_within_source": 5,
     "hn_url": "",
-    "prior": 0.398,
+    "prior": 0.338,
     "_spillover_date": "2026-05-31"
   },
   {
@@ -598,7 +486,7 @@
     "published_at": "2026-05-25T14:13:24Z",
     "rank_within_source": 8,
     "hn_url": "",
-    "prior": 0.398,
+    "prior": 0.338,
     "_spillover_date": "2026-05-31"
   },
   {
@@ -612,7 +500,7 @@
     "published_at": "2026-05-31T02:20:15Z",
     "rank_within_source": 8,
     "hn_url": "https://lobste.rs/s/e7n06u/ahoy_decmate_ii_little_pdp_8_could",
-    "prior": 0.388,
+    "prior": 0.33,
     "_spillover_date": "2026-05-31"
   },
   {
@@ -626,7 +514,7 @@
     "published_at": "2026-05-28T00:00:00Z",
     "rank_within_source": 6,
     "hn_url": "",
-    "prior": 0.379,
+    "prior": 0.322,
     "_spillover_date": "2026-06-01"
   },
   {
@@ -640,7 +528,7 @@
     "published_at": "2026-05-30T15:59:58Z",
     "rank_within_source": 3,
     "hn_url": "",
-    "prior": 0.344,
+    "prior": 0.292,
     "_spillover_date": "2026-05-31"
   },
   {
@@ -654,7 +542,7 @@
     "published_at": "2026-05-25T02:35:01Z",
     "rank_within_source": 12,
     "hn_url": "",
-    "prior": 0.332,
+    "prior": 0.282,
     "_spillover_date": "2026-05-31"
   }
 ]
