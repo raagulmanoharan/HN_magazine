@@ -52,7 +52,9 @@ SOURCE_WEIGHTS = {
     "sidebar":          0.84,   # UX/design signal is scarce, weight high
     # Design + UX sources — weighted high to balance the tech-heavy mix
     "smashingmag":      0.84,
+    "dense_discovery":  0.83,   # Kai Brach's weekly — very high craft/signal ratio
     "nngroup":          0.82,
+    "heydesigner":      0.80,   # daily design links aggregator
     "figma":            0.80,
     "codrops":          0.78,
     # AI thought leaders / newsletters
@@ -77,82 +79,88 @@ SOURCE_WEIGHTS = {
 # Per-source fetch caps. Keep lab blogs small (low volume, high signal) and
 # HN trimmed (otherwise it numerically drowns everything else).
 DEFAULT_LIMITS = {
-    "hn":              25,
-    "lobsters":        15,
-    "reddit_ml":       20,
-    "github_trending": 12,
-    "huggingface":     10,
-    "quanta":           8,
-    "producthunt":      8,
-    "techcrunch":       8,
-    "theverge":         8,
-    "anthropic":        5,
-    "openai":           5,
-    "deepmind":         5,
-    "meta_ai":          5,
-    "simonwillison":    5,
-    "karpathy":         5,
-    "importai":         5,
-    "lilianweng":       5,
-    "interconnects":    5,
-    "schneier":         5,
-    "sidebar":          5,
-    "smashingmag":      8,
-    "nngroup":          5,
-    "figma":            5,
-    "codrops":          8,
+    "hn":               25,
+    "lobsters":         15,
+    "reddit_ml":        20,
+    "github_trending":  12,
+    "huggingface":      10,
+    "quanta":            8,
+    "producthunt":       8,
+    "techcrunch":        8,
+    "theverge":          8,
+    "anthropic":         5,
+    "openai":            5,
+    "deepmind":          5,
+    "meta_ai":           5,
+    "simonwillison":     5,
+    "karpathy":          5,
+    "importai":          5,
+    "lilianweng":        5,
+    "interconnects":     5,
+    "schneier":          5,
+    "sidebar":           5,
+    "smashingmag":       8,
+    "dense_discovery":   5,
+    "nngroup":           5,
+    "heydesigner":       8,
+    "figma":             5,
+    "codrops":           8,
 }
 
 FRESHNESS_DAYS = {
-    "hn": 3,
-    "lobsters": 3,
-    "reddit_ml": 3,
-    "github_trending": 7,
-    "huggingface": 7,
-    "anthropic": 14,
-    "openai": 14,
-    "deepmind": 14,
-    "meta_ai": 14,
-    "simonwillison": 7,
-    "karpathy": 14,
-    "importai": 7,
-    "lilianweng": 14,
-    "interconnects": 7,
-    "schneier": 10,
-    "sidebar": 3,
-    "smashingmag": 3,
-    "nngroup": 7,
-    "figma": 7,
-    "codrops": 5,
-    "quanta": 14,
-    "techcrunch": 3,
-    "theverge": 3,
-    "producthunt": 3,
+    "hn":               3,
+    "lobsters":         3,
+    "reddit_ml":        3,
+    "github_trending":  7,
+    "huggingface":      7,
+    "anthropic":        14,
+    "openai":           14,
+    "deepmind":         14,
+    "meta_ai":          14,
+    "simonwillison":    7,
+    "karpathy":         14,
+    "importai":         7,
+    "lilianweng":       14,
+    "interconnects":    7,
+    "schneier":         10,
+    "sidebar":          3,
+    "smashingmag":      3,
+    "dense_discovery":  7,   # weekly newsletter; give the full week to surface
+    "nngroup":          7,
+    "heydesigner":      3,   # daily links; 3 days is plenty
+    "figma":            7,
+    "codrops":          5,
+    "quanta":           14,
+    "techcrunch":       3,
+    "theverge":         3,
+    "producthunt":      3,
 }
 
 # --------------------------------------------------------------------------
 # Feed URLs. Edit these if a publisher changes their RSS path.
 # --------------------------------------------------------------------------
 FEED_URLS = {
-    "anthropic":     "https://www.anthropic.com/news/rss.xml",
-    "openai":        "https://openai.com/news/rss.xml",
-    "deepmind":      "https://deepmind.google/blog/rss.xml",
-    "meta_ai":       "https://ai.meta.com/blog/rss/",
-    "simonwillison": "https://simonwillison.net/atom/everything/",
-    "karpathy":      "https://karpathy.ai/rss.xml",
-    "importai":      "https://importai.substack.com/feed",
-    "lilianweng":    "https://lilianweng.github.io/index.xml",
-    "interconnects": "https://www.interconnects.ai/feed",
-    "schneier":      "https://www.schneier.com/feed/atom/",
-    "sidebar":       "https://sidebar.io/feed.xml",
-    "smashingmag":   "https://www.smashingmagazine.com/feed/",
-    "nngroup":       "https://www.nngroup.com/feed/rss/",
-    "figma":         "https://www.figma.com/blog/feed/",
-    "codrops":       "https://tympanus.net/codrops/feed/",
-    "quanta":        "https://www.quantamagazine.org/feed/",
-    "techcrunch":    "https://techcrunch.com/category/artificial-intelligence/feed/",
-    "theverge":      "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-    "producthunt":   "https://www.producthunt.com/feed",
+    "anthropic":        "https://www.anthropic.com/news/rss.xml",
+    "openai":           "https://openai.com/news/rss.xml",
+    "deepmind":         "https://deepmind.google/blog/rss.xml",
+    "meta_ai":          "https://ai.meta.com/blog/rss/",
+    "simonwillison":    "https://simonwillison.net/atom/everything/",
+    "karpathy":         "https://karpathy.ai/rss.xml",
+    "importai":         "https://importai.substack.com/feed",
+    "lilianweng":       "https://lilianweng.github.io/index.xml",
+    "interconnects":    "https://www.interconnects.ai/feed",
+    "schneier":         "https://www.schneier.com/feed/atom/",
+    "sidebar":          "https://sidebar.io/feed.xml",
+    "smashingmag":      "https://www.smashingmagazine.com/feed/",
+    "dense_discovery":  "https://www.densediscovery.com/feed.xml",
+    "nngroup":          "https://www.nngroup.com/feed/rss/",
+    "heydesigner":      "https://heydesigner.com/feed/",
+    "figma":            "https://www.figma.com/blog/feed/",
+    "codrops":          "https://tympanus.net/codrops/feed/",
+    "quanta":           "https://www.quantamagazine.org/feed/",
+    "techcrunch":       "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "theverge":         "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+    "producthunt":      "https://www.producthunt.com/feed",
 }
 
 # Many sites (Lobste.rs, Product Hunt, some CDN-fronted blogs) 403 on
@@ -424,9 +432,9 @@ def _parse_rss_date(s: str) -> datetime | None:
         return None
 
 
-def _fetch_feed(source: str, limit: int) -> list[dict]:
+def _fetch_feed(source: str, limit: int, url_override: str | None = None) -> list[dict]:
     """Generic RSS/Atom fetcher using stdlib XML."""
-    url = FEED_URLS.get(source)
+    url = url_override or FEED_URLS.get(source)
     if not url:
         return []
     raw = _http_get(url, timeout=20)
@@ -528,7 +536,9 @@ FETCHERS: dict[str, Callable[[int], list[dict]]] = {
     "schneier":        lambda n: _fetch_feed("schneier", n),
     "sidebar":         lambda n: _fetch_feed("sidebar", n),
     "smashingmag":     lambda n: _fetch_feed("smashingmag", n),
+    "dense_discovery": lambda n: _fetch_feed("dense_discovery", n),
     "nngroup":         lambda n: _fetch_feed("nngroup", n),
+    "heydesigner":     lambda n: _fetch_feed("heydesigner", n),
     "figma":           lambda n: _fetch_feed("figma", n),
     "codrops":         lambda n: _fetch_feed("codrops", n),
     "quanta":          lambda n: _fetch_feed("quanta", n),
@@ -544,28 +554,55 @@ FETCHERS: dict[str, Callable[[int], list[dict]]] = {
 def fetch_all(
     enabled: dict[str, bool] | None = None,
     limits: dict[str, int] | None = None,
+    custom_feeds: list[dict] | None = None,
     top_k: int = 60,
 ) -> list[dict]:
     """Fetch from every enabled source in parallel, filter stale items,
     dedup by normalized URL, attach `prior`, return the top `top_k`
-    sorted by `prior` descending."""
+    sorted by `prior` descending.
+
+    custom_feeds: list of dicts from taste.json, each with keys:
+        id, url, label, weight (0..1), limit (int), freshness_days (int), enabled (bool)
+    """
     enabled = enabled or {}
     limits = {**DEFAULT_LIMITS, **(limits or {})}
 
-    active = [s for s in FETCHERS if enabled.get(s, True)]
+    # Register custom feeds — local overrides so we never mutate module globals.
+    extra_fetchers: dict[str, Callable[[int], list[dict]]] = {}
+    extra_weights: dict[str, float] = {}
+    extra_freshness: dict[str, int] = {}
+
+    for cf in (custom_feeds or []):
+        cid = (cf.get("id") or "").strip()
+        curl = (cf.get("url") or "").strip()
+        if not cid or not curl:
+            continue
+        if not cf.get("enabled", True):
+            enabled[cid] = False
+            continue
+        extra_fetchers[cid] = lambda n, s=cid, u=curl: _fetch_feed(s, n, url_override=u)
+        extra_weights[cid] = float(cf.get("weight", 0.75))
+        extra_freshness[cid] = int(cf.get("freshness_days", 7))
+        limits[cid] = int(cf.get("limit", 5))
+        enabled.setdefault(cid, True)
+
+    all_fetchers = {**FETCHERS, **extra_fetchers}
+    all_weights = {**SOURCE_WEIGHTS, **extra_weights}
+    all_freshness = {**FRESHNESS_DAYS, **extra_freshness}
+
+    active = [s for s in all_fetchers if enabled.get(s, True)]
     log.info("fetching from %d sources: %s", len(active), ", ".join(active))
 
     results: list[dict] = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(len(active), 16)) as pool:
         future_to_source = {
-            pool.submit(FETCHERS[s], limits.get(s, 10)): s for s in active
+            pool.submit(all_fetchers[s], limits.get(s, 10)): s for s in active
         }
         for fut in concurrent.futures.as_completed(future_to_source):
             s = future_to_source[fut]
             try:
                 items = fut.result()
-                # Freshness filter
-                days = FRESHNESS_DAYS.get(s, 14)
+                days = all_freshness.get(s, 14)
                 fresh = [
                     it for it in items
                     if _fresh(_parse_time(it.get("published_at")), days)
@@ -580,14 +617,19 @@ def fetch_all(
     for it in results:
         key = _normalize_url(it["url"]) or it["id"]
         prev = by_url.get(key)
-        if prev is None or SOURCE_WEIGHTS.get(it["source"], 0) > SOURCE_WEIGHTS.get(prev["source"], 0):
+        if prev is None or all_weights.get(it["source"], 0) > all_weights.get(prev["source"], 0):
             by_url[key] = it
 
     deduped = list(by_url.values())
 
     # Attach prior and sort.
     for it in deduped:
-        it["prior"] = _prior(it["source"], it["rank_within_source"], it.get("score"))
+        w = all_weights.get(it["source"], SOURCE_WEIGHTS.get(it["source"], 0.5))
+        rank = it["rank_within_source"]
+        rank_factor = 1.0 / (1.0 + 0.15 * max(rank - 1, 0))
+        raw = max(it.get("score") or 0, 0)
+        score_factor = min(math.log10(raw + 1) / 8.0, 0.15)
+        it["prior"] = round(w * rank_factor + score_factor, 3)
 
     deduped.sort(key=lambda it: it["prior"], reverse=True)
 

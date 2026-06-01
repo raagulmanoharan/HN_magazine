@@ -319,16 +319,18 @@ def build(date: dt.date, public_base_url: str | None = None) -> dict:
     MAGAZINES_DIR.mkdir(parents=True, exist_ok=True)
 
     log.info("fetching candidates from all sources ...")
-    # Read per-source enable flags from taste.json if present.
+    # Read per-source enable flags and custom feeds from taste.json if present.
     taste_path = ROOT / "taste.json"
     enabled: dict[str, bool] = {}
+    custom_feeds: list[dict] = []
     try:
         taste = json.loads(taste_path.read_text())
         sources_cfg = taste.get("sources") or {}
         enabled = {k: bool(v.get("enabled", True)) for k, v in sources_cfg.items()}
+        custom_feeds = taste.get("custom_feeds") or []
     except Exception:
         pass
-    stories = fetch_all(enabled=enabled, top_k=80)
+    stories = fetch_all(enabled=enabled, custom_feeds=custom_feeds, top_k=80)
     log.info("fetched %d candidates", len(stories))
 
     # Merge spillover from the previous build (runners-up that are still fresh).
