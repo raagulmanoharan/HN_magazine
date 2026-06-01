@@ -14,32 +14,57 @@
 html,body{margin:0;padding:0}
 body{font-family:'Inter',system-ui,sans-serif;font-size:22px;line-height:1.5;
   color:#17140e;background:#f4ecd8;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1100px;margin:0 auto;padding:clamp(48px,6vw,110px)}
+.wrap{max-width:1100px;margin:0 auto;padding:clamp(32px,6vw,110px)}
 .masthead{display:flex;justify-content:space-between;align-items:flex-end;
-  border-bottom:4px solid #17140e;padding-bottom:18px;margin-bottom:56px;flex-wrap:wrap;gap:18px}
+  border-bottom:4px solid #17140e;padding-bottom:18px;margin-bottom:48px;flex-wrap:wrap;gap:16px}
 h1{font-family:'Fraunces',serif;font-style:italic;font-weight:900;
-  font-size:clamp(48px,7vw,104px);margin:0;line-height:.95;letter-spacing:-.02em}
-.sub{font-family:'Fraunces',serif;font-size:clamp(24px,2.4vw,34px);font-style:italic;font-weight:400;
-  max-width:42ch;line-height:1.35}
-.issue-list{margin-top:56px;list-style:none;padding:0}
-.issue-list li{border-bottom:1.5px solid rgba(23,20,14,.2);padding:24px 0}
-.issue-list a{display:flex;justify-content:space-between;align-items:baseline;gap:24px;
-  color:#17140e;text-decoration:none;flex-wrap:wrap}
-.issue-list .left{display:flex;flex-direction:column;gap:6px}
+  font-size:clamp(40px,7vw,104px);margin:0;line-height:.95;letter-spacing:-.02em}
+.sub{font-family:'Fraunces',serif;font-size:clamp(18px,2.4vw,28px);font-style:italic;font-weight:400;
+  max-width:42ch;line-height:1.35;opacity:.8}
+.issue-list{margin-top:40px;list-style:none;padding:0}
+.issue-list li{border-bottom:1.5px solid rgba(23,20,14,.2)}
+.issue-list a{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:16px 24px;
+  padding:18px 0;
+  color:#17140e;text-decoration:none
+}
+.issue-list .left{display:flex;flex-direction:column;gap:5px}
 .issue-list .tagline{font-family:'Fraunces',serif;font-style:italic;font-weight:700;
-  font-size:clamp(26px,2.8vw,38px);letter-spacing:-.01em;line-height:1.2}
-.issue-list .d{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(16px,1.4vw,20px);
-  letter-spacing:.08em;text-transform:uppercase;opacity:.55}
-.issue-list .n{font-family:'Inter',sans-serif;font-size:20px;letter-spacing:.18em;
-  text-transform:uppercase;opacity:.6}
-.issue-list a:hover .d{color:#b63b1f}
-.issue-list .weekly-badge{display:inline-block;background:#b63b1f;color:#f4ecd8;
-  padding:4px 12px;font-family:'Inter',sans-serif;font-size:14px;font-weight:800;
+  font-size:clamp(20px,2.6vw,34px);letter-spacing:-.01em;line-height:1.2}
+.issue-list .d{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(12px,1.2vw,16px);
+  letter-spacing:.1em;text-transform:uppercase;opacity:.5}
+.issue-list .n{font-family:'Inter',sans-serif;font-size:clamp(13px,1.2vw,17px);
+  letter-spacing:.16em;text-transform:uppercase;opacity:.5;white-space:nowrap;text-align:right}
+.issue-list a:hover .tagline{color:#b63b1f}
+.issue-list .weekly-badge{
+  display:inline-block;background:#b63b1f;color:#f4ecd8;
+  padding:3px 10px;font-family:'Inter',sans-serif;font-size:11px;font-weight:800;
   letter-spacing:.2em;text-transform:uppercase;border-radius:3px;vertical-align:middle;
-  margin-left:12px}
+  margin-left:10px
+}
 .empty{font-family:'Fraunces',serif;font-style:italic;font-size:26px;opacity:.7}
-footer{margin-top:96px;padding-top:24px;border-top:1.5px solid rgba(23,20,14,.2);
-  font-size:18px;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+footer{margin-top:72px;padding-top:22px;border-top:1.5px solid rgba(23,20,14,.2);
+  font-size:14px;letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+@media(max-width:600px){
+  .wrap{padding:24px 16px 48px}
+  .masthead{border-bottom-width:3px;padding-bottom:14px;margin-bottom:28px;gap:12px}
+  h1{font-size:clamp(36px,12vw,56px)}
+  .sub{font-size:17px;line-height:1.4}
+  .issue-list{margin-top:28px}
+  .issue-list a{
+    grid-template-columns:1fr;
+    gap:6px;
+    padding:16px 0
+  }
+  .issue-list .n{text-align:left;font-size:12px;opacity:.4}
+  .issue-list .tagline{font-size:clamp(19px,5.5vw,26px)}
+  .issue-list .d{font-size:12px}
+  .issue-list .weekly-badge{font-size:10px;padding:2px 8px}
+  footer{margin-top:48px;font-size:12px}
+}
 </style>
 </head>
 <body>
