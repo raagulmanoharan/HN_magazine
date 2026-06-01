@@ -54,6 +54,18 @@ def _sanitize_spread(html: str, class_name: str) -> str:
         html = html.rstrip() + "\n</section>"
     # Remove duplicate </section> tags
     html = re.sub(r"(</section>\s*)+$", "</section>", html)
+    # Fix truncated style blocks (opened but never closed)
+    if '<style>' in html and '</style>' not in html:
+        last_brace = html.rfind('}')
+        if last_brace != -1:
+            html = html[:last_brace + 1] + f"""
+.{class_name} {{ min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: clamp(24px, 5vw, 72px); }}
+</style>
+<div style="text-align:center;max-width:600px;">
+  <p style="font-size:22px;opacity:0.7;">This spread was truncated during generation.</p>
+</div>
+</section>"""
+            return html
     # Ensure dark-background spreads have a light text color set
     bg_match = re.search(
         rf'\.{re.escape(class_name)}\s*\{{([^}}]+)\}}', html)
@@ -140,7 +152,7 @@ Generate the spread now.
 
     resp = client.messages.create(
         model=MODEL,
-        max_tokens=4096,
+        max_tokens=8192,
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": story_brief}],
     )
@@ -176,7 +188,7 @@ Generate the <section> now.
 
     resp = client.messages.create(
         model=MODEL,
-        max_tokens=3000,
+        max_tokens=8192,
         system=[{"type": "text", "text": _SPREAD_SYSTEM.replace("{n}", "cover").replace("{url}", "#")}],
         messages=[{"role": "user", "content": brief}],
     )
