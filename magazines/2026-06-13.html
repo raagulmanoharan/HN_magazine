@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; SATURDAY, JUNE 13, 2026</title>
-<meta name="description" content="Export controls, agentic craft, and weird science">
+<meta name="description" content="Government kills Claude, agents learn your habits">
 <meta property="og:title" content="Morning Edition · SATURDAY, JUNE 13, 2026">
-<meta property="og:description" content="Export controls, agentic craft, and weird science">
+<meta property="og:description" content="Government kills Claude, agents learn your habits">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&family=Open+Sans:wght@400;500;600;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -683,11 +683,11 @@ a{color:inherit;text-underline-offset:4px}
   <div class="cover-body">
     <div>
       <div class="cover-kicker">Today&rsquo;s lead &middot; AI POLICY</div>
-      <h2 class="cover-title">Anthropic on the US Gov Directive to Suspend Fable 5 and Mythos 5</h2>
-      <p class="cover-tagline">Export controls, agentic craft, and weird science</p>
-      <p class="body-lead body-lead--wide">The US government invoked national security export controls to pull Anthropic&#x27;s most capable models from commercial access — a first. Anthropic&#x27;s pushback is pointed: a single narrow jailbreak finding shouldn&#x27;t recall a model deployed to hundreds of millions. This is the kind of governance collision that will reshape how frontier AI ships.</p>
+      <h2 class="cover-title">Anthropic cuts off Fable 5 and Mythos 5 following government order</h2>
+      <p class="cover-tagline">Government kills Claude, agents learn your habits</p>
+      <p class="body-lead body-lead--wide">The US government invoked national security export controls to block all access to Anthropic&#x27;s most capable models — including for Anthropic&#x27;s own employees. The company publicly disagrees, calling the jailbreak finding insufficient grounds to recall a commercial model serving hundreds of millions. This is the first time a government has directly suspended a frontier commercial AI model.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://www.theverge.com/ai-artificial-intelligence/949553/anthropic-fable-5-mythos-5-government-national-security" target="_blank" rel="noopener">Open the lead &rarr;</a>
         
       </div>
       
@@ -697,76 +697,95 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section data-story="2" class="spread s-rose">
-  <div class="stamp">Applies<br>to&nbsp;you</div>
-  <div>
-    <div class="kicker">UX + AI</div>
-    <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>The Core Skill of Design in the AI Era: Critique</h2>
-    <p class="body-lead">NN/g argues that as AI generates more interface output, the designer&#x27;s irreplaceable contribution shifts to formalized critique — encoding user needs into evaluation criteria rather than pixels. For a UX designer building AI-assisted workflows, this is the job description rewrite happening in real time.</p>
+<section data-story="2" class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">II</span>
   </div>
   <div>
-    <p class="apply-note">&rarr; Read it today and draft your own rubric for evaluating AI-generated UI against your current project&#x27;s user needs.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://www.nngroup.com/articles/ai-era-critique/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <div class="kicker">AGENTIC AI</div>
+    <h2>Getting Better at Working With You: Compiling User Corrections into Runtime Enforcement</h2>
+    <div class="body-lead">Coding agents that forget corrections between sessions are the main friction in agentic workflows — this paper proposes compiling user corrections into persistent runtime rules rather than relying on context recall. Directly relevant if you&#x27;re building or evaluating LLM-assisted dev pipelines where consistency across sessions actually matters.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://huggingface.co/papers/2606.13174" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      
+    </div>
+    
+  </div>
+  <div>
+    <div class="footnote">&sect; filed under agentic ai</div>
+  </div>
+</section>
+
+<section data-story="3" class="spread s-newsprint">
+  <div class="masthead-bar">The Daily Ledger</div>
+  <div class="title-row">
+    <div class="badge">03</div>
+    <div>
+      <div class="kicker">LLM TOOLING</div>
+      <h2>AI OSS tool goes archived overnight after raising $7.3M seed</h2>
+    </div>
+  </div>
+  <div class="cols">
+    <p>TensorZero, a structured LLM gateway with evals and prompt optimization, quietly archived its repo the same week it closed a $7.3M seed.</p>
+    <p>The HN thread is worth reading for what this signals about the sustainability of OSS-as-moat in the LLM infra space — and whether to trust open tools in your stack.</p>
+  </div>
+  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+    <a class="read-more" href="https://github.com/tensorzero/tensorzero" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    
+  </div>
+  
+  
+</section>
+
+<section data-story="4" class="spread s-rose">
+  <div class="stamp">Applies<br>to&nbsp;you</div>
+  <div>
+    <div class="kicker">DEV TOOLS</div>
+    <div class="numeral-xl" aria-hidden="true">04</div>
+    <h2>ponytail — Makes your AI agent think like the laziest senior dev</h2>
+    <p class="body-lead">Ponytail is a constraint layer for AI coding agents that aggressively prunes before generating — the premise being that not writing code is usually the right call. Trending hard on GitHub this week; worth dropping into an agentic coding setup to see if it cuts hallucinated scaffolding.</p>
+  </div>
+  <div>
+    <p class="apply-note">&rarr; Clone the repo and wire it into your current AI coding agent config today to test the minimal-output constraint.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="3" class="spread s-blueprint">
+<section data-story="5" class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; SECURITY &middot; Morning Edition</span></div>
+  <div class="core">
+    <div class="big-num" aria-hidden="true">No. 05</div>
+    <div class="kicker">SECURITY</div>
+    <h2>Arch Linux AUR malware incident: more than 1,500 packages affected</h2>
+    <p class="body-lead">Over 1,500 AUR packages were compromised in a supply-chain malware incident — Arch maintainers say it&#x27;s now under control. If you run Arch or pull AUR packages in any self-hosted or dev environment, audit your installed packages and check the HN thread for the specific malware signatures identified.</p>
+    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.phoronix.com/news/Arch-Linux-AUR-More-Than-1500" target="_blank" rel="noopener">Over the wire &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Run a full AUR package audit now; the HN thread has a checklist of known-compromised package names.</p>
+    
+  </div>
+  <div class="bar"><span class="bar-inner">Filed SATURDAY, JUNE 13, 2026</span></div>
+</section>
+
+<section data-story="6" class="spread s-blueprint">
   <div class="frame">
     <div class="spec">
-      <span>REV.03</span>
-      <span>NNGROUP.COM</span>
-      <span>SHEET 3/10</span>
+      <span>REV.06</span>
+      <span>HUGGINGFACE.CO</span>
+      <span>SHEET 6/10</span>
     </div>
-    <div class="kicker">INFORMATION DESIGN</div>
-    <h2>Context Architecture: IA Principles Applied to AI Systems</h2>
+    <div class="kicker">RESEARCH</div>
+    <h2>Dense Latent Communication Across Heterogeneous AI Agents</h2>
     <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">03</div>
-      <p class="body-lead">Applying classic IA thinking to the context window is a genuinely useful reframe: how you structure what an agent knows shapes what it produces. For a UX designer working on agentic products, this is prompt craft dressed in the language you already use.</p>
+      <div class="big-n" aria-hidden="true">06</div>
+      <p class="body-lead">Multi-agent systems that communicate through text pay a steep decode/re-encode tax — this paper proposes passing KV-cache states directly across heterogeneous models. A meaningful architectural shift for anyone thinking about multi-agent orchestration efficiency at production scale.</p>
     </div>
     <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.nngroup.com/articles/context-architecture/" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Map the context your current AI feature receives using IA conventions — hierarchy, labeling, relationships — and see where it breaks.</p>
-    
-  </div>
-</section>
-
-<section data-story="4" class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #   #  
-#   #  #   #  
-#   #  #####  
-#   #      #  
-#####      #  </div>
-    <div class="kicker">AI TOOLING</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
-    <h2>OpenAI WebRTC Audio Session, Now With Document Context</h2>
-    <p class="body-lead">&gt; Simon Willison extends his WebRTC realtime audio demo to accept document context — a concrete example of layering multimodal inputs onto OpenAI&#x27;s live API. The working demo and source make this immediately forkable for anyone prototyping voice-first AI interfaces.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/Jun/12/openai-webrtc/#atom-everything" target="_blank" rel="noopener">$ open &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Clone the repo, drop in your own document, and have a voice conversation with it using the OpenAI Realtime API today.</p>
-    
-  </div>
-</section>
-
-<section data-story="5" class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">AI POLITICS</div>
-    <div class="tiny-num" aria-hidden="true">05</div>
-  </div>
-  <h2>The best code is the code you never wrote — but the best model is the one you can run yourself.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A high-engagement manifesto landing the week a government export-control order pulled Anthropic&#x27;s frontier models — the timing is not subtle. With 1099 upvotes and 345 comments, this captures a genuine community mood shift worth understanding if you&#x27;re building on or for AI infrastructure.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; opensourceaimustwin.com</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://opensourceaimustwin.com/?share=v2" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://huggingface.co/papers/2606.13594" target="_blank" rel="noopener">View schematic &rarr;</a>
       
     </div>
     
@@ -774,94 +793,73 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section data-story="6" class="spread s-riso">
-  <div class="layout">
-    <div class="kicker">TYPOGRAPHY + SYSTEMS</div>
-    <div class="riso-num" data-n="06" aria-hidden="true">06</div>
-    <h2>Swift at Apple: Migrating the TrueType Hinting Interpreter</h2>
-    <p class="body-lead">Apple rewrote the TrueType hinting interpreter — the code that makes fonts render crisply at small sizes — in Swift. For anyone who cares about the craft stack underneath typography, this is a rare look at low-level type rendering infrastructure being modernized.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://swift.org/blog/migrating-truetype-hinting-to-swift/" target="_blank" rel="noopener">Pull a proof &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
-<section data-story="7" class="spread s-academic">
-  <div class="masthead-line">
-    <span>Morning Edition &mdash; Review</span>
-    <span class="roman">VII</span>
-  </div>
-  <div>
-    <div class="kicker">WEIRD SCIENCE</div>
-    <h2>CRISPR Tech Selectively Shreds Cancer Cells, Including &#x27;Undruggable&#x27; Cancers</h2>
-    <div class="body-lead">A new CRISPR technique targets and destroys cancer cells with high selectivity — including tumor types previously considered undruggable because they lack surface markers for conventional therapies. 858 upvotes and 191 comments signals genuine excitement beyond the usual bio-hype cycle.</div>
-    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://innovativegenomics.org/news/crispr-technique-selectively-shreds-cancer-cells/" target="_blank" rel="noopener">Continue reading &rarr;</a>
-      
-    </div>
-    
-  </div>
-  <div>
-    <div class="footnote">&sect; filed under weird science</div>
-  </div>
-</section>
-
-<section data-story="8" class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 08</span>
-    <span>AI EVALS</span>
-  </div>
-  <div class="ix-body">
-    <h2>LLM Self-Reports Predict Behavior More Than You&#x27;d Think — Under the Right Conditions</h2>
-    <p class="body-lead">A Hugging Face paper rehabilitates psychometric self-reports as behavioral predictors for LLMs — but only when methodology is controlled. For anyone running evals or designing AI personas, this is a calibration check on a widely dismissed signal.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://huggingface.co/papers/2606.12730" target="_blank" rel="noopener">Follow the thread &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
-<section data-story="9" class="spread s-grid">
-  <div class="grid-top">
-    <div class="tag">INFORMATION DESIGN</div>
-    <div class="num-corner">No. 09</div>
-  </div>
-  <div class="grid-body">
-    <h2>Rejected Emoji Proposals</h2>
-    <div class="side">
-      <p class="body-lead">A meticulous archive of Unicode emoji proposals that didn&#x27;t make the cut — with original submission docs, rejection rationale, and candidate glyphs. It&#x27;s a surprisingly revealing look at how a standards body makes interface-level vocabulary decisions at global scale.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://charlottebuff.com/unicode/misc/rejected-emoji-proposals/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        
-      </div>
-      
-      
-    </div>
-  </div>
-</section>
-
-<section data-story="10" class="spread s-polaroid">
-  <div class="kicker">DESIGN TOOLS</div>
+<section data-story="7" class="spread s-polaroid">
+  <div class="kicker">UX / INTERACTION</div>
   <div class="layout">
     <div class="photo">
       <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">Know Your Shortcuts: Interactive 3D Keyboard for App Shortcuts</div>
-      <div class="photo-caption">No. 10 &middot; shrtcts.click</div>
+      <div class="photo-body">Turn your site into a place people can bump into each other</div>
+      <div class="photo-caption">No. 07 &middot; cauenapier.com</div>
     </div>
     <div>
-      <p class="body-lead">An interactive 3D keyboard that visualizes shortcut mappings for the apps you use daily — a small UX object that does exactly one thing well. The interface design itself is worth the visit as a reference for how spatial metaphor can make dense keyboard data scannable.</p>
+      <p class="body-lead">Townsquare is a drop-in library that adds ambient presence to any website — users see each other moving around pages in real time. The interaction design problem here (how do you make presence legible without noise?) is genuinely interesting, and the working demo ships today.</p>
       <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://shrtcts.click/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <a class="read-more" href="https://cauenapier.com/blog/townsquare_release/" target="_blank" rel="noopener">Read the story &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Open it now and check shortcut coverage for Figma or your primary design tool — takes 90 seconds.</p>
+      <p class="apply-note">&rarr; Drop the library into a side project today to experience the presence UX firsthand — the release post has integration instructions.</p>
       
     </div>
+  </div>
+</section>
+
+<section data-story="8" class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">GENERATIVE CRAFT</div>
+    <div class="riso-num" data-n="08" aria-hidden="true">08</div>
+    <h2>The future of Hollywood isn&#x27;t feeding prompts into vanilla gen AI models</h2>
+    <p class="body-lead">Tribeca 2026 field report: the filmmakers actually doing interesting work with generative AI are building fine-tuned, production-specific pipelines — not prompting off-the-shelf models. Useful framing for anyone thinking about where creative AI tools are genuinely moving the craft.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.theverge.com/ai-artificial-intelligence/948425/tribeca-2026-dear-upstairs-neighbors-google-deepmind-openai" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section data-story="9" class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">DESIGN SYSTEMS</div>
+    <div class="tiny-num" aria-hidden="true">09</div>
+  </div>
+  <h2>The distortion of SRP causes both overengineering and underengineering simultaneously.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A clear-eyed teardown of how SRP gets misapplied in component and system design — leading to both over-engineered microcomponents and bloated monoliths. Directly relevant to design system architecture decisions, where the cost of getting abstraction granularity wrong compounds fast.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; truehenrique.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.truehenrique.com/en/2021/10/27/single-responsibility-the-distorted-principle/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section data-story="10" class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 10</span>
+    <span>WEIRD SCIENCE</span>
+  </div>
+  <div class="ix-body">
+    <h2>What&#x27;s the Future of Gene Editing? Jennifer Doudna on CRISPR</h2>
+    <p class="body-lead">Quanta&#x27;s Joy of Why podcast: Jennifer Doudna on the explosive growth of CRISPR after her Nobel-winning discovery, the remaining hard problems, and what the next decade actually looks like. Editorial-grade science journalism that earns the time investment.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.quantamagazine.org/whats-the-future-of-gene-editing-20260611/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      
+    </div>
+    
+    
   </div>
 </section>
 
@@ -870,9 +868,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  4 of them are flagged as directly applicable &mdash; open those first.</p>
+  3 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Merriweather and Open Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-06-13 12:22 UTC.</p>
+  at 2026-06-13 14:09 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0529 &middot; SATURDAY, JUNE 13, 2026</p>
