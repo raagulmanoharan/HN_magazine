@@ -1,0 +1,4597 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Morning Edition — Weekly &middot; SUNDAY, JUNE 14, 2026</title>
+<meta name="description" content="Models banned, frames perfect, agents multiplying">
+<meta property="og:title" content="Morning Edition — Weekly &middot; SUNDAY, JUNE 14, 2026">
+<meta property="og:description" content="Models banned, frames perfect, agents multiplying">
+<meta property="og:type" content="article">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#111;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.spread{position:relative;min-height:100vh;overflow:hidden}
+a{color:inherit}
+</style>
+</head>
+<body>
+<section class="spread spread-cover">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-cover { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  padding: clamp(24px, 4vw, 64px);
+}
+
+.spread-cover::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 60vw, 800px);
+  height: clamp(300px, 60vw, 800px);
+  background: radial-gradient(ellipse at center, rgba(255, 90, 30, 0.18) 0%, rgba(200, 30, 80, 0.10) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-cover::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: clamp(200px, 45vw, 600px);
+  height: clamp(200px, 45vw, 600px);
+  background: radial-gradient(ellipse at center, rgba(80, 30, 200, 0.15) 0%, rgba(20, 80, 180, 0.08) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-cover .cover-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: clamp(12px, 2vw, 24px);
+}
+
+.spread-cover .cover-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: clamp(11px, 1.5vw, 13px);
+}
+
+.spread-cover .cover-issue span {
+  color: rgba(255, 120, 60, 0.8);
+  font-size: inherit;
+}
+
+.spread-cover .cover-date-pill {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.5vw, 13px);
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.spread-cover .cover-center {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 5vh, 80px) 0;
+}
+
+.spread-cover .cover-subtitle-pre {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.5vw, 14px);
+  color: rgba(255, 120, 60, 0.9);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: clamp(8px, 1.5vh, 20px);
+  display: block;
+}
+
+.spread-cover .cover-title-wrap {
+  position: relative;
+}
+
+.spread-cover .cover-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(64px, 13vw, 180px);
+  line-height: 0.88;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.spread-cover .cover-title-outline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(64px, 13vw, 180px);
+  line-height: 0.88;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.18);
+  letter-spacing: -0.02em;
+  display: block;
+  margin-left: clamp(8px, 3vw, 60px);
+  position: relative;
+  z-index: 1;
+}
+
+.spread-cover .cover-divider {
+  width: clamp(60px, 12vw, 160px);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 90, 30, 0.9), rgba(200, 30, 80, 0.6), transparent);
+  margin: clamp(16px, 3vh, 36px) 0;
+}
+
+.spread-cover .cover-weekly-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spread-cover .cover-weekly-word {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(28px, 5vw, 72px);
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+}
+
+.spread-cover .cover-weekly-rule {
+  width: clamp(40px, 8vw, 120px);
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+}
+
+.spread-cover .cover-tagline-wrap {
+  margin-top: clamp(24px, 4vh, 56px);
+  position: relative;
+  padding-left: clamp(16px, 3vw, 40px);
+}
+
+.spread-cover .cover-tagline-wrap::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(255, 90, 30, 0.9) 0%, rgba(200, 30, 80, 0.4) 100%);
+}
+
+.spread-cover .cover-tagline {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(13px, 2vw, 22px);
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  max-width: clamp(280px, 55vw, 700px);
+}
+
+.spread-cover .cover-tagline em {
+  color: rgba(255, 120, 60, 0.95);
+  font-style: normal;
+}
+
+.spread-cover .cover-bottom-bar {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: clamp(12px, 2vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-cover .cover-bottom-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1.3vw, 12px);
+  color: rgba(255, 255, 255, 0.22);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.spread-cover .cover-dot-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spread-cover .cover-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 90, 30, 0.5);
+}
+
+.spread-cover .cover-dot:nth-child(2) {
+  background: rgba(200, 30, 80, 0.4);
+}
+
+.spread-cover .cover-dot:nth-child(3) {
+  background: rgba(80, 30, 200, 0.4);
+}
+
+.spread-cover .cover-noise {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.012) 2px,
+      rgba(255,255,255,0.012) 3px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spread-cover .cover-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: clamp(40px, 8vw, 100px) clamp(40px, 8vw, 100px);
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse at 70% 30%, rgba(0,0,0,0.3) 0%, transparent 60%);
+}
+
+@media (min-width: 720px) {
+  .spread-cover .cover-title {
+    line-height: 0.85;
+  }
+
+  .spread-cover .cover-tagline-wrap {
+    max-width: 70vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .spread-cover .cover-title-outline {
+    margin-left: clamp(4px, 2vw, 20px);
+  }
+
+  .spread-cover .cover-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
+
+<div class="cover-grid-lines"></div>
+<div class="cover-noise"></div>
+
+<div class="cover-top-bar">
+  <div class="cover-issue">Issue <span>No. W24</span></div>
+  <div class="cover-date-pill">Sunday, June 14, 2026</div>
+</div>
+
+<div class="cover-center">
+  <span class="cover-subtitle-pre">Morning Edition</span>
+  <div class="cover-title-wrap">
+    <span class="cover-title">Morning</span>
+    <span class="cover-title-outline">Edition</span>
+  </div>
+  <div class="cover-divider"></div>
+  <div class="cover-weekly-badge">
+    <span class="cover-weekly-rule"></span>
+    <span class="cover-weekly-word">Weekly</span>
+    <span class="cover-weekly-rule"></span>
+  </div>
+  <div class="cover-tagline-wrap">
+    <p class="cover-tagline">
+      <em>Models banned,</em> frames perfect,<br>
+      agents <em>multiplying</em>
+    </p>
+  </div>
+</div>
+
+<div class="cover-bottom-bar">
+  <div class="cover-bottom-meta">Morning Edition — Weekly &nbsp;·&nbsp; W24 &nbsp;·&nbsp; 2026</div>
+  <div class="cover-dot-row">
+    <div class="cover-dot"></div>
+    <div class="cover-dot"></div>
+    <div class="cover-dot"></div>
+  </div>
+</div>
+
+</section>
+<section class="spread spread-1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+.spread-1 { color: #f0eee8;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.spread-1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 30, 30, 0.04) 39px,
+      rgba(255, 30, 30, 0.04) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 30, 30, 0.03) 39px,
+      rgba(255, 30, 30, 0.03) 40px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-1::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 60vw, 700px);
+  height: clamp(300px, 60vw, 700px);
+  background: radial-gradient(circle, rgba(180, 0, 0, 0.18) 0%, rgba(80, 0, 120, 0.12) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-1 .s1-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: clamp(20px, 4vw, 48px) clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid rgba(255, 30, 30, 0.25);
+}
+
+.spread-1 .s1-pub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: max(18px, min(1.2vw, 14px));
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.spread-1 .s1-issue {
+  font-size: 18px;
+  color: rgba(255, 30, 30, 0.7);
+  letter-spacing: 0.1em;
+  text-align: right;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.spread-1 .s1-body {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: clamp(24px, 5vw, 80px) clamp(20px, 5vw, 72px);
+  gap: clamp(24px, 4vw, 48px);
+}
+
+@media (min-width: 720px) {
+  .spread-1 .s1-body {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.spread-1 .s1-left {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 32px);
+}
+
+.spread-1 .s1-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  color: #ff1e1e;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.spread-1 .s1-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #ff1e1e;
+}
+
+.spread-1 .s1-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 8.5vw, 120px);
+  line-height: 0.92;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.spread-1 .s1-title em {
+  font-style: normal;
+  color: #ff1e1e;
+  display: block;
+}
+
+.spread-1 .s1-access-badge {
+  display: inline-block;
+  border: 1px solid rgba(255, 30, 30, 0.5);
+  padding: 8px 18px;
+  font-size: 18px;
+  color: rgba(255, 30, 30, 0.8);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: 'IBM Plex Mono', monospace;
+  position: relative;
+  background: rgba(255, 30, 30, 0.05);
+}
+
+.spread-1 .s1-access-badge::before {
+  content: '⬛';
+  margin-right: 8px;
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+.spread-1 .s1-right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 40px);
+  padding-top: clamp(0px, 2vw, 24px);
+}
+
+@media (min-width: 720px) {
+  .spread-1 .s1-right {
+    padding-top: clamp(60px, 6vw, 100px);
+  }
+}
+
+.spread-1 .s1-redaction {
+  position: relative;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.spread-1 .s1-redaction .redact {
+  background: rgba(255, 30, 30, 0.85);
+  color: rgba(255, 30, 30, 0.85);
+  border-radius: 2px;
+  padding: 0 4px;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.spread-1 .s1-blurb {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(20px, 1.8vw, 22px);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.55);
+  border-left: 2px solid rgba(255, 30, 30, 0.4);
+  padding-left: 20px;
+  font-style: italic;
+}
+
+.spread-1 .s1-cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spread-1 .cta {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: #ff1e1e;
+  padding: 14px 32px;
+  text-decoration: none;
+  position: relative;
+  transition: background 0.2s;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.spread-1 .cta:hover {
+  background: #ffffff;
+  color: #0a0a0f;
+}
+
+.spread-1 .s1-source {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.08em;
+}
+
+.spread-1 .s1-big-number {
+  position: absolute;
+  right: clamp(20px, 5vw, 72px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(180px, 28vw, 420px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 30, 30, 0.08);
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  letter-spacing: -0.05em;
+}
+
+@media (min-width: 720px) {
+  .spread-1 .s1-big-number {
+    display: none;
+  }
+}
+
+.spread-1 .s1-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 2.5vw, 28px) clamp(20px, 5vw, 72px);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.spread-1 .s1-footer-tag {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.18);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.spread-1 .s1-spread-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: rgba(255, 30, 30, 0.25);
+  letter-spacing: 0.05em;
+}
+
+.spread-1 .s1-status-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: rgba(255, 30, 30, 0.6);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.spread-1 .s1-status-line::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff1e1e;
+  box-shadow: 0 0 8px #ff1e1e;
+  flex-shrink: 0;
+  animation: s1-pulse 2s ease-in-out infinite;
+}
+
+@keyframes s1-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.spread-1 .s1-diagonal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff1e1e 0%, rgba(255, 30, 30, 0) 100%);
+  z-index: 3;
+}
+</style>
+
+<div class="s1-big-number">01</div>
+
+<header class="s1-header">
+  <div class="s1-pub">
+    Morning Edition — Weekly<br>
+    Sunday, June 14, 2026
+  </div>
+  <div class="s1-issue">
+    Spread 01 / 10
+  </div>
+</header>
+
+<div class="s1-body">
+  <div class="s1-left">
+    <span class="s1-kicker">AI Policy</span>
+    <h1 class="s1-title">
+      Anthropic<br>
+      <em>Cuts Off</em><br>
+      Fable 5<br>
+      &amp; Mythos 5
+    </h1>
+    <div class="s1-access-badge">Access: Suspended</div>
+  </div>
+
+  <div class="s1-right">
+    <div class="s1-redaction">
+      US Government<br>
+      Export Control<br>
+      Directive — <span class="redact">CLASSIFIED</span><br>
+      National Security<br>
+      <span class="redact">REDACTED</span> Hard Stop.
+    </div>
+
+    <p class="s1-blurb">
+      A federal export control directive forced Anthropic to suspend global access to two frontier models — including for its own employees. This is what happens when frontier AI capability meets geopolitical hard stops.
+    </p>
+
+    <div class="s1-cta-wrap">
+      <a class="cta" href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">Read →</a>
+    </div>
+
+    <div class="s1-status-line">Live: Access Terminated</div>
+
+    <div class="s1-source">Source: Interconnects / Nathan Lambert — Score 52 · 23 comments</div>
+  </div>
+</div>
+
+<footer class="s1-footer">
+  <span class="s1-footer-tag">Morning Edition — Weekly</span>
+  <span class="s1-spread-num">01</span>
+  <span class="s1-footer-tag">June 14, 2026</span>
+</footer>
+
+<div class="s1-diagonal"></div>
+</section>
+<section class="spread spread-2">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-2 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #e8e4d9;
+  font-family: 'Space Grotesk', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.spread-2::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(ellipse at center, rgba(99, 255, 180, 0.07) 0%, rgba(0, 180, 255, 0.04) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-2::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(ellipse at center, rgba(180, 100, 255, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-2 .s2-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 72px);
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* Top bar */
+.spread-2 .s2-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: clamp(24px, 3vw, 48px);
+  border-bottom: 1px solid rgba(232, 228, 217, 0.12);
+  margin-bottom: clamp(32px, 4vw, 64px);
+}
+
+.spread-2 .s2-edition {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: rgba(232, 228, 217, 0.4);
+  text-transform: uppercase;
+}
+
+.spread-2 .s2-issue-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(99, 255, 180, 0.7);
+  letter-spacing: 0.04em;
+}
+
+/* Kicker */
+.spread-2 .s2-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.4vw, 20px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #63ffb4;
+  margin-bottom: clamp(16px, 2vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-2 .s2-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #63ffb4;
+}
+
+/* Main headline */
+.spread-2 .s2-headline-wrap {
+  margin-bottom: clamp(24px, 3vw, 48px);
+}
+
+.spread-2 .s2-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 6.5vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #e8e4d9;
+  margin: 0;
+}
+
+.spread-2 .s2-headline span.accent {
+  color: #63ffb4;
+  display: inline-block;
+  position: relative;
+}
+
+.spread-2 .s2-headline .slash {
+  color: rgba(232, 228, 217, 0.2);
+}
+
+/* Two-column layout for lower section */
+.spread-2 .s2-body-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 4vw, 64px);
+  margin-top: clamp(32px, 4vw, 56px);
+  flex: 1;
+}
+
+/* Architecture diagram */
+.spread-2 .s2-diagram {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 24px);
+  padding: clamp(20px, 3vw, 36px);
+  background: rgba(232, 228, 217, 0.03);
+  border: 1px solid rgba(232, 228, 217, 0.08);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-2 .s2-diagram::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    rgba(232,228,217,0.02) 40px,
+    rgba(232,228,217,0.02) 41px
+  );
+  pointer-events: none;
+}
+
+.spread-2 .s2-node {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.spread-2 .s2-node-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.3vw, 20px);
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+
+.spread-2 .s2-node-sub {
+  font-size: clamp(18px, 1.1vw, 19px);
+  color: rgba(232, 228, 217, 0.45);
+  letter-spacing: 0.02em;
+}
+
+.spread-2 .s2-node.planner .s2-node-label {
+  color: #63ffb4;
+}
+
+.spread-2 .s2-node.executor .s2-node-label {
+  color: #00b4ff;
+}
+
+.spread-2 .s2-node-box {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.2vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.spread-2 .s2-node.planner .s2-node-box {
+  background: rgba(99, 255, 180, 0.1);
+  border: 1px solid rgba(99, 255, 180, 0.3);
+  color: #63ffb4;
+}
+
+.spread-2 .s2-node.executor .s2-node-box {
+  background: rgba(0, 180, 255, 0.1);
+  border: 1px solid rgba(0, 180, 255, 0.3);
+  color: #00b4ff;
+}
+
+.spread-2 .s2-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.spread-2 .s2-arrow-line {
+  width: clamp(32px, 4vw, 60px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(99, 255, 180, 0.4), rgba(0, 180, 255, 0.4));
+  position: relative;
+}
+
+.spread-2 .s2-arrow-line::after {
+  content: '▶';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: rgba(0, 180, 255, 0.6);
+}
+
+.spread-2 .s2-arrow-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232, 228, 217, 0.3);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Blurb text */
+.spread-2 .s2-blurb {
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.6;
+  color: rgba(232, 228, 217, 0.75);
+  font-weight: 300;
+  max-width: 72ch;
+}
+
+/* Bottom strip */
+.spread-2 .s2-bottom {
+  margin-top: auto;
+  padding-top: clamp(32px, 4vw, 56px);
+  border-top: 1px solid rgba(232, 228, 217, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+/* Applies badge */
+.spread-2 .s2-applies-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.spread-2 .s2-stamp {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 2px solid #63ffb4;
+  color: #63ffb4;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  position: relative;
+  transform: rotate(-1.5deg);
+  transform-origin: left center;
+  box-shadow: 0 0 12px rgba(99, 255, 180, 0.15), inset 0 0 8px rgba(99, 255, 180, 0.05);
+}
+
+.spread-2 .s2-apply-note {
+  font-size: clamp(18px, 1.4vw, 20px);
+  color: rgba(232, 228, 217, 0.55);
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 60ch;
+  padding-left: 4px;
+  border-left: 2px solid rgba(99, 255, 180, 0.3);
+  padding-left: 14px;
+}
+
+/* CTA */
+.spread-2 .s2-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.spread-2 .s2-source {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232, 228, 217, 0.25);
+  letter-spacing: 0.06em;
+}
+
+.spread-2 a.cta {
+  display: inline-block;
+  padding: clamp(14px, 1.5vw, 18px) clamp(24px, 3vw, 48px);
+  background: linear-gradient(135deg, #63ffb4 0%, #00b4ff 100%);
+  color: #0a0a0f;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: clamp(18px, 1.4vw, 22px);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.spread-2 a.cta:hover {
+  opacity: 0.85;
+}
+
+/* Big background numeral */
+.spread-2 .s2-bg-num {
+  position: absolute;
+  right: -2vw;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: clamp(160px, 25vw, 400px);
+  line-height: 1;
+  color: rgba(232, 228, 217, 0.025);
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+
+/* Responsive */
+@media (min-width: 720px) {
+  .spread-2 .s2-body-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .spread-2 .s2-diagram {
+    grid-column: 1 / -1;
+  }
+
+  .spread-2 .s2-blurb {
+    grid-column: 1;
+  }
+
+  .spread-2 .s2-applies-section {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 720px) {
+  .spread-2 .s2-headline {
+    max-width: 85%;
+  }
+}
+</style>
+
+<div class="s2-bg-num" aria-hidden="true">02</div>
+
+<div class="s2-inner">
+  <!-- Top bar -->
+  <div class="s2-topbar">
+    <span class="s2-edition">Morning Edition — Weekly · Jun 14, 2026</span>
+    <span class="s2-issue-num">02 / 10</span>
+  </div>
+
+  <!-- Kicker -->
+  <div class="s2-kicker">Agentic Tooling</div>
+
+  <!-- Headline -->
+  <div class="s2-headline-wrap">
+    <h1 class="s2-headline">
+      shadcn<span class="slash">/</span><span class="accent">improve</span><br>
+      Audit smart.<br>Execute cheap.
+    </h1>
+  </div>
+
+  <!-- Body grid -->
+  <div class="s2-body-grid">
+    <!-- Architecture diagram -->
+    <div class="s2-diagram" aria-label="Architecture: Planner model hands off to Executor model">
+      <div class="s2-node planner">
+        <div class="s2-node-box">Sonnet / o3</div>
+        <div class="s2-node-label">PLANNER</div>
+        <div class="s2-node-sub">Capable · Costly</div>
+      </div>
+
+      <div class="s2-arrow" aria-hidden="true">
+        <div class="s2-arrow-line"></div>
+        <div class="s2-arrow-tag">PLAN →</div>
+      </div>
+
+      <div class="s2-node executor">
+        <div class="s2-node-box">Codex / mini</div>
+        <div class="s2-node-label">EXECUTOR</div>
+        <div class="s2-node-sub">Fast · Cheap</div>
+      </div>
+    </div>
+
+    <!-- Blurb -->
+    <div class="s2-blurb">
+      shadcn's new CLI lets a capable model write a detailed execution plan, then hands it off to a cheaper model to do the actual work. A clean architectural pattern for cost-efficient agentic coding you can wire into your workflow today.
+    </div>
+
+    <!-- Applies section -->
+    <div class="s2-applies-section">
+      <div class="s2-applies-badge">
+        <span class="s2-stamp">✦ Applies to you</span>
+        <p class="s2-apply-note">Clone the repo and run it against your current project — the README has a working example with Claude and Codex as the planner/executor pair.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom strip -->
+  <div class="s2-bottom">
+    <div class="s2-cta-row">
+      <span class="s2-source">github.com/shadcn/improve · ★ 3,924</span>
+      <a class="cta" href="https://github.com/shadcn/improve" target="_blank" rel="noopener">Read →</a>
+    </div>
+  </div>
+</div>
+
+</section>
+<section class="spread spread-3">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap');
+
+.spread-3 { color: #f0eee8;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-family: 'DM Mono', monospace;
+  box-sizing: border-box;
+}
+
+/* Animated scanline grid background */
+.spread-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glowing vertical accent bar */
+.spread-3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: clamp(160px, 28vw, 380px);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    #ff3cac 20%,
+    #784ba0 50%,
+    #2b86c5 80%,
+    transparent 100%
+  );
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* ── TOP HEADER STRIP ── */
+.spread-3 .s3-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.spread-3 .s3-pub {
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.spread-3 .s3-issue {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+}
+
+.spread-3 .s3-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2.5vw, 28px);
+  color: #ff3cac;
+  letter-spacing: 0.05em;
+}
+
+/* ── MAIN BODY ── */
+.spread-3 .s3-body {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: clamp(140px, 26vw, 360px) 1fr;
+  align-items: start;
+  gap: 0;
+  padding: 0;
+}
+
+/* LEFT COLUMN — kicker + frame counter */
+.spread-3 .s3-left {
+  position: relative;
+  padding: clamp(40px, 6vh, 80px) clamp(20px, 4vw, 56px) clamp(40px, 6vh, 80px) clamp(20px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-right: none;
+}
+
+.spread-3 .s3-kicker {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #ff3cac;
+  align-self: flex-start;
+}
+
+.spread-3 .s3-big-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 14vw, 200px);
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.12);
+  letter-spacing: -0.02em;
+  margin-top: auto;
+  user-select: none;
+}
+
+/* Frame quality bars — decorative */
+.spread-3 .s3-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.spread-3 .s3-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-3 .s3-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.spread-3 .s3-bar:nth-child(1)::after { width: 95%; background: linear-gradient(90deg, #ff3cac, #784ba0); }
+.spread-3 .s3-bar:nth-child(2)::after { width: 60%; background: rgba(255,255,255,0.15); }
+.spread-3 .s3-bar:nth-child(3)::after { width: 78%; background: rgba(255,255,255,0.15); }
+.spread-3 .s3-bar:nth-child(4)::after { width: 40%; background: rgba(255,255,255,0.15); }
+
+.spread-3 .s3-bar-label {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+
+/* RIGHT COLUMN — main content */
+.spread-3 .s3-right {
+  padding: clamp(40px, 7vh, 100px) clamp(24px, 5vw, 80px) clamp(40px, 6vh, 80px) clamp(28px, 4vw, 60px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vh, 48px);
+}
+
+.spread-3 .s3-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 8.5vw, 130px);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  position: relative;
+}
+
+.spread-3 .s3-title em {
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 1px #ff3cac;
+  display: block;
+}
+
+.spread-3 .s3-byline {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-3 .s3-byline::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: #ff3cac;
+}
+
+.spread-3 .s3-blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+  max-width: 58ch;
+  border-left: 2px solid rgba(255,60,172,0.4);
+  padding-left: clamp(16px, 2vw, 28px);
+}
+
+.spread-3 .s3-blurb strong {
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Frame diagnostics row */
+.spread-3 .s3-diagnostics {
+  display: flex;
+  gap: clamp(12px, 2vw, 28px);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.spread-3 .s3-diag-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spread-3 .s3-diag-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4vw, 52px);
+  line-height: 1;
+  color: #ffffff;
+}
+
+.spread-3 .s3-diag-val.accent {
+  color: #ff3cac;
+}
+
+.spread-3 .s3-diag-lbl {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-3 .s3-diag-sep {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  align-self: center;
+}
+
+/* APPLIES TO YOU badge */
+.spread-3 .s3-applies {
+  position: relative;
+  background: rgba(255,60,172,0.08);
+  border: 1px solid rgba(255,60,172,0.35);
+  border-radius: 2px;
+  padding: clamp(16px, 2.5vw, 24px) clamp(20px, 3vw, 32px);
+  max-width: 62ch;
+}
+
+.spread-3 .s3-applies::before {
+  content: '▶ APPLIES TO YOU';
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: #ff3cac;
+  margin-bottom: 10px;
+}
+
+.spread-3 .s3-applies p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+}
+
+/* CTA */
+.spread-3 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(20px, 2.8vw, 34px);
+  letter-spacing: 0.14em;
+  color: #0a0a0f;
+  background: linear-gradient(135deg, #ff3cac 0%, #784ba0 100%);
+  padding: clamp(12px, 1.8vh, 20px) clamp(24px, 3.5vw, 48px);
+  text-decoration: none;
+  border-radius: 2px;
+  align-self: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.2s;
+}
+
+.spread-3 .cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.spread-3 .cta:hover::after {
+  opacity: 1;
+}
+
+/* ── FOOTER STRIP ── */
+.spread-3 .s3-footer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(14px, 2vw, 24px) clamp(20px, 5vw, 64px);
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.spread-3 .s3-footer-tag {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-3 .s3-footer-src {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: 0.05em;
+}
+
+.spread-3 .s3-footer-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff3cac;
+  opacity: 0.6;
+}
+
+/* Corner frame decoration */
+.spread-3 .s3-corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  z-index: 2;
+}
+
+.spread-3 .s3-corner--tl {
+  top: 12px;
+  right: 12px;
+  border-top: 1.5px solid rgba(255,60,172,0.4);
+  border-right: 1.5px solid rgba(255,60,172,0.4);
+}
+
+.spread-3 .s3-corner--br {
+  bottom: 12px;
+  left: 12px;
+  border-bottom: 1.5px solid rgba(255,60,172,0.4);
+  border-left: 1.5px solid rgba(255,60,172,0.4);
+}
+
+/* Horizontal scanline overlay on title area */
+.spread-3 .s3-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.08) 3px,
+    rgba(0,0,0,0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+  .spread-3::after {
+    display: none;
+  }
+
+  .spread-3 .s3-body {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-3 .s3-left {
+    flex-direction: row;
+    align-items: center;
+    padding: 24px clamp(20px, 5vw, 40px) 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    gap: 20px;
+  }
+
+  .spread-3 .s3-kicker {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 18px;
+  }
+
+  .spread-3 .s3-big-num {
+    font-size: clamp(60px, 18vw, 100px);
+    margin-top: 0;
+    margin-left: auto;
+  }
+
+  .spread-3 .s3-bars {
+    display: none;
+  }
+
+  .spread-3 .s3-bar-label {
+    display: none;
+  }
+
+  .spread-3 .s3-right {
+    padding: 28px clamp(20px, 5vw, 40px) 24px;
+  }
+
+  .spread-3 .s3-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .spread-3 .s3-diagnostics {
+    gap: 16px;
+  }
+
+  .spread-3 .s3-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+</style>
+
+<!-- Corner accents -->
+<div class="s3-corner s3-corner--tl"></div>
+<div class="s3-corner s3-corner--br"></div>
+<div class="s3-scanline"></div>
+
+<!-- Header -->
+<header class="s3-header">
+  <div class="s3-pub">Morning Edition</div>
+  <div class="s3-num">No. 03</div>
+  <div class="s3-issue">Sunday, June 14 · 2026</div>
+</header>
+
+<!-- Main body -->
+<div class="s3-body">
+
+  <!-- Left sidebar -->
+  <aside class="s3-left">
+    <span class="s3-kicker">Interface Craft</span>
+    <div class="s3-big-num">03</div>
+    <div class="s3-bars">
+      <div class="s3-bar"></div>
+      <div class="s3-bar"></div>
+      <div class="s3-bar"></div>
+      <div class="s3-bar"></div>
+      <div class="s3-bar-label">frame quality</div>
+    </div>
+  </aside>
+
+  <!-- Right content -->
+  <main class="s3-right">
+
+    <h1 class="s3-title">
+      Every<br>
+      Frame<br>
+      <em>Perfect</em>
+    </h1>
+
+    <div class="s3-byline">Nikita Prokopov · tonsky.me</div>
+
+    <p class="s3-blurb">
+      Most UI frameworks still ship <strong>jank</strong> because engineers treat rendering as an afterthought. Prokopov makes the case — with characteristically sharp visuals — that <strong>motion quality is invisible until it isn't.</strong> Essential craft reading for anyone building or auditing design systems.
+    </p>
+
+    <div class="s3-diagnostics">
+      <div class="s3-diag-item">
+        <span class="s3-diag-val accent">16ms</span>
+        <span class="s3-diag-lbl">frame budget</span>
+      </div>
+      <div class="s3-diag-sep"></div>
+      <div class="s3-diag-item">
+        <span class="s3-diag-val">60fps</span>
+        <span class="s3-diag-lbl">target</span>
+      </div>
+      <div class="s3-diag-sep"></div>
+      <div class="s3-diag-item">
+        <span class="s3-diag-val accent">97</span>
+        <span class="s3-diag-lbl">score</span>
+      </div>
+    </div>
+
+    <div class="s3-applies">
+      <p>Use the examples as a reference checklist when auditing animation and scroll behavior in your own design work or codebase.</p>
+    </div>
+
+    <a class="cta" href="https://tonsky.me/blog/every-frame-perfect/" target="_blank" rel="noopener">Read →</a>
+
+  </main>
+</div>
+
+<!-- Footer -->
+<footer class="s3-footer">
+  <span class="s3-footer-tag">Rendering · Animation · Systems</span>
+  <div class="s3-footer-dot"></div>
+  <span class="s3-footer-src">tonsky.me · score 97 · 15 comments</span>
+</footer>
+
+</section>
+<section class="spread spread-4">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Bebas+Neue&display=swap');
+
+.spread-4 {
+  min-height: 100vh;
+  background-color: #050a12;
+  color: #e8edf5;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+}
+
+.spread-4 *,
+.spread-4 *::before,
+.spread-4 *::after {
+  box-sizing: border-box;
+}
+
+/* Animated diffusion grid background */
+.spread-4::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(64, 180, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64, 180, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  z-index: 0;
+}
+
+/* Radial glow burst */
+.spread-4::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle at center,
+    rgba(0, 120, 255, 0.22) 0%,
+    rgba(80, 0, 200, 0.12) 40%,
+    transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-4 .inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(28px, 5vw, 72px);
+  gap: 0;
+}
+
+/* Top bar */
+.spread-4 .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(64, 180, 255, 0.2);
+  padding-bottom: 16px;
+  margin-bottom: clamp(32px, 5vw, 64px);
+}
+
+.spread-4 .edition {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: rgba(232, 237, 245, 0.4);
+  text-transform: uppercase;
+}
+
+.spread-4 .issue-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: 0.2em;
+  color: rgba(64, 180, 255, 0.5);
+}
+
+/* Kicker */
+.spread-4 .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #40b4ff;
+  margin-bottom: clamp(20px, 3vw, 36px);
+}
+
+.spread-4 .kicker::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #40b4ff;
+}
+
+/* Main content layout */
+.spread-4 .content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 4vw, 56px);
+  align-items: start;
+}
+
+/* Giant stat on left side */
+.spread-4 .stat-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.spread-4 .stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(140px, 30vw, 320px);
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(64, 180, 255, 0.6);
+  background: linear-gradient(135deg, #40b4ff 0%, #6040ff 50%, #c040ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+/* Diffusion particle dots layered on stat */
+.spread-4 .stat-number::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(64, 180, 255, 0.7) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+.spread-4 .stat-label {
+  font-size: clamp(18px, 2vw, 21px);
+  font-weight: 300;
+  color: rgba(232, 237, 245, 0.55);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 12px;
+  padding-left: 4px;
+  border-left: 3px solid rgba(64, 180, 255, 0.4);
+  padding-left: 14px;
+}
+
+/* Text side */
+.spread-4 .text-side {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.spread-4 .headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(38px, 7vw, 86px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #e8edf5;
+}
+
+.spread-4 .headline em {
+  font-style: normal;
+  color: #40b4ff;
+}
+
+.spread-4 .blurb {
+  font-size: clamp(20px, 2.2vw, 23px);
+  line-height: 1.65;
+  font-weight: 300;
+  color: rgba(232, 237, 245, 0.72);
+  max-width: 58ch;
+  border-left: 1px solid rgba(64, 180, 255, 0.25);
+  padding-left: clamp(16px, 2vw, 28px);
+}
+
+/* Speed comparison bar */
+.spread-4 .speed-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spread-4 .speed-label {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(232, 237, 245, 0.4);
+}
+
+.spread-4 .speed-track {
+  position: relative;
+  height: 6px;
+  background: rgba(64, 180, 255, 0.12);
+  border-radius: 3px;
+  max-width: 480px;
+}
+
+.spread-4 .speed-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #40b4ff, #a040ff);
+}
+
+.spread-4 .speed-fill.new {
+  width: 100%;
+}
+
+.spread-4 .speed-fill.old {
+  width: 25%;
+  background: rgba(232, 237, 245, 0.2);
+}
+
+.spread-4 .speed-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-4 .speed-tag {
+  font-size: 18px;
+  min-width: 140px;
+  font-weight: 400;
+  color: rgba(232, 237, 245, 0.55);
+}
+
+/* CTA */
+.spread-4 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 3vw, 36px);
+  letter-spacing: 0.2em;
+  color: #050a12;
+  background: linear-gradient(135deg, #40b4ff 0%, #8040ff 100%);
+  padding: 14px 36px;
+  text-decoration: none;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  align-self: flex-start;
+  transition: opacity 0.2s;
+}
+
+.spread-4 .cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+}
+
+.spread-4 .cta:hover {
+  opacity: 0.85;
+}
+
+/* Bottom bar */
+.spread-4 .bottom-bar {
+  border-top: 1px solid rgba(64, 180, 255, 0.15);
+  padding-top: 16px;
+  margin-top: clamp(32px, 5vw, 56px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-4 .source-tag {
+  font-size: 18px;
+  color: rgba(232, 237, 245, 0.3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-4 .deepmind-badge {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(64, 180, 255, 0.5);
+  text-transform: uppercase;
+  border: 1px solid rgba(64, 180, 255, 0.2);
+  padding: 4px 14px;
+  border-radius: 2px;
+}
+
+/* Floating decorative numeral */
+.spread-4 .bg-numeral {
+  position: absolute;
+  bottom: -4%;
+  left: -2%;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(120px, 22vw, 280px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(64, 180, 255, 0.06);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+/* Responsive: tablet and up */
+@media (min-width: 720px) {
+  .spread-4 .content-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(40px, 5vw, 80px);
+  }
+
+  .spread-4 .stat-block {
+    align-items: center;
+    text-align: center;
+  }
+
+  .spread-4 .stat-label {
+    text-align: left;
+    align-self: flex-start;
+  }
+
+  .spread-4 .headline {
+    font-size: clamp(48px, 5.5vw, 86px);
+  }
+}
+</style>
+
+<div class="inner">
+  <span class="bg-numeral" aria-hidden="true">04</span>
+
+  <div class="top-bar">
+    <span class="edition">Morning Edition · Weekly</span>
+    <span class="issue-num">Sun, June 14, 2026 · 04 / 10</span>
+  </div>
+
+  <div>
+    <div class="kicker">AI Research</div>
+
+    <div class="content-grid">
+      <!-- Left: Giant Stat -->
+      <div class="stat-block">
+        <span class="stat-number" aria-label="4 times faster">4×</span>
+        <p class="stat-label">faster text generation<br>vs. autoregressive baseline</p>
+      </div>
+
+      <!-- Right: Text -->
+      <div class="text-side">
+        <h1 class="headline">
+          Diffusion<em>Gemma</em><br>Rewrites<br>the Speed Limit
+        </h1>
+
+        <p class="blurb">
+          DeepMind ships a diffusion-based text model that claims 4× throughput over autoregressive baselines at comparable quality. If the gains hold in production, this reshapes the cost curve for real-time UX — think latency-sensitive copilot interfaces and streaming completions.
+        </p>
+
+        <div class="speed-bar-wrap">
+          <span class="speed-label">Relative Throughput</span>
+          <div class="speed-row">
+            <span class="speed-tag">DiffusionGemma</span>
+            <div class="speed-track" style="flex:1;">
+              <div class="speed-fill new"></div>
+            </div>
+          </div>
+          <div class="speed-row">
+            <span class="speed-tag">Autoregressive</span>
+            <div class="speed-track" style="flex:1;">
+              <div class="speed-fill old"></div>
+            </div>
+          </div>
+        </div>
+
+        <a class="cta" href="https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/" target="_blank" rel="noopener">Read →</a>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <span class="source-tag">Source: DeepMind Research Blog</span>
+      <span class="deepmind-badge">DeepMind · 2026</span>
+    </div>
+  </div>
+</div>
+</section>
+<section class="spread spread-5">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+.spread-5 {
+  min-height: 100vh;
+  background-color: #0a0f1e;
+  color: #e8e4d9;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background grid texture */
+.spread-5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 200, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 200, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glowing orb top-right */
+.spread-5::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: clamp(300px, 45vw, 600px);
+  height: clamp(300px, 45vw, 600px);
+  background: radial-gradient(circle, rgba(99, 200, 255, 0.12) 0%, rgba(120, 80, 255, 0.08) 45%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-5 * {
+  box-sizing: border-box;
+}
+
+/* ── HEADER BAR ── */
+.spread-5 .s5-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 28px) clamp(24px, 6vw, 80px);
+  border-bottom: 1px solid rgba(99, 200, 255, 0.15);
+}
+
+.spread-5 .s5-pub {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(99, 200, 255, 0.7);
+}
+
+.spread-5 .s5-issue {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(232, 228, 217, 0.4);
+}
+
+.spread-5 .s5-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(232, 228, 217, 0.2);
+  letter-spacing: 0.04em;
+}
+
+/* ── MAIN BODY ── */
+.spread-5 .s5-body {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: clamp(40px, 6vw, 80px) clamp(24px, 6vw, 80px);
+  gap: clamp(32px, 4vw, 48px);
+}
+
+/* ── KICKER ── */
+.spread-5 .s5-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(99, 200, 255, 0.9);
+}
+
+.spread-5 .s5-kicker::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(99,200,255,0.9), rgba(120,80,255,0.8));
+}
+
+/* ── TITLE AREA ── */
+.spread-5 .s5-title-block {
+  position: relative;
+}
+
+.spread-5 .s5-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(38px, 7vw, 96px);
+  line-height: 1.0;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: #e8e4d9;
+}
+
+.spread-5 .s5-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, #63c8ff 0%, #a07bff 50%, #ff6b9d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.spread-5 .s5-subtitle {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(22px, 3.5vw, 44px);
+  color: rgba(232, 228, 217, 0.5);
+  margin: clamp(8px, 1.5vw, 16px) 0 0 0;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ── DIAGRAM / IA NODES ── */
+.spread-5 .s5-diagram {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(6px, 1.5vw, 16px);
+  flex-wrap: wrap;
+}
+
+.spread-5 .s5-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 80px;
+}
+
+.spread-5 .s5-node-pill {
+  background: rgba(99, 200, 255, 0.06);
+  border: 1px solid rgba(99, 200, 255, 0.25);
+  border-radius: 6px;
+  padding: clamp(10px, 1.5vw, 16px) clamp(8px, 1.5vw, 18px);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  color: rgba(232, 228, 217, 0.85);
+  position: relative;
+  transition: none;
+}
+
+.spread-5 .s5-node:nth-child(1) .s5-node-pill {
+  border-color: rgba(99, 200, 255, 0.5);
+  background: rgba(99, 200, 255, 0.1);
+  color: #63c8ff;
+}
+.spread-5 .s5-node:nth-child(2) .s5-node-pill {
+  border-color: rgba(160, 123, 255, 0.5);
+  background: rgba(160, 123, 255, 0.1);
+  color: #a07bff;
+}
+.spread-5 .s5-node:nth-child(3) .s5-node-pill {
+  border-color: rgba(255, 107, 157, 0.5);
+  background: rgba(255, 107, 157, 0.1);
+  color: #ff6b9d;
+}
+.spread-5 .s5-node:nth-child(4) .s5-node-pill {
+  border-color: rgba(99, 200, 255, 0.35);
+  background: rgba(99, 200, 255, 0.07);
+}
+.spread-5 .s5-node:nth-child(5) .s5-node-pill {
+  border-color: rgba(160, 123, 255, 0.35);
+  background: rgba(160, 123, 255, 0.07);
+}
+
+.spread-5 .s5-node-arrow {
+  font-size: 20px;
+  color: rgba(232, 228, 217, 0.2);
+  margin-top: 12px;
+  align-self: center;
+  flex: 0;
+}
+
+.spread-5 .s5-node-label {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(232, 228, 217, 0.4);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* ── BLURB ── */
+.spread-5 .s5-blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.6;
+  color: rgba(232, 228, 217, 0.75);
+  font-weight: 300;
+  max-width: 72ch;
+  border-left: 3px solid rgba(99, 200, 255, 0.3);
+  padding-left: clamp(16px, 2.5vw, 28px);
+  margin: 0;
+}
+
+.spread-5 .s5-blurb strong {
+  font-weight: 600;
+  color: #e8e4d9;
+}
+
+/* ── APPLIES BADGE ── */
+.spread-5 .s5-applies-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(99,200,255,0.06) 0%, rgba(120,80,255,0.06) 100%);
+  border: 1px solid rgba(99, 200, 255, 0.3);
+  border-radius: 12px;
+  padding: clamp(16px, 2.5vw, 28px) clamp(20px, 3vw, 36px);
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-5 .s5-applies-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #63c8ff, #a07bff, #ff6b9d);
+}
+
+.spread-5 .s5-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #63c8ff;
+}
+
+.spread-5 .s5-badge-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #63c8ff;
+  box-shadow: 0 0 8px rgba(99, 200, 255, 0.8);
+  animation: none;
+}
+
+.spread-5 .s5-apply-note {
+  font-size: clamp(20px, 2vw, 22px);
+  line-height: 1.5;
+  color: rgba(232, 228, 217, 0.8);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ── FOOTER / CTA ── */
+.spread-5 .s5-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: clamp(20px, 3vw, 36px) clamp(24px, 6vw, 80px);
+  border-top: 1px solid rgba(99, 200, 255, 0.1);
+}
+
+.spread-5 .s5-source {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(232, 228, 217, 0.3);
+  text-transform: uppercase;
+}
+
+.spread-5 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #63c8ff 0%, #a07bff 100%);
+  color: #0a0f1e;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: clamp(12px, 1.5vw, 18px) clamp(24px, 3vw, 40px);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-5 .cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.spread-5 .cta:hover::after {
+  opacity: 1;
+}
+
+/* ── LARGE BG NUMBER ── */
+.spread-5 .s5-bg-num {
+  position: absolute;
+  bottom: -20px;
+  right: clamp(24px, 6vw, 80px);
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(120px, 22vw, 320px);
+  font-weight: 400;
+  color: rgba(99, 200, 255, 0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  letter-spacing: -0.04em;
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 720px) {
+  .spread-5 .s5-body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .spread-5 .s5-kicker {
+    grid-column: 1 / -1;
+  }
+
+  .spread-5 .s5-title-block {
+    grid-column: 1 / -1;
+  }
+
+  .spread-5 .s5-diagram {
+    grid-column: 1 / -1;
+  }
+
+  .spread-5 .s5-blurb {
+    grid-column: 1 / 2;
+    align-self: start;
+  }
+
+  .spread-5 .s5-applies-wrap {
+    grid-column: 2 / 3;
+    align-self: start;
+  }
+}
+</style>
+
+<div class="s5-header">
+  <span class="s5-pub">Morning Edition</span>
+  <span class="s5-issue">Sunday, June 14, 2026</span>
+  <span class="s5-num">05 / 10</span>
+</div>
+
+<div class="s5-body">
+  <div class="s5-kicker">
+    <span>UX + AI Design</span>
+  </div>
+
+  <div class="s5-title-block">
+    <h1 class="s5-title"><em>Context</em><br>Architecture</h1>
+    <p class="s5-subtitle">Applying IA Principles to AI Systems</p>
+  </div>
+
+  <div class="s5-diagram">
+    <div class="s5-node">
+      <div class="s5-node-pill">Hierarchy</div>
+      <div class="s5-node-label">Priority<br>Layers</div>
+    </div>
+    <div class="s5-node-arrow">→</div>
+    <div class="s5-node">
+      <div class="s5-node-pill">Labeling</div>
+      <div class="s5-node-label">Semantic<br>Tags</div>
+    </div>
+    <div class="s5-node-arrow">→</div>
+    <div class="s5-node">
+      <div class="s5-node-pill">Metadata</div>
+      <div class="s5-node-label">Structured<br>Context</div>
+    </div>
+    <div class="s5-node-arrow">→</div>
+    <div class="s5-node">
+      <div class="s5-node-pill">Agent<br>Input</div>
+      <div class="s5-node-label">Prompt<br>Payload</div>
+    </div>
+    <div class="s5-node-arrow">→</div>
+    <div class="s5-node">
+      <div class="s5-node-pill">AI<br>Output</div>
+      <div class="s5-node-label">Coherent<br>Response</div>
+    </div>
+  </div>
+
+  <p class="s5-blurb">NNg argues that information architecture skills — hierarchy, labeling, structured metadata — <strong>directly transfer to designing how AI agents receive and interpret context.</strong> For a UX designer building AI-powered products, this is a concrete framework, not a metaphor.</p>
+
+  <div class="s5-applies-wrap">
+    <div class="s5-badge">
+      <span class="s5-badge-dot"></span>
+      Applies to You
+    </div>
+    <p class="s5-apply-note">Map your current product's context payloads using the IA vocabulary in the article — it's a fast audit that surfaces prompt design gaps.</p>
+  </div>
+</div>
+
+<div class="s5-footer">
+  <span class="s5-source">NNGroup · Context Architecture</span>
+  <a class="cta" href="https://www.nngroup.com/articles/context-architecture/?utm_source=rss&utm_medium=feed&utm_campaign=rss-syndication" target="_blank" rel="noopener">Read →</a>
+</div>
+
+<div class="s5-bg-num" aria-hidden="true">05</div>
+</section>
+<section class="spread spread-6">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&display=swap');
+
+.spread-6 {
+  min-height: 100vh;
+  background-color: #0d0d0d;
+  color: #f0ede6;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'DM Mono', monospace;
+}
+
+/* Background texture: diagonal grid lines */
+.spread-6::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -55deg,
+      transparent,
+      transparent 60px,
+      rgba(255,255,255,0.025) 60px,
+      rgba(255,255,255,0.025) 61px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Large accent circle */
+.spread-6::after {
+  content: '';
+  position: absolute;
+  width: clamp(300px, 60vw, 800px);
+  height: clamp(300px, 60vw, 800px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,90,0,0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-6 * {
+  position: relative;
+  z-index: 1;
+}
+
+/* TOP BAR */
+.spread-6 .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.spread-6 .kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  color: #ff5a00;
+  text-transform: uppercase;
+}
+
+.spread-6 .edition-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  color: rgba(240,237,230,0.35);
+  text-transform: uppercase;
+}
+
+.spread-6 .issue-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(240,237,230,0.2);
+  font-style: italic;
+}
+
+/* MAIN CONTENT */
+.spread-6 .main {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: clamp(32px, 5vw, 72px) clamp(20px, 5vw, 72px);
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* Eyebrow line */
+.spread-6 .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(8px, 2vw, 16px);
+}
+
+.spread-6 .eyebrow-line {
+  display: block;
+  width: clamp(40px, 6vw, 80px);
+  height: 2px;
+  background: #ff5a00;
+}
+
+.spread-6 .eyebrow-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  color: #ff5a00;
+  text-transform: uppercase;
+}
+
+/* Display title */
+.spread-6 .display-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(36px, 7vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: #f0ede6;
+  max-width: 16ch;
+}
+
+.spread-6 .display-title em {
+  font-style: italic;
+  color: #ff5a00;
+}
+
+/* Two-column lower section */
+.spread-6 .lower {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  margin-top: clamp(16px, 3vw, 32px);
+}
+
+/* Pullquote panel */
+.spread-6 .pullquote-panel {
+  border-left: 4px solid #ff5a00;
+  padding-left: clamp(20px, 3vw, 36px);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.spread-6 .pullquote-panel blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 3vw, 34px);
+  font-style: italic;
+  line-height: 1.4;
+  color: #f0ede6;
+  margin: 0 0 12px 0;
+}
+
+.spread-6 .pullquote-panel cite {
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  color: rgba(240,237,230,0.45);
+  letter-spacing: 0.1em;
+  font-style: normal;
+}
+
+/* Blurb + CTA */
+.spread-6 .blurb-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.spread-6 .blurb-text {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.7;
+  color: rgba(240,237,230,0.72);
+}
+
+/* Eval diagram — decorative */
+.spread-6 .eval-diagram {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.spread-6 .eval-node {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  color: rgba(240,237,230,0.6);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.spread-6 .eval-node.highlight {
+  background: rgba(255,90,0,0.15);
+  border-color: #ff5a00;
+  color: #ff5a00;
+  font-weight: 500;
+}
+
+.spread-6 .eval-arrow {
+  font-size: 18px;
+  color: rgba(255,255,255,0.2);
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+
+/* CTA */
+.spread-6 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(18px, 1.5vw, 20px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0d0d0d;
+  background: #ff5a00;
+  padding: clamp(14px, 2vw, 18px) clamp(24px, 3vw, 36px);
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.spread-6 .cta:hover {
+  background: #e64f00;
+}
+
+/* BOTTOM BAR */
+.spread-6 .bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(14px, 2vw, 24px) clamp(20px, 5vw, 72px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.spread-6 .bottom-left {
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  color: rgba(240,237,230,0.3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-6 .bottom-right {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: rgba(240,237,230,0.25);
+}
+
+.spread-6 .page-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(60px, 10vw, 120px);
+  font-weight: 900;
+  color: rgba(255,90,0,0.08);
+  line-height: 1;
+  position: absolute;
+  bottom: clamp(10px, 3vw, 40px);
+  right: clamp(20px, 5vw, 72px);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* RESPONSIVE: wider layout */
+@media (min-width: 720px) {
+  .spread-6 .lower {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .spread-6 .display-title {
+    font-size: clamp(52px, 7vw, 96px);
+  }
+}
+</style>
+
+<!-- TOP BAR -->
+<header class="top-bar">
+  <span class="kicker">UX Practice</span>
+  <span class="edition-label">Morning Edition</span>
+  <span class="issue-num">06 / 10</span>
+</header>
+
+<!-- MAIN -->
+<main class="main">
+  <div>
+    <div class="eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Sunday, June 14, 2026</span>
+    </div>
+    <h1 class="display-title">
+      The Core Skill<br>of Design in<br>the <em>AI Era:</em><br>Critique
+    </h1>
+  </div>
+
+  <!-- Eval flow diagram -->
+  <div class="eval-diagram" aria-hidden="true">
+    <span class="eval-node">AI Output</span>
+    <span class="eval-arrow">→</span>
+    <span class="eval-node highlight">Critique</span>
+    <span class="eval-arrow">→</span>
+    <span class="eval-node">Ship</span>
+  </div>
+
+  <div class="lower">
+    <!-- Pullquote -->
+    <div class="pullquote-panel">
+      <blockquote>
+        "Design critique is the eval layer AI cannot supply itself."
+      </blockquote>
+      <cite>— NNgroup, 2026</cite>
+    </div>
+
+    <!-- Blurb + CTA -->
+    <div class="blurb-panel">
+      <p class="blurb-text">
+        NNg reframes critique as the essential judgment layer between AI output and shipping product. Your taste and user knowledge become the rubric no model can supply — especially when volume outpaces judgment.
+      </p>
+      <a class="cta" href="https://www.nngroup.com/articles/ai-era-critique/?utm_source=rss&utm_medium=feed&utm_campaign=rss-syndication" target="_blank" rel="noopener">Read →</a>
+    </div>
+  </div>
+</main>
+
+<!-- BOTTOM BAR -->
+<footer class="bottom-bar">
+  <span class="bottom-left">NNgroup · UX Practice</span>
+  <span class="bottom-right">Judgment over volume</span>
+</footer>
+
+<!-- Large ghost page number -->
+<span class="page-num" aria-hidden="true">06</span>
+
+</section>
+<section class="spread spread-7">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+.spread-7 { color: #f0eee8;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+  font-family: 'Crimson Pro', Georgia, serif;
+}
+
+/* Background grid lines */
+.spread-7::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+}
+
+/* Big glowing arc */
+.spread-7::after {
+  content: '';
+  position: absolute;
+  top: -20vh;
+  right: -15vw;
+  width: clamp(300px, 70vw, 900px);
+  height: clamp(300px, 70vw, 900px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.12) 0%, rgba(255, 60, 0, 0.06) 40%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-7 .inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto auto;
+  padding: clamp(24px, 5vw, 80px);
+  box-sizing: border-box;
+  gap: 0;
+}
+
+/* Header bar */
+.spread-7 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 16px;
+  margin-bottom: clamp(32px, 6vh, 80px);
+}
+
+.spread-7 .kicker {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-size: max(18px, 1.5vw);
+  letter-spacing: 0.2em;
+  color: #ff6a00;
+  line-height: 1;
+}
+
+.spread-7 .issue-info {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: max(18px, 1.2vw);
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.25);
+  line-height: 1;
+  text-align: right;
+}
+
+.spread-7 .issue-info span {
+  display: block;
+  color: rgba(255,255,255,0.12);
+  font-size: max(18px, 1vw);
+}
+
+/* Main content area */
+.spread-7 .content {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* Huge numeral */
+.spread-7 .numeral {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(120px, 28vw, 380px);
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 106, 0, 0.3);
+  text-stroke: 1px rgba(255, 106, 0, 0.3);
+  position: absolute;
+  right: clamp(16px, 4vw, 60px);
+  bottom: clamp(100px, 20vh, 240px);
+  z-index: 0;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+/* Title */
+.spread-7 .title-block {
+  position: relative;
+  z-index: 2;
+}
+
+.spread-7 .ax-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 22vw, 320px);
+  line-height: 0.88;
+  background: linear-gradient(135deg, #ff6a00 0%, #ff3c00 40%, #ff9a3c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.05em;
+}
+
+.spread-7 .title-main {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 5vw, 72px);
+  color: #ffffff;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  display: block;
+  max-width: 22ch;
+}
+
+.spread-7 .title-sub {
+  display: block;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: clamp(18px, 2.5vw, 32px);
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  margin-top: 0.4em;
+}
+
+/* Divider line */
+.spread-7 .divider {
+  width: clamp(60px, 10vw, 120px);
+  height: 1px;
+  background: linear-gradient(90deg, #ff6a00, transparent);
+  margin: clamp(20px, 3vh, 40px) 0;
+}
+
+/* Blurb */
+.spread-7 .blurb {
+  font-size: clamp(20px, 2vw, 26px);
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  line-height: 1.65;
+  max-width: 55ch;
+}
+
+.spread-7 .blurb em {
+  color: rgba(255,255,255,0.85);
+  font-style: italic;
+}
+
+/* Pull quote */
+.spread-7 .pullquote-block {
+  position: relative;
+  padding-left: clamp(20px, 3vw, 40px);
+  border-left: 2px solid #ff6a00;
+  margin: clamp(24px, 4vh, 52px) 0;
+  max-width: 42ch;
+}
+
+.spread-7 .pullquote-block blockquote {
+  margin: 0;
+  padding: 0;
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-style: italic;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.45;
+}
+
+.spread-7 .pullquote-block cite {
+  display: block;
+  margin-top: 0.6em;
+  font-size: max(18px, 1.2vw);
+  font-style: normal;
+  color: #ff6a00;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.12em;
+}
+
+/* Footer bar */
+.spread-7 .footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: clamp(16px, 2vh, 28px);
+  margin-top: clamp(32px, 5vh, 64px);
+}
+
+.spread-7 .footer-left {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: max(18px, 1.2vw);
+  color: rgba(255,255,255,0.25);
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
+.spread-7 .footer-left strong {
+  color: rgba(255,255,255,0.45);
+  font-style: normal;
+}
+
+.spread-7 .cta {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2vw, 26px);
+  letter-spacing: 0.2em;
+  color: #0a0a0f;
+  background: linear-gradient(90deg, #ff6a00, #ff3c00);
+  text-decoration: none;
+  padding: 0.55em 1.6em;
+  display: inline-block;
+  position: relative;
+  transition: opacity 0.2s ease;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+}
+
+.spread-7 .cta:hover {
+  opacity: 0.85;
+}
+
+/* Cockpit decorative element */
+.spread-7 .cockpit-deco {
+  position: absolute;
+  left: clamp(16px, 4vw, 80px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  width: clamp(1px, 0.5px, 1px);
+  height: 45vh;
+  background: linear-gradient(to bottom, transparent, rgba(255,106,0,0.2), transparent);
+  pointer-events: none;
+}
+
+/* Dot accent */
+.spread-7 .dot-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: clamp(16px, 2.5vh, 32px);
+  align-items: center;
+}
+
+.spread-7 .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff6a00;
+  opacity: 0.7;
+}
+
+.spread-7 .dot:nth-child(2) { opacity: 0.4; }
+.spread-7 .dot:nth-child(3) { opacity: 0.2; }
+
+/* Maeda byline tag */
+.spread-7 .maeda-tag {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: max(18px, 1.4vw);
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.18);
+  margin-bottom: 0.3em;
+  display: block;
+}
+
+/* Responsive */
+@media (min-width: 720px) {
+  .spread-7 .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-7 .content {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .spread-7 .title-block {
+    grid-column: 1 / 2;
+  }
+
+  .spread-7 .right-col {
+    grid-column: 2 / 3;
+    padding-left: clamp(24px, 4vw, 60px);
+    border-left: 1px solid rgba(255,255,255,0.08);
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-7 .right-col {
+    margin-top: 0;
+  }
+
+  .spread-7 .numeral {
+    font-size: 45vw;
+    right: -4vw;
+    bottom: clamp(80px, 15vh, 180px);
+    opacity: 0.7;
+  }
+}
+</style>
+
+<div class="inner">
+  <!-- BG numeral -->
+  <div class="numeral" aria-hidden="true">07</div>
+  <div class="cockpit-deco" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="kicker">Design Thinking</div>
+    <div class="issue-info">
+      MORNING EDITION
+      <span>SUNDAY, JUNE 14 — 2026</span>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="content">
+    <!-- Left / title column -->
+    <div class="title-block">
+      <span class="maeda-tag">John Maeda</span>
+      <div class="dot-row" aria-hidden="true">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <span class="ax-label">AX</span>
+      <span class="title-main">What Is AI Experience Design?</span>
+      <span class="title-sub">From cockpit to co-pilot — a new discipline is coined.</span>
+    </div>
+
+    <!-- Right column -->
+    <div class="right-col">
+      <div class="divider" aria-hidden="true"></div>
+      <p class="blurb">
+        Maeda coins <em>"AX"</em> — AI Experience — drawing a line from HCI cockpit design to the new discipline of aligning AI capability with human intent. Short, punchy, and worth reading alongside the NNg context-architecture piece as a conceptual pair.
+      </p>
+
+      <div class="pullquote-block">
+        <blockquote>
+          "For most of my career I designed the cockpit. Now I design the co-pilot."
+        </blockquote>
+        <cite>— John Maeda</cite>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <strong>maeda.pm</strong> · June 11, 2026
+    </div>
+    <a class="cta" href="https://maeda.pm/2026/06/11/what-is-ax/" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</div>
+</section>
+<section class="spread spread-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,900;1,700&display=swap');
+
+.spread-8 { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Degrading attention visual — fading vertical bars */
+.spread-8::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,90,60,0.04) 0px,
+    rgba(255,90,60,0.04) 2px,
+    transparent 2px,
+    transparent 28px
+  );
+  z-index: 0;
+}
+
+/* Big radial glow to suggest a spotlight fading out */
+.spread-8::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(400px, 90vw, 1000px);
+  height: clamp(400px, 80vh, 800px);
+  background: radial-gradient(
+    ellipse at 30% 40%,
+    rgba(255,90,60,0.18) 0%,
+    rgba(120,40,200,0.10) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-8 * {
+  box-sizing: border-box;
+}
+
+/* ── TOP BAR ── */
+.spread-8 .top-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(18px, 3vw, 36px) clamp(24px, 5vw, 80px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.spread-8 .pub-info {
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.spread-8 .issue-num {
+  font-size: 18px;
+  color: rgba(255,90,60,0.7);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.spread-8 .kicker-tag {
+  background: rgba(255,90,60,0.15);
+  border: 1px solid rgba(255,90,60,0.4);
+  color: #ff5a3c;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 2px;
+}
+
+/* ── MAIN CONTENT ── */
+.spread-8 .main-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: clamp(32px, 5vw, 72px) clamp(24px, 5vw, 80px);
+  gap: clamp(24px, 4vw, 48px);
+  align-content: start;
+}
+
+/* Context window token bar visualization */
+.spread-8 .token-bar-wrap {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+  height: clamp(40px, 6vw, 72px);
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: clamp(8px, 2vw, 24px);
+}
+
+.spread-8 .token-segment {
+  flex: 1;
+  border-radius: 1px;
+  transition: none;
+}
+
+.spread-8 .token-segment:nth-child(1)  { height: 100%; background: rgba(255,90,60,0.90); }
+.spread-8 .token-segment:nth-child(2)  { height: 95%;  background: rgba(255,90,60,0.82); }
+.spread-8 .token-segment:nth-child(3)  { height: 90%;  background: rgba(255,90,60,0.74); }
+.spread-8 .token-segment:nth-child(4)  { height: 82%;  background: rgba(255,90,60,0.65); }
+.spread-8 .token-segment:nth-child(5)  { height: 72%;  background: rgba(200,60,180,0.55); }
+.spread-8 .token-segment:nth-child(6)  { height: 60%;  background: rgba(160,50,200,0.44); }
+.spread-8 .token-segment:nth-child(7)  { height: 46%;  background: rgba(120,40,200,0.33); }
+.spread-8 .token-segment:nth-child(8)  { height: 32%;  background: rgba(80,30,160,0.22); }
+.spread-8 .token-segment:nth-child(9)  { height: 18%;  background: rgba(60,20,120,0.15); }
+.spread-8 .token-segment:nth-child(10) { height: 8%;   background: rgba(40,10,80,0.10); }
+
+.spread-8 .token-label-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.spread-8 .token-label {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+}
+
+.spread-8 .token-label.highlight {
+  color: #ff5a3c;
+}
+
+/* ── HEADLINE ── */
+.spread-8 .headline-block {
+  position: relative;
+}
+
+.spread-8 .headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(44px, 8vw, 110px);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.spread-8 .headline .word-trust {
+  color: #ff5a3c;
+  position: relative;
+  display: inline-block;
+}
+
+/* strikethrough decoration on TRUST */
+.spread-8 .headline .word-trust::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 52%;
+  width: 100%;
+  height: clamp(3px, 0.5vw, 6px);
+  background: rgba(255,90,60,0.7);
+  transform: rotate(-2deg);
+}
+
+.spread-8 .headline .word-large {
+  display: block;
+  color: rgba(255,255,255,0.15);
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Attention degrades — ghost text */
+.spread-8 .ghost-line {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(44px, 8vw, 110px);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: rgba(255,255,255,0.04);
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── TWO-COL LOWER SECTION ── */
+.spread-8 .lower-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  margin-top: clamp(8px, 2vw, 16px);
+}
+
+.spread-8 .blurb-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.spread-8 .blurb-text {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.62);
+  font-weight: 300;
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* APPLIES TO YOU badge */
+.spread-8 .applies-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 2px solid #ff5a3c;
+  padding: 12px 20px;
+  border-radius: 2px;
+  position: relative;
+  align-self: flex-start;
+}
+
+.spread-8 .applies-badge::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(255,90,60,0.2);
+  pointer-events: none;
+}
+
+.spread-8 .applies-badge .badge-label {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ff5a3c;
+}
+
+.spread-8 .applies-note {
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.50);
+  font-weight: 400;
+  font-style: italic;
+  max-width: 48ch;
+  padding-left: 20px;
+  border-left: 2px solid rgba(255,90,60,0.35);
+  margin: 0;
+}
+
+/* Sidebar stat / accent column */
+.spread-8 .accent-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.spread-8 .degradation-box {
+  background: rgba(255,90,60,0.06);
+  border: 1px solid rgba(255,90,60,0.18);
+  padding: clamp(20px, 3vw, 36px);
+  border-radius: 4px;
+  position: relative;
+}
+
+.spread-8 .degradation-box::before {
+  content: 'ATTENTION DEGRADES →';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #0a0a0f;
+  padding: 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255,90,60,0.6);
+  text-transform: uppercase;
+}
+
+.spread-8 .deg-stat {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 9vw, 96px);
+  font-weight: 900;
+  color: rgba(255,90,60,0.25);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.spread-8 .deg-stat .deg-num {
+  color: rgba(255,90,60,0.90);
+}
+
+.spread-8 .deg-label {
+  font-size: 18px;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+/* ── CTA / BOTTOM BAR ── */
+.spread-8 .bottom-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(18px, 3vw, 32px) clamp(24px, 5vw, 80px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.spread-8 .date-tag {
+  font-size: 18px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.spread-8 .cta {
+  display: inline-block;
+  background: #ff5a3c;
+  color: #0a0a0f;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px clamp(24px, 3vw, 40px);
+  border-radius: 2px;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+}
+
+.spread-8 .cta::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255,90,60,0.4);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.spread-8 .cta:hover {
+  background: #0a0a0f;
+  color: #ff5a3c;
+  outline: 1px solid #ff5a3c;
+}
+
+/* ── RESPONSIVE: 720px+ ── */
+@media (min-width: 720px) {
+  .spread-8 .lower-grid {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .spread-8 .main-content {
+    padding-top: clamp(40px, 6vw, 80px);
+  }
+}
+</style>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="pub-info">Morning Edition — Weekly</span>
+  <span class="kicker-tag">LLM Tooling</span>
+  <span class="issue-num">08 / 10</span>
+</div>
+
+<!-- MAIN -->
+<div class="main-content">
+
+  <!-- Token bar visualization -->
+  <div>
+    <div class="token-bar-wrap">
+      <div class="token-segment"></div>
+      <div class="token-segment"></div>
+      <div class="token-segment"></div>
+      <div class="token-segment"></div>
+      <div class="token-segment"></div>
+      <div class="token-segment"></div>
+      <div class="token-segment"></div>
+      <div class="token-segment"></div>
+      <div class="token-segment"></div>
+      <div class="token-segment"></div>
+    </div>
+    <div class="token-label-row">
+      <span class="token-label highlight">Token 0</span>
+      <span class="token-label">50K</span>
+      <span class="token-label">100K</span>
+      <span class="token-label">150K</span>
+      <span class="token-label">200K →</span>
+    </div>
+  </div>
+
+  <!-- Headline -->
+  <div class="headline-block">
+    <h1 class="headline">
+      Don't<br>
+      <span class="word-trust">Trust</span><br>
+      <span class="word-large">Large</span>
+      Context<br>
+      Windows
+    </h1>
+    <p class="ghost-line" aria-hidden="true">…context…context…context…</p>
+  </div>
+
+  <!-- Lower grid -->
+  <div class="lower-grid">
+    <div class="blurb-col">
+      <p class="blurb-text">
+        Stuffing 200K tokens doesn't mean the model actually reads all of it. 
+        Field-tested failure cases show where attention silently collapses — 
+        and why context size is not a safety blanket for RAG pipelines.
+      </p>
+
+      <div class="applies-badge">
+        <span class="badge-label">✦ Applies to You</span>
+      </div>
+      <p class="applies-note">
+        Run the author's minimal repro against your own RAG setup to see where attention degrades in your specific context window.
+      </p>
+    </div>
+
+    <div class="accent-col">
+      <div class="degradation-box">
+        <div class="deg-stat"><span class="deg-num">200</span>K</div>
+        <p class="deg-label">tokens in context<br>≠ tokens attended to</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <span class="date-tag">Sunday, June 14 · 2026</span>
+  <a class="cta" href="https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows" target="_blank" rel="noopener">Read →</a>
+</div>
+
+</section>
+<section class="spread spread-9">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Playfair+Display:ital,wght@0,900;1,700&display=swap');
+
+.spread-9 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #e8e4f0;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animated circuit/noise background */
+.spread-9::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      rgba(120, 80, 220, 0.07) 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      rgba(120, 80, 220, 0.07) 60px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-9::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 80vw;
+  height: 80vw;
+  max-width: 900px;
+  max-height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(90, 40, 180, 0.25) 0%,
+    rgba(180, 40, 120, 0.12) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-9 .s9-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 80px);
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* Top bar */
+.spread-9 .s9-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(180, 140, 255, 0.2);
+  padding-bottom: clamp(12px, 2vw, 20px);
+  margin-bottom: clamp(24px, 4vw, 56px);
+}
+
+.spread-9 .s9-magazine {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(200, 180, 255, 0.5);
+}
+
+.spread-9 .s9-issue {
+  font-size: clamp(18px, 1.5vw, 20px);
+  font-weight: 300;
+  color: rgba(200, 180, 255, 0.35);
+  letter-spacing: 0.05em;
+}
+
+/* Kicker */
+.spread-9 .s9-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(16px, 3vw, 32px);
+}
+
+.spread-9 .s9-kicker-label {
+  font-size: clamp(18px, 1.6vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #b06cff;
+}
+
+.spread-9 .s9-kicker-line {
+  width: clamp(40px, 6vw, 80px);
+  height: 2px;
+  background: linear-gradient(90deg, #b06cff, transparent);
+}
+
+/* Main content area */
+.spread-9 .s9-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-content: start;
+  flex: 1;
+}
+
+/* Display number */
+.spread-9 .s9-numeral {
+  position: absolute;
+  right: clamp(24px, 5vw, 80px);
+  top: clamp(80px, 12vw, 160px);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(120px, 22vw, 320px);
+  font-weight: 900;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(150, 100, 255, 0.15);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Title */
+.spread-9 .s9-title-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: clamp(300px, 75vw, 820px);
+}
+
+.spread-9 .s9-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 7.5vw, 100px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin: 0 0 clamp(8px, 1.5vw, 16px) 0;
+  color: #f0ecff;
+}
+
+.spread-9 .s9-title em {
+  font-style: italic;
+  color: #c084fc;
+}
+
+/* Accent bracket decoration */
+.spread-9 .s9-bracket {
+  position: relative;
+  padding-left: clamp(16px, 3vw, 32px);
+  margin-bottom: clamp(20px, 3.5vw, 40px);
+}
+
+.spread-9 .s9-bracket::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #b06cff, #ff4da6);
+}
+
+/* Blurb */
+.spread-9 .s9-blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(220, 210, 255, 0.8);
+  max-width: 640px;
+}
+
+/* Bottom area */
+.spread-9 .s9-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: clamp(16px, 3vw, 32px);
+  border-top: 1px solid rgba(180, 140, 255, 0.15);
+  padding-top: clamp(20px, 3vw, 36px);
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Crypto lock visual */
+.spread-9 .s9-lock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spread-9 .s9-lock-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.spread-9 .s9-lock-bit {
+  width: clamp(20px, 2.5vw, 32px);
+  height: clamp(20px, 2.5vw, 32px);
+  border-radius: 3px;
+  font-size: clamp(18px, 1.4vw, 20px);
+  font-weight: 700;
+  font-family: 'Space Grotesk', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0;
+}
+
+.spread-9 .s9-lock-bit.on {
+  background: rgba(176, 108, 255, 0.3);
+  color: #c084fc;
+  border: 1px solid rgba(176, 108, 255, 0.5);
+}
+
+.spread-9 .s9-lock-bit.off {
+  background: rgba(255, 77, 166, 0.15);
+  color: rgba(255, 77, 166, 0.6);
+  border: 1px solid rgba(255, 77, 166, 0.25);
+}
+
+.spread-9 .s9-lock-bit.dim {
+  background: rgba(255,255,255, 0.04);
+  color: rgba(255,255,255, 0.18);
+  border: 1px solid rgba(255,255,255, 0.08);
+}
+
+.spread-9 .s9-meta {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.5vw, 14px);
+}
+
+.spread-9 .s9-source-label {
+  font-size: clamp(18px, 1.4vw, 20px);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(200, 180, 255, 0.4);
+}
+
+.spread-9 .s9-source-name {
+  font-size: clamp(18px, 1.6vw, 21px);
+  font-weight: 700;
+  color: rgba(200, 180, 255, 0.7);
+  letter-spacing: 0.02em;
+}
+
+/* CTA */
+.spread-9 .s9-cta-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.spread-9 a.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #7c3aed, #db2777);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: clamp(14px, 2vw, 20px) clamp(24px, 4vw, 44px);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.spread-9 a.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  pointer-events: none;
+}
+
+.spread-9 a.cta:hover {
+  opacity: 0.88;
+}
+
+/* Floating glitch line accents */
+.spread-9 .s9-glitch-lines {
+  position: absolute;
+  left: 0;
+  bottom: 30%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-9 .s9-glitch-line {
+  height: 1px;
+  margin-bottom: clamp(18px, 3vw, 36px);
+  opacity: 0.12;
+}
+
+.spread-9 .s9-glitch-line:nth-child(1) {
+  width: 45%;
+  background: linear-gradient(90deg, transparent, #b06cff, transparent);
+  margin-left: 0;
+}
+
+.spread-9 .s9-glitch-line:nth-child(2) {
+  width: 25%;
+  background: linear-gradient(90deg, transparent, #ff4da6, transparent);
+  margin-left: 15%;
+}
+
+.spread-9 .s9-glitch-line:nth-child(3) {
+  width: 60%;
+  background: linear-gradient(90deg, transparent, #6040cc, transparent);
+  margin-left: 5%;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (min-width: 720px) {
+  .spread-9 .s9-main {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .spread-9 .s9-title-wrap {
+    grid-column: 1 / 3;
+  }
+
+  .spread-9 .s9-bracket {
+    grid-column: 1 / 2;
+  }
+
+  .spread-9 .s9-lock {
+    grid-column: 2 / 3;
+    justify-self: end;
+    align-self: start;
+    padding-top: 8px;
+  }
+
+  .spread-9 .s9-bottom {
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-9 .s9-numeral {
+    opacity: 0.4;
+    right: -10px;
+    top: clamp(60px, 15vw, 120px);
+  }
+  .spread-9 .s9-bottom {
+    grid-template-columns: 1fr;
+    gap: clamp(16px, 4vw, 24px);
+  }
+  .spread-9 .s9-cta-wrap {
+    justify-content: flex-start;
+  }
+}
+</style>
+
+<div class="s9-inner">
+
+  <!-- Ghost numeral -->
+  <div class="s9-numeral" aria-hidden="true">09</div>
+
+  <!-- Glitch lines -->
+  <div class="s9-glitch-lines" aria-hidden="true">
+    <div class="s9-glitch-line"></div>
+    <div class="s9-glitch-line"></div>
+    <div class="s9-glitch-line"></div>
+  </div>
+
+  <!-- Top bar -->
+  <div class="s9-topbar">
+    <span class="s9-magazine">Morning Edition</span>
+    <span class="s9-issue">SUN · JUNE 14, 2026 · No.09</span>
+  </div>
+
+  <!-- Main content -->
+  <div class="s9-main">
+
+    <!-- Title block spans full width -->
+    <div class="s9-title-wrap">
+      <div class="s9-kicker">
+        <span class="s9-kicker-label">Privacy + AI</span>
+        <span class="s9-kicker-line"></span>
+      </div>
+      <h1 class="s9-title">
+        The Future of Siri:<br>
+        Why <em>Private&nbsp;Inference</em><br>
+        Isn't Private&nbsp;Enough
+      </h1>
+    </div>
+
+    <!-- Blurb with bracket accent -->
+    <div class="s9-bracket">
+      <p class="s9-blurb">
+        Matthew Green's cryptography engineering blog tears into why Apple's Private Cloud Compute — despite being technically impressive — still doesn't give users <strong>verifiable guarantees</strong> about what happens to their data. The privacy–UX intersection is underexplored, and this is one of the sharpest analyses of it.
+      </p>
+    </div>
+
+    <!-- Binary lock visual -->
+    <div class="s9-lock" aria-hidden="true">
+      <div class="s9-lock-row">
+        <div class="s9-lock-bit on">1</div>
+        <div class="s9-lock-bit off">0</div>
+        <div class="s9-lock-bit on">1</div>
+        <div class="s9-lock-bit dim">?</div>
+        <div class="s9-lock-bit off">0</div>
+      </div>
+      <div class="s9-lock-row">
+        <div class="s9-lock-bit dim">?</div>
+        <div class="s9-lock-bit on">1</div>
+        <div class="s9-lock-bit off">0</div>
+        <div class="s9-lock-bit on">1</div>
+        <div class="s9-lock-bit dim">?</div>
+      </div>
+      <div class="s9-lock-row">
+        <div class="s9-lock-bit off">0</div>
+        <div class="s9-lock-bit dim">?</div>
+        <div class="s9-lock-bit dim">?</div>
+        <div class="s9-lock-bit on">1</div>
+        <div class="s9-lock-bit off">0</div>
+      </div>
+    </div>
+
+  </div><!-- /s9-main -->
+
+  <!-- Bottom bar -->
+  <div class="s9-bottom">
+    <div class="s9-meta">
+      <span class="s9-source-label">Source</span>
+      <span class="s9-source-name">Cryptography Engineering Blog</span>
+    </div>
+
+    <div></div><!-- spacer on desktop -->
+
+    <div class="s9-cta-wrap">
+      <a class="cta" href="https://blog.cryptographyengineering.com/2026/06/09/apples-siri-ai-or-more-shouting-into-the-void-about-private-agents/" target="_blank" rel="noopener">Read →</a>
+    </div>
+  </div>
+
+</div>
+</section>
+<section class="spread spread-10">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Playfair+Display:ital,wght@0,900;1,900&display=swap');
+
+.spread-10 {
+  min-height: 100vh;
+  background-color: #050a14;
+  color: #e8e2d4;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Animated mathematical grid background */
+.spread-10::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 202, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 202, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+}
+
+/* Large glowing orb */
+.spread-10::after {
+  content: '';
+  position: absolute;
+  width: clamp(400px, 70vw, 900px);
+  height: clamp(400px, 70vw, 900px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 112, 255, 0.18) 0%, rgba(0, 255, 200, 0.06) 45%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-10 * {
+  box-sizing: border-box;
+}
+
+/* ── HEADER ── */
+.spread-10 .s10-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: clamp(20px, 4vw, 48px) clamp(24px, 5vw, 72px) 0;
+}
+
+.spread-10 .s10-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spread-10 .s10-edition {
+  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: max(18px, 1.1vw);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(232, 226, 212, 0.35);
+  font-weight: 300;
+}
+
+.spread-10 .s10-kicker {
+  display: inline-block;
+  font-size: max(18px, 1vw);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #00ffc8;
+  border: 1.5px solid rgba(0, 255, 200, 0.4);
+  padding: 4px 14px;
+  margin-top: 8px;
+}
+
+.spread-10 .s10-issue {
+  font-size: max(18px, 1.1vw);
+  color: rgba(232, 226, 212, 0.3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: right;
+}
+
+/* ── MAIN BODY ── */
+.spread-10 .s10-body {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 60px);
+  padding: clamp(32px, 5vw, 60px) clamp(24px, 5vw, 72px);
+  align-items: center;
+}
+
+/* Left column: giant type */
+.spread-10 .s10-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.spread-10 .s10-number {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(120px, 22vw, 280px);
+  line-height: 0.82;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(99, 202, 255, 0.35);
+  user-select: none;
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+
+.spread-10 .s10-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(28px, 4.5vw, 64px);
+  line-height: 1.05;
+  color: #e8e2d4;
+  margin: 0;
+}
+
+.spread-10 .s10-headline em {
+  font-style: normal;
+  color: #00ffc8;
+}
+
+/* decorative horizontal rule with dot */
+.spread-10 .s10-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: clamp(20px, 3vw, 32px) 0;
+}
+
+.spread-10 .s10-rule::before,
+.spread-10 .s10-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 202, 255, 0.4), transparent);
+}
+
+.spread-10 .s10-rule span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ffc8;
+  flex-shrink: 0;
+}
+
+/* Right column */
+.spread-10 .s10-right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.spread-10 .s10-blurb {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.65;
+  color: rgba(232, 226, 212, 0.78);
+  font-weight: 300;
+  border-left: 3px solid rgba(0, 255, 200, 0.5);
+  padding-left: clamp(16px, 2vw, 28px);
+}
+
+/* Math formula visual decoration */
+.spread-10 .s10-formula {
+  font-size: max(18px, 1.2vw);
+  color: rgba(99, 202, 255, 0.5);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  font-family: 'Space Grotesk', monospace;
+  line-height: 1.9;
+}
+
+.spread-10 .s10-formula .s10-highlight {
+  color: #63caff;
+  opacity: 1;
+}
+
+/* Tags row */
+.spread-10 .s10-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spread-10 .s10-tag {
+  font-size: max(18px, 0.9vw);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 5px 14px;
+  border: 1px solid rgba(99, 202, 255, 0.2);
+  color: rgba(99, 202, 255, 0.6);
+  border-radius: 2px;
+}
+
+/* ── FOOTER ── */
+.spread-10 .s10-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(24px, 5vw, 72px) clamp(28px, 4vw, 48px);
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.spread-10 .s10-source {
+  font-size: max(18px, 1vw);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(232, 226, 212, 0.25);
+  font-weight: 300;
+}
+
+.spread-10 .s10-footer-rule {
+  position: absolute;
+  top: 0;
+  left: clamp(24px, 5vw, 72px);
+  right: clamp(24px, 5vw, 72px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 202, 255, 0.2), transparent);
+}
+
+.spread-10 a.cta {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: max(18px, 1.1vw);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #050a14;
+  background: #00ffc8;
+  padding: clamp(12px, 1.5vw, 18px) clamp(24px, 3vw, 44px);
+  text-decoration: none;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: background 0.2s;
+}
+
+.spread-10 a.cta:hover {
+  background: #63caff;
+}
+
+/* Floating formula fragments (decorative) */
+.spread-10 .s10-frag {
+  position: absolute;
+  font-family: 'Space Grotesk', monospace;
+  font-weight: 300;
+  color: rgba(99, 202, 255, 0.07);
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.spread-10 .s10-frag-1 {
+  font-size: clamp(60px, 10vw, 140px);
+  top: 8%;
+  right: 2%;
+  transform: rotate(-8deg);
+}
+
+.spread-10 .s10-frag-2 {
+  font-size: clamp(40px, 6vw, 90px);
+  bottom: 18%;
+  left: 3%;
+  transform: rotate(6deg);
+}
+
+.spread-10 .s10-frag-3 {
+  font-size: clamp(30px, 4vw, 60px);
+  bottom: 35%;
+  right: 8%;
+  transform: rotate(-4deg);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+  .spread-10 .s10-body {
+    grid-template-columns: 1fr;
+    gap: clamp(16px, 4vw, 32px);
+    padding-top: clamp(20px, 5vw, 40px);
+  }
+
+  .spread-10 .s10-number {
+    font-size: clamp(100px, 30vw, 180px);
+  }
+
+  .spread-10 .s10-headline {
+    font-size: clamp(28px, 7vw, 48px);
+  }
+
+  .spread-10 .s10-blurb {
+    font-size: clamp(20px, 4vw, 24px);
+  }
+
+  .spread-10 .s10-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .spread-10 .s10-formula {
+    font-size: max(18px, 3.5vw);
+  }
+}
+</style>
+
+<!-- decorative floating formula fragments -->
+<div class="s10-frag s10-frag-1">∑ₙ₌₁^∞</div>
+<div class="s10-frag s10-frag-2">∀ε &gt; 0 ∃δ</div>
+<div class="s10-frag s10-frag-3">P ≠ NP ?</div>
+
+<!-- HEADER -->
+<header class="s10-header">
+  <div class="s10-meta">
+    <span class="s10-edition">Morning Edition · June 14, 2026</span>
+    <span class="s10-kicker">Weird Science</span>
+  </div>
+  <span class="s10-issue">№ 10 / 10</span>
+</header>
+
+<!-- BODY -->
+<main class="s10-body">
+  <div class="s10-left">
+    <div class="s10-number">10</div>
+    <h1 class="s10-headline">
+      Terry Tao,<br>
+      <em>AI</em><br>
+      Evangelist
+    </h1>
+  </div>
+
+  <div class="s10-right">
+    <p class="s10-blurb">
+      The world's most celebrated mathematician is using proof-checkers and LLMs to decompose hard problems into verifiable chunks — a workflow that looks a lot like the divide-and-conquer agentic patterns shipping in software tooling right now.
+    </p>
+
+    <div class="s10-rule"><span></span></div>
+
+    <div class="s10-formula">
+      <span class="s10-highlight">PROBLEM</span> → decompose()<br>
+      &nbsp;&nbsp;↳ chunk₁ → verify()<br>
+      &nbsp;&nbsp;↳ chunk₂ → verify()<br>
+      &nbsp;&nbsp;↳ chunkₙ → verify()<br>
+      <span class="s10-highlight">QED</span> ✓
+    </div>
+
+    <div class="s10-tags">
+      <span class="s10-tag">LLMs</span>
+      <span class="s10-tag">Proof Checking</span>
+      <span class="s10-tag">Agentic AI</span>
+      <span class="s10-tag">Mathematics</span>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="s10-footer">
+  <div class="s10-footer-rule"></div>
+  <span class="s10-source">Quanta Magazine · 2026</span>
+  <a class="cta" href="https://www.quantamagazine.org/how-terry-tao-became-an-evangelist-for-ai-in-math-20260608/" target="_blank" rel="noopener">Read →</a>
+</footer>
+
+</section>
+
+<section class="spread spread-colophon">
+<style>
+.spread-colophon{background:#17140e;color:#f4ecd8;padding:clamp(48px,6vw,110px);
+  min-height:50vh;display:flex;flex-direction:column;justify-content:center;gap:28px;
+  font-family:system-ui,sans-serif}
+.spread-colophon h3{font-size:clamp(36px,5vw,72px);margin:0;font-weight:300;
+  font-style:italic;line-height:1.1}
+.spread-colophon p{font-size:22px;line-height:1.5;max-width:56ch;margin:0;opacity:.85}
+.spread-colophon .sm{font-size:18px;letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+</style>
+<h3>That was this week.</h3>
+<p>Ten stories, curated across twenty sources. 4 flagged as
+directly applicable. Each spread designed from scratch by Claude.</p>
+<p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
+text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
+<p class="sm">Morning Edition — Weekly &middot; Issue No. W24
+&middot; SUNDAY, JUNE 14, 2026</p>
+</section>
+
+</body>
+</html>
