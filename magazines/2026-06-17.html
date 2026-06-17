@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; WEDNESDAY, JUNE 17, 2026</title>
-<meta name="description" content="Deploy simulations, OKLCh color, ad blocker dusk">
+<meta name="description" content="Ship tools, weird math, and security surprises">
 <meta property="og:title" content="Morning Edition · WEDNESDAY, JUNE 17, 2026">
-<meta property="og:description" content="Deploy simulations, OKLCh color, ad blocker dusk">
+<meta property="og:description" content="Ship tools, weird math, and security surprises">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,500;0,700;0,900;1,500;1,900&family=Noto+Sans:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -682,15 +682,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; SECURITY / DESIGN TOOLS</div>
-      <h2 class="cover-title">Want your images back? Sure... That&#x27;ll be $5</h2>
-      <p class="cover-tagline">Deploy simulations, OKLCh color, ad blocker dusk</p>
-      <p class="body-lead body-lead--wide">A field report on a cloud design tool quietly holding user assets hostage behind a paywall toggle — the kind of lock-in that never appears in the onboarding flow. For any UX designer who stores production assets in SaaS tools, this is a direct cautionary tale about data portability and vendor trust.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; DEV TOOLS</div>
+      <h2 class="cover-title">Epic Games Announces Lore Version Control System</h2>
+      <p class="cover-tagline">Ship tools, weird math, and security surprises</p>
+      <p class="body-lead body-lead--wide">Epic is shipping a new version control system — from the studio that built Perforce muscle-memory into AAA pipelines. The HN thread is already dissecting whether this solves large-binary workflows that Git can&#x27;t touch, which matters for anyone building design-system assets or generative-art pipelines at scale.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://www.lutr.dev/want-your-images-back-sure-that-ll-be-5-dollars" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://lore.org/" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Audit which cloud tools own your exported assets today and verify you have offline backups before the pricing changes.</p>
+      <p class="apply-note">&rarr; Visit lore.org and scan the docs today to see if it addresses the large-file and branching pain points you hit with Git.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -700,104 +700,115 @@ a{color:inherit;text-underline-offset:4px}
 <section data-story="2" class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">AI EVALS</div>
+    <div class="kicker">INTERFACE CRAFT</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Predicting model behavior before release by simulating deployment</h2>
-    <p class="body-lead">OpenAI&#x27;s Deployment Simulation uses real conversation data to predict how a model will behave before it ships — essentially running a synthetic production environment as an eval harness. For anyone building on the API or designing AI-driven interfaces, understanding how safety and behavior evals actually work upstream is critical context.</p>
+    <h2>&lt;click-to-play&gt; — A Progressive-Enhancement Web Component</h2>
+    <p class="body-lead">Simon Willison ships a tiny Web Component that replaces an animated GIF&#x27;s autoplay chaos with a static first-frame plus user-triggered playback — zero JS framework required. The progressive-enhancement pattern is textbook good UX: no layout shift, no bandwidth waste, works without JS.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Read the method closely: the synthetic deployment framing maps directly onto how you&#x27;d design eval pipelines for your own agentic workflows.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://openai.com/index/deployment-simulation" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Drop the component into any doc or portfolio page that uses GIFs today — it&#x27;s a copy-paste install.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Jun/17/click-to-play-component/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="3" class="spread s-riso">
-  <div class="layout">
-    <div class="kicker">TYPOGRAPHY / COLOR</div>
-    <div class="riso-num" data-n="03" aria-hidden="true">03</div>
-    <h2>Color picking OKLCh for mortals</h2>
-    <p class="body-lead">A practical walkthrough of OKLCh — the perceptually uniform color space that modern CSS now supports natively — aimed at designers who don&#x27;t want a math lecture. If you&#x27;re still specifying palettes in HSL, this is the upgrade path your design system needs.</p>
+<section data-story="3" class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #####  
+#   #      #  
+#   #   ####  
+#   #      #  
+#####  #####  </div>
+    <div class="kicker">PRIVACY + DEV TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
+    <h2>datasette-tailscale 0.1a0 — Instant Private Datasette Over Tailscale</h2>
+    <p class="body-lead">&gt; One command spins up a Datasette instance accessible only over your Tailscale network — no public exposure, no reverse proxy config. For a UX researcher who wants to share a SQLite database with collaborators without touching cloud storage or auth tokens, this is the missing glue layer.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://hugodaniel.com/posts/color-picking-oklch/" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      <a class="read-more" href="https://simonwillison.net/2026/Jun/16/datasette-tailscale/#atom-everything" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Open your active design system and swap one gray ramp to OKLCh today using the picker linked in the post.</p>
+    <p class="apply-note">&rarr; Run `pip install datasette-tailscale` and try `datasette tailscale mydata.db --ts-authkey &lt;key&gt;` on any local database today.</p>
     
   </div>
 </section>
 
-<section data-story="4" class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.04</span>
-      <span>GRIDLANES.WEBKIT.ORG</span>
-      <span>SHEET 4/10</span>
-    </div>
-    <div class="kicker">CSS / LAYOUT</div>
-    <h2>The field guide to CSS Grid Lanes</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">04</div>
-      <p class="body-lead">WebKit&#x27;s interactive playground for CSS Grid Lanes — the forthcoming masonry-in-pure-CSS spec — lets you experiment with the actual syntax before it&#x27;s broadly shipped. A rare chance to get ahead of a layout primitive that will reshape how we build editorial and card-based UIs.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://gridlanes.webkit.org/" target="_blank" rel="noopener">View schematic &rarr;</a>
+<section data-story="4" class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">UX + AI</div>
+    <div class="tiny-num" aria-hidden="true">04</div>
+  </div>
+  <h2>Mistake predictions for certainties, and the interface becomes a liability.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Smashing Magazine makes the case for treating AI outputs as probability distributions rather than answers, and designing UI states accordingly. Directly applicable when you&#x27;re building interfaces around LLM responses — confidence indicators, fallback states, and graceful degradation all flow from this mindset.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; smashingmagazine.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://smashingmagazine.com/2026/06/designing-uncertainty-how-ai-supercharges-probabilistic-thinking/" target="_blank" rel="noopener">Read the story &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Pull up the playground and prototype a masonry grid for your next project&#x27;s card component right now.</p>
+    <p class="apply-note">&rarr; Read the framework section and map its uncertainty states to your current AI-facing design specs or component library today.</p>
     
   </div>
 </section>
 
 <section data-story="5" class="spread s-stat">
   <div class="top">
-    <div class="chip">No. 05 &middot; UX RESEARCH</div>
+    <div class="chip">No. 05 &middot; INDUSTRY</div>
     
   </div>
   <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">60%</div>
-    <div class="stat-label">US consumers turned off by &#x27;AI&#x27; in brand messaging</div>
+    <div class="stat-value" aria-hidden="true">$60B</div>
+    <div class="stat-label">Reported Cursor acquisition price — largest AI dev-tool deal on record</div>
   </div>
   <div>
-    <h2>Sixty percent of US consumers say &#x27;AI&#x27; in brand messaging is a turnoff</h2>
-    <p class="body-lead">Survey data from a large WP VIP study: majority of consumers react negatively to AI branding in product copy — yet most product teams are racing to add it. A concrete, citable stat for any designer arguing against AI feature-flag labels in client work.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://wpvip.com/future-of-the-web-2026/" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    <h2>SpaceX to Acquire Cursor&#x27;s Parent Anysphere for $60B</h2>
+    <p class="body-lead">The AI code-editor you probably use daily is being absorbed into Elon Musk&#x27;s private empire — not a software company, an aerospace one. The 659-comment HN thread is already interrogating what this means for Cursor&#x27;s roadmap, data handling, and whether the editor becomes a captive tool.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/" target="_blank" rel="noopener">Read the story &rarr;</a></div>
     
     
   </div>
 </section>
 
-<section data-story="6" class="spread s-ticker">
-  <div class="bar"><span class="bar-inner">Breaking &middot; OPEN MODELS &middot; Morning Edition</span></div>
-  <div class="core">
-    <div class="big-num" aria-hidden="true">No. 06</div>
-    <div class="kicker">OPEN MODELS</div>
-    <h2>GLM-5.2 is the new leading open-weights model on Artificial Analysis</h2>
-    <p class="body-lead">GLM-5.2 from Zhipu AI tops the Artificial Analysis intelligence index for open-weights models, displacing the previous leaders. For anyone running local inference or self-hosted agentic pipelines, this is a new benchmark to run against your stack.</p>
-    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://artificialanalysis.ai/articles/glm-5-2-is-the-new-leading-open-weights-model-on-the-artificial-analysis-intelligence-index" target="_blank" rel="noopener">Over the wire &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
+<section data-story="6" class="spread s-newsprint">
+  <div class="masthead-bar">The Daily Ledger</div>
+  <div class="title-row">
+    <div class="badge">06</div>
+    <div>
+      <div class="kicker">SECURITY RESEARCH</div>
+      <h2>I Could&#x27;ve Rickrolled the Entire FIFA World Cup With Just My ID</h2>
     </div>
-    <p class="apply-note">&rarr; Pull the model weights from Hugging Face and benchmark it against your current open-weights setup today.</p>
+  </div>
+  <div class="cols">
+    <p>A researcher discovered that World Cup stadium broadcast infrastructure was accessible with only a basic credential — a vivid case study in s</p>
+    <p>ecurity theater at the intersection of identity verification and large-scale event tech. The failure mode is architectural, not a one-off bug.</p>
+  </div>
+  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+    <a class="read-more" href="https://bobdahacker.com/blog/fifa-hack" target="_blank" rel="noopener">Full dispatch &rarr;</a>
     
   </div>
-  <div class="bar"><span class="bar-inner">Filed WEDNESDAY, JUNE 17, 2026</span></div>
+  
+  
 </section>
 
-<section data-story="7" class="spread s-neon">
-  <div>
-    <div class="kicker">GENERATIVE ART</div>
-  </div>
-  <div>
-    <div class="numeral-slash" aria-hidden="true">07</div>
-    <h2>Show HN: High-Res Neural Cellular Automata</h2>
-    <p class="body-lead">Neural Cellular Automata running at HD resolution in real-time via neural fields — three live browser demos including a self-healing pattern that repairs damage. The visual output is striking and the underlying technique (per-cell neural fields) is a legitimate creative primitive worth understanding.</p>
+<section data-story="7" class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.07</span>
+      <span>RFC-EDITOR.ORG</span>
+      <span>SHEET 7/10</span>
+    </div>
+    <div class="kicker">WEB STANDARDS</div>
+    <h2>RFC 10008: HTTP Gets a Formal QUERY Method</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">07</div>
+      <p class="body-lead">After years of GET-with-body hacks and POST-for-reads, HTTP finally standardizes a QUERY method for safe, cacheable requests with a body. If you&#x27;re designing APIs for search-heavy or filter-heavy UIs — or building agentic tool calls over HTTP — this changes the contract.</p>
+    </div>
     <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://cells2pixels.github.io/" target="_blank" rel="noopener">Go loud &rarr;</a>
+      <a class="read-more" href="https://www.rfc-editor.org/info/rfc10008/" target="_blank" rel="noopener">View schematic &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Open the demo right now and try the damage-and-heal interaction — it&#x27;s a working demo you can fork.</p>
+    <p class="apply-note">&rarr; Read the RFC&#x27;s method semantics section and flag any current POST-for-search endpoints in your API spec for future migration.</p>
     
   </div>
 </section>
@@ -805,54 +816,50 @@ a{color:inherit;text-underline-offset:4px}
 <section data-story="8" class="spread s-midnight">
   <div class="bg-num" aria-hidden="true">08</div>
   <div class="content">
-    <div class="kicker">PRIVACY / SECURITY</div>
-    <h2>GrapheneOS has been ported to Android 17</h2>
-    <p class="body-lead">GrapheneOS — the hardened, privacy-first Android fork — has completed its port to Android 17 with official releases imminent. For anyone running a Pixel as their daily privacy device, this is the upgrade signal you&#x27;ve been waiting for.</p>
+    <div class="kicker">SECURITY</div>
+    <h2>27-Year-Old Authentication Bypass Found in OpenBSD&#x27;s PPP Stack</h2>
+    <p class="body-lead">A dormant auth bypass in OpenBSD&#x27;s PPP PAP implementation — trusted since 1999 — surfaces as a sharp reminder that even security-focused BSDs accumulate silent debt. The write-up is forensic and readable, covering how the bypass survived decades of audits.</p>
     <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://discuss.grapheneos.org/d/36469-grapheneos-has-been-ported-to-android-17-and-official-releases-are-coming-soon" target="_blank" rel="noopener">Read the story &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
+      <a class="read-more" href="https://blog.argus-systems.ai/blog/openbsd-pap-27-year-auth-bypass.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
     </div>
-    <p class="apply-note">&rarr; Check the GrapheneOS updater channel on your Pixel device; official Android 17 builds are coming soon.</p>
+    
     
   </div>
   <div class="footer-slug">Morning Edition &middot; After Dark</div>
 </section>
 
-<section data-story="9" class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">PRIVACY / BROWSER</div>
-    <div class="tiny-num" aria-hidden="true">09</div>
+<section data-story="9" class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">IX</span>
   </div>
-  <h2>The browser that killed ad blockers is now the browser you recommend against.<span class="mark">.</span></h2>
   <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Chrome&#x27;s Manifest V3 enforcement finally kills Manifest V2 extension support, taking down uBlock Origin and peers with it. Directly affects how you browse for research and how you advise clients on browser choice — Firefox and extension alternatives are now the concrete path forward.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; 9to5google.com</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://9to5google.com/2026/06/15/google-chromes-next-update-will-mark-the-end-of-popular-ad-blockers/" target="_blank" rel="noopener">Read the story &rarr;</a>
+    <div class="kicker">WEIRD SCIENCE</div>
+    <h2>Seven Perfect Shuffles Randomize a Deck — How Many Sloppy Ones?</h2>
+    <div class="body-lead">The classic Diaconis result gave us seven riffle shuffles for true randomness, but assumed magician-level precision. A new proof relaxes that constraint and still gets you to randomness — the kind of elegant mathematical update that reframes what counts as &#x27;good enough&#x27; in probabilistic systems.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.quantamagazine.org/seven-perfect-shuffles-randomize-a-deck-of-cards-but-how-many-sloppy-ones-20260617/" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
-    
+  </div>
+  <div>
+    <div class="footnote">&sect; filed under weird science</div>
   </div>
 </section>
 
-<section data-story="10" class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">DESIGN CRAFT</div>
-    <div class="tiny-num" aria-hidden="true">10</div>
-  </div>
-  <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">Will the next generation of practitioners get the same thing?</p>
-    <div class="attrib">&mdash; blog.murphytrueman.com</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">A reflective piece on what Figma&#x27;s collaborative model revealed about design process that was previously invisible — and whether the next generation of AI-assisted tooling will surface the same kind of legible craft. Rare thoughtful analysis from the sidebar feed on how tooling shapes design culture.</p>
+<section data-story="10" class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">GENERATIVE + MOTION</div>
+    <div class="riso-num" data-n="10" aria-hidden="true">10</div>
+    <h2>pixel2motion — AI Turns Raster Logos Into SVG Animations</h2>
+    <p class="body-lead">An open-source pipeline that takes a static raster logo and outputs smooth SVG animations, HTML demos, GIF/video previews, and motion QA artifacts. For a UX designer working with brand identity or design systems, this is a concrete &#x27;run it on a logo today&#x27; tool with real output artifacts.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://blog.murphytrueman.com/what-figma-made-visible/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
+      <a class="read-more" href="https://github.com/nolangz/pixel2motion" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
     </div>
-    
+    <p class="apply-note">&rarr; Clone the repo and feed it a client logo or your own mark — the QA evidence output alone is worth the experiment.</p>
     
   </div>
 </section>
@@ -862,9 +869,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  7 of them are flagged as directly applicable &mdash; open those first.</p>
+  6 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Noto Serif Display and Noto Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-06-17 14:25 UTC.</p>
+  at 2026-06-17 15:44 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0533 &middot; WEDNESDAY, JUNE 17, 2026</p>
