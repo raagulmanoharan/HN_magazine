@@ -1,17 +1,17 @@
 [
   {
-    "id": "lobsters:gdwaqt",
-    "title": "Town Square, the community deserves connection",
-    "url": "https://cauenapier.com/blog/town-square-the-community-deserves-connection/",
+    "id": "lobsters:s1ep1w",
+    "title": "Is anyone still using Emacs?",
+    "url": "https://jmmv.dev/2026/06/is-anyone-still-using-emacs.html",
     "source": "lobsters",
-    "score": 13,
-    "comments": 6,
+    "score": 54,
+    "comments": 44,
     "text": "",
-    "published_at": "2026-06-20T10:02:17Z",
+    "published_at": "2026-06-20T18:47:52Z",
     "rank_within_source": 1,
-    "hn_url": "https://lobste.rs/s/gdwaqt/town_square_community_deserves",
-    "prior": 0.943,
-    "_spillover_date": "2026-06-20"
+    "hn_url": "https://lobste.rs/s/s1ep1w/is_anyone_still_using_emacs",
+    "prior": 0.95,
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "openai:https://openai.com/index/chatgpt-enterprise-spend-controls",
@@ -25,7 +25,35 @@
     "rank_within_source": 1,
     "hn_url": "",
     "prior": 0.92,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "hn:48617990",
+    "title": "Beyond All Reason (Free Total Annihilation Inspired RTS)",
+    "url": "https://www.beyondallreason.info",
+    "source": "hn",
+    "score": 120,
+    "comments": 47,
+    "text": "",
+    "published_at": "2026-06-21T11:38:01Z",
+    "rank_within_source": 1,
+    "hn_url": "https://news.ycombinator.com/item?id=48617990",
+    "prior": 0.9,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "github:1273536446",
+    "title": "zhongerxin/Cowart",
+    "url": "https://github.com/zhongerxin/Cowart",
+    "source": "github_trending",
+    "score": 878,
+    "comments": 1,
+    "text": "",
+    "published_at": "2026-06-18T16:08:30Z",
+    "rank_within_source": 2,
+    "hn_url": "",
+    "prior": 0.863,
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "deepmind:https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/",
@@ -39,7 +67,7 @@
     "rank_within_source": 1,
     "hn_url": "",
     "prior": 0.86,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "robotsandpencils:https://robotsandpencils.com/?p=3430",
@@ -53,7 +81,7 @@
     "rank_within_source": 1,
     "hn_url": "",
     "prior": 0.82,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "nngroup:/articles/diary-study-incentives/?1781888400",
@@ -67,21 +95,21 @@
     "rank_within_source": 1,
     "hn_url": "",
     "prior": 0.82,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
   },
   {
-    "id": "jim_nielsen:https://blog.jim-nielsen.com/2026/full-page-paralysis/",
-    "title": "Full Page Paralysis",
-    "url": "https://blog.jim-nielsen.com/2026/full-page-paralysis/",
-    "source": "jim_nielsen",
-    "score": 0,
-    "comments": 0,
-    "text": "You\u2019ve probably heard the term. It\u2019s meant to convey how difficult it can be to start something. \u201cBlank page paralysis\u201d. But for my money, beginning is easy. Finishing is the hard part. In software, they call it \u201cthe last 90%\u201d. In logistics",
-    "published_at": "2026-06-19T19:00:00Z",
-    "rank_within_source": 1,
-    "hn_url": "",
-    "prior": 0.8,
-    "_spillover_date": "2026-06-20"
+    "id": "hn:48617782",
+    "title": "The case against geometric algebra (2024)",
+    "url": "https://alexkritchevsky.com/2024/02/28/geometric-algebra.html",
+    "source": "hn",
+    "score": 71,
+    "comments": 41,
+    "text": "",
+    "published_at": "2026-06-21T11:06:55Z",
+    "rank_within_source": 2,
+    "hn_url": "https://news.ycombinator.com/item?id=48617782",
+    "prior": 0.802,
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "openai:https://openai.com/index/improving-health-intelligence-in-chatgpt",
@@ -95,21 +123,21 @@
     "rank_within_source": 2,
     "hn_url": "",
     "prior": 0.8,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
   },
   {
-    "id": "github:1269395331",
-    "title": "Waishnav/devspace \u2014 Turn ChatGPT into Codex",
-    "url": "https://github.com/Waishnav/devspace",
-    "source": "github_trending",
-    "score": 1559,
-    "comments": 17,
-    "text": "Turn ChatGPT into Codex",
-    "published_at": "2026-06-14T16:57:27Z",
-    "rank_within_source": 3,
+    "id": "jim_nielsen:https://blog.jim-nielsen.com/2026/full-page-paralysis/",
+    "title": "Full Page Paralysis",
+    "url": "https://blog.jim-nielsen.com/2026/full-page-paralysis/",
+    "source": "jim_nielsen",
+    "score": 0,
+    "comments": 0,
+    "text": "You\u2019ve probably heard the term. It\u2019s meant to convey how difficult it can be to start something. \u201cBlank page paralysis\u201d. But for my money, beginning is easy. Finishing is the hard part. In software, they call it \u201cthe last 90%\u201d. In logistics",
+    "published_at": "2026-06-19T19:00:00Z",
+    "rank_within_source": 1,
     "hn_url": "",
-    "prior": 0.781,
-    "_spillover_date": "2026-06-20"
+    "prior": 0.8,
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "adactio:https://adactio.com/journal/22619",
@@ -123,21 +151,35 @@
     "rank_within_source": 1,
     "hn_url": "",
     "prior": 0.78,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
   },
   {
-    "id": "lobsters:k5raot",
-    "title": "Bevy 0.19",
-    "url": "https://bevy.org/news/bevy-0-19/",
+    "id": "lobsters:m36bsm",
+    "title": "The Wholesale Plagiarism of Obscure Sorrows",
+    "url": "https://waxy.org/2026/06/the-wholesale-plagiarism-of-obscure-sorrows/",
     "source": "lobsters",
-    "score": 53,
+    "score": 46,
+    "comments": 4,
+    "text": "",
+    "published_at": "2026-06-20T22:58:59Z",
+    "rank_within_source": 3,
+    "hn_url": "https://lobste.rs/s/m36bsm/wholesale_plagiarism_obscure_sorrows",
+    "prior": 0.765,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "hn:48618226",
+    "title": "David Ahl's Basic Computer Games Ported to C",
+    "url": "https://github.com/proteanthread/bcg",
+    "source": "hn",
+    "score": 24,
     "comments": 7,
     "text": "",
-    "published_at": "2026-06-19T21:41:22Z",
+    "published_at": "2026-06-21T12:11:29Z",
     "rank_within_source": 3,
-    "hn_url": "https://lobste.rs/s/k5raot/bevy_0_19",
-    "prior": 0.765,
-    "_spillover_date": "2026-06-20"
+    "hn_url": "https://news.ycombinator.com/item?id=48618226",
+    "prior": 0.727,
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "interconnects:https://www.interconnects.ai/p/state-of-the-blog-mid-2026",
@@ -151,21 +193,7 @@
     "rank_within_source": 2,
     "hn_url": "",
     "prior": 0.696,
-    "_spillover_date": "2026-06-20"
-  },
-  {
-    "id": "heydesigner:https://heydesigner.com/2026-06-18/",
-    "title": "Storied Colors",
-    "url": "https://heydesigner.com/2026-06-18/",
-    "source": "heydesigner",
-    "score": 0,
-    "comments": 0,
-    "text": "Every frame perfect, Ending responsive images, The golden rule of customizable select, Introducing the MDN MCP server.",
-    "published_at": "2026-06-18T07:42:00Z",
-    "rank_within_source": 2,
-    "hn_url": "",
-    "prior": 0.696,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "jim_nielsen:https://blog.jim-nielsen.com/2026/good-at-things/",
@@ -179,49 +207,49 @@
     "rank_within_source": 2,
     "hn_url": "",
     "prior": 0.696,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
   },
   {
-    "id": "lobsters:ew22ks",
-    "title": "There Are No Instances in atproto",
-    "url": "https://overreacted.io/there-are-no-instances-in-atproto/",
-    "source": "lobsters",
-    "score": 12,
-    "comments": 9,
-    "text": "",
-    "published_at": "2026-06-20T07:42:32Z",
-    "rank_within_source": 4,
-    "hn_url": "https://lobste.rs/s/ew22ks/there_are_no_instances_atproto",
-    "prior": 0.691,
-    "_spillover_date": "2026-06-20"
-  },
-  {
-    "id": "lobsters:crl4fj",
-    "title": "What are your Favorite Lobste.rs Comments?",
-    "url": "https://lobste.rs/s/crl4fj/what_are_your_favorite_lobste_rs_comments",
-    "source": "lobsters",
-    "score": 113,
-    "comments": 20,
-    "text": "The forum has been around for a long time and I occasionally find old gems, I wonder what great insights etc. I've missed from the past.",
-    "published_at": "2026-06-18T17:04:00Z",
-    "rank_within_source": 1,
-    "hn_url": "https://lobste.rs/s/crl4fj/what_are_your_favorite_lobste_rs_comments",
-    "prior": 0.686,
-    "_spillover_date": "2026-06-19"
-  },
-  {
-    "id": "hn:48608255",
-    "title": "Bootimus \u2013 A Self-Contained PXE and HTTP Boot Server",
-    "url": "https://bootimus.com",
+    "id": "hn:48616713",
+    "title": "A 3D voxel game engine written in APL",
+    "url": "https://github.com/namgyaaal/avoxelgame",
     "source": "hn",
-    "score": 26,
-    "comments": 5,
+    "score": 94,
+    "comments": 8,
     "text": "",
-    "published_at": "2026-06-20T10:55:18Z",
+    "published_at": "2026-06-21T08:04:54Z",
     "rank_within_source": 4,
-    "hn_url": "https://news.ycombinator.com/item?id=48608255",
+    "hn_url": "https://news.ycombinator.com/item?id=48616713",
     "prior": 0.667,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "github:1269395331",
+    "title": "Waishnav/devspace \u2014 Turn ChatGPT into Codex",
+    "url": "https://github.com/Waishnav/devspace",
+    "source": "github_trending",
+    "score": 1559,
+    "comments": 17,
+    "text": "Turn ChatGPT into Codex",
+    "published_at": "2026-06-14T16:57:27Z",
+    "rank_within_source": 3,
+    "hn_url": "",
+    "prior": 0.664,
     "_spillover_date": "2026-06-20"
+  },
+  {
+    "id": "github:1274547830",
+    "title": "Forsy-AI/agent-apprenticeship \u2014 The living ecosystem where AI agents learn from real-world work through iterative workflow loops, reusable experience, and collective training signal exchange.",
+    "url": "https://github.com/Forsy-AI/agent-apprenticeship",
+    "source": "github_trending",
+    "score": 582,
+    "comments": 2,
+    "text": "The living ecosystem where AI agents learn from real-world work through iterative workflow loops, reusable experience, and collective training signal exchange.",
+    "published_at": "2026-06-19T16:19:37Z",
+    "rank_within_source": 5,
+    "hn_url": "",
+    "prior": 0.662,
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "schneier:https://www.schneier.com/?p=72164",
@@ -235,6 +263,34 @@
     "rank_within_source": 1,
     "hn_url": "",
     "prior": 0.66,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "lobsters:5j33bp",
+    "title": "Apple Internals: Swift in the Kernel",
+    "url": "https://blog.calif.io/p/apple-internals-swift-in-the-kernel",
+    "source": "lobsters",
+    "score": 15,
+    "comments": 0,
+    "text": "",
+    "published_at": "2026-06-21T08:41:24Z",
+    "rank_within_source": 5,
+    "hn_url": "https://lobste.rs/s/5j33bp/apple_internals_swift_kernel",
+    "prior": 0.65,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "lobsters:k5raot",
+    "title": "Bevy 0.19",
+    "url": "https://bevy.org/news/bevy-0-19/",
+    "source": "lobsters",
+    "score": 53,
+    "comments": 7,
+    "text": "",
+    "published_at": "2026-06-19T21:41:22Z",
+    "rank_within_source": 3,
+    "hn_url": "https://lobste.rs/s/k5raot/bevy_0_19",
+    "prior": 0.65,
     "_spillover_date": "2026-06-20"
   },
   {
@@ -249,21 +305,21 @@
     "rank_within_source": 3,
     "hn_url": "",
     "prior": 0.646,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
   },
   {
-    "id": "lobsters:jmhfck",
-    "title": "Safe SIMD in Rust, even on the inside",
-    "url": "https://shnatsel.medium.com/safe-simd-in-rust-even-on-the-inside-c6f1ff381828",
+    "id": "lobsters:watrw9",
+    "title": "OCaml 5.5.0 released",
+    "url": "https://discuss.ocaml.org/t/ocaml-5-5-0-released/18265",
     "source": "lobsters",
-    "score": 14,
-    "comments": 1,
+    "score": 78,
+    "comments": 0,
     "text": "",
-    "published_at": "2026-06-20T04:16:28Z",
+    "published_at": "2026-06-20T17:11:59Z",
     "rank_within_source": 6,
-    "hn_url": "https://lobste.rs/s/jmhfck/safe_simd_rust_even_on_inside",
-    "prior": 0.604,
-    "_spillover_date": "2026-06-20"
+    "hn_url": "https://lobste.rs/s/watrw9/ocaml_5_5_0_released",
+    "prior": 0.607,
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "hf:2606.19334",
@@ -277,7 +333,7 @@
     "rank_within_source": 3,
     "hn_url": "",
     "prior": 0.6,
-    "_spillover_date": "2026-06-20"
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "adactio:https://adactio.com/journal/22611",
@@ -291,20 +347,160 @@
     "rank_within_source": 3,
     "hn_url": "",
     "prior": 0.6,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "heydesigner:https://heydesigner.com/2026-06-18/",
+    "title": "Storied Colors",
+    "url": "https://heydesigner.com/2026-06-18/",
+    "source": "heydesigner",
+    "score": 0,
+    "comments": 0,
+    "text": "Every frame perfect, Ending responsive images, The golden rule of customizable select, Introducing the MDN MCP server.",
+    "published_at": "2026-06-18T07:42:00Z",
+    "rank_within_source": 2,
+    "hn_url": "",
+    "prior": 0.592,
     "_spillover_date": "2026-06-20"
   },
   {
-    "id": "github:1271627791",
-    "title": "rebel0789/codexpro \u2014 Use ChatGPT Developer Mode as a local coding agent for your repo through MCP.",
-    "url": "https://github.com/rebel0789/codexpro",
+    "id": "lobsters:crl4fj",
+    "title": "What are your Favorite Lobste.rs Comments?",
+    "url": "https://lobste.rs/s/crl4fj/what_are_your_favorite_lobste_rs_comments",
+    "source": "lobsters",
+    "score": 113,
+    "comments": 20,
+    "text": "The forum has been around for a long time and I occasionally find old gems, I wonder what great insights etc. I've missed from the past.",
+    "published_at": "2026-06-18T17:04:00Z",
+    "rank_within_source": 1,
+    "hn_url": "https://lobste.rs/s/crl4fj/what_are_your_favorite_lobste_rs_comments",
+    "prior": 0.583,
+    "_spillover_date": "2026-06-19"
+  },
+  {
+    "id": "github:1271432814",
+    "title": "ngrok/webernetes \u2014 Kubernetes in the browser.",
+    "url": "https://github.com/ngrok/webernetes",
     "source": "github_trending",
-    "score": 500,
-    "comments": 3,
-    "text": "Use ChatGPT Developer Mode as a local coding agent for your repo through MCP.",
-    "published_at": "2026-06-16T21:22:43Z",
+    "score": 433,
+    "comments": 4,
+    "text": "Kubernetes in the browser.",
+    "published_at": "2026-06-16T16:52:34Z",
     "rank_within_source": 7,
     "hn_url": "",
     "prior": 0.582,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "hn:48608255",
+    "title": "Bootimus \u2013 A Self-Contained PXE and HTTP Boot Server",
+    "url": "https://bootimus.com",
+    "source": "hn",
+    "score": 26,
+    "comments": 5,
+    "text": "",
+    "published_at": "2026-06-20T10:55:18Z",
+    "rank_within_source": 4,
+    "hn_url": "https://news.ycombinator.com/item?id=48608255",
+    "prior": 0.567,
+    "_spillover_date": "2026-06-20"
+  },
+  {
+    "id": "producthunt:tag:www.producthunt.com,2005:Post/1176905",
+    "title": "Agent 37",
+    "url": "https://www.producthunt.com/products/agent-37-38",
+    "source": "producthunt",
+    "score": 0,
+    "comments": 0,
+    "text": "Give every customer their own Hermes or OpenClaw agent Discussion | Link",
+    "published_at": "2026-06-20T19:03:23Z",
+    "rank_within_source": 1,
+    "hn_url": "",
+    "prior": 0.55,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "github:1269836503",
+    "title": "dongshuyan/compass-skills \u2014 \u53f8\u5357\uff1a\u4e2a\u6027\u5316 AI \u4efb\u52a1\u603b\u63a7 Skills \u7cfb\u7edf /COMPASS: Personal Alignment Skills OS for AI Agents",
+    "url": "https://github.com/dongshuyan/compass-skills",
+    "source": "github_trending",
+    "score": 400,
+    "comments": 0,
+    "text": "\u53f8\u5357\uff1a\u4e2a\u6027\u5316 AI \u4efb\u52a1\u603b\u63a7 Skills \u7cfb\u7edf /COMPASS: Personal Alignment Skills OS for AI Agents",
+    "published_at": "2026-06-15T06:28:04Z",
+    "rank_within_source": 8,
+    "hn_url": "",
+    "prior": 0.55,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "hn:48599555",
+    "title": "Running MicroVMs in Proxmox VE, the Easy Way",
+    "url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+    "source": "hn",
+    "score": 121,
+    "comments": 9,
+    "text": "",
+    "published_at": "2026-06-19T15:13:11Z",
+    "rank_within_source": 7,
+    "hn_url": "https://news.ycombinator.com/item?id=48599555",
+    "prior": 0.545,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "lobsters:gdwaqt",
+    "title": "Town Square, the community deserves connection",
+    "url": "https://cauenapier.com/blog/town-square-the-community-deserves-connection/",
+    "source": "lobsters",
+    "score": 25,
+    "comments": 10,
+    "text": "",
+    "published_at": "2026-06-20T10:02:17Z",
+    "rank_within_source": 8,
+    "hn_url": "https://lobste.rs/s/gdwaqt/town_square_community_deserves",
+    "prior": 0.54,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "techcrunch:https://techcrunch.com/?p=3134695",
+    "title": "In the Weights is your new AI-centric vanity search",
+    "url": "https://techcrunch.com/2026/06/20/in-the-weights-is-your-new-ai-centric-vanity-search/",
+    "source": "techcrunch",
+    "score": 0,
+    "comments": 0,
+    "text": "So ... what's your In the Weights score?",
+    "published_at": "2026-06-20T19:41:11Z",
+    "rank_within_source": 2,
+    "hn_url": "",
+    "prior": 0.539,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "hn:48587865",
+    "title": "Two Qwen3 models on one DGX Spark: the residency math",
+    "url": "https://www.devashish.me/p/two-qwen3-models-on-one-dgx-spark",
+    "source": "hn",
+    "score": 18,
+    "comments": 7,
+    "text": "",
+    "published_at": "2026-06-18T16:29:52Z",
+    "rank_within_source": 8,
+    "hn_url": "https://news.ycombinator.com/item?id=48587865",
+    "prior": 0.516,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "lobsters:jmhfck",
+    "title": "Safe SIMD in Rust, even on the inside",
+    "url": "https://shnatsel.medium.com/safe-simd-in-rust-even-on-the-inside-c6f1ff381828",
+    "source": "lobsters",
+    "score": 14,
+    "comments": 1,
+    "text": "",
+    "published_at": "2026-06-20T04:16:28Z",
+    "rank_within_source": 6,
+    "hn_url": "https://lobste.rs/s/jmhfck/safe_simd_rust_even_on_inside",
+    "prior": 0.513,
     "_spillover_date": "2026-06-20"
   },
   {
@@ -316,10 +512,24 @@
     "comments": 0,
     "text": "Luca Guadagnino's film about OpenAI CEO Sam Altman, Artificial, has reportedly been dropped by Amazon MGM. The film, which stars Andrew Garfield and covers the rollercoaster five days in 2023 spanning Altman's termination and reinstatement ",
     "published_at": "2026-06-19T14:15:29Z",
-    "rank_within_source": 1,
+    "rank_within_source": 2,
     "hn_url": "",
-    "prior": 0.58,
-    "_spillover_date": "2026-06-20"
+    "prior": 0.504,
+    "_spillover_date": "2026-06-21"
+  },
+  {
+    "id": "github:1272999515",
+    "title": "MstKail/polymarket-trading-bot-services-polyedge365 \u2014 polymarket trading bot services, polymarket copy trading bot, polymarket arbitrage bot, polymarket hedge bot, polymarket maker bot, polymarket trading bot services, polymarket copy trading bot, polymarket arbitrage bot, polymarket hedge bot, polymarket maker bot, polymarket trading bot services, polymarket copy trading bot, polymarket arbitrage bot",
+    "url": "https://github.com/MstKail/polymarket-trading-bot-services-polyedge365",
+    "source": "github_trending",
+    "score": 373,
+    "comments": 0,
+    "text": "polymarket trading bot services, polymarket copy trading bot, polymarket arbitrage bot, polymarket hedge bot, polymarket maker bot, polymarket trading bot services, polymarket copy trading bot, polymarket arbitrage bot, polymarket hedge bot",
+    "published_at": "2026-06-18T05:56:44Z",
+    "rank_within_source": 10,
+    "hn_url": "",
+    "prior": 0.499,
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "hn:48582374",
@@ -332,7 +542,7 @@
     "published_at": "2026-06-18T08:16:20Z",
     "rank_within_source": 6,
     "hn_url": "https://news.ycombinator.com/item?id=48582374",
-    "prior": 0.579,
+    "prior": 0.492,
     "_spillover_date": "2026-06-20"
   },
   {
@@ -346,8 +556,22 @@
     "published_at": "2026-06-13T00:00:00Z",
     "rank_within_source": 1,
     "hn_url": "",
-    "prior": 0.564,
+    "prior": 0.479,
     "_spillover_date": "2026-06-19"
+  },
+  {
+    "id": "github:1272107529",
+    "title": "ReulgeApmpetty0O/Back-End-Developer-Interview-Questions \u2014 A list of back-end related questions you can be inspired from to interview potential candidates, test yourself or completely ignore",
+    "url": "https://github.com/ReulgeApmpetty0O/Back-End-Developer-Interview-Questions",
+    "source": "github_trending",
+    "score": 357,
+    "comments": 1,
+    "text": "A list of back-end related questions you can be inspired from to interview potential candidates, test yourself or completely ignore",
+    "published_at": "2026-06-17T09:46:11Z",
+    "rank_within_source": 11,
+    "hn_url": "",
+    "prior": 0.478,
+    "_spillover_date": "2026-06-21"
   },
   {
     "id": "techcrunch:https://techcrunch.com/?post_type=tc_video&p=3134608",
@@ -360,21 +584,7 @@
     "published_at": "2026-06-19T16:08:17Z",
     "rank_within_source": 2,
     "hn_url": "",
-    "prior": 0.539,
-    "_spillover_date": "2026-06-20"
-  },
-  {
-    "id": "github:1274547830",
-    "title": "Forsy-AI/agent-apprenticeship \u2014 The living ecosystem for AI agents learning from real-world work through iterative loops and training-signal exchange.",
-    "url": "https://github.com/Forsy-AI/agent-apprenticeship",
-    "source": "github_trending",
-    "score": 438,
-    "comments": 6,
-    "text": "The living ecosystem for AI agents learning from real-world work through iterative loops and training-signal exchange.",
-    "published_at": "2026-06-19T16:19:37Z",
-    "rank_within_source": 9,
-    "hn_url": "",
-    "prior": 0.523,
+    "prior": 0.458,
     "_spillover_date": "2026-06-20"
   },
   {
@@ -388,7 +598,7 @@
     "published_at": "2026-06-13T08:32:39Z",
     "rank_within_source": 4,
     "hn_url": "",
-    "prior": 0.518,
+    "prior": 0.44,
     "_spillover_date": "2026-06-19"
   },
   {
@@ -402,21 +612,7 @@
     "published_at": "2026-06-19T04:49:33Z",
     "rank_within_source": 2,
     "hn_url": "",
-    "prior": 0.504,
-    "_spillover_date": "2026-06-20"
-  },
-  {
-    "id": "github:1269836503",
-    "title": "dongshuyan/compass-skills \u2014 \u53f8\u5357\uff1a\u4e2a\u6027\u5316 AI \u4efb\u52a1\u603b\u63a7 Skills \u7cfb\u7edf /COMPASS: Personal Alignment Skills OS for AI Agents",
-    "url": "https://github.com/dongshuyan/compass-skills",
-    "source": "github_trending",
-    "score": 393,
-    "comments": 0,
-    "text": "\u53f8\u5357\uff1a\u4e2a\u6027\u5316 AI \u4efb\u52a1\u603b\u63a7 Skills \u7cfb\u7edf /COMPASS: Personal Alignment Skills OS for AI Agents",
-    "published_at": "2026-06-15T06:28:04Z",
-    "rank_within_source": 10,
-    "hn_url": "",
-    "prior": 0.499,
+    "prior": 0.428,
     "_spillover_date": "2026-06-20"
   },
   {
@@ -430,7 +626,7 @@
     "published_at": "2026-06-19T12:45:11Z",
     "rank_within_source": 2,
     "hn_url": "https://news.ycombinator.com/item?id=48597939",
-    "prior": 0.493,
+    "prior": 0.419,
     "_spillover_date": "2026-06-19"
   },
   {
@@ -444,7 +640,7 @@
     "published_at": "2026-06-19T08:26:25Z",
     "rank_within_source": 10,
     "hn_url": "https://lobste.rs/s/heb0am/godot_4_7_lights_camera_action",
-    "prior": 0.49,
+    "prior": 0.416,
     "_spillover_date": "2026-06-20"
   },
   {
@@ -458,7 +654,7 @@
     "published_at": "2026-06-19T16:05:30Z",
     "rank_within_source": 1,
     "hn_url": "",
-    "prior": 0.468,
+    "prior": 0.398,
     "_spillover_date": "2026-06-20"
   },
   {
@@ -472,7 +668,7 @@
     "published_at": "2026-06-19T15:23:28Z",
     "rank_within_source": 1,
     "hn_url": "",
-    "prior": 0.448,
+    "prior": 0.381,
     "_spillover_date": "2026-06-19"
   },
   {
@@ -486,7 +682,7 @@
     "published_at": "2026-06-17T08:08:00Z",
     "rank_within_source": 3,
     "hn_url": "",
-    "prior": 0.445,
+    "prior": 0.378,
     "_spillover_date": "2026-06-19"
   },
   {
@@ -500,91 +696,7 @@
     "published_at": "2026-06-18T05:10:01Z",
     "rank_within_source": 2,
     "hn_url": "https://lobste.rs/s/b0mp2e/changes_emacs_31_i_m_already_daily_driving",
-    "prior": 0.441,
+    "prior": 0.375,
     "_spillover_date": "2026-06-18"
-  },
-  {
-    "id": "hf:2606.19602",
-    "title": "Configurable Clinical Information Extraction with Agentic RAG: What Works, What Breaks, and Why",
-    "url": "https://huggingface.co/papers/2606.19602",
-    "source": "huggingface",
-    "score": 0,
-    "comments": 1,
-    "text": "Patient contexts span hundreds of heterogeneous documents and thousands of structured data points, yet the document-level metadata that AI systems need for retrieval and triage is absent or incomplete. Standard retrieval-augmented generatio",
-    "published_at": "2026-06-17T00:00:00Z",
-    "rank_within_source": 3,
-    "hn_url": "",
-    "prior": 0.433,
-    "_spillover_date": "2026-06-19"
-  },
-  {
-    "id": "lobsters:u0nv8q",
-    "title": "DiffsHub",
-    "url": "https://diffshub.com/",
-    "source": "lobsters",
-    "score": 9,
-    "comments": 2,
-    "text": "",
-    "published_at": "2026-06-19T10:36:25Z",
-    "rank_within_source": 6,
-    "hn_url": "https://lobste.rs/s/u0nv8q/diffshub",
-    "prior": 0.421,
-    "_spillover_date": "2026-06-19"
-  },
-  {
-    "id": "hn:48585866",
-    "title": "Ubiquiti: Enterprise NAS, Built on ZFS",
-    "url": "https://blog.ui.com/article/introducing-enterprise-nas",
-    "source": "hn",
-    "score": 58,
-    "comments": 27,
-    "text": "",
-    "published_at": "2026-06-18T14:24:30Z",
-    "rank_within_source": 2,
-    "hn_url": "https://news.ycombinator.com/item?id=48585866",
-    "prior": 0.419,
-    "_spillover_date": "2026-06-18"
-  },
-  {
-    "id": "hf:2606.20381",
-    "title": "Rethinking Shrinkage Bias in LLM FP4 Pretraining: Geometric Origin, Systemic Impact, and UFP4 Recipe",
-    "url": "https://huggingface.co/papers/2606.20381",
-    "source": "huggingface",
-    "score": 0,
-    "comments": 1,
-    "text": "FP4 training promises substantial reductions in memory and computation cost for LLM pretraining, yet current FP4 hardware paths and recipes, including NVIDIA Blackwell/Rubin-class systems and AMD MI350-series GPUs, remain centered on E2M1 d",
-    "published_at": "2026-06-18T00:00:00Z",
-    "rank_within_source": 2,
-    "hn_url": "",
-    "prior": 0.416,
-    "_spillover_date": "2026-06-19"
-  },
-  {
-    "id": "lobsters:azy6y2",
-    "title": "I hate compilers",
-    "url": "https://xeiaso.net/notes/2026/anubis-wasm-vendor-binary/",
-    "source": "lobsters",
-    "score": 75,
-    "comments": 41,
-    "text": "",
-    "published_at": "2026-06-18T05:14:20Z",
-    "rank_within_source": 7,
-    "hn_url": "https://lobste.rs/s/azy6y2/i_hate_compilers",
-    "prior": 0.412,
-    "_spillover_date": "2026-06-19"
-  },
-  {
-    "id": "heydesigner:https://heydesigner.com/newsletter/daily-designer/",
-    "title": "Daily Designer",
-    "url": "https://heydesigner.com/newsletter/daily-designer/",
-    "source": "heydesigner",
-    "score": 0,
-    "comments": 0,
-    "text": "UI Skills for design engineers, Dieter Rams avoids computers. His ten rules still fit designing for AI, What is AX?, Design systems are over and more.",
-    "published_at": "2026-06-16T16:25:00Z",
-    "rank_within_source": 4,
-    "hn_url": "",
-    "prior": 0.399,
-    "_spillover_date": "2026-06-19"
   }
 ]
