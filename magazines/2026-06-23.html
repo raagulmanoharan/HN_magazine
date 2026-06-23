@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; TUESDAY, JUNE 23, 2026</title>
-<meta name="description" content="Agents, injections, taste, and squiggles">
+<meta name="description" content="Agents, privacy gaps, and craft that ships">
 <meta property="og:title" content="Morning Edition · TUESDAY, JUNE 23, 2026">
-<meta property="og:description" content="Agents, injections, taste, and squiggles">
+<meta property="og:description" content="Agents, privacy gaps, and craft that ships">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Raleway:wght@400;500;600;800&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -682,15 +682,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AI SECURITY</div>
-      <h2 class="cover-title">Prompt Injection as Role Confusion</h2>
-      <p class="cover-tagline">Agents, injections, taste, and squiggles</p>
-      <p class="body-lead body-lead--wide">Simon Willison frames prompt injection not as a jailbreak problem but as a structural role-confusion failure — and praises a blog-style paper writeup that makes the research actually land. If you&#x27;re building agentic workflows that process untrusted content, this reframe changes how you think about mitigations.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; LOCAL LLM</div>
+      <h2 class="cover-title">GLM-5.2 — How to Run Locally</h2>
+      <p class="cover-tagline">Agents, privacy gaps, and craft that ships</p>
+      <p class="body-lead body-lead--wide">Unsloth drops a practical guide for running GLM-5.2 locally, and the HN thread is buzzing with 215 comments from people actually benchmarking it. For a UX designer building agentic workflows or running evals offline, a capable local model changes the privacy calculus entirely.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/#atom-everything" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://unsloth.ai/docs/models/glm-5.2" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Read the linked paper writeup today and audit any agentic pipeline where user-supplied text touches system-level instructions.</p>
+      <p class="apply-note">&rarr; Follow the Unsloth docs to get GLM-5.2 running locally today — no API key, no egress.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -700,143 +700,72 @@ a{color:inherit;text-underline-offset:4px}
 <section data-story="2" class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">DESIGN × AI</div>
+    <div class="kicker">AGENTIC AI / PRIVACY</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Taste: Design DNA for AI Agents — a Claude Code Skill</h2>
-    <p class="body-lead">Tastelab reads any website&#x27;s design tokens and the decisions behind them, framing it as abductive reasoning for design — and ships as a Claude Code skill you can drop into your workflow today. This is the rare thing: a design-intelligence tool built for the agentic layer, not just another Figma plugin.</p>
+    <h2>Capable but Careless: Do Computer-Use Agents Follow Contextual Integrity?</h2>
+    <p class="body-lead">Researchers probe whether computer-use agents respect contextual integrity — the social norm that information shared in one context shouldn&#x27;t freely flow to another. As CUAs cross email, calendars, and to-do apps, this is the privacy paper your next design review needs on the table.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Open tastelab.xyz, install the Claude Code skill, and run it against a competitor or inspiration site to extract its design DNA.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://www.tastelab.xyz/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Read before your next agentic-workflow design session — the framework here maps directly to permission-scoping decisions in your UI.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://huggingface.co/papers/2606.23189" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="3" class="spread s-polaroid">
-  <div class="kicker">GENERATIVE TOOLS</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">Porting Moebius 0.2B Image Inpainting to Run in the Browser</div>
-      <div class="photo-caption">No. 03 &middot; simonwillison.net</div>
-    </div>
-    <div>
-      <p class="body-lead">Willison ports a compact but surprisingly capable inpainting model to run entirely in-browser using Claude Code, producing a working demo with no server required. For a UX designer experimenting with generative image workflows, a local-weight inpainting tool with zero infra overhead is immediately useful.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://simonwillison.net/2026/Jun/22/porting-moebius/#atom-everything" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
-      </div>
-      <p class="apply-note">&rarr; Pull up the working browser demo linked in the post and test it on a design mockup or UI screenshot today.</p>
-      
-    </div>
-  </div>
-</section>
-
-<section data-story="4" class="spread s-riso">
-  <div class="layout">
-    <div class="kicker">INTERACTION DESIGN</div>
-    <div class="riso-num" data-n="04" aria-hidden="true">04</div>
-    <h2>Show Your Hands: Designing Finger-Friendly Interactions</h2>
-    <p class="body-lead">A thoughtful longread on the biomechanics and cultural strangeness of designing for hands — the appendages your users actually touch screens with. Sidebar picks on touch interaction craft are rare enough that this one shouldn&#x27;t be skipped.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://aresluna.org/show-your-hands-honor/" target="_blank" rel="noopener">Pull a proof &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Audit your current mobile UI against the finger-reach zones and grip postures discussed in the piece.</p>
-    
-  </div>
-</section>
-
-<section data-story="5" class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">05</div>
-  <div class="content">
-    <div class="kicker">AI SAFETY</div>
-    <h2>Anthropic&#x27;s Fable 5 Safety Model Jailbroken Within Days</h2>
-    <p class="body-lead">Schneier covers the rapid circumvention of Fable 5&#x27;s hardened guardrails, raising the recurring question of whether capability-restricted model variants can hold. Directly relevant context if you&#x27;re making trust decisions about which Anthropic model tier to build on.</p>
-    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/06/anthropics-fable-5-model-jailbroken-within-days.html" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-  <div class="footer-slug">Morning Edition &middot; After Dark</div>
-</section>
-
-<section data-story="6" class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #      
-#   #  #####  
-#   #  #   #  
-#####  #####  </div>
-    <div class="kicker">AGENTIC TOOLS</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
-    <h2>Cloudflare&#x27;s Security Audit Skill for Coding Agents</h2>
-    <p class="body-lead">&gt; Cloudflare ships a reusable coding-agent skill for multi-phase security audits with machine-readable, independently verified findings — a concrete pattern for composable agent capabilities. The skill-as-module architecture is worth studying even if security audits aren&#x27;t your primary use case.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">$ open &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Clone the repo and inspect the skill&#x27;s interface design as a template for your own Claude Code or coding-agent skills.</p>
-    
-  </div>
-</section>
-
-<section data-story="7" class="spread s-stat">
+<section data-story="3" class="spread s-pullquote">
   <div class="top">
-    <div class="chip">No. 07 &middot; MODEL RESEARCH</div>
-    
-  </div>
-  <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">3B</div>
-    <div class="stat-label">params to beat Opus 4.5</div>
-  </div>
-  <div>
-    <h2>VibeThinker: 3B Model That Beats Opus 4.5 on Reasoning</h2>
-    <p class="body-lead">A 3-billion parameter model trained with a novel SFT+GRPO combo reportedly outperforms Claude Opus 4.5 on reasoning benchmarks — a significant efficiency claim if it holds up to scrutiny. The HN thread is already stress-testing the methodology, making it worth reading alongside the paper.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://arxiv.org/abs/2606.16140" target="_blank" rel="noopener">Read the story &rarr;</a></div>
-    
-    
-  </div>
-</section>
-
-<section data-story="8" class="spread s-academic">
-  <div class="masthead-line">
-    <span>Morning Edition &mdash; Review</span>
-    <span class="roman">VIII</span>
-  </div>
-  <div>
-    <div class="kicker">AI POLICY + RESEARCH</div>
-    <h2>Toward Open-Weight LLMs Without Risks: Separating Capabilities</h2>
-    <div class="body-lead">This paper proposes a technical path to releasing open-weight models that preserve research utility while suppressing specific dangerous capabilities — moving beyond the blunt instrument of pre-release suppression. Directly relevant to anyone evaluating open vs. hosted model tradeoffs for sensitive applications.</div>
-    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://huggingface.co/papers/2606.21638" target="_blank" rel="noopener">Continue reading &rarr;</a>
-      
-    </div>
-    
-  </div>
-  <div>
-    <div class="footnote">&sect; filed under ai policy + research</div>
-  </div>
-</section>
-
-<section data-story="9" class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">AI WORKFLOWS</div>
-    <div class="tiny-num" aria-hidden="true">09</div>
+    <div class="kicker" style="color:#d9b26a">AGENTIC WORKFLOWS</div>
+    <div class="tiny-num" aria-hidden="true">03</div>
   </div>
   <div>
     <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">The loop is the product now.</p>
-    <div class="attrib">&mdash; lucumr.pocoo.org</div>
+    <p class="pq">Context doesn&#x27;t preserve itself — someone has to engineer the memory.</p>
+    <div class="attrib">&mdash; openai.com</div>
   </div>
   <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Armin Ronacher (Flask, Jinja) argues that the agentic feedback loop — where AI continuously refines its own output — is the structural shift developers and designers haven&#x27;t fully reckoned with. Sharp practitioner voice, not hot-take punditry.</p>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Jason Liu&#x27;s field report on using Codex to preserve context and manage complexity across long tasks is exactly the kind of practitioner writeup this reader lives for — not a product announcement, but a real workflow teardown from someone who ships with it daily.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://lucumr.pocoo.org/2026/6/23/the-coming-loop/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://openai.com/index/codex-maxxing-long-running-work" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Steal Liu&#x27;s context-preservation patterns for your own Codex or Claude agentic loops today.</p>
+    
+  </div>
+</section>
+
+<section data-story="4" class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #   #  
+#   #  #   #  
+#   #  #####  
+#   #      #  
+#####      #  </div>
+    <div class="kicker">AI TOOLING</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
+    <h2>Baidu Unlimited-OCR — One-Shot Long-Horizon Document Parsing</h2>
+    <p class="body-lead">&gt; Baidu drops an OCR library claiming one-shot parsing across arbitrarily long documents — a genuine gap in existing tooling. If you&#x27;re building LLM pipelines that ingest PDFs, design specs, or scanned research, this is worth a quick clone and test against your real data.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://github.com/baidu/Unlimited-OCR" target="_blank" rel="noopener">$ open &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Clone the repo and run it against a complex PDF you&#x27;ve been pre-processing by hand.</p>
+    
+  </div>
+</section>
+
+<section data-story="5" class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">CREATIVE TOOLS / OPEN SOURCE</div>
+    <div class="tiny-num" aria-hidden="true">05</div>
+  </div>
+  <h2>Collaboration on drivers would benefit everyone — so naturally, it doesn&#x27;t happen.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">David Revoy — the Pepper &amp; Carrot artist — breaks down the structural incentives preventing tablet makers from cooperating on open drivers. It&#x27;s a quiet case study in how hardware vendor politics shape the creative software stack designers actually depend on.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; davidrevoy.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.davidrevoy.com/article1154/why-drawing-tablet-brands-wont-collaborate-on-linux-floss-drivers" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
@@ -844,18 +773,102 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section data-story="10" class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 10</span>
-    <span>CRAFT HISTORY</span>
+<section data-story="6" class="spread s-newsprint">
+  <div class="masthead-bar">The Daily Ledger</div>
+  <div class="title-row">
+    <div class="badge">06</div>
+    <div>
+      <div class="kicker">SURVEILLANCE / PRIVACY</div>
+      <h2>MSG Made Dossier on Activists Who Opposed Facial Recognition</h2>
+    </div>
   </div>
-  <div class="ix-body">
-    <h2>In Memory of the Man Who Put Red and Green Squiggles Under Words</h2>
-    <p class="body-lead">An Old New Thing tribute to the engineer behind spell-check underlines — one of the most quietly influential UI affordances in software history, now so embedded in interfaces we forget someone designed it. A brief, humanizing read that reframes how we think about interface primitives.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://devblogs.microsoft.com/oldnewthing/20260622-00/?p=112451" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+  <div class="cols">
+    <p>Madison Square Garden didn&#x27;t just use facial recognition to ban lawyers — they compiled opposition research on critics of the program.</p>
+    <p>This is the full-loop version of surveillance drift: the system retaliates against those who question it, which matters for anyone designing or advocating around biometric UI.</p>
+  </div>
+  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+    <a class="read-more" href="https://www.404media.co/madison-square-garden-made-dossier-on-activists-who-opposed-facial-recognition/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    
+  </div>
+  
+  
+</section>
+
+<section data-story="7" class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">VII</span>
+  </div>
+  <div>
+    <div class="kicker">EVALS / AGENTIC AI</div>
+    <h2>Counsel: A Meta-Evaluation Dataset for Agentic Tasks</h2>
+    <div class="body-lead">Evaluating multi-step agentic trajectories by hand takes hours — Counsel is a meta-eval dataset designed to automate that bottleneck. If you&#x27;re building or reviewing agentic systems and care about eval rigor, this is the infrastructure paper to bookmark.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://huggingface.co/papers/2606.21627" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
+    
+  </div>
+  <div>
+    <div class="footnote">&sect; filed under evals / agentic ai</div>
+  </div>
+</section>
+
+<section data-story="8" class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.08</span>
+      <span>OPENAI.COM</span>
+      <span>SHEET 8/10</span>
+    </div>
+    <div class="kicker">SECURITY / AI</div>
+    <h2>OpenAI: Patch the Planet — AI-Assisted Open Source Vulnerability Fixing</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">08</div>
+      <p class="body-lead">OpenAI&#x27;s Daybreak initiative pairs AI triage with human expert review to find and fix open-source vulnerabilities at scale. The interesting design question buried here: how do you build a workflow where AI handles initial triage and humans handle confirmation without each degrading the other&#x27;s judgment?</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://openai.com/index/patch-the-planet" target="_blank" rel="noopener">View schematic &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section data-story="9" class="spread s-polaroid">
+  <div class="kicker">DESIGN CRAFT</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">Designing Beyond the Surface: How DashDigital Turns Complexity into Clarity</div>
+      <div class="photo-caption">No. 09 &middot; tympanus.net</div>
+    </div>
+    <div>
+      <p class="body-lead">Codrops profiles DashDigital&#x27;s research-led approach, making the case that strong digital work requires understanding the problem architecture before touching pixels. A rare practitioner showcase with enough process transparency to actually learn from.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://tympanus.net/codrops/2026/06/22/designing-beyond-the-surface-how-dashdigital-turns-complexity-into-clarity/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
+
+<section data-story="10" class="spread s-stat">
+  <div class="top">
+    <div class="chip">No. 10 &middot; UX RESEARCH</div>
+    
+  </div>
+  <div class="stat-wrap">
+    <div class="stat-value" aria-hidden="true">27%</div>
+    <div class="stat-label">of orgs actually act on research findings</div>
+  </div>
+  <div>
+    <h2>94% Say Research Matters. Only 27% Act on It.</h2>
+    <p class="body-lead">A survey of 309 researchers and leaders maps the gap between insight generation and organizational decision-making. For UX designers who&#x27;ve watched their own findings disappear into a Confluence graveyard, the numbers are grimly familiar — but the gap-closing patterns are worth the read.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://bit.ly/side-hey1" target="_blank" rel="noopener">Read the story &rarr;</a></div>
     
     
   </div>
@@ -866,9 +879,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  5 of them are flagged as directly applicable &mdash; open those first.</p>
+  4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Lora and Raleway. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-06-23 13:42 UTC.</p>
+  at 2026-06-23 14:57 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0539 &middot; TUESDAY, JUNE 23, 2026</p>
