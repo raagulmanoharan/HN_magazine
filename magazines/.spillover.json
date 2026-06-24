@@ -4,27 +4,27 @@
     "title": "kanavtwtgg/birds.cafe",
     "url": "https://github.com/kanavtwtgg/birds.cafe",
     "source": "github_trending",
-    "score": 727,
+    "score": 753,
     "comments": 0,
     "text": "",
     "published_at": "2026-06-21T13:57:28Z",
-    "rank_within_source": 6,
-    "hn_url": "",
-    "prior": 0.619,
-    "_spillover_date": "2026-06-24"
-  },
-  {
-    "id": "github:1277578741",
-    "title": "bozhouDev/codex-orange-book \u2014 Codex \u6a59\u76ae\u4e66\uff1a\u4ece\u5b89\u88c5\u5230\u5b9e\u6218\u6848\u4f8b\u7684\u5168\u94fe\u8def Codex \u4f7f\u7528\u6307\u5357\uff08\u975e\u5b98\u65b9\u5f00\u6e90\uff0c\u542b\u53ef\u4e0b\u8f7d PDF\uff09",
-    "url": "https://github.com/bozhouDev/codex-orange-book",
-    "source": "github_trending",
-    "score": 653,
-    "comments": 2,
-    "text": "Codex \u6a59\u76ae\u4e66\uff1a\u4ece\u5b89\u88c5\u5230\u5b9e\u6218\u6848\u4f8b\u7684\u5168\u94fe\u8def Codex \u4f7f\u7528\u6307\u5357\uff08\u975e\u5b98\u65b9\u5f00\u6e90\uff0c\u542b\u53ef\u4e0b\u8f7d PDF\uff09",
-    "published_at": "2026-06-23T02:36:54Z",
     "rank_within_source": 7,
     "hn_url": "",
     "prior": 0.582,
+    "_spillover_date": "2026-06-24"
+  },
+  {
+    "id": "github:1275444433",
+    "title": "overflowy/make-look-scanned \u2014 Makes PDFs look scanned (CLI or in the browser via WASM)",
+    "url": "https://github.com/overflowy/make-look-scanned",
+    "source": "github_trending",
+    "score": 397,
+    "comments": 0,
+    "text": "Makes PDFs look scanned (CLI or in the browser via WASM)",
+    "published_at": "2026-06-20T17:39:59Z",
+    "rank_within_source": 12,
+    "hn_url": "",
+    "prior": 0.459,
     "_spillover_date": "2026-06-24"
   }
 ]
