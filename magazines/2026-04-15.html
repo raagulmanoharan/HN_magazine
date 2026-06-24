@@ -261,7 +261,7 @@ a{color:inherit;text-underline-offset:4px}
 
   /* --- Snap frame --- */
   html{scroll-snap-type:y mandatory}
-  body{font-size:17px}
+  body{font-size:17px;overflow-x:hidden}
 
   /* --- Sticky nav bar --- */
   #m-nav{
@@ -304,8 +304,6 @@ a{color:inherit;text-underline-offset:4px}
     scroll-snap-align:start;
     overflow:hidden
   }
-  /* First spread clears the 44px nav bar */
-  .spread:first-of-type{padding-top:60px}
 
   /* --- Base type --- */
   .kicker{font-size:12px;letter-spacing:.22em}
@@ -322,13 +320,15 @@ a{color:inherit;text-underline-offset:4px}
 
   /* Inline CTA rows: stack vertically */
   .spread [style*="display:flex"][style*="gap:24px"]{
-    flex-direction:column!important;gap:10px!important;align-items:stretch!important
+    flex-direction:column!important;gap:10px!important;align-items:flex-start!important
   }
+  /* Prevent long repo names / URLs from busting out horizontally */
+  .spread h2,.spread h1,.cover-title{word-break:break-word;overflow-wrap:break-word}
 
   /* --- 01 HERO --- */
   .s-hero{padding:0}
   .s-hero .masthead{
-    padding:56px 20px 14px;
+    padding:62px 20px 14px; /* 44px nav + 18px breathing room */
     flex-direction:column;align-items:flex-start;gap:4px;
     border-bottom-width:3px
   }
@@ -345,7 +345,7 @@ a{color:inherit;text-underline-offset:4px}
   .s-hero .cover-tagline{font-size:17px;margin:0 0 16px;max-width:none;line-height:1.4}
 
   /* --- 02 MIDNIGHT --- */
-  .s-midnight .bg-num{font-size:66vw;right:-6vw;top:6%;opacity:.55}
+  .s-midnight .bg-num{font-size:44vw;right:-4vw;top:8%;opacity:.45}
   .s-midnight .content{max-width:none}
   .s-midnight h2{font-size:clamp(30px,9vw,50px);margin:14px 0 16px;line-height:1.05}
 
@@ -354,7 +354,7 @@ a{color:inherit;text-underline-offset:4px}
     top:68px;right:16px;padding:7px 10px;font-size:11px;
     border-width:3px;letter-spacing:.16em;line-height:1.1;transform:rotate(6deg)
   }
-  .s-rose .numeral-xl{font-size:32vw;line-height:.85;margin:16px 0 -4px}
+  .s-rose .numeral-xl{font-size:20vw;line-height:.85;margin:10px 0 -4px}
   .s-rose h2{font-size:clamp(26px,8vw,44px);margin:12px 0 14px}
 
   /* --- 04 TERMINAL --- */
@@ -370,7 +370,7 @@ a{color:inherit;text-underline-offset:4px}
   .s-academic .masthead-line{font-size:15px}
   .s-academic h2{font-size:clamp(26px,7.5vw,42px);margin:16px 0 14px}
   .s-academic .body-lead{column-count:1;font-size:17px}
-  .s-academic .body-lead::first-letter{font-size:clamp(56px,17vw,84px);margin:4px 10px 0 -2px}
+  .s-academic .body-lead::first-letter{font-size:clamp(36px,10vw,52px);margin:4px 8px 0 -2px}
   .s-academic .footnote{font-size:15px}
   .s-academic .roman{font-size:16px}
 
@@ -378,7 +378,7 @@ a{color:inherit;text-underline-offset:4px}
   .s-stat .top{flex-direction:column;gap:10px;align-items:flex-start}
   .s-stat .chip{font-size:12px;padding:7px 12px;border-width:2px}
   .s-stat .stat-wrap{padding:16px 0}
-  .s-stat .stat-value{font-size:38vw;line-height:.85}
+  .s-stat .stat-value{font-size:22vw;line-height:.85}
   .s-stat .stat-label{font-size:13px;letter-spacing:.18em;margin-top:8px}
   .s-stat h2{font-size:clamp(18px,5vw,28px);margin:14px 0 8px}
 
@@ -390,20 +390,20 @@ a{color:inherit;text-underline-offset:4px}
   .s-newsprint .cols{column-count:1;font-size:17px;margin-top:16px;line-height:1.6}
 
   /* --- 08 NEON --- */
-  .s-neon .numeral-slash{font-size:44vw;-webkit-text-stroke-width:2px}
+  .s-neon .numeral-slash{font-size:28vw;-webkit-text-stroke-width:1.5px}
   .s-neon h2{font-size:clamp(26px,8vw,46px);margin:6px 0 14px}
   .s-neon .kicker{padding:7px 12px}
   .s-neon .apply-note{padding:12px 14px}
 
   /* --- 09 ZINE --- */
-  .s-zine .marker-num{font-size:38vw}
+  .s-zine .marker-num{font-size:24vw}
   .s-zine h2{font-size:clamp(26px,8vw,44px);margin:12px 0 12px;transform:none}
   .s-zine .sticker{font-size:12px;padding:8px 12px;
     box-shadow:3px 3px 0 #1a1a1a;transform:none}
   .s-zine .scribble{width:70%;height:6px}
 
   /* --- 10 PULLQUOTE --- */
-  .s-pullquote .quote-open{font-size:44vw;line-height:.72;margin:0 0 -6px -4px}
+  .s-pullquote .quote-open{font-size:28vw;line-height:.72;margin:0 0 -4px -2px}
   .s-pullquote .pq{font-size:clamp(22px,7.5vw,38px);line-height:1.1;
     margin:0 0 14px;max-width:none}
   .s-pullquote .tiny-num{font-size:24px}
@@ -454,7 +454,7 @@ a{color:inherit;text-underline-offset:4px}
     font-size:clamp(26px,8vw,44px);margin:10px 0 14px;
     text-shadow:2px 2px 0 rgba(10,184,190,.55),-2px -2px 0 rgba(255,71,140,.45)
   }
-  .s-riso .riso-num{font-size:38vw}
+  .s-riso .riso-num{font-size:24vw}
 
   /* --- 17 INDEX CARD --- */
   .s-index::before{left:20px}
@@ -484,8 +484,12 @@ a{color:inherit;text-underline-offset:4px}
   .s-postcard .body-lead{max-width:none}
 
   /* --- Colophon --- */
-  .colophon{padding:32px 20px 52px;scroll-snap-align:start}
-  .colophon h3{font-size:32px}
+  .colophon{
+    padding:52px 20px 52px;
+    scroll-snap-align:start;
+    min-height:100svh;min-height:100vh
+  }
+  .colophon h3{font-size:28px}
   .colophon p{font-size:17px}
 }
 </style>
