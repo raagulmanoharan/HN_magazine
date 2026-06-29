@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; WEDNESDAY, JUNE 24, 2026</title>
-<meta name="description" content="Agents go agentic, type goes physical, and science goes weird.">
+<meta name="description" content="Ship it, test it, make it visible">
 <meta property="og:title" content="Morning Edition · WEDNESDAY, JUNE 24, 2026">
-<meta property="og:description" content="Agents go agentic, type goes physical, and science goes weird.">
+<meta property="og:description" content="Ship it, test it, make it visible">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,500;0,700;0,900;1,500;1,900&family=Karla:wght@400;500;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -440,7 +440,7 @@ a{color:inherit;text-underline-offset:4px}
 
   /* --- Snap frame --- */
   html{scroll-snap-type:y mandatory}
-  body{font-size:17px;overflow-x:hidden}
+  body{font-size:17px}
 
   /* --- Sticky nav bar --- */
   #m-nav{
@@ -455,7 +455,7 @@ a{color:inherit;text-underline-offset:4px}
     position:relative;overflow:hidden
   }
   #m-nav-title{
-    font-family:'Karla',sans-serif;font-weight:800;font-size:11px;
+    font-family:'Inter',sans-serif;font-weight:800;font-size:11px;
     letter-spacing:.18em;text-transform:uppercase;color:#f4ecd8;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
     max-width:55%
@@ -467,7 +467,7 @@ a{color:inherit;text-underline-offset:4px}
     justify-content:flex-end
   }
   #m-progress{
-    font-family:'Karla',sans-serif;font-weight:700;font-size:11px;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:11px;
     letter-spacing:.12em;color:#d9b26a
   }
   #m-bar{
@@ -483,6 +483,8 @@ a{color:inherit;text-underline-offset:4px}
     scroll-snap-align:start;
     overflow:hidden
   }
+  /* First spread clears the 44px nav bar */
+  .spread:first-of-type{padding-top:60px}
 
   /* --- Base type --- */
   .kicker{font-size:12px;letter-spacing:.22em}
@@ -499,15 +501,13 @@ a{color:inherit;text-underline-offset:4px}
 
   /* Inline CTA rows: stack vertically */
   .spread [style*="display:flex"][style*="gap:24px"]{
-    flex-direction:column!important;gap:10px!important;align-items:flex-start!important
+    flex-direction:column!important;gap:10px!important;align-items:stretch!important
   }
-  /* Prevent long repo names / URLs from busting out horizontally */
-  .spread h2,.spread h1,.cover-title{word-break:break-word;overflow-wrap:break-word}
 
   /* --- 01 HERO --- */
   .s-hero{padding:0}
   .s-hero .masthead{
-    padding:62px 20px 14px; /* 44px nav + 18px breathing room */
+    padding:56px 20px 14px;
     flex-direction:column;align-items:flex-start;gap:4px;
     border-bottom-width:3px
   }
@@ -524,7 +524,7 @@ a{color:inherit;text-underline-offset:4px}
   .s-hero .cover-tagline{font-size:17px;margin:0 0 16px;max-width:none;line-height:1.4}
 
   /* --- 02 MIDNIGHT --- */
-  .s-midnight .bg-num{font-size:44vw;right:-4vw;top:8%;opacity:.45}
+  .s-midnight .bg-num{font-size:66vw;right:-6vw;top:6%;opacity:.55}
   .s-midnight .content{max-width:none}
   .s-midnight h2{font-size:clamp(30px,9vw,50px);margin:14px 0 16px;line-height:1.05}
 
@@ -533,7 +533,7 @@ a{color:inherit;text-underline-offset:4px}
     top:68px;right:16px;padding:7px 10px;font-size:11px;
     border-width:3px;letter-spacing:.16em;line-height:1.1;transform:rotate(6deg)
   }
-  .s-rose .numeral-xl{font-size:20vw;line-height:.85;margin:10px 0 -4px}
+  .s-rose .numeral-xl{font-size:32vw;line-height:.85;margin:16px 0 -4px}
   .s-rose h2{font-size:clamp(26px,8vw,44px);margin:12px 0 14px}
 
   /* --- 04 TERMINAL --- */
@@ -549,7 +549,7 @@ a{color:inherit;text-underline-offset:4px}
   .s-academic .masthead-line{font-size:15px}
   .s-academic h2{font-size:clamp(26px,7.5vw,42px);margin:16px 0 14px}
   .s-academic .body-lead{column-count:1;font-size:17px}
-  .s-academic .body-lead::first-letter{font-size:clamp(36px,10vw,52px);margin:4px 8px 0 -2px}
+  .s-academic .body-lead::first-letter{font-size:clamp(56px,17vw,84px);margin:4px 10px 0 -2px}
   .s-academic .footnote{font-size:15px}
   .s-academic .roman{font-size:16px}
 
@@ -557,7 +557,7 @@ a{color:inherit;text-underline-offset:4px}
   .s-stat .top{flex-direction:column;gap:10px;align-items:flex-start}
   .s-stat .chip{font-size:12px;padding:7px 12px;border-width:2px}
   .s-stat .stat-wrap{padding:16px 0}
-  .s-stat .stat-value{font-size:22vw;line-height:.85}
+  .s-stat .stat-value{font-size:38vw;line-height:.85}
   .s-stat .stat-label{font-size:13px;letter-spacing:.18em;margin-top:8px}
   .s-stat h2{font-size:clamp(18px,5vw,28px);margin:14px 0 8px}
 
@@ -569,20 +569,20 @@ a{color:inherit;text-underline-offset:4px}
   .s-newsprint .cols{column-count:1;font-size:17px;margin-top:16px;line-height:1.6}
 
   /* --- 08 NEON --- */
-  .s-neon .numeral-slash{font-size:28vw;-webkit-text-stroke-width:1.5px}
+  .s-neon .numeral-slash{font-size:44vw;-webkit-text-stroke-width:2px}
   .s-neon h2{font-size:clamp(26px,8vw,46px);margin:6px 0 14px}
   .s-neon .kicker{padding:7px 12px}
   .s-neon .apply-note{padding:12px 14px}
 
   /* --- 09 ZINE --- */
-  .s-zine .marker-num{font-size:24vw}
+  .s-zine .marker-num{font-size:38vw}
   .s-zine h2{font-size:clamp(26px,8vw,44px);margin:12px 0 12px;transform:none}
   .s-zine .sticker{font-size:12px;padding:8px 12px;
     box-shadow:3px 3px 0 #1a1a1a;transform:none}
   .s-zine .scribble{width:70%;height:6px}
 
   /* --- 10 PULLQUOTE --- */
-  .s-pullquote .quote-open{font-size:28vw;line-height:.72;margin:0 0 -4px -2px}
+  .s-pullquote .quote-open{font-size:44vw;line-height:.72;margin:0 0 -6px -4px}
   .s-pullquote .pq{font-size:clamp(22px,7.5vw,38px);line-height:1.1;
     margin:0 0 14px;max-width:none}
   .s-pullquote .tiny-num{font-size:24px}
@@ -633,7 +633,7 @@ a{color:inherit;text-underline-offset:4px}
     font-size:clamp(26px,8vw,44px);margin:10px 0 14px;
     text-shadow:2px 2px 0 rgba(10,184,190,.55),-2px -2px 0 rgba(255,71,140,.45)
   }
-  .s-riso .riso-num{font-size:24vw}
+  .s-riso .riso-num{font-size:38vw}
 
   /* --- 17 INDEX CARD --- */
   .s-index::before{left:20px}
@@ -663,12 +663,8 @@ a{color:inherit;text-underline-offset:4px}
   .s-postcard .body-lead{max-width:none}
 
   /* --- Colophon --- */
-  .colophon{
-    padding:52px 20px 52px;
-    scroll-snap-align:start;
-    min-height:100svh;min-height:100vh
-  }
-  .colophon h3{font-size:28px}
+  .colophon{padding:32px 20px 52px;scroll-snap-align:start}
+  .colophon h3{font-size:32px}
   .colophon p{font-size:17px}
 }
 </style>
@@ -686,162 +682,123 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; ANTHROPIC</div>
-      <h2 class="cover-title">Claude&#x27;s new tool_use streaming lets you watch agents think in real time</h2>
-      <p class="cover-tagline">Agents go agentic, type goes physical, and science goes weird.</p>
-      <p class="body-lead body-lead--wide">Anthropic&#x27;s streaming tool_use events now surface each intermediate step as it happens — input_json_delta chunks let you render partial tool calls before the full JSON lands. For anyone building agentic UIs, this is the hook that makes &quot;thinking&quot; states feel honest rather than theatrical.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AGENTIC TOOLING</div>
+      <h2 class="cover-title">Haystack: Open-Source AI Framework for Production-Ready Agents and RAG</h2>
+      <p class="cover-tagline">Ship it, test it, make it visible</p>
+      <p class="body-lead body-lead--wide">Deepset&#x27;s Haystack is a composable Python framework for building RAG pipelines and agentic workflows that actually ship to production — not toy demos. If you&#x27;re wiring LLMs into real products, this is the plumbing worth knowing. Modular, evals-friendly, and actively maintained.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://docs.anthropic.com/en/api/tool-use-streaming" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://haystack.deepset.ai/" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Wire up the streaming SDK today and surface partial tool calls in your agent&#x27;s status UI — one afternoon of work.</p>
+      <p class="apply-note">&rarr; Install today with `pip install haystack-ai` and explore the agentic pipeline templates in the docs.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
   </div>
 </section>
 
-<section data-story="2" class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">02</div>
-  <div class="content">
-    <div class="kicker">LOCAL-FIRST</div>
-    <h2>Ink &amp; Switch: Peritext — a CRDT for rich text that actually composes</h2>
-    <p class="body-lead">Ink &amp; Switch published Peritext, a character-level CRDT that preserves rich text intent across concurrent edits — the thing that makes collaborative Markdown editors stop eating your bold tags when two people type at once. The formalism is dense but the demo is immediately convincing.</p>
-    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.inkandswitch.com/peritext/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-  <div class="footer-slug">Morning Edition &middot; After Dark</div>
-</section>
-
-<section data-story="3" class="spread s-rose">
+<section data-story="2" class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">FIGMA</div>
-    <div class="numeral-xl" aria-hidden="true">03</div>
-    <h2>Figma Variables hit GA: design tokens that survive the handoff</h2>
-    <p class="body-lead">Figma Variables are now fully live — scoped color, number, string, and boolean tokens that bind directly to components and export as JSON. The design-to-code gap just got a measurable chunk smaller, especially if you&#x27;re running a Tailwind or CSS-variable-based system.</p>
+    <div class="kicker">UX CRAFT</div>
+    <div class="numeral-xl" aria-hidden="true">02</div>
+    <h2>Testing What Users Actually See with Vitest and Chromatic</h2>
+    <p class="body-lead">Chromatic&#x27;s visual regression layer bolted onto Vitest&#x27;s Browser Mode gives you component tests that catch what the eye catches, not just what assertions catch. For a UX designer who also ships, this is the gap between &quot;tests pass&quot; and &quot;it looks right.&quot;</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Create a token library today and connect it to your existing component set — the Variable Scope controls are surprisingly granular.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://www.figma.com/blog/variables-are-generally-available/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Follow the Codrops walkthrough to add Chromatic snapshots to an existing Vitest suite in an afternoon.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://tympanus.net/codrops/2026/06/24/testing-what-users-actually-see-with-vitest-and-chromatic/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="4" class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #   #  
-#   #  #   #  
-#   #  #####  
-#   #      #  
-#####      #  </div>
-    <div class="kicker">LLM TOOLING</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">hamel.dev</span></div>
-    <h2>Evals for LLMs: a practical field guide from Hamel Husain</h2>
-    <p class="body-lead">&gt; Hamel&#x27;s guide cuts through the eval hype with concrete patterns — unit evals for individual behaviors, integration evals for pipelines, and a sharp take on why LLM-as-judge works better than it should when you constrain the rubric. Actionable from page one.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://hamel.dev/blog/posts/evals/" target="_blank" rel="noopener">$ open &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Start with three unit evals on your worst-performing prompt today. The guide&#x27;s scoring template pastes straight into a Python test.</p>
-    
-  </div>
-</section>
-
-<section data-story="5" class="spread s-academic">
+<section data-story="3" class="spread s-academic">
   <div class="masthead-line">
     <span>Morning Edition &mdash; Review</span>
-    <span class="roman">V</span>
+    <span class="roman">III</span>
   </div>
   <div>
-    <div class="kicker">TYPOGRAPHY</div>
-    <h2>Matthew Butterick&#x27;s Practical Typography, 2026 edition: the ligature chapter</h2>
-    <div class="body-lead">Butterick updated his ligature guidance for variable fonts and updated OpenType feature support — specifically, when discretionary ligatures cross the line from refinement to noise. His test for &#x27;would a reader notice if this ligature were missing?&#x27; is still the clearest heuristic in the field.</div>
+    <div class="kicker">GENERATIVE ART</div>
+    <h2>Semantic Browsing: Controllable Diversity for Image Generation</h2>
+    <div class="body-lead">Text-to-image models collapse into a single canonical interpretation of any prompt — this paper proposes mechanisms to steer toward genuine semantic diversity without sacrificing fidelity. Directly relevant to anyone using generative tooling for design exploration or moodboarding.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://practicaltypography.com/ligatures.html" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      <a class="read-more" href="https://huggingface.co/papers/2606.23679" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
   </div>
   <div>
-    <div class="footnote">&sect; filed under typography</div>
+    <div class="footnote">&sect; filed under generative art</div>
   </div>
 </section>
 
-<section data-story="6" class="spread s-stat">
-  <div class="top">
-    <div class="chip">No. 06 &middot; DEV TOOLS</div>
-    <span class="tag-applies">Applies to you</span>
-  </div>
-  <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">—</div>
-    <div class="stat-label">POINTS ON HN</div>
-  </div>
-  <div>
-    <h2>Open-source project: Zed editor adds Claude as a built-in AI backend</h2>
-    <p class="body-lead">Zed&#x27;s native Claude integration routes through the Anthropic API directly — no extension, no wrapper, just `zed.toml` config and you&#x27;re editing with context-aware completions. The latency advantage over Copilot-via-extension is measurable in their own benchmarks.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://zed.dev/blog/claude-ai-backend" target="_blank" rel="noopener">Read the story &rarr;</a></div>
-    <p class="apply-note">&rarr; Swap your editor backend this afternoon — the config is three lines and the free tier covers a full workday of completions.</p>
-    
-  </div>
-</section>
-
-<section data-story="7" class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">07</div>
+<section data-story="4" class="spread s-polaroid">
+  <div class="kicker">GENERATIVE CRAFT</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">InkField | 墨域 — Every Gesture Remembered, Every Image Evolving</div>
+      <div class="photo-caption">No. 04 &middot; ileivoivm.github.io</div>
+    </div>
     <div>
-      <div class="kicker">NEUROSCIENCE</div>
-      <h2>Researchers map the &#x27;binding problem&#x27; in biological neural nets — and it&#x27;s not where you&#x27;d expect</h2>
+      <p class="body-lead">A browser-based generative drawing system where every stroke persists and the image keeps evolving after you&#x27;ve lifted the pen. It&#x27;s a rare piece of interaction design that treats the act of drawing as the artifact, not the output.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://ileivoivm.github.io/inkField/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
+      </div>
+      <p class="apply-note">&rarr; Open it now in a browser — no install, no sign-up, just draw.</p>
+      
     </div>
   </div>
-  <div class="cols">
-    <p>A Quanta deep-dive on how the brain stitches disparate perceptual features into a unified object — turns out temporal synchrony (neurons firing together) matters far le</p>
-    <p>ss than population-level geometry in high-dimensional latent space. Directly relevant to anyone thinking about how LLM attention might or might not model the same thing.</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://www.quantamagazine.org/the-binding-problem-neural-timing/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
-    
-  </div>
-  
-  
 </section>
 
-<section data-story="8" class="spread s-neon">
-  <div>
-    <div class="kicker">DESIGN SYSTEMS</div>
+<section data-story="5" class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">DESIGN HISTORY</div>
+    <div class="riso-num" data-n="05" aria-hidden="true">05</div>
+    <h2>A Short History of Modern Brand Design</h2>
+    <p class="body-lead">Jens Müller and Katharina Süstek&#x27;s new Taschen book traces the visual grammar of modern branding from 19th-century marks through today&#x27;s system-scale identities. For a designer thinking about how design systems inherit historical logic, this is the long view.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.itsnicethat.com/features/katharina-sussek-jens-muller-the-elements-of-brand-design-taschen-publication-graphic-design-spotlight-170626" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      
+    </div>
+    
+    
   </div>
-  <div>
-    <div class="numeral-slash" aria-hidden="true">08</div>
-    <h2>shadcn/ui: new Registry CLI ships component copy-paste without the boilerplate</h2>
-    <p class="body-lead">shadcn&#x27;s Registry CLI lets you publish and consume components from any URL — your own hosted registry, a GitHub repo, or a local path. The copy-paste model now has a protocol, which means design systems that refused to be npm packages finally have a distribution story.</p>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://ui.shadcn.com/docs/registry" target="_blank" rel="noopener">Go loud &rarr;</a>
+</section>
+
+<section data-story="6" class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #####  
+#   #  #      
+#   #  #####  
+#   #  #   #  
+#####  #####  </div>
+    <div class="kicker">DEV TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
+    <h2>OPFS + Pyodide Test Harness — Python in the Browser, Persistent Storage</h2>
+    <p class="body-lead">&gt; Simon Willison is experimenting with OPFS (Origin Private File System) to let Pyodide-based browser apps read and write persistent SQLite files — no server required. The architecture notes here are a blueprint for building genuinely local-first Python tools.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://simonwillison.net/2026/Jun/23/opfs-pyodide/#atom-everything" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Publish your internal component library as a registry today and replace your current Notion &#x27;copy this code&#x27; docs with a one-liner.</p>
+    <p class="apply-note">&rarr; The test harness is linked in the post; you can fork and run it against your own Pyodide project today.</p>
     
   </div>
 </section>
 
-<section data-story="9" class="spread s-zine">
-  <div>
-    <div class="sticker">Cut &amp; keep</div>
+<section data-story="7" class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 07</span>
+    <span>AI IN THE WILD</span>
   </div>
-  <div>
-    <div class="marker-num" aria-hidden="true">09</div>
-    <div class="scribble" aria-hidden="true"></div>
-    <div class="kicker">SECURITY</div>
-    <h2>Schneier: AI-assisted phishing is now indistinguishable from targeted spear-phishing</h2>
-    <p class="body-lead">Schneier breaks down recent research showing GPT-4-level models can craft contextually accurate spear-phishing emails that beat human-written attacks in click-through rate. The implication isn&#x27;t just &#x27;threats got worse&#x27; — it&#x27;s that volume-based email defenses are now structurally obsolete.</p>
+  <div class="ix-body">
+    <h2>How GPT-5 Helped Solve a 3-Year Immunology Mystery</h2>
+    <p class="body-lead">Immunologist Derya Unutmaz used GPT-5 Pro to crack a T cell behavior puzzle that had been stuck for three years — a field report on what frontier models actually do when applied to hard domain-specific research, not a press release about potential.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.schneier.com/blog/archives/2025/05/ai-and-phishing.html" target="_blank" rel="noopener">Read it &rarr;</a>
+      <a class="read-more" href="https://openai.com/index/gpt-5-immunology-mystery" target="_blank" rel="noopener">Follow the thread &rarr;</a>
       
     </div>
     
@@ -849,22 +806,59 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section data-story="10" class="spread s-pullquote">
+<section data-story="8" class="spread s-manifesto">
   <div class="top">
-    <div class="kicker" style="color:#d9b26a">AI HARDWARE</div>
-    <div class="tiny-num" aria-hidden="true">10</div>
+    <div class="kicker">SECURITY</div>
+    <div class="tiny-num" aria-hidden="true">08</div>
   </div>
+  <h2>The format has been so thoroughly gamed it has lost its signal value.<span class="mark">.</span></h2>
   <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">The Humane Arc Pin post-mortem: what wearable AI actually needs to replace a screen</p>
-    <div class="attrib">&mdash; theverge.com</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">With Humane&#x27;s acquisition by HP, a clear autopsy is possible: the Arc Pin failed not on AI capability but on response latency and lack of a persistent ambient display. The interaction model that works isn&#x27;t &#x27;no screen&#x27; — it&#x27;s &#x27;right-sized screen surfaced at the right moment.&#x27; A useful constraints brief for anyone designing ambient AI UX.</p>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Filippo Valsorda argues that the CVE/vuln-report ritual has been so thoroughly gamed — by AI-generated noise, bounty hunters, and PR-driven disclosure — that the format has lost its signal value. A sharp critique with real implications for how security communication is designed.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; words.filippo.io</div>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.theverge.com/2025/5/17/24158619/humane-ai-pin-hp-acquisition" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://words.filippo.io/vuln-reports/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
+    
+    
+  </div>
+</section>
+
+<section data-story="9" class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.09</span>
+      <span>KOLISTAT.COM</span>
+      <span>SHEET 9/10</span>
+    </div>
+    <div class="kicker">DEV TOOLS</div>
+    <h2>Statistics That Live in Your SQL — StatsDuck v0.6.0</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">09</div>
+      <p class="body-lead">StatsDuck embeds statistical functions directly into DuckDB so you can run regressions, distributions, and hypothesis tests inside SQL queries — no R, no Python context switch. For designers doing any data-informed UX work, this dramatically lowers the friction of quick quantitative checks.</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://kolistat.com/blog/the-stats-duck-v0-6-0/" target="_blank" rel="noopener">View schematic &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Install the DuckDB extension from the post and run your first statistical query against a CSV in minutes.</p>
+    
+  </div>
+</section>
+
+<section data-story="10" class="spread s-stat">
+  <div class="top">
+    <div class="chip">No. 10 &middot; SHIPPING NEWS</div>
+    
+  </div>
+  <div class="stat-wrap">
+    <div class="stat-value" aria-hidden="true">1,778</div>
+    <div class="stat-label">HN points on launch day</div>
+  </div>
+  <div>
+    <h2>Steam Machine Launches Today</h2>
+    <p class="body-lead">Valve&#x27;s Steam Machine is back — a proper Linux gaming PC hitting retail after years of SteamOS maturation. With 1,500+ HN comments, this is a genuine platform moment: Linux on the desktop via the gaming wedge, with real hardware and Valve&#x27;s full distribution weight behind it.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://store.steampowered.com/news/group/45479024/view/685257114654870245" target="_blank" rel="noopener">Read the story &rarr;</a></div>
     
     
   </div>
@@ -877,7 +871,7 @@ a{color:inherit;text-underline-offset:4px}
   <p>Ten stories, hand-curated across twenty sources before you were awake.
   5 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Bitter and Karla. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-06-24 15:32 UTC.</p>
+  at 2026-06-24 14:40 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0540 &middot; WEDNESDAY, JUNE 24, 2026</p>
