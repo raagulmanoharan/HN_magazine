@@ -1,0 +1,4596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Morning Edition — Weekly &middot; SUNDAY, JUNE 7, 2026</title>
+<meta name="description" content="Sandboxes, worms, memory dreams, and design systems">
+<meta property="og:title" content="Morning Edition — Weekly &middot; SUNDAY, JUNE 7, 2026">
+<meta property="og:description" content="Sandboxes, worms, memory dreams, and design systems">
+<meta property="og:type" content="article">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#111;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.spread{position:relative;min-height:100vh;overflow:hidden}
+a{color:inherit}
+
+/* ---- Mobile global scroll-snap overlay (fixed) ---- */
+@media(max-width:719px){
+html{scroll-snap-type:y mandatory}
+body{overflow-x:hidden}
+#m-nav{
+  display:flex!important;
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  height:48px;
+  background:rgba(17,17,17,.85);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+#m-nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;padding:0 16px;position:relative;
+}
+#m-nav-title{
+  font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  max-width:55%;
+}
+#m-toc-btn{
+  background:none;border:none;color:#fff;cursor:pointer;
+  display:flex;align-items:center;gap:7px;padding:6px 0;
+  font-size:13px;font-weight:600;letter-spacing:.05em;flex-shrink:0;
+}
+#m-progress{opacity:.75}
+#m-bar{
+  position:absolute;bottom:0;left:0;height:2px;
+  background:#d9b26a;transition:width .35s ease;
+}
+#m-drawer{
+  display:none;position:fixed;top:48px;left:0;right:0;bottom:0;
+  z-index:998;background:rgba(17,17,17,.97);overflow-y:auto;
+  padding:16px 0 32px;
+}
+#m-drawer.open{display:block}
+.m-drawer-close{
+  padding:12px 20px 16px;font-size:13px;opacity:.6;cursor:pointer;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.m-drawer-item{
+  display:flex;align-items:baseline;gap:10px;
+  padding:14px 20px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.m-drawer-item:active{background:rgba(255,255,255,.05)}
+.m-drawer-num{font-size:11px;opacity:.4;flex-shrink:0;min-width:18px}
+.m-drawer-title{font-size:16px;font-weight:600;color:#fff;line-height:1.3}
+.m-drawer-kicker{font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;flex-shrink:0;align-self:center}
+.spread,.spread-colophon{scroll-snap-align:start;min-height:100svh;min-height:100vh;overflow:hidden}
+.spread-cover{padding-top:52px!important;scroll-snap-align:start}
+h1,h2,h3,.cover-title{word-break:break-word;overflow-wrap:break-word}
+}
+</style>
+</head>
+<body>
+<div id="m-nav" style="display:none" role="banner"><div id="m-nav-inner"><span id="m-nav-title">Morning Edition</span><button id="m-toc-btn" aria-label="Open story list" aria-expanded="false"><span id="m-progress">1 / 10</span><svg width="18" height="13" viewBox="0 0 18 13" fill="currentColor" aria-hidden="true"><rect width="18" height="2" rx="1"/><rect y="5.5" width="18" height="2" rx="1"/><rect y="11" width="18" height="2" rx="1"/></svg></button><div id="m-bar" style="width:10%"></div></div></div><div id="m-drawer" role="dialog" aria-modal="true" aria-label="All stories"></div>
+<section data-story="0" class="spread spread-cover">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+.spread-cover { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(24px, 4vw, 64px);
+  box-sizing: border-box;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Background texture layers */
+.spread-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(180, 100, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 10% 80%, rgba(255, 80, 60, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 90% 90%, rgba(0, 200, 180, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Horizontal rule lines texture */
+.spread-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 48px,
+    rgba(255, 255, 255, 0.025) 48px,
+    rgba(255, 255, 255, 0.025) 49px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-cover .cover-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* TOP BAR */
+.spread-cover .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: clamp(12px, 2vw, 24px);
+}
+
+.spread-cover .top-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2vw, 28px);
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.spread-cover .issue-meta {
+  text-align: right;
+}
+
+.spread-cover .issue-no {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2vw, 26px);
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.25em;
+  display: block;
+}
+
+.spread-cover .issue-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 22px);
+  color: rgba(255,255,255,0.25);
+  display: block;
+  margin-top: 4px;
+}
+
+/* MAIN TITLE BLOCK */
+.spread-cover .title-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 5vw, 80px) 0;
+}
+
+.spread-cover .title-morning {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 18vw, 280px);
+  color: #ffffff;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  display: block;
+  position: relative;
+}
+
+/* Ghost duplicate for depth */
+.spread-cover .title-morning::after {
+  content: 'MORNING';
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(180, 100, 255, 0.3);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.spread-cover .title-edition-row {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(16px, 3vw, 48px);
+  margin-top: clamp(4px, 1vw, 12px);
+}
+
+.spread-cover .title-edition {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 18vw, 280px);
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.7);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  display: block;
+}
+
+.spread-cover .subtitle-weekly {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(28px, 5vw, 80px);
+  color: rgba(255,255,255,0.45);
+  line-height: 1;
+  display: block;
+  align-self: flex-end;
+  margin-bottom: clamp(8px, 1.5vw, 18px);
+}
+
+/* DIVIDER LINE WITH ACCENT */
+.spread-cover .mid-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(180,100,255,0.8) 0%, rgba(255,80,60,0.6) 40%, rgba(0,200,180,0.4) 70%, transparent 100%);
+  margin: clamp(16px, 3vw, 40px) 0;
+  position: relative;
+}
+
+.spread-cover .mid-divider::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(180,100,255,0.9);
+  font-size: 10px;
+  line-height: 1;
+}
+
+/* TAGLINE */
+.spread-cover .tagline-block {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 3vw, 48px);
+}
+
+.spread-cover .tagline-eyebrow {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: rgba(180,100,255,0.8);
+  letter-spacing: 0.3em;
+  white-space: nowrap;
+  padding-top: 4px;
+  flex-shrink: 0;
+}
+
+.spread-cover .tagline-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(22px, 3.5vw, 52px);
+  color: rgba(255,255,255,0.75);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+/* BOTTOM BAR */
+.spread-cover .bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: clamp(12px, 2vw, 24px);
+  margin-top: clamp(16px, 3vw, 40px);
+}
+
+.spread-cover .bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-cover .dot-red {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,80,60,0.8);
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(255,80,60,0.5);
+}
+
+.spread-cover .dot-green {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0,200,180,0.8);
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(0,200,180,0.5);
+}
+
+.spread-cover .dot-purple {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(180,100,255,0.8);
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(180,100,255,0.5);
+}
+
+.spread-cover .bottom-caption {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 1.5vw, 20px);
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.08em;
+}
+
+.spread-cover .bottom-right {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: rgba(255,255,255,0.15);
+  letter-spacing: 0.3em;
+}
+
+/* Large background number */
+.spread-cover .bg-number {
+  position: absolute;
+  bottom: -2vw;
+  right: clamp(24px, 4vw, 64px);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(120px, 25vw, 420px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+/* Vertical side label */
+.spread-cover .side-label {
+  position: absolute;
+  right: clamp(8px, 1.5vw, 20px);
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 720px) {
+  .spread-cover .title-edition-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .spread-cover .subtitle-weekly {
+    align-self: flex-start;
+    margin-bottom: 0;
+    margin-top: clamp(4px, 2vw, 12px);
+  }
+
+  .spread-cover .tagline-block {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .spread-cover .tagline-eyebrow {
+    font-size: 18px;
+  }
+
+  .spread-cover .top-bar {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .spread-cover .issue-meta {
+    text-align: left;
+  }
+
+  .spread-cover .bottom-bar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .spread-cover .side-label {
+    display: none;
+  }
+}
+</style>
+
+<div class="cover-inner">
+  <header class="top-bar">
+    <span class="top-label">Morning Edition</span>
+    <div class="issue-meta">
+      <span class="issue-no">Issue W23</span>
+      <span class="issue-date">Sunday, June 7, 2026</span>
+    </div>
+  </header>
+
+  <main class="title-block">
+    <span class="title-morning">Morning</span>
+    <div class="title-edition-row">
+      <span class="title-edition">Edition</span>
+      <span class="subtitle-weekly">— Weekly</span>
+    </div>
+  </main>
+
+  <div class="mid-divider"></div>
+
+  <div class="tagline-block">
+    <span class="tagline-eyebrow">This Issue</span>
+    <p class="tagline-text">Sandboxes, worms, memory dreams, and design systems</p>
+  </div>
+
+  <footer class="bottom-bar">
+    <div class="bottom-left">
+      <span class="dot-red"></span>
+      <span class="dot-green"></span>
+      <span class="dot-purple"></span>
+      <span class="bottom-caption">morningedition.weekly</span>
+    </div>
+    <span class="bottom-right">Vol. I · 2026</span>
+  </footer>
+</div>
+
+<span class="bg-number">23</span>
+<span class="side-label">Morning Edition — Weekly — W23 — 2026</span>
+
+</section>
+<section data-story="1" class="spread spread-1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-1 *,
+.spread-1 *::before,
+.spread-1 *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.spread-1 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #f0ede8;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: clamp(24px, 4vw, 64px);
+}
+
+/* Background grid texture */
+.spread-1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: clamp(32px, 5vw, 60px) clamp(32px, 5vw, 60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gradient accent blob */
+.spread-1::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 60vw, 800px);
+  height: clamp(300px, 60vw, 800px);
+  background: radial-gradient(ellipse at center, rgba(99, 60, 255, 0.18) 0%, rgba(0, 200, 180, 0.08) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-1 .s1-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: clamp(12px, 2vw, 20px);
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+.spread-1 .s1-masthead {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+}
+
+.spread-1 .s1-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.25);
+}
+
+.spread-1 .s1-main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vw, 52px);
+  align-content: start;
+}
+
+.spread-1 .s1-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.3vw, 13px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #00c8b4;
+}
+
+.spread-1 .s1-kicker::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: #00c8b4;
+}
+
+.spread-1 .s1-numeral {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(80px, 18vw, 220px);
+  line-height: 0.85;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.12);
+  position: absolute;
+  right: clamp(-10px, 1vw, 20px);
+  top: 50%;
+  transform: translateY(-60%);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.spread-1 .s1-title-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.spread-1 .s1-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 7.5vw, 96px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  max-width: 14ch;
+}
+
+.spread-1 .s1-title .s1-title-line-accent {
+  display: block;
+  background: linear-gradient(90deg, #6c3cff, #00c8b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.spread-1 .s1-title .s1-title-line-plain {
+  display: block;
+  color: #f0ede8;
+}
+
+.spread-1 .s1-lower {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 40px);
+  position: relative;
+  z-index: 1;
+}
+
+.spread-1 .s1-blurb {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.65;
+  color: rgba(240, 237, 232, 0.72);
+  max-width: 60ch;
+  font-weight: 300;
+}
+
+.spread-1 .s1-blurb strong {
+  color: #f0ede8;
+  font-weight: 500;
+}
+
+.spread-1 .s1-applies-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(14px, 2vw, 22px);
+  background: rgba(108, 60, 255, 0.12);
+  border: 1px solid rgba(108, 60, 255, 0.45);
+  border-left: 4px solid #6c3cff;
+  padding: clamp(16px, 2.5vw, 24px) clamp(18px, 3vw, 28px);
+  max-width: 680px;
+  position: relative;
+}
+
+.spread-1 .s1-applies-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(108, 60, 255, 0.06), transparent 60%);
+  pointer-events: none;
+}
+
+.spread-1 .s1-badge {
+  flex-shrink: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(9px, 1vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: #6c3cff;
+  padding: 5px 10px;
+  line-height: 1.3;
+  text-align: center;
+  transform: rotate(-2deg);
+  box-shadow: 2px 2px 0 rgba(0, 200, 180, 0.4);
+  margin-top: 2px;
+}
+
+.spread-1 .s1-apply-note {
+  font-size: clamp(18px, 1.8vw, 20px);
+  line-height: 1.55;
+  color: rgba(240, 237, 232, 0.85);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.spread-1 .s1-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: clamp(16px, 2.5vw, 28px);
+  margin-top: clamp(20px, 3vw, 40px);
+}
+
+.spread-1 .s1-source-line {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.1vw, 13px);
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-1 a.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0a0a0f;
+  background: linear-gradient(90deg, #6c3cff, #00c8b4);
+  padding: clamp(12px, 1.5vw, 16px) clamp(20px, 3vw, 32px);
+  position: relative;
+  transition: opacity 0.2s;
+}
+
+.spread-1 a.cta::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(255,255,255,0.25);
+  pointer-events: none;
+}
+
+.spread-1 a.cta:hover {
+  opacity: 0.88;
+}
+
+.spread-1 .s1-divider-line {
+  width: clamp(40px, 8vw, 80px);
+  height: 2px;
+  background: linear-gradient(90deg, #6c3cff, #00c8b4);
+  margin: 0;
+  display: block;
+}
+
+@media (min-width: 720px) {
+  .spread-1 .s1-main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: clamp(32px, 5vw, 80px);
+    row-gap: clamp(20px, 3vw, 36px);
+  }
+
+  .spread-1 .s1-kicker-col {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 2vw, 24px);
+  }
+
+  .spread-1 .s1-title-wrap {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  .spread-1 .s1-lower {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 3vw, 40px);
+    border-left: 1px solid rgba(255,255,255,0.08);
+    padding-left: clamp(24px, 4vw, 60px);
+  }
+
+  .spread-1 .s1-numeral {
+    right: clamp(40px, 5vw, 80px);
+    top: 40%;
+  }
+}
+
+</style>
+
+<div class="s1-header">
+  <span class="s1-masthead">Morning Edition — Weekly</span>
+  <span class="s1-issue">Sunday, June 7 · 2026</span>
+</div>
+
+<div class="s1-main">
+  <div class="s1-kicker-col">
+    <span class="s1-kicker">Design Systems</span>
+    <span class="s1-divider-line"></span>
+  </div>
+
+  <div class="s1-title-wrap">
+    <div class="s1-numeral" aria-hidden="true">01</div>
+    <h1 class="s1-title">
+      <span class="s1-title-line-plain">Make Your</span>
+      <span class="s1-title-line-plain">Design</span>
+      <span class="s1-title-line-plain">System</span>
+      <span class="s1-title-line-accent">AI-Ready.</span>
+    </h1>
+  </div>
+
+  <div class="s1-lower">
+    <p class="s1-blurb">
+      A practical guide to reducing drift and improving AI-generated prototype quality — directly relevant if you're already using <strong>Claude or Copilot</strong> to scaffold UI. The framing around <strong>context and token-friendliness</strong> makes this unusually concrete for a Smashing piece.
+    </p>
+
+    <div class="s1-applies-wrap">
+      <span class="s1-badge">Applies<br>to You</span>
+      <p class="s1-apply-note">Audit your current design system tokens and component docs against the AI-readiness checklist in the article today.</p>
+    </div>
+  </div>
+</div>
+
+<div class="s1-footer">
+  <span class="s1-source-line">smashingmagazine.com · Spread 01 of 10</span>
+  <a class="cta" href="https://smashingmagazine.com/2026/06/how-make-design-system-ai-ready/" target="_blank" rel="noopener">Read →</a>
+</div>
+
+</section>
+<section data-story="2" class="spread spread-2">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-2 {
+  min-height: 100vh;
+  background: #0a0e1a;
+  color: #e8eaf0;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: clamp(24px, 4vw, 64px);
+  box-sizing: border-box;
+}
+
+/* Animated grid background */
+.spread-2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(100, 220, 180, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 220, 180, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  z-index: 0;
+}
+
+/* Glowing orb */
+.spread-2::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 50vw, 700px);
+  height: clamp(300px, 50vw, 700px);
+  background: radial-gradient(circle, rgba(100, 220, 180, 0.12) 0%, rgba(60, 100, 255, 0.08) 40%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-2 * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header row */
+.spread-2 .s2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(20px, 3vw, 48px);
+  border-bottom: 1px solid rgba(100, 220, 180, 0.2);
+  padding-bottom: clamp(12px, 2vw, 24px);
+}
+
+.spread-2 .s2-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spread-2 .s2-edition {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  color: rgba(232, 234, 240, 0.4);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.spread-2 .s2-issue-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(48px, 8vw, 120px);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(100, 220, 180, 0.25);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
+.spread-2 .s2-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: #64dcb4;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: rgba(100, 220, 180, 0.08);
+  border: 1px solid rgba(100, 220, 180, 0.3);
+  padding: 6px 14px;
+  align-self: flex-start;
+}
+
+/* Main content */
+.spread-2 .s2-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-content: start;
+}
+
+@media (min-width: 720px) {
+  .spread-2 .s2-body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .spread-2 .s2-title-block {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .spread-2 .s2-right-col {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .spread-2 .s2-blurb-block {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+}
+
+.spread-2 .s2-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 5.5vw, 80px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: #e8eaf0;
+  margin: 0;
+}
+
+.spread-2 .s2-title em {
+  font-style: normal;
+  color: #64dcb4;
+  display: block;
+}
+
+.spread-2 .s2-blurb {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.65;
+  color: rgba(232, 234, 240, 0.7);
+  margin: 0;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+/* Code decoration panel */
+.spread-2 .s2-code-panel {
+  background: rgba(10, 14, 26, 0.8);
+  border: 1px solid rgba(100, 220, 180, 0.2);
+  border-left: 3px solid #64dcb4;
+  padding: clamp(16px, 2.5vw, 28px);
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  line-height: 1.7;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-2 .s2-code-panel::before {
+  content: '●  ●  ●';
+  display: block;
+  color: rgba(100, 220, 180, 0.3);
+  font-size: 18px;
+  margin-bottom: 12px;
+  letter-spacing: 4px;
+}
+
+.spread-2 .s2-code-line {
+  display: block;
+  color: rgba(232, 234, 240, 0.5);
+}
+
+.spread-2 .s2-code-line .kw {
+  color: #64dcb4;
+}
+
+.spread-2 .s2-code-line .str {
+  color: #a8d8c8;
+}
+
+.spread-2 .s2-code-line .cm {
+  color: rgba(100, 220, 180, 0.35);
+}
+
+/* Apply badge */
+.spread-2 .s2-apply-block {
+  background: linear-gradient(135deg, rgba(100, 220, 180, 0.12), rgba(60, 100, 255, 0.08));
+  border: 1px solid rgba(100, 220, 180, 0.4);
+  padding: clamp(16px, 2.5vw, 28px);
+  position: relative;
+}
+
+.spread-2 .s2-apply-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0e1a;
+  background: #64dcb4;
+  display: inline-block;
+  padding: 4px 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.spread-2 .s2-apply-note {
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(232, 234, 240, 0.85);
+  margin: 0;
+  font-weight: 400;
+}
+
+.spread-2 .s2-apply-note strong {
+  color: #64dcb4;
+  font-weight: 700;
+}
+
+/* Footer */
+.spread-2 .s2-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: clamp(24px, 4vw, 48px);
+  padding-top: clamp(12px, 2vw, 24px);
+  border-top: 1px solid rgba(100, 220, 180, 0.15);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.spread-2 .s2-pub {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232, 234, 240, 0.3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-2 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0e1a;
+  background: #64dcb4;
+  text-decoration: none;
+  padding: clamp(12px, 1.5vw, 18px) clamp(20px, 3vw, 40px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-2 .cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.4s;
+}
+
+.spread-2 .cta:hover {
+  background: #a8f0d8;
+  color: #0a0e1a;
+}
+
+.spread-2 .cta:hover::before {
+  transform: translateX(100%);
+}
+
+/* Decorative vertical line */
+.spread-2 .s2-decor-line {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .spread-2 .s2-decor-line {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    bottom: 15%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(100, 220, 180, 0.2) 30%, rgba(100, 220, 180, 0.2) 70%, transparent);
+    z-index: 0;
+  }
+}
+
+/* Wasm hexagon decorative */
+.spread-2 .s2-hex {
+  position: absolute;
+  bottom: clamp(20px, 5vw, 80px);
+  left: clamp(20px, 3vw, 60px);
+  width: clamp(60px, 8vw, 120px);
+  height: clamp(60px, 8vw, 120px);
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.spread-2 .s2-hex::before,
+.spread-2 .s2-hex::after {
+  content: '';
+  position: absolute;
+  border: 2px solid #64dcb4;
+  border-radius: 4px;
+}
+
+.spread-2 .s2-hex::before {
+  inset: 0;
+  transform: rotate(0deg);
+}
+
+.spread-2 .s2-hex::after {
+  inset: 8px;
+  transform: rotate(45deg);
+}
+</style>
+
+<div class="s2-decor-line"></div>
+<div class="s2-hex"></div>
+
+<!-- HEADER -->
+<header class="s2-header">
+  <div class="s2-meta">
+    <span class="s2-edition">Morning Edition · Sunday, June 7, 2026</span>
+    <span class="s2-issue-num">02</span>
+  </div>
+  <span class="s2-kicker">Dev Tools</span>
+</header>
+
+<!-- BODY -->
+<div class="s2-body">
+  <div class="s2-title-block">
+    <h1 class="s2-title">
+      Running Python
+      <em>in a Sandbox</em>
+      with WASM
+    </h1>
+  </div>
+
+  <div class="s2-right-col">
+    <!-- Code panel -->
+    <div class="s2-code-panel">
+      <span class="s2-code-line"><span class="cm"># install the alpha</span></span>
+      <span class="s2-code-line"><span class="kw">pip install</span> <span class="str">micropython-wasm==0.1a2</span></span>
+      <span class="s2-code-line">&nbsp;</span>
+      <span class="s2-code-line"><span class="cm"># run untrusted code safely</span></span>
+      <span class="s2-code-line"><span class="kw">micropython-wasm</span> <span class="str">run</span> script.py</span>
+      <span class="s2-code-line">&nbsp;</span>
+      <span class="s2-code-line"><span class="cm"># zero host access · full isolation</span></span>
+    </div>
+
+    <!-- Apply to you -->
+    <div class="s2-apply-block">
+      <span class="s2-apply-badge">✦ Applies to You</span>
+      <p class="s2-apply-note">
+        <strong>Install micropython-wasm 0.1a2</strong> from PyPI and run the CLI example from the post today.
+      </p>
+    </div>
+  </div>
+
+  <div class="s2-blurb-block">
+    <p class="s2-blurb">
+      Simon Willison's cleanest sandboxing solution yet: MicroPython compiled to WASM, now with a CLI and a pip-installable alpha. If you're building agentic tools that run untrusted code, this is the <em>'try it yourself'</em> moment he's been building toward for years.
+    </p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="s2-footer">
+  <span class="s2-pub">Morning Edition · Weekly</span>
+  <a class="cta" href="https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/#atom-everything" target="_blank" rel="noopener">Read →</a>
+</footer>
+
+</section>
+<section data-story="3" class="spread spread-3">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap');
+
+.spread-3 {
+  min-height: 100vh;
+  background-color: #080c0a;
+  color: #e8f5e9;
+  font-family: 'Share Tech Mono', monospace;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animated scanline texture */
+.spread-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 255, 80, 0.03) 3px,
+    rgba(0, 255, 80, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Radial glow background */
+.spread-3::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(300px, 70vw, 900px);
+  height: clamp(300px, 70vw, 900px);
+  background: radial-gradient(ellipse at center,
+    rgba(0, 200, 80, 0.12) 0%,
+    rgba(0, 80, 30, 0.06) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-3 * {
+  box-sizing: border-box;
+}
+
+/* ── HEADER BAR ── */
+.spread-3 .s3-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(12px, 2vw, 24px) clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid rgba(0, 255, 80, 0.2);
+}
+
+.spread-3 .s3-masthead {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.18em;
+  color: rgba(0, 255, 80, 0.5);
+  text-transform: uppercase;
+}
+
+.spread-3 .s3-issue {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.12em;
+  color: rgba(0, 255, 80, 0.35);
+}
+
+.spread-3 .s3-kicker-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spread-3 .s3-kicker {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  letter-spacing: 0.25em;
+  color: #00ff50;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid rgba(0, 255, 80, 0.5);
+}
+
+.spread-3 .s3-num {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  color: rgba(0, 255, 80, 0.3);
+  letter-spacing: 0.1em;
+}
+
+/* ── MAIN CONTENT ── */
+.spread-3 .s3-main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 6vw, 80px) clamp(20px, 5vw, 64px);
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* Oversized display title */
+.spread-3 .s3-title-wrap {
+  position: relative;
+}
+
+.spread-3 .s3-title-prefix {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(0, 255, 80, 0.55);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.spread-3 .s3-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 11vw, 160px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #e8f5e9;
+  position: relative;
+  margin: 0;
+}
+
+.spread-3 .s3-title .s3-title-line2 {
+  display: block;
+  color: #00ff50;
+  text-shadow:
+    0 0 40px rgba(0, 255, 80, 0.6),
+    0 0 80px rgba(0, 255, 80, 0.2);
+}
+
+.spread-3 .s3-title .s3-title-line3 {
+  display: block;
+  color: rgba(200, 240, 200, 0.6);
+  font-size: clamp(36px, 7vw, 100px);
+}
+
+/* Code stripe decoration */
+.spread-3 .s3-code-stripe {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(10px, 1.1vw, 13px);
+  color: rgba(0, 255, 80, 0.2);
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  white-space: nowrap;
+  overflow: hidden;
+  border-left: 2px solid rgba(0, 255, 80, 0.3);
+  padding-left: 16px;
+  max-width: clamp(280px, 60vw, 700px);
+}
+
+/* Body + blurb area */
+.spread-3 .s3-body-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.spread-3 .s3-blurb {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.65;
+  color: rgba(200, 240, 210, 0.82);
+  max-width: 700px;
+  border-left: 3px solid rgba(0, 255, 80, 0.4);
+  padding-left: clamp(16px, 2vw, 28px);
+}
+
+.spread-3 .s3-blurb strong {
+  color: #00ff50;
+  font-weight: normal;
+}
+
+/* Threat node diagram — pure CSS */
+.spread-3 .s3-diagram {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  row-gap: 12px;
+}
+
+.spread-3 .s3-node {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(11px, 1vw, 13px);
+  letter-spacing: 0.12em;
+  color: #080c0a;
+  background: #00ff50;
+  padding: 6px 14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.spread-3 .s3-node.dim {
+  background: rgba(0, 255, 80, 0.18);
+  color: rgba(0, 255, 80, 0.7);
+}
+
+.spread-3 .s3-arrow {
+  font-size: clamp(18px, 1.5vw, 20px);
+  color: rgba(0, 255, 80, 0.4);
+  padding: 0 8px;
+}
+
+/* ── FOOTER ── */
+.spread-3 .s3-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: clamp(16px, 2.5vw, 28px) clamp(20px, 5vw, 64px);
+  border-top: 1px solid rgba(0, 255, 80, 0.18);
+}
+
+.spread-3 .s3-source {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(11px, 1vw, 13px);
+  color: rgba(0, 255, 80, 0.3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.spread-3 .cta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: #080c0a;
+  background: #00ff50;
+  text-decoration: none;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: clamp(10px, 1.5vw, 16px) clamp(24px, 3vw, 40px);
+  display: inline-block;
+  position: relative;
+  transition: background 0.15s, color 0.15s;
+  box-shadow: 0 0 24px rgba(0, 255, 80, 0.35);
+}
+
+.spread-3 .cta::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 1px solid rgba(0, 255, 80, 0.4);
+  pointer-events: none;
+}
+
+.spread-3 .cta:hover {
+  background: #080c0a;
+  color: #00ff50;
+  box-shadow: 0 0 40px rgba(0, 255, 80, 0.6);
+}
+
+/* Corner decoration */
+.spread-3 .s3-corner-tl,
+.spread-3 .s3-corner-br {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spread-3 .s3-corner-tl {
+  top: 0;
+  right: 0;
+  border-top: 2px solid rgba(0, 255, 80, 0.25);
+  border-right: 2px solid rgba(0, 255, 80, 0.25);
+}
+
+.spread-3 .s3-corner-br {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid rgba(0, 255, 80, 0.25);
+  border-left: 2px solid rgba(0, 255, 80, 0.25);
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 720px) {
+  .spread-3 .s3-body-grid {
+    grid-template-columns: 1.6fr 1fr;
+    align-items: start;
+  }
+
+  .spread-3 .s3-diagram {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .spread-3 .s3-arrow {
+    transform: rotate(90deg);
+    padding: 2px 0;
+  }
+}
+</style>
+
+<div class="s3-corner-tl"></div>
+<div class="s3-corner-br"></div>
+
+<header class="s3-header">
+  <span class="s3-masthead">Morning Edition — Weekly</span>
+  <div class="s3-kicker-bar">
+    <span class="s3-kicker">Security</span>
+    <span class="s3-num">03 / 10</span>
+  </div>
+  <span class="s3-issue">Sun Jun 07 2026</span>
+</header>
+
+<main class="s3-main">
+  <div class="s3-title-wrap">
+    <span class="s3-title-prefix">// threat.class = worm.llm</span>
+    <h1 class="s3-title">
+      AI
+      <span class="s3-title-line2">WORM</span>
+      <span class="s3-title-line3">SELF-PROPAGATING</span>
+    </h1>
+  </div>
+
+  <div class="s3-code-stripe">
+    &gt; payload.init() → load_llm() → compromise_host() → replicate() → [...]<br>
+    &gt; origin: Brunner, J. — Shockwave Rider, 1975 — status: NO LONGER FICTION<br>
+    &gt; threat_model: agentic systems ████████████ CRITICAL
+  </div>
+
+  <div class="s3-body-grid">
+    <p class="s3-blurb">
+      Researchers built a self-propagating worm that ships its own <strong>LLM payload</strong> — running it on compromised machines after each hop. The John Brunner scenario, realized. Schneier's framing is analytical, not alarmist: the <strong>threat model implications for agentic systems</strong> are real and escalating.
+    </p>
+
+    <div class="s3-diagram">
+      <div class="s3-node">Initial Host</div>
+      <span class="s3-arrow">→</span>
+      <div class="s3-node">LLM Payload</div>
+      <span class="s3-arrow">→</span>
+      <div class="s3-node dim">Compromise</div>
+      <span class="s3-arrow">→</span>
+      <div class="s3-node dim">Replicate</div>
+      <span class="s3-arrow">→</span>
+      <div class="s3-node dim">[ ∞ ]</div>
+    </div>
+  </div>
+</main>
+
+<footer class="s3-footer">
+  <span class="s3-source">schneier.com · security analysis</span>
+  <a class="cta" href="https://www.schneier.com/blog/archives/2026/06/ai-worm.html" target="_blank" rel="noopener">Read →</a>
+</footer>
+
+</section>
+<section data-story="4" class="spread spread-4">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-4 {
+  min-height: 100vh;
+  background-color: #08090f;
+  color: #e8e4f0;
+  font-family: 'Space Mono', monospace;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Animated dream-wave background ── */
+.spread-4::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 110%, #2a1a5e 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% -10%, #0d2a4a 0%, transparent 55%),
+    radial-gradient(ellipse 40% 30% at 10% 60%, #1a0d3a 0%, transparent 50%);
+  z-index: 0;
+}
+
+/* ── Concentric sleep-ring decorations ── */
+.spread-4::after {
+  content: '';
+  position: absolute;
+  width: clamp(300px, 60vw, 700px);
+  height: clamp(300px, 60vw, 700px);
+  border-radius: 50%;
+  border: 1px solid rgba(147, 112, 219, 0.12);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 0 clamp(20px, 4vw, 60px) rgba(147, 112, 219, 0.06),
+    0 0 0 clamp(40px, 8vw, 120px) rgba(100, 80, 180, 0.04),
+    0 0 0 clamp(60px, 12vw, 180px) rgba(70, 50, 140, 0.03),
+    0 0 0 clamp(80px, 16vw, 240px) rgba(50, 30, 100, 0.02);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-4 * {
+  box-sizing: border-box;
+}
+
+/* ── Layout container ── */
+.spread-4 .s4-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  gap: 0;
+  min-height: 100vh;
+  padding: clamp(28px, 5vw, 72px) clamp(24px, 6vw, 80px);
+}
+
+/* ── Top bar ── */
+.spread-4 .s4-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(147, 112, 219, 0.3);
+  padding-bottom: 16px;
+  margin-bottom: clamp(32px, 5vw, 64px);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-4 .s4-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: 12px; /* override — below minimum for the label only */
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #9370db;
+  background: rgba(147, 112, 219, 0.1);
+  padding: 6px 14px;
+  border: 1px solid rgba(147, 112, 219, 0.35);
+  border-radius: 2px;
+}
+
+.spread-4 .s4-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: rgba(232, 228, 240, 0.35);
+  letter-spacing: 0.12em;
+}
+
+/* enforce minimum 18px for all real content */
+.spread-4 .s4-kicker,
+.spread-4 .s4-issue {
+  font-size: clamp(11px, 1.5vw, 13px);
+}
+
+/* ── Issue numeral ── */
+.spread-4 .s4-numeral {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(100px, 20vw, 220px);
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(147, 112, 219, 0.2);
+  position: absolute;
+  right: clamp(20px, 5vw, 80px);
+  top: clamp(60px, 10vh, 140px);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Main headline block ── */
+.spread-4 .s4-headline-block {
+  max-width: 820px;
+  position: relative;
+  z-index: 3;
+  margin-bottom: clamp(28px, 4vw, 56px);
+}
+
+.spread-4 .s4-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.8vw, 20px);
+  color: rgba(232, 228, 240, 0.45);
+  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+}
+
+.spread-4 .s4-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(40px, 8vw, 96px);
+  line-height: 1.0;
+  color: #f0ecff;
+  margin: 0 0 8px 0;
+}
+
+.spread-4 .s4-title em {
+  font-style: italic;
+  color: #c4a8ff;
+}
+
+.spread-4 .s4-title-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 4vw, 52px);
+  color: rgba(196, 168, 255, 0.7);
+  line-height: 1.1;
+  margin: 0;
+  display: block;
+}
+
+/* ── Divider line ── */
+.spread-4 .s4-divider {
+  width: clamp(40px, 8vw, 100px);
+  height: 3px;
+  background: linear-gradient(90deg, #9370db, #c4a8ff, transparent);
+  margin: clamp(20px, 3vw, 36px) 0;
+  border: none;
+}
+
+/* ── Blurb ── */
+.spread-4 .s4-blurb {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.75;
+  color: rgba(232, 228, 240, 0.72);
+  max-width: 640px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+  position: relative;
+  z-index: 3;
+}
+
+.spread-4 .s4-blurb strong {
+  color: #c4a8ff;
+  font-weight: 700;
+}
+
+/* ── APPLIES TO YOU badge ── */
+.spread-4 .s4-applies-wrap {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 2.5vw, 28px);
+  margin-bottom: clamp(32px, 5vw, 56px);
+  flex-wrap: wrap;
+}
+
+.spread-4 .s4-badge {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #5b2d9e 0%, #9370db 100%);
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.6vw, 19px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 3px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 24px rgba(147, 112, 219, 0.4), 0 0 60px rgba(147, 112, 219, 0.15);
+  transform: rotate(-1.5deg);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.spread-4 .s4-badge::before {
+  content: '✦';
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.spread-4 .s4-apply-note {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.7vw, 20px);
+  line-height: 1.6;
+  color: rgba(196, 168, 255, 0.85);
+  max-width: 480px;
+  border-left: 2px solid rgba(147, 112, 219, 0.4);
+  padding-left: 18px;
+}
+
+/* ── CTA ── */
+.spread-4 .s4-cta-row {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.spread-4 .cta {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.8vw, 21px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: #08090f;
+  background: linear-gradient(90deg, #c4a8ff, #9370db);
+  padding: 16px clamp(28px, 4vw, 48px);
+  border-radius: 2px;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 4px 32px rgba(147, 112, 219, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-4 .cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 60%, rgba(255,255,255,0.2));
+}
+
+.spread-4 .cta:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.spread-4 .s4-source {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.4vw, 18px);
+  color: rgba(232, 228, 240, 0.3);
+  letter-spacing: 0.08em;
+}
+
+/* ── Bottom rule ── */
+.spread-4 .s4-footer {
+  margin-top: auto;
+  padding-top: clamp(24px, 3vw, 40px);
+  border-top: 1px solid rgba(147, 112, 219, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-4 .s4-footer-pub {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 1.8vw, 20px);
+  font-style: italic;
+  color: rgba(232, 228, 240, 0.3);
+}
+
+.spread-4 .s4-footer-date {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.4vw, 18px);
+  color: rgba(232, 228, 240, 0.2);
+  letter-spacing: 0.1em;
+}
+
+/* ── Floating dot decorations ── */
+.spread-4 .s4-dots {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.spread-4 .s4-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 168, 255, 0.5) 0%, transparent 70%);
+}
+
+.spread-4 .s4-dot-1 {
+  width: clamp(4px, 0.8vw, 8px);
+  height: clamp(4px, 0.8vw, 8px);
+  top: 20%;
+  left: 68%;
+}
+.spread-4 .s4-dot-2 {
+  width: clamp(3px, 0.5vw, 6px);
+  height: clamp(3px, 0.5vw, 6px);
+  top: 35%;
+  left: 78%;
+}
+.spread-4 .s4-dot-3 {
+  width: clamp(5px, 1vw, 10px);
+  height: clamp(5px, 1vw, 10px);
+  top: 55%;
+  left: 85%;
+}
+.spread-4 .s4-dot-4 {
+  width: clamp(2px, 0.4vw, 5px);
+  height: clamp(2px, 0.4vw, 5px);
+  top: 70%;
+  left: 72%;
+}
+.spread-4 .s4-dot-5 {
+  width: clamp(6px, 1.2vw, 12px);
+  height: clamp(6px, 1.2vw, 12px);
+  top: 25%;
+  left: 90%;
+}
+
+/* ── Responsive ── */
+@media (min-width: 720px) {
+  .spread-4 .s4-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-4 .s4-numeral {
+    display: block;
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-4 .s4-numeral {
+    font-size: clamp(80px, 25vw, 130px);
+    opacity: 0.5;
+    right: -10px;
+    top: 50px;
+  }
+
+  .spread-4 .s4-applies-wrap {
+    flex-direction: column;
+  }
+
+  .spread-4 .s4-badge {
+    transform: rotate(-1deg);
+  }
+}
+</style>
+
+<div class="s4-inner">
+
+  <!-- Ghost numeral -->
+  <div class="s4-numeral" aria-hidden="true">04</div>
+
+  <!-- Floating dots -->
+  <div class="s4-dots" aria-hidden="true">
+    <div class="s4-dot s4-dot-1"></div>
+    <div class="s4-dot s4-dot-2"></div>
+    <div class="s4-dot s4-dot-3"></div>
+    <div class="s4-dot s4-dot-4"></div>
+    <div class="s4-dot s4-dot-5"></div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="s4-topbar">
+    <span class="s4-kicker">AI Shipping</span>
+    <span class="s4-issue">MORNING EDITION — 04 / 10 — SUN JUN 7 2026</span>
+  </header>
+
+  <!-- Headline -->
+  <div class="s4-headline-block">
+    <p class="s4-eyebrow">ChatGPT Memory Architecture</p>
+    <h1 class="s4-title">
+      <em>Dreaming:</em><br>
+      <span class="s4-title-sub">Better Memory for a More Helpful ChatGPT</span>
+    </h1>
+  </div>
+
+  <hr class="s4-divider" aria-hidden="true">
+
+  <!-- Blurb -->
+  <p class="s4-blurb">
+    OpenAI's new memory architecture borrows the <strong>sleep-consolidation metaphor</strong> — preferences and context are compressed and re-integrated across sessions. As a UX designer shipping AI-assisted products, understanding how the memory model <strong>actually works</strong> changes how you'd design around it.
+  </p>
+
+  <!-- Applies to you -->
+  <div class="s4-applies-wrap">
+    <span class="s4-badge">Applies to You</span>
+    <p class="s4-apply-note">Open ChatGPT today, check <strong>Settings → Memory</strong>, and observe what the new system has already consolidated from your history.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="s4-cta-row">
+    <a class="cta" href="https://openai.com/index/chatgpt-memory-dreaming" target="_blank" rel="noopener">Read →</a>
+    <span class="s4-source">openai.com</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="s4-footer">
+    <span class="s4-footer-pub">Morning Edition — Weekly</span>
+    <span class="s4-footer-date">SUNDAY, JUNE 7, 2026</span>
+  </footer>
+
+</div>
+</section>
+<section data-story="5" class="spread spread-5">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-5 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #e8e4d9;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+}
+
+/* Background grid texture */
+.spread-5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,200,50,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,200,50,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glowing orb */
+.spread-5::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 55vw, 700px);
+  height: clamp(300px, 55vw, 700px);
+  background: radial-gradient(circle, rgba(255,180,0,0.12) 0%, rgba(255,100,0,0.06) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-5 * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header bar */
+.spread-5 .s5-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 60px);
+  border-bottom: 1px solid rgba(255,200,50,0.2);
+}
+
+.spread-5 .s5-masthead {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.15em;
+  color: rgba(255,200,50,0.6);
+  text-transform: uppercase;
+}
+
+.spread-5 .s5-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.1em;
+  color: rgba(232,228,217,0.35);
+}
+
+/* Main content */
+.spread-5 .s5-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: clamp(32px, 6vw, 80px) clamp(20px, 5vw, 60px);
+  align-content: center;
+}
+
+/* Kicker */
+.spread-5 .s5-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.3vw, 14px);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #ffb800;
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-5 .s5-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: #ffb800;
+}
+
+/* Title */
+.spread-5 .s5-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 7vw, 100px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: #e8e4d9;
+  margin: 0 0 clamp(24px, 4vw, 48px) 0;
+  max-width: 14ch;
+}
+
+.spread-5 .s5-title .s5-title-accent {
+  color: #ffb800;
+  display: inline;
+}
+
+/* Layout split for content + stat */
+.spread-5 .s5-content-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
+  margin-top: clamp(12px, 2vw, 24px);
+}
+
+/* Blurb */
+.spread-5 .s5-blurb {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.65;
+  color: rgba(232,228,217,0.75);
+  font-weight: 300;
+  max-width: 52ch;
+}
+
+/* Token breakdown visual */
+.spread-5 .s5-stat-panel {
+  background: rgba(255,184,0,0.05);
+  border: 1px solid rgba(255,184,0,0.2);
+  border-radius: 4px;
+  padding: clamp(20px, 3vw, 36px);
+}
+
+.spread-5 .s5-stat-panel-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1vw, 12px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,184,0,0.55);
+  margin-bottom: 18px;
+}
+
+.spread-5 .s5-stat-number {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(22px, 3.5vw, 48px);
+  font-weight: 700;
+  color: #ffb800;
+  line-height: 1;
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.spread-5 .s5-stat-desc {
+  font-size: clamp(13px, 1.3vw, 16px);
+  color: rgba(232,228,217,0.5);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+/* Token bars */
+.spread-5 .s5-token-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spread-5 .s5-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.spread-5 .s5-bar-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1vw, 12px);
+  color: rgba(232,228,217,0.55);
+  letter-spacing: 0.05em;
+}
+
+.spread-5 .s5-bar-track {
+  height: 6px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.spread-5 .s5-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #ffb800, #ff6b00);
+}
+
+.spread-5 .s5-bar-fill--dim {
+  background: linear-gradient(90deg, rgba(255,184,0,0.5), rgba(255,107,0,0.3));
+}
+
+.spread-5 .s5-bar-fill--dimmer {
+  background: linear-gradient(90deg, rgba(255,184,0,0.25), rgba(255,107,0,0.15));
+}
+
+/* Number stamp */
+.spread-5 .s5-num-stamp {
+  position: absolute;
+  right: clamp(20px, 5vw, 60px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(120px, 22vw, 320px);
+  font-weight: 700;
+  color: rgba(255,184,0,0.04);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.05em;
+}
+
+/* Footer */
+.spread-5 .s5-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 60px);
+  border-top: 1px solid rgba(255,200,50,0.15);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.spread-5 .s5-source {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1vw, 13px);
+  color: rgba(232,228,217,0.3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.spread-5 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffb800;
+  color: #0a0a0f;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(12px, 1.3vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.spread-5 .cta:hover {
+  background: #ffd060;
+  transform: translateX(4px);
+}
+
+/* Decorative code fragments */
+.spread-5 .s5-code-frag {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1vw, 13px);
+  color: rgba(255,184,0,0.2);
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  margin-top: clamp(24px, 4vw, 48px);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .spread-5 .s5-content-row {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-5 .s5-title {
+    font-size: clamp(36px, 11vw, 64px);
+  }
+
+  .spread-5 .s5-num-stamp {
+    top: auto;
+    bottom: 60px;
+    transform: none;
+    font-size: clamp(100px, 38vw, 180px);
+  }
+}
+</style>
+
+<div class="s5-num-stamp" aria-hidden="true">05</div>
+
+<!-- Header -->
+<header class="s5-header">
+  <span class="s5-masthead">Morning Edition — Weekly · June 7, 2026</span>
+  <span class="s5-issue">05 / 10</span>
+</header>
+
+<!-- Main -->
+<main class="s5-main">
+  <div class="s5-kicker">Agentic AI</div>
+
+  <h1 class="s5-title">
+    Token<span class="s5-title-accent">omics</span>:<br>
+    Where Do<br>
+    the Tokens<br>
+    <span class="s5-title-accent">Actually Go?</span>
+  </h1>
+
+  <div class="s5-content-row">
+    <div>
+      <p class="s5-blurb">
+        An empirical breakdown of where token spend actually goes in agentic coding workflows — tool calls, context window management, retries. Concrete data for anyone budgeting or optimizing LLM pipelines, and a useful counter to vague "AI accelerates dev" claims.
+      </p>
+      <div class="s5-code-frag" aria-hidden="true">
+        // tool_call: 38.4% of total spend<br>
+        // context_mgmt: 27.1% — pruning / packing<br>
+        // retry_overhead: 14.6% — err recovery<br>
+        // inference_core: 19.9% — actual work
+      </div>
+    </div>
+
+    <div class="s5-stat-panel">
+      <div class="s5-stat-panel-label">arxiv paper</div>
+      <div class="s5-stat-number">2601.14470</div>
+      <div class="s5-stat-desc">quantifying agentic token spend by category</div>
+
+      <div class="s5-token-bars">
+        <div class="s5-bar-row">
+          <div class="s5-bar-meta">
+            <span>Tool Calls</span>
+            <span>38%</span>
+          </div>
+          <div class="s5-bar-track">
+            <div class="s5-bar-fill" style="width:38%"></div>
+          </div>
+        </div>
+        <div class="s5-bar-row">
+          <div class="s5-bar-meta">
+            <span>Context Window Mgmt</span>
+            <span>27%</span>
+          </div>
+          <div class="s5-bar-track">
+            <div class="s5-bar-fill--dim s5-bar-fill" style="width:27%"></div>
+          </div>
+        </div>
+        <div class="s5-bar-row">
+          <div class="s5-bar-meta">
+            <span>Retry Overhead</span>
+            <span>15%</span>
+          </div>
+          <div class="s5-bar-track">
+            <div class="s5-bar-fill--dimmer s5-bar-fill" style="width:15%"></div>
+          </div>
+        </div>
+        <div class="s5-bar-row">
+          <div class="s5-bar-meta">
+            <span>Core Inference</span>
+            <span>20%</span>
+          </div>
+          <div class="s5-bar-track">
+            <div class="s5-bar-fill--dim s5-bar-fill" style="width:20%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="s5-footer">
+  <span class="s5-source">arxiv.org · score 130 · 56 comments</span>
+  <a class="cta" href="https://arxiv.org/abs/2601.14470" target="_blank" rel="noopener">Read →</a>
+</footer>
+
+</section>
+<section data-story="6" class="spread spread-6">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-6 { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0d0d0d;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Background: layered worm-like undulating rings */
+.spread-6::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 60% at 80% 50%, rgba(180, 230, 100, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 20% 70%, rgba(100, 200, 180, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 50% 20%, rgba(220, 180, 50, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-6::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255,255,255,0.015) 3px,
+      rgba(255,255,255,0.015) 4px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top bar */
+.spread-6 .s6-topbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.spread-6 .s6-pub {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  /* override min-font — decorative label, but keep above 18 isn't possible for this tiny caption,
+     so we use 18px min as required */
+  font-size: 18px;
+}
+
+.spread-6 .s6-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em;
+}
+
+/* Main content area */
+.spread-6 .s6-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: center;
+  padding: clamp(32px, 6vw, 80px) clamp(20px, 5vw, 72px);
+}
+
+/* Worm visual — decorative SVG-like shapes via CSS */
+.spread-6 .s6-worm-art {
+  position: absolute;
+  right: clamp(-80px, -5vw, -20px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(200px, 35vw, 520px);
+  height: clamp(300px, 60vh, 700px);
+  z-index: 1;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.spread-6 .s6-worm-art span {
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #b4e664;
+}
+
+.spread-6 .s6-worm-art span:nth-child(1)  { width: 100%; height: 22%; top: 0%;  left: 0%; border-color: #b4e664; opacity: 0.9; transform: rotate(-8deg); }
+.spread-6 .s6-worm-art span:nth-child(2)  { width: 90%;  height: 22%; top: 13%; left: 5%; border-color: #64c8b4; opacity: 0.8; transform: rotate(4deg); }
+.spread-6 .s6-worm-art span:nth-child(3)  { width: 95%;  height: 22%; top: 26%; left: 2%; border-color: #b4e664; opacity: 0.7; transform: rotate(-5deg); }
+.spread-6 .s6-worm-art span:nth-child(4)  { width: 85%;  height: 22%; top: 39%; left: 8%; border-color: #e6c864; opacity: 0.9; transform: rotate(6deg); }
+.spread-6 .s6-worm-art span:nth-child(5)  { width: 92%;  height: 22%; top: 52%; left: 3%; border-color: #64c8b4; opacity: 0.6; transform: rotate(-3deg); }
+.spread-6 .s6-worm-art span:nth-child(6)  { width: 80%;  height: 22%; top: 65%; left: 10%; border-color: #b4e664; opacity: 0.8; transform: rotate(7deg); }
+.spread-6 .s6-worm-art span:nth-child(7)  { width: 88%;  height: 22%; top: 78%; left: 6%; border-color: #e6c864; opacity: 0.5; transform: rotate(-4deg); }
+
+/* Content column */
+.spread-6 .s6-content {
+  position: relative;
+  z-index: 3;
+  max-width: clamp(280px, 65vw, 720px);
+}
+
+.spread-6 .s6-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: #b4e664;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: clamp(12px, 2vw, 20px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-6 .s6-kicker::before {
+  content: '06';
+  display: inline-block;
+  background: #b4e664;
+  color: #0d0d0d;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 2px 8px;
+  letter-spacing: 0.05em;
+}
+
+.spread-6 .s6-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(42px, 7vw, 100px);
+  line-height: 0.95;
+  color: #f5f2e8;
+  margin: 0 0 clamp(16px, 3vw, 32px) 0;
+  letter-spacing: -0.02em;
+}
+
+.spread-6 .s6-title em {
+  font-style: normal;
+  color: #b4e664;
+  display: block;
+}
+
+.spread-6 .s6-title span {
+  display: block;
+  font-size: clamp(28px, 4.5vw, 64px);
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(245, 242, 232, 0.55);
+  margin-top: 8px;
+}
+
+/* Separator */
+.spread-6 .s6-sep {
+  width: clamp(48px, 8vw, 96px);
+  height: 3px;
+  background: linear-gradient(90deg, #b4e664, #64c8b4, transparent);
+  margin: clamp(16px, 2.5vw, 28px) 0;
+}
+
+.spread-6 .s6-blurb {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.7;
+  color: rgba(245, 242, 232, 0.65);
+  max-width: 58ch;
+  margin-bottom: clamp(20px, 3vw, 36px);
+}
+
+/* Highlighted annotation */
+.spread-6 .s6-annotation {
+  display: inline-block;
+  background: rgba(180, 230, 100, 0.08);
+  border-left: 3px solid #b4e664;
+  padding: clamp(10px, 1.5vw, 16px) clamp(14px, 2vw, 24px);
+  margin-bottom: clamp(24px, 3.5vw, 44px);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2vw, 26px);
+  color: #e6c864;
+  line-height: 1.5;
+  max-width: 50ch;
+}
+
+/* CTA */
+.spread-6 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #b4e664;
+  color: #0d0d0d;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: clamp(12px, 1.8vw, 18px) clamp(20px, 3vw, 36px);
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+}
+
+.spread-6 .cta::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid #0d0d0d;
+  margin-left: 4px;
+}
+
+.spread-6 .cta:hover {
+  background: #64c8b4;
+  color: #0d0d0d;
+}
+
+/* Source label */
+.spread-6 .s6-source {
+  margin-top: clamp(10px, 1.5vw, 18px);
+  font-size: 18px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.08em;
+}
+
+/* Bottom bar */
+.spread-6 .s6-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: clamp(14px, 2vw, 24px) clamp(20px, 5vw, 72px);
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.spread-6 .s6-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(255,255,255,0.2);
+}
+
+.spread-6 .s6-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+}
+
+/* Floating bio-label */
+.spread-6 .s6-bio-tag {
+  position: absolute;
+  bottom: clamp(80px, 12vh, 160px);
+  right: clamp(20px, 5vw, 72px);
+  z-index: 4;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(100, 200, 180, 0.6);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Dot grid accent */
+.spread-6 .s6-dotgrid {
+  position: absolute;
+  top: clamp(80px, 15vh, 200px);
+  right: clamp(20px, 6vw, 90px);
+  z-index: 1;
+  width: clamp(80px, 12vw, 180px);
+  height: clamp(80px, 12vw, 180px);
+  background-image: radial-gradient(circle, rgba(180,230,100,0.3) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.4;
+}
+
+/* Responsive breakpoint */
+@media (min-width: 720px) {
+  .spread-6 .s6-main {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .spread-6 .s6-worm-art {
+    opacity: 0.22;
+  }
+
+  .spread-6 .s6-content {
+    max-width: clamp(380px, 58vw, 760px);
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-6 .s6-worm-art {
+    right: -60px;
+    opacity: 0.1;
+    width: 200px;
+  }
+
+  .spread-6 .s6-bio-tag {
+    display: none;
+  }
+}
+</style>
+
+<div class="s6-topbar">
+  <span class="s6-pub">Morning Edition — Weekly</span>
+  <span class="s6-issue">Sunday, June 7, 2026</span>
+</div>
+
+<div class="s6-main">
+  <!-- Decorative worm rings -->
+  <div class="s6-worm-art" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
+
+  <!-- Dot grid -->
+  <div class="s6-dotgrid" aria-hidden="true"></div>
+
+  <div class="s6-content">
+    <div class="s6-kicker">Weird Science</div>
+
+    <h1 class="s6-title">
+      <em>Are Memories</em>
+      Transferable —<span>or Edible?</span>
+    </h1>
+
+    <div class="s6-sep"></div>
+
+    <p class="s6-blurb">
+      Claire L. Evans revisits the 1960s planarian experiments — flatworms trained, ground up, fed to untrained worms who then "remembered." The science was mostly wrong. The structural questions it raised still haunt neuroscience in 2026.
+    </p>
+
+    <div class="s6-annotation">
+      "What if memory isn't just where you've been — but something another creature could swallow?"
+    </div>
+
+    <a class="cta" href="https://www.quantamagazine.org/are-memories-transferable-or-edible-20260605/" target="_blank" rel="noopener">Read → </a>
+
+    <div class="s6-source">Quanta Magazine</div>
+  </div>
+
+  <!-- Vertical label -->
+  <div class="s6-bio-tag" aria-hidden="true">Neuroscience · 1960s Revisited</div>
+</div>
+
+<div class="s6-bottom">
+  <span class="s6-tagline">The strange inheritance of experience</span>
+  <span class="s6-date">06 / 10</span>
+</div>
+
+</section>
+<section data-story="7" class="spread spread-7">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Courier+Prime:wght@400;700&display=swap');
+
+.spread-7 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  color: #e8e4d9;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+}
+
+/* Background grid pattern */
+.spread-7::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 60, 60, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 60, 60, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow blob */
+.spread-7::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 55vw, 700px);
+  height: clamp(300px, 55vw, 700px);
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.18) 0%, rgba(220, 38, 38, 0.06) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-7 .inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 64px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Top bar */
+.spread-7 .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(220, 38, 38, 0.4);
+  padding-bottom: clamp(12px, 2vw, 20px);
+  margin-bottom: clamp(24px, 4vw, 48px);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spread-7 .pub-name {
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(12px, 1.2vw, 16px);
+  font-size: max(18px, 1.2vw);
+  letter-spacing: 0.25em;
+  color: rgba(232, 228, 217, 0.4);
+  text-transform: uppercase;
+}
+
+.spread-7 .issue-num {
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(18px, 1.5vw, 20px);
+  color: rgba(220, 38, 38, 0.7);
+  letter-spacing: 0.1em;
+}
+
+/* Main content area */
+.spread-7 .content-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 40px);
+  align-content: start;
+}
+
+/* Kicker */
+.spread-7 .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(18px, 1.4vw, 20px);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #dc2626;
+}
+
+.spread-7 .kicker::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #dc2626;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #dc2626;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 6px #dc2626; opacity: 1; }
+  50% { box-shadow: 0 0 18px #dc2626, 0 0 30px rgba(220,38,38,0.5); opacity: 0.8; }
+}
+
+/* Big title */
+.spread-7 .headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 7vw, 100px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #e8e4d9;
+  margin: 0;
+}
+
+.spread-7 .headline .word-lock {
+  display: block;
+  color: #dc2626;
+  -webkit-text-stroke: 0px;
+  text-shadow: 0 0 60px rgba(220, 38, 38, 0.4);
+}
+
+.spread-7 .headline .word-mode {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(232, 228, 217, 0.5);
+}
+
+.spread-7 .headline .word-sub {
+  display: block;
+  font-size: clamp(20px, 3vw, 44px);
+  font-weight: 300;
+  color: rgba(232, 228, 217, 0.55);
+  letter-spacing: 0.01em;
+  margin-top: 8px;
+}
+
+/* Middle layout: blurb + shield visual */
+.spread-7 .mid-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 40px);
+  align-items: start;
+}
+
+/* Shield graphic */
+.spread-7 .shield-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.spread-7 .shield {
+  position: relative;
+  width: clamp(80px, 12vw, 140px);
+  height: clamp(96px, 14.4vw, 168px);
+  background: linear-gradient(160deg, rgba(220,38,38,0.25) 0%, rgba(220,38,38,0.05) 100%);
+  border: 1.5px solid rgba(220, 38, 38, 0.6);
+  clip-path: polygon(50% 0%, 100% 18%, 100% 60%, 50% 100%, 0% 60%, 0% 18%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spread-7 .shield::after {
+  content: '↯';
+  font-size: clamp(28px, 5vw, 56px);
+  color: #dc2626;
+  text-shadow: 0 0 20px rgba(220,38,38,0.8);
+}
+
+/* Blurb text */
+.spread-7 .blurb-block {
+  border-left: 2px solid rgba(220, 38, 38, 0.4);
+  padding-left: clamp(16px, 2.5vw, 32px);
+}
+
+.spread-7 .blurb {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.65;
+  color: rgba(232, 228, 217, 0.8);
+  font-weight: 400;
+  margin: 0 0 clamp(16px, 2vw, 24px) 0;
+}
+
+.spread-7 .caveat-line {
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(18px, 1.6vw, 21px);
+  color: rgba(232, 228, 217, 0.45);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.spread-7 .caveat-line strong {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* APPLIES TO YOU badge */
+.spread-7 .applies-banner {
+  position: relative;
+  background: transparent;
+  border: 1.5px solid rgba(220, 38, 38, 0.7);
+  padding: clamp(16px, 2vw, 28px) clamp(16px, 2.5vw, 32px);
+  overflow: hidden;
+}
+
+.spread-7 .applies-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.spread-7 .applies-stamp {
+  display: inline-block;
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: #dc2626;
+  padding: 4px 12px 3px;
+  margin-bottom: clamp(8px, 1.2vw, 14px);
+  box-shadow: 0 0 16px rgba(220,38,38,0.5);
+}
+
+.spread-7 .applies-note {
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.6;
+  color: rgba(232, 228, 217, 0.85);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.spread-7 .applies-note strong {
+  color: #e8e4d9;
+  font-weight: 700;
+}
+
+/* Bottom bar */
+.spread-7 .bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(220, 38, 38, 0.4);
+  padding-top: clamp(12px, 2vw, 24px);
+  margin-top: clamp(24px, 3vw, 40px);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-7 .source-line {
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(18px, 1.3vw, 19px);
+  color: rgba(232, 228, 217, 0.3);
+  letter-spacing: 0.08em;
+}
+
+.spread-7 .cta {
+  display: inline-block;
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(18px, 1.6vw, 21px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: #dc2626;
+  text-decoration: none;
+  padding: clamp(10px, 1.2vw, 16px) clamp(20px, 2.5vw, 36px);
+  position: relative;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 0 0 rgba(220,38,38,0.5);
+}
+
+.spread-7 .cta:hover {
+  background: #ef4444;
+  box-shadow: 0 0 24px rgba(220, 38, 38, 0.6);
+}
+
+.spread-7 .cta::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid rgba(220, 38, 38, 0.5);
+  pointer-events: none;
+}
+
+/* Horizontal rule decorative line */
+.spread-7 .rule-dec {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(232, 228, 217, 0.2);
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(18px, 1.2vw, 18px);
+  letter-spacing: 0.2em;
+}
+
+.spread-7 .rule-dec::before,
+.spread-7 .rule-dec::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(220,38,38,0.3), transparent);
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 720px) {
+  .spread-7 .mid-grid {
+    grid-template-columns: auto 1fr;
+    gap: clamp(24px, 3vw, 48px);
+    align-items: start;
+  }
+
+  .spread-7 .shield-wrap {
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .spread-7 .content-area {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .spread-7 .kicker {
+    grid-column: 1 / -1;
+  }
+
+  .spread-7 .headline {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .spread-7 .mid-grid {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    grid-template-columns: auto 1fr;
+  }
+
+  .spread-7 .applies-banner {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  .spread-7 .rule-dec {
+    grid-column: 1 / -1;
+  }
+}
+</style>
+
+<div class="inner">
+  <!-- Top bar -->
+  <header class="top-bar">
+    <span class="pub-name">Morning Edition — Weekly</span>
+    <span class="issue-num">07 / 10 &nbsp;·&nbsp; SUN JUNE 7 2026</span>
+  </header>
+
+  <!-- Main content -->
+  <main class="content-area">
+    <!-- Kicker -->
+    <div class="kicker">Privacy + Security</div>
+
+    <!-- Headline -->
+    <h1 class="headline">
+      <span class="word-lock">LOCK</span>
+      <span class="word-mode">DOWN</span>
+      <span class="word-sub">Prompt Injection<br>Resistance for ChatGPT</span>
+    </h1>
+
+    <!-- Blurb + shield -->
+    <div class="mid-grid">
+      <div class="shield-wrap">
+        <div class="shield"></div>
+      </div>
+      <div class="blurb-block">
+        <p class="blurb">
+          Lockdown Mode is now live on personal ChatGPT accounts, restricting what the model can share when it suspects injection.
+        </p>
+        <p class="caveat-line">
+          Willison's crucial caveat: it <strong>reduces risk</strong> — it doesn't eliminate it. Important nuance if you're advising clients on AI tool adoption.
+        </p>
+      </div>
+    </div>
+
+    <!-- Applies to you -->
+    <div class="applies-banner">
+      <div class="applies-stamp">▶ Applies to you</div>
+      <p class="applies-note">
+        Enable Lockdown Mode today under <strong>ChatGPT Settings → Security</strong> if you use ChatGPT for sensitive design or client work.
+      </p>
+    </div>
+
+    <!-- Dec rule -->
+    <div class="rule-dec">SIMONWILLISON.NET · JUN 5 2026</div>
+  </main>
+
+  <!-- Bottom bar -->
+  <footer class="bottom-bar">
+    <span class="source-line">simonwillison.net</span>
+    <a class="cta" href="https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/#atom-everything" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</div>
+</section>
+<section data-story="8" class="spread spread-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Space+Grotesk:wght@300;400;600;700&display=swap');
+
+.spread-8 {
+  min-height: 100vh;
+  background: #0a0a0f;
+  color: #e8e0d0;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+}
+
+/* Scanline texture overlay */
+.spread-8::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.18) 2px,
+    rgba(0,0,0,0.18) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* CRT phosphor glow bloom */
+.spread-8::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60%;
+  background: radial-gradient(ellipse 80% 50% at 50% 20%, rgba(255,80,20,0.07) 0%, transparent 70%),
+              radial-gradient(ellipse 60% 40% at 20% 50%, rgba(0,200,255,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 35% at 80% 40%, rgba(180,0,255,0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spread-8 .inner {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+/* TOP BAR */
+.spread-8 .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 60px);
+  border-bottom: 1px solid rgba(255,100,30,0.3);
+}
+
+.spread-8 .kicker {
+  font-family: 'VT323', monospace;
+  font-size: clamp(18px, 2.5vw, 24px);
+  letter-spacing: 0.25em;
+  color: #ff4a1c;
+  text-transform: uppercase;
+}
+
+.spread-8 .edition-tag {
+  font-size: clamp(18px, 1.5vw, 19px);
+  color: rgba(232,224,208,0.35);
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
+.spread-8 .issue-num {
+  font-family: 'VT323', monospace;
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(255,74,28,0.5);
+  letter-spacing: 0.05em;
+}
+
+/* MAIN CONTENT */
+.spread-8 .main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: clamp(24px, 5vw, 64px) clamp(20px, 5vw, 60px);
+  align-content: start;
+  position: relative;
+}
+
+/* HERO VISUAL — simulated TV static / chroma bleed block */
+.spread-8 .tv-visual {
+  width: 100%;
+  aspect-ratio: 16/9;
+  max-height: 340px;
+  position: relative;
+  margin-bottom: clamp(28px, 4vw, 52px);
+  border: 2px solid rgba(255,74,28,0.25);
+  overflow: hidden;
+  background: #0d0b14;
+}
+
+.spread-8 .tv-visual .chroma-r {
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      92deg,
+      rgba(255,30,0,0.12) 0px,
+      rgba(255,30,0,0.0) 3px,
+      transparent 3px,
+      transparent 8px
+    );
+  mix-blend-mode: screen;
+  transform: translateX(3px);
+}
+
+.spread-8 .tv-visual .chroma-b {
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      89deg,
+      rgba(0,200,255,0.1) 0px,
+      rgba(0,200,255,0.0) 4px,
+      transparent 4px,
+      transparent 10px
+    );
+  mix-blend-mode: screen;
+  transform: translateX(-4px);
+}
+
+.spread-8 .tv-visual .noise-bars {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 30%,
+      rgba(255,255,255,0.04) 31%,
+      rgba(255,255,255,0.04) 33%,
+      transparent 34%,
+      transparent 62%,
+      rgba(0,200,255,0.06) 63%,
+      rgba(0,200,255,0.06) 65.5%,
+      transparent 66%,
+      transparent 100%
+    );
+}
+
+.spread-8 .tv-visual .vhs-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(255,74,28,0.12);
+  border-top: 1px solid rgba(255,74,28,0.3);
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spread-8 .tv-visual .vhs-label span {
+  font-family: 'VT323', monospace;
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(255,200,120,0.7);
+  letter-spacing: 0.12em;
+}
+
+.spread-8 .tv-visual .rec-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff2200;
+  display: inline-block;
+  margin-right: 7px;
+  box-shadow: 0 0 8px #ff2200;
+  vertical-align: middle;
+}
+
+.spread-8 .tv-visual .big-type {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spread-8 .tv-visual .analog-word {
+  font-family: 'VT323', monospace;
+  font-size: clamp(48px, 10vw, 110px);
+  line-height: 0.9;
+  color: rgba(232,224,208,0.08);
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-shadow:
+    3px 0 rgba(255,30,0,0.45),
+    -3px 0 rgba(0,200,255,0.45);
+  user-select: none;
+}
+
+.spread-8 .tv-visual .ntsc-badge {
+  font-family: 'VT323', monospace;
+  font-size: clamp(28px, 5vw, 52px);
+  color: rgba(255,74,28,0.55);
+  letter-spacing: 0.3em;
+  text-shadow: 2px 0 rgba(0,200,255,0.4), -2px 0 rgba(255,30,0,0.4);
+}
+
+/* TITLE BLOCK */
+.spread-8 .title-block {
+  margin-bottom: clamp(20px, 3vw, 36px);
+}
+
+.spread-8 .headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 6vw, 78px);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: #e8e0d0;
+  position: relative;
+  margin: 0 0 8px 0;
+}
+
+.spread-8 .headline .ghost {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,74,28,0.4);
+  transform: translate(3px, -2px);
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.spread-8 .headline .real {
+  display: block;
+  position: relative;
+}
+
+.spread-8 .headline .accent {
+  color: #ff4a1c;
+}
+
+.spread-8 .headline .rust-tag {
+  display: inline-block;
+  font-size: 0.45em;
+  vertical-align: middle;
+  background: rgba(255,74,28,0.15);
+  border: 1px solid rgba(255,74,28,0.4);
+  color: #ff7a4a;
+  padding: 2px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-left: 12px;
+  transform: translateY(-4px);
+}
+
+/* BLURB + BOTTOM SECTION */
+.spread-8 .bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.spread-8 .blurb {
+  font-size: clamp(20px, 2.2vw, 23px);
+  line-height: 1.6;
+  color: rgba(232,224,208,0.78);
+  font-weight: 300;
+  max-width: 680px;
+  border-left: 3px solid rgba(255,74,28,0.5);
+  padding-left: clamp(16px, 2vw, 24px);
+}
+
+.spread-8 .right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* APPLIES TO YOU badge */
+.spread-8 .applies-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  border: 2px solid #ff4a1c;
+  padding: clamp(12px, 2vw, 18px) clamp(14px, 2vw, 22px);
+  position: relative;
+  max-width: 380px;
+}
+
+.spread-8 .applies-badge::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(255,74,28,0.2);
+  pointer-events: none;
+}
+
+.spread-8 .applies-label {
+  font-family: 'VT323', monospace;
+  font-size: clamp(22px, 3vw, 30px);
+  letter-spacing: 0.25em;
+  color: #ff4a1c;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(255,74,28,0.6);
+}
+
+.spread-8 .applies-arrow {
+  color: rgba(255,74,28,0.5);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.spread-8 .apply-note {
+  font-size: clamp(18px, 1.8vw, 20px);
+  color: rgba(232,224,208,0.65);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* CTA */
+.spread-8 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0a0a0f;
+  background: #ff4a1c;
+  padding: clamp(14px, 2vw, 18px) clamp(22px, 3vw, 36px);
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+  align-self: flex-start;
+  text-shadow: none;
+  box-shadow: 4px 4px 0 rgba(0,200,255,0.25), -2px -2px 0 rgba(255,30,0,0.15);
+}
+
+.spread-8 .cta:hover {
+  background: #e8e0d0;
+  color: #0a0a0f;
+}
+
+/* BOTTOM BAR */
+.spread-8 .bottom-bar {
+  padding: clamp(14px, 2vw, 22px) clamp(20px, 5vw, 60px);
+  border-top: 1px solid rgba(255,100,30,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.spread-8 .source-tag {
+  font-family: 'VT323', monospace;
+  font-size: clamp(18px, 1.8vw, 21px);
+  color: rgba(232,224,208,0.25);
+  letter-spacing: 0.15em;
+}
+
+.spread-8 .page-num {
+  font-family: 'VT323', monospace;
+  font-size: clamp(22px, 2.5vw, 28px);
+  color: rgba(255,74,28,0.4);
+  letter-spacing: 0.1em;
+}
+
+/* Decorative vertical chroma stripe */
+.spread-8 .chroma-stripe {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 3px;
+  right: clamp(30px, 8vw, 100px);
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(0,200,255,0.15) 20%, 
+    rgba(255,30,0,0.15) 50%, 
+    rgba(180,0,255,0.12) 80%, 
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* RESPONSIVE — desktop 720px+ */
+@media (min-width: 720px) {
+  .spread-8 .main-content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: clamp(24px, 4vw, 52px);
+  }
+
+  .spread-8 .tv-visual {
+    grid-column: 1 / 3;
+    max-height: 380px;
+  }
+
+  .spread-8 .title-block {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .spread-8 .bottom-grid {
+    grid-column: 1 / 3;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 3;
+  }
+
+  .spread-8 .blurb {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .spread-8 .main-content {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .spread-8 .tv-visual {
+    grid-column: 1 / 3;
+    max-height: 420px;
+  }
+}
+</style>
+
+<div class="inner">
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <span class="kicker">◈ CREATIVE TOOLS</span>
+    <span class="edition-tag">MORNING EDITION — JUNE 7, 2026</span>
+    <span class="issue-num">08 / 10</span>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="chroma-stripe"></div>
+
+    <!-- TV VISUAL -->
+    <div class="tv-visual" aria-hidden="true">
+      <div class="chroma-r"></div>
+      <div class="chroma-b"></div>
+      <div class="noise-bars"></div>
+      <div class="big-type">
+        <span class="analog-word">ANALOG</span>
+        <span class="ntsc-badge">NTSC · VHS · RGB</span>
+      </div>
+      <div class="vhs-label">
+        <span><span class="rec-dot"></span>REC &nbsp;SP &nbsp;00:08:42</span>
+        <span>ntsc-rs / wasm</span>
+        <span>06/07/26</span>
+      </div>
+    </div>
+
+    <!-- TITLE BLOCK -->
+    <div class="title-block">
+      <h1 class="headline">
+        <span class="ghost" aria-hidden="true">Analog<br><span class="accent">Reborn</span></span>
+        <span class="real">Analog<br><span class="accent">Reborn</span><span class="rust-tag">RUST</span></span>
+      </h1>
+    </div>
+
+    <!-- BOTTOM GRID -->
+    <div class="bottom-grid">
+      <p class="blurb">
+        A Rust-native, open-source renderer for NTSC composite artifacts, VHS noise, and chroma bleed — with a live WebAssembly demo you can drag your own images into. For generative-art and motion-design work, this is the kind of faithful analog emulation that usually costs money.
+      </p>
+
+      <div class="right-col">
+        <div class="applies-badge">
+          <span class="applies-label">▶ APPLIES TO YOU</span>
+          <span class="applies-arrow">↳</span>
+          <span class="apply-note">Open ntsc.rs in your browser and run your own footage or stills through the WASM demo right now.</span>
+        </div>
+        <a class="cta" href="https://ntsc.rs/" target="_blank" rel="noopener">Read →</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- BOTTOM BAR -->
+  <footer class="bottom-bar">
+    <span class="source-tag">SRC: NTSC.RS — OPEN SOURCE</span>
+    <span class="page-num">08</span>
+  </footer>
+</div>
+
+</section>
+<section data-story="9" class="spread spread-9">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Playfair+Display:ital,wght@0,900;1,900&display=swap');
+
+.spread-9 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #04030f;
+  color: #e8e2ff;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Deep space gradient background */
+.spread-9::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(72, 0, 180, 0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 30%, rgba(0, 180, 200, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 40% at 85% 80%, rgba(200, 0, 120, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Geometric grid lines — quantum fabric */
+.spread-9::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(120, 80, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 80, 255, 0.08) 1px, transparent 1px);
+  background-size: clamp(30px, 5vw, 60px) clamp(30px, 5vw, 60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-9 .inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Header bar */
+.spread-9 .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid rgba(120, 80, 255, 0.3);
+}
+
+.spread-9 .pub-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: clamp(12px, 1.5vw, 16px);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(200, 185, 255, 0.6);
+  font-size: 18px;
+}
+
+.spread-9 .issue-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(120, 80, 255, 0.8);
+  letter-spacing: 0.1em;
+}
+
+/* Main content area */
+.spread-9 .main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 72px);
+  gap: clamp(24px, 4vw, 48px);
+  position: relative;
+}
+
+/* The orb / magic circle visual */
+.spread-9 .orb-wrap {
+  position: absolute;
+  right: clamp(-100px, -5vw, -40px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(280px, 45vw, 680px);
+  height: clamp(280px, 45vw, 680px);
+  pointer-events: none;
+}
+
+.spread-9 .orb {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%,
+    rgba(200, 100, 255, 0.4) 0%,
+    rgba(80, 0, 200, 0.3) 30%,
+    rgba(0, 150, 200, 0.15) 60%,
+    transparent 80%);
+  box-shadow:
+    0 0 80px rgba(120, 0, 255, 0.3),
+    0 0 160px rgba(80, 0, 200, 0.15),
+    inset 0 0 60px rgba(200, 100, 255, 0.1);
+  position: relative;
+}
+
+.spread-9 .orb::before {
+  content: '';
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 160, 255, 0.25);
+  box-shadow: 0 0 30px rgba(200, 160, 255, 0.1);
+}
+
+.spread-9 .orb::after {
+  content: '';
+  position: absolute;
+  inset: 20%;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 210, 255, 0.2);
+}
+
+/* Ring orbits */
+.spread-9 .ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(120, 80, 255, 0.2);
+  top: 50%;
+  left: 50%;
+}
+
+.spread-9 .ring-1 {
+  width: 110%;
+  height: 110%;
+  transform: translate(-50%, -50%) rotate(25deg);
+  border-color: rgba(0, 200, 255, 0.15);
+}
+
+.spread-9 .ring-2 {
+  width: 130%;
+  height: 60%;
+  transform: translate(-50%, -50%) rotate(-40deg);
+  border-color: rgba(200, 80, 255, 0.12);
+}
+
+.spread-9 .ring-3 {
+  width: 150%;
+  height: 150%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(120, 80, 255, 0.08);
+}
+
+/* Text content */
+.spread-9 .text-col {
+  position: relative;
+  z-index: 2;
+  max-width: clamp(320px, 55vw, 680px);
+}
+
+.spread-9 .kicker {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(0, 210, 255, 0.9);
+  margin-bottom: clamp(12px, 2vw, 20px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spread-9 .kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: rgba(0, 210, 255, 0.9);
+}
+
+.spread-9 .headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(32px, 5.5vw, 80px);
+  line-height: 1.0;
+  color: #ffffff;
+  margin: 0 0 clamp(16px, 2.5vw, 32px) 0;
+  letter-spacing: -0.02em;
+}
+
+.spread-9 .headline .magic-word {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(200, 140, 255, 0.9);
+  position: relative;
+}
+
+.spread-9 .headline .gravity-word {
+  display: block;
+  color: rgba(0, 210, 255, 0.95);
+  font-style: normal;
+  font-size: clamp(40px, 7vw, 100px);
+}
+
+.spread-9 .divider-line {
+  width: clamp(40px, 8vw, 100px);
+  height: 3px;
+  background: linear-gradient(90deg, rgba(200, 100, 255, 0.9), rgba(0, 210, 255, 0.5));
+  margin: clamp(16px, 2.5vw, 28px) 0;
+}
+
+.spread-9 .blurb {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.65;
+  color: rgba(220, 210, 255, 0.75);
+  font-weight: 300;
+  max-width: 540px;
+}
+
+.spread-9 .blurb strong {
+  color: rgba(220, 210, 255, 0.95);
+  font-weight: 700;
+}
+
+/* CTA */
+.spread-9 .cta-wrap {
+  margin-top: clamp(24px, 4vw, 40px);
+}
+
+.spread-9 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #04030f;
+  background: linear-gradient(135deg, rgba(200, 140, 255, 1), rgba(0, 210, 255, 1));
+  padding: 14px 32px;
+  border-radius: 2px;
+  position: relative;
+  transition: opacity 0.2s;
+}
+
+.spread-9 .cta:hover {
+  opacity: 0.85;
+}
+
+/* Bottom bar */
+.spread-9 .bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 2vw, 24px) clamp(20px, 5vw, 72px);
+  border-top: 1px solid rgba(120, 80, 255, 0.2);
+}
+
+.spread-9 .source-tag {
+  font-size: 18px;
+  color: rgba(180, 160, 255, 0.4);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.spread-9 .page-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(120, 80, 255, 0.5);
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.2em;
+}
+
+/* Science detail — entanglement nodes */
+.spread-9 .node {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(200, 140, 255, 0.7);
+  pointer-events: none;
+}
+
+.spread-9 .node-1 {
+  width: 6px; height: 6px;
+  top: 18%; left: 12%;
+  box-shadow: 0 0 12px rgba(200, 140, 255, 0.8);
+}
+.spread-9 .node-2 {
+  width: 4px; height: 4px;
+  top: 65%; left: 8%;
+  background: rgba(0, 210, 255, 0.7);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.8);
+}
+.spread-9 .node-3 {
+  width: 8px; height: 8px;
+  top: 35%; left: 48%;
+  background: rgba(120, 80, 255, 0.5);
+  box-shadow: 0 0 16px rgba(120, 80, 255, 0.8);
+}
+
+/* Responsive */
+@media (min-width: 720px) {
+  .spread-9 .main-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .spread-9 .orb-wrap {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+    width: clamp(280px, 40vw, 580px);
+    height: clamp(280px, 40vw, 580px);
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-9 .orb-wrap {
+    display: block;
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 260px;
+    height: 260px;
+    opacity: 0.5;
+  }
+
+  .spread-9 .text-col {
+    max-width: 100%;
+  }
+}
+</style>
+
+<div class="inner">
+  <div class="top-bar">
+    <span class="pub-name">Morning Edition — Weekly</span>
+    <span class="issue-num">09 / 10</span>
+  </div>
+
+  <div class="main-content">
+    <div class="text-col">
+      <div class="kicker">Weird Science</div>
+      <h1 class="headline">
+        Entanglement<br>
+        Builds Space&#8209;Time.<br>
+        Now <span class="magic-word">'Magic'</span><br>
+        <span class="gravity-word">Bends It.</span>
+      </h1>
+      <div class="divider-line"></div>
+      <p class="blurb">
+        Physicists have traced the pliability of space-time in holographic theories to <strong>'magic'</strong> — a measure of quantum non-stabilizerness. It's the closest anyone's gotten to explaining why <strong>gravity bends at all</strong> from first-principles quantum mechanics.
+      </p>
+      <div class="cta-wrap">
+        <a class="cta" href="https://www.quantamagazine.org/entanglement-builds-space-time-now-magic-gives-it-gravity-20260603/" target="_blank" rel="noopener">Read →</a>
+      </div>
+    </div>
+
+    <div class="orb-wrap">
+      <div class="orb">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+      </div>
+    </div>
+
+    <div class="node node-1"></div>
+    <div class="node node-2"></div>
+    <div class="node node-3"></div>
+  </div>
+
+  <div class="bottom-bar">
+    <span class="source-tag">Quanta Magazine · June 3, 2026</span>
+    <span class="page-num">SUNDAY, JUNE 7 · 2026</span>
+  </div>
+</div>
+
+</section>
+<section data-story="10" class="spread spread-10">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-10 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  color: #f0ece0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Mono', monospace;
+  box-sizing: border-box;
+}
+
+/* Animated background: two opposing gradient orbs */
+.spread-10::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 60%, rgba(255, 140, 0, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 45% at 85% 40%, rgba(60, 120, 220, 0.13) 0%, transparent 70%);
+  z-index: 0;
+}
+
+/* Diagonal dividing line */
+.spread-10::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    transparent 49.3%,
+    rgba(240, 236, 224, 0.07) 49.3%,
+    rgba(240, 236, 224, 0.07) 50.7%,
+    transparent 50.7%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-10 * {
+  box-sizing: border-box;
+}
+
+.spread-10 .inner {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: clamp(24px, 4vw, 60px);
+  gap: clamp(20px, 3vw, 40px);
+}
+
+/* ── HEADER ── */
+.spread-10 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(240, 236, 224, 0.15);
+  padding-bottom: clamp(12px, 2vw, 20px);
+}
+
+.spread-10 .kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.25em;
+  color: rgba(240, 236, 224, 0.45);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.spread-10 .edition {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(240, 236, 224, 0.3);
+  letter-spacing: 0.1em;
+  text-align: right;
+}
+
+.spread-10 .edition span {
+  display: block;
+  font-size: 18px;
+  color: rgba(240, 236, 224, 0.15);
+}
+
+/* ── MAIN CONTENT ── */
+.spread-10 .main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 4vw, 60px);
+  align-items: center;
+}
+
+/* Left: Title + blurb */
+.spread-10 .left-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 36px);
+}
+
+.spread-10 .title-block {
+  position: relative;
+}
+
+.spread-10 .title-word-ai {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(52px, 8vw, 110px);
+  line-height: 0.9;
+  display: block;
+  background: linear-gradient(135deg, #ff8c00 0%, #ffb347 60%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.spread-10 .title-rest {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 3vw, 38px);
+  line-height: 1.25;
+  color: #f0ece0;
+  margin-top: clamp(8px, 1vw, 14px);
+  opacity: 0.85;
+}
+
+.spread-10 .issue-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(80px, 12vw, 160px);
+  font-weight: 700;
+  color: rgba(240, 236, 224, 0.04);
+  line-height: 1;
+  position: absolute;
+  bottom: -30px;
+  right: -10px;
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.spread-10 .blurb {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.7;
+  color: rgba(240, 236, 224, 0.6);
+  max-width: 480px;
+  position: relative;
+  padding-left: clamp(16px, 2vw, 24px);
+  border-left: 2px solid rgba(255, 140, 0, 0.4);
+}
+
+/* Right: pullquote + duality visual */
+.spread-10 .right-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 40px);
+  align-items: flex-start;
+}
+
+.spread-10 .duality {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.spread-10 .duality-top {
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.18) 0%, rgba(255, 100, 0, 0.06) 100%);
+  border: 1px solid rgba(255, 140, 0, 0.25);
+  padding: clamp(18px, 2.5vw, 28px);
+  position: relative;
+  border-radius: 4px 4px 0 0;
+}
+
+.spread-10 .duality-bottom {
+  background: linear-gradient(315deg, rgba(60, 120, 220, 0.18) 0%, rgba(30, 80, 180, 0.06) 100%);
+  border: 1px solid rgba(60, 120, 220, 0.25);
+  padding: clamp(18px, 2.5vw, 28px);
+  position: relative;
+  border-radius: 0 0 4px 4px;
+}
+
+.spread-10 .duality-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: clamp(6px, 1vw, 10px);
+}
+
+.spread-10 .duality-top .duality-label {
+  color: #ff8c00;
+}
+
+.spread-10 .duality-bottom .duality-label {
+  color: #6e9ef5;
+}
+
+.spread-10 .duality-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.35;
+}
+
+.spread-10 .duality-top .duality-text {
+  color: rgba(255, 200, 100, 0.9);
+}
+
+.spread-10 .duality-bottom .duality-text {
+  color: rgba(150, 185, 255, 0.9);
+}
+
+.spread-10 .duality-icon {
+  position: absolute;
+  top: 50%;
+  right: clamp(16px, 2vw, 24px);
+  transform: translateY(-50%);
+  font-size: clamp(28px, 3.5vw, 48px);
+  opacity: 0.25;
+}
+
+/* Pullquote strip */
+.spread-10 .pullquote-strip {
+  width: 100%;
+  padding: clamp(16px, 2vw, 24px) clamp(16px, 2.5vw, 28px);
+  border-top: 1px solid rgba(240, 236, 224, 0.12);
+  border-bottom: 1px solid rgba(240, 236, 224, 0.12);
+}
+
+.spread-10 .pullquote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.4;
+  font-style: italic;
+  color: #f0ece0;
+  margin: 0;
+}
+
+.spread-10 .pullquote-text::before {
+  content: '\201C';
+  font-size: 1.4em;
+  line-height: 0;
+  vertical-align: -0.3em;
+  color: rgba(255, 140, 0, 0.5);
+  margin-right: 0.05em;
+}
+
+.spread-10 .pullquote-text::after {
+  content: '\201D';
+  font-size: 1.4em;
+  line-height: 0;
+  vertical-align: -0.3em;
+  color: rgba(60, 120, 220, 0.5);
+  margin-left: 0.05em;
+}
+
+.spread-10 .pullquote-attr {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(240, 236, 224, 0.35);
+  margin-top: clamp(8px, 1vw, 12px);
+  letter-spacing: 0.08em;
+}
+
+/* ── FOOTER ── */
+.spread-10 .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(240, 236, 224, 0.1);
+  padding-top: clamp(14px, 2vw, 22px);
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.spread-10 .source-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(240, 236, 224, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.spread-10 .source-tag strong {
+  color: rgba(240, 236, 224, 0.5);
+}
+
+.spread-10 .cta {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: clamp(18px, 1.6vw, 21px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: linear-gradient(90deg, #ff8c00, #ffb347);
+  padding: clamp(12px, 1.5vw, 16px) clamp(24px, 3vw, 40px);
+  text-decoration: none;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+  position: relative;
+  white-space: nowrap;
+}
+
+.spread-10 .cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 28px rgba(255, 140, 0, 0.35);
+}
+
+.spread-10 .cta:hover {
+  opacity: 0.88;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+  .spread-10 .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .spread-10 .left-col {
+    order: 1;
+  }
+
+  .spread-10 .right-col {
+    order: 2;
+  }
+
+  .spread-10 .issue-num {
+    font-size: clamp(60px, 20vw, 100px);
+    bottom: -20px;
+    right: 0;
+  }
+
+  .spread-10 .duality {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .spread-10 .duality-top {
+    border-radius: 4px 0 0 4px;
+  }
+
+  .spread-10 .duality-bottom {
+    border-radius: 0 4px 4px 0;
+  }
+
+  .spread-10 .duality-icon {
+    display: none;
+  }
+
+  .spread-10 .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .spread-10 .cta {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .spread-10 .duality {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .spread-10 .duality-top {
+    border-radius: 4px 4px 0 0;
+  }
+
+  .spread-10 .duality-bottom {
+    border-radius: 0 0 4px 4px;
+  }
+}
+</style>
+
+<div class="inner">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="kicker">Field Notes</div>
+    <div class="edition">
+      Morning Edition
+      <span>Sun, Jun 7, 2026 · №10</span>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+    <!-- LEFT -->
+    <div class="left-col">
+      <div class="title-block">
+        <span class="title-word-ai">AI</span>
+        <p class="title-rest">Enthusiasts Race Against Time;<br>Skeptics Race Against Entropy.</p>
+        <div class="issue-num">10</div>
+      </div>
+      <p class="blurb">
+        Willison quotes Charity Majors on the structural tension between AI optimists and skeptics on the same product teams — not a flame war, but a real observation about two different risk horizons. Worth thirty seconds if you're the only AI-leaning designer on your team.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-col">
+      <div class="duality">
+        <div class="duality-top">
+          <div class="duality-label">The Optimist</div>
+          <div class="duality-text">Racing against time — before momentum stalls and budgets evaporate.</div>
+          <div class="duality-icon">⚡</div>
+        </div>
+        <div class="duality-bottom">
+          <div class="duality-label">The Skeptic</div>
+          <div class="duality-text">Racing against entropy — before complexity compounds and trust erodes.</div>
+          <div class="duality-icon">🌊</div>
+        </div>
+      </div>
+
+      <div class="pullquote-strip">
+        <p class="pullquote-text">AI enthusiasts are in a race against time; skeptics are in a race against entropy.</p>
+        <div class="pullquote-attr">— Charity Majors, via Simon Willison</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="source-tag">
+      <strong>simonwillison.net</strong> · Jun 4, 2026
+    </div>
+    <a class="cta" href="https://simonwillison.net/2026/Jun/4/ai-enthusiasts-ai-skeptics/#atom-everything" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</div>
+</section>
+
+<section data-story="11" class="spread spread-colophon">
+<style>
+.spread-colophon{background:#17140e;color:#f4ecd8;padding:clamp(48px,6vw,110px);
+  min-height:50vh;display:flex;flex-direction:column;justify-content:center;gap:28px;
+  font-family:system-ui,sans-serif}
+.spread-colophon h3{font-size:clamp(36px,5vw,72px);margin:0;font-weight:300;
+  font-style:italic;line-height:1.1}
+.spread-colophon p{font-size:22px;line-height:1.5;max-width:56ch;margin:0;opacity:.85}
+.spread-colophon .sm{font-size:18px;letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+</style>
+<h3>That was this week.</h3>
+<p>Ten stories, curated across twenty sources. 5 flagged as
+directly applicable. Each spread designed from scratch by Claude.</p>
+<p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
+text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
+<p class="sm">Morning Edition — Weekly &middot; Issue No. W23
+&middot; SUNDAY, JUNE 7, 2026</p>
+</section>
+
+<script>
+(function(){
+var sp=document.querySelectorAll('[data-story]');
+var total=10;
+if(!sp.length)return;
+var drawer=document.getElementById('m-drawer');
+var prog=document.getElementById('m-progress');
+var bar=document.getElementById('m-bar');
+var ntitle=document.getElementById('m-nav-title');
+var tbtn=document.getElementById('m-toc-btn');
+function closeDrawer(){drawer.classList.remove('open');tbtn.setAttribute('aria-expanded','false');}
+var cl=document.createElement('div');
+cl.className='m-drawer-close';
+cl.innerHTML='All stories &middot; tap to jump <span aria-hidden="true">&times;</span>';
+cl.addEventListener('click',closeDrawer);
+drawer.appendChild(cl);
+sp.forEach(function(s,i){
+var h=s.querySelector('h2')||s.querySelector('h1');
+var k=s.querySelector('.kicker');
+var txt=(h?h.textContent.trim():'');
+if(txt.length>55)txt=txt.slice(0,52)+'…';
+var it=document.createElement('div');
+it.className='m-drawer-item';
+it.innerHTML=(k?'<span class="m-drawer-kicker">'+k.textContent.trim().slice(0,22)+'</span>':'')
++'<span class="m-drawer-num">'+(i+1)+'</span>'
++'<span class="m-drawer-title">'+txt+'</span>';
+it.addEventListener('click',function(){closeDrawer();s.scrollIntoView({behavior:'smooth'});});
+drawer.appendChild(it);
+});
+tbtn.addEventListener('click',function(){
+var open=drawer.classList.toggle('open');
+tbtn.setAttribute('aria-expanded',String(open));
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){
+if(!e.isIntersecting)return;
+var idx=parseInt(e.target.getAttribute('data-story'))||1;
+if(prog)prog.textContent=idx+' / '+total;
+if(bar)bar.style.width=Math.round(idx/total*100)+'%';
+var k=e.target.querySelector('.kicker');
+if(ntitle)ntitle.textContent=(idx===1)?'Morning Edition':(k?k.textContent.trim().slice(0,26):'Morning Edition');
+});
+},{threshold:0.5});
+sp.forEach(function(s){io.observe(s);});
+}
+})();
+</script>
+</body>
+</html>

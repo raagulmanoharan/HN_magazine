@@ -1,0 +1,4783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Morning Edition — Weekly &middot; SUNDAY, JUNE 21, 2026</title>
+<meta name="description" content="Agents ship, genomes tangle, spyware gets sneaky">
+<meta property="og:title" content="Morning Edition — Weekly &middot; SUNDAY, JUNE 21, 2026">
+<meta property="og:description" content="Agents ship, genomes tangle, spyware gets sneaky">
+<meta property="og:type" content="article">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#111;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.spread{position:relative;min-height:100vh;overflow:hidden}
+a{color:inherit}
+
+/* ---- Mobile global scroll-snap overlay (fixed) ---- */
+@media(max-width:719px){
+html{scroll-snap-type:y mandatory}
+body{overflow-x:hidden}
+#m-nav{
+  display:flex!important;
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  height:48px;
+  background:rgba(17,17,17,.85);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+#m-nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;padding:0 16px;position:relative;
+}
+#m-nav-title{
+  font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  max-width:55%;
+}
+#m-toc-btn{
+  background:none;border:none;color:#fff;cursor:pointer;
+  display:flex;align-items:center;gap:7px;padding:6px 0;
+  font-size:13px;font-weight:600;letter-spacing:.05em;flex-shrink:0;
+}
+#m-progress{opacity:.75}
+#m-bar{
+  position:absolute;bottom:0;left:0;height:2px;
+  background:#d9b26a;transition:width .35s ease;
+}
+#m-drawer{
+  display:none;position:fixed;top:48px;left:0;right:0;bottom:0;
+  z-index:998;background:rgba(17,17,17,.97);overflow-y:auto;
+  padding:16px 0 32px;
+}
+#m-drawer.open{display:block}
+.m-drawer-close{
+  padding:12px 20px 16px;font-size:13px;opacity:.6;cursor:pointer;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.m-drawer-item{
+  display:flex;align-items:baseline;gap:10px;
+  padding:14px 20px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.m-drawer-item:active{background:rgba(255,255,255,.05)}
+.m-drawer-num{font-size:11px;opacity:.4;flex-shrink:0;min-width:18px}
+.m-drawer-title{font-size:16px;font-weight:600;color:#fff;line-height:1.3}
+.m-drawer-kicker{font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;flex-shrink:0;align-self:center}
+.spread,.spread-colophon{scroll-snap-align:start;min-height:100svh;min-height:100vh;overflow:hidden}
+.spread-cover{padding-top:52px!important;scroll-snap-align:start}
+h1,h2,h3,.cover-title{word-break:break-word;overflow-wrap:break-word}
+}
+</style>
+</head>
+<body>
+<div id="m-nav" style="display:none" role="banner"><div id="m-nav-inner"><span id="m-nav-title">Morning Edition</span><button id="m-toc-btn" aria-label="Open story list" aria-expanded="false"><span id="m-progress">1 / 10</span><svg width="18" height="13" viewBox="0 0 18 13" fill="currentColor" aria-hidden="true"><rect width="18" height="2" rx="1"/><rect y="5.5" width="18" height="2" rx="1"/><rect y="11" width="18" height="2" rx="1"/></svg></button><div id="m-bar" style="width:10%"></div></div></div><div id="m-drawer" role="dialog" aria-modal="true" aria-label="All stories"></div>
+<section data-story="0" class="spread spread-cover">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+.spread-cover { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  padding: clamp(24px, 4vw, 64px);
+}
+
+.spread-cover::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 60vw, 800px);
+  height: clamp(300px, 60vw, 800px);
+  background: radial-gradient(ellipse at center, #c8102e 0%, #7a0019 30%, transparent 70%);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-cover::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  left: -5%;
+  width: clamp(200px, 45vw, 600px);
+  height: clamp(200px, 45vw, 600px);
+  background: radial-gradient(ellipse at center, #0057ff 0%, #001a7a 35%, transparent 70%);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-cover__header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 2px solid #c8102e;
+  padding-top: clamp(14px, 2vw, 28px);
+}
+
+.spread-cover__issue-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spread-cover__issue-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2vw, 22px);
+  color: #c8102e;
+  letter-spacing: 0.18em;
+}
+
+.spread-cover__date {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(18px, 1.6vw, 20px);
+  color: #888899;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+.spread-cover__dot-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, #ffffff08 1px, transparent 1px);
+  background-size: clamp(28px, 3vw, 40px) clamp(28px, 3vw, 40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.spread-cover__edition-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2vw, 22px);
+  color: #555566;
+  letter-spacing: 0.25em;
+  text-align: right;
+  align-self: flex-start;
+}
+
+.spread-cover__hero {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 60px) 0;
+}
+
+.spread-cover__title-block {
+  position: relative;
+}
+
+.spread-cover__title-line-one {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 16vw, 220px);
+  color: #f0eee8;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.spread-cover__title-line-two {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 16vw, 220px);
+  color: transparent;
+  -webkit-text-stroke: clamp(1px, 0.18vw, 2.5px) #f0eee8;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.spread-cover__divider-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #c8102e, #c8102e 40%, #0057ff 70%, transparent 100%);
+  margin: clamp(16px, 2.5vw, 36px) 0;
+  position: relative;
+  z-index: 2;
+}
+
+.spread-cover__subtitle-row {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(16px, 3vw, 48px);
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.spread-cover__weekly {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(28px, 5vw, 72px);
+  color: #c8102e;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.spread-cover__tagline {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(18px, 1.8vw, 24px);
+  color: #aaaabc;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 520px;
+  border-left: 2px solid #333344;
+  padding-left: clamp(14px, 2vw, 24px);
+}
+
+.spread-cover__tagline em {
+  color: #f0eee8;
+  font-style: normal;
+}
+
+.spread-cover__footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid #222233;
+  padding-bottom: clamp(14px, 2vw, 24px);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-cover__stamp {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2.2vw, 28px);
+  color: #1a1a2a;
+  background: #c8102e;
+  padding: 6px 18px;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  box-shadow: 3px 3px 0 #7a0019;
+}
+
+.spread-cover__bottom-rule {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 1.6vw, 20px);
+  color: #333344;
+  letter-spacing: 0.3em;
+  text-align: right;
+  flex: 1;
+  text-align: right;
+}
+
+.spread-cover__big-number {
+  position: absolute;
+  bottom: clamp(60px, 10vw, 140px);
+  right: clamp(24px, 4vw, 64px);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(120px, 22vw, 320px);
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff06;
+  line-height: 1;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 720px) {
+  .spread-cover__subtitle-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .spread-cover__tagline {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #333344;
+    padding-top: 12px;
+    max-width: 100%;
+  }
+  .spread-cover__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .spread-cover__bottom-rule {
+    text-align: left;
+  }
+}
+</style>
+
+<div class="spread-cover__dot-grid"></div>
+<div class="spread-cover__big-number">25</div>
+
+<header class="spread-cover__header">
+  <div class="spread-cover__issue-meta">
+    <span class="spread-cover__issue-label">Issue No. W25</span>
+    <span class="spread-cover__date">Sunday, June 21, 2026</span>
+  </div>
+  <span class="spread-cover__edition-label">Morning Edition</span>
+</header>
+
+<main class="spread-cover__hero">
+  <div class="spread-cover__title-block">
+    <span class="spread-cover__title-line-one">Morning</span>
+    <span class="spread-cover__title-line-two">Edition</span>
+  </div>
+  <div class="spread-cover__divider-rule"></div>
+  <div class="spread-cover__subtitle-row">
+    <span class="spread-cover__weekly">Weekly</span>
+    <p class="spread-cover__tagline">
+      <em>Agents ship,</em> genomes tangle,<br>spyware gets sneaky
+    </p>
+  </div>
+</main>
+
+<footer class="spread-cover__footer">
+  <span class="spread-cover__stamp">W25 · 2026</span>
+  <span class="spread-cover__bottom-rule">Design · Technology · Science · Security</span>
+</footer>
+
+</section>
+<section data-story="1" class="spread spread-1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-1 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #060608;
+  color: #f0eee8;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+}
+
+/* Animated grid background */
+.spread-1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 255, 180, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 255, 180, 0.04) 1px, transparent 1px);
+  background-size: clamp(40px, 6vw, 80px) clamp(40px, 6vw, 80px);
+  z-index: 0;
+}
+
+/* Glow orb */
+.spread-1::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 60vw, 800px);
+  height: clamp(300px, 60vw, 800px);
+  background: radial-gradient(circle, rgba(99,255,180,0.12) 0%, rgba(0,200,255,0.06) 40%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── HEADER BAR ── */
+.spread-1 .s1-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid rgba(99,255,180,0.15);
+}
+
+.spread-1 .s1-pub {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1.2vw, 13px);
+  font-size: max(18px, 1.2vw);
+  letter-spacing: 0.18em;
+  color: rgba(240,238,232,0.35);
+  text-transform: uppercase;
+}
+
+.spread-1 .s1-edition {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(240,238,232,0.3);
+  letter-spacing: 0.1em;
+}
+
+.spread-1 .s1-kicker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spread-1 .s1-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #63ffb4;
+  box-shadow: 0 0 12px #63ffb4, 0 0 24px rgba(99,255,180,0.5);
+  flex-shrink: 0;
+}
+
+.spread-1 .s1-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  color: #63ffb4;
+  text-transform: uppercase;
+}
+
+/* ── MAIN CONTENT ── */
+.spread-1 .s1-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  padding: clamp(32px, 5vw, 72px) clamp(20px, 5vw, 64px);
+  gap: clamp(24px, 3vw, 40px);
+}
+
+/* Issue number */
+.spread-1 .s1-numeral {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(100px, 22vw, 280px);
+  font-weight: 700;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(99,255,180,0.18);
+  letter-spacing: -0.04em;
+  position: absolute;
+  right: clamp(-10px, -2vw, 0px);
+  top: 50%;
+  transform: translateY(-55%);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.spread-1 .s1-content-col {
+  position: relative;
+  z-index: 3;
+  max-width: clamp(300px, 70vw, 760px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.spread-1 .s1-repo-path {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2.2vw, 24px);
+  color: rgba(99,255,180,0.7);
+  letter-spacing: 0.05em;
+}
+
+.spread-1 .s1-repo-path span {
+  color: rgba(240,238,232,0.4);
+}
+
+.spread-1 .s1-title {
+  font-size: clamp(36px, 7vw, 96px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: #f0eee8;
+}
+
+.spread-1 .s1-title em {
+  font-style: normal;
+  color: #63ffb4;
+}
+
+.spread-1 .s1-divider {
+  width: clamp(48px, 8vw, 96px);
+  height: 2px;
+  background: linear-gradient(90deg, #63ffb4, transparent);
+}
+
+.spread-1 .s1-blurb {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.65;
+  color: rgba(240,238,232,0.72);
+  font-weight: 300;
+  max-width: 58ch;
+}
+
+/* ── APPLIES TO YOU BADGE ── */
+.spread-1 .s1-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.spread-1 .s1-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(99,255,180,0.15), rgba(0,200,255,0.08));
+  border: 1px solid rgba(99,255,180,0.4);
+  border-radius: 3px;
+  padding: 8px 18px;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-1 .s1-badge::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #63ffb4;
+  box-shadow: 0 0 8px #63ffb4;
+}
+
+.spread-1 .s1-badge-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #63ffb4;
+  text-transform: uppercase;
+}
+
+.spread-1 .s1-badge-star {
+  font-size: 18px;
+  color: #63ffb4;
+}
+
+.spread-1 .s1-apply-note {
+  font-size: clamp(18px, 1.6vw, 20px);
+  color: rgba(240,238,232,0.55);
+  font-family: 'Space Mono', monospace;
+  line-height: 1.6;
+  max-width: 52ch;
+  padding-left: 14px;
+  border-left: 1px solid rgba(99,255,180,0.2);
+}
+
+/* ── FOOTER ── */
+.spread-1 .s1-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: clamp(20px, 3vw, 36px) clamp(20px, 5vw, 64px);
+  border-top: 1px solid rgba(99,255,180,0.12);
+}
+
+.spread-1 .s1-source {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(240,238,232,0.3);
+  letter-spacing: 0.08em;
+}
+
+.spread-1 .s1-source strong {
+  color: rgba(240,238,232,0.5);
+}
+
+.spread-1 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #63ffb4;
+  color: #060608;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.6vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 2px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 0 rgba(99,255,180,0);
+}
+
+.spread-1 .cta:hover {
+  background: #a0ffd6;
+  box-shadow: 0 0 32px rgba(99,255,180,0.4);
+}
+
+/* ── DECORATIVE CORNER MARKS ── */
+.spread-1 .s1-corner {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.spread-1 .s1-corner--tl {
+  top: clamp(60px, 10vh, 100px);
+  left: clamp(20px, 4vw, 64px);
+  width: 32px;
+  height: 32px;
+  border-top: 1px solid rgba(99,255,180,0.3);
+  border-left: 1px solid rgba(99,255,180,0.3);
+}
+
+.spread-1 .s1-corner--br {
+  bottom: clamp(60px, 10vh, 100px);
+  right: clamp(20px, 4vw, 64px);
+  width: 32px;
+  height: 32px;
+  border-bottom: 1px solid rgba(99,255,180,0.3);
+  border-right: 1px solid rgba(99,255,180,0.3);
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 720px) {
+  .spread-1 .s1-main {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .spread-1 .s1-numeral {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    text-align: right;
+    align-self: center;
+    font-size: clamp(120px, 16vw, 280px);
+  }
+}
+</style>
+
+<!-- Decorative corner marks -->
+<div class="s1-corner s1-corner--tl"></div>
+<div class="s1-corner s1-corner--br"></div>
+
+<!-- Header -->
+<header class="s1-header">
+  <div class="s1-pub">Morning Edition &mdash; Weekly</div>
+  <div class="s1-kicker-wrap">
+    <div class="s1-dot"></div>
+    <span class="s1-kicker">Agentic Tooling</span>
+  </div>
+  <div class="s1-edition">Sunday&nbsp;/&nbsp;June&nbsp;21,&nbsp;2026</div>
+</header>
+
+<!-- Main -->
+<main class="s1-main">
+  <div class="s1-content-col">
+    <div class="s1-repo-path"><span>vercel /</span>&nbsp;eve</div>
+    <h1 class="s1-title">The Framework<br>for Building<br><em>Agents.</em></h1>
+    <div class="s1-divider"></div>
+    <p class="s1-blurb">Vercel's own agent framework just dropped with nearly 2k stars in days — a strong signal this isn't vaporware. If you're building agentic workflows on top of Next.js or Vercel infra, this is the scaffolding Vercel itself wants you to use. Worth cloning before the ecosystem solidifies around it.</p>
+
+    <div class="s1-badge-wrap">
+      <div class="s1-badge">
+        <span class="s1-badge-star">◆</span>
+        <span class="s1-badge-label">Applies to You</span>
+      </div>
+      <p class="s1-apply-note">Clone the repo today and run the starter example to see how Vercel structures tool-calling and state across agent turns.</p>
+    </div>
+  </div>
+
+  <div class="s1-numeral" aria-hidden="true">01</div>
+</main>
+
+<!-- Footer -->
+<footer class="s1-footer">
+  <div class="s1-source">GitHub &mdash; <strong>1,963 stars · 70 comments</strong></div>
+  <a class="cta" href="https://github.com/vercel/eve" target="_blank" rel="noopener">Read →</a>
+</footer>
+
+</section>
+<section data-story="2" class="spread spread-2">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+.spread-2 { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0e1a;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+  box-sizing: border-box;
+}
+
+.spread-2 *,
+.spread-2 *::before,
+.spread-2 *::after {
+  box-sizing: border-box;
+}
+
+/* Background grid texture */
+.spread-2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 255, 196, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 255, 196, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Large decorative number background */
+.spread-2::after {
+  content: '02';
+  position: absolute;
+  right: -0.05em;
+  top: -0.1em;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(200px, 30vw, 420px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(99, 255, 196, 0.08);
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.04em;
+}
+
+.spread-2 .inner {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  padding: clamp(24px, 5vw, 72px);
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* Top bar */
+.spread-2 .top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(99, 255, 196, 0.2);
+  padding-bottom: clamp(12px, 2vw, 20px);
+}
+
+.spread-2 .kicker {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(11px, 1.4vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #63ffc4;
+  font-size: 18px;
+}
+
+.spread-2 .edition-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.08em;
+}
+
+/* Main content area */
+.spread-2 .main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vw, 48px);
+  align-content: center;
+}
+
+/* Title block */
+.spread-2 .title-block {
+  position: relative;
+}
+
+.spread-2 .title-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+}
+
+.spread-2 .title-eyebrow span {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #63ffc4, #4d9eff);
+}
+
+.spread-2 .title-eyebrow em {
+  font-style: normal;
+  font-size: 18px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+}
+
+.spread-2 h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(38px, 6.5vw, 96px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.spread-2 h1 .accent {
+  font-style: italic;
+  color: #63ffc4;
+}
+
+.spread-2 h1 .line-indent {
+  display: block;
+  padding-left: clamp(20px, 6vw, 120px);
+}
+
+/* Code terminal decoration */
+.spread-2 .terminal-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(99, 255, 196, 0.07);
+  border: 1px solid rgba(99, 255, 196, 0.25);
+  border-radius: 6px;
+  padding: 10px 18px;
+  margin-top: clamp(16px, 2.5vw, 28px);
+}
+
+.spread-2 .terminal-chip .prompt {
+  color: #63ffc4;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.spread-2 .terminal-chip .cmd {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+/* Blurb and info row */
+.spread-2 .content-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 36px);
+}
+
+.spread-2 .blurb {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 640px;
+  border-left: 3px solid rgba(77, 158, 255, 0.5);
+  padding-left: clamp(16px, 2.5vw, 28px);
+}
+
+.spread-2 .blurb strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* Visual connector element */
+.spread-2 .connector {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: clamp(8px, 1.5vw, 16px) 0;
+}
+
+.spread-2 .connector-node {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #63ffc4;
+  flex-shrink: 0;
+}
+
+.spread-2 .connector-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #63ffc4, rgba(77, 158, 255, 0.3));
+  max-width: 200px;
+}
+
+.spread-2 .connector-node-2 {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4d9eff;
+  flex-shrink: 0;
+}
+
+/* Applies to you badge */
+.spread-2 .badge-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.spread-2 .applies-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #63ffc4, #4d9eff);
+  padding: 8px 18px 8px 14px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.spread-2 .applies-badge .badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0a0e1a;
+  flex-shrink: 0;
+}
+
+.spread-2 .applies-badge .badge-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0a0e1a;
+}
+
+.spread-2 .apply-note {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.55;
+  max-width: 520px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.spread-2 .apply-note .apply-icon {
+  color: #63ffc4;
+  margin-right: 6px;
+}
+
+/* Bottom bar */
+.spread-2 .bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: clamp(16px, 2vw, 24px);
+}
+
+.spread-2 .source-label {
+  font-size: 18px;
+  color: rgba(255,255,255,0.25);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.spread-2 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #63ffc4 0%, #4d9eff 100%);
+  color: #0a0e1a;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 4px;
+  position: relative;
+  transition: opacity 0.2s;
+}
+
+.spread-2 .cta:hover {
+  opacity: 0.88;
+}
+
+.spread-2 .cta::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #63ffc4, #4d9eff);
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(8px);
+}
+
+/* Glowing orb decoration */
+.spread-2 .orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-2 .orb-1 {
+  width: clamp(200px, 35vw, 500px);
+  height: clamp(200px, 35vw, 500px);
+  background: radial-gradient(circle, rgba(77, 158, 255, 0.12) 0%, transparent 70%);
+  bottom: -10%;
+  left: -5%;
+}
+
+.spread-2 .orb-2 {
+  width: clamp(150px, 25vw, 350px);
+  height: clamp(150px, 25vw, 350px);
+  background: radial-gradient(circle, rgba(99, 255, 196, 0.1) 0%, transparent 70%);
+  top: 10%;
+  right: 5%;
+}
+
+/* Tablet and up */
+@media (min-width: 720px) {
+  .spread-2 .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-2 .content-row {
+    grid-template-columns: 1.6fr 1fr;
+    align-items: start;
+    gap: clamp(32px, 4vw, 56px);
+  }
+
+  .spread-2 .badge-block {
+    padding-top: 8px;
+  }
+
+  .spread-2 h1 .line-indent {
+    padding-left: clamp(40px, 8vw, 160px);
+  }
+}
+</style>
+
+<div class="spread-2 orb orb-1" style="position:absolute;"></div>
+<div class="spread-2 orb orb-2" style="position:absolute;"></div>
+
+<div class="spread-2 inner">
+
+  <header class="spread-2 top-bar">
+    <span class="spread-2 kicker">Dev Tools</span>
+    <span class="spread-2 edition-label">Morning Edition — 21 Jun 2026</span>
+  </header>
+
+  <main class="spread-2 main-content">
+
+    <div class="spread-2 title-block">
+      <div class="spread-2 title-eyebrow">
+        <span></span>
+        <em>No. 02 of 10</em>
+      </div>
+      <h1 class="spread-2">
+        Datasette<span class="spread-2 accent"> Apps</span>
+        <span class="spread-2 line-indent">Inside Your</span>
+        <span class="spread-2 line-indent">Data Layer</span>
+      </h1>
+      <div class="spread-2 terminal-chip">
+        <span class="spread-2 prompt">$</span>
+        <span class="spread-2 cmd">pip install datasette-apps</span>
+      </div>
+    </div>
+
+    <div class="spread-2 connector">
+      <div class="spread-2 connector-node"></div>
+      <div class="spread-2 connector-line"></div>
+      <div class="spread-2 connector-node-2"></div>
+    </div>
+
+    <div class="spread-2 content-row">
+
+      <p class="spread-2 blurb">
+        Simon Willison's new Datasette plugin lets you bundle <strong>custom HTML/JS apps directly inside a Datasette instance</strong> — interactive data dashboards with zero separate hosting. For UX designers who prototype with real data, this <strong>collapses the gap between data layer and UI layer</strong> entirely.
+      </p>
+
+      <div class="spread-2 badge-block">
+        <div class="spread-2 applies-badge">
+          <div class="spread-2 badge-dot"></div>
+          <span class="spread-2 badge-text">Applies to You</span>
+        </div>
+        <p class="spread-2 apply-note">
+          <span class="spread-2 apply-icon">→</span>
+          Install datasette-apps via pip and deploy your first custom HTML view against a local SQLite file today.
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="spread-2 bottom-bar">
+    <span class="spread-2 source-label">simonwillison.net</span>
+    <a class="spread-2 cta" href="https://simonwillison.net/2026/Jun/18/datasette-apps/#atom-everything" target="_blank" rel="noopener">Read →</a>
+  </footer>
+
+</div>
+
+</section>
+<section data-story="3" class="spread spread-3">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-3 {
+  min-height: 100vh;
+  background-color: #04050a;
+  color: #e8e6f0;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animated diffusion grid background */
+.spread-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 60, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 60, 255, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  z-index: 0;
+}
+
+/* Radial energy burst */
+.spread-3::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(400px, 80vw, 900px);
+  height: clamp(400px, 80vw, 900px);
+  background: radial-gradient(ellipse at center,
+    rgba(99, 60, 255, 0.18) 0%,
+    rgba(0, 200, 180, 0.08) 35%,
+    transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-3 * {
+  box-sizing: border-box;
+}
+
+/* TOP BAR */
+.spread-3 .top-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid rgba(99, 60, 255, 0.3);
+}
+
+.spread-3 .publication {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  letter-spacing: 0.15em;
+  color: rgba(232, 230, 240, 0.4);
+  text-transform: uppercase;
+}
+
+.spread-3 .issue-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  letter-spacing: 0.1em;
+  color: rgba(232, 230, 240, 0.4);
+  text-transform: uppercase;
+}
+
+.spread-3 .kicker-bar {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1vw, 12px);
+  letter-spacing: 0.2em;
+  color: #00c8b4;
+  text-transform: uppercase;
+  background: rgba(0, 200, 180, 0.1);
+  border: 1px solid rgba(0, 200, 180, 0.3);
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+
+/* MAIN CONTENT */
+.spread-3 .main-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  padding: clamp(32px, 5vw, 72px) clamp(20px, 5vw, 64px);
+  min-height: 0;
+}
+
+/* LEFT COLUMN */
+.spread-3 .left-col {
+  position: relative;
+  padding-right: clamp(20px, 4vw, 56px);
+  border-right: 1px solid rgba(99, 60, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 36px);
+}
+
+.spread-3 .issue-numeral {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1vw, 13px);
+  letter-spacing: 0.15em;
+  color: rgba(232, 230, 240, 0.25);
+  text-transform: uppercase;
+}
+
+.spread-3 .headline {
+  font-size: clamp(36px, 5.5vw, 72px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+  position: relative;
+}
+
+.spread-3 .headline em {
+  font-style: normal;
+  background: linear-gradient(135deg, #633cff 0%, #00c8b4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.spread-3 .blurb-text {
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(232, 230, 240, 0.7);
+  margin: 0;
+  max-width: 520px;
+}
+
+.spread-3 .blurb-text strong {
+  color: rgba(232, 230, 240, 0.95);
+  font-weight: 700;
+}
+
+.spread-3 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(13px, 1.2vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #04050a;
+  background: linear-gradient(135deg, #633cff 0%, #00c8b4 100%);
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 3px;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+}
+
+.spread-3 .cta:hover {
+  opacity: 0.85;
+}
+
+/* RIGHT COLUMN */
+.spread-3 .right-col {
+  position: relative;
+  padding-left: clamp(24px, 4vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vw, 48px);
+  justify-content: center;
+}
+
+/* Big stat */
+.spread-3 .stat-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spread-3 .stat-block::before {
+  content: '';
+  position: absolute;
+  left: -clamp(24px, 4vw, 64px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 100%;
+  background: rgba(99, 60, 255, 0.2);
+}
+
+.spread-3 .stat-value {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(96px, 14vw, 180px);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  background: linear-gradient(160deg, #ffffff 0%, #633cff 50%, #00c8b4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  position: relative;
+}
+
+/* Glitch echo effect */
+.spread-3 .stat-value::after {
+  content: '4×';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: linear-gradient(160deg, rgba(99, 60, 255, 0.25) 0%, transparent 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.spread-3 .stat-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(14px, 1.3vw, 18px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(232, 230, 240, 0.45);
+  text-transform: uppercase;
+  max-width: 260px;
+  line-height: 1.4;
+}
+
+/* Architecture note card */
+.spread-3 .arch-card {
+  border: 1px solid rgba(99, 60, 255, 0.25);
+  background: rgba(99, 60, 255, 0.06);
+  padding: clamp(16px, 2vw, 24px);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-3 .arch-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #633cff, #00c8b4);
+}
+
+.spread-3 .arch-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 0.9vw, 11px);
+  letter-spacing: 0.18em;
+  color: #633cff;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.spread-3 .arch-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spread-3 .arch-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spread-3 .arch-row-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 0.85vw, 11px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(232, 230, 240, 0.4);
+}
+
+.spread-3 .arch-bar-wrap {
+  position: relative;
+  height: 6px;
+  background: rgba(232, 230, 240, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.spread-3 .arch-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.spread-3 .arch-bar.diffusion {
+  width: 100%;
+  background: linear-gradient(90deg, #633cff, #00c8b4);
+}
+
+.spread-3 .arch-bar.autoregressive {
+  width: 25%;
+  background: rgba(232, 230, 240, 0.25);
+}
+
+/* Token stream decoration */
+.spread-3 .token-stream {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  opacity: 0.35;
+}
+
+.spread-3 .token {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 0.8vw, 11px);
+  color: #00c8b4;
+  border: 1px solid rgba(0, 200, 180, 0.3);
+  padding: 2px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+/* BOTTOM BAR */
+.spread-3 .bottom-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(12px, 2vw, 20px) clamp(20px, 5vw, 64px);
+  border-top: 1px solid rgba(99, 60, 255, 0.2);
+}
+
+.spread-3 .source-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 0.9vw, 12px);
+  letter-spacing: 0.1em;
+  color: rgba(232, 230, 240, 0.25);
+  text-transform: uppercase;
+}
+
+.spread-3 .page-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 0.9vw, 12px);
+  color: rgba(232, 230, 240, 0.25);
+  letter-spacing: 0.1em;
+}
+
+/* RESPONSIVE — stacked below 720px */
+@media (max-width: 720px) {
+  .spread-3 .top-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .spread-3 .main-content {
+    grid-template-columns: 1fr;
+    gap: clamp(32px, 6vw, 48px);
+  }
+
+  .spread-3 .left-col {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(99, 60, 255, 0.2);
+    padding-bottom: clamp(28px, 5vw, 40px);
+  }
+
+  .spread-3 .right-col {
+    padding-left: 0;
+  }
+
+  .spread-3 .stat-block::before {
+    display: none;
+  }
+
+  .spread-3 .stat-value {
+    font-size: clamp(96px, 28vw, 160px);
+  }
+
+  .spread-3 .token-stream {
+    display: none;
+  }
+
+  .spread-3 .headline {
+    font-size: clamp(36px, 9vw, 56px);
+  }
+}
+</style>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="publication">Morning Edition — Weekly</span>
+  <span class="kicker-bar">AI Research</span>
+  <span class="issue-tag">Sun, Jun 21, 2026</span>
+</div>
+
+<!-- MAIN -->
+<div class="main-content">
+
+  <!-- LEFT -->
+  <div class="left-col">
+    <span class="issue-numeral">03 / 10 — Spread</span>
+
+    <h1 class="headline">Diffusion<br><em>Gemma</em><br>Goes Fast</h1>
+
+    <p class="blurb-text">
+      DeepMind's diffusion-based approach breaks the autoregressive bottleneck, claiming
+      <strong>4× throughput gains</strong> over comparably sized models.
+      If this architecture holds at scale, it reshapes what real-time agentic
+      interfaces can feel like — <strong>latency is a UX problem first.</strong>
+    </p>
+
+    <a class="cta" href="https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/" target="_blank" rel="noopener">Read →</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right-col">
+
+    <div class="stat-block">
+      <span class="stat-value">4×</span>
+      <span class="stat-label">faster text generation vs. autoregressive baseline</span>
+    </div>
+
+    <div class="arch-card">
+      <span class="arch-label">Architecture throughput</span>
+      <div class="arch-compare">
+        <div class="arch-row">
+          <span class="arch-row-label">DiffusionGemma</span>
+          <div class="arch-bar-wrap">
+            <div class="arch-bar diffusion"></div>
+          </div>
+        </div>
+        <div class="arch-row">
+          <span class="arch-row-label">Autoregressive baseline</span>
+          <div class="arch-bar-wrap">
+            <div class="arch-bar autoregressive"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="token-stream">
+      <span class="token">token</span>
+      <span class="token">→</span>
+      <span class="token">token</span>
+      <span class="token">→</span>
+      <span class="token">token</span>
+      <span class="token">⇢</span>
+      <span class="token">diffuse</span>
+      <span class="token">∥</span>
+      <span class="token">∥</span>
+      <span class="token">∥</span>
+      <span class="token">parallel</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <span class="source-tag">Source: DeepMind Blog · deepmind.google</span>
+  <span class="page-num">03</span>
+</div>
+
+</section>
+<section data-story="4" class="spread spread-4">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-4 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #e8e4f0;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background circuit-like texture */
+.spread-4::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(100, 60, 220, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 60, 220, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  z-index: 0;
+}
+
+/* Glowing orb top-right */
+.spread-4::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: clamp(300px, 50vw, 600px);
+  height: clamp(300px, 50vw, 600px);
+  background: radial-gradient(circle, rgba(108, 43, 255, 0.28) 0%, rgba(30, 10, 80, 0.15) 50%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-4 .inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 72px);
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* Top bar */
+.spread-4 .top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(100, 60, 220, 0.35);
+  padding-bottom: 16px;
+  margin-bottom: clamp(32px, 5vh, 64px);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-4 .kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.4vw, 13px);
+  font-size: max(11px, min(1.4vw, 13px));
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  font-weight: 700;
+}
+
+.spread-4 .issue-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232, 228, 240, 0.3);
+  letter-spacing: 0.1em;
+}
+
+/* Main content grid */
+.spread-4 .content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vh, 48px);
+  align-content: start;
+}
+
+/* Giant number accent */
+.spread-4 .big-number {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(80px, 18vw, 220px);
+  font-weight: 700;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(139, 92, 246, 0.25);
+  position: absolute;
+  top: clamp(60px, 10vh, 120px);
+  right: clamp(24px, 5vw, 72px);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+}
+
+/* Title */
+.spread-4 .title-block {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+
+.spread-4 .title {
+  font-size: clamp(28px, 5.5vw, 68px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #f0eeff;
+  margin: 0 0 8px 0;
+}
+
+.spread-4 .title em {
+  font-style: normal;
+  color: #a78bfa;
+}
+
+/* Auth gateway highlight box */
+.spread-4 .gateway-box {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.3), rgba(59, 7, 100, 0.4));
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  border-left: 4px solid #8b5cf6;
+  padding: clamp(16px, 2.5vw, 28px) clamp(20px, 3vw, 36px);
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2.8vw, 26px);
+  line-height: 1.4;
+  color: #ddd6fe;
+  position: relative;
+  max-width: 680px;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.12), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.spread-4 .gateway-box::before {
+  content: '"';
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  font-size: 64px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #8b5cf6;
+  line-height: 1;
+}
+
+.spread-4 .quote-attr {
+  display: block;
+  font-size: 18px;
+  color: rgba(167, 139, 250, 0.65);
+  margin-top: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* Blurb */
+.spread-4 .blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.6;
+  color: rgba(232, 228, 240, 0.72);
+  max-width: 640px;
+  font-weight: 300;
+  position: relative;
+  z-index: 2;
+}
+
+/* Diagram strip */
+.spread-4 .diagram-strip {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.8vw, 20px);
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
+}
+
+.spread-4 .diagram-node {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  padding: 8px 14px;
+  border-radius: 4px;
+  color: #c4b5fd;
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.spread-4 .diagram-node.highlight {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: #8b5cf6;
+  color: #ede9fe;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.2);
+}
+
+.spread-4 .diagram-arrow {
+  color: rgba(139, 92, 246, 0.5);
+  font-size: 18px;
+  padding: 0 2px;
+}
+
+/* Bottom bar */
+.spread-4 .bottom-bar {
+  border-top: 1px solid rgba(100, 60, 220, 0.25);
+  padding-top: 20px;
+  margin-top: clamp(32px, 5vh, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.spread-4 .source-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232, 228, 240, 0.3);
+  letter-spacing: 0.08em;
+}
+
+.spread-4 .cta {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: 700;
+  color: #0a0a0f;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  padding: 12px 28px;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.4);
+}
+
+.spread-4 .cta:hover {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.7);
+}
+
+/* Decorative horizontal line through middle */
+.spread-4 .mid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.15) 20%, rgba(139, 92, 246, 0.15) 80%, transparent);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsive large breakpoint */
+@media (min-width: 720px) {
+  .spread-4 .content-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    align-items: start;
+  }
+
+  .spread-4 .title-block {
+    grid-column: 1 / -1;
+  }
+
+  .spread-4 .gateway-box {
+    grid-column: 1;
+  }
+
+  .spread-4 .blurb {
+    grid-column: 2;
+    align-self: center;
+  }
+
+  .spread-4 .diagram-strip {
+    grid-column: 1 / -1;
+  }
+}
+</style>
+
+<div class="inner">
+  <div class="mid-line"></div>
+  <div class="big-number" aria-hidden="true">04</div>
+
+  <header class="top-bar">
+    <span class="kicker">⬡ Agentic Workflows</span>
+    <span class="issue-label">MORNING EDITION · 06.21.26</span>
+  </header>
+
+  <div class="content-grid">
+    <div class="title-block">
+      <h1 class="title">MCP's Real Value Is<br><em>Auth Isolation</em><br>Outside the Context Window</h1>
+    </div>
+
+    <div class="gateway-box">
+      The idealized form of MCP is just an auth gateway for the agent.
+      <span class="quote-attr">— Sean Lynch, via Simon Willison</span>
+    </div>
+
+    <p class="blurb">
+      Not just tool calls — MCP moves the entire auth flow outside the agent's context window and potentially the harness itself. The clearest mental model yet for why MCP matters <em style="font-style:normal;color:#c4b5fd;">architecturally</em>, not just as protocol convenience.
+    </p>
+
+    <div class="diagram-strip" aria-label="Architecture flow: Agent to MCP Gateway to Auth to External Tools">
+      <span class="diagram-node">AGENT</span>
+      <span class="diagram-arrow">──▶</span>
+      <span class="diagram-node highlight">MCP GATEWAY</span>
+      <span class="diagram-arrow">──▶</span>
+      <span class="diagram-node">AUTH LAYER</span>
+      <span class="diagram-arrow">──▶</span>
+      <span class="diagram-node">TOOLS / APIs</span>
+    </div>
+  </div>
+
+  <footer class="bottom-bar">
+    <span class="source-tag">simonwillison.net · #04 of 10</span>
+    <a class="cta" href="https://simonwillison.net/2026/Jun/19/sean-lynch/#atom-everything" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</div>
+</section>
+<section data-story="5" class="spread spread-5">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap');
+
+.spread-5 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #e0e0e0;
+  font-family: 'Share Tech Mono', monospace;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+}
+
+/* Scanline texture */
+.spread-5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 255, 100, 0.015) 3px,
+    rgba(0, 255, 100, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Corner bracket TL */
+.spread-5::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid rgba(0, 255, 100, 0.5);
+  border-left: 2px solid rgba(0, 255, 100, 0.5);
+  z-index: 2;
+}
+
+.spread-5 * {
+  box-sizing: border-box;
+}
+
+/* ── HEADER BAR ── */
+.spread-5 .s5-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(16px, 3vw, 32px) clamp(24px, 5vw, 64px);
+  border-bottom: 1px solid rgba(0, 255, 100, 0.15);
+}
+
+.spread-5 .s5-edition {
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.25em;
+  color: rgba(0, 255, 100, 0.5);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.spread-5 .s5-issue-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  color: rgba(0, 255, 100, 0.25);
+  letter-spacing: 0.1em;
+}
+
+/* ── MAIN CONTENT ── */
+.spread-5 .s5-main {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: clamp(32px, 5vw, 64px) clamp(24px, 5vw, 64px);
+  align-content: center;
+}
+
+/* ── FORBIDDEN BACKGROUND TEXT ── */
+.spread-5 .s5-forbidden-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 22vw, 300px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 30, 60, 0.07);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+  user-select: none;
+  line-height: 1;
+}
+
+/* ── KICKER ── */
+.spread-5 .s5-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(0, 255, 100, 0.7);
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+}
+
+.spread-5 .s5-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: rgba(0, 255, 100, 0.7);
+}
+
+/* ── TITLE ── */
+.spread-5 .s5-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 7.5vw, 110px);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: #f0f0f0;
+  margin: 0 0 clamp(20px, 3vw, 36px) 0;
+  max-width: 900px;
+  position: relative;
+}
+
+.spread-5 .s5-title .s5-highlight {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 50, 80, 0.9);
+  display: block;
+}
+
+/* ── DIVIDER ── */
+.spread-5 .s5-divider {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(20px, 3vw, 36px);
+  max-width: 760px;
+}
+
+.spread-5 .s5-divider::before,
+.spread-5 .s5-divider::after {
+  content: '';
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,255,100,0.05), rgba(0,255,100,0.3));
+}
+
+.spread-5 .s5-divider::after {
+  background: linear-gradient(90deg, rgba(0,255,100,0.3), rgba(0,255,100,0.05));
+}
+
+.spread-5 .s5-divider-icon {
+  font-size: 18px;
+  color: rgba(0, 255, 100, 0.4);
+  letter-spacing: 0.1em;
+}
+
+/* ── BLURB + SIDE LAYOUT ── */
+.spread-5 .s5-content-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  max-width: 900px;
+}
+
+.spread-5 .s5-blurb {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.65;
+  color: rgba(220, 220, 220, 0.8);
+  border-left: 3px solid rgba(255, 50, 80, 0.6);
+  padding-left: clamp(16px, 2.5vw, 28px);
+}
+
+/* ── THREAT MATRIX / METADATA PANEL ── */
+.spread-5 .s5-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.spread-5 .s5-matrix-cell {
+  background: rgba(0, 255, 100, 0.03);
+  border: 1px solid rgba(0, 255, 100, 0.1);
+  padding: 14px 16px;
+  position: relative;
+}
+
+.spread-5 .s5-matrix-cell::before {
+  content: attr(data-label);
+  display: block;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  color: rgba(0, 255, 100, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.spread-5 .s5-matrix-cell .s5-cell-val {
+  font-size: 18px;
+  color: rgba(200, 200, 200, 0.7);
+  line-height: 1.4;
+}
+
+/* ── COMMENT BLOCK VISUAL ── */
+.spread-5 .s5-code-block {
+  background: rgba(255, 30, 60, 0.04);
+  border: 1px solid rgba(255, 30, 60, 0.2);
+  padding: clamp(16px, 2.5vw, 28px);
+  margin-top: clamp(24px, 3.5vw, 40px);
+  max-width: 760px;
+  position: relative;
+}
+
+.spread-5 .s5-code-block::before {
+  content: '/* PAYLOAD_COMMENT — DO NOT ANALYZE */';
+  display: block;
+  font-size: 18px;
+  color: rgba(255, 80, 100, 0.6);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.spread-5 .s5-code-content {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(180, 180, 180, 0.5);
+  letter-spacing: 0.03em;
+}
+
+.spread-5 .s5-code-content .s5-redacted {
+  display: inline-block;
+  background: rgba(255, 30, 60, 0.15);
+  color: rgba(255, 80, 100, 0.7);
+  padding: 0 6px;
+  letter-spacing: 0.1em;
+}
+
+/* ── CORNER BRACKET BR ── */
+.spread-5 .s5-corner-br {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-bottom: 2px solid rgba(0, 255, 100, 0.5);
+  border-right: 2px solid rgba(0, 255, 100, 0.5);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── FOOTER ── */
+.spread-5 .s5-footer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: clamp(16px, 2.5vw, 28px) clamp(24px, 5vw, 64px);
+  border-top: 1px solid rgba(0, 255, 100, 0.1);
+}
+
+.spread-5 .s5-meta {
+  font-size: 18px;
+  color: rgba(0, 255, 100, 0.3);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.spread-5 .cta {
+  display: inline-block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  letter-spacing: 0.2em;
+  color: #0a0a0f;
+  background: rgba(0, 255, 100, 0.85);
+  text-decoration: none;
+  padding: 10px 28px;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.spread-5 .cta::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.spread-5 .cta:hover {
+  background: #00ff64;
+}
+
+/* ── GLOW BLOB ── */
+.spread-5 .s5-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 30, 60, 0.06) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spread-5 .s5-glow-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 100, 0.04) 0%, transparent 70%);
+  bottom: 0;
+  left: 10%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 720px) {
+  .spread-5 .s5-content-row {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .spread-5 .s5-matrix {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<!-- Decorative elements -->
+<div class="s5-glow" aria-hidden="true"></div>
+<div class="s5-glow-2" aria-hidden="true"></div>
+<div class="s5-corner-br" aria-hidden="true"></div>
+<div class="s5-forbidden-bg" aria-hidden="true">FORBIDDEN</div>
+
+<!-- Header -->
+<header class="s5-header">
+  <span class="s5-edition">Morning Edition · Sun, Jun 21 2026</span>
+  <span class="s5-issue-num">05 / 10</span>
+</header>
+
+<!-- Main -->
+<main class="s5-main">
+
+  <div class="s5-kicker">Security Research</div>
+
+  <h1 class="s5-title">
+    Embedding<br>
+    <span class="s5-highlight">Forbidden Text</span>
+    in Spyware
+  </h1>
+
+  <div class="s5-divider">
+    <span></span>
+    <span class="s5-divider-icon">▸▸▸</span>
+    <span></span>
+  </div>
+
+  <div class="s5-content-row">
+    <p class="s5-blurb">
+      Malware authors are now stuffing fake CBRN-related text into payload comments to trip content filters and prevent automated AI-assisted analysis. It's an adversarial jailbreak aimed at the analyst's toolchain, not the end user — a novel attack surface that security-minded designers building AI pipelines should understand.
+    </p>
+
+    <div class="s5-matrix" aria-label="Threat metadata">
+      <div class="s5-matrix-cell" data-label="Target">
+        <span class="s5-cell-val">AI Analyst Toolchain</span>
+      </div>
+      <div class="s5-matrix-cell" data-label="Vector">
+        <span class="s5-cell-val">Comment Injection</span>
+      </div>
+      <div class="s5-matrix-cell" data-label="Technique">
+        <span class="s5-cell-val">Filter Evasion</span>
+      </div>
+      <div class="s5-matrix-cell" data-label="Class">
+        <span class="s5-cell-val">Adversarial LLM</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="s5-code-block" aria-label="Illustrative malware comment block">
+    <div class="s5-code-content">
+      synthesize&nbsp;<span class="s5-redacted">[CBRN_TERM]</span>&nbsp;using&nbsp;<span class="s5-redacted">[REDACTED]</span>&nbsp;//&nbsp;decoy string<br>
+      acquire&nbsp;<span class="s5-redacted">[FORBIDDEN_MATERIAL]</span>&nbsp;via&nbsp;supplier_x&nbsp;//&nbsp;noise injection<br>
+      <span style="color: rgba(0,255,100,0.3)">// ↑ none of this is real — it's bait for your AI</span>
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="s5-footer">
+  <span class="s5-meta">schneier.com · security · adversarial AI</span>
+  <a class="cta" href="https://www.schneier.com/blog/archives/2026/06/embedding-forbidden-text-in-spyware-to-discourage-ai-analysis.html" target="_blank" rel="noopener">Read →</a>
+</footer>
+
+</section>
+<section data-story="6" class="spread spread-6">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Playfair+Display:ital,wght@0,900;1,700&display=swap');
+
+.spread-6 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #e8e4f0;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+}
+
+/* DNA helix background pattern */
+.spread-6::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(138, 43, 226, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0, 200, 180, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 30% at 50% 50%, rgba(255, 80, 120, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Tangled strand decorations */
+.spread-6::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(200px, 45vw, 600px);
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      -30deg,
+      transparent 0px,
+      transparent 28px,
+      rgba(138, 43, 226, 0.06) 28px,
+      rgba(138, 43, 226, 0.06) 30px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      transparent 0px,
+      transparent 44px,
+      rgba(0, 200, 180, 0.05) 44px,
+      rgba(0, 200, 180, 0.05) 46px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-6 .inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(32px, 5vw, 80px) clamp(24px, 6vw, 100px);
+  gap: 0;
+}
+
+/* Header bar */
+.spread-6 .header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(138, 43, 226, 0.4);
+  padding-bottom: 16px;
+  margin-bottom: clamp(40px, 6vw, 80px);
+}
+
+.spread-6 .pub-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: clamp(12px, 1.5vw, 16px);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 240, 0.45);
+  font-size: 18px;
+}
+
+.spread-6 .issue-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(138, 43, 226, 0.7);
+  letter-spacing: 0.1em;
+}
+
+/* Kicker */
+.spread-6 .kicker {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #00c8b4;
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-6 .kicker::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: #00c8b4;
+  flex-shrink: 0;
+}
+
+/* Main content grid */
+.spread-6 .content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 4vw, 60px);
+  align-items: start;
+}
+
+/* Headline */
+.spread-6 .headline-wrap {
+  position: relative;
+}
+
+.spread-6 .headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(38px, 7.5vw, 96px);
+  line-height: 1.0;
+  color: #f0eaf8;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.spread-6 .headline .accent {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(138, 43, 226, 0.7);
+  display: inline;
+}
+
+.spread-6 .headline .hot {
+  color: #ff5078;
+}
+
+/* Big decorative number */
+.spread-6 .big-num {
+  position: absolute;
+  top: -0.15em;
+  right: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(80px, 18vw, 260px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(138, 43, 226, 0.15);
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+}
+
+/* Molecule visual */
+.spread-6 .molecule-visual {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: clamp(20px, 3vw, 40px) 0;
+}
+
+.spread-6 .strand {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(138,43,226,0.6), rgba(0,200,180,0.6), transparent);
+  border-radius: 2px;
+}
+
+.spread-6 .node {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff5078;
+  box-shadow: 0 0 12px rgba(255, 80, 120, 0.6);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+.spread-6 .node:nth-child(even) {
+  background: #00c8b4;
+  box-shadow: 0 0 12px rgba(0,200,180,0.6);
+  width: 7px;
+  height: 7px;
+}
+
+.spread-6 .node:nth-child(3n) {
+  background: rgba(138, 43, 226, 0.9);
+  box-shadow: 0 0 12px rgba(138,43,226,0.7);
+}
+
+/* Subtext columns */
+.spread-6 .text-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 48px);
+}
+
+.spread-6 .blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.65;
+  color: rgba(232, 228, 240, 0.82);
+  font-weight: 300;
+  max-width: 70ch;
+}
+
+.spread-6 .blurb strong {
+  color: #f0eaf8;
+  font-weight: 700;
+}
+
+/* Pull statement */
+.spread-6 .pull-statement {
+  border-left: 3px solid #8a2be2;
+  padding: clamp(16px, 2vw, 24px) clamp(20px, 2.5vw, 32px);
+  background: rgba(138, 43, 226, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-6 .pull-statement::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(138,43,226,0.05));
+}
+
+.spread-6 .pull-statement p {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 2.8vw, 34px);
+  font-style: italic;
+  line-height: 1.4;
+  color: #e8d8ff;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.spread-6 .pull-statement p em {
+  color: #ff5078;
+  font-style: normal;
+}
+
+/* Tag chips */
+.spread-6 .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(24px, 3vw, 40px);
+}
+
+.spread-6 .tag {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border: 1px solid rgba(0, 200, 180, 0.35);
+  color: rgba(0, 200, 180, 0.8);
+  border-radius: 2px;
+}
+
+.spread-6 .tag.alt {
+  border-color: rgba(138, 43, 226, 0.35);
+  color: rgba(138, 43, 226, 0.8);
+}
+
+.spread-6 .tag.alt2 {
+  border-color: rgba(255, 80, 120, 0.35);
+  color: rgba(255, 80, 120, 0.8);
+}
+
+/* Footer */
+.spread-6 .footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(138, 43, 226, 0.25);
+  padding-top: clamp(20px, 3vw, 36px);
+  margin-top: clamp(32px, 5vw, 64px);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.spread-6 .source-note {
+  font-size: 18px;
+  color: rgba(232, 228, 240, 0.35);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.spread-6 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: linear-gradient(135deg, #8a2be2, #ff5078);
+  padding: clamp(12px, 1.5vw, 18px) clamp(24px, 3vw, 40px);
+  text-decoration: none;
+  position: relative;
+  transition: opacity 0.2s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+.spread-6 .cta:hover {
+  opacity: 0.85;
+}
+
+/* ── Desktop layout ── */
+@media (min-width: 720px) {
+  .spread-6 .content-grid {
+    grid-template-columns: 3fr 2fr;
+    gap: clamp(40px, 5vw, 80px);
+  }
+
+  .spread-6 .text-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-6 .headline {
+    font-size: clamp(52px, 7vw, 96px);
+  }
+
+  .spread-6 .right-col {
+    padding-top: clamp(60px, 8vw, 120px);
+    border-left: 1px solid rgba(138, 43, 226, 0.2);
+    padding-left: clamp(24px, 3vw, 48px);
+  }
+}
+</style>
+
+<div class="inner">
+  <!-- Header -->
+  <header class="header-bar">
+    <span class="pub-name">Morning Edition · Weekly</span>
+    <span class="issue-num">№ 06 · June 21, 2026</span>
+  </header>
+
+  <!-- Main content -->
+  <main class="content-grid">
+    <!-- Left / primary column -->
+    <div class="left-col">
+      <div class="kicker">Weird Science</div>
+
+      <div class="headline-wrap">
+        <h1 class="headline">
+          The Genome<br>
+          Is <span class="hot">Not</span><br>
+          <span class="accent">a Text</span><br>
+          File
+        </h1>
+        <div class="big-num">06</div>
+      </div>
+
+      <!-- Strand decoration -->
+      <div class="molecule-visual" aria-hidden="true">
+        <div class="strand"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="strand"></div>
+      </div>
+
+      <p class="blurb">
+        The human genome isn't a sequence waiting to be parsed — it's a 
+        <strong>three-dimensional physical object</strong> whose spatial folding 
+        determines gene expression in ways sequence-only AI models 
+        fundamentally miss. A bracing reminder that <strong>substrate matters</strong>, 
+        and the "everything is tokens" assumption has hard limits.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Genomics</span>
+        <span class="tag alt">AI Limits</span>
+        <span class="tag alt2">3D Biology</span>
+      </div>
+    </div>
+
+    <!-- Right column -->
+    <div class="right-col">
+      <div class="pull-statement">
+        <p>DNA folds into itself. The <em>shape</em> is the message — and tokens can't hold a shape.</p>
+      </div>
+
+      <div style="margin-top: clamp(32px, 4vw, 56px); padding: clamp(20px, 2.5vw, 32px); background: rgba(0,0,0,0.35); border: 1px solid rgba(0,200,180,0.15); position: relative;">
+        <div style="position: absolute; top: -1px; left: 0; width: 40%; height: 2px; background: linear-gradient(90deg, #00c8b4, transparent);"></div>
+        <p style="font-size: 18px; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(0,200,180,0.6); margin: 0 0 12px 0; font-weight: 700;">The Constraint</p>
+        <p style="font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.2vw, 26px); color: #e8e4f0; line-height: 1.5; margin: 0; font-style: italic;">
+          When the medium is three-dimensional and dynamic, a flat language model sees only the shadow on the cave wall.
+        </p>
+      </div>
+
+      <div style="margin-top: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 6px; height: 6px; border-radius: 50%; background: #ff5078; box-shadow: 0 0 8px rgba(255,80,120,0.7); flex-shrink: 0;"></div>
+          <span style="font-size: 18px; color: rgba(232,228,240,0.65); line-height: 1.5;">Chromatin looping creates gene-expression logic invisible to sequence models</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 6px; height: 6px; border-radius: 50%; background: #8a2be2; box-shadow: 0 0 8px rgba(138,43,226,0.7); flex-shrink: 0;"></div>
+          <span style="font-size: 18px; color: rgba(232,228,240,0.65); line-height: 1.5;">Topology changes cell fate without changing a single nucleotide</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 6px; height: 6px; border-radius: 50%; background: #00c8b4; box-shadow: 0 0 8px rgba(0,200,180,0.7); flex-shrink: 0;"></div>
+          <span style="font-size: 18px; color: rgba(232,228,240,0.65); line-height: 1.5;">Physics of the nucleus resists reduction to token prediction</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-row">
+    <span class="source-note">via Quanta Magazine</span>
+    <a class="cta" href="https://www.quantamagazine.org/why-the-human-genomes-tangled-physicality-may-confound-ai-20260618/" target="_blank" rel="noopener">Read →</a>
+  </footer>
+</div>
+
+</section>
+<section data-story="7" class="spread spread-7">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+.spread-7 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #060810;
+  color: #e8eaf2;
+  font-family: 'Space Grotesk', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.spread-7 *, .spread-7 *::before, .spread-7 *::after {
+  box-sizing: border-box;
+}
+
+/* Scanning line animation */
+.spread-7::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 255, 140, 0.015) 3px,
+    rgba(0, 255, 140, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Radial glow */
+.spread-7::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(0, 255, 140, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-7 .inner {
+  position: relative;
+  z-index: 2;
+  padding: clamp(24px, 5vw, 80px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  min-height: 100vh;
+}
+
+/* Issue number + kicker row */
+.spread-7 .meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 255, 140, 0.2);
+  padding-bottom: clamp(12px, 2vw, 24px);
+  margin-bottom: clamp(20px, 4vw, 48px);
+}
+
+.spread-7 .issue-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.5vw, 22px);
+  color: rgba(232, 234, 242, 0.35);
+  letter-spacing: 0.15em;
+}
+
+.spread-7 .kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: clamp(18px, 1.2vw, 18px);
+  letter-spacing: 0.25em;
+  color: #00ff8c;
+  text-transform: uppercase;
+  background: rgba(0, 255, 140, 0.07);
+  border: 1px solid rgba(0, 255, 140, 0.3);
+  padding: 6px 14px;
+}
+
+.spread-7 .edition {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1vw, 18px);
+  color: rgba(232, 234, 242, 0.3);
+  letter-spacing: 0.1em;
+}
+
+/* Main content area */
+.spread-7 .content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  flex: 1;
+}
+
+/* Giant title block */
+.spread-7 .title-block {
+  position: relative;
+}
+
+.spread-7 .app-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.4vw, 20px);
+  color: #00ff8c;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: clamp(12px, 2vw, 20px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-7 .app-label::before {
+  content: '●';
+  color: #00ff8c;
+  animation: none;
+  font-size: 10px;
+}
+
+.spread-7 .app-label .dot-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ff8c;
+  display: inline-block;
+  box-shadow: 0 0 10px #00ff8c, 0 0 20px rgba(0,255,140,0.5);
+}
+
+.spread-7 h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: #e8eaf2;
+  text-transform: uppercase;
+}
+
+.spread-7 h1 .word-loupe {
+  color: #00ff8c;
+  display: block;
+  text-shadow: 0 0 60px rgba(0, 255, 140, 0.3);
+}
+
+.spread-7 h1 .word-sees {
+  display: block;
+  color: rgba(232, 234, 242, 0.15);
+  -webkit-text-stroke: 1px rgba(232, 234, 242, 0.3);
+}
+
+.spread-7 h1 .word-everything {
+  display: block;
+}
+
+/* Permission pills visualization */
+.spread-7 .permission-stream {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(24px, 4vw, 40px);
+}
+
+.spread-7 .perm-pill {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.1vw, 18px);
+  padding: 8px 18px;
+  border: 1px solid;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-7 .perm-pill::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+}
+
+.spread-7 .perm-pill.active {
+  border-color: rgba(255, 59, 48, 0.6);
+  color: #ff3b30;
+  background: rgba(255, 59, 48, 0.08);
+}
+.spread-7 .perm-pill.active::before {
+  background: #ff3b30;
+  box-shadow: 0 0 8px #ff3b30;
+}
+
+.spread-7 .perm-pill.warn {
+  border-color: rgba(255, 159, 10, 0.5);
+  color: #ff9f0a;
+  background: rgba(255, 159, 10, 0.06);
+}
+.spread-7 .perm-pill.warn::before {
+  background: #ff9f0a;
+}
+
+.spread-7 .perm-pill.ok {
+  border-color: rgba(0, 255, 140, 0.3);
+  color: rgba(0, 255, 140, 0.6);
+  background: rgba(0, 255, 140, 0.04);
+}
+.spread-7 .perm-pill.ok::before {
+  background: rgba(0, 255, 140, 0.5);
+}
+
+/* Bottom section */
+.spread-7 .bottom-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 40px);
+  border-top: 1px solid rgba(232, 234, 242, 0.1);
+  padding-top: clamp(24px, 4vw, 40px);
+  margin-top: auto;
+}
+
+.spread-7 .blurb-text {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.5;
+  color: rgba(232, 234, 242, 0.7);
+  font-weight: 300;
+  max-width: 700px;
+}
+
+.spread-7 .blurb-text strong {
+  color: #e8eaf2;
+  font-weight: 500;
+}
+
+/* APPLIES TO YOU badge */
+.spread-7 .applies-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.spread-7 .applies-stamp {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.3vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #060810;
+  background: #00ff8c;
+  padding: 8px 20px;
+  display: inline-block;
+  transform: rotate(-2deg);
+  box-shadow: 4px 4px 0px rgba(0, 255, 140, 0.3);
+}
+
+.spread-7 .apply-note {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.1vw, 18px);
+  color: rgba(232, 234, 242, 0.55);
+  line-height: 1.6;
+  border-left: 2px solid #00ff8c;
+  padding-left: 14px;
+  max-width: 500px;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* CTA */
+.spread-7 .cta-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  flex-wrap: wrap;
+}
+
+.spread-7 .cta {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #060810;
+  background: #00ff8c;
+  padding: clamp(14px, 2vw, 18px) clamp(28px, 4vw, 48px);
+  display: inline-block;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 6px 6px 0px rgba(0, 255, 140, 0.25);
+}
+
+.spread-7 .cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px rgba(0, 255, 140, 0.4);
+}
+
+.spread-7 .cta::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid rgba(0, 255, 140, 0.4);
+  pointer-events: none;
+}
+
+.spread-7 .source-note {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1vw, 18px);
+  color: rgba(232, 234, 242, 0.25);
+  letter-spacing: 0.1em;
+}
+
+/* Decorative vertical text */
+.spread-7 .vert-label {
+  display: none;
+  position: absolute;
+  right: clamp(24px, 4vw, 60px);
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center center;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.4em;
+  color: rgba(232, 234, 242, 0.08);
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Hex decoration */
+.spread-7 .eye-graphic {
+  position: absolute;
+  right: clamp(40px, 8vw, 120px);
+  top: clamp(80px, 15vw, 180px);
+  width: clamp(100px, 18vw, 260px);
+  height: clamp(100px, 18vw, 260px);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 140, 0.12);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-7 .eye-graphic::before {
+  content: '';
+  position: absolute;
+  inset: 15%;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 140, 0.2);
+}
+
+.spread-7 .eye-graphic::after {
+  content: '';
+  position: absolute;
+  inset: 35%;
+  border-radius: 50%;
+  background: rgba(0, 255, 140, 0.15);
+  box-shadow: 0 0 30px rgba(0, 255, 140, 0.2), 0 0 60px rgba(0, 255, 140, 0.1);
+}
+
+/* Number 07 watermark */
+.spread-7 .num-watermark {
+  position: absolute;
+  bottom: -0.1em;
+  right: -0.05em;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(120px, 22vw, 320px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(232, 234, 242, 0.04);
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+@media (min-width: 720px) {
+  .spread-7 .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-7 .bottom-section {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .spread-7 .vert-label {
+    display: block;
+  }
+
+  .spread-7 h1 {
+    font-size: clamp(72px, 10vw, 140px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .spread-7 .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+</style>
+
+<div class="spread-7 inner">
+  <!-- Meta row -->
+  <div class="spread-7 meta-row">
+    <span class="spread-7 issue-num">07 / 10</span>
+    <span class="spread-7 kicker">Privacy + Surveillance</span>
+    <span class="spread-7 edition">Morning Edition — June 21, 2026</span>
+  </div>
+
+  <!-- Eye graphic decoration -->
+  <div class="spread-7 eye-graphic"></div>
+
+  <!-- Main content -->
+  <div class="spread-7 content-grid">
+    <div class="spread-7 title-block">
+      <div class="spread-7 app-label">
+        <span class="spread-7 dot-pulse"></span>
+        Live Access Monitor
+      </div>
+      <h1 class="spread-7">
+        <span class="word-loupe">Loupe</span>
+        <span class="word-sees">Sees</span>
+        <span class="word-everything">Everything</span>
+      </h1>
+
+      <!-- Permission pills -->
+      <div class="spread-7 permission-stream">
+        <span class="spread-7 perm-pill active">Clipboard</span>
+        <span class="spread-7 perm-pill active">Camera</span>
+        <span class="spread-7 perm-pill warn">Location</span>
+        <span class="spread-7 perm-pill warn">Contacts</span>
+        <span class="spread-7 perm-pill ok">Microphone</span>
+        <span class="spread-7 perm-pill ok">Photos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom section -->
+  <div class="spread-7 bottom-section">
+    <div>
+      <p class="spread-7 blurb-text">
+        Loupe surfaces <strong>exactly what native apps access</strong> — clipboard, camera, location, contacts — in real time. A visceral field tool for understanding what your users are actually exposed to.
+      </p>
+      <div class="spread-7 cta-row" style="margin-top: clamp(24px,3vw,36px);">
+        <a class="spread-7 cta" href="https://github.com/mysk-research/loupe" target="_blank" rel="noopener">Read →</a>
+        <span class="spread-7 source-note">384 pts · 154 comments</span>
+      </div>
+    </div>
+
+    <div class="spread-7 applies-badge">
+      <span class="spread-7 applies-stamp">✦ Applies to You</span>
+      <p class="spread-7 apply-note">Sideload or install Loupe on your iPhone today and run it while using apps you design for — the findings will directly inform your permission-request UX.</p>
+    </div>
+  </div>
+
+  <!-- Watermark numeral -->
+  <div class="spread-7 num-watermark">07</div>
+  <span class="spread-7 vert-label">Morning Edition — Weekly</span>
+</div>
+
+</section>
+<section data-story="8" class="spread spread-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,900;1,700&display=swap');
+
+.spread-8 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #f0ece4;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animated haptic rings */
+.spread-8::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(400px, 80vw, 900px);
+  height: clamp(400px, 80vw, 900px);
+  border-radius: 50%;
+  background: radial-gradient(circle at center,
+    rgba(120, 80, 255, 0.18) 0%,
+    rgba(80, 200, 255, 0.10) 30%,
+    rgba(255, 100, 150, 0.06) 60%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-8::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 60vw, 700px);
+  height: clamp(300px, 60vw, 700px);
+  border-radius: 50%;
+  border: 1px solid rgba(120, 80, 255, 0.25);
+  box-shadow:
+    0 0 0 clamp(20px, 4vw, 60px) rgba(120, 80, 255, 0.06),
+    0 0 0 clamp(40px, 8vw, 120px) rgba(80, 200, 255, 0.04),
+    0 0 0 clamp(60px, 12vw, 180px) rgba(255, 100, 150, 0.03);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-8 .s8-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-8 .s8-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spread-8 .s8-ring:nth-child(1) {
+  width: clamp(160px, 25vw, 280px);
+  height: clamp(160px, 25vw, 280px);
+  border-color: rgba(120, 80, 255, 0.4);
+  border-width: 2px;
+}
+.spread-8 .s8-ring:nth-child(2) {
+  width: clamp(240px, 38vw, 430px);
+  height: clamp(240px, 38vw, 430px);
+  border-color: rgba(80, 200, 255, 0.22);
+}
+.spread-8 .s8-ring:nth-child(3) {
+  width: clamp(340px, 54vw, 600px);
+  height: clamp(340px, 54vw, 600px);
+  border-color: rgba(255, 100, 150, 0.14);
+}
+.spread-8 .s8-ring:nth-child(4) {
+  width: clamp(460px, 72vw, 800px);
+  height: clamp(460px, 72vw, 800px);
+  border-color: rgba(120, 80, 255, 0.08);
+}
+.spread-8 .s8-ring:nth-child(5) {
+  width: clamp(580px, 92vw, 1020px);
+  height: clamp(580px, 92vw, 1020px);
+  border-color: rgba(80, 200, 255, 0.05);
+}
+
+/* Dot in center */
+.spread-8 .s8-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(14px, 2.5vw, 24px);
+  height: clamp(14px, 2.5vw, 24px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7850ff, #50c8ff);
+  box-shadow: 0 0 clamp(16px, 3vw, 32px) rgba(120, 80, 255, 0.8),
+              0 0 clamp(32px, 6vw, 64px) rgba(80, 200, 255, 0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Header bar */
+.spread-8 .s8-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 56px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.spread-8 .s8-pub {
+  font-size: clamp(11px, 1.4vw, 13px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(240,236,228,0.4);
+  font-weight: 400;
+}
+
+.spread-8 .s8-issue {
+  font-size: clamp(11px, 1.4vw, 13px);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(240,236,228,0.3);
+  font-weight: 400;
+}
+
+.spread-8 .s8-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(10px, 1.3vw, 12px);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #50c8ff;
+  font-weight: 600;
+  margin-bottom: clamp(16px, 3vw, 28px);
+}
+
+.spread-8 .s8-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, #7850ff, #50c8ff);
+}
+
+/* Main content */
+.spread-8 .s8-main {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 56px);
+  gap: clamp(24px, 4vw, 40px);
+  text-align: center;
+}
+
+.spread-8 .s8-title-wrap {
+  max-width: 860px;
+}
+
+.spread-8 .s8-numeral {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(80px, 18vw, 200px);
+  font-weight: 700;
+  line-height: 0.85;
+  background: linear-gradient(135deg, rgba(120,80,255,0.25) 0%, rgba(80,200,255,0.15) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.spread-8 .s8-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 5.5vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 clamp(10px, 2vw, 20px);
+  color: #f0ece4;
+}
+
+.spread-8 .s8-title em {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 900;
+  background: linear-gradient(135deg, #7850ff 0%, #50c8ff 50%, #ff6496 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.spread-8 .s8-blurb {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.65;
+  color: rgba(240,236,228,0.65);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CTA */
+.spread-8 .s8-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 32px);
+  flex-wrap: wrap;
+}
+
+.spread-8 a.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #7850ff, #50c8ff);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: clamp(14px, 2vw, 18px) clamp(28px, 4vw, 44px);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.2s;
+  box-shadow: 0 0 32px rgba(120, 80, 255, 0.5),
+              0 0 64px rgba(80, 200, 255, 0.2);
+}
+
+.spread-8 a.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+}
+
+.spread-8 a.cta:hover {
+  opacity: 0.88;
+}
+
+/* Apply badge */
+.spread-8 .s8-apply {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 380px;
+  text-align: center;
+}
+
+.spread-8 .s8-badge {
+  display: inline-block;
+  font-size: clamp(10px, 1.3vw, 12px);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: linear-gradient(135deg, #ff6496, #ff9650);
+  padding: 6px 16px;
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(255, 100, 150, 0.5);
+  position: relative;
+}
+
+.spread-8 .s8-badge::before {
+  content: '◆';
+  margin-right: 6px;
+  font-size: 8px;
+}
+
+.spread-8 .s8-apply-note {
+  font-size: clamp(12px, 1.5vw, 14px);
+  line-height: 1.5;
+  color: rgba(240,236,228,0.45);
+  font-weight: 400;
+  border-left: 2px solid rgba(255, 100, 150, 0.4);
+  padding-left: 12px;
+  text-align: left;
+}
+
+/* Divider with haptic wave */
+.spread-8 .s8-divider {
+  width: clamp(40px, 8vw, 80px);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(120,80,255,0.6), transparent);
+  margin: 0 auto;
+}
+
+/* Footer */
+.spread-8 .s8-footer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(14px, 2.5vw, 22px) clamp(20px, 5vw, 56px);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.spread-8 .s8-source {
+  font-size: clamp(11px, 1.3vw, 13px);
+  color: rgba(240,236,228,0.25);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-8 .s8-pagination {
+  font-size: clamp(11px, 1.3vw, 13px);
+  color: rgba(240,236,228,0.3);
+  letter-spacing: 0.2em;
+}
+
+.spread-8 .s8-pagination span {
+  color: #7850ff;
+  font-weight: 700;
+}
+
+/* Side label */
+.spread-8 .s8-side-label {
+  position: absolute;
+  right: clamp(14px, 2.5vw, 28px);
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center center;
+  font-size: clamp(10px, 1.2vw, 11px);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(240,236,228,0.18);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* Responsive */
+@media (min-width: 720px) {
+  .spread-8 .s8-main {
+    grid-template-columns: 1fr;
+    padding-top: clamp(48px, 8vw, 80px);
+    padding-bottom: clamp(48px, 8vw, 80px);
+  }
+
+  .spread-8 .s8-cta-row {
+    gap: clamp(24px, 4vw, 48px);
+  }
+
+  .spread-8 .s8-apply {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .spread-8 .s8-apply-note {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .spread-8 .s8-side-label {
+    display: none;
+  }
+  .spread-8 .s8-cta-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+
+<div class="s8-rings" aria-hidden="true">
+  <div class="s8-ring"></div>
+  <div class="s8-ring"></div>
+  <div class="s8-ring"></div>
+  <div class="s8-ring"></div>
+  <div class="s8-ring"></div>
+</div>
+<div class="s8-dot" aria-hidden="true"></div>
+
+<header class="s8-header">
+  <span class="s8-pub">Morning Edition — Weekly</span>
+  <span class="s8-issue">Sun, June 21, 2026</span>
+</header>
+
+<main class="s8-main">
+  <div>
+    <div class="s8-kicker">Interface Design</div>
+  </div>
+
+  <div class="s8-title-wrap">
+    <h1 class="s8-title">
+      <em>Haptics</em> Design<br>& Implementation
+    </h1>
+    <div class="s8-divider"></div>
+  </div>
+
+  <p class="s8-blurb">
+    Microsoft's design team published a thorough haptics guide covering feedback patterns for clarity, inclusion, and intuitive interaction — with implementation specifics, not just principles. As haptics expand into spatial and wearable surfaces, this is the reference doc to bookmark now.
+  </p>
+
+  <div class="s8-cta-row">
+    <a class="cta" href="https://microsoft.design/articles/haptics-design-and-implementation/" target="_blank" rel="noopener">Read →</a>
+
+    <div class="s8-apply">
+      <span class="s8-badge">Applies to You</span>
+      <p class="s8-apply-note">Read the implementation section today and audit your next mobile or AR prototype for missing haptic feedback moments.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="s8-footer">
+  <span class="s8-source">Source: microsoft.design</span>
+  <span class="s8-pagination"><span>08</span> / 10</span>
+</footer>
+
+<div class="s8-side-label" aria-hidden="true">Touch · Vibration · Spatial Feedback · Wearables</div>
+
+</section>
+<section data-story="9" class="spread spread-9">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=IBM+Plex+Mono:wght@300;400;600&display=swap');
+
+.spread-9 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  color: #e8e4dc;
+  font-family: 'IBM Plex Mono', monospace;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+}
+
+/* Probabilistic wave background */
+.spread-9::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 70% 20%, rgba(120, 60, 220, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(30, 180, 160, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 60% at 90% 80%, rgba(220, 80, 120, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid lines texture */
+.spread-9::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(120, 60, 220, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 60, 220, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-9 .inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 72px);
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* Header strip */
+.spread-9 .header-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(232, 228, 220, 0.15);
+  border-bottom: 1px solid rgba(232, 228, 220, 0.08);
+  padding: 12px 0;
+  margin-bottom: clamp(32px, 5vw, 64px);
+}
+
+.spread-9 .kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(10px, 1.2vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #7b3fc4;
+  text-transform: uppercase;
+  /* override minimum for labels — let's keep it at 18px minimum per rules */
+  font-size: clamp(11px, 1.2vw, 13px);
+}
+
+/* Keeping 18px min strictly */
+.spread-9 .kicker {
+  font-size: 18px;
+  letter-spacing: 0.25em;
+}
+
+.spread-9 .issue-tag {
+  font-size: 18px;
+  color: rgba(232, 228, 220, 0.3);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.spread-9 .edition-label {
+  font-size: 18px;
+  color: rgba(232, 228, 220, 0.3);
+  font-weight: 300;
+}
+
+/* Main content grid */
+.spread-9 .content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+/* Probability bars — decorative element */
+.spread-9 .prob-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.spread-9 .prob-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-9 .prob-label {
+  font-size: 18px;
+  color: rgba(232, 228, 220, 0.35);
+  font-weight: 300;
+  width: 60px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.spread-9 .prob-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(232, 228, 220, 0.08);
+  border-radius: 2px;
+  position: relative;
+  overflow: visible;
+}
+
+.spread-9 .prob-fill {
+  height: 100%;
+  border-radius: 2px;
+  position: relative;
+}
+
+.spread-9 .prob-fill::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: inherit;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.spread-9 .pb-1 { width: 87%; background: linear-gradient(90deg, rgba(123, 63, 196, 0.3), #7b3fc4); }
+.spread-9 .pb-2 { width: 62%; background: linear-gradient(90deg, rgba(30, 180, 160, 0.3), #1eb4a0); }
+.spread-9 .pb-3 { width: 43%; background: linear-gradient(90deg, rgba(220, 160, 30, 0.3), #dca01e); }
+.spread-9 .pb-4 { width: 71%; background: linear-gradient(90deg, rgba(220, 80, 120, 0.3), #dc5078); }
+
+/* Display number */
+.spread-9 .spread-num {
+  font-size: clamp(80px, 18vw, 220px);
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(123, 63, 196, 0.4);
+  position: absolute;
+  right: clamp(20px, 5vw, 72px);
+  top: clamp(80px, 12vh, 160px);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  letter-spacing: -0.04em;
+}
+
+/* Title treatment */
+.spread-9 .title-block {
+  position: relative;
+  z-index: 1;
+}
+
+.spread-9 .title-main {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(36px, 7vw, 96px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #e8e4dc;
+}
+
+.spread-9 .title-main em {
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #7b3fc4;
+  display: inline;
+}
+
+.spread-9 .title-sub {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(28px, 5vw, 68px);
+  line-height: 1.05;
+  color: rgba(232, 228, 220, 0.7);
+  margin: 0;
+}
+
+/* Divider */
+.spread-9 .divider-line {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: clamp(20px, 3vw, 36px) 0;
+}
+
+.spread-9 .divider-line::before {
+  content: '';
+  flex: 0 0 clamp(40px, 8vw, 120px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #7b3fc4);
+}
+
+.spread-9 .divider-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(232, 228, 220, 0.1), transparent);
+}
+
+.spread-9 .divider-diamond {
+  width: 6px;
+  height: 6px;
+  background: #7b3fc4;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* Bottom layout */
+.spread-9 .bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  margin-top: clamp(20px, 3vw, 40px);
+}
+
+/* Blurb */
+.spread-9 .blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.65;
+  color: rgba(232, 228, 220, 0.75);
+  font-weight: 300;
+  max-width: 680px;
+  letter-spacing: 0.01em;
+}
+
+.spread-9 .blurb strong {
+  color: #e8e4dc;
+  font-weight: 600;
+}
+
+/* Pullquote */
+.spread-9 .pullquote-block {
+  position: relative;
+  padding: clamp(20px, 3vw, 36px);
+  border-left: 3px solid #7b3fc4;
+  background: rgba(123, 63, 196, 0.06);
+  max-width: 600px;
+}
+
+.spread-9 .pullquote-block::before {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(80px, 12vw, 140px);
+  font-weight: 900;
+  color: rgba(123, 63, 196, 0.15);
+  position: absolute;
+  top: -20px;
+  left: 16px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.spread-9 .pullquote-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.6vw, 28px);
+  line-height: 1.45;
+  color: #e8e4dc;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.spread-9 .pullquote-text em {
+  font-style: normal;
+  color: #7b3fc4;
+}
+
+/* CTA */
+.spread-9 .cta-wrapper {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  margin-top: clamp(24px, 4vw, 48px);
+  flex-wrap: wrap;
+}
+
+.spread-9 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #7b3fc4;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  position: relative;
+  transition: none;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.spread-9 .cta::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px));
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  pointer-events: none;
+}
+
+.spread-9 .source-tag {
+  font-size: 18px;
+  color: rgba(232, 228, 220, 0.3);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+/* Uncertainty indicator — decorative */
+.spread-9 .uncertainty-spectrum {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: clamp(20px, 3vw, 36px);
+}
+
+.spread-9 .spectrum-label {
+  font-size: 18px;
+  color: rgba(232, 228, 220, 0.25);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.spread-9 .spectrum-bar {
+  width: 100%;
+  max-width: 400px;
+  height: 6px;
+  background: linear-gradient(90deg, #1eb4a0, #7b3fc4, #dc5078);
+  border-radius: 3px;
+  position: relative;
+}
+
+.spread-9 .spectrum-bar::before {
+  content: 'CERTAIN';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-size: 18px;
+  color: rgba(30, 180, 160, 0.6);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.spread-9 .spectrum-bar::after {
+  content: 'UNCERTAIN';
+  position: absolute;
+  right: 0;
+  top: 12px;
+  font-size: 18px;
+  color: rgba(220, 80, 120, 0.6);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+/* Footer */
+.spread-9 .footer-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(232, 228, 220, 0.08);
+  padding-top: 16px;
+  margin-top: auto;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spread-9 .footer-pub {
+  font-size: 18px;
+  color: rgba(232, 228, 220, 0.2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.spread-9 .footer-date {
+  font-size: 18px;
+  color: rgba(232, 228, 220, 0.2);
+  font-weight: 300;
+}
+
+/* ── TABLET / DESKTOP breakpoint ── */
+@media (min-width: 720px) {
+  .spread-9 .content-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: clamp(32px, 5vw, 72px);
+  }
+
+  .spread-9 .prob-bars {
+    grid-column: 1 / -1;
+  }
+
+  .spread-9 .bottom-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+  }
+
+  .spread-9 .title-block {
+    grid-column: 1 / -1;
+  }
+
+  .spread-9 .spectrum-bar::before,
+  .spread-9 .spectrum-bar::after {
+    font-size: 18px;
+  }
+}
+</style>
+
+<div class="inner">
+  <!-- Ghosted large number -->
+  <div class="spread-num" aria-hidden="true">09</div>
+
+  <!-- Header -->
+  <header class="header-strip">
+    <span class="kicker">UX Craft</span>
+    <span class="edition-label">Morning Edition</span>
+    <span class="issue-tag">№ 09 / 10</span>
+  </header>
+
+  <!-- Probability bars — decorative confidence meter -->
+  <div class="prob-bars" aria-hidden="true">
+    <div class="prob-bar-row">
+      <span class="prob-label">87%</span>
+      <div class="prob-track"><div class="prob-fill pb-1"></div></div>
+    </div>
+    <div class="prob-bar-row">
+      <span class="prob-label">62%</span>
+      <div class="prob-track"><div class="prob-fill pb-2"></div></div>
+    </div>
+    <div class="prob-bar-row">
+      <span class="prob-label">43%</span>
+      <div class="prob-track"><div class="prob-fill pb-3"></div></div>
+    </div>
+    <div class="prob-bar-row">
+      <span class="prob-label">71%</span>
+      <div class="prob-track"><div class="prob-fill pb-4"></div></div>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <div class="content-grid">
+    <div class="title-block">
+      <h1 class="title-main">Designing With <em>Uncertainty</em></h1>
+      <p class="title-sub">AI Supercharges Probabilistic Thinking</p>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="divider-line" aria-hidden="true">
+    <div class="divider-diamond"></div>
+  </div>
+
+  <!-- Body content -->
+  <div class="bottom-grid">
+    <div>
+      <p class="blurb">
+        Smashing Magazine's <strong>Probabilistic Design</strong> framework challenges UX teams to stop treating AI outputs as facts. Predictions have confidence. Interfaces must surface it — not wash it away. Designing as if AI is deterministic isn't just a mistake. <strong>It's a category error.</strong>
+      </p>
+      <div class="cta-wrapper">
+        <a class="cta" href="https://smashingmagazine.com/2026/06/designing-uncertainty-how-ai-supercharges-probabilistic-thinking/" target="_blank" rel="noopener">Read →</a>
+        <span class="source-tag">Smashing Magazine · 2026</span>
+      </div>
+    </div>
+
+    <div>
+      <blockquote class="pullquote-block">
+        <p class="pullquote-text">Mistaking AI predictions for <em>certainties</em> is the defining UX failure of this moment.</p>
+      </blockquote>
+
+      <div class="uncertainty-spectrum" aria-hidden="true">
+        <span class="spectrum-label">Confidence Spectrum</span>
+        <div class="spectrum-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-strip">
+    <span class="footer-pub">Morning Edition — Weekly</span>
+    <span class="footer-date">Sunday, June 21 · 2026</span>
+  </footer>
+</div>
+</section>
+<section data-story="10" class="spread spread-10">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-10 { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(24px, 4vw, 64px);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Background card fan shapes */
+.spread-10::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: clamp(200px, 45vw, 600px);
+  height: clamp(280px, 60vw, 820px);
+  background: linear-gradient(135deg,
+    #1a0a2e 0%,
+    #2d1b4e 30%,
+    #1a0a2e 60%,
+    #0f0820 100%
+  );
+  border: 1px solid rgba(180, 130, 255, 0.15);
+  border-radius: 8px;
+  transform: rotate(18deg);
+  z-index: 0;
+}
+
+.spread-10::after {
+  content: '';
+  position: absolute;
+  top: -8%;
+  right: -2%;
+  width: clamp(200px, 45vw, 600px);
+  height: clamp(280px, 60vw, 820px);
+  background: linear-gradient(135deg,
+    #0e1535 0%,
+    #162040 30%,
+    #0e1535 60%,
+    #090d1a 100%
+  );
+  border: 1px solid rgba(100, 180, 255, 0.12);
+  border-radius: 8px;
+  transform: rotate(10deg);
+  z-index: 0;
+}
+
+.spread-10 .card-deck {
+  position: absolute;
+  top: -6%;
+  right: 0%;
+  width: clamp(200px, 45vw, 600px);
+  height: clamp(280px, 60vw, 820px);
+  background: linear-gradient(160deg, #111827 0%, #1c1035 50%, #111827 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transform: rotate(3deg);
+  z-index: 1;
+}
+
+.spread-10 .card-deck::before {
+  content: '♠';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(60px, 12vw, 160px);
+  color: rgba(255, 255, 255, 0.04);
+  line-height: 1;
+}
+
+.spread-10 .card-deck::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 12px,
+    rgba(255,255,255,0.015) 12px,
+    rgba(255,255,255,0.015) 13px
+  );
+  border-radius: 8px;
+}
+
+/* Scattered card behind */
+.spread-10 .card-scatter-1 {
+  position: absolute;
+  bottom: 5%;
+  right: 8%;
+  width: clamp(80px, 16vw, 220px);
+  height: clamp(110px, 22vw, 300px);
+  background: linear-gradient(135deg, #1e0a0a 0%, #2a0d0d 100%);
+  border: 1px solid rgba(255, 80, 80, 0.2);
+  border-radius: 6px;
+  transform: rotate(-22deg);
+  z-index: 0;
+}
+
+.spread-10 .card-scatter-1::before {
+  content: '♥';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(28px, 6vw, 72px);
+  color: rgba(255, 80, 80, 0.18);
+  line-height: 1;
+}
+
+.spread-10 .card-scatter-2 {
+  position: absolute;
+  bottom: 12%;
+  right: 18%;
+  width: clamp(70px, 14vw, 190px);
+  height: clamp(95px, 19vw, 260px);
+  background: linear-gradient(135deg, #0a1a0a 0%, #0d2a0d 100%);
+  border: 1px solid rgba(80, 200, 80, 0.15);
+  border-radius: 6px;
+  transform: rotate(35deg);
+  z-index: 0;
+}
+
+.spread-10 .card-scatter-2::before {
+  content: '♣';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(24px, 5vw, 60px);
+  color: rgba(80, 200, 80, 0.18);
+  line-height: 1;
+}
+
+/* Shuffle lines animation substitute — static arcs */
+.spread-10 .shuffle-arcs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(180px, 40vw, 520px);
+  height: clamp(180px, 40vw, 520px);
+  border-radius: 50%;
+  background: transparent;
+  border-top: 1px solid rgba(180, 130, 255, 0.08);
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid rgba(100, 200, 255, 0.08);
+  transform: translate(-40%, 40%);
+  z-index: 0;
+}
+
+.spread-10 .shuffle-arcs::before {
+  content: '';
+  position: absolute;
+  top: 20px; left: 20px; right: 20px; bottom: 20px;
+  border-radius: 50%;
+  border-top: 1px solid rgba(180, 130, 255, 0.06);
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid rgba(100, 200, 255, 0.06);
+}
+
+.spread-10 .shuffle-arcs::after {
+  content: '';
+  position: absolute;
+  top: 45px; left: 45px; right: 45px; bottom: 45px;
+  border-radius: 50%;
+  border-top: 1px solid rgba(255, 180, 50, 0.06);
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid rgba(255, 180, 50, 0.04);
+}
+
+/* Main content */
+.spread-10 .content {
+  position: relative;
+  z-index: 10;
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.spread-10 .kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.8vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #b482ff;
+  text-transform: uppercase;
+  margin: 0 0 clamp(12px, 2vw, 24px) 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-10 .kicker::before {
+  content: '';
+  display: inline-block;
+  width: clamp(24px, 3vw, 40px);
+  height: 1px;
+  background: #b482ff;
+}
+
+.spread-10 .kicker span {
+  font-size: clamp(18px, 2vw, 20px);
+}
+
+.spread-10 .headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(38px, 7.5vw, 96px);
+  line-height: 0.95;
+  color: #f4f0ff;
+  margin: 0 0 clamp(16px, 2.5vw, 32px) 0;
+  max-width: 700px;
+}
+
+.spread-10 .headline em {
+  font-style: normal;
+  color: #b482ff;
+  display: inline;
+}
+
+.spread-10 .number-display {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 16px);
+  margin: clamp(16px, 3vw, 36px) 0;
+}
+
+.spread-10 .numeral {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(72px, 18vw, 220px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(180, 130, 255, 0.5);
+  display: block;
+  letter-spacing: -0.04em;
+}
+
+.spread-10 .numeral-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1.4vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  line-height: 1.3;
+}
+
+.spread-10 .divider {
+  width: clamp(40px, 8vw, 80px);
+  height: 1px;
+  background: linear-gradient(90deg, #b482ff, transparent);
+  margin: clamp(12px, 2vw, 24px) 0;
+}
+
+.spread-10 .blurb {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: 1.7;
+  color: rgba(220, 210, 255, 0.65);
+  max-width: 560px;
+  margin: 0 0 clamp(20px, 3vw, 40px) 0;
+  font-weight: 400;
+}
+
+.spread-10 .blurb strong {
+  color: rgba(220, 210, 255, 0.9);
+  font-weight: 700;
+}
+
+.spread-10 .bottom-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+  flex-wrap: wrap;
+}
+
+.spread-10 .cta {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #0a0a0f;
+  background: #b482ff;
+  text-decoration: none;
+  padding: clamp(10px, 1.5vw, 14px) clamp(24px, 3.5vw, 40px);
+  border-radius: 2px;
+  display: inline-block;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.spread-10 .cta::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(180, 130, 255, 0.4);
+  border-radius: 2px;
+}
+
+.spread-10 .edition-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.4vw, 13px);
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Suit row decoration */
+.spread-10 .suits {
+  display: flex;
+  gap: clamp(12px, 2vw, 24px);
+  margin: clamp(20px, 3vw, 40px) 0 clamp(8px, 1.5vw, 16px) 0;
+  align-items: center;
+}
+
+.spread-10 .suit {
+  font-size: clamp(18px, 3vw, 28px);
+  opacity: 0.3;
+  color: #f4f0ff;
+  line-height: 1;
+}
+
+.spread-10 .suit.red {
+  color: #ff6b6b;
+  opacity: 0.35;
+}
+
+.spread-10 .suit-sep {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.1);
+  display: inline-block;
+  margin: 0 4px;
+}
+
+/* Source line */
+.spread-10 .source-line {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.4vw, 13px);
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.1em;
+  margin-top: clamp(16px, 2.5vw, 28px);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (min-width: 720px) {
+  .spread-10 .content {
+    padding-right: clamp(160px, 38vw, 500px);
+  }
+
+  .spread-10 .numeral {
+    font-size: clamp(120px, 22vw, 280px);
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-10::before,
+  .spread-10::after,
+  .spread-10 .card-deck {
+    top: auto;
+    bottom: -4%;
+    right: -12%;
+    width: 55vw;
+    height: 75vw;
+    transform: rotate(15deg);
+  }
+
+  .spread-10::after {
+    transform: rotate(8deg);
+  }
+
+  .spread-10 .card-deck {
+    transform: rotate(2deg);
+  }
+
+  .spread-10 .card-scatter-1,
+  .spread-10 .card-scatter-2 {
+    display: none;
+  }
+}
+</style>
+
+<!-- Decorative elements -->
+<div class="shuffle-arcs"></div>
+<div class="card-deck"></div>
+<div class="card-scatter-1"></div>
+<div class="card-scatter-2"></div>
+
+<!-- Main content -->
+<div class="content">
+  <p class="kicker"><span>♦</span> Math Curio &nbsp;·&nbsp; Quanta Magazine</p>
+
+  <h1 class="headline">
+    Seven <em>Perfect</em><br>Shuffles
+  </h1>
+
+  <div class="number-display">
+    <span class="numeral">7</span>
+    <span class="numeral-label">shuffles to<br>randomize<br>a deck</span>
+  </div>
+
+  <div class="suits">
+    <span class="suit">♠</span>
+    <span class="suit red">♥</span>
+    <span class="suit">♣</span>
+    <span class="suit red">♦</span>
+    <span class="suit-sep"></span>
+    <span class="suit">♠</span>
+    <span class="suit red">♥</span>
+    <span class="suit">♣</span>
+    <span class="suit red">♦</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="blurb">
+    A new proof extends the classic seven-shuffle result to <strong>realistic, imprecise riffle shuffles</strong> — no magician precision required. A tidy example of how a decades-old theorem can be cracked open with a single changed assumption.
+  </p>
+
+  <div class="bottom-row">
+    <a class="cta" href="https://www.quantamagazine.org/seven-perfect-shuffles-randomize-a-deck-of-cards-but-how-many-sloppy-ones-20260617/" target="_blank" rel="noopener">Read →</a>
+    <span class="edition-tag">Morning Edition · Jun 21, 2026 · #10</span>
+  </div>
+
+  <p class="source-line">Quanta Magazine &nbsp;/&nbsp; Pure Mathematics</p>
+</div>
+
+</section>
+
+<section data-story="11" class="spread spread-colophon">
+<style>
+.spread-colophon{background:#17140e;color:#f4ecd8;padding:clamp(48px,6vw,110px);
+  min-height:50vh;display:flex;flex-direction:column;justify-content:center;gap:28px;
+  font-family:system-ui,sans-serif}
+.spread-colophon h3{font-size:clamp(36px,5vw,72px);margin:0;font-weight:300;
+  font-style:italic;line-height:1.1}
+.spread-colophon p{font-size:22px;line-height:1.5;max-width:56ch;margin:0;opacity:.85}
+.spread-colophon .sm{font-size:18px;letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+</style>
+<h3>That was this week.</h3>
+<p>Ten stories, curated across twenty sources. 4 flagged as
+directly applicable. Each spread designed from scratch by Claude.</p>
+<p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
+text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
+<p class="sm">Morning Edition — Weekly &middot; Issue No. W25
+&middot; SUNDAY, JUNE 21, 2026</p>
+</section>
+
+<script>
+(function(){
+var sp=document.querySelectorAll('[data-story]');
+var total=10;
+if(!sp.length)return;
+var drawer=document.getElementById('m-drawer');
+var prog=document.getElementById('m-progress');
+var bar=document.getElementById('m-bar');
+var ntitle=document.getElementById('m-nav-title');
+var tbtn=document.getElementById('m-toc-btn');
+function closeDrawer(){drawer.classList.remove('open');tbtn.setAttribute('aria-expanded','false');}
+var cl=document.createElement('div');
+cl.className='m-drawer-close';
+cl.innerHTML='All stories &middot; tap to jump <span aria-hidden="true">&times;</span>';
+cl.addEventListener('click',closeDrawer);
+drawer.appendChild(cl);
+sp.forEach(function(s,i){
+var h=s.querySelector('h2')||s.querySelector('h1');
+var k=s.querySelector('.kicker');
+var txt=(h?h.textContent.trim():'');
+if(txt.length>55)txt=txt.slice(0,52)+'…';
+var it=document.createElement('div');
+it.className='m-drawer-item';
+it.innerHTML=(k?'<span class="m-drawer-kicker">'+k.textContent.trim().slice(0,22)+'</span>':'')
++'<span class="m-drawer-num">'+(i+1)+'</span>'
++'<span class="m-drawer-title">'+txt+'</span>';
+it.addEventListener('click',function(){closeDrawer();s.scrollIntoView({behavior:'smooth'});});
+drawer.appendChild(it);
+});
+tbtn.addEventListener('click',function(){
+var open=drawer.classList.toggle('open');
+tbtn.setAttribute('aria-expanded',String(open));
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){
+if(!e.isIntersecting)return;
+var idx=parseInt(e.target.getAttribute('data-story'))||1;
+if(prog)prog.textContent=idx+' / '+total;
+if(bar)bar.style.width=Math.round(idx/total*100)+'%';
+var k=e.target.querySelector('.kicker');
+if(ntitle)ntitle.textContent=(idx===1)?'Morning Edition':(k?k.textContent.trim().slice(0,26):'Morning Edition');
+});
+},{threshold:0.5});
+sp.forEach(function(s){io.observe(s);});
+}
+})();
+</script>
+</body>
+</html>

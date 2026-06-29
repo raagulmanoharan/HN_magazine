@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install Morning Edition Shortcut</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,system-ui,sans-serif;background:#f4ecd8;color:#17140e;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+.card{background:#fff;border-radius:20px;padding:48px 32px;max-width:400px;width:100%;
+  text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+h1{font-size:28px;font-weight:800;margin-bottom:8px}
+.sub{font-size:16px;color:#666;margin-bottom:32px;line-height:1.5}
+.btn{display:inline-block;background:#17140e;color:#f4ecd8;font-size:18px;font-weight:700;
+  padding:16px 36px;border-radius:14px;text-decoration:none;letter-spacing:.02em;
+  transition:transform .1s}
+.btn:active{transform:scale(.97)}
+.steps{text-align:left;margin-top:36px;padding-top:28px;border-top:1px solid #eee}
+.steps h2{font-size:16px;font-weight:700;margin-bottom:16px;text-transform:uppercase;
+  letter-spacing:.1em;color:#999}
+.steps ol{padding-left:24px;font-size:15px;line-height:1.8;color:#444}
+.steps li{margin-bottom:8px}
+.steps strong{color:#17140e}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Morning Edition</h1>
+  <p class="sub">Get a daily notification with your issue's headline. Tap to read the full magazine.</p>
+  <a class="btn" id="install" href="#">Add to Shortcuts</a>
+  <div class="steps">
+    <h2>Then set up automation</h2>
+    <ol>
+      <li>Open <strong>Shortcuts</strong> app</li>
+      <li>Go to <strong>Automation</strong> tab</li>
+      <li>Tap <strong>+</strong> &rarr; <strong>Time of Day</strong></li>
+      <li>Set <strong>7:30 AM</strong> &rarr; <strong>Daily</strong></li>
+      <li>Toggle <strong>Run Immediately</strong></li>
+      <li>Pick <strong>Morning Edition</strong></li>
+    </ol>
+  </div>
+</div>
+<script>
+var shortcutURL = 'https://raw.githubusercontent.com/raagulmanoharan/HN_magazine/main/MorningEdition.shortcut';
+var installURL = 'shortcuts://import-shortcut?url=' + encodeURIComponent(shortcutURL) + '&name=' + encodeURIComponent('Morning Edition');
+document.getElementById('install').href = installURL;
+</script>
+</body>
+</html>
