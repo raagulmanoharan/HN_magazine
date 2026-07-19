@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; SUNDAY, JULY 19, 2026</title>
-<meta name="description" content="Shipping wars, steganography, and multiplication unsolved">
+<meta name="description" content="Shipping models, tools, and craft today">
 <meta property="og:title" content="Morning Edition · SUNDAY, JULY 19, 2026">
-<meta property="og:description" content="Shipping wars, steganography, and multiplication unsolved">
+<meta property="og:description" content="Shipping models, tools, and craft today">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -686,15 +686,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; LOCAL AI TOOLS</div>
-      <h2 class="cover-title">Transcribe.cpp — local, private speech-to-text in C++</h2>
-      <p class="cover-tagline">Shipping wars, steganography, and multiplication unsolved</p>
-      <p class="body-lead body-lead--wide">A lean C++ transcription tool running Whisper entirely on-device — no API keys, no cloud handshake, no data leaving your machine. For a UX designer running agentic workflows or doing user-research recordings, this is the privacy-safe transcription layer you&#x27;ve been waiting for.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AI SHIPPING</div>
+      <h2 class="cover-title">Qwen 3.8 Max Preview — a new frontier model lands</h2>
+      <p class="cover-tagline">Shipping models, tools, and craft today</p>
+      <p class="body-lead body-lead--wide">Qwen 3.8 Max is live with a pricing page, meaning it&#x27;s a real product you can evaluate now, not a paper. The HN thread has 84 comments worth skimming for early benchmark comparisons and agentic workflow suitability notes from people already testing it.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://workshop.cjpais.com/projects/transcribe-cpp" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://www.qwencloud.com/pricing/token-plan" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Clone the repo, build with CMake, and point it at any audio file or mic input to get local transcripts today.</p>
+      <p class="apply-note">&rarr; Hit the pricing page, grab an API key, and run your standard eval prompts against it today.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -706,150 +706,89 @@ a{color:inherit;text-underline-offset:4px}
   <div>
     <div class="kicker">AI TOOLING</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Claude Code now runs on a Rust-rewritten Bun — 10% faster startup</h2>
-    <p class="body-lead">Simon Willison flags that Claude Code v2.1.181+ silently shipped a Rust port of Bun underneath, trimming Linux startup by 10%. A rare &#x27;boring is good&#x27; infrastructure story that proves agentic CLI tools are being taken seriously as production software.</p>
+    <h2>OpenAI quietly cuts Codex context window from 372k to 272k tokens</h2>
+    <p class="body-lead">A 100k-token stealth reduction in Codex&#x27;s context window is the kind of silent infra change that breaks agentic pipelines overnight. If you&#x27;re running long-context coding workflows on Codex, you need to know this happened — and audit your prompt budgets now.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; If you run Claude Code, you&#x27;re already on this — check your version with `claude --version` and update if behind v2.1.181.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Check any Codex-dependent agentic workflow for prompts or repo ingests that assumed the old 372k ceiling.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://github.com/openai/codex/pull/33972/files" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="3" class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">AI CRAFT</div>
-    <div class="tiny-num" aria-hidden="true">03</div>
-  </div>
-  <h2>Reviewing AI code is not a process — it is a comfort blanket.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">The post dismantles the reassurance that &#x27;we review all AI-generated code&#x27; as meaningful quality control — arguing reviewers lack the context, bandwidth, and incentive to catch what LLMs quietly slip through. Directly relevant to any designer handing off AI-assisted specs or code.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; softwaremaxims.com</div>
+<section data-story="3" class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #####  
+#   #      #  
+#   #   ####  
+#   #      #  
+#####  #####  </div>
+    <div class="kicker">PRIVACY TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
+    <h2>Aether-GUI: One-click desktop wrapper for censorship-circumvention tunnel</h2>
+    <p class="body-lead">&gt; Tauri v2 + React 19 + Rust wrapping a censorship-circumvention tunnel into a desktop app you can actually hand to a non-technical person. The self-hosted, bring-your-own-infra angle is exactly the kind of privacy tooling worth watching — and the stack is instructive for design-systems-in-native-apps work.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://softwaremaxims.com/blog/reviewing-ai-code" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
+      <a class="read-more" href="https://github.com/MatinSenPai/Aether-GUI" target="_blank" rel="noopener">$ open &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
     </div>
-    
+    <p class="apply-note">&rarr; Clone and run locally; inspect the Tauri v2 + React 19 component architecture as a reference for your own desktop tool experiments.</p>
     
   </div>
 </section>
 
-<section data-story="4" class="spread s-ticker">
-  <div class="bar"><span class="bar-inner">Breaking &middot; OPEN MODELS &middot; Morning Edition</span></div>
+<section data-story="4" class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">IV</span>
+  </div>
+  <div>
+    <div class="kicker">AI + SCIENCE</div>
+    <h2>DeepMind&#x27;s approach to bioresilience and AI safety in biology</h2>
+    <div class="body-lead">DeepMind and Isomorphic Labs lay out a policy-level framework for preventing AI-enabled misuse of biological research — a rare attempt to make frontier-lab safety concrete rather than gestural. Relevant context for anyone building AI tooling and wondering where the guardrails actually come from.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://deepmind.google/blog/our-approach-to-bioresilience/" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      
+    </div>
+    
+  </div>
+  <div>
+    <div class="footnote">&sect; filed under ai + science</div>
+  </div>
+</section>
+
+<section data-story="5" class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; SECURITY RESEARCH &middot; Morning Edition</span></div>
   <div class="core">
-    <div class="big-num" aria-hidden="true">No. 04</div>
-    <div class="kicker">OPEN MODELS</div>
-    <h2>Qwen 3.8 is launching open-weight soon</h2>
-    <p class="body-lead">Alibaba&#x27;s Qwen team is dropping a new open-weight model with a preview already live on qwencloud.com. The HN thread has 122 comments worth skimming for early evals — the open-weight release makes this directly relevant to local and self-hosted agentic setups.</p>
+    <div class="big-num" aria-hidden="true">No. 05</div>
+    <div class="kicker">SECURITY RESEARCH</div>
+    <h2>wp2shell: Pre-Authentication RCE in WordPress Core</h2>
+    <p class="body-lead">A named, documented pre-auth RCE in WordPress core is a genuine event — not a breach roundup. If any client site, internal tool, or portfolio still runs WP, this requires action before the end of the day.</p>
     <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://twitter.com/Alibaba_Qwen/status/2078759124914098291" target="_blank" rel="noopener">Over the wire &rarr;</a>
+      <a class="read-more" href="https://wp2shell.com/" target="_blank" rel="noopener">Over the wire &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Hit the Qwen Cloud preview API today to run your own evals before the open-weight drop, then plan your local deployment.</p>
+    <p class="apply-note">&rarr; Check any WordPress instances you manage or host for clients and patch immediately — the exploit is publicly documented.</p>
     
   </div>
   <div class="bar"><span class="bar-inner">Filed SUNDAY, JULY 19, 2026</span></div>
 </section>
 
-<section data-story="5" class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #      
-#   #  #####  
-#   #      #  
-#####  #####  </div>
-    <div class="kicker">SECURITY + PRIVACY</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
-    <h2>LLM Steganography: Hide Messages Inside Normal-Looking Conversations</h2>
-    <p class="body-lead">&gt; A trending repo that uses LLMs to embed covert messages inside plausible-looking chat conversations — steganography for the AI era. The privacy and adversarial-design implications are immediate: if you work on content moderation, trust systems, or secure comms UX, this is your threat model.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/nethical6/conversation-steganography" target="_blank" rel="noopener">$ open &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Clone and run the demo to see what LLM steganography looks like in practice — useful for threat-modeling any AI-mediated communication surface.</p>
-    
-  </div>
-</section>
-
-<section data-story="6" class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.06</span>
-      <span>SIMONWILLISON.NET</span>
-      <span>SHEET 6/10</span>
-    </div>
-    <div class="kicker">DEV TOOLS</div>
-    <h2>SQLite Query Explainer — interactive explain tool, runs in-browser</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">06</div>
-      <p class="body-lead">Simon Willison used an LLM to build an interactive SQLite EXPLAIN visualizer that runs entirely in the browser via WASM. For anyone doing local-first or self-hosted projects with SQLite, being able to read query plans without leaving your editor tab is genuinely useful.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/Jul/18/sqlite-query-explainer/#atom-everything" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Open the tool now and paste any slow SQLite query to get a human-readable breakdown of its execution plan.</p>
-    
-  </div>
-</section>
-
-<section data-story="7" class="spread s-academic">
-  <div class="masthead-line">
-    <span>Morning Edition &mdash; Review</span>
-    <span class="roman">VII</span>
-  </div>
-  <div>
-    <div class="kicker">WEIRD MATH</div>
-    <h2>Mathematicians Still Don&#x27;t Know the Fastest Way to Multiply Numbers</h2>
-    <div class="body-lead">Multiplication — the operation every neural network does billions of times a second — still has no proven-optimal algorithm. The piece walks through why the complexity lower bound remains unproven, and why it matters more than ever as compute costs dominate AI infrastructure decisions.</div>
-    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.scientificamerican.com/article/mathematicians-still-dont-know-the-fastest-way-to-multiply-numbers/" target="_blank" rel="noopener">Continue reading &rarr;</a>
-      
-    </div>
-    
-  </div>
-  <div>
-    <div class="footnote">&sect; filed under weird math</div>
-  </div>
-</section>
-
-<section data-story="8" class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">08</div>
-    <div>
-      <div class="kicker">SECURITY</div>
-      <h2>Half a Second — a book about the XZ backdoor</h2>
-    </div>
-  </div>
-  <div class="cols">
-    <p>A full book-length treatment of the XZ Utils supply-chain backdoor — one of the most sophisticated social-engineering attacks on ope</p>
-    <p>n-source infrastructure ever documented. Essential reading if you care about the trust model underneath the dev tools you ship with.</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://www.half-second.com/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
-    
-  </div>
-  
-  
-</section>
-
-<section data-story="9" class="spread s-pullquote">
+<section data-story="6" class="spread s-pullquote">
   <div class="top">
-    <div class="kicker" style="color:#d9b26a">INDUSTRY CRITIQUE</div>
-    <div class="tiny-num" aria-hidden="true">09</div>
+    <div class="kicker" style="color:#d9b26a">CRAFT</div>
+    <div class="tiny-num" aria-hidden="true">06</div>
   </div>
   <div>
     <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">AI mania is not a strategy — it is panic wearing a roadmap.</p>
-    <div class="attrib">&mdash; simonwillison.net</div>
+    <p class="pq">Making it work feels like progress. Making it good feels like risk.</p>
+    <div class="attrib">&mdash; blog.jim-nielsen.com</div>
   </div>
   <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Willison surfaces Nik Suresh&#x27;s field report from inside large enterprises where AI mania is crowding out rational planning — anonymous anecdotes that land hard. Less hot-take, more documented pattern: useful context if you&#x27;re designing AI workflows for organizations that are already in this mode.</p>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Jim Nielsen names the tension every designer-who-ships feels: the seductive clarity of &#x27;making it work&#x27; versus the slower, more uncertain work of &#x27;making it good.&#x27; A short, honest read that reframes the duality as something to sit with rather than resolve.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/Jul/19/ai-mania/#atom-everything" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://blog.jim-nielsen.com/2026/make-it-work-make-it-good/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
@@ -857,21 +796,73 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section data-story="10" class="spread s-zine">
-  <div>
-    <div class="sticker">Cut &amp; keep</div>
+<section data-story="7" class="spread s-postcard">
+  <div class="pc-inner">
+    <div class="stamp" aria-hidden="true">07<small>Morning<br>Edition</small></div>
+    <div class="postmark" aria-hidden="true">SUNDAY<br>&middot;&middot;&middot;</div>
+    <div class="kicker">FIELD REPORT</div>
+    <h2>What I learned selling 2,500 MIDI recorders: hardware is not so hard</h2>
+    <p class="body-lead">A real field report from someone who actually shipped 2,500 physical music devices — not a Medium think-piece about hardware being hard. The intersection of music software and physical product UX makes this directly relevant to anyone thinking about creative tool design beyond the screen.</p>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://chipweinberger.com/articles/20260719-hardware-is-not-so-hard" target="_blank" rel="noopener">Wish you were here &rarr;</a>
+      
+    </div>
+    
+    
+    <div class="footer-slug">Morning Edition &middot; Airmail from chipweinberger.com</div>
   </div>
-  <div>
-    <div class="marker-num" aria-hidden="true">10</div>
-    <div class="scribble" aria-hidden="true"></div>
-    <div class="kicker">SELF-HOSTED</div>
-    <h2>Hardcore IndieWeb: Run your own website 100% independently for $0.01/day</h2>
-    <p class="body-lead">A practical walkthrough for running a fully independent personal site — your own domain, hosting, and stack — for a penny a day. For a designer who cares about privacy and digital sovereignty, this is the actionable counterpoint to platform dependence.</p>
+</section>
+
+<section data-story="8" class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 08</span>
+    <span>DEV TOOLS</span>
+  </div>
+  <div class="ix-body">
+    <h2>GitRoot — terminal tool for navigating monorepos</h2>
+    <p class="body-lead">GitRoot is a small CLI that anchors your working directory to the repo root regardless of where you&#x27;re nested — solving a mundane but genuinely irritating problem in large monorepos. Lobste.rs comments suggest it&#x27;s already polished enough to just drop into your shell config.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.neatnik.net/hardcore-indieweb" target="_blank" rel="noopener">Read it &rarr;</a>
+      <a class="read-more" href="https://gitroot.dev/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Follow the guide to spin up your own VPS-hosted site today using the $0.01/day stack outlined — the steps are concrete and beginner-accessible.</p>
+    <p class="apply-note">&rarr; Install via the instructions on gitroot.dev and add to your shell profile — works today with no config required.</p>
+    
+  </div>
+</section>
+
+<section data-story="9" class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.09</span>
+      <span>QUESMA.COM</span>
+      <span>SHEET 9/10</span>
+    </div>
+    <div class="kicker">PROMPT CRAFT</div>
+    <h2>I burned all my tokens researching how to save tokens</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">09</div>
+      <p class="body-lead">A practical walkthrough of building a custom deep-research pipeline — and the irony of burning a token budget optimizing token budgets is genuinely instructive. The architecture decisions about when to use retrieval vs. brute-force context are immediately applicable to agentic workflow design.</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://quesma.com/blog/custom-deep-research-pipeline/" target="_blank" rel="noopener">View schematic &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Skim the pipeline architecture section and adapt the retrieval-first pattern to your own LLM workflows today.</p>
+    
+  </div>
+</section>
+
+<section data-story="10" class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">GENERATIVE / CREATIVE</div>
+    <div class="riso-num" data-n="10" aria-hidden="true">10</div>
+    <h2>Scroll-scrubbed &#x27;fly through the world&#x27; burger demo with Kubeez</h2>
+    <p class="body-lead">A scroll-scrubbed video experience generated with Kubeez, live in the browser — the kind of creative demo that pushes what scroll-driven animation can do when generative video is in the loop. Worth opening the live demo to feel the interaction before anything else.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://github.com/KubeezMedia/kubeez-scroll-world-video" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Open meepcastana.github.io/kubeez-scroll-world-video in the browser right now, then fork the repo to study the scroll-scrub implementation.</p>
     
   </div>
 </section>
@@ -881,9 +872,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  6 of them are flagged as directly applicable &mdash; open those first.</p>
+  7 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Cormorant Garamond and Work Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-07-19 11:53 UTC.</p>
+  at 2026-07-19 13:25 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0565 &middot; SUNDAY, JULY 19, 2026</p>
