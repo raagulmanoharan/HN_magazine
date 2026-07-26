@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; SUNDAY, JULY 26, 2026</title>
-<meta name="description" content="Context rules, linters bite, privacy holds">
+<meta name="description" content="Linters, languages, layers, and Google Zero">
 <meta property="og:title" content="Morning Edition · SUNDAY, JULY 26, 2026">
-<meta property="og:description" content="Context rules, linters bite, privacy holds">
+<meta property="og:description" content="Linters, languages, layers, and Google Zero">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,500;0,700;0,900;1,500;1,900&family=Noto+Sans:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -686,15 +686,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AI CRAFT</div>
-      <h2 class="cover-title">The New Rules of Context Engineering for Claude 5 Generation Models</h2>
-      <p class="cover-tagline">Context rules, linters bite, privacy holds</p>
-      <p class="body-lead body-lead--wide">Anthropic publishes its own playbook for structuring context windows with Claude 5-class models — covering memory types, tool call patterns, and prompt architecture. This is the agentic-workflow bible you&#x27;d reference before building anything serious with Claude today.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; DEV TOOLS</div>
+      <h2 class="cover-title">Ruff v0.16.0 breaks CI everywhere — here&#x27;s what changed</h2>
+      <p class="cover-tagline">Linters, languages, layers, and Google Zero</p>
+      <p class="body-lead body-lead--wide">Astral&#x27;s Ruff just shipped v0.16.0 with new default checks that silently broke unpinned CI jobs across the ecosystem — Simon Willison caught it the hard way. If you have any Python in your stack or agentic pipelines, this is a &#x27;pin your deps or audit now&#x27; moment.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://simonwillison.net/2026/Jul/25/ruff/#atom-everything" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Read alongside your current system prompts and revise how you&#x27;re segmenting memory, instructions, and tool outputs.</p>
+      <p class="apply-note">&rarr; Run `pip install ruff==0.15.x` or audit your pyproject.toml today if you have unpinned Ruff in any CI workflow.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -704,172 +704,165 @@ a{color:inherit;text-underline-offset:4px}
 <section data-story="2" class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">DEV TOOLS</div>
+    <div class="kicker">UX + DESIGN</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Ruff v0.16.0 — 413 Default Rules, Up from 59</h2>
-    <p class="body-lead">Ruff&#x27;s default rule set jumped 7× in a single release — Simon Willison noticed when his unpinned CI started failing. If you run Ruff in any Python project without a pinned version, expect immediate breakage and a useful forcing function to clean up long-ignored lint debt.</p>
+    <h2>Components Are Dead — and other design provocations this week</h2>
+    <p class="body-lead">A curated design round-up with a spicy frame: component-based thinking may be calcifying rather than enabling. Also inside: applying Nir Eyal&#x27;s Hook Model to AI products without being manipulative, and a dropdown-vs-alternative interaction breakdown.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Pin your ruff version or run `ruff check --select ALL` today to see exactly what just changed in your codebase.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://astral.sh/blog/ruff-v0.16.0" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; The Hook Model + AI piece is directly applicable if you&#x27;re designing any AI-assisted workflow product right now.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://heydesigner.com/2026-07-23/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="3" class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.03</span>
-      <span>DISCUSS.GRAPHENEOS.ORG</span>
-      <span>SHEET 3/10</span>
+<section data-story="3" class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">AI + THE WEB</div>
+    <div class="tiny-num" aria-hidden="true">03</div>
+  </div>
+  <h2>Google once sent oceans of traffic. The deal is over.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">The historic traffic bargain between Google and publishers is functionally dead, and AI-generated answers are the mechanism. For a UX designer building products that depend on discoverability or content ecosystems, the structural shift here reshapes what &#x27;findable&#x27; even means.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; theverge.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.theverge.com/podcast/970735/google-zero-reddit-ai-publishers-vergecast" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
     </div>
-    <div class="kicker">PRIVACY &amp; SECURITY</div>
-    <h2>GrapheneOS Protections Against Data Extraction from Locked Devices</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">03</div>
-      <p class="body-lead">GrapheneOS&#x27;s detailed technical breakdown of how it resists forensic extraction tools — covering USB control, memory wiping, and exploit surface reduction. Dense, specific, and directly useful if you care about what happens to your device in a high-stakes situation.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://discuss.grapheneos.org/d/40700-grapheneos-protections-against-data-extraction-from-locked-devices" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Read the feature matrix and cross-check against your current device setup — some protections require explicit configuration.</p>
+    
     
   </div>
 </section>
 
-<section data-story="4" class="spread s-stat">
-  <div class="top">
-    <div class="chip">No. 04 &middot; LOCAL AI</div>
-    <span class="tag-applies">Applies to you</span>
+<section data-story="4" class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #   #  
+#   #  #   #  
+#   #  #####  
+#   #      #  
+#####      #  </div>
+    <div class="kicker">LANGUAGES</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">youtube.com</span></div>
+    <h2>Verse: Epic Games&#x27; New Scripting Language Explained</h2>
+    <p class="body-lead">&gt; Epic&#x27;s Verse language — designed for Fortnite&#x27;s UEFN but with serious PL theory backing — is getting explained in depth. It&#x27;s a functional-logic hybrid with novel concurrency semantics, and it&#x27;s actually shipping in a creative tool millions use.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://youtube.com/watch?v=ebqKYLKjL6U" target="_blank" rel="noopener">$ open &rarr;</a>
+      
+    </div>
+    
+    
   </div>
-  <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">9.36M</div>
-    <div class="stat-label">parameters for full voice synthesis</div>
+</section>
+
+<section data-story="5" class="spread s-zine">
+  <div>
+    <div class="sticker">Cut &amp; keep</div>
   </div>
   <div>
-    <h2>Inflect-Micro-v2: Complete Voice Synthesis in 9.36M Parameters</h2>
-    <p class="body-lead">A complete TTS model small enough to run on a microcontroller — under 10M parameters with intelligible output. For designers prototyping voice interfaces or agentic pipelines that need on-device speech without cloud latency, this is a meaningful engineering milestone.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://huggingface.co/owensong/Inflect-Micro-v2" target="_blank" rel="noopener">Read the story &rarr;</a></div>
-    <p class="apply-note">&rarr; Pull the model from Hugging Face and wire it into a local voice-interface prototype today — no API key required.</p>
+    <div class="marker-num" aria-hidden="true">05</div>
+    <div class="scribble" aria-hidden="true"></div>
+    <div class="kicker">CREATIVE AI</div>
+    <h2>Midjourney Acquires Astrology App Co-Star</h2>
+    <p class="body-lead">Midjourney — best known as a generative image tool — has acquired Co-Star, the personalized astrology app with a distinct dark, typographically precise aesthetic. The product direction is genuinely unclear, which makes it either fascinating or alarming from a design perspective.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.theverge.com/ai-artificial-intelligence/970894/midjourney-co-star-acquisition" target="_blank" rel="noopener">Read it &rarr;</a>
+      
+    </div>
+    
     
   </div>
 </section>
 
-<section data-story="5" class="spread s-newsprint">
+<section data-story="6" class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">06</div>
+  <div class="content">
+    <div class="kicker">PRIVACY + SECURITY</div>
+    <h2>Android May Soon Restrict On-Device ADB, Killing Shizuku and libadb</h2>
+    <p class="body-lead">Google appears to be closing the on-device ADB loophole that tools like Shizuku rely on — the same loophole that enables a wide range of privacy-respecting customization and automation on Android without root. A quiet but significant tightening of the platform&#x27;s locked-down posture.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://kitsumed.github.io/blog/posts/android-may-soon-restrict-on-device-adb/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
+</section>
+
+<section data-story="7" class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">VII</span>
+  </div>
+  <div>
+    <div class="kicker">SYSTEMS</div>
+    <h2>Everyone Should Know SIMD</h2>
+    <div class="body-lead">Mitchell Hashimoto argues SIMD isn&#x27;t exotic low-level arcana — it&#x27;s a fundamental tool any serious programmer should have in reach. Dense, practical, and the kind of thing that recontextualizes why your string parsing or image processing is slow.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://mitchellh.com/writing/everyone-should-know-simd" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      
+    </div>
+    
+  </div>
+  <div>
+    <div class="footnote">&sect; filed under systems</div>
+  </div>
+</section>
+
+<section data-story="8" class="spread s-newsprint">
   <div class="masthead-bar">The Daily Ledger</div>
   <div class="title-row">
-    <div class="badge">05</div>
+    <div class="badge">08</div>
     <div>
-      <div class="kicker">AI INDUSTRY</div>
-      <h2>DeepSeek Pauses Fundraise After Compute Gap Comments Leaked</h2>
+      <div class="kicker">FIELD REPORT</div>
+      <h2>I Tried Building a Real App with AI. It Took a Year.</h2>
     </div>
   </div>
   <div class="cols">
-    <p>A leaked investor-meeting transcript has Liang Wenfeng candid about DeepSeek&#x27;s compute disadvantage versus US labs — the kind of primary</p>
-    <p>-source signal that&#x27;s rare in this space. The fundraise pause itself matters less than what the transcript reveals about the actual gap.</p>
+    <p>A year-long honest account of shipping a real product with AI coding assistance — not a vibe check, but a longitudinal field repor</p>
+    <p>t on where agentic workflows genuinely help and where they quietly accrue technical debt. The comment thread has strong signal too.</p>
   </div>
   <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://github.com/demo-zexuan/liang-wenfeng-investor-meeting-2026-7-22/blob/master/%E6%A2%81%E6%96%87%E9%94%8B%E6%8A%95%E8%B5%84%E8%80%85%E4%BA%A4%E6%B5%81%E4%BC%9A-%E6%96%87%E5%AD%97%E7%A8%BF_1_18_translate_20260723201651.pdf" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    <a class="read-more" href="https://www.alexhyett.com/videos/tried-building-app-with-ai-it-took-a-year/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
     
   </div>
   
   
 </section>
 
-<section data-story="6" class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #      
-#   #  #####  
-#   #  #   #  
-#####  #####  </div>
-    <div class="kicker">LANGUAGES</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">zigbyexample.neocities.org</span></div>
-    <h2>Zig by Example</h2>
-    <p class="body-lead">&gt; A clean, worked-example reference for Zig — modeled on Go by Example but covering Zig&#x27;s distinctive comptime, allocators, and error-union patterns. If you&#x27;ve been curious about Zig for systems tooling or WASM targets, this is the lowest-friction entry point available.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://zigbyexample.neocities.org/" target="_blank" rel="noopener">$ open &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Open the site and work through the allocator and comptime sections — they&#x27;re the parts that don&#x27;t transfer from any other language.</p>
-    
-  </div>
-</section>
-
-<section data-story="7" class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">UX PRACTICE</div>
-    <div class="tiny-num" aria-hidden="true">07</div>
-  </div>
-  <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">Product sense means knowing which patterns apply — and when they don&#x27;t.</p>
-    <div class="attrib">&mdash; nngroup.com</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">NNGroup operationalizes product sense as pattern-matching from experimentation — not intuition, not taste. For a UX designer increasingly asked to own product decisions alongside AI tooling, this framing gives you something concrete to build and defend in critique.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.nngroup.com/articles/product-sense-definition/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener">Read the story &rarr;</a>
+<section data-story="9" class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; AI SHIPPING &middot; Morning Edition</span></div>
+  <div class="core">
+    <div class="big-num" aria-hidden="true">No. 09</div>
+    <div class="kicker">AI SHIPPING</div>
+    <h2>OpenAI Presence: Enterprise Voice + Chat Agent Platform</h2>
+    <p class="body-lead">OpenAI is entering the enterprise contact-center market with Presence, a platform for deploying trusted voice and chat agents at scale. For UX designers thinking about conversational interface patterns, this is the product that will standardize what &#x27;AI agent UX&#x27; means for most enterprises.</p>
+    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://openai.com/index/introducing-openai-presence" target="_blank" rel="noopener">Over the wire &rarr;</a>
       
     </div>
     
     
   </div>
+  <div class="bar"><span class="bar-inner">Filed SUNDAY, JULY 26, 2026</span></div>
 </section>
 
-<section data-story="8" class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">SYSTEMS</div>
-    <div class="tiny-num" aria-hidden="true">08</div>
+<section data-story="10" class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 10</span>
+    <span>WEIRD SCIENCE</span>
   </div>
-  <h2>The conditions that killed microkernels in the 90s no longer all apply.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A sober re-examination of whether the microkernel moment has finally arrived — driven by security isolation needs, capability hardware, and formal-verification tooling that didn&#x27;t exist in the L4 era. Less nostalgic than it sounds; the argument is grounded in current constraints.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; notes.hella.cheap</div>
+  <div class="ix-body">
+    <h2>Hannah Fry Wins the 2026 Leelavati Prize for Mathematics Outreach</h2>
+    <p class="body-lead">Hannah Fry — mathematician, BBC presenter, author of &#x27;Hello World&#x27; — takes the Leelavati Prize for making mathematics genuinely accessible. She&#x27;s one of the clearest communicators working on how algorithms and AI shape everyday life, and this is well-deserved recognition.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://notes.hella.cheap/maybe-we-should-revisit-microkernels.html" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://www.maths.cam.ac.uk/features/professor-hannah-fry-wins-leelavati-prize" target="_blank" rel="noopener">Follow the thread &rarr;</a>
       
     </div>
     
     
-  </div>
-</section>
-
-<section data-story="9" class="spread s-riso">
-  <div class="layout">
-    <div class="kicker">GENERATIVE TOOLS</div>
-    <div class="riso-num" data-n="09" aria-hidden="true">09</div>
-    <h2>story-to-handdrawn-video — Agent Skill: Story Copy → Hand-Drawn Animation</h2>
-    <p class="body-lead">An open agentic pipeline that converts text or ordered images into silent hand-drawn MP4 animations — sketchy-line aesthetic, no cloud API required. Designers exploring generative motion or storyboard prototyping will find the image-sequence-in path directly useful.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/gnipbao/story-to-handdrawn-video" target="_blank" rel="noopener">Pull a proof &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Clone the repo and feed it a sequence of storyboard frames to see the hand-drawn animation output in minutes.</p>
-    
-  </div>
-</section>
-
-<section data-story="10" class="spread s-academic">
-  <div class="masthead-line">
-    <span>Morning Edition &mdash; Review</span>
-    <span class="roman">X</span>
-  </div>
-  <div>
-    <div class="kicker">WEIRD INTERNALS</div>
-    <h2>Watching Go&#x27;s New Garbage Collector Move Through the Heap</h2>
-    <div class="body-lead">A visual, instrumented walkthrough of Go&#x27;s updated GC — showing how it traverses the heap differently from the old collector with actual heap-state snapshots. The kind of empirical &#x27;I ran this and watched what happened&#x27; piece that makes runtime behavior legible.</div>
-    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://theconsensus.dev/p/2026/07/19/observing-gos-garbage-collector-old-and-new.html" target="_blank" rel="noopener">Continue reading &rarr;</a>
-      
-    </div>
-    
-  </div>
-  <div>
-    <div class="footnote">&sect; filed under weird internals</div>
   </div>
 </section>
 
@@ -878,9 +871,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  6 of them are flagged as directly applicable &mdash; open those first.</p>
+  2 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Noto Serif Display and Noto Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-07-26 11:59 UTC.</p>
+  at 2026-07-26 13:38 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0572 &middot; SUNDAY, JULY 26, 2026</p>
