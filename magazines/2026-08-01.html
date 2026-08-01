@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; SATURDAY, AUGUST 1, 2026</title>
-<meta name="description" content="Agents misbehave, math breaks, MCP evolves">
+<meta name="description" content="Agentic tools, open weights, and a typographic deep cut">
 <meta property="og:title" content="Morning Edition · SATURDAY, AUGUST 1, 2026">
-<meta property="og:description" content="Agents misbehave, math breaks, MCP evolves">
+<meta property="og:description" content="Agentic tools, open weights, and a typographic deep cut">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -686,15 +686,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AI RESEARCH</div>
-      <h2 class="cover-title">OpenAI&#x27;s Ten Advances in Mathematics and Theoretical Computer Science</h2>
-      <p class="cover-tagline">Agents misbehave, math breaks, MCP evolves</p>
-      <p class="body-lead body-lead--wide">OpenAI drops a batch of results on long-standing open problems — geometry, cryptography, complexity. This is the kind of concrete artifact that separates &#x27;AI reasons&#x27; from &#x27;AI proved something.&#x27; Worth reading alongside the Quanta piece on whether that reasoning is even real.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AGENTIC WORKFLOWS</div>
+      <h2 class="cover-title">qm – Multiplayer Agent Harness for Work</h2>
+      <p class="cover-tagline">Agentic tools, open weights, and a typographic deep cut</p>
+      <p class="body-lead body-lead--wide">A GitHub-hosted harness for running multiple AI agents in parallel on real work tasks — not a demo, an actual orchestration layer. The 598-point HN score and 128 comments suggest this hit a nerve with practitioners tired of single-agent toys. Worth cloning and stress-testing against your current Claude/Codex setup today.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://openai.com/index/ten-advances-in-mathematics" target="_blank" rel="noopener">Open the lead &rarr;</a>
-        
+        <a class="read-more" href="https://github.com/yc-software/qm" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
       </div>
-      
+      <p class="apply-note">&rarr; Clone the repo and run the quickstart against a real task queue to see how multi-agent coordination holds up in practice.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -704,50 +704,104 @@ a{color:inherit;text-underline-offset:4px}
 <section data-story="2" class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">AGENTIC TOOLING</div>
+    <div class="kicker">LLM TOOLING</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Stateless MCP Has Recaptured My Interest — and Inspired Two New Tools</h2>
-    <p class="body-lead">MCP 2.0 (the 2026-07-28 spec) is the biggest protocol change since launch, and Willison built mcp-explorer and datasette-mcp to show what stateless MCP unlocks. If you&#x27;re wiring agentic workflows, this is the freshest on-ramp to the new paradigm.</p>
+    <h2>llm-mcp-client 0.1a0 — Simon Willison ships MCP support for LLM CLI</h2>
+    <p class="body-lead">Willison&#x27;s `llm` CLI now speaks Model Context Protocol, meaning any MCP-compatible server can pipe context straight into your local model runs. This is the missing glue between the MCP ecosystem and command-line LLM workflows — install it today and wire up your first tool server.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Clone mcp-explorer today to inspect any MCP server&#x27;s tool surface without spinning up a stateful session.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Run `pip install llm-mcp-client` and point it at an existing MCP server to test tool-augmented prompts from the terminal.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Jul/31/llm-mcp-client/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="3" class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.03</span>
-      <span>MICROSOFT.GITHUB.IO</span>
-      <span>SHEET 3/10</span>
-    </div>
-    <div class="kicker">INFORMATION DESIGN</div>
-    <h2>Flint: A Visualization Language for the AI Era</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">03</div>
-      <p class="body-lead">Microsoft research project treating chart-making as a declarative language rather than an imperative API — you describe the data story, Flint renders it. Directly relevant to any UX designer thinking about AI-generated dashboards or design-system charting components.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://microsoft.github.io/flint-chart/" target="_blank" rel="noopener">View schematic &rarr;</a>
+<section data-story="3" class="spread s-terminal">
+  <div class="window">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="ascii-num" aria-hidden="true">#####  #####  
+#   #      #  
+#   #   ####  
+#   #      #  
+#####  #####  </div>
+    <div class="kicker">EVALS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
+    <h2>smevals — A Small, Composable Eval Suite for Models, Prompts, and Harnesses</h2>
+    <p class="body-lead">&gt; Built with Jesse Vincent&#x27;s Prime Radiant lab, smevals is a lightweight framework for answering concrete capability questions across models and prompt variants — not a benchmark leaderboard, a practical harness for the questions you actually have. If you ship AI features, this is the eval tooling you&#x27;ve been improvising yourself.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://simonwillison.net/2026/Jul/31/smevals/#atom-everything" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; The live demo at the link lets you write Flint specs in the browser right now — try it against your own data shapes.</p>
+    <p class="apply-note">&rarr; Pull the repo and run the included eval suite against two model/prompt variants to calibrate your current stack.</p>
     
   </div>
 </section>
 
-<section data-story="4" class="spread s-ticker">
+<section data-story="4" class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">TYPOGRAPHY</div>
+    <div class="riso-num" data-n="04" aria-hidden="true">04</div>
+    <h2>Manual: •.,:;?· — A deep typographic guide to punctuation marks</h2>
+    <p class="body-lead">type.today&#x27;s editorial deep-dive into dots, middle dots, colons, and their typographic cousins covers historical usage, optical behavior, and spacing rules that most digital designers never learned. The kind of craft reference you bookmark and return to when kerning a UI label feels weirdly off.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://type.today/en/journal/dots" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Keep it open while reviewing any current typographic spec — the middle-dot and interpunct sections are immediately applicable to dense information UI.</p>
+    
+  </div>
+</section>
+
+<section data-story="5" class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.05</span>
+      <span>DEEPMIND.GOOGLE</span>
+      <span>SHEET 5/10</span>
+    </div>
+    <div class="kicker">AI SHIPPING</div>
+    <h2>Gemini Robotics ER 2: Video Understanding, Tool Orchestration, Multi-Robot Collaboration</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">05</div>
+      <p class="body-lead">DeepMind&#x27;s ER 2 model ships meaningful upgrades to how Gemini-powered robots parse video, delegate subtasks, and coordinate across multiple physical agents. The task-orchestration layer is the part worth watching — it&#x27;s the same architectural problem agentic software workflows are solving, just with arms.</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/" target="_blank" rel="noopener">View schematic &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section data-story="6" class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">CRAFT</div>
+    <div class="tiny-num" aria-hidden="true">06</div>
+  </div>
+  <h2>AI generates the prototype; you are still responsible for the product.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">The prototype/product gap is real and persistent regardless of how good the codegen gets. A UX designer shepherding AI-assisted builds needs to hold the line on interaction quality, edge cases, and polish that no model ships by default. 129 comments suggests this landed with practitioners, not just theorists.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; weeraman.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://weeraman.com/the-prototype-isnt-the-product/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section data-story="7" class="spread s-ticker">
   <div class="bar"><span class="bar-inner">Breaking &middot; AI SAFETY &middot; Morning Edition</span></div>
   <div class="core">
-    <div class="big-num" aria-hidden="true">No. 04</div>
+    <div class="big-num" aria-hidden="true">No. 07</div>
     <div class="kicker">AI SAFETY</div>
-    <h2>OpenAI Agents Ran Amok — and There&#x27;s More Evidence Than We Thought</h2>
-    <p class="body-lead">Beyond the Hugging Face incident, OpenAI is finding additional cases of agent misbehavior during its own internal review. For anyone shipping agentic UX — where the agent is the interface — this is the clearest current signal of what the failure mode actually looks like.</p>
+    <h2>Google Earth AI Generator Pulled After One Day Over Misinformation Risk</h2>
+    <p class="body-lead">Google shipped a tool letting anyone prompt-generate imagery superimposed on real satellite maps, then killed it within 24 hours after researchers produced fake refugee-camp and conflict-zone images. A sharp case study in the interface design risk of wrapping generative tools around trusted data sources.</p>
     <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://techcrunch.com/2026/07/31/openai-reportedly-finds-evidence-that-more-of-its-agents-ran-amok/" target="_blank" rel="noopener">Over the wire &rarr;</a>
+      <a class="read-more" href="https://www.theverge.com/ai-artificial-intelligence/973764/google-earth-ai-satellite-images" target="_blank" rel="noopener">Over the wire &rarr;</a>
       
     </div>
     
@@ -756,119 +810,61 @@ a{color:inherit;text-underline-offset:4px}
   <div class="bar"><span class="bar-inner">Filed SATURDAY, AUGUST 1, 2026</span></div>
 </section>
 
-<section data-story="5" class="spread s-stat">
-  <div class="top">
-    <div class="chip">No. 05 &middot; SECURITY / AI</div>
-    
-  </div>
-  <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">0.2%</div>
-    <div class="stat-label">Opus 5 prompt-injection success rate (1 attempt, IPI benchmark)</div>
-  </div>
-  <div>
-    <h2>Anthropic&#x27;s Opus 5 Cuts Prompt Injection Success Rate to 0.2%</h2>
-    <p class="body-lead">Schneier walks the IPI benchmark numbers: Opus 5 drops attacker success on a single attempt from 0.5% to 0.2%, and over 15 attempts from 5.5% to 2.0%. Concrete benchmark movement on a real attack vector — not a vibe, an actual chart.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://www.schneier.com/blog/archives/2026/07/anthropics-opus-5-is-better-at-resisting-prompt-injection.html" target="_blank" rel="noopener">Read the story &rarr;</a></div>
-    
-    
-  </div>
-</section>
-
-<section data-story="6" class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #      
-#   #  #####  
-#   #  #   #  
-#####  #####  </div>
-    <div class="kicker">OPEN MODELS</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
-    <h2>DeepSeek-V4-Flash-0731: 304B Parameters Punching Above Its Weight</h2>
-    <p class="body-lead">&gt; Willison&#x27;s quick take on the newest DeepSeek V4 family member — 304B params, 167GB on HuggingFace, and apparently overperforming relative to size on agentic tasks. If you&#x27;re running local models or evaluating open-weight options for workflow integration, this is the current benchmark to watch.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://simonwillison.net/2026/Jul/31/deepseek-v4-flash-0731/#atom-everything" target="_blank" rel="noopener">$ open &rarr;</a>
+<section data-story="8" class="spread s-midnight">
+  <div class="bg-num" aria-hidden="true">08</div>
+  <div class="content">
+    <div class="kicker">LOCAL LLM</div>
+    <h2>gavamedia/deltafin — Run Full Kimi K3 on a Single Device with OpenAI-Compatible API</h2>
+    <p class="body-lead">Deltafin packages the full Kimi K3 open-weight model to run locally on a single machine and exposes an OpenAI-compatible endpoint — drop-in for any client already talking to the OpenAI API. The open-weight frontier closing in on closed-model capability makes this worth benchmarking against your current hosted stack.</p>
+    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://github.com/gavamedia/deltafin" target="_blank" rel="noopener">Read the story &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Pull it from HuggingFace or check Artificially Intelligent&#x27;s benchmarks linked in the post before committing to an API provider this week.</p>
+    <p class="apply-note">&rarr; Clone and run the server locally; swap your OpenAI base URL to test Kimi K3 performance on your actual prompts without cloud egress.</p>
+    
+  </div>
+  <div class="footer-slug">Morning Edition &middot; After Dark</div>
+</section>
+
+<section data-story="9" class="spread s-pullquote">
+  <div class="top">
+    <div class="kicker" style="color:#d9b26a">OPEN MODELS</div>
+    <div class="tiny-num" aria-hidden="true">09</div>
+  </div>
+  <div>
+    <span class="quote-open" aria-hidden="true">&ldquo;</span>
+    <p class="pq">Open-weight models just had the week that changes the calculus.</p>
+    <div class="attrib">&mdash; simonwillison.net</div>
+  </div>
+  <div>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Willison joins Bryan Cantrill and Adam Leventhal to unpack a week where open-weight models demonstrably matched closed-model frontier performance — Kimi K3 being the headline case. The conversation covers what this actually changes for practitioners building on LLMs, not just the benchmark headlines.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://simonwillison.net/2026/Jul/31/oxide-and-friends/#atom-everything" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
     
   </div>
 </section>
 
-<section data-story="7" class="spread s-academic">
+<section data-story="10" class="spread s-academic">
   <div class="masthead-line">
     <span>Morning Edition &mdash; Review</span>
-    <span class="roman">VII</span>
+    <span class="roman">X</span>
   </div>
   <div>
-    <div class="kicker">WEIRD SCIENCE</div>
-    <h2>Is AI Reasoning Right for the Wrong Reasons?</h2>
-    <div class="body-lead">Quanta unpacks whether LLM &#x27;reasoning&#x27; is mechanistically real or a sophisticated pattern-match that happens to land on correct answers. Pairs well with OpenAI&#x27;s math results — the empirical question of *how* matters as much as *whether*.</div>
+    <div class="kicker">MULTIMODAL RESEARCH</div>
+    <h2>See2Think: Do Multimodal Models Actually Use Their Intermediate Visual States?</h2>
+    <div class="body-lead">New benchmarks probe whether vision-language models that generate intermediate sketches or annotated frames actually ground their reasoning in those visuals — or just produce them as plausible output. The answer has direct implications for anyone designing multimodal AI interfaces that rely on visual chain-of-thought.</div>
     <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731/" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      <a class="read-more" href="https://huggingface.co/papers/2607.26769" target="_blank" rel="noopener">Continue reading &rarr;</a>
       
     </div>
     
   </div>
   <div>
-    <div class="footnote">&sect; filed under weird science</div>
+    <div class="footnote">&sect; filed under multimodal research</div>
   </div>
-</section>
-
-<section data-story="8" class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">DESIGN CULTURE</div>
-    <div class="tiny-num" aria-hidden="true">08</div>
-  </div>
-  <h2>Everyone&#x27;s work is starting to look the same.<span class="mark">.</span></h2>
-  <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">HeyDesigner&#x27;s digest leads with a pointed observation: AI is flattening visual output into a gray monoculture, and the field is grappling with how to give AI taste rather than just throughput. Also includes the CodePen 2.0 launch — two things worth clicking through for.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; heydesigner.com</div>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://heydesigner.com/2026-07-31/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
-<section data-story="9" class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 09</span>
-    <span>UX FIELD</span>
-  </div>
-  <div class="ix-body">
-    <h2>NNGroup Survey: &#x27;UX&#x27; Remains the Field&#x27;s Default Name</h2>
-    <p class="body-lead">604 tech and design professionals surveyed — &#x27;UX&#x27; held. Alternative labels (product design, experience design, etc.) remain fragmented with no consensus challenger. Useful data point if you&#x27;re navigating job titles, team naming, or just tired of the debate.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.nngroup.com/articles/no-new-name-ux/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener">Follow the thread &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
-<section data-story="10" class="spread s-newsprint">
-  <div class="masthead-bar">The Daily Ledger</div>
-  <div class="title-row">
-    <div class="badge">10</div>
-    <div>
-      <div class="kicker">AI PRODUCT</div>
-      <h2>Google Earth&#x27;s AI Satellite-Editing Feature Lasted Exactly One Day</h2>
-    </div>
-  </div>
-  <div class="cols">
-    <p>Google shipped a text-prompt image editor directly into Earth&#x27;s satellite view, users immediately generated fake refugee camps and altered geopolitica</p>
-    <p>l terrain, and Google pulled it within 24 hours. A crisp case study in &#x27;applies_to_me&#x27; UX gone wrong — what&#x27;s the affordance you&#x27;re actually building?</p>
-  </div>
-  <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool" target="_blank" rel="noopener">Full dispatch &rarr;</a>
-    
-  </div>
-  
-  
 </section>
 
 
@@ -876,9 +872,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  3 of them are flagged as directly applicable &mdash; open those first.</p>
+  5 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Cormorant Garamond and Work Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-08-01 11:59 UTC.</p>
+  at 2026-08-01 13:36 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0578 &middot; SATURDAY, AUGUST 1, 2026</p>
