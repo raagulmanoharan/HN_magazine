@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; WEDNESDAY, AUGUST 5, 2026</title>
-<meta name="description" content="Gray icons, agentic tools, and LLM limits">
+<meta name="description" content="Agents, atoms, and dithered pixels today">
 <meta property="og:title" content="Morning Edition · WEDNESDAY, AUGUST 5, 2026">
-<meta property="og:description" content="Gray icons, agentic tools, and LLM limits">
+<meta property="og:description" content="Agents, atoms, and dithered pixels today">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,500;0,700;0,900;1,500;1,900&family=Noto+Sans:wght@400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -686,15 +686,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; INTERFACE DESIGN</div>
-      <h2 class="cover-title">The Plateau of Sad Gray Icons</h2>
-      <p class="cover-tagline">Gray icons, agentic tools, and LLM limits</p>
-      <p class="body-lead body-lead--wide">Yesenia Pérez-Cruz names the aesthetic disease spreading through AI-native UIs: every surface flattened to soft gray icon containers. A sharp UX critique that connects AI agents&#x27; taste problem to the homogenization of visual interfaces. Required reading if you&#x27;re shipping anything today.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AI TOOLING</div>
+      <h2 class="cover-title">llm-anthropic 0.26: Claude Fable-5, Sonnet-5, Opus-5, and server-side tools</h2>
+      <p class="cover-tagline">Agents, atoms, and dithered pixels today</p>
+      <p class="body-lead body-lead--wide">Simon Willison&#x27;s llm-anthropic plugin now surfaces the new Claude 5 model tier — Fable, Sonnet, Opus — plus server-side tools for WebSearch, WebFetch, CodeExecution, and Anthropic MCP, all accessible from the CLI. If you run agentic workflows via the llm command line, this is a same-day upgrade worth making.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://yeseniaperezcruz.substack.com/p/the-plateau-of-sad-gray-icons" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://simonwillison.net/2026/Aug/4/llm-anthropic/#atom-everything" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Read it before your next design review — it gives you language to push back on gray-washing in your own product.</p>
+      <p class="apply-note">&rarr; Run `pip install -U llm-anthropic` and try `llm -m claude-sonnet-5 &#x27;your prompt&#x27;` with server-side WebSearch today.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -704,50 +704,50 @@ a{color:inherit;text-underline-offset:4px}
 <section data-story="2" class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">AI TOOLING</div>
+    <div class="kicker">DEV TOOLS</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>LLM 0.32: Reasoning Traces, Server-Side Tools, and Smarter Logging</h2>
-    <p class="body-lead">Simon Willison&#x27;s LLM CLI gets its biggest upgrade yet — visible reasoning traces, server-side tools, and a redesigned content-addressable SQL log. Pair it with the companion llm-anthropic 0.26 plugin to get Claude Fable-5, Sonnet-5, Opus-5, plus WebSearch and CodeExecution server-side. Install-and-run today.</p>
+    <h2>llm 0.32: the CLI that glues every LLM you use</h2>
+    <p class="body-lead">The underlying `llm` 0.32 release unlocks the new plugin features above — server-side tool support, multi-modal hooks, and cleaner plugin APIs. Willison&#x27;s detailed post covers what changed; a prerequisite for anyone already in the llm ecosystem.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Run `pip install llm==0.32 llm-anthropic==0.26` and you&#x27;re querying Claude Opus-5 with reasoning traces from the terminal.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Run `pip install -U llm` before updating the anthropic plugin; check the release post for breaking changes in the plugin API.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Aug/4/llm/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="3" class="spread s-academic">
-  <div class="masthead-line">
-    <span>Morning Edition &mdash; Review</span>
-    <span class="roman">III</span>
-  </div>
-  <div>
-    <div class="kicker">AI RESEARCH</div>
-    <h2>Position Paper: LLMs Can&#x27;t Jump</h2>
-    <div class="body-lead">A position paper arguing LLMs hit a fundamental ceiling on certain classes of reasoning — not a capability gap that more compute fixes. Matters to anyone designing AI-assisted UX flows: knowing where models reliably fail shapes which tasks you offload to agents and which you keep under human control.</div>
-    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt" target="_blank" rel="noopener">Continue reading &rarr;</a>
+<section data-story="3" class="spread s-polaroid">
+  <div class="kicker">UX + AI</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">The &#x27;AI can do the UX&#x27; mistake — and what Claude Cowork actually does</div>
+      <div class="photo-caption">No. 03 &middot; heydesigner.com</div>
+    </div>
+    <div>
+      <p class="body-lead">Today&#x27;s HeyDesigner digest covers the &#x27;AI can do the UX&#x27; misconception, a hands-on guide to testing Figma design systems with Claude Code and figma-cli, and a piece on agent-native coding environments. Dense, directly relevant, no filler.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://heydesigner.com/2026-08-05/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
+      </div>
+      <p class="apply-note">&rarr; The Figma design-system testing walkthrough with Claude Code and figma-cli is actionable right now if you have a component library to audit.</p>
       
     </div>
-    
-  </div>
-  <div>
-    <div class="footnote">&sect; filed under ai research</div>
   </div>
 </section>
 
 <section data-story="4" class="spread s-manifesto">
   <div class="top">
-    <div class="kicker">DEV CULTURE</div>
+    <div class="kicker">AGENTIC WORKFLOWS</div>
     <div class="tiny-num" aria-hidden="true">04</div>
   </div>
-  <h2>The repo that invented the borrow checker is now policing borrowed text.<span class="mark">.</span></h2>
+  <h2>Humans and agents should work from the same source of truth.<span class="mark">.</span></h2>
   <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">The Rust core team just formalized rules around LLM-generated contributions to the language itself — a notable first for a major open-source project. The lobste.rs thread is sharp, and the policy itself sets a template others will copy or reject loudly.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; blog.rust-lang.org</div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A field report on moving humans and agents onto a single repo as the shared source of truth, eliminating Jira-plus-AI-connector friction. Part 1 explains the why; Part 2 promises the operating model. Concrete enough to provoke your own workflow audit.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; robotsandpencils.com</div>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://blog.rust-lang.org/inside-rust/2026/08/05/rust-langrust-is-adopting-an-llm-policy/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://robotsandpencils.com/repo-native-delivery/" target="_blank" rel="noopener">Read the story &rarr;</a>
       
     </div>
     
@@ -755,42 +755,21 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section data-story="5" class="spread s-terminal">
-  <div class="window">
-    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #      
-#   #  #####  
-#   #      #  
-#####  #####  </div>
-    <div class="kicker">DEV TOOLS</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
-    <h2>firecrawl/anydoc — Convert Any Office Doc to Clean Markdown, Built in Rust</h2>
-    <p class="body-lead">&gt; Word, PowerPoint, Excel, OpenDocument, EPUB, CSV, PDF — all to clean Markdown, fast, via a Rust library with Node and Python bindings. Exactly the kind of preprocessing layer an agentic pipeline needs before feeding docs to an LLM. No API key, no cloud.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/firecrawl/anydoc" target="_blank" rel="noopener">$ open &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Install via `npm install anydoc` or `pip install anydoc` and drop it in front of any RAG pipeline today.</p>
-    
-  </div>
-</section>
-
-<section data-story="6" class="spread s-blueprint">
+<section data-story="5" class="spread s-blueprint">
   <div class="frame">
     <div class="spec">
-      <span>REV.06</span>
-      <span>OPENAI.COM</span>
-      <span>SHEET 6/10</span>
+      <span>REV.05</span>
+      <span>TECHCRUNCH.COM</span>
+      <span>SHEET 5/10</span>
     </div>
-    <div class="kicker">AI SAFETY</div>
-    <h2>OpenAI: Third-Party Cyber Evaluations of Its Models</h2>
+    <div class="kicker">AI INFRA</div>
+    <h2>Anthropic is building its own AI chip design team</h2>
     <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">06</div>
-      <p class="body-lead">OpenAI publishes a transparency report on recent third-party cybersecurity evaluations — detailing what external red-teamers found and what safeguards are being added. Relevant context for anyone designing agentic systems where model behavior under adversarial prompts matters.</p>
+      <div class="big-n" aria-hidden="true">05</div>
+      <p class="body-lead">Anthropic is now co-designing custom silicon alongside Claude — a significant vertical integration move that will shape inference speed and cost for everything built on the API. The competitive implications for OpenAI and Google&#x27;s TPU advantage are real.</p>
     </div>
     <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://openai.com/index/third-party-cyber-evaluations-involving-openai-models" target="_blank" rel="noopener">View schematic &rarr;</a>
+      <a class="read-more" href="https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/" target="_blank" rel="noopener">View schematic &rarr;</a>
       
     </div>
     
@@ -798,75 +777,87 @@ a{color:inherit;text-underline-offset:4px}
   </div>
 </section>
 
-<section data-story="7" class="spread s-polaroid">
-  <div class="kicker">VISUAL CRAFT</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">Readymag Showcase: Websites That Feel Unmistakably Human</div>
-      <div class="photo-caption">No. 07 &middot; tympanus.net</div>
-    </div>
-    <div>
-      <p class="body-lead">Codrops curates a set of Readymag-built sites that resist template gravity — a counter-argument in motion to the gray-icon plateau. Good fuel for a mood board when you need to justify why craft still matters to a stakeholder who just discovered Figma AI.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://tympanus.net/codrops/2026/08/05/a-canvas-for-individuality-creating-websites-that-feel-unmistakably-human-with-readymag/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        
-      </div>
-      
+<section data-story="6" class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; INDUSTRY SHIFT &middot; Morning Edition</span></div>
+  <div class="core">
+    <div class="big-num" aria-hidden="true">No. 06</div>
+    <div class="kicker">INDUSTRY SHIFT</div>
+    <h2>Google Assistant shuts down on Android next month</h2>
+    <p class="body-lead">Google Assistant is being fully retired from Android phones and tablets — a clean line in the sand for the Gemini era. Worth noting as a case study in how quickly a dominant assistant-era product can be sunset once a successor ships.</p>
+    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.theverge.com/tech/975516/google-assistant-android-phones-tablets-shutdown" target="_blank" rel="noopener">Over the wire &rarr;</a>
       
     </div>
+    
+    
   </div>
+  <div class="bar"><span class="bar-inner">Filed WEDNESDAY, AUGUST 5, 2026</span></div>
 </section>
 
-<section data-story="8" class="spread s-stat">
+<section data-story="7" class="spread s-pullquote">
   <div class="top">
-    <div class="chip">No. 08 &middot; SECURITY RESEARCH</div>
-    
-  </div>
-  <div class="stat-wrap">
-    <div class="stat-value" aria-hidden="true">2M+</div>
-    <div class="stat-label">US vehicles with remotely exploitable anti-theft hardware</div>
-  </div>
-  <div>
-    <h2>Vulnerabilities in KARR Car Anti-Theft: 2M Vehicles Exposed</h2>
-    <p class="body-lead">UC San Diego researchers found that the KARR aftermarket car alarm — installed in over two million US vehicles — can be remotely exploited to track or disable cars. Schneier&#x27;s framing is analytical, not breathless, and the attack surface (always-on cellular, weak auth) is a familiar pattern.</p>
-    <div style="margin-top:24px"><a class="read-more" href="https://www.schneier.com/blog/archives/2026/08/vulnerabilities-in-car-anti-theft-device.html" target="_blank" rel="noopener">Read the story &rarr;</a></div>
-    
-    
-  </div>
-</section>
-
-<section data-story="9" class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 09</span>
-    <span>LANGUAGES</span>
-  </div>
-  <div class="ix-body">
-    <h2>Enabling Polonius: Rust&#x27;s Next Borrow Checker Lands on Nightly</h2>
-    <p class="body-lead">Polonius, the long-awaited rewrite of Rust&#x27;s borrow checker with richer lifetime analysis, is now opt-in on nightly. If you write any Rust in your toolchain or build scripts, this is the moment to experiment — it unlocks patterns the current NLL checker rejects.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://blog.rust-lang.org/2026/08/04/enabling-polonius-alpha-on-nighty/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Add `#![feature(polonius)]` to a nightly Rust project today and run it against code that currently fails lifetime checks.</p>
-    
-  </div>
-</section>
-
-<section data-story="10" class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">DESIGN THINKING</div>
-    <div class="tiny-num" aria-hidden="true">10</div>
+    <div class="kicker" style="color:#d9b26a">SECURITY</div>
+    <div class="tiny-num" aria-hidden="true">07</div>
   </div>
   <div>
     <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">If your kitchen knife kept changing shape, you&#x27;d have to relearn it every time.</p>
-    <div class="attrib">&mdash; stackoverflow.blog</div>
+    <p class="pq">Security is hard — not because people are lazy, but because the surface is infinite.</p>
+    <div class="attrib">&mdash; textslashplain.com</div>
   </div>
   <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">A tight argument from Stack Overflow&#x27;s blog: tool attachment isn&#x27;t irrationality or inertia, it&#x27;s accumulated trust encoded in muscle memory and predictability. As a UX designer shipping tools, this reframes &quot;why won&#x27;t they switch&quot; as a design debt problem, not a user education problem.</p>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">An honest, non-breathless account of why getting security right is structurally hard — useful counterweight to breach-report doom cycles. The Lobsters thread adds sharp practitioner takes worth skimming.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://stackoverflow.blog/2026/07/29/developers-are-attached-to-tools-because-tools-encode-trust/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://textslashplain.com/2026/08/04/security-is-hard-yall/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section data-story="8" class="spread s-riso">
+  <div class="layout">
+    <div class="kicker">VISUAL CRAFT</div>
+    <div class="riso-num" data-n="08" aria-hidden="true">08</div>
+    <h2>Dither It — free browser tool for Floyd-Steinberg, Atkinson, Bayer dithering</h2>
+    <p class="body-lead">Clean browser tool for classic dithering algorithms — Floyd-Steinberg, Atkinson, ordered Bayer — with animated GIF support and batch upload. Immediately useful for lo-fi UI textures, generative art, or any project leaning into print-era aesthetics.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://ditherit.com/" target="_blank" rel="noopener">Pull a proof &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Drop an image at ditherit.com right now — the Atkinson preset is particularly good for high-contrast UI mockup textures.</p>
+    
+  </div>
+</section>
+
+<section data-story="9" class="spread s-stat">
+  <div class="top">
+    <div class="chip">No. 09 &middot; TOOLS + LONGEVITY</div>
+    
+  </div>
+  <div class="stat-wrap">
+    <div class="stat-value" aria-hidden="true">20 years</div>
+    <div class="stat-label">Pandoc in production — still the only converter you need</div>
+  </div>
+  <div>
+    <h2>Twenty Years of Pandoc</h2>
+    <p class="body-lead">John MacFarlane reflects on two decades of Pandoc — the universal document converter that quietly underpins half the technical publishing world. A rare retrospective on a tool that just works, with notes on what architectural choices made it last.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://pandoc.org/twenty-years-of-pandoc.html" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    
+    
+  </div>
+</section>
+
+<section data-story="10" class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 10</span>
+    <span>WEIRD SCIENCE + CULTURE</span>
+  </div>
+  <div class="ix-body">
+    <h2>Ray Bradbury&#x27;s &#x27;There Will Come Soft Rains&#x27; is set today (2026-08-04)</h2>
+    <p class="body-lead">Bradbury&#x27;s 1950 story — a fully automated house continuing its routines after humanity has gone — is set on this exact date. A 76-year-old piece of information design about the loneliness of persistent systems, arriving on schedule.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://short-stories.co/@raybradbury/there-will-come-soft-rains-6k8vr4xxlnmj" target="_blank" rel="noopener">Follow the thread &rarr;</a>
       
     </div>
     
@@ -881,7 +872,7 @@ a{color:inherit;text-underline-offset:4px}
   <p>Ten stories, hand-curated across twenty sources before you were awake.
   4 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Noto Serif Display and Noto Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-08-05 12:49 UTC.</p>
+  at 2026-08-05 14:18 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0582 &middot; WEDNESDAY, AUGUST 5, 2026</p>
