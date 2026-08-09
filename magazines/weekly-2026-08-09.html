@@ -1,0 +1,4813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Morning Edition — Weekly &middot; SUNDAY, AUGUST 9, 2026</title>
+<meta name="description" content="Claude ships, Erdős falls, craft fights back">
+<meta property="og:title" content="Morning Edition — Weekly &middot; SUNDAY, AUGUST 9, 2026">
+<meta property="og:description" content="Claude ships, Erdős falls, craft fights back">
+<meta property="og:type" content="article">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#111;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.spread{position:relative;min-height:100vh;overflow:hidden}
+a{color:inherit}
+</style>
+</head>
+<body>
+<section class="spread spread-cover">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+.spread-cover { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: clamp(24px, 4vw, 64px);
+}
+
+.spread-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 90, 31, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(180, 30, 220, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 30% at 0% 80%, rgba(30, 120, 255, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-cover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 20%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.06) 80%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spread-cover__noise {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.035;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.8) 2px,
+      rgba(255,255,255,0.8) 3px
+    );
+  pointer-events: none;
+}
+
+.spread-cover__top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: clamp(8px, 2vw, 20px);
+}
+
+.spread-cover__meta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spread-cover__issue {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 2.2vw, 22px);
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.35);
+  line-height: 1;
+}
+
+.spread-cover__date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 1.8vw, 20px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.04em;
+}
+
+.spread-cover__rule-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: clamp(80px, 10vh, 120px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 90, 31, 0.5) 30%, rgba(255, 90, 31, 0.8) 50%, rgba(255, 90, 31, 0.5) 70%, transparent 100%);
+  z-index: 2;
+}
+
+.spread-cover__badge {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 1.8vw, 20px);
+  letter-spacing: 0.22em;
+  color: rgba(255, 90, 31, 0.9);
+  text-align: right;
+  line-height: 1.3;
+}
+
+.spread-cover__center {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0;
+}
+
+.spread-cover__eyebrow {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 3.5vw, 38px);
+  letter-spacing: 0.55em;
+  color: rgba(255, 90, 31, 0.75);
+  margin-bottom: clamp(8px, 1.5vh, 18px);
+  text-indent: 0.55em;
+}
+
+.spread-cover__title-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.spread-cover__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 18vw, 220px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  display: block;
+  position: relative;
+  z-index: 2;
+  text-shadow:
+    0 0 80px rgba(255, 90, 31, 0.25),
+    0 0 160px rgba(255, 90, 31, 0.1);
+}
+
+.spread-cover__title-shadow {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 18vw, 220px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.spread-cover__divider-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 3vw, 32px);
+  width: 100%;
+  max-width: 900px;
+  margin: clamp(12px, 2vh, 24px) auto;
+}
+
+.spread-cover__divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+.spread-cover__subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 4.5vw, 56px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.35em;
+  color: rgba(255,255,255,0.55);
+  text-indent: 0.35em;
+  white-space: nowrap;
+}
+
+.spread-cover__tagline-wrap {
+  margin-top: clamp(16px, 3vh, 36px);
+  padding: clamp(10px, 1.5vh, 16px) clamp(20px, 3vw, 40px);
+  border: 1px solid rgba(255, 90, 31, 0.3);
+  position: relative;
+  background: rgba(255, 90, 31, 0.04);
+}
+
+.spread-cover__tagline-wrap::before,
+.spread-cover__tagline-wrap::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: rgba(255, 90, 31, 0.7);
+  border-style: solid;
+}
+
+.spread-cover__tagline-wrap::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.spread-cover__tagline-wrap::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.spread-cover__tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+
+.spread-cover__tagline em {
+  color: rgba(255, 90, 31, 0.95);
+  font-style: normal;
+}
+
+.spread-cover__bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: clamp(8px, 2vw, 20px);
+}
+
+.spread-cover__rule-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(90px, 11vh, 130px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.08) 70%, transparent 100%);
+  z-index: 2;
+}
+
+.spread-cover__footer-left {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 1.6vw, 20px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.08em;
+}
+
+.spread-cover__footer-right {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 1.6vw, 20px);
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.2);
+}
+
+.spread-cover__vert-text {
+  position: absolute;
+  left: clamp(10px, 2vw, 28px);
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 1.4vw, 18px);
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.1);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.spread-cover__vert-text-right {
+  position: absolute;
+  right: clamp(10px, 2vw, 28px);
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.4vw, 18px);
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.08);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.spread-cover__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-cover__orb--1 {
+  width: clamp(300px, 50vw, 700px);
+  height: clamp(300px, 50vw, 700px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255,90,31,0.06) 0%, transparent 70%);
+}
+
+.spread-cover__orb--2 {
+  width: clamp(150px, 25vw, 350px);
+  height: clamp(150px, 25vw, 350px);
+  top: -5%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(180,30,220,0.09) 0%, transparent 70%);
+}
+
+.spread-cover__orb--3 {
+  width: clamp(100px, 18vw, 260px);
+  height: clamp(100px, 18vw, 260px);
+  bottom: 5%;
+  left: 5%;
+  background: radial-gradient(circle, rgba(30,120,255,0.08) 0%, transparent 70%);
+}
+
+@media (max-width: 720px) {
+  .spread-cover__vert-text,
+  .spread-cover__vert-text-right {
+    display: none;
+  }
+
+  .spread-cover__top {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .spread-cover__badge {
+    text-align: left;
+  }
+
+  .spread-cover__subtitle {
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+  }
+
+  .spread-cover__tagline {
+    font-size: clamp(18px, 4.5vw, 22px);
+  }
+
+  .spread-cover__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+</style>
+
+<div class="spread-cover__noise"></div>
+<div class="spread-cover__orb spread-cover__orb--1"></div>
+<div class="spread-cover__orb spread-cover__orb--2"></div>
+<div class="spread-cover__orb spread-cover__orb--3"></div>
+<div class="spread-cover__rule-top"></div>
+<div class="spread-cover__rule-bottom"></div>
+<div class="spread-cover__vert-text">MORNING EDITION — WEEKLY — W32</div>
+<div class="spread-cover__vert-text-right">Sunday, August 9, 2026</div>
+
+<div class="spread-cover__top">
+  <div class="spread-cover__meta-left">
+    <span class="spread-cover__issue">Issue No. W32</span>
+    <span class="spread-cover__date">Sunday, August 9, 2026</span>
+  </div>
+  <div class="spread-cover__badge">Morning Edition<br>Weekly</div>
+</div>
+
+<div class="spread-cover__center">
+  <div class="spread-cover__eyebrow">Morning Edition</div>
+  <div class="spread-cover__title-wrap">
+    <span class="spread-cover__title-shadow" aria-hidden="true">Weekly</span>
+    <span class="spread-cover__title">Weekly</span>
+  </div>
+  <div class="spread-cover__divider-row">
+    <div class="spread-cover__divider-line"></div>
+    <div class="spread-cover__subtitle">No. W32</div>
+    <div class="spread-cover__divider-line"></div>
+  </div>
+  <div class="spread-cover__tagline-wrap">
+    <span class="spread-cover__tagline">
+      "<em>Claude</em> ships, <em>Erdős</em> falls, <em>craft</em> fights back"
+    </span>
+  </div>
+</div>
+
+<div class="spread-cover__bottom">
+  <span class="spread-cover__footer-left">morningedition.weekly</span>
+  <span class="spread-cover__footer-right">Aug 9 — 2026</span>
+</div>
+
+</section>
+<section class="spread spread-1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-1 {
+  min-height: 100vh;
+  background: #0a0a0f;
+  color: #f0ede8;
+  font-family: 'Space Grotesk', sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(24px, 4vw, 56px);
+  box-sizing: border-box;
+}
+
+.spread-1::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: clamp(300px, 60vw, 700px);
+  height: clamp(300px, 60vw, 700px);
+  background: radial-gradient(ellipse at center,
+    rgba(255, 107, 53, 0.18) 0%,
+    rgba(255, 60, 120, 0.10) 40%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-1::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: clamp(200px, 40vw, 500px);
+  height: clamp(200px, 40vw, 500px);
+  background: radial-gradient(ellipse at center,
+    rgba(80, 100, 255, 0.15) 0%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-1 .s1-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid rgba(240, 237, 232, 0.12);
+  padding-bottom: clamp(16px, 2vw, 28px);
+}
+
+.spread-1 .s1-masthead {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 232, 0.4);
+  font-size: 18px;
+}
+
+.spread-1 .s1-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(240, 237, 232, 0.35);
+  letter-spacing: 0.05em;
+}
+
+.spread-1 .s1-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: clamp(32px, 5vw, 72px) 0;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.spread-1 .s1-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #ff6b35;
+  font-weight: 700;
+}
+
+.spread-1 .s1-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #ff6b35;
+}
+
+.spread-1 .s1-number-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(120px, 22vw, 260px);
+  font-weight: 700;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 107, 53, 0.25);
+  position: absolute;
+  right: clamp(-20px, -2vw, -40px);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+  z-index: 1;
+}
+
+.spread-1 .s1-title {
+  font-size: clamp(32px, 5.5vw, 76px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+  position: relative;
+  z-index: 2;
+}
+
+.spread-1 .s1-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff3c78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.spread-1 .s1-blurb {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.6;
+  color: rgba(240, 237, 232, 0.72);
+  max-width: 52ch;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+}
+
+.spread-1 .s1-applies-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 60, 120, 0.10));
+  border: 1px solid rgba(255, 107, 53, 0.45);
+  border-radius: 4px;
+  padding: clamp(14px, 2vw, 20px) clamp(18px, 2.5vw, 28px);
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+}
+
+.spread-1 .s1-applies-badge::before {
+  content: '▶ APPLIES TO YOU';
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #ff6b35;
+}
+
+.spread-1 .s1-applies-text {
+  font-size: 20px;
+  color: rgba(240, 237, 232, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.spread-1 .s1-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(240, 237, 232, 0.10);
+  padding-top: clamp(16px, 2vw, 28px);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.spread-1 .s1-edition-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(240, 237, 232, 0.3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-1 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ff6b35, #ff3c78);
+  color: #0a0a0f;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 3px;
+  transition: opacity 0.2s;
+  position: relative;
+  z-index: 2;
+}
+
+.spread-1 .cta:hover {
+  opacity: 0.85;
+}
+
+.spread-1 .s1-divider-line {
+  position: absolute;
+  left: clamp(24px, 4vw, 56px);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(255, 107, 53, 0.3) 20%,
+    rgba(255, 60, 120, 0.3) 60%,
+    transparent 100%);
+  z-index: 1;
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .spread-1 .s1-main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .spread-1 .s1-kicker {
+    grid-column: 1 / -1;
+  }
+
+  .spread-1 .s1-title {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+
+  .spread-1 .s1-blurb {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    align-self: end;
+    padding-left: clamp(20px, 3vw, 48px);
+    border-left: 1px solid rgba(240, 237, 232, 0.12);
+  }
+
+  .spread-1 .s1-applies-badge {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  .spread-1 .s1-divider-line {
+    display: block;
+  }
+
+  .spread-1 .s1-number-badge {
+    font-size: clamp(120px, 18vw, 220px);
+  }
+}
+</style>
+
+<div class="s1-divider-line"></div>
+
+<header class="s1-header">
+  <div class="s1-masthead">Morning Edition — Weekly</div>
+  <div class="s1-date">Sunday, Aug 9, 2026 · 01 of 10</div>
+</header>
+
+<main class="s1-main">
+  <div class="s1-number-badge">01</div>
+
+  <div class="s1-kicker">AI Shipping</div>
+
+  <h1 class="s1-title">
+    <em>Auto Mode</em><br>Is Now<br>Default
+  </h1>
+
+  <p class="s1-blurb">
+    Anthropic is confident enough in Claude Code's autonomous mode to make it the default for new sessions across paid tiers — no more manual toggle. For anyone already running Claude Code in their workflow, this changes the out-of-box behavior today.
+  </p>
+
+  <div class="s1-applies-badge">
+    <p class="s1-applies-text">Open a new Claude Code session on a Pro/Max/Team plan — auto mode is live now, no config needed.</p>
+  </div>
+</main>
+
+<footer class="s1-footer">
+  <span class="s1-edition-label">Claude Code · Pro · Max · Team</span>
+  <a class="cta" href="https://simonwillison.net/2026/Aug/8/auto-mode/#atom-everything" target="_blank" rel="noopener">Read →</a>
+</footer>
+
+</section>
+<section class="spread spread-2">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-2 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.spread-2 {
+  min-height: 100vh;
+  background-color: #0a0e0d;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(0, 255, 140, 0.04) 39px,
+      rgba(0, 255, 140, 0.04) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(0, 255, 140, 0.03) 39px,
+      rgba(0, 255, 140, 0.03) 40px
+    );
+  font-family: 'Space Grotesk', sans-serif;
+  color: #e8f5ee;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Decorative rust-colored blob */
+.spread-2::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: clamp(280px, 40vw, 560px);
+  height: clamp(280px, 40vw, 560px);
+  background: radial-gradient(ellipse at center,
+    rgba(183, 65, 14, 0.45) 0%,
+    rgba(183, 65, 14, 0.15) 45%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Green glow bottom left */
+.spread-2::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -60px;
+  width: clamp(200px, 30vw, 400px);
+  height: clamp(200px, 30vw, 400px);
+  background: radial-gradient(ellipse at center,
+    rgba(0, 255, 140, 0.12) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-2 .inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 64px) clamp(20px, 5vw, 80px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+.spread-2 .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 255, 140, 0.2);
+  padding-bottom: 14px;
+  margin-bottom: clamp(32px, 5vh, 60px);
+}
+
+.spread-2 .issue-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232, 245, 238, 0.35);
+  letter-spacing: 0.08em;
+}
+
+.spread-2 .kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #00ff8c;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: rgba(0, 255, 140, 0.08);
+  border: 1px solid rgba(0, 255, 140, 0.3);
+  padding: 4px 14px;
+}
+
+/* Main grid */
+.spread-2 .main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vw, 48px);
+  flex: 1;
+}
+
+/* Giant number */
+.spread-2 .spread-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(80px, 18vw, 260px);
+  font-weight: 700;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 255, 140, 0.18);
+  position: absolute;
+  right: clamp(16px, 4vw, 60px);
+  top: 50%;
+  transform: translateY(-60%);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Title block */
+.spread-2 .title-block {
+  position: relative;
+  z-index: 2;
+}
+
+.spread-2 .title-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: #b7410e;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.spread-2 .main-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 5.5vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #e8f5ee;
+  max-width: 820px;
+}
+
+.spread-2 .main-title em {
+  font-style: normal;
+  color: #00ff8c;
+}
+
+.spread-2 .title-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(232, 245, 238, 0.5);
+  margin-top: 10px;
+  letter-spacing: 0.04em;
+}
+
+/* Format tags */
+.spread-2 .format-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: clamp(20px, 3vh, 36px);
+  position: relative;
+  z-index: 2;
+}
+
+.spread-2 .tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  padding: 5px 12px;
+  border: 1px solid rgba(183, 65, 14, 0.5);
+  color: #ff8c5a;
+  background: rgba(183, 65, 14, 0.08);
+  letter-spacing: 0.06em;
+  transition: none;
+}
+
+.spread-2 .tag.rust {
+  border-color: rgba(0, 255, 140, 0.4);
+  color: #00ff8c;
+  background: rgba(0, 255, 140, 0.06);
+}
+
+/* Content row */
+.spread-2 .content-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 40px);
+  position: relative;
+  z-index: 2;
+}
+
+.spread-2 .blurb-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.spread-2 .blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.65;
+  color: rgba(232, 245, 238, 0.78);
+  font-weight: 400;
+  max-width: 680px;
+  border-left: 3px solid #b7410e;
+  padding-left: 20px;
+}
+
+/* Code block style snippet */
+.spread-2 .code-snippet {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(0, 255, 140, 0.15);
+  border-left: 3px solid #00ff8c;
+  padding: 16px 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: #a8ffcf;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.spread-2 .code-snippet .dim {
+  color: rgba(168, 255, 207, 0.35);
+}
+
+.spread-2 .code-snippet .rust-kw {
+  color: #ff8c5a;
+}
+
+/* Applies badge */
+.spread-2 .applies-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 380px;
+}
+
+.spread-2 .applies-badge {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #00ff8c;
+  color: #0a0e0d;
+  padding: 6px 16px;
+  position: relative;
+}
+
+.spread-2 .applies-badge::before {
+  content: '★';
+  margin-right: 8px;
+}
+
+.spread-2 .apply-note {
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(232, 245, 238, 0.6);
+  font-style: italic;
+  padding-left: 4px;
+  border-left: 2px solid rgba(0, 255, 140, 0.3);
+  padding-left: 12px;
+}
+
+/* Bottom bar */
+.spread-2 .bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid rgba(0, 255, 140, 0.15);
+  padding-top: 20px;
+  margin-top: clamp(24px, 4vh, 48px);
+  position: relative;
+  z-index: 2;
+}
+
+.spread-2 .source-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232, 245, 238, 0.3);
+  letter-spacing: 0.06em;
+}
+
+.spread-2 .source-label span {
+  color: rgba(232, 245, 238, 0.55);
+}
+
+.spread-2 .cta {
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a0e0d;
+  background: #00ff8c;
+  padding: 12px 28px;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  position: relative;
+  transition: none;
+}
+
+.spread-2 .cta::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #00ff8c;
+  z-index: -1;
+}
+
+/* Horizontal divider line with label */
+.spread-2 .section-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.spread-2 .section-divider::before,
+.spread-2 .section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 255, 140, 0.12);
+}
+
+.spread-2 .section-divider span {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(232, 245, 238, 0.2);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (min-width: 720px) {
+  .spread-2 .content-row {
+    grid-template-columns: 1.6fr 1fr;
+    align-items: start;
+  }
+
+  .spread-2 .main-grid {
+    gap: clamp(20px, 3vh, 40px);
+  }
+}
+</style>
+
+<div class="inner">
+  <!-- Top bar -->
+  <div class="topbar">
+    <span class="issue-label">MORNING EDITION — 09.AUG.2026</span>
+    <span class="kicker">DEV TOOLS</span>
+  </div>
+
+  <!-- Ghost number -->
+  <div class="spread-num" aria-hidden="true">02</div>
+
+  <!-- Main grid -->
+  <div class="main-grid">
+
+    <!-- Title block -->
+    <div class="title-block">
+      <div class="title-eyebrow">firecrawl / anydoc</div>
+      <h1 class="main-title">Convert <em>Any</em> Office or PDF Format to <em>Clean Markdown.</em> In Rust.</h1>
+      <div class="title-sub">// Node.js · Python · Rust core</div>
+    </div>
+
+    <!-- Format tags -->
+    <div class="format-tags" role="list" aria-label="Supported formats">
+      <span class="tag" role="listitem">WORD</span>
+      <span class="tag" role="listitem">POWERPOINT</span>
+      <span class="tag" role="listitem">EXCEL</span>
+      <span class="tag" role="listitem">ODF</span>
+      <span class="tag" role="listitem">RTF</span>
+      <span class="tag" role="listitem">EPUB</span>
+      <span class="tag" role="listitem">CSV</span>
+      <span class="tag" role="listitem">PDF</span>
+      <span class="tag rust" role="listitem">→ MARKDOWN</span>
+      <span class="tag rust" role="listitem">⚙ RUST CORE</span>
+    </div>
+
+    <div class="section-divider"><span>OVERVIEW</span></div>
+
+    <!-- Content row -->
+    <div class="content-row">
+      <div class="blurb-col">
+        <p class="blurb">Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV, PDF — all piped to clean Markdown via a Rust core with Node.js and Python bindings. This is the missing pre-processing step for any LLM pipeline that needs to ingest client files or legacy docs without paying cloud OCR fees.</p>
+
+        <div class="code-snippet" aria-label="Quick install example">
+          <span class="dim"># npm</span><br>
+          <span class="rust-kw">npm</span> install anydoc<br>
+          <br>
+          <span class="dim"># pip</span><br>
+          <span class="rust-kw">pip</span> install anydoc<br>
+          <br>
+          <span class="dim"># convert.js</span><br>
+          <span class="rust-kw">const</span> { convert } = require(<span style="color:#e8f5ee">'anydoc'</span>)<br>
+          await convert(<span style="color:#e8f5ee">'report.docx'</span>, <span style="color:#e8f5ee">'out.md'</span>)
+        </div>
+      </div>
+
+      <div class="applies-block">
+        <span class="applies-badge">Applies to You</span>
+        <p class="apply-note">Install via npm or pip today and drop it into your existing agentic document-processing pipeline as a local conversion step.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <span class="source-label">GitHub · <span>score 12,425 · 55 comments</span></span>
+    <a class="cta" href="https://github.com/firecrawl/anydoc" target="_blank" rel="noopener">Read →</a>
+  </div>
+</div>
+
+</section>
+<section class="spread spread-3">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-3 {
+  min-height: 100vh;
+  background-color: #050a0e;
+  color: #e8f4f0;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Scanline texture */
+.spread-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 255, 120, 0.015) 3px,
+    rgba(0, 255, 120, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Radial danger glow */
+.spread-3::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 800px;
+  max-height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 30, 60, 0.12) 0%, rgba(255, 30, 60, 0.04) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-3 .s3-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 80px);
+  box-sizing: border-box;
+  gap: 0;
+}
+
+/* Top bar */
+.spread-3 .s3-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 255, 120, 0.25);
+  padding-bottom: clamp(12px, 2vw, 20px);
+  margin-bottom: clamp(32px, 5vw, 60px);
+}
+
+.spread-3 .s3-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: max(11px, clamp(11px, 1.2vw, 14px));
+  color: rgba(0, 255, 120, 0.7);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.spread-3 .s3-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: max(11px, clamp(11px, 1.2vw, 14px));
+  color: rgba(232, 244, 240, 0.35);
+  letter-spacing: 0.1em;
+}
+
+/* Kicker */
+.spread-3 .s3-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: max(18px, clamp(18px, 2vw, 22px));
+  color: rgba(255, 60, 80, 0.9);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: clamp(16px, 3vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-3 .s3-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ff3c50;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(255, 60, 80, 0.8), 0 0 24px rgba(255, 60, 80, 0.4);
+  animation: none;
+  flex-shrink: 0;
+}
+
+/* Number display */
+.spread-3 .s3-numeral {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(120px, 20vw, 280px);
+  font-weight: 700;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 255, 120, 0.15);
+  position: absolute;
+  right: clamp(16px, 4vw, 60px);
+  top: clamp(80px, 15vh, 180px);
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+}
+
+/* Main title */
+.spread-3 .s3-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 6.5vw, 96px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+  margin-bottom: clamp(28px, 4vw, 50px);
+  color: #e8f4f0;
+  position: relative;
+}
+
+.spread-3 .s3-title .s3-highlight {
+  color: transparent;
+  -webkit-text-stroke: 2px #ff3c50;
+  display: inline;
+}
+
+/* Threshold bar — decorative */
+.spread-3 .s3-threshold {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.spread-3 .s3-threshold-bar {
+  flex: 1;
+  max-width: 320px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.spread-3 .s3-threshold-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 82%;
+  background: linear-gradient(90deg, #00ff78 0%, #ff3c50 100%);
+  border-radius: 3px;
+}
+
+.spread-3 .s3-threshold-label {
+  font-family: 'Space Mono', monospace;
+  font-size: max(11px, clamp(11px, 1.2vw, 13px));
+  color: rgba(255, 60, 80, 0.8);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Blurb */
+.spread-3 .s3-blurb {
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 52ch;
+  color: rgba(232, 244, 240, 0.75);
+  margin-bottom: clamp(36px, 5vw, 60px);
+  border-left: 2px solid rgba(0, 255, 120, 0.4);
+  padding-left: clamp(16px, 2vw, 28px);
+}
+
+/* Warning block */
+.spread-3 .s3-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 60, 80, 0.08);
+  border: 1px solid rgba(255, 60, 80, 0.3);
+  border-radius: 4px;
+  padding: 10px 18px;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.spread-3 .s3-warning-icon {
+  font-family: 'Space Mono', monospace;
+  font-size: max(18px, 18px);
+  color: #ff3c50;
+  font-weight: 700;
+}
+
+.spread-3 .s3-warning-text {
+  font-family: 'Space Mono', monospace;
+  font-size: max(18px, clamp(18px, 1.5vw, 20px));
+  color: rgba(255, 60, 80, 0.9);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* CTA */
+.spread-3 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: max(18px, clamp(18px, 2vw, 22px));
+  font-weight: 700;
+  color: #050a0e;
+  background: #00ff78;
+  text-decoration: none;
+  padding: clamp(14px, 2vw, 20px) clamp(24px, 3vw, 40px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+}
+
+.spread-3 .cta:hover {
+  background: #ff3c50;
+  color: #ffffff;
+}
+
+/* Bottom bar */
+.spread-3 .s3-bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 255, 120, 0.15);
+  padding-top: clamp(16px, 2vw, 24px);
+  margin-top: clamp(36px, 5vw, 60px);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-3 .s3-source {
+  font-family: 'Space Mono', monospace;
+  font-size: max(18px, clamp(18px, 1.3vw, 18px));
+  color: rgba(232, 244, 240, 0.3);
+  letter-spacing: 0.06em;
+}
+
+.spread-3 .s3-date {
+  font-family: 'Space Mono', monospace;
+  font-size: max(18px, clamp(18px, 1.3vw, 18px));
+  color: rgba(0, 255, 120, 0.4);
+  letter-spacing: 0.1em;
+}
+
+/* Grid decoration — circuit lines */
+.spread-3 .s3-circuit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(200px, 30vw, 400px);
+  height: clamp(200px, 30vw, 400px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.12;
+}
+
+.spread-3 .s3-circuit::before {
+  content: '';
+  position: absolute;
+  bottom: clamp(24px, 5vw, 80px);
+  left: clamp(24px, 5vw, 80px);
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid #00ff78;
+  border-bottom: 1px solid #00ff78;
+}
+
+.spread-3 .s3-circuit::after {
+  content: '';
+  position: absolute;
+  bottom: clamp(44px, 7vw, 110px);
+  left: clamp(44px, 7vw, 110px);
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  border-left: 1px solid #00ff78;
+  border-bottom: 1px solid #00ff78;
+}
+
+/* Responsive */
+@media (min-width: 720px) {
+  .spread-3 .s3-title {
+    max-width: 18ch;
+  }
+
+  .spread-3 .s3-numeral {
+    right: clamp(40px, 6vw, 100px);
+  }
+}
+
+@media (max-width: 480px) {
+  .spread-3 .s3-numeral {
+    font-size: clamp(80px, 22vw, 160px);
+    opacity: 0.6;
+  }
+}
+</style>
+
+<div class="s3-inner">
+  <!-- Circuit decoration -->
+  <div class="s3-circuit"></div>
+
+  <!-- Ghost numeral -->
+  <span class="s3-numeral" aria-hidden="true">03</span>
+
+  <!-- Top bar -->
+  <div class="s3-topbar">
+    <span class="s3-meta">Morning Edition</span>
+    <span class="s3-issue">Weekly — Sun. Aug 9, 2026</span>
+  </div>
+
+  <!-- Content -->
+  <div class="s3-body">
+    <div class="s3-kicker">AI Safety</div>
+
+    <h1 class="s3-title">
+      OpenAI Paused <span class="s3-highlight">Astra</span> After a Critical Threshold
+    </h1>
+
+    <div class="s3-threshold">
+      <div class="s3-threshold-bar">
+        <div class="s3-threshold-fill"></div>
+      </div>
+      <span class="s3-threshold-label">Capability Threshold Breached</span>
+    </div>
+
+    <p class="s3-blurb">
+      OpenAI's preliminary evals found Astra could independently identify and execute attacks against hardened real-world systems — so they slowed internal development until new safeguards are ready. It's the first time a lab has publicly disclosed pausing a model mid-development for a capability threshold, and the eval methodology is worth reading carefully.
+    </p>
+
+    <div class="s3-warning">
+      <span class="s3-warning-icon">!</span>
+      <span class="s3-warning-text">Development Halted — Safeguards Pending</span>
+    </div>
+
+    <a class="cta" href="https://openai.com/index/responding-next-frontier-critical-cyber-capabilities" target="_blank" rel="noopener">Read → </a>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="s3-bottombar">
+    <span class="s3-source">Source: OpenAI</span>
+    <span class="s3-date">08.09.2026</span>
+  </div>
+</div>
+
+</section>
+<section class="spread spread-4">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-4 { color: #f0eee8;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a1a;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  overflow: hidden;
+  font-family: 'Space Mono', monospace;
+  box-sizing: border-box;
+}
+
+.spread-4 *,
+.spread-4 *::before,
+.spread-4 *::after {
+  box-sizing: border-box;
+}
+
+/* Background hex grid pattern */
+.spread-4::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      60deg,
+      transparent,
+      transparent 38px,
+      rgba(99, 60, 180, 0.08) 38px,
+      rgba(99, 60, 180, 0.08) 40px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      transparent,
+      transparent 38px,
+      rgba(99, 60, 180, 0.08) 38px,
+      rgba(99, 60, 180, 0.08) 40px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 38px,
+      rgba(99, 60, 180, 0.05) 38px,
+      rgba(99, 60, 180, 0.05) 40px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Radial glow */
+.spread-4::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(ellipse at center,
+    rgba(120, 60, 220, 0.25) 0%,
+    rgba(60, 20, 120, 0.15) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-4 .inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 80px) clamp(24px, 5vw, 80px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+/* Kicker */
+.spread-4 .kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-4 .kicker::before {
+  content: '04';
+  display: inline-block;
+  background: rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  color: #a78bfa;
+  padding: 2px 10px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.spread-4 .kicker::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  max-width: 120px;
+  background: linear-gradient(90deg, rgba(167, 139, 250, 0.5), transparent);
+}
+
+/* Hex visual */
+.spread-4 .hex-display {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(20px, 4vw, 60px) 0;
+}
+
+.spread-4 .hex-ring {
+  position: relative;
+  width: clamp(180px, 40vw, 320px);
+  height: clamp(180px, 40vw, 320px);
+}
+
+/* Central hexagon via clip-path */
+.spread-4 .hex-shape {
+  position: absolute;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.spread-4 .hex-shape-1 {
+  inset: 0;
+  background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 50%, #1e1b4b 100%);
+}
+
+.spread-4 .hex-shape-2 {
+  inset: 8%;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+}
+
+.spread-4 .hex-shape-3 {
+  inset: 20%;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+}
+
+.spread-4 .hex-shape-4 {
+  inset: 35%;
+  background: #c4b5fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Number inside innermost hex */
+.spread-4 .hex-number {
+  position: absolute;
+  inset: 35%;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c4b5fd;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(18px, 4vw, 38px);
+  color: #1e1b4b;
+  line-height: 1;
+}
+
+/* Orbiting small hexagons */
+.spread-4 .orbit-hex {
+  position: absolute;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  width: clamp(20px, 5vw, 42px);
+  height: clamp(20px, 5vw, 42px);
+}
+
+.spread-4 .orbit-hex-1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(167, 139, 250, 0.6);
+}
+
+.spread-4 .orbit-hex-2 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(196, 181, 253, 0.4);
+}
+
+.spread-4 .orbit-hex-3 {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: rgba(124, 58, 237, 0.7);
+}
+
+.spread-4 .orbit-hex-4 {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: rgba(139, 92, 246, 0.5);
+}
+
+.spread-4 .orbit-hex-5 {
+  top: 12%;
+  right: 8%;
+  background: rgba(196, 181, 253, 0.3);
+}
+
+.spread-4 .orbit-hex-6 {
+  bottom: 12%;
+  left: 8%;
+  background: rgba(109, 40, 217, 0.6);
+}
+
+/* Title */
+.spread-4 .title-block {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 2vw, 20px);
+}
+
+.spread-4 .title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(36px, 7vw, 96px);
+  line-height: 0.95;
+  color: #f5f0ff;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.spread-4 .title em {
+  font-style: normal;
+  color: #a78bfa;
+  display: inline;
+}
+
+.spread-4 .title .every {
+  font-style: normal;
+  color: #c4b5fd;
+  font-size: clamp(42px, 8vw, 110px);
+}
+
+/* Decorative rule under title */
+.spread-4 .title-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.spread-4 .title-rule::before {
+  content: '';
+  flex: 0 0 clamp(40px, 8vw, 120px);
+  height: 3px;
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+}
+
+.spread-4 .title-rule-dot {
+  width: 8px;
+  height: 8px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: #a78bfa;
+  flex-shrink: 0;
+}
+
+.spread-4 .title-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(167, 139, 250, 0.4), transparent);
+}
+
+/* Blurb */
+.spread-4 .blurb {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.65;
+  color: rgba(220, 210, 255, 0.75);
+  max-width: 680px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.spread-4 .blurb strong {
+  color: #c4b5fd;
+  font-weight: 700;
+}
+
+/* Meta row */
+.spread-4 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  flex-wrap: wrap;
+}
+
+.spread-4 .meta-source {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: rgba(167, 139, 250, 0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-4 .meta-divider {
+  width: 4px;
+  height: 4px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: rgba(167, 139, 250, 0.3);
+  flex-shrink: 0;
+}
+
+.spread-4 .meta-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: rgba(167, 139, 250, 0.6);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  padding: 3px 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* CTA */
+.spread-4 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1e1b4b;
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #7c3aed 100%);
+  padding: clamp(14px, 2vw, 20px) clamp(24px, 4vw, 48px);
+  position: relative;
+  transition: all 0.2s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  align-self: flex-start;
+}
+
+.spread-4 .cta:hover {
+  background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 50%, #a78bfa 100%);
+  letter-spacing: 0.2em;
+}
+
+.spread-4 .cta::after {
+  content: '→';
+  font-size: 1.2em;
+}
+
+/* Bottom stripe */
+.spread-4 .bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    #4c1d95 0%,
+    #7c3aed 25%,
+    #a78bfa 50%,
+    #7c3aed 75%,
+    #4c1d95 100%
+  );
+  z-index: 2;
+}
+
+/* Date label */
+.spread-4 .date-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: rgba(167, 139, 250, 0.35);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: right;
+  margin-top: auto;
+}
+
+/* === Desktop layout === */
+@media (min-width: 720px) {
+  .spread-4 .inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    column-gap: clamp(32px, 5vw, 80px);
+    align-items: start;
+  }
+
+  .spread-4 .kicker {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .spread-4 .title-block {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    align-self: center;
+  }
+
+  .spread-4 .hex-display {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    justify-self: center;
+    padding: 0;
+  }
+
+  .spread-4 .blurb {
+    grid-column: 1 / 2;
+    grid-row: 3;
+  }
+
+  .spread-4 .meta-row {
+    grid-column: 1 / 2;
+    grid-row: 4;
+  }
+
+  .spread-4 .cta {
+    grid-column: 1 / 2;
+    grid-row: 5;
+  }
+
+  .spread-4 .date-label {
+    grid-column: 2 / 3;
+    grid-row: 5;
+    align-self: end;
+  }
+}
+</style>
+
+<div class="inner">
+  <div class="kicker">Weird Math</div>
+
+  <div class="title-block">
+    <h1 class="title">
+      There Are<br>
+      <em>Magic</em><br>
+      Hexagons<br>
+      of <span class="every">Every</span><br>
+      Order
+    </h1>
+    <div class="title-rule">
+      <div class="title-rule-dot"></div>
+    </div>
+  </div>
+
+  <div class="hex-display">
+    <div class="hex-ring">
+      <div class="hex-shape hex-shape-1"></div>
+      <div class="hex-shape hex-shape-2"></div>
+      <div class="hex-shape hex-shape-3"></div>
+      <div class="hex-number">04</div>
+      <div class="orbit-hex orbit-hex-1"></div>
+      <div class="orbit-hex orbit-hex-2"></div>
+      <div class="orbit-hex orbit-hex-3"></div>
+      <div class="orbit-hex orbit-hex-4"></div>
+      <div class="orbit-hex orbit-hex-5"></div>
+      <div class="orbit-hex orbit-hex-6"></div>
+    </div>
+  </div>
+
+  <p class="blurb">
+    For decades only <strong>one non-trivial magic hexagon</strong> was known to exist. Now a constructive proof shows they exist at every order — accessible writing, interactive visualizations, and the kind of recreational math that makes you want to open a notebook.
+  </p>
+
+  <div class="meta-row">
+    <span class="meta-source">gukov.dev</span>
+    <span class="meta-divider"></span>
+    <span class="meta-tag">Recreational Math</span>
+    <span class="meta-divider"></span>
+    <span class="meta-tag">Aug 2026</span>
+  </div>
+
+  <a class="cta" href="https://gukov.dev/math/2026/08/02/new-magic-hexagons.html" target="_blank" rel="noopener">Read </a>
+
+  <div class="date-label">Sunday, August 9, 2026<br>Morning Edition Weekly</div>
+</div>
+
+<div class="bottom-bar"></div>
+</section>
+<section class="spread spread-5">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-5 { color: #f0eee8;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a12;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  box-sizing: border-box;
+}
+
+.spread-5 *,
+.spread-5 *::before,
+.spread-5 *::after {
+  box-sizing: border-box;
+}
+
+/* Background grid pattern */
+.spread-5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(120, 80, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 80, 255, 0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+}
+
+/* Giant glowing orb behind title */
+.spread-5::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(ellipse at center,
+    rgba(100, 50, 255, 0.18) 0%,
+    rgba(60, 20, 180, 0.10) 40%,
+    transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.spread-5 .inner {
+  position: relative;
+  z-index: 2;
+  padding: clamp(32px, 6vw, 80px) clamp(24px, 7vw, 100px);
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Issue number + kicker row */
+.spread-5 .meta-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+  margin-bottom: clamp(24px, 4vw, 56px);
+}
+
+.spread-5 .issue-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(60px, 10vw, 140px);
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(120, 80, 255, 0.4);
+  letter-spacing: -4px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.spread-5 .kicker-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spread-5 .kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: max(18px, clamp(18px, 1.2vw, 18px));
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  font-weight: 700;
+}
+
+.spread-5 .edition {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.1em;
+}
+
+/* Main layout: asymmetric grid */
+.spread-5 .main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+/* Title */
+.spread-5 .title-wrap {
+  position: relative;
+}
+
+.spread-5 .title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(38px, 7.5vw, 112px);
+  line-height: 0.95;
+  color: #ffffff;
+  letter-spacing: -2px;
+  margin: 0;
+  position: relative;
+}
+
+.spread-5 .title .accent {
+  color: transparent;
+  -webkit-text-stroke: 2px #8b5cf6;
+  display: inline;
+}
+
+.spread-5 .title .glow {
+  color: #a78bfa;
+  text-shadow:
+    0 0 40px rgba(139, 92, 246, 0.8),
+    0 0 80px rgba(139, 92, 246, 0.4);
+}
+
+/* Decorative math symbols floating */
+.spread-5 .math-deco {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(80px, 15vw, 220px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(139, 92, 246, 0.15);
+  user-select: none;
+  pointer-events: none;
+  font-style: italic;
+}
+
+/* Bottom row */
+.spread-5 .bottom-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 32px);
+  margin-top: clamp(20px, 3vw, 40px);
+  align-items: start;
+}
+
+/* Blurb */
+.spread-5 .blurb-block {
+  position: relative;
+  padding-left: clamp(16px, 2vw, 28px);
+  border-left: 3px solid #8b5cf6;
+}
+
+.spread-5 .blurb {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(20px, 1.8vw, 22px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Node constellation ornament */
+.spread-5 .constellation {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.spread-5 .nodes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+.spread-5 .node {
+  width: clamp(8px, 1.2vw, 14px);
+  height: clamp(8px, 1.2vw, 14px);
+  border-radius: 50%;
+  background: #8b5cf6;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.8);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.spread-5 .node::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  height: 1px;
+  width: clamp(20px, 3vw, 40px);
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.6), rgba(139, 92, 246, 0.1));
+}
+
+.spread-5 .node:last-child::after {
+  display: none;
+}
+
+.spread-5 .node.dim {
+  background: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 0 6px rgba(139, 92, 246, 0.2);
+}
+
+.spread-5 .node.mid {
+  background: rgba(139, 92, 246, 0.55);
+  box-shadow: 0 0 9px rgba(139, 92, 246, 0.5);
+  width: clamp(6px, 1vw, 11px);
+  height: clamp(6px, 1vw, 11px);
+}
+
+/* CTA */
+.spread-5 .cta-row {
+  margin-top: clamp(24px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 32px);
+  flex-wrap: wrap;
+}
+
+.spread-5 .cta {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 1.6vw, 20px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #0a0a12;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  text-decoration: none;
+  padding: clamp(12px, 1.5vw, 18px) clamp(24px, 3vw, 44px);
+  display: inline-block;
+  position: relative;
+  transition: opacity 0.2s;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.spread-5 .cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.2s;
+  clip-path: inherit;
+}
+
+.spread-5 .cta:hover::before {
+  opacity: 1;
+}
+
+.spread-5 .cta:hover {
+  opacity: 0.9;
+}
+
+.spread-5 .source-note {
+  font-size: 18px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.08em;
+}
+
+/* Horizontal rule */
+.spread-5 .hr {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(139, 92, 246, 0.4) 20%,
+    rgba(139, 92, 246, 0.4) 80%,
+    transparent);
+  margin: clamp(20px, 3vw, 40px) 0;
+}
+
+/* Bottom footer line */
+.spread-5 .footer-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spread-5 .mag-name {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+.spread-5 .date-stamp {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+}
+
+/* Vertical accent bar */
+.spread-5 .vert-accent {
+  position: absolute;
+  right: clamp(24px, 5vw, 72px);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent,
+    rgba(139, 92, 246, 0.25) 20%,
+    rgba(139, 92, 246, 0.25) 80%,
+    transparent);
+  z-index: 1;
+}
+
+/* Second glow orb bottom right */
+.spread-5 .orb2 {
+  position: absolute;
+  bottom: -15%;
+  right: -5%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(ellipse at center,
+    rgba(167, 139, 250, 0.10) 0%,
+    rgba(109, 40, 217, 0.06) 40%,
+    transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsive: desktop */
+@media (min-width: 720px) {
+  .spread-5 .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-5 .bottom-row {
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+  }
+
+  .spread-5 .title {
+    font-size: clamp(52px, 8.5vw, 112px);
+  }
+}
+</style>
+
+<div class="spread-5 orb2" aria-hidden="true"></div>
+<div class="spread-5 vert-accent" aria-hidden="true"></div>
+
+<div class="spread-5 inner">
+
+  <div class="spread-5 meta-row">
+    <div class="spread-5 issue-num">05</div>
+    <div class="spread-5 kicker-block">
+      <span class="spread-5 kicker">⬡ Weird Science</span>
+      <span class="spread-5 edition">Morning Edition — Weekly</span>
+    </div>
+  </div>
+
+  <div class="spread-5 main-grid">
+    <div class="spread-5 title-wrap">
+      <div class="spread-5 math-deco" aria-hidden="true">∞</div>
+      <h1 class="spread-5 title">
+        Why the Legendary<br>
+        <span class="spread-5 glow">Erdős</span> <span class="spread-5 accent">Problems</span><br>
+        Are Falling<br>
+        to AI
+      </h1>
+    </div>
+  </div>
+
+  <div class="spread-5 hr"></div>
+
+  <div class="spread-5 bottom-row">
+    <div class="spread-5 blurb-block">
+      <p class="spread-5 blurb">
+        Erdős-style combinatorial problems are disproportionately yielding to AI solvers — and the researchers interviewed are genuinely puzzled by the selectivity. Not a hype piece. A pattern that reveals how AI's mathematical mind differs from a human one.
+      </p>
+    </div>
+    <div class="spread-5 constellation" aria-label="Node graph illustration">
+      <div class="spread-5 nodes">
+        <div class="spread-5 node dim"></div>
+        <div class="spread-5 node mid"></div>
+        <div class="spread-5 node"></div>
+        <div class="spread-5 node mid"></div>
+        <div class="spread-5 node dim"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spread-5 cta-row">
+    <a class="spread-5 cta" href="https://www.quantamagazine.org/why-the-legendary-erdos-problems-are-falling-to-ai-20260803/" target="_blank" rel="noopener">Read →</a>
+    <span class="spread-5 source-note">Quanta Magazine</span>
+  </div>
+
+  <div class="spread-5 hr"></div>
+
+  <div class="spread-5 footer-line">
+    <span class="spread-5 mag-name">Morning Edition</span>
+    <span class="spread-5 date-stamp">Sunday, Aug 09 2026 — 05 / 10</span>
+  </div>
+
+</div>
+
+</section>
+<section class="spread spread-6">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-6 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f5f0e8;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Mono', monospace;
+  box-sizing: border-box;
+}
+
+.spread-6 *,
+.spread-6 *::before,
+.spread-6 *::after {
+  box-sizing: border-box;
+}
+
+/* Background texture layers */
+.spread-6::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(0,0,0,0.06) 39px,
+      rgba(0,0,0,0.06) 40px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-6::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #1a1a1a;
+  clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 0;
+}
+
+/* Header bar */
+.spread-6 .s6-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(16px, 2.5vw, 28px) clamp(20px, 4vw, 60px);
+  border-bottom: 2px solid #1a1a1a;
+  background: #f5f0e8;
+}
+
+.spread-6 .s6-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1.2vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+.spread-6 .s6-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1.2vw, 13px);
+  color: #888;
+  letter-spacing: 0.1em;
+}
+
+.spread-6 .s6-numeral {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 900;
+  font-style: italic;
+  color: #c9b99a;
+}
+
+/* Main content area */
+.spread-6 .s6-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0;
+  padding: clamp(32px, 5vw, 80px) 0;
+}
+
+/* Left column */
+.spread-6 .s6-left {
+  padding: 0 clamp(20px, 4vw, 60px);
+  position: relative;
+}
+
+.spread-6 .s6-display-word {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(64px, 12vw, 160px);
+  line-height: 0.88;
+  color: #1a1a1a;
+  display: block;
+  position: relative;
+}
+
+.spread-6 .s6-display-word.s6-naked {
+  color: #1a1a1a;
+  -webkit-text-stroke: 2px #1a1a1a;
+}
+
+.spread-6 .s6-display-word.s6-designer {
+  color: transparent;
+  -webkit-text-stroke: 2px #c9b99a;
+  margin-left: clamp(16px, 3vw, 48px);
+}
+
+.spread-6 .s6-scratch {
+  position: absolute;
+  left: clamp(20px, 4vw, 60px);
+  width: clamp(120px, 22vw, 300px);
+  height: 3px;
+  background: #c9b99a;
+  top: calc(50% - 1.5px);
+  transform: rotate(-2deg);
+}
+
+.spread-6 .s6-title-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.3vw, 15px);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: #666;
+  text-transform: uppercase;
+  margin-top: clamp(20px, 3vw, 36px);
+  padding-left: 2px;
+  max-width: 380px;
+  line-height: 1.8;
+}
+
+/* Right column */
+.spread-6 .s6-right {
+  padding: clamp(24px, 4vw, 60px) clamp(20px, 4vw, 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.spread-6 .s6-pullquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 3.2vw, 42px);
+  font-weight: 400;
+  font-style: italic;
+  color: #f5f0e8;
+  line-height: 1.3;
+  position: relative;
+  padding-left: clamp(16px, 2vw, 24px);
+}
+
+.spread-6 .s6-pullquote::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  background: #c9b99a;
+}
+
+.spread-6 .s6-blurb {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(13px, 1.5vw, 18px);
+  font-weight: 400;
+  color: rgba(245, 240, 232, 0.65);
+  line-height: 1.75;
+  max-width: 480px;
+}
+
+/* Decorative big quote mark */
+.spread-6 .s6-bigquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(100px, 18vw, 240px);
+  font-weight: 900;
+  font-style: italic;
+  color: rgba(201, 185, 154, 0.12);
+  line-height: 1;
+  position: absolute;
+  top: clamp(-20px, -2vw, -30px);
+  right: clamp(20px, 4vw, 60px);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* CTA */
+.spread-6 .s6-cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-6 a.cta {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(12px, 1.4vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background: #c9b99a;
+  padding: clamp(10px, 1.5vw, 16px) clamp(20px, 3vw, 36px);
+  text-decoration: none;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+}
+
+.spread-6 a.cta::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #c9b99a;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.spread-6 a.cta:hover {
+  background: #f5f0e8;
+  color: #1a1a1a;
+}
+
+.spread-6 .s6-source {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1.1vw, 13px);
+  color: rgba(245, 240, 232, 0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Footer */
+.spread-6 .s6-footer {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 2px solid #1a1a1a;
+}
+
+.spread-6 .s6-footer-left {
+  background: #f5f0e8;
+  padding: clamp(12px, 2vw, 20px) clamp(20px, 4vw, 60px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spread-6 .s6-footer-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1.1vw, 13px);
+  color: #888;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.spread-6 .s6-footer-edition {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 1.8vw, 20px);
+  font-weight: 900;
+  font-style: italic;
+  color: #1a1a1a;
+}
+
+.spread-6 .s6-footer-right {
+  background: #1a1a1a;
+  padding: clamp(12px, 2vw, 20px) clamp(20px, 4vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.spread-6 .s6-footer-date {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1.1vw, 13px);
+  color: rgba(245, 240, 232, 0.4);
+  letter-spacing: 0.12em;
+}
+
+/* Decorative vertical rule on left */
+.spread-6 .s6-vrule {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  background: #1a1a1a;
+  z-index: 3;
+}
+
+/* Small decorative dot cluster */
+.spread-6 .s6-dots {
+  position: absolute;
+  bottom: clamp(20px, 4vw, 60px);
+  left: clamp(20px, 4vw, 60px);
+  display: grid;
+  grid-template-columns: repeat(5, 8px);
+  grid-template-rows: repeat(4, 8px);
+  gap: 6px;
+  z-index: 2;
+}
+
+.spread-6 .s6-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c9b99a;
+  opacity: 0.6;
+}
+
+/* Responsive: mobile */
+@media (max-width: 720px) {
+  .spread-6::after {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 55%;
+    clip-path: polygon(0% 12%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .spread-6 .s6-main {
+    grid-template-columns: 1fr;
+    padding: clamp(24px, 5vw, 48px) 0;
+    gap: 0;
+  }
+
+  .spread-6 .s6-left {
+    padding-bottom: clamp(32px, 6vw, 60px);
+  }
+
+  .spread-6 .s6-vrule {
+    display: none;
+  }
+
+  .spread-6 .s6-right {
+    padding-top: clamp(28px, 5vw, 52px);
+  }
+
+  .spread-6 .s6-display-word {
+    font-size: clamp(56px, 18vw, 100px);
+  }
+
+  .spread-6 .s6-bigquote {
+    font-size: clamp(80px, 25vw, 140px);
+    top: -10px;
+    right: 10px;
+  }
+
+  .spread-6 .s6-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-6 .s6-footer-right {
+    justify-content: flex-start;
+    padding-top: clamp(8px, 2vw, 14px);
+    padding-bottom: clamp(8px, 2vw, 14px);
+  }
+
+  .spread-6 .s6-dots {
+    display: none;
+  }
+
+  .spread-6 .s6-scratch {
+    width: clamp(80px, 30vw, 200px);
+  }
+}
+</style>
+
+<!-- HEADER -->
+<header class="s6-header">
+  <div style="display:flex;align-items:center;gap:clamp(12px,2vw,28px);">
+    <span class="s6-numeral">06</span>
+    <span class="s6-kicker">Design Culture</span>
+  </div>
+  <span class="s6-issue">Morning Edition — Weekly</span>
+  <span class="s6-issue" style="color:#1a1a1a;">Sunday, Aug 9 2026</span>
+</header>
+
+<!-- MAIN -->
+<main class="s6-main">
+
+  <!-- LEFT: Display type -->
+  <div class="s6-left">
+    <div style="position:relative;display:inline-block;">
+      <span class="s6-display-word s6-naked">The</span>
+      <span class="s6-display-word s6-naked">Naked</span>
+      <span class="s6-scratch"></span>
+      <span class="s6-display-word s6-designer">Designer</span>
+    </div>
+    <p class="s6-title-sub">What Happens When You<br>Can't Hide Behind Craft</p>
+    <div class="s6-vrule"></div>
+    <div class="s6-dots">
+      <div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div>
+      <div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div>
+      <div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div>
+      <div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div><div class="s6-dot"></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Dark panel content -->
+  <div class="s6-right">
+    <span class="s6-bigquote">"</span>
+
+    <blockquote class="s6-pullquote">
+      AI has made execution nearly free — your point of view is all that's left.
+    </blockquote>
+
+    <p class="s6-blurb">
+      Microsoft Design's essay argues that when AI makes execution nearly free, a designer's value collapses into having a genuine point of view — craft was always the alibi, not the asset. Uncomfortable in the right way.
+    </p>
+
+    <div class="s6-cta-wrap">
+      <a class="cta" href="https://microsoft.design/articles/the-naked-designer-what-happens-when-you-cant-hide-behind-craft/" target="_blank" rel="noopener">Read →</a>
+      <span class="s6-source">Microsoft Design</span>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="s6-footer">
+  <div class="s6-footer-left">
+    <span class="s6-footer-edition">Morning Edition</span>
+    <span class="s6-footer-label">6 of 10 this week</span>
+  </div>
+  <div class="s6-footer-right">
+    <span class="s6-footer-date">Spread 06 / 10 &nbsp;·&nbsp; SUNDAY 08.09.2026</span>
+  </div>
+</footer>
+
+</section>
+<section class="spread spread-7">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Grotesk:wght@300;400;700&display=swap');
+
+.spread-7 {
+  min-height: 100vh;
+  background-color: #0e0d0b;
+  color: #f0ebe2;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+  box-sizing: border-box;
+}
+
+.spread-7 *,
+.spread-7 *::before,
+.spread-7 *::after {
+  box-sizing: border-box;
+}
+
+/* Background texture layers */
+.spread-7::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 79px,
+      rgba(240, 235, 226, 0.04) 79px,
+      rgba(240, 235, 226, 0.04) 80px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 79px,
+      rgba(240, 235, 226, 0.03) 79px,
+      rgba(240, 235, 226, 0.03) 80px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-7::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 800px;
+  max-height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180, 140, 90, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header bar */
+.spread-7 .s7-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(18px, 3vw, 36px) clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid rgba(240, 235, 226, 0.12);
+}
+
+.spread-7 .s7-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spread-7 .s7-issue-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.4vw, 22px);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: rgba(240, 235, 226, 0.35);
+}
+
+.spread-7 .s7-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(240, 235, 226, 0.25);
+}
+
+.spread-7 .s7-date {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.4vw, 20px);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(240, 235, 226, 0.35);
+}
+
+.spread-7 .s7-kicker-badge {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.2vw, 19px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #c8a96e;
+  text-transform: uppercase;
+  border: 1px solid rgba(200, 169, 110, 0.4);
+  padding: 5px 14px;
+}
+
+/* Main body */
+.spread-7 .s7-body {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0;
+  padding: clamp(40px, 6vw, 96px) clamp(20px, 5vw, 72px);
+  align-items: start;
+}
+
+.spread-7 .s7-left {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  padding-right: clamp(24px, 4vw, 64px);
+  border-right: 1px solid rgba(240, 235, 226, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: clamp(28px, 3vw, 44px);
+}
+
+.spread-7 .s7-numeral {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(120px, 18vw, 260px);
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(200, 169, 110, 0.4);
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: -0.1em;
+}
+
+.spread-7 .s7-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spread-7 .s7-title-pre {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.2vw, 19px);
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 226, 0.4);
+}
+
+.spread-7 .s7-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(28px, 4.2vw, 66px);
+  line-height: 1.1;
+  color: #f0ebe2;
+  letter-spacing: -0.01em;
+}
+
+.spread-7 .s7-title em {
+  font-style: italic;
+  color: #c8a96e;
+}
+
+.spread-7 .s7-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, #c8a96e, transparent);
+}
+
+.spread-7 .s7-right {
+  grid-column: 2;
+  grid-row: 1;
+  padding-left: clamp(24px, 4vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.spread-7 .s7-blurb {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(20px, 1.7vw, 24px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(240, 235, 226, 0.78);
+}
+
+.spread-7 .s7-concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(240, 235, 226, 0.08);
+  border: 1px solid rgba(240, 235, 226, 0.08);
+}
+
+.spread-7 .s7-concept-item {
+  background: #0e0d0b;
+  padding: clamp(16px, 2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spread-7 .s7-concept-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.1vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(200, 169, 110, 0.7);
+}
+
+.spread-7 .s7-concept-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 1.5vw, 22px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(240, 235, 226, 0.65);
+  line-height: 1.4;
+}
+
+.spread-7 .s7-right-lower {
+  grid-column: 2;
+  grid-row: 2;
+  padding-left: clamp(24px, 4vw, 64px);
+  padding-top: clamp(24px, 3vw, 40px);
+  border-top: 1px solid rgba(240, 235, 226, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.spread-7 .s7-archive-vis {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 60px;
+}
+
+.spread-7 .s7-bar {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(200, 169, 110, 0.7), rgba(200, 169, 110, 0.15));
+  border-radius: 2px 2px 0 0;
+  position: relative;
+}
+
+.spread-7 .s7-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: #c8a96e;
+  border-radius: 2px 2px 0 0;
+}
+
+.spread-7 .s7-bar:nth-child(1) { height: 30%; }
+.spread-7 .s7-bar:nth-child(2) { height: 55%; }
+.spread-7 .s7-bar:nth-child(3) { height: 45%; }
+.spread-7 .s7-bar:nth-child(4) { height: 80%; }
+.spread-7 .s7-bar:nth-child(5) { height: 60%; }
+.spread-7 .s7-bar:nth-child(6) { height: 95%; }
+.spread-7 .s7-bar:nth-child(7) { height: 70%; }
+.spread-7 .s7-bar:nth-child(8) { height: 100%; }
+.spread-7 .s7-bar:nth-child(9) { height: 85%; }
+.spread-7 .s7-bar:nth-child(10) { height: 65%; }
+.spread-7 .s7-bar:nth-child(11) { height: 90%; }
+.spread-7 .s7-bar:nth-child(12) { height: 75%; }
+
+.spread-7 .s7-archive-caption {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.1vw, 18px);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(240, 235, 226, 0.3);
+  text-transform: uppercase;
+}
+
+/* Footer */
+.spread-7 .s7-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(18px, 2.5vw, 32px) clamp(20px, 5vw, 72px);
+  border-top: 1px solid rgba(240, 235, 226, 0.1);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.spread-7 .s7-source-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.1vw, 18px);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(240, 235, 226, 0.28);
+  text-transform: uppercase;
+}
+
+.spread-7 .s7-source-tag strong {
+  color: rgba(240, 235, 226, 0.5);
+  font-weight: 700;
+}
+
+.spread-7 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1.3vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0e0d0b;
+  background: #c8a96e;
+  text-decoration: none;
+  padding: 12px 28px;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.spread-7 .cta::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(200, 169, 110, 0.4);
+  pointer-events: none;
+}
+
+.spread-7 .cta:hover {
+  background: #d4b87c;
+}
+
+.spread-7 .s7-edition-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.2vw, 20px);
+  font-weight: 300;
+  color: rgba(240, 235, 226, 0.22);
+  letter-spacing: 0.05em;
+}
+
+/* Decorative film strip element */
+.spread-7 .s7-filmstrip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: clamp(6px, 0.8vw, 10px);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+
+.spread-7 .s7-filmstrip-seg {
+  flex: 1;
+  border-bottom: 1px solid rgba(200, 169, 110, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spread-7 .s7-filmstrip-seg::after {
+  content: '';
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(200, 169, 110, 0.25);
+}
+
+/* Vertical label */
+.spread-7 .s7-vert-label {
+  position: absolute;
+  right: clamp(20px, 5vw, 72px);
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 1vw, 18px);
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  color: rgba(240, 235, 226, 0.1);
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .spread-7 .s7-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .spread-7 .s7-left {
+    grid-column: 1;
+    grid-row: 1;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(240, 235, 226, 0.1);
+    padding-bottom: clamp(28px, 5vw, 40px);
+  }
+
+  .spread-7 .s7-right {
+    grid-column: 1;
+    grid-row: 2;
+    padding-left: 0;
+    padding-top: clamp(28px, 5vw, 40px);
+  }
+
+  .spread-7 .s7-right-lower {
+    grid-column: 1;
+    grid-row: 3;
+    padding-left: 0;
+  }
+
+  .spread-7 .s7-vert-label {
+    display: none;
+  }
+
+  .spread-7 .s7-numeral {
+    font-size: clamp(100px, 28vw, 180px);
+  }
+
+  .spread-7 .s7-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
+
+<!-- Film strip accent -->
+<div class="s7-filmstrip" aria-hidden="true">
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+  <div class="s7-filmstrip-seg"></div>
+</div>
+
+<!-- Vertical watermark -->
+<span class="s7-vert-label" aria-hidden="true">Morning Edition — Weekly — 09.08.2026</span>
+
+<!-- Header -->
+<header class="s7-header">
+  <div class="s7-meta-left">
+    <span class="s7-issue-num">07 / 10</span>
+    <span class="s7-dot"></span>
+    <span class="s7-date">Sunday, August 9 · 2026</span>
+  </div>
+  <span class="s7-kicker-badge">Interaction Design</span>
+</header>
+
+<!-- Body -->
+<div class="s7-body">
+  <div class="s7-left">
+    <span class="s7-numeral" aria-hidden="true">07</span>
+    <div class="s7-title-block">
+      <span class="s7-title-pre">Case Study</span>
+      <h1 class="s7-title">Designing a <em>Flexible</em> Digital Archive for Chems.Studio's Creative Practice</h1>
+      <div class="s7-divider"></div>
+    </div>
+  </div>
+
+  <div class="s7-right">
+    <p class="s7-blurb">A film-led portfolio built around a quiet, flexible framework — the case study walks through how the team structured a years-spanning archive without imposing visual hierarchy that would date. Strong reference for anyone designing systems that need to hold creative work across time without becoming a gallery template.</p>
+
+    <div class="s7-concept-grid" role="list" aria-label="Key concepts">
+      <div class="s7-concept-item" role="listitem">
+        <span class="s7-concept-label">Approach</span>
+        <span class="s7-concept-desc">No imposed hierarchy</span>
+      </div>
+      <div class="s7-concept-item" role="listitem">
+        <span class="s7-concept-label">Medium</span>
+        <span class="s7-concept-desc">Film-led portfolio</span>
+      </div>
+      <div class="s7-concept-item" role="listitem">
+        <span class="s7-concept-label">Challenge</span>
+        <span class="s7-concept-desc">Years-spanning archive</span>
+      </div>
+      <div class="s7-concept-item" role="listitem">
+        <span class="s7-concept-label">Output</span>
+        <span class="s7-concept-desc">Timeless structure</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="s7-right-lower">
+    <div class="s7-archive-vis" role="img" aria-label="Archive depth visualization — works across time">
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+      <div class="s7-bar"></div>
+    </div>
+    <span class="s7-archive-caption">Works across time — depth without template</span>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="s7-footer">
+  <span class="s7-source-tag">Source: <strong>Codrops</strong> · Design Systems · Archive</span>
+  <a class="cta" href="https://tympanus.net/codrops/2026/08/08/designing-a-flexible-digital-archive-for-chems-studios-creative-practice/" target="_blank" rel="noopener">Read →</a>
+  <span class="s7-edition-mark">Morning Edition — Weekly</span>
+</footer>
+
+</section>
+<section class="spread spread-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-8 {
+  min-height: 100vh;
+  background-color: #0a0e1a;
+  color: #e8eaf0;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background grid texture */
+.spread-8::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 255, 180, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 255, 180, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glowing orb */
+.spread-8::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: clamp(300px, 50vw, 700px);
+  height: clamp(300px, 50vw, 700px);
+  background: radial-gradient(circle, rgba(99,255,180,0.12) 0%, rgba(0,180,255,0.06) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-8 * {
+  box-sizing: border-box;
+}
+
+/* ── HEADER BAR ── */
+.spread-8 .s8-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid rgba(99, 255, 180, 0.18);
+}
+
+.spread-8 .s8-pub {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  letter-spacing: 0.18em;
+  color: rgba(232,234,240,0.4);
+  text-transform: uppercase;
+}
+
+.spread-8 .s8-issue {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  letter-spacing: 0.12em;
+  color: rgba(232,234,240,0.4);
+}
+
+.spread-8 .s8-num-display {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  color: rgba(99,255,180,0.6);
+  letter-spacing: 0.08em;
+}
+
+/* ── MAIN CONTENT ── */
+.spread-8 .s8-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: clamp(32px, 5vw, 72px) clamp(20px, 5vw, 64px);
+  align-content: center;
+}
+
+/* ── KICKER ── */
+.spread-8 .s8-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.3vw, 14px);
+  letter-spacing: 0.22em;
+  color: #63ffb4;
+  text-transform: uppercase;
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spread-8 .s8-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: #63ffb4;
+}
+
+/* ── HEADLINE ── */
+.spread-8 .s8-headline-wrap {
+  position: relative;
+  margin-bottom: clamp(28px, 4vw, 56px);
+}
+
+.spread-8 .s8-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 7.5vw, 108px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: #e8eaf0;
+  margin: 0;
+  position: relative;
+}
+
+.spread-8 .s8-headline .s8-accent-word {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #63ffb4;
+}
+
+.spread-8 .s8-headline .s8-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.spread-8 .s8-headline .s8-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0.05em;
+  left: 0;
+  right: 0;
+  height: 0.08em;
+  background: linear-gradient(90deg, #63ffb4, #00b4ff);
+  border-radius: 2px;
+}
+
+/* ── CODE PILL decoration ── */
+.spread-8 .s8-code-strip {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.1vw, 13px);
+  color: rgba(99,255,180,0.5);
+  letter-spacing: 0.06em;
+  margin-bottom: clamp(20px, 3vw, 36px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.7;
+}
+
+/* ── TWO-COL LOWER ── */
+.spread-8 .s8-lower {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.spread-8 .s8-blurb {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.62;
+  color: rgba(232,234,240,0.78);
+  font-weight: 300;
+  max-width: 680px;
+}
+
+.spread-8 .s8-blurb strong {
+  color: #e8eaf0;
+  font-weight: 500;
+}
+
+/* ── APPLIES BADGE ── */
+.spread-8 .s8-applies-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 560px;
+}
+
+.spread-8 .s8-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #63ffb4 0%, #00b4ff 100%);
+  color: #0a0e1a;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: clamp(11px, 1.2vw, 13px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 4px;
+  width: fit-content;
+  position: relative;
+}
+
+.spread-8 .s8-badge::before {
+  content: '▶';
+  font-size: 9px;
+}
+
+.spread-8 .s8-apply-note {
+  font-size: clamp(18px, 1.8vw, 20px);
+  line-height: 1.5;
+  color: rgba(232,234,240,0.62);
+  border-left: 2px solid rgba(99,255,180,0.35);
+  padding-left: 16px;
+  font-style: italic;
+}
+
+/* ── BROWSER GRAPHIC ── */
+.spread-8 .s8-visual {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin-top: clamp(20px, 3vw, 0px);
+}
+
+.spread-8 .s8-terminal {
+  background: rgba(14, 20, 36, 0.9);
+  border: 1px solid rgba(99,255,180,0.22);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(99,255,180,0.06), 0 24px 48px rgba(0,0,0,0.5);
+}
+
+.spread-8 .s8-terminal-bar {
+  background: rgba(99,255,180,0.08);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(99,255,180,0.12);
+}
+
+.spread-8 .s8-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.spread-8 .s8-dot-r { background: rgba(255,95,87,0.7); }
+.spread-8 .s8-dot-y { background: rgba(255,189,46,0.7); }
+.spread-8 .s8-dot-g { background: rgba(99,255,180,0.7); }
+
+.spread-8 .s8-terminal-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: rgba(232,234,240,0.35);
+  margin-left: 8px;
+  letter-spacing: 0.06em;
+}
+
+.spread-8 .s8-terminal-body {
+  padding: 20px 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(12px, 1.3vw, 14px);
+  line-height: 1.9;
+  color: rgba(232,234,240,0.8);
+}
+
+.spread-8 .s8-line-cmd { color: #63ffb4; }
+.spread-8 .s8-line-muted { color: rgba(232,234,240,0.35); }
+.spread-8 .s8-line-strike {
+  color: rgba(255,95,87,0.7);
+  text-decoration: line-through;
+}
+.spread-8 .s8-line-ok { color: #63ffb4; }
+.spread-8 .s8-line-warn { color: rgba(255,189,46,0.9); }
+.spread-8 .s8-line-info { color: rgba(0,180,255,0.9); }
+
+/* ── DIVIDER BARS ── */
+.spread-8 .s8-bars {
+  display: flex;
+  gap: 4px;
+  margin: clamp(24px, 3vw, 40px) 0 clamp(16px, 2vw, 28px);
+}
+
+.spread-8 .s8-bar {
+  height: 4px;
+  border-radius: 2px;
+  flex: 1;
+  background: rgba(99,255,180,0.15);
+}
+.spread-8 .s8-bar:nth-child(1) { background: #63ffb4; flex: 3; }
+.spread-8 .s8-bar:nth-child(2) { background: #00b4ff; flex: 2; }
+.spread-8 .s8-bar:nth-child(3) { background: rgba(99,255,180,0.25); flex: 5; }
+
+/* ── FOOTER ── */
+.spread-8 .s8-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: clamp(16px, 2.5vw, 24px) clamp(20px, 5vw, 64px);
+  border-top: 1px solid rgba(99, 255, 180, 0.12);
+}
+
+.spread-8 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1.5px solid #63ffb4;
+  color: #63ffb4;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: clamp(13px, 1.4vw, 16px);
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.2s;
+}
+
+.spread-8 .cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #63ffb4;
+  transform: translateX(-101%);
+  transition: transform 0.25s ease;
+  z-index: -1;
+}
+
+.spread-8 .cta:hover { color: #0a0e1a; }
+.spread-8 .cta:hover::before { transform: translateX(0); }
+
+.spread-8 .s8-footer-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.1vw, 13px);
+  color: rgba(232,234,240,0.28);
+  letter-spacing: 0.1em;
+}
+
+/* ── LARGE BREAKPOINT ── */
+@media (min-width: 720px) {
+  .spread-8 .s8-lower {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .spread-8 .s8-applies-wrap {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .spread-8 .s8-lower {
+    grid-template-columns: 5fr 4fr;
+  }
+
+  .spread-8 .s8-headline {
+    font-size: clamp(72px, 8.5vw, 120px);
+  }
+}
+</style>
+
+<!-- HEADER -->
+<header class="s8-header">
+  <span class="s8-pub">Morning Edition — Weekly&ensp;/&ensp;Sun, Aug 9, 2026</span>
+  <span class="s8-num-display">08 / 10</span>
+  <span class="s8-issue">Frontend</span>
+</header>
+
+<!-- MAIN -->
+<main class="s8-main">
+  <div class="s8-kicker">Frontend Craft</div>
+
+  <div class="s8-headline-wrap">
+    <h1 class="s8-headline">
+      Ship&nbsp;<span class="s8-accent-word">Less</span><br>
+      Java<span class="s8-highlight">Script</span>
+    </h1>
+  </div>
+
+  <div class="s8-code-strip">
+    npx baseline-audit &nbsp;·&nbsp; package.json &nbsp;·&nbsp; 12 candidates found &nbsp;·&nbsp; ~38kb removable
+  </div>
+
+  <div class="s8-bars">
+    <div class="s8-bar"></div>
+    <div class="s8-bar"></div>
+    <div class="s8-bar"></div>
+  </div>
+
+  <div class="s8-lower">
+    <div class="s8-left-col">
+      <p class="s8-blurb">
+        A practical guide to auditing your npm dependencies against what the web platform now handles natively —
+        the gap between <strong>'you need a library for this'</strong> and
+        <strong>'the browser does this'</strong> has been quietly closing.
+        Concrete and immediately applicable to any design-system or component-library you're maintaining.
+      </p>
+
+      <div class="s8-applies-wrap" style="margin-top: clamp(24px,3vw,40px)">
+        <div class="s8-badge">Applies to you</div>
+        <p class="s8-apply-note">
+          Run the Baseline compatibility audit against your current project's package.json today and identify candidates for removal.
+        </p>
+      </div>
+    </div>
+
+    <div class="s8-visual">
+      <div class="s8-terminal">
+        <div class="s8-terminal-bar">
+          <span class="s8-dot s8-dot-r"></span>
+          <span class="s8-dot s8-dot-y"></span>
+          <span class="s8-dot s8-dot-g"></span>
+          <span class="s8-terminal-title">baseline-audit · package.json</span>
+        </div>
+        <div class="s8-terminal-body">
+          <div class="s8-line-cmd">$ npx baseline-audit .</div>
+          <div class="s8-line-muted">Scanning 148 dependencies…</div>
+          <div>&nbsp;</div>
+          <div class="s8-line-strike">✗ scroll-into-view-if-needed</div>
+          <div class="s8-line-info">&nbsp;&nbsp;→ element.scrollIntoView()</div>
+          <div class="s8-line-strike">✗ classnames</div>
+          <div class="s8-line-info">&nbsp;&nbsp;→ clsx built-in or template literal</div>
+          <div class="s8-line-strike">✗ object-assign</div>
+          <div class="s8-line-info">&nbsp;&nbsp;→ Object.assign() Baseline 2017</div>
+          <div class="s8-line-strike">✗ resize-observer-polyfill</div>
+          <div class="s8-line-info">&nbsp;&nbsp;→ ResizeObserver Baseline 2023</div>
+          <div>&nbsp;</div>
+          <div class="s8-line-warn">⚠ 12 candidates identified</div>
+          <div class="s8-line-ok">✓ ~38.4 kb potential savings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="s8-footer">
+  <a class="cta" href="https://smashingmagazine.com/2026/08/how-baseline-can-help-ship-less-javascript/" target="_blank" rel="noopener">Read →</a>
+  <span class="s8-footer-meta">Smashing Magazine &nbsp;·&nbsp; 2026</span>
+</footer>
+
+</section>
+<section class="spread spread-9">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+.spread-9 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0f;
+  color: #e8e0d0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'IBM Plex Mono', monospace;
+  box-sizing: border-box;
+}
+
+/* Background grid pattern */
+.spread-9::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,60,30,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,60,30,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Red diagonal slash */
+.spread-9::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 55%;
+  height: 130%;
+  background: linear-gradient(135deg, transparent 0%, transparent 48%, rgba(200,30,10,0.12) 48%, rgba(200,30,10,0.12) 52%, transparent 52%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-9 * {
+  box-sizing: border-box;
+}
+
+/* ---- Header bar ---- */
+.spread-9 .s9-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid rgba(255,60,30,0.3);
+}
+
+.spread-9 .s9-issue {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: max(18px, 1.1vw);
+  letter-spacing: 0.18em;
+  color: rgba(232,224,208,0.4);
+  text-transform: uppercase;
+}
+
+.spread-9 .s9-issue span {
+  color: rgba(255,60,30,0.7);
+}
+
+.spread-9 .s9-masthead {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(18px, 1.4vw, 20px);
+  letter-spacing: 0.06em;
+  color: rgba(232,224,208,0.25);
+  text-transform: uppercase;
+}
+
+/* ---- Main content ---- */
+.spread-9 .s9-main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: clamp(32px, 6vw, 80px) clamp(20px, 5vw, 72px);
+  gap: clamp(24px, 4vw, 48px);
+  align-content: start;
+}
+
+/* Kicker */
+.spread-9 .s9-kicker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.spread-9 .s9-kicker-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(18px, 1.5vw, 20px);
+  letter-spacing: 0.3em;
+  color: #ff3c1e;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.spread-9 .s9-kicker-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,60,30,0.8), transparent);
+}
+
+.spread-9 .s9-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(18px, 1.2vw, 20px);
+  color: rgba(255,60,30,0.35);
+  letter-spacing: 0.1em;
+}
+
+/* Big display title */
+.spread-9 .s9-title-wrap {
+  position: relative;
+}
+
+.spread-9 .s9-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 11vw, 160px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: #e8e0d0;
+  margin: 0;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.spread-9 .s9-title em {
+  font-style: normal;
+  color: #ff3c1e;
+  display: inline;
+}
+
+/* Glitch/shadow effect on title */
+.spread-9 .s9-title-ghost {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 11vw, 160px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,60,30,0.15);
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* Data redaction bars on title */
+.spread-9 .s9-redact {
+  display: inline-block;
+  background: #ff3c1e;
+  height: 0.85em;
+  vertical-align: middle;
+  border-radius: 2px;
+  position: relative;
+  top: -0.05em;
+}
+
+/* Body + sidebar split */
+.spread-9 .s9-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.spread-9 .s9-blurb {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.65;
+  color: rgba(232,224,208,0.75);
+  max-width: 72ch;
+  border-left: 3px solid rgba(255,60,30,0.4);
+  padding-left: clamp(16px, 2vw, 28px);
+}
+
+.spread-9 .s9-blurb strong {
+  color: #e8e0d0;
+  font-weight: 700;
+}
+
+/* Data transaction visual */
+.spread-9 .s9-data-flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: clamp(8px, 1.5vw, 16px);
+}
+
+.spread-9 .s9-node {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(18px, 1.2vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1px solid;
+  position: relative;
+}
+
+.spread-9 .s9-node--you {
+  border-color: rgba(232,224,208,0.4);
+  color: rgba(232,224,208,0.7);
+}
+
+.spread-9 .s9-node--bank {
+  border-color: rgba(232,224,208,0.3);
+  color: rgba(232,224,208,0.5);
+}
+
+.spread-9 .s9-node--broker {
+  border-color: rgba(255,60,30,0.5);
+  color: rgba(255,60,30,0.8);
+  background: rgba(255,60,30,0.06);
+}
+
+.spread-9 .s9-node--ice {
+  border-color: #ff3c1e;
+  color: #ff3c1e;
+  background: rgba(255,60,30,0.12);
+  font-style: italic;
+}
+
+.spread-9 .s9-arrow {
+  font-size: clamp(18px, 1.4vw, 22px);
+  color: rgba(255,60,30,0.5);
+  font-weight: 700;
+}
+
+.spread-9 .s9-flow-label {
+  width: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(18px, 1.1vw, 18px);
+  color: rgba(232,224,208,0.3);
+  letter-spacing: 0.12em;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Warning bar */
+.spread-9 .s9-warning {
+  background: rgba(255,60,30,0.08);
+  border: 1px solid rgba(255,60,30,0.25);
+  border-left: 4px solid #ff3c1e;
+  padding: clamp(14px, 2vw, 22px) clamp(16px, 2.5vw, 28px);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.spread-9 .s9-warning-icon {
+  font-size: clamp(22px, 2.5vw, 32px);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.spread-9 .s9-warning-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(18px, 1.4vw, 20px);
+  line-height: 1.55;
+  color: rgba(232,224,208,0.7);
+  font-style: italic;
+}
+
+.spread-9 .s9-warning-text strong {
+  color: #ff3c1e;
+  font-style: normal;
+}
+
+/* ---- Footer ---- */
+.spread-9 .s9-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 72px);
+  border-top: 1px solid rgba(255,60,30,0.2);
+}
+
+.spread-9 .s9-source {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(18px, 1.1vw, 18px);
+  color: rgba(232,224,208,0.3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-9 .s9-source span {
+  color: rgba(232,224,208,0.5);
+}
+
+.spread-9 a.cta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: #ff3c1e;
+  text-decoration: none;
+  padding: 12px 32px;
+  display: inline-block;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.spread-9 a.cta::before {
+  content: '';
+  position: absolute;
+  inset: 3px -3px -3px 3px;
+  border: 1px solid rgba(255,60,30,0.4);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.spread-9 a.cta:hover {
+  background: #e8e0d0;
+  color: #0a0a0f;
+}
+
+/* Large decorative 09 */
+.spread-9 .s9-deco-num {
+  position: absolute;
+  bottom: clamp(60px, 10vh, 120px);
+  right: clamp(20px, 4vw, 60px);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(120px, 22vw, 320px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,60,30,0.08);
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  letter-spacing: -0.04em;
+}
+
+/* Scanline overlay */
+.spread-9 .s9-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.08) 3px,
+    rgba(0,0,0,0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ---- Responsive: wider screens ---- */
+@media (min-width: 720px) {
+  .spread-9 .s9-content-grid {
+    grid-template-columns: 3fr 2fr;
+    gap: clamp(32px, 4vw, 56px);
+  }
+
+  .spread-9 .s9-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 8px;
+  }
+
+  .spread-9 .s9-data-flow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .spread-9 .s9-arrow-v {
+    display: block;
+    font-size: clamp(20px, 2vw, 28px);
+    color: rgba(255,60,30,0.5);
+    font-weight: 700;
+    padding-left: 20px;
+  }
+
+  .spread-9 .s9-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 719px) {
+  .spread-9 .s9-arrow-v {
+    display: none;
+  }
+
+  .spread-9 .s9-sidebar {
+    display: contents;
+  }
+}
+</style>
+
+<!-- Decorative -->
+<div class="s9-scanlines" aria-hidden="true"></div>
+<div class="s9-deco-num" aria-hidden="true">09</div>
+
+<!-- Header -->
+<header class="s9-header">
+  <div class="s9-issue">Morning Edition &mdash; <span>Aug 9, 2026</span> &mdash; Weekly</div>
+  <div class="s9-masthead">09 / 10</div>
+</header>
+
+<!-- Main -->
+<main class="s9-main">
+
+  <!-- Kicker -->
+  <div class="s9-kicker">
+    <span class="s9-kicker-label">Surveillance</span>
+    <span class="s9-kicker-line"></span>
+    <span class="s9-num">#09</span>
+  </div>
+
+  <!-- Title -->
+  <div class="s9-title-wrap">
+    <p class="s9-title-ghost" aria-hidden="true">ICE IS BUYING YOUR<br>CREDIT CARD DATA</p>
+    <h1 class="s9-title">ICE IS BUYING YOUR<br><em>CREDIT CARD</em> DATA</h1>
+  </div>
+
+  <!-- Content grid -->
+  <div class="s9-content-grid">
+
+    <!-- Left: blurb + warning -->
+    <div class="s9-left">
+      <p class="s9-blurb">
+        ICE is purchasing the <strong>personal data you provided</strong> when opening a credit card — routed through data brokers to sidestep legal oversight. The mechanism is the same one that makes most "private" financial data <strong>effectively public to anyone willing to pay.</strong>
+      </p>
+
+      <div class="s9-warning" style="margin-top: clamp(20px,3vw,36px);">
+        <div class="s9-warning-icon">⚠</div>
+        <div class="s9-warning-text">
+          <strong>The loophole:</strong> agencies avoid privacy law restrictions by purchasing data through brokers rather than subpoenaing it directly — no warrant, no oversight, no notification.
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: data flow sidebar -->
+    <div class="s9-sidebar">
+      <div class="s9-data-flow">
+        <div class="s9-node s9-node--you">You</div>
+        <span class="s9-arrow">→</span>
+        <span class="s9-arrow-v">↓</span>
+        <div class="s9-node s9-node--bank">Bank / Card Issuer</div>
+        <span class="s9-arrow">→</span>
+        <span class="s9-arrow-v">↓</span>
+        <div class="s9-node s9-node--broker">Data Broker</div>
+        <span class="s9-arrow">→</span>
+        <span class="s9-arrow-v">↓</span>
+        <div class="s9-node s9-node--ice">ICE</div>
+        <span class="s9-flow-label">No warrant. No subpoena. Just payment.</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="s9-footer">
+  <div class="s9-source">Via <span>Schneier on Security</span></div>
+  <a class="cta" href="https://www.schneier.com/blog/archives/2026/08/ice-is-buying-access-to-credit-card-records.html" target="_blank" rel="noopener">Read →</a>
+</footer>
+
+</section>
+<section class="spread spread-10">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+.spread-10 {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #e8e8e0;
+  font-family: 'Space Grotesk', sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background grid texture */
+.spread-10::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Radial glow */
+.spread-10::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: clamp(300px, 60vw, 800px);
+  height: clamp(300px, 60vw, 800px);
+  background: radial-gradient(circle, rgba(0,255,136,0.07) 0%, rgba(0,180,255,0.04) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spread-10 * {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.spread-10 .s10-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 5vw, 60px);
+  border-bottom: 1px solid rgba(0,255,136,0.15);
+}
+
+.spread-10 .s10-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  letter-spacing: 0.25em;
+  color: #00ff88;
+  text-transform: uppercase;
+}
+
+.spread-10 .s10-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.2vw, 13px);
+  color: rgba(232,232,224,0.3);
+  letter-spacing: 0.1em;
+}
+
+/* MAIN BODY */
+.spread-10 .s10-body {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: clamp(32px, 6vw, 80px) clamp(20px, 5vw, 60px);
+  align-content: center;
+}
+
+/* The big versus display */
+.spread-10 .s10-versus {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 3vw, 40px);
+  margin-bottom: clamp(24px, 4vw, 48px);
+  flex-wrap: wrap;
+}
+
+.spread-10 .s10-tech {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(42px, 10vw, 130px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.spread-10 .s10-tech--redis {
+  color: rgba(232,232,224,0.15);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255,80,80,0.6);
+  text-decoration-thickness: 3px;
+}
+
+.spread-10 .s10-tech--mysql {
+  color: #00ff88;
+  text-shadow:
+    0 0 40px rgba(0,255,136,0.3),
+    0 0 80px rgba(0,255,136,0.1);
+}
+
+.spread-10 .s10-arrow {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(24px, 5vw, 64px);
+  color: rgba(0,255,136,0.4);
+  flex-shrink: 0;
+}
+
+/* Title */
+.spread-10 .s10-title {
+  font-size: clamp(22px, 3.5vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #e8e8e0;
+  max-width: 820px;
+  margin-bottom: clamp(20px, 3vw, 36px);
+}
+
+.spread-10 .s10-title em {
+  font-style: normal;
+  color: #00ff88;
+}
+
+/* Horizontal rule */
+.spread-10 .s10-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,255,136,0.4) 0%, rgba(0,180,255,0.2) 50%, transparent 100%);
+  margin-bottom: clamp(20px, 3vw, 36px);
+  border: none;
+}
+
+/* Bottom grid: blurb + tags */
+.spread-10 .s10-lower {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: start;
+}
+
+.spread-10 .s10-blurb {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.65;
+  color: rgba(232,232,224,0.7);
+  font-weight: 300;
+  max-width: 660px;
+}
+
+.spread-10 .s10-blurb strong {
+  color: #e8e8e0;
+  font-weight: 500;
+}
+
+/* Tags/pills sidebar */
+.spread-10 .s10-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.spread-10 .s10-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(10px, 1vw, 12px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid rgba(0,255,136,0.25);
+  color: rgba(0,255,136,0.6);
+  white-space: nowrap;
+}
+
+.spread-10 .s10-tag--active {
+  background: rgba(0,255,136,0.08);
+  border-color: rgba(0,255,136,0.5);
+  color: #00ff88;
+}
+
+/* Score bar */
+.spread-10 .s10-score-block {
+  margin-top: clamp(24px, 3vw, 40px);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.spread-10 .s10-score-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.1vw, 13px);
+  color: rgba(232,232,224,0.35);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.spread-10 .s10-score-bar {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.spread-10 .s10-score-pip {
+  width: clamp(6px, 0.8vw, 9px);
+  height: clamp(18px, 2vw, 24px);
+  background: rgba(0,255,136,0.15);
+  display: inline-block;
+}
+
+.spread-10 .s10-score-pip.filled {
+  background: #00ff88;
+  box-shadow: 0 0 6px rgba(0,255,136,0.5);
+}
+
+.spread-10 .s10-score-num {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(18px, 2vw, 22px);
+  color: #00ff88;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+/* FOOTER */
+.spread-10 .s10-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(16px, 2.5vw, 28px) clamp(20px, 5vw, 60px);
+  border-top: 1px solid rgba(0,255,136,0.12);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.spread-10 .s10-edition {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(11px, 1.1vw, 13px);
+  color: rgba(232,232,224,0.25);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.spread-10 .cta {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a0a0f;
+  background: #00ff88;
+  text-decoration: none;
+  padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 36px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(0,255,136,0.2);
+}
+
+.spread-10 .cta:hover {
+  background: #33ffaa;
+  box-shadow: 0 0 32px rgba(0,255,136,0.4);
+}
+
+/* Decorative corner */
+.spread-10 .s10-corner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(100px, 20vw, 240px);
+  height: clamp(100px, 20vw, 240px);
+  border-right: 1px solid rgba(0,180,255,0.08);
+  border-top: 1px solid rgba(0,180,255,0.08);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.spread-10 .s10-corner::before {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  border-right: 1px solid rgba(0,180,255,0.05);
+  border-top: 1px solid rgba(0,180,255,0.05);
+}
+
+/* Spread number watermark */
+.spread-10 .s10-watermark {
+  position: absolute;
+  bottom: clamp(60px, 8vw, 100px);
+  right: clamp(20px, 5vw, 60px);
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(80px, 18vw, 220px);
+  font-weight: 700;
+  color: rgba(0,255,136,0.03);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .spread-10 .s10-lower {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-10 .s10-tags {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .spread-10 .s10-tech {
+    font-size: clamp(38px, 14vw, 72px);
+  }
+
+  .spread-10 .s10-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
+
+<div class="s10-watermark">10</div>
+<div class="s10-corner"></div>
+
+<header class="s10-header">
+  <span class="s10-kicker">// Systems</span>
+  <span class="s10-meta">Morning Edition · Aug 9, 2026 · 10 / 10</span>
+</header>
+
+<main class="s10-body">
+  <div class="s10-versus">
+    <span class="s10-tech s10-tech--redis">Redis</span>
+    <span class="s10-arrow">→</span>
+    <span class="s10-tech s10-tech--mysql">MySQL</span>
+  </div>
+
+  <h1 class="s10-title">
+    Shopify Replaced Redis with MySQL for<br>
+    Inventory Reservations — <em>and It Scaled</em>
+  </h1>
+
+  <hr class="s10-rule">
+
+  <div class="s10-lower">
+    <div>
+      <p class="s10-blurb">
+        Shopify's engineering post on migrating high-throughput inventory reservations from Redis to MySQL is a real-world <strong>counter-narrative to the 'you need a cache for that' orthodoxy</strong> — they detail the transaction patterns, locking strategy, and scale results. Good reading before defaulting to Redis in your next agentic backend.
+      </p>
+      <div class="s10-score-block">
+        <span class="s10-score-label">HN Score</span>
+        <div class="s10-score-bar">
+          <span class="s10-score-pip filled"></span>
+          <span class="s10-score-pip filled"></span>
+          <span class="s10-score-pip filled"></span>
+          <span class="s10-score-pip filled"></span>
+          <span class="s10-score-pip filled"></span>
+          <span class="s10-score-pip filled"></span>
+          <span class="s10-score-pip filled"></span>
+          <span class="s10-score-pip"></span>
+          <span class="s10-score-pip"></span>
+          <span class="s10-score-pip"></span>
+        </div>
+        <span class="s10-score-num">221</span>
+        <span class="s10-score-label">/ 131 comments</span>
+      </div>
+    </div>
+
+    <div class="s10-tags">
+      <span class="s10-tag s10-tag--active">Transactions</span>
+      <span class="s10-tag">Locking Strategy</span>
+      <span class="s10-tag">High Throughput</span>
+      <span class="s10-tag">Counter-narrative</span>
+    </div>
+  </div>
+</main>
+
+<footer class="s10-footer">
+  <span class="s10-edition">Morning Edition · Weekly · Shopify Engineering</span>
+  <a class="cta" href="https://shopify.engineering/scaling-inventory-reservations" target="_blank" rel="noopener">Read →</a>
+</footer>
+
+</section>
+
+<section class="spread spread-colophon">
+<style>
+.spread-colophon{background:#17140e;color:#f4ecd8;padding:clamp(48px,6vw,110px);
+  min-height:50vh;display:flex;flex-direction:column;justify-content:center;gap:28px;
+  font-family:system-ui,sans-serif}
+.spread-colophon h3{font-size:clamp(36px,5vw,72px);margin:0;font-weight:300;
+  font-style:italic;line-height:1.1}
+.spread-colophon p{font-size:22px;line-height:1.5;max-width:56ch;margin:0;opacity:.85}
+.spread-colophon .sm{font-size:18px;letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+</style>
+<h3>That was this week.</h3>
+<p>Ten stories, curated across twenty sources. 3 flagged as
+directly applicable. Each spread designed from scratch by Claude.</p>
+<p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
+text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
+<p class="sm">Morning Edition — Weekly &middot; Issue No. W32
+&middot; SUNDAY, AUGUST 9, 2026</p>
+</section>
+
+</body>
+</html>
