@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; MONDAY, AUGUST 10, 2026</title>
-<meta name="description" content="Agents ship, controls tighten, craft holds firm">
+<meta name="description" content="Agents, compression failures, and system prompt archaeology">
 <meta property="og:title" content="Morning Edition · MONDAY, AUGUST 10, 2026">
-<meta property="og:description" content="Agents ship, controls tighten, craft holds firm">
+<meta property="og:description" content="Agents, compression failures, and system prompt archaeology">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&family=Open+Sans:wght@400;500;600;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -686,15 +686,15 @@ a{color:inherit;text-underline-offset:4px}
   </div>
   <div class="cover-body">
     <div>
-      <div class="cover-kicker">Today&rsquo;s lead &middot; AI SHIPPING</div>
-      <h2 class="cover-title">Anthropic Turns Claude Code Auto Mode On by Default</h2>
-      <p class="cover-tagline">Agents ship, controls tighten, craft holds firm</p>
-      <p class="body-lead body-lead--wide">Claude Code now defaults to autonomous execution rather than asking for permission at every step — a meaningful posture shift for anyone running agentic coding workflows. If you use Claude Code for real work, your daily loop just changed. Worth understanding the new guardrails before it surprises you mid-session.</p>
+      <div class="cover-kicker">Today&rsquo;s lead &middot; AI INTERNALS</div>
+      <h2 class="cover-title">Claude Opus 5 System Prompt Leaked and Annotated</h2>
+      <p class="cover-tagline">Agents, compression failures, and system prompt archaeology</p>
+      <p class="body-lead body-lead--wide">Simon Willison digs into the Claude Opus 5 system prompt, including the strange export-control suspension arc where Fable 5 and Mythos 5 went dark for 18 days. For anyone building on Claude, the prompt structure here is a direct window into Anthropic&#x27;s current prompt-craft philosophy.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://simonwillison.net/2026/Aug/9/claude-opus-5-system-prompt/#atom-everything" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Open Claude Code today and check the new auto-mode defaults in settings before your next coding session.</p>
+      <p class="apply-note">&rarr; Read the annotated system prompt today to audit your own Claude prompts against Anthropic&#x27;s own conventions.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -704,50 +704,56 @@ a{color:inherit;text-underline-offset:4px}
 <section data-story="2" class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">AGENTIC INFRA</div>
+    <div class="kicker">SECURITY RESEARCH</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>Docker Sandboxes — Disposable, Isolated Sandboxes for AI Agents</h2>
-    <p class="body-lead">Docker&#x27;s answer to the agent-containment problem: fully disposable, isolated environments purpose-built for LLM tool-use. The real problem with agentic workflows has always been blast radius — this is a first-class infrastructure solution that lets you hand a shell to an agent without flinching.</p>
+    <h2>OpenClaw: Zero Auth Checks Let Anyone Cancel Your Reservation</h2>
+    <p class="body-lead">A live exploit demo where a researcher bumps their waitlist position by cancelling a stranger&#x27;s reservation — no auth check fires. A brutal illustration of why authorization logic and business logic need to be tested as a unit, not separately.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Visit the product page and check the quickstart; if you run any local agents today, this is the containment layer worth trialing.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://www.docker.com/products/docker-sandboxes/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; Use this as a checklist prompt: run an auth-surface audit on any reservation or queue system you&#x27;re designing today.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Aug/10/openclaw/#atom-everything" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="3" class="spread s-ticker">
-  <div class="bar"><span class="bar-inner">Breaking &middot; OPEN MODELS &middot; Morning Edition</span></div>
-  <div class="core">
-    <div class="big-num" aria-hidden="true">No. 03</div>
-    <div class="kicker">OPEN MODELS</div>
-    <h2>Meta Muse Glimmer — Open-Weights 30B Local Coding Model</h2>
-    <p class="body-lead">Meta drops a 30B open-weights coding model positioned explicitly for agentic use — local deployment, open weights, and a stated focus on multi-step tool use rather than benchmark-chasing. For anyone building or evaluating local agent pipelines, this is the most immediately testable new option in the tier.</p>
-    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" target="_blank" rel="noopener">Over the wire &rarr;</a>
+<section data-story="3" class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">III</span>
+  </div>
+  <div>
+    <div class="kicker">LLM TRAINING</div>
+    <h2>Nathan Lambert&#x27;s Post-Training Textbook Ships</h2>
+    <div class="body-lead">After years of documenting open-model training, Nathan Lambert&#x27;s post-training textbook is done. This is the closest thing to a canonical reference on RLHF, alignment, and evals from someone who has actually run the pipelines — not a thinkpiece.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://www.interconnects.ai/p/5-useful-things-youll-learn-in-my" target="_blank" rel="noopener">Continue reading &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Pull the weights via the Hugging Face link in the blog post and drop it into your local agent harness for a first eval today.</p>
-    
+    <p class="apply-note">&rarr; Grab the textbook today; chapter previews are live and immediately applicable to understanding model behavior in your agentic workflows.</p>
   </div>
-  <div class="bar"><span class="bar-inner">Filed MONDAY, AUGUST 10, 2026</span></div>
+  <div>
+    <div class="footnote">&sect; filed under llm training</div>
+  </div>
 </section>
 
-<section data-story="4" class="spread s-manifesto">
+<section data-story="4" class="spread s-pullquote">
   <div class="top">
-    <div class="kicker">INTERFACE CRAFT</div>
+    <div class="kicker" style="color:#d9b26a">PROMPT CRAFT</div>
     <div class="tiny-num" aria-hidden="true">04</div>
   </div>
-  <h2>Toggles confuse state with action, and we keep using them anyway.<span class="mark">.</span></h2>
   <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A close reading of why toggle switches so often mislead users — conflating on/off state with action, failing to communicate what &quot;on&quot; means, and actively degrading feedback loops. The kind of foundational UX critique that sharpens your eye every time a design review comes up.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; ignorethecode.net</div>
+    <span class="quote-open" aria-hidden="true">&ldquo;</span>
+    <p class="pq">Relevant but incomplete: independent selection breaks the coherence of what survives.</p>
+    <div class="attrib">&mdash; huggingface.co</div>
+  </div>
+  <div>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Hard prompt compression — scoring and pruning tokens independently — creates dangling references where retained text points to content that was cut. The failure is paradigm-level, not an edge case, and it matters any time you&#x27;re compressing long context for cheaper inference.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://ignorethecode.net/blog/2026/08/09/toggles_considered_harmful/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
+      <a class="read-more" href="https://huggingface.co/papers/2608.04569" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
     </div>
-    <p class="apply-note">&rarr; Audit one toggle in your current design system against the criteria in the post before your next design review.</p>
+    
     
   </div>
 </section>
@@ -760,118 +766,115 @@ a{color:inherit;text-underline-offset:4px}
 #   #  #####  
 #   #      #  
 #####  #####  </div>
-    <div class="kicker">SECURITY</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">schneier.com</span></div>
-    <h2>Python Now Has a Post-Quantum Encryption Library</h2>
-    <p class="body-lead">&gt; ML-KEM and ML-DSA — the NIST-standardized post-quantum primitives — are now one pip-install away for the entire Python ecosystem, funded by the Sovereign Tech Agency. If you&#x27;re building anything that touches user data or needs long-term privacy guarantees, the migration path just got dramatically shorter.</p>
+    <div class="kicker">AGENTIC TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
+    <h2>phone-harness: Let Your Agent Control Your Phone</h2>
+    <p class="body-lead">&gt; A trending GitHub lib that exposes phone controls as an agent harness — tap, scroll, read screen — so LLM agents can drive mobile UIs directly. For UX designers thinking about agentic interfaces, this is a concrete artifact of where the interaction model is heading.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.schneier.com/blog/archives/2026/08/python-now-has-a-post-quantum-encryption-library.html" target="_blank" rel="noopener">$ open &rarr;</a>
+      <a class="read-more" href="https://github.com/ShawnPana/phone-harness" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Run `pip install` the library (linked from Schneier&#x27;s post) and swap one key-exchange in a side project today to get a feel for the API surface.</p>
+    <p class="apply-note">&rarr; Clone and run the demo today to see what agent-driven mobile interaction feels like from the other side of the interface.</p>
     
   </div>
 </section>
 
-<section data-story="6" class="spread s-academic">
-  <div class="masthead-line">
-    <span>Morning Edition &mdash; Review</span>
-    <span class="roman">VI</span>
-  </div>
-  <div>
-    <div class="kicker">ALIGNMENT</div>
-    <h2>Lessons from the Hacks — Model Alignment and What Determines Safety</h2>
-    <div class="body-lead">Nathan Lambert works through what recent adversarial model incidents actually tell us about alignment versus safety theater — useful framing for anyone building on top of LLMs who needs to think seriously about eval coverage and behavioral guarantees rather than just trusting system prompts.</div>
-    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://www.interconnects.ai/p/lessons-from-the-hacks" target="_blank" rel="noopener">Continue reading &rarr;</a>
+<section data-story="6" class="spread s-polaroid">
+  <div class="kicker">DESIGN CRAFT</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">From Brand Systems to Cultural Worlds: Inside Antinomy and 27b</div>
+      <div class="photo-caption">No. 06 &middot; tympanus.net</div>
+    </div>
+    <div>
+      <p class="body-lead">Codrops profiles two studios that treat brand systems as cultural infrastructure rather than visual veneer — strategy, experience, and editorial edge as one practice. The framing of &#x27;world-building vs. theming&#x27; is worth stealing for your next design system pitch.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://tympanus.net/codrops/2026/08/10/from-brand-systems-to-cultural-worlds-inside-antinomy-and-27b/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        
+      </div>
+      
       
     </div>
-    
-  </div>
-  <div>
-    <div class="footnote">&sect; filed under alignment</div>
   </div>
 </section>
 
-<section data-story="7" class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.07</span>
-      <span>AGENT-PLUGINS.ORG</span>
-      <span>SHEET 7/10</span>
-    </div>
-    <div class="kicker">AGENTIC TOOLING</div>
-    <h2>Agent Plugins — A Portable Package Format for Reusable AI Agent Components</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">07</div>
-      <p class="body-lead">An emerging open spec for packaging reusable agent capabilities — think npm for agent tools, with a defined manifest and runtime contract. Early days, but if this gets traction it addresses one of the messiest interoperability problems in the current agentic stack.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://agent-plugins.org/" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Browse the spec at agent-plugins.org and check whether any of your current Claude or GPT tool definitions could be packaged as a plugin today.</p>
-    
-  </div>
-</section>
-
-<section data-story="8" class="spread s-pullquote">
-  <div class="top">
-    <div class="kicker" style="color:#d9b26a">INFORMATION DESIGN</div>
-    <div class="tiny-num" aria-hidden="true">08</div>
-  </div>
-  <div>
-    <span class="quote-open" aria-hidden="true">&ldquo;</span>
-    <p class="pq">IA isn&#x27;t about menus. It&#x27;s about making the invisible structure of knowledge navigable.</p>
-    <div class="attrib">&mdash; jarango.com</div>
-  </div>
-  <div>
-    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">Fifty years in, IA is still routinely confused with navigation design or site maps. This piece cuts to what the discipline is actually for — giving form to the relationships between concepts so that people can act on them. A useful corrective to keep sharp when AI is flattening everything into chat.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://jarango.com/2026/08/07/whats-the-purpose-of-information-architecture/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
-<section data-story="9" class="spread s-index">
-  <div class="ix-top">
-    <span>Card No. 09</span>
-    <span>WEIRD SCIENCE</span>
-  </div>
-  <div class="ix-body">
-    <h2>Taxi Drivers Rarely Die of Alzheimer&#x27;s — Spatial Reasoning and Brain Health</h2>
-    <p class="body-lead">New synthesis on hippocampal neuroplasticity in professional navigators — sustained complex spatial reasoning appears to build structural brain reserve that delays Alzheimer&#x27;s onset. Directly relevant to any UX designer thinking about spatial cognition and how digital environments either exercise or atrophy it.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://theconversation.com/taxi-drivers-rarely-die-of-alzheimers-how-complex-mental-maps-and-spatial-reasoning-protect-your-brain-286650" target="_blank" rel="noopener">Follow the thread &rarr;</a>
-      
-    </div>
-    
-    
-  </div>
-</section>
-
-<section data-story="10" class="spread s-newsprint">
+<section data-story="7" class="spread s-newsprint">
   <div class="masthead-bar">The Daily Ledger</div>
   <div class="title-row">
-    <div class="badge">10</div>
+    <div class="badge">07</div>
     <div>
-      <div class="kicker">LLM TOOLING</div>
-      <h2>GitHub Models Is Now Retired</h2>
+      <div class="kicker">SECURITY</div>
+      <h2>What Happened to HackerOne?</h2>
     </div>
   </div>
   <div class="cols">
-    <p>Simon Willison notes GitHub Models has been quietly retired — discovered via a broken CI run rather than any announcement.</p>
-    <p>If you have any scripts, repos, or workflows relying on the GitHub Models API for quick model access, they&#x27;re silently failing right now.</p>
+    <p>A detailed post-mortem on HackerOne&#x27;s decline — cultural drift, triage quality collapse, and what happens when a trust-dependent mark</p>
+    <p>etplace loses researcher confidence. Real analysis, not a press release, and relevant to anyone thinking about how platforms degrade.</p>
   </div>
   <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-    <a class="read-more" href="https://simonwillison.net/2026/Aug/9/github-models-is-now-retired/#atom-everything" target="_blank" rel="noopener">Full dispatch &rarr;</a>
-    <span class="tag-applies">Applies to you</span>
+    <a class="read-more" href="https://blog.teknogeek.io/posts/what-happened-to-hackerone/" target="_blank" rel="noopener">Full dispatch &rarr;</a>
+    
   </div>
-  <p class="apply-note">&rarr; Search your repos and GitHub Actions workflows for any GitHub Models API calls and swap them to an alternative endpoint today.</p>
   
+  
+</section>
+
+<section data-story="8" class="spread s-blueprint">
+  <div class="frame">
+    <div class="spec">
+      <span>REV.08</span>
+      <span>FZAKARIA.COM</span>
+      <span>SHEET 8/10</span>
+    </div>
+    <div class="kicker">DEV INFRA</div>
+    <h2>nixpkgs-multiverse: Every Package Version That Ever Existed</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
+      <div class="big-n" aria-hidden="true">08</div>
+      <p class="body-lead">A Nix project that surfaces every historical nixpkgs version as an addressable artifact, solving the reproducibility problem for long-lived projects that need a specific old dependency. The architecture post explains how it handles the combinatorial explosion.</p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://fzakaria.com/2026/08/09/nixpkgs-multiverse-every-version-that-ever-existed" target="_blank" rel="noopener">View schematic &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; If you run any self-hosted or local-first tooling on Nix, this lets you pin to exact historical states today.</p>
+    
+  </div>
+</section>
+
+<section data-story="9" class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">UX + AI</div>
+    <div class="tiny-num" aria-hidden="true">09</div>
+  </div>
+  <h2>Websites aren&#x27;t dying — their job is changing: agent-readable, verifiable, machine-first.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A tight argument that websites aren&#x27;t dying but their job is changing — from human-readable pages to agent-parseable surfaces with verifiable authenticity. Directly relevant for any UX designer now thinking about what &#x27;designing for agents&#x27; actually means.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; joost.blog</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://joost.blog/future-of-the-website/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section data-story="10" class="spread s-index">
+  <div class="ix-top">
+    <span>Card No. 10</span>
+    <span>WEIRD SCIENCE</span>
+  </div>
+  <div class="ix-body">
+    <h2>Parametron: The 1954 Japanese Computer Using Neither Transistors Nor Tubes</h2>
+    <p class="body-lead">The Parametron used ferrite cores driven by parametric oscillation — no active amplifying components at all. A genuinely alien computing paradigm from 1954 that briefly made Japan a world leader in computer hardware before transistors won out.</p>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://ethw.org/Milestones:Parametron,_1954" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
 </section>
 
 
@@ -879,9 +882,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  7 of them are flagged as directly applicable &mdash; open those first.</p>
+  5 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Merriweather and Open Sans. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-08-10 11:43 UTC.</p>
+  at 2026-08-10 13:16 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0587 &middot; MONDAY, AUGUST 10, 2026</p>
