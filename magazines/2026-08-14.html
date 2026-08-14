@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Morning Edition &middot; FRIDAY, AUGUST 14, 2026</title>
-<meta name="description" content="Flash models, fast silicon, hidden reasoning exposed">
+<meta name="description" content="Agents ship, models debate, aging is code">
 <meta property="og:title" content="Morning Edition · FRIDAY, AUGUST 14, 2026">
-<meta property="og:description" content="Flash models, fast silicon, hidden reasoning exposed">
+<meta property="og:description" content="Agents ship, models debate, aging is code">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,500;0,700;0,900;1,500;1,900&family=Source+Sans+3:wght@400;500;600;800&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -687,14 +687,14 @@ a{color:inherit;text-underline-offset:4px}
   <div class="cover-body">
     <div>
       <div class="cover-kicker">Today&rsquo;s lead &middot; AI SHIPPING</div>
-      <h2 class="cover-title">Gemini 3.7 Flash is here</h2>
-      <p class="cover-tagline">Flash models, fast silicon, hidden reasoning exposed</p>
-      <p class="body-lead body-lead--wide">Google drops another Flash-tier model with 873 HN upvotes and 445 comments — this is the week&#x27;s loudest model release outside of OpenAI. For anyone routing tasks across Gemini, Claude, and GPT-5.x, Flash 3.7 is a new speed/cost lever worth benchmarking immediately.</p>
+      <h2 class="cover-title">Introducing Gemini 3.7 Flash</h2>
+      <p class="cover-tagline">Agents ship, models debate, aging is code</p>
+      <p class="body-lead body-lead--wide">DeepMind drops a new Flash-tier model, and Simon Willison already has the llm-gemini 0.33 plugin updated to match. If you run LLM-powered workflows from the CLI or build on Gemini&#x27;s API, this is the moment to benchmark it against your current stack.</p>
       <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Open the lead &rarr;</a>
+        <a class="read-more" href="https://deepmind.google/blog/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Open the lead &rarr;</a>
         <span class="tag-applies">Applies to you</span>
       </div>
-      <p class="apply-note">&rarr; Hit ai.google.dev/gemini-api/docs/models/gemini-3.7-flash today and run your standard eval prompts against it via the API.</p>
+      <p class="apply-note">&rarr; Run `pip install llm-gemini` and try `llm -m gemini-3.7-flash &#x27;your prompt&#x27;` today.</p>
       
     </div>
     <div class="cover-numeral" aria-hidden="true">01</div>
@@ -704,165 +704,168 @@ a{color:inherit;text-underline-offset:4px}
 <section data-story="2" class="spread s-rose">
   <div class="stamp">Applies<br>to&nbsp;you</div>
   <div>
-    <div class="kicker">AI SHIPPING</div>
+    <div class="kicker">DEV TOOLS</div>
     <div class="numeral-xl" aria-hidden="true">02</div>
-    <h2>GPT-5.6 Sol Ultrafast: 750 tokens/second via Cerebras</h2>
-    <p class="body-lead">OpenAI&#x27;s Ultrafast tier runs GPT-5.6 Sol at up to 14× normal speed using Cerebras wafer-scale silicon — 750 output tokens per second in preview. If your agentic workflows are bottlenecked on inference latency, this changes the math on what loops are practical.</p>
+    <h2>llm-gemini 0.33 — Gemini 3.7 Flash support drops</h2>
+    <p class="body-lead">Willison&#x27;s llm-gemini plugin now surfaces Gemini 3.7 Flash, 3.6 Flash, Flash Lite, and two new embedding models — same day as the announcement. If you use Simon&#x27;s `llm` CLI for agentic prompting or evals, this is a drop-in upgrade.</p>
   </div>
   <div>
-    <p class="apply-note">&rarr; Request preview access via the OpenAI API dashboard and test latency-sensitive agentic chains today.</p>
-    <div style="margin-top:28px"><a class="read-more" href="https://openai.com/index/previewing-ultrafast" target="_blank" rel="noopener">Try it now &rarr;</a></div>
+    <p class="apply-note">&rarr; `pip install -U llm-gemini` then `llm models` to confirm the new variants appear.</p>
+    <div style="margin-top:28px"><a class="read-more" href="https://simonwillison.net/2026/Aug/13/llm-gemini/" target="_blank" rel="noopener">Try it now &rarr;</a></div>
     
     <div class="footer-slug">Morning Edition &middot; Alert Desk</div>
   </div>
 </section>
 
-<section data-story="3" class="spread s-blueprint">
-  <div class="frame">
-    <div class="spec">
-      <span>REV.03</span>
-      <span>OPENAI.COM</span>
-      <span>SHEET 3/10</span>
-    </div>
-    <div class="kicker">AI TOOLING</div>
-    <h2>The builder&#x27;s guide to GPT-5.6</h2>
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center">
-      <div class="big-n" aria-hidden="true">03</div>
-      <p class="body-lead">OpenAI&#x27;s own field manual for shipping with GPT-5.6, covering model selection, Responses API capabilities, and cost-efficiency patterns for agentic builds. Rare that a lab publishes something this concrete — closer to a prod engineering doc than a marketing post.</p>
-    </div>
-    <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://openai.com/index/builders-guide-to-gpt-5-6" target="_blank" rel="noopener">View schematic &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Read the model-selection section and cross-check against your current routing logic for agentic tasks.</p>
-    
+<section data-story="3" class="spread s-academic">
+  <div class="masthead-line">
+    <span>Morning Edition &mdash; Review</span>
+    <span class="roman">III</span>
   </div>
-</section>
-
-<section data-story="4" class="spread s-midnight">
-  <div class="bg-num" aria-hidden="true">04</div>
-  <div class="content">
-    <div class="kicker">SECURITY + AI</div>
-    <h2>Stolen Thoughts: decoding hidden LLM chain-of-thought at scale</h2>
-    <p class="body-lead">A research project exploiting encrypted chain-of-thought blocks returned by Anthropic, OpenAI, and Google APIs to reconstruct hidden reasoning. Immediately relevant to anyone designing systems that rely on opaque model reasoning — your mental model of what&#x27;s private may be wrong.</p>
-    <div style="margin-top:36px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://stolen-thoughts.com/" target="_blank" rel="noopener">Read the story &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Visit the site, check the methodology, and audit any prompts where you assumed extended thinking output was fully opaque.</p>
-    
-  </div>
-  <div class="footer-slug">Morning Edition &middot; After Dark</div>
-</section>
-
-<section data-story="5" class="spread s-polaroid">
-  <div class="kicker">DESIGN + AI</div>
-  <div class="layout">
-    <div class="photo">
-      <div class="tape" aria-hidden="true"></div>
-      <div class="photo-body">Claude Code 101, for designers</div>
-      <div class="photo-caption">No. 05 &middot; yaronschoen.com</div>
-    </div>
-    <div>
-      <p class="body-lead">A plain-language primer on Claude Code aimed specifically at designers — demystifying models, tokens, agents, and MCP without requiring an engineering background. Exactly the bridge resource you&#x27;d send to a design teammate or use to build your own mental model.</p>
-      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-        <a class="read-more" href="https://yaronschoen.com/blog/claude-code-101-for-designers/" target="_blank" rel="noopener">Read the story &rarr;</a>
-        <span class="tag-applies">Applies to you</span>
-      </div>
-      <p class="apply-note">&rarr; Read it now and share with any design collaborators still treating Claude Code as a black box.</p>
-      
-    </div>
-  </div>
-</section>
-
-<section data-story="6" class="spread s-manifesto">
-  <div class="top">
-    <div class="kicker">DESIGN SYSTEMS</div>
-    <div class="tiny-num" aria-hidden="true">06</div>
-  </div>
-  <h2>A classification that forces teams to document implementation logic for sustained consistency.<span class="mark">.</span></h2>
   <div>
-    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">Matt Rothenberg draws a hard line: a shared Figma file or component library isn&#x27;t a design system — a design system requires documented implementation logic that sustains product consistency without tribal knowledge. Useful provocation for any team shipping AI-generated UI.</p>
-    <div class="attrib" style="margin-top:24px">&mdash; mattrothenberg.com</div>
+    <div class="kicker">AGENTIC AI</div>
+    <h2>Spec-first AI agent refactors 189 files in 717k-line codebase, no human review</h2>
+    <div class="body-lead">A fully instrumented case study of an AI coding agent dismantling a core architectural invariant across a near-million-line codebase with zero human code review and no pre-existing test oracle. The methodology — specification-first convergence — is the part worth stealing.</div>
+    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://huggingface.co/papers/2608.12440" target="_blank" rel="noopener">Continue reading &rarr;</a>
+      
+    </div>
+    
+  </div>
+  <div>
+    <div class="footnote">&sect; filed under agentic ai</div>
+  </div>
+</section>
+
+<section data-story="4" class="spread s-pullquote">
+  <div class="top">
+    <div class="kicker" style="color:#d9b26a">LLM EVALS</div>
+    <div class="tiny-num" aria-hidden="true">04</div>
+  </div>
+  <div>
+    <span class="quote-open" aria-hidden="true">&ldquo;</span>
+    <p class="pq">Opus 5 feels worse — and the benchmarks don&#x27;t know it yet.</p>
+    <div class="attrib">&mdash; mun-logadan.github.io</div>
+  </div>
+  <div>
+    <p class="body-lead" style="color:#c9c2ae;max-width:56ch">A practitioner&#x27;s field report on the qualitative regression in Opus 5 — the kind of texture you can&#x27;t catch in benchmarks. With 182 comments piling on, this is shaping up to be a useful aggregation of real-world friction reports for anyone doing model selection.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://mattrothenberg.com/notes/you-dont-have-a-design-system/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <a class="read-more" href="https://mun-logadan.github.io/why-does-opus-5-feel-worse/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      <span class="tag-applies">Applies to you</span>
+    </div>
+    <p class="apply-note">&rarr; Read before deciding whether to migrate existing Claude workflows to Opus 5 or hold on Sonnet.</p>
+    
+  </div>
+</section>
+
+<section data-story="5" class="spread s-ticker">
+  <div class="bar"><span class="bar-inner">Breaking &middot; OPEN MODELS &middot; Morning Edition</span></div>
+  <div class="core">
+    <div class="big-num" aria-hidden="true">No. 05</div>
+    <div class="kicker">OPEN MODELS</div>
+    <h2>GLM-5.3: Frontier coding with emergent cyber capabilities</h2>
+    <p class="body-lead">Z.ai&#x27;s GLM-5.3 lands with frontier-tier coding scores and, notably, emergent offensive security capabilities — enough to spawn a same-day Writer enterprise variant. The 334-comment thread is already stress-testing what &#x27;emergent cyber capabilities&#x27; actually means in practice.</p>
+    <div style="margin-top:16px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://z.ai/blog/glm-5.3" target="_blank" rel="noopener">Over the wire &rarr;</a>
       
     </div>
     
     
   </div>
+  <div class="bar"><span class="bar-inner">Filed FRIDAY, AUGUST 14, 2026</span></div>
 </section>
 
-<section data-story="7" class="spread s-riso">
-  <div class="layout">
-    <div class="kicker">CREATIVE UI</div>
-    <div class="riso-num" data-n="07" aria-hidden="true">07</div>
-    <h2>Liquid Gooey: liquid UI effects library for React</h2>
-    <p class="body-lead">A focused React library for physically-plausible liquid goo effects — the kind of interaction texture that makes a UI feel genuinely crafted rather than template-generated. Small, demo-driven, the kind of thing you can drop into a project today.</p>
-    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://gooey.jakubantalik.com/" target="_blank" rel="noopener">Pull a proof &rarr;</a>
-      <span class="tag-applies">Applies to you</span>
-    </div>
-    <p class="apply-note">&rarr; Open the demo at gooey.jakubantalik.com and npm install it into a sandbox project.</p>
+<section data-story="6" class="spread s-stat">
+  <div class="top">
+    <div class="chip">No. 06 &middot; AI INFRA</div>
+    
+  </div>
+  <div class="stat-wrap">
+    <div class="stat-value" aria-hidden="true">GPT-5.6 Sol</div>
+    <div class="stat-label">Cerebras wafer-scale inference, agentic-loop latency</div>
+  </div>
+  <div>
+    <h2>Accelerating GPT-5.6 Sol Ultrafast with Cerebras</h2>
+    <p class="body-lead">Cerebras is running GPT-5.6 Sol at wafer-scale speeds, and the latency numbers reportedly make real-time agentic loops actually usable. For anyone building multi-step AI workflows where inference lag kills UX, this is the infrastructure story to watch.</p>
+    <div style="margin-top:24px"><a class="read-more" href="https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai" target="_blank" rel="noopener">Read the story &rarr;</a></div>
+    
     
   </div>
 </section>
 
-<section data-story="8" class="spread s-terminal">
+<section data-story="7" class="spread s-terminal">
   <div class="window">
     <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
     <div class="ascii-num" aria-hidden="true">#####  #####  
-#   #  #   #  
-#   #  #####  
-#   #  #   #  
-#####  #####  </div>
-    <div class="kicker">AI TOOLING</div>
-    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">github.com</span></div>
-    <h2>book-to-skill: turn any PDF into a Claude Code skill</h2>
-    <p class="body-lead">&gt; A trending GitHub tool that ingests a technical book PDF and produces a Claude Code skill — so the book&#x27;s knowledge is queryable and executable while you work. For a designer learning systems or APIs, this is a genuinely novel knowledge workflow.</p>
+#   #      #  
+#   #     #   
+#   #    #    
+#####   #     </div>
+    <div class="kicker">DEV TOOLS</div>
+    <div class="prompt"><span class="dollar">$</span> <span class="cmd">curl</span> <span class="arg">simonwillison.net</span></div>
+    <h2>sqlite-utils 4.2 — complex ALTER TABLE finally lands</h2>
+    <p class="body-lead">&gt; The `table.transform()` method now handles the SQLite ALTER TABLE limitation by creating a fresh table, copying data, and swapping — a long-requested ergonomic fix. If you use sqlite-utils for local data pipelines or LLM output storage, upgrade is straightforward.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/Leutenegger/book-to-skill" target="_blank" rel="noopener">$ open &rarr;</a>
+      <a class="read-more" href="https://simonwillison.net/2026/Aug/13/sqlite-utils/" target="_blank" rel="noopener">$ open &rarr;</a>
       <span class="tag-applies">Applies to you</span>
     </div>
-    <p class="apply-note">&rarr; Clone the repo and run it against a design-systems or UX book PDF you already have.</p>
+    <p class="apply-note">&rarr; `pip install -U sqlite-utils` and check `table.transform()` for any schema migration you&#x27;ve been deferring.</p>
     
   </div>
 </section>
 
-<section data-story="9" class="spread s-academic">
-  <div class="masthead-line">
-    <span>Morning Edition &mdash; Review</span>
-    <span class="roman">IX</span>
-  </div>
-  <div>
-    <div class="kicker">AI RESEARCH</div>
-    <h2>Are You Sure You&#x27;re Sure? Instruction tuning breeds overconfidence</h2>
-    <div class="body-lead">New paper shows instruction-tuned models verbalize overconfidence — they assert answers with more certainty than their actual accuracy warrants, and this effect correlates with reduced lexical diversity. Directly relevant if you&#x27;re designing UX for AI-generated outputs and trust calibration.</div>
-    <div style="margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://huggingface.co/papers/2608.13430" target="_blank" rel="noopener">Continue reading &rarr;</a>
-      
-    </div>
-    
-  </div>
-  <div>
-    <div class="footnote">&sect; filed under ai research</div>
-  </div>
-</section>
-
-<section data-story="10" class="spread s-index">
+<section data-story="8" class="spread s-index">
   <div class="ix-top">
-    <span>Card No. 10</span>
-    <span>SECURITY RESEARCH</span>
+    <span>Card No. 08</span>
+    <span>WEIRD SCIENCE</span>
   </div>
   <div class="ix-body">
-    <h2>skitter-creek-bath-salts: unlock everything on the CPU via DRAM scrambling</h2>
-    <p class="body-lead">From xoreaxeaxeax — reliably one of the most technically unhinged security researchers alive — a new repo exploiting DRAM scrambling to unlock arbitrary CPU capabilities. No product angle, pure research artifact, the kind of weird low-level finding that reframes what &#x27;secure hardware&#x27; means.</p>
+    <h2>Why Aging May Be a Program, Not a Breakdown</h2>
+    <p class="body-lead">Junyue Cao&#x27;s single-cell atlas of millions of mouse cells finds aging looks less like entropy and more like a deliberate cellular remodeling — a &#x27;cell society&#x27; being reorganized rather than worn down. The framing has uncomfortable implications for what &#x27;fixing&#x27; aging would even mean.</p>
     <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
-      <a class="read-more" href="https://github.com/xoreaxeaxeax/skitter-creek-bath-salts" target="_blank" rel="noopener">Follow the thread &rarr;</a>
+      <a class="read-more" href="https://www.quantamagazine.org/why-aging-may-be-a-program-not-a-breakdown-20260814/" target="_blank" rel="noopener">Follow the thread &rarr;</a>
       
     </div>
     
     
+  </div>
+</section>
+
+<section data-story="9" class="spread s-manifesto">
+  <div class="top">
+    <div class="kicker">SYSTEMS</div>
+    <div class="tiny-num" aria-hidden="true">09</div>
+  </div>
+  <h2>We need safe C FFI you can adopt file by file, not all at once.<span class="mark">.</span></h2>
+  <div>
+    <p class="body-lead" style="color:#d8cfb8;max-width:56ch">A pointed argument for a memory-safe C interop layer that doesn&#x27;t force you to rewrite everything in Rust first. The `fil-c` proposal sits in the pragmatic middle ground that systems designers actually live in, and the lobste.rs thread has sharp counterpoints worth reading.</p>
+    <div class="attrib" style="margin-top:24px">&mdash; domenkozar.com</div>
+    <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+      <a class="read-more" href="https://domenkozar.com/2026/08/13/i-want-extern-fil-c/" target="_blank" rel="noopener">Read the story &rarr;</a>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<section data-story="10" class="spread s-polaroid">
+  <div class="kicker">DESIGN TOOLS</div>
+  <div class="layout">
+    <div class="photo">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="photo-body">Morphicons: Morph any SVG icon into any other</div>
+      <div class="photo-caption">No. 10 &middot; heydesigner.com</div>
+    </div>
+    <div>
+      <p class="body-lead">Morphicons offers smooth SVG-to-SVG icon morphing — the kind of micro-interaction glue that elevates a design system from static to alive. Worth pulling up alongside the Claude Code 101 for designers piece linked in the same heydesigner digest.</p>
+      <div style="margin-top:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+        <a class="read-more" href="https://heydesigner.com/2026-08-13/" target="_blank" rel="noopener">Read the story &rarr;</a>
+        <span class="tag-applies">Applies to you</span>
+      </div>
+      <p class="apply-note">&rarr; Open the Morphicons demo and test it against icons already in your design system today.</p>
+      
+    </div>
   </div>
 </section>
 
@@ -871,9 +874,9 @@ a{color:inherit;text-underline-offset:4px}
   <div class="smallprint">Colophon</div>
   <h3>That was today.</h3>
   <p>Ten stories, hand-curated across twenty sources before you were awake.
-  7 of them are flagged as directly applicable &mdash; open those first.</p>
+  5 of them are flagged as directly applicable &mdash; open those first.</p>
   <p>Set in Crimson Pro and Source Sans 3. Rendered by a small Python pipeline and an Anthropic model
-  at 2026-08-14 11:41 UTC.</p>
+  at 2026-08-14 13:14 UTC.</p>
   <p><a href="../index.html" style="color:#d9b26a;text-decoration:underline;
     text-underline-offset:4px;font-size:22px">Browse all issues &rarr;</a></p>
   <p class="smallprint">Morning Edition &middot; Issue No. 0591 &middot; FRIDAY, AUGUST 14, 2026</p>
