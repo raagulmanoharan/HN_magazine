@@ -1,19 +1,5 @@
 [
   {
-    "id": "lobsters:fooyux",
-    "title": "Why I remain a skeptic",
-    "url": "https://blog.jsbarretto.com/post/i-remain-a-skeptic",
-    "source": "lobsters",
-    "score": 56,
-    "comments": 50,
-    "text": "",
-    "published_at": "2026-08-15T13:29:59Z",
-    "rank_within_source": 2,
-    "hn_url": "https://lobste.rs/s/fooyux/why_i_remain_skeptic",
-    "prior": 0.846,
-    "_spillover_date": "2026-08-16"
-  },
-  {
     "id": "robotsandpencils:https://robotsandpencils.com/?p=3568",
     "title": "Pt. 2: Repo-Native Delivery \u2013 The Operating Model",
     "url": "https://robotsandpencils.com/repo-native-delivery-model/",
@@ -74,8 +60,8 @@
     "title": "awesome-dsh-plugin/awesome-dsh-plugin \u2014 A curated list of plugins for DeepSeek Harness (dsh) \u00b7 DeepSeek Harness \u63d2\u4ef6\u7cbe\u9009\u5217\u8868",
     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
     "source": "github_trending",
-    "score": 3922,
-    "comments": 54,
+    "score": 4149,
+    "comments": 66,
     "text": "A curated list of plugins for DeepSeek Harness (dsh) \u00b7 DeepSeek Harness \u63d2\u4ef6\u7cbe\u9009\u5217\u8868",
     "published_at": "2026-08-13T13:55:31Z",
     "rank_within_source": 4,
@@ -84,59 +70,17 @@
     "_spillover_date": "2026-08-16"
   },
   {
-    "id": "robotsandpencils:https://robotsandpencils.com/?p=3527",
-    "title": "Robots & Pencils Enriches Studio for Generative and Agentic AI with\u00a0Addition of Brendan Flynn as SVP, Strategy",
-    "url": "https://robotsandpencils.com/brendan-flynn-svp-strategy/",
-    "source": "robotsandpencils",
-    "score": 0,
-    "comments": 0,
-    "text": "Flynn brings two decades of large-scale product engineering and delivery leadership, with a track record of building the operating model that lets enterprise AI scale. Robots &#38; Pencils, an applied AI engineering partner designed for ent",
-    "published_at": "2026-08-06T13:59:15Z",
-    "rank_within_source": 2,
-    "hn_url": "",
-    "prior": 0.713,
-    "_spillover_date": "2026-08-16"
-  },
-  {
-    "id": "openai:https://openai.com/index/dali-rajic-chief-revenue-officer",
-    "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer",
-    "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
-    "source": "openai",
-    "score": 0,
-    "comments": 0,
-    "text": "OpenAI appoints Dali Rajic as Chief Revenue Officer to lead its global revenue organization and help businesses realize the full value of AI.",
-    "published_at": "2026-08-13T09:00:00Z",
-    "rank_within_source": 3,
-    "hn_url": "",
-    "prior": 0.708,
-    "_spillover_date": "2026-08-16"
-  },
-  {
     "id": "lobsters:jyhsng",
     "title": "Zig Day Seattle, WA #3",
     "url": "https://zig.day/usa/seattle/3/",
     "source": "lobsters",
-    "score": 16,
+    "score": 18,
     "comments": 2,
     "text": "",
     "published_at": "2026-08-15T21:18:32Z",
     "rank_within_source": 4,
     "hn_url": "https://lobste.rs/s/jyhsng/zig_day_seattle_wa_3",
     "prior": 0.702,
-    "_spillover_date": "2026-08-16"
-  },
-  {
-    "id": "jim_nielsen:https://blog.jim-nielsen.com/2026/fruit-of-ai/",
-    "title": "The Fruits of AI",
-    "url": "https://blog.jim-nielsen.com/2026/fruit-of-ai/",
-    "source": "jim_nielsen",
-    "score": 0,
-    "comments": 0,
-    "text": "Terry Godier has a post titled \u201cMea culpa\u201d (which, given his framing, might\u2019ve been better titled \u201cClaude\u2019s Culpa\u201d). I\u2019m not sure how much to even trust anything in his post given the backstory , but this line stood out: I was careless in r",
-    "published_at": "2026-08-11T19:00:00Z",
-    "rank_within_source": 2,
-    "hn_url": "",
-    "prior": 0.696,
     "_spillover_date": "2026-08-16"
   },
   {
@@ -154,12 +98,26 @@
     "_spillover_date": "2026-08-16"
   },
   {
+    "id": "hn:49292385",
+    "title": "Chestnut \u2013 eGPU dock with open-source firmware",
+    "url": "https://hwbusters.com/news/comma-ai-egpu-dock-runs-open-source-firmware-249-bare-799-with-an-rx-9060/",
+    "source": "hn",
+    "score": 40,
+    "comments": 7,
+    "text": "",
+    "published_at": "2026-08-13T22:01:04Z",
+    "rank_within_source": 4,
+    "hn_url": "https://news.ycombinator.com/item?id=49292385",
+    "prior": 0.667,
+    "_spillover_date": "2026-08-16"
+  },
+  {
     "id": "github:1331636953",
     "title": "zhu1090093659/dsh-web-ui \u2014 Plugin and skin collection for DeepSeek Harness (DSH) Web UI - task board, git graph, right-side panel, remote mobile UI, pet, live token stats, and skin center.",
     "url": "https://github.com/zhu1090093659/dsh-web-ui",
     "source": "github_trending",
-    "score": 3120,
-    "comments": 45,
+    "score": 3184,
+    "comments": 50,
     "text": "Plugin and skin collection for DeepSeek Harness (DSH) Web UI - task board, git graph, right-side panel, remote mobile UI, pet, live token stats, and skin center.",
     "published_at": "2026-08-12T05:15:20Z",
     "rank_within_source": 5,
@@ -182,54 +140,12 @@
     "_spillover_date": "2026-08-16"
   },
   {
-    "id": "lobsters:fjwpeh",
-    "title": "My comment section is static HTML",
-    "url": "https://jva.lol/weblog/my-comment-section-is-static-html/",
-    "source": "lobsters",
-    "score": 12,
-    "comments": 8,
-    "text": "",
-    "published_at": "2026-08-14T23:58:27Z",
-    "rank_within_source": 3,
-    "hn_url": "https://lobste.rs/s/fjwpeh/my_comment_section_is_static_html",
-    "prior": 0.642,
-    "_spillover_date": "2026-08-15"
-  },
-  {
-    "id": "openai:https://openai.com/index/how-enterprises-put-ai-to-work",
-    "title": "From assistance to execution: How enterprises put AI to work",
-    "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
-    "source": "openai",
-    "score": 0,
-    "comments": 0,
-    "text": "OpenAI research reveals how enterprises are adopting agentic AI, using ChatGPT and Codex, and how frontier firms are pulling ahead in AI adoption.",
-    "published_at": "2026-08-12T06:00:00Z",
-    "rank_within_source": 4,
-    "hn_url": "",
-    "prior": 0.634,
-    "_spillover_date": "2026-08-16"
-  },
-  {
-    "id": "techcrunch:https://techcrunch.com/?p=3153313",
-    "title": "Woman claims her stepfather used Grok to transform childhood photo into explicit imagery",
-    "url": "https://techcrunch.com/2026/08/15/woman-claims-her-stepfather-used-grok-to-transform-childhood-photo-into-explicit-imagery/",
-    "source": "techcrunch",
-    "score": 0,
-    "comments": 0,
-    "text": "The woman claimed that AI tools are \"taking everyday life and turning it into child sexual abuse.\"",
-    "published_at": "2026-08-15T21:29:19Z",
-    "rank_within_source": 1,
-    "hn_url": "",
-    "prior": 0.62,
-    "_spillover_date": "2026-08-16"
-  },
-  {
     "id": "github:1334245678",
     "title": "xiaobright/dsh-anchored-standard \u2014 Two-phase DeepSeek Harness preset: Minimal-aligned bootstrap, then full Standard tools (Project2 98/99)",
     "url": "https://github.com/xiaobright/dsh-anchored-standard",
     "source": "github_trending",
-    "score": 2677,
-    "comments": 29,
+    "score": 2739,
+    "comments": 30,
     "text": "Two-phase DeepSeek Harness preset: Minimal-aligned bootstrap, then full Standard tools (Project2 98/99)",
     "published_at": "2026-08-14T14:06:39Z",
     "rank_within_source": 6,
@@ -266,20 +182,6 @@
     "_spillover_date": "2026-08-16"
   },
   {
-    "id": "lobsters:khcojf",
-    "title": "Recap: Software Should Work 2026",
-    "url": "https://bencornia.com/blog/recap-software-should-work-2026",
-    "source": "lobsters",
-    "score": 16,
-    "comments": 1,
-    "text": "",
-    "published_at": "2026-08-15T20:01:21Z",
-    "rank_within_source": 6,
-    "hn_url": "https://lobste.rs/s/khcojf/recap_software_should_work_2026",
-    "prior": 0.607,
-    "_spillover_date": "2026-08-16"
-  },
-  {
     "id": "hf:2608.06914",
     "title": "RibAssist 3D: Biplanar Rib-Fracture Detection, Addressing, and Selective 3D Localization from CT-Derived Projections",
     "url": "https://huggingface.co/papers/2608.06914",
@@ -312,55 +214,13 @@
     "title": "yjh051108/dsh-routing-suite \u2014 dsh-routing-suite \u2014 injector + router-standard kit: install the runtime injector first, then the task-aware reasoning-mode router preset (measured P1-P23).",
     "url": "https://github.com/yjh051108/dsh-routing-suite",
     "source": "github_trending",
-    "score": 2424,
-    "comments": 23,
+    "score": 2510,
+    "comments": 24,
     "text": "dsh-routing-suite \u2014 injector + router-standard kit: install the runtime injector first, then the task-aware reasoning-mode router preset (measured P1-P23).",
     "published_at": "2026-08-14T21:20:55Z",
     "rank_within_source": 7,
     "hn_url": "",
     "prior": 0.582,
-    "_spillover_date": "2026-08-16"
-  },
-  {
-    "id": "theverge:https://www.theverge.com/?p=980502",
-    "title": "Have a laugh at AI\u2019s expense by roleplaying as a chatbot",
-    "url": "https://www.theverge.com/entertainment/980502/roleplay-as-an-ai-chatbot",
-    "source": "theverge",
-    "score": 0,
-    "comments": 0,
-    "text": "Your AI Slop Bores Me is brilliant in its simplicity. There are two tabs: human and LARP as an AI. On one side you enter a request. On the other, you submit an answer. But the important thing is that there's a human on both sides of the equ",
-    "published_at": "2026-08-15T20:45:00Z",
-    "rank_within_source": 1,
-    "hn_url": "",
-    "prior": 0.58,
-    "_spillover_date": "2026-08-16"
-  },
-  {
-    "id": "hn:49314902",
-    "title": "Software Engineering fundamentals matter more",
-    "url": "https://rhonabwy.com/2026/08/15/software-engineering-fundamentals-matter-more-than-ever/",
-    "source": "hn",
-    "score": 165,
-    "comments": 101,
-    "text": "",
-    "published_at": "2026-08-15T22:31:09Z",
-    "rank_within_source": 6,
-    "hn_url": "https://news.ycombinator.com/item?id=49314902",
-    "prior": 0.579,
-    "_spillover_date": "2026-08-16"
-  },
-  {
-    "id": "openai:https://openai.com/index/ringcentral",
-    "title": "How RingCentral builds AI-native work from engineering to ops",
-    "url": "https://openai.com/index/ringcentral",
-    "source": "openai",
-    "score": 0,
-    "comments": 0,
-    "text": "See how RingCentral uses ChatGPT Work and Codex to accelerate AI product development and centralize operational intelligence across engineering and operations.",
-    "published_at": "2026-08-12T00:00:00Z",
-    "rank_within_source": 5,
-    "hn_url": "",
-    "prior": 0.575,
     "_spillover_date": "2026-08-16"
   },
   {
@@ -378,45 +238,59 @@
     "_spillover_date": "2026-08-16"
   },
   {
-    "id": "github:1329629252",
-    "title": "SMNETSTUDIO/WeChat-AI",
-    "url": "https://github.com/SMNETSTUDIO/WeChat-AI",
+    "id": "github:1332959628",
+    "title": "cordiverse/paper \u2014 A Programming Paradigm for Spatiotemporal Composability",
+    "url": "https://github.com/cordiverse/paper",
     "source": "github_trending",
-    "score": 1759,
+    "score": 1774,
     "comments": 0,
-    "text": "",
-    "published_at": "2026-08-10T09:06:43Z",
+    "text": "A Programming Paradigm for Spatiotemporal Composability",
+    "published_at": "2026-08-13T09:53:33Z",
     "rank_within_source": 8,
     "hn_url": "",
     "prior": 0.55,
     "_spillover_date": "2026-08-16"
   },
   {
-    "id": "producthunt:tag:www.producthunt.com,2005:Post/1222624",
-    "title": "HarnessRouter Community Edition",
-    "url": "https://www.producthunt.com/products/epsilla",
-    "source": "producthunt",
-    "score": 0,
-    "comments": 0,
-    "text": "Open-source unified interface for agent harnesses Discussion | Link",
-    "published_at": "2026-08-14T06:38:52Z",
-    "rank_within_source": 1,
-    "hn_url": "",
-    "prior": 0.55,
-    "_spillover_date": "2026-08-16"
+    "id": "lobsters:fjwpeh",
+    "title": "My comment section is static HTML",
+    "url": "https://jva.lol/weblog/my-comment-section-is-static-html/",
+    "source": "lobsters",
+    "score": 12,
+    "comments": 8,
+    "text": "",
+    "published_at": "2026-08-14T23:58:27Z",
+    "rank_within_source": 3,
+    "hn_url": "https://lobste.rs/s/fjwpeh/my_comment_section_is_static_html",
+    "prior": 0.546,
+    "_spillover_date": "2026-08-15"
   },
   {
     "id": "hn:49313428",
     "title": "Super El Ni\u00f1o Keeps Growing as New Forecasts Reach Record Territory Ahead Winter",
     "url": "https://www.severe-weather.eu/long-range-2/super-el-nino-growth-accelerating-to-record-strength-fall-winter-2026-2027-forecast-impact-united-states-canada-europe-fa/",
     "source": "hn",
-    "score": 262,
-    "comments": 158,
+    "score": 291,
+    "comments": 185,
     "text": "",
     "published_at": "2026-08-15T19:20:51Z",
     "rank_within_source": 7,
     "hn_url": "https://news.ycombinator.com/item?id=49313428",
     "prior": 0.545,
+    "_spillover_date": "2026-08-16"
+  },
+  {
+    "id": "lobsters:khcojf",
+    "title": "Recap: Software Should Work 2026",
+    "url": "https://bencornia.com/blog/recap-software-should-work-2026",
+    "source": "lobsters",
+    "score": 16,
+    "comments": 1,
+    "text": "",
+    "published_at": "2026-08-15T20:01:21Z",
+    "rank_within_source": 8,
+    "hn_url": "https://lobste.rs/s/khcojf/recap_software_should_work_2026",
+    "prior": 0.54,
     "_spillover_date": "2026-08-16"
   },
   {
@@ -434,6 +308,90 @@
     "_spillover_date": "2026-08-16"
   },
   {
+    "id": "lobsters:5rh6fs",
+    "title": "Haskell: origins, evolution, and future",
+    "url": "https://www.youtube.com/watch?v=MQeIerDsReA&t=673s",
+    "source": "lobsters",
+    "score": 6,
+    "comments": 0,
+    "text": "",
+    "published_at": "2026-08-16T07:17:26Z",
+    "rank_within_source": 7,
+    "hn_url": "https://lobste.rs/s/5rh6fs/haskell_origins_evolution_future",
+    "prior": 0.527,
+    "_spillover_date": "2026-08-16"
+  },
+  {
+    "id": "theverge:https://www.theverge.com/?p=980502",
+    "title": "Have a laugh at AI\u2019s expense by roleplaying as a chatbot",
+    "url": "https://www.theverge.com/entertainment/980502/roleplay-as-an-ai-chatbot",
+    "source": "theverge",
+    "score": 0,
+    "comments": 0,
+    "text": "Your AI Slop Bores Me is brilliant in its simplicity. There are two tabs: human and LARP as an AI. On one side you enter a request. On the other, you submit an answer. But the important thing is that there's a human on both sides of the equ",
+    "published_at": "2026-08-15T20:45:00Z",
+    "rank_within_source": 2,
+    "hn_url": "",
+    "prior": 0.504,
+    "_spillover_date": "2026-08-16"
+  },
+  {
+    "id": "hn:49314902",
+    "title": "Software Engineering fundamentals matter more",
+    "url": "https://rhonabwy.com/2026/08/15/software-engineering-fundamentals-matter-more-than-ever/",
+    "source": "hn",
+    "score": 165,
+    "comments": 101,
+    "text": "",
+    "published_at": "2026-08-15T22:31:09Z",
+    "rank_within_source": 6,
+    "hn_url": "https://news.ycombinator.com/item?id=49314902",
+    "prior": 0.492,
+    "_spillover_date": "2026-08-16"
+  },
+  {
+    "id": "github:1332080070",
+    "title": "dmmulroy/anti-slop \u2014 Opinionated Oxlint rules for rejecting low-evidence TypeScript and JavaScript patterns",
+    "url": "https://github.com/dmmulroy/anti-slop",
+    "source": "github_trending",
+    "score": 1479,
+    "comments": 1,
+    "text": "Opinionated Oxlint rules for rejecting low-evidence TypeScript and JavaScript patterns",
+    "published_at": "2026-08-12T13:48:50Z",
+    "rank_within_source": 11,
+    "hn_url": "",
+    "prior": 0.478,
+    "_spillover_date": "2026-08-16"
+  },
+  {
+    "id": "techcrunch:https://techcrunch.com/?p=3153306",
+    "title": "SpaceX officially closes its Cursor acquisition",
+    "url": "https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/",
+    "source": "techcrunch",
+    "score": 0,
+    "comments": 0,
+    "text": "AI coding startup Cursor is now officially a part of SpaceX.",
+    "published_at": "2026-08-15T16:30:00Z",
+    "rank_within_source": 3,
+    "hn_url": "",
+    "prior": 0.477,
+    "_spillover_date": "2026-08-16"
+  },
+  {
+    "id": "producthunt:tag:www.producthunt.com,2005:Post/1222624",
+    "title": "HarnessRouter Community Edition",
+    "url": "https://www.producthunt.com/products/epsilla",
+    "source": "producthunt",
+    "score": 0,
+    "comments": 0,
+    "text": "Open-source unified interface for agent harnesses Discussion | Link",
+    "published_at": "2026-08-14T06:38:52Z",
+    "rank_within_source": 1,
+    "hn_url": "",
+    "prior": 0.468,
+    "_spillover_date": "2026-08-16"
+  },
+  {
     "id": "adactio:https://adactio.com/journal/22708",
     "title": "Girls In Their Married Bliss by Edna O\u2019Brien",
     "url": "https://adactio.com/journal/22708",
@@ -444,7 +402,7 @@
     "published_at": "2026-08-09T11:20:11Z",
     "rank_within_source": 4,
     "hn_url": "",
-    "prior": 0.538,
+    "prior": 0.457,
     "_spillover_date": "2026-08-16"
   },
   {
@@ -458,7 +416,7 @@
     "published_at": "2026-08-14T16:13:40Z",
     "rank_within_source": 1,
     "hn_url": "",
-    "prior": 0.527,
+    "prior": 0.448,
     "_spillover_date": "2026-08-15"
   },
   {
@@ -472,22 +430,8 @@
     "published_at": "2026-08-15T07:59:42Z",
     "rank_within_source": 5,
     "hn_url": "https://news.ycombinator.com/item?id=49308685",
-    "prior": 0.526,
+    "prior": 0.447,
     "_spillover_date": "2026-08-15"
-  },
-  {
-    "id": "github:1332959628",
-    "title": "cordiverse/paper \u2014 A Programming Paradigm for Spatiotemporal Composability",
-    "url": "https://github.com/cordiverse/paper",
-    "source": "github_trending",
-    "score": 1758,
-    "comments": 0,
-    "text": "A Programming Paradigm for Spatiotemporal Composability",
-    "published_at": "2026-08-13T09:53:33Z",
-    "rank_within_source": 9,
-    "hn_url": "",
-    "prior": 0.523,
-    "_spillover_date": "2026-08-16"
   },
   {
     "id": "lobsters:dnlhah",
@@ -500,22 +444,8 @@
     "published_at": "2026-08-13T23:09:13Z",
     "rank_within_source": 2,
     "hn_url": "https://lobste.rs/s/dnlhah/let_s_not_call_it_tech_debt_it_s_just_mess",
-    "prior": 0.519,
+    "prior": 0.441,
     "_spillover_date": "2026-08-14"
-  },
-  {
-    "id": "lobsters:5rh6fs",
-    "title": "Haskell: origins, evolution, and future",
-    "url": "https://www.youtube.com/watch?v=MQeIerDsReA&t=673s",
-    "source": "lobsters",
-    "score": 5,
-    "comments": 0,
-    "text": "",
-    "published_at": "2026-08-16T07:17:26Z",
-    "rank_within_source": 7,
-    "hn_url": "https://lobste.rs/s/5rh6fs/haskell_origins_evolution_future",
-    "prior": 0.518,
-    "_spillover_date": "2026-08-16"
   },
   {
     "id": "hn:49314235",
@@ -528,7 +458,7 @@
     "published_at": "2026-08-15T20:54:11Z",
     "rank_within_source": 8,
     "hn_url": "https://news.ycombinator.com/item?id=49314235",
-    "prior": 0.516,
+    "prior": 0.439,
     "_spillover_date": "2026-08-16"
   },
   {
@@ -542,7 +472,7 @@
     "published_at": "2026-08-15T10:42:53Z",
     "rank_within_source": 5,
     "hn_url": "https://lobste.rs/s/fsbumg/serokell_s_work_on_ghc_dependent_types",
-    "prior": 0.507,
+    "prior": 0.431,
     "_spillover_date": "2026-08-15"
   },
   {
@@ -556,7 +486,7 @@
     "published_at": "2026-08-14T16:54:16Z",
     "rank_within_source": 2,
     "hn_url": "",
-    "prior": 0.504,
+    "prior": 0.428,
     "_spillover_date": "2026-08-16"
   },
   {
@@ -570,7 +500,7 @@
     "published_at": "2026-08-14T19:05:12Z",
     "rank_within_source": 7,
     "hn_url": "https://lobste.rs/s/j9mwib/we_implemented_ipv8_internet_draft_linux",
-    "prior": 0.476,
+    "prior": 0.405,
     "_spillover_date": "2026-08-15"
   },
   {
@@ -584,7 +514,7 @@
     "published_at": "2026-08-14T15:43:28Z",
     "rank_within_source": 2,
     "hn_url": "",
-    "prior": 0.458,
+    "prior": 0.389,
     "_spillover_date": "2026-08-15"
   },
   {
@@ -598,7 +528,7 @@
     "published_at": "2026-08-14T09:52:20Z",
     "rank_within_source": 3,
     "hn_url": "https://lobste.rs/s/2dsufc/comments_code_vs_pr_description",
-    "prior": 0.451,
+    "prior": 0.383,
     "_spillover_date": "2026-08-14"
   },
   {
@@ -612,7 +542,7 @@
     "published_at": "2026-08-14T11:33:57Z",
     "rank_within_source": 9,
     "hn_url": "https://lobste.rs/s/avjfxw/curl_performance",
-    "prior": 0.437,
+    "prior": 0.371,
     "_spillover_date": "2026-08-15"
   },
   {
@@ -626,7 +556,7 @@
     "published_at": "2026-08-13T05:28:40Z",
     "rank_within_source": 4,
     "hn_url": "https://lobste.rs/s/62kxco/python_s_pre_declared_constants_are_kinda",
-    "prior": 0.431,
+    "prior": 0.366,
     "_spillover_date": "2026-08-14"
   },
   {
@@ -640,7 +570,7 @@
     "published_at": "2026-08-12T12:31:16Z",
     "rank_within_source": 6,
     "hn_url": "https://news.ycombinator.com/item?id=49271382",
-    "prior": 0.418,
+    "prior": 0.355,
     "_spillover_date": "2026-08-15"
   },
   {
@@ -654,7 +584,7 @@
     "published_at": "2026-08-12T00:00:00Z",
     "rank_within_source": 2,
     "hn_url": "",
-    "prior": 0.416,
+    "prior": 0.354,
     "_spillover_date": "2026-08-14"
   },
   {
@@ -668,7 +598,7 @@
     "published_at": "2026-08-14T22:04:19Z",
     "rank_within_source": 10,
     "hn_url": "https://lobste.rs/s/ueyokn/what_you_gain_by_building_your_own_game",
-    "prior": 0.411,
+    "prior": 0.349,
     "_spillover_date": "2026-08-15"
   },
   {
@@ -682,7 +612,7 @@
     "published_at": "2026-08-10T18:32:23Z",
     "rank_within_source": 11,
     "hn_url": "",
-    "prior": 0.406,
+    "prior": 0.345,
     "_spillover_date": "2026-08-15"
   },
   {
@@ -696,7 +626,7 @@
     "published_at": "2026-08-13T12:09:50Z",
     "rank_within_source": 1,
     "hn_url": "https://news.ycombinator.com/item?id=49284774",
-    "prior": 0.399,
+    "prior": 0.339,
     "_spillover_date": "2026-08-13"
   }
 ]
